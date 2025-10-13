@@ -1,0 +1,46 @@
+# --- Python ---
+__pycache__/
+*.py[cod]
+*.pyo
+*.so
+*.egg-info/
+.eggs/
+dist/
+build/
+pip-wheel-metadata/
+
+# --- Virtual envs ---
+.venv/
+venv/
+env/
+
+# --- Jupyter ---
+.ipynb_checkpoints/
+# Decide if you want notebooks tracked:
+ *.ipynb        # (uncomment to ignore all notebooks)
+# Or keep them in a folder you track, e.g. notebooks/
+
+# --- OS/Editor ---
+.DS_Store
+Thumbs.db
+.vscode/
+
+# --- Secrets & configs ---
+.env
+.env.*
+*.secret
+*.key
+configs/**/secrets*.yml
+
+# --- Project-specific (safe to ignore) ---
+/artifacts/
+/filings/
+/logs/
+/tmp/
+/cache/
+/data/            # if you keep raw dumps here (optional)
+
+# --- Reports/exports (optional) ---
+# Put generated HTML/PDF into artifacts/ so you don't need to ignore them by name.
+# *.html
+# *.pdf
