@@ -33,10 +33,6 @@ Thumbs.db
 configs/**/secrets*.yml
 
 # --- Project-specific (safe to ignore) ---
-/artifacts/*
-!/artifacts/.gitkeep
-/filings/
-/logs/
 /tmp/
 /cache/
 /data/            # if you keep raw dumps here (optional)
@@ -45,3 +41,10 @@ configs/**/secrets*.yml
 # Put generated HTML/PDF into artifacts/ so you don't need to ignore them by name.
 # *.html
 # *.pdf
+
+/artifacts/*
+!/artifacts/.gitkeep
+/filings/*
+!/filings/.gitkeep
+/logs/*
+!/logs/.gitkeep
