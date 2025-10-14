@@ -33,7 +33,8 @@ Thumbs.db
 configs/**/secrets*.yml
 
 # --- Project-specific (safe to ignore) ---
-/artifacts/
+/artifacts/*
+!/artifacts/.gitkeep
 /filings/
 /logs/
 /tmp/
