@@ -9,3 +9,4 @@
 
 # Notebooks: don’t touch line endings
 *.ipynb -text
+.gitignore text eol=lf
