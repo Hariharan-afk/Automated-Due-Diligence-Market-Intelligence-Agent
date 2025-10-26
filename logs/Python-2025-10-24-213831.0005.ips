@@ -1,0 +1,654 @@
+{"app_name":"Python","timestamp":"2025-10-24 21:38:31.00 -0400","app_version":"3.13.7","slice_uuid":"b45e3280-10cc-31fc-bef8-6734370791e8","build_version":"3.13.7","platform":1,"bundleID":"org.python.python","share_with_app_devs":0,"is_first_party":0,"bug_type":"309","os_version":"macOS 26.0.1 (25A362)","roots_installed":0,"name":"Python","incident_id":"C0B9EFFF-C9F3-46F3-8D5F-2E8A471DD4EF"}
+{
+  "uptime" : 630000,
+  "procRole" : "Unspecified",
+  "version" : 2,
+  "userID" : 501,
+  "deployVersion" : 210,
+  "modelCode" : "Mac16,13",
+  "coalitionID" : 682,
+  "osVersion" : {
+    "train" : "macOS 26.0.1",
+    "build" : "25A362",
+    "releaseType" : "User"
+  },
+  "captureTime" : "2025-10-24 21:38:31.5228 -0400",
+  "codeSigningMonitor" : 2,
+  "incident" : "C0B9EFFF-C9F3-46F3-8D5F-2E8A471DD4EF",
+  "pid" : 31987,
+  "translated" : false,
+  "cpuType" : "ARM-64",
+  "roots_installed" : 0,
+  "bug_type" : "309",
+  "procLaunch" : "2025-10-24 21:38:31.0980 -0400",
+  "procStartAbsTime" : 15299099577229,
+  "procExitAbsTime" : 15299109767231,
+  "procName" : "Python",
+  "procPath" : "\/opt\/homebrew\/*\/Python.framework\/Versions\/3.13\/Resources\/Python.app\/Contents\/MacOS\/Python",
+  "bundleInfo" : {"CFBundleShortVersionString":"3.13.7","CFBundleVersion":"3.13.7","CFBundleIdentifier":"org.python.python"},
+  "storeInfo" : {"deviceIdentifierForVendor":"01368D61-D588-5D85-862D-A8489CF07B34","thirdParty":true},
+  "parentProc" : "Python",
+  "parentPid" : 31886,
+  "coalitionName" : "com.microsoft.VSCode",
+  "crashReporterKey" : "1E1BA98A-3CD8-DD10-1886-CFE6EC13375B",
+  "developerMode" : 1,
+  "responsiblePid" : 634,
+  "responsibleProc" : "Electron",
+  "codeSigningID" : "org.python.python",
+  "codeSigningTeamID" : "",
+  "codeSigningFlags" : 570425889,
+  "codeSigningValidationCategory" : 10,
+  "codeSigningTrustLevel" : 4294967295,
+  "codeSigningAuxiliaryInfo" : 0,
+  "instructionByteStream" : {"beforePC":"9E8Dqf17BKn9AwGR8wMAqs1gAJQWAEC58wsAtGgOQPmoCwC0FBEAkQ==","atPC":"FwlAOf8HAPkIZDbQAJFA+UABALThAxSqkWQAlPUDAKoAZDbQAAADkQ=="},
+  "bootSessionUUID" : "15FD21C3-385C-4EA8-8F01-94D3BED4D1B3",
+  "wakeTime" : 3143,
+  "sleepWakeUUID" : "2DC3F611-F64C-456C-8895-734C409DC114",
+  "sip" : "enabled",
+  "vmRegionInfo" : "0x10b4dc8c9 is not in any region.  Bytes after previous region: 2250  Bytes before following region: 259895\n      REGION TYPE                    START - END         [ VSIZE] PRT\/MAX SHRMOD  REGION DETAIL\n      VM_ALLOCATE                 10b3dc000-10b4dc000    [ 1024K] rw-\/rwx SM=COW  \n--->  GAP OF 0x40000 BYTES\n      MALLOC metadata             10b51c000-10b540000    [  144K] rw-\/rwx SM=PRV  ",
+  "exception" : {"codes":"0x0000000000000001, 0x000000010b4dc8c9","rawCodes":[1,4484614345],"type":"EXC_BAD_ACCESS","signal":"SIGSEGV","subtype":"KERN_INVALID_ADDRESS at 0x000000010b4dc8c9"},
+  "termination" : {"flags":0,"code":11,"namespace":"SIGNAL","indicator":"Segmentation fault: 11","byProc":"exc handler","byPid":31987},
+  "vmregioninfo" : "0x10b4dc8c9 is not in any region.  Bytes after previous region: 2250  Bytes before following region: 259895\n      REGION TYPE                    START - END         [ VSIZE] PRT\/MAX SHRMOD  REGION DETAIL\n      VM_ALLOCATE                 10b3dc000-10b4dc000    [ 1024K] rw-\/rwx SM=COW  \n--->  GAP OF 0x40000 BYTES\n      MALLOC metadata             10b51c000-10b540000    [  144K] rw-\/rwx SM=PRV  ",
+  "asi" : {"CoreFoundation":["*** multi-threaded process forked ***"],"libsystem_c.dylib":["crashed on child side of fork pre-exec"]},
+  "extMods" : {"caller":{"thread_create":0,"thread_set_state":0,"task_for_pid":0},"system":{"thread_create":0,"thread_set_state":0,"task_for_pid":0},"targeted":{"thread_create":0,"thread_set_state":0,"task_for_pid":0},"warnings":0},
+  "faultingThread" : 0,
+  "threads" : [{"triggered":true,"id":7119662,"threadState":{"x":[{"value":8655538348,"symbolLocation":172,"symbol":"_main_thread"},{"value":6830604099},{"value":16777476},{"value":0},{"value":6830604037},{"value":6135158304},{"value":116},{"value":0},{"value":4484614343},{"value":8655587752,"symbolLocation":0,"symbol":"errno"},{"value":1},{"value":51062800496},{"value":1},{"value":51072006752},{"value":2051},{"value":6830601991},{"value":6833186312,"symbolLocation":0,"symbol":"__error"},{"value":8678825688},{"value":0},{"value":51062800448},{"value":4484614347},{"value":68719460612},{"value":22},{"value":1},{"value":51068715680},{"value":4341732560,"symbolLocation":0,"symbol":"cfunction_call"},{"value":4332947240},{"value":176},{"value":4344691552,"symbolLocation":0,"symbol":"_PyEval_EvalFrameDefault.opcode_targets"}],"flavor":"ARM_THREAD_STATE64","lr":{"value":6830494080},"cpsr":{"value":536870912},"fp":{"value":6135159488},"sp":{"value":6135159424},"esr":{"value":2449473543,"description":"(Data Abort) byte read Translation fault"},"pc":{"value":6830494100,"matchesCrashFrame":1},"far":{"value":4484614345}},"frames":[{"imageOffset":16788,"symbol":"_os_log_preferences_refresh","symbolLocation":56,"imageIndex":57},{"imageOffset":19196,"symbol":"os_log_type_enabled","symbolLocation":768,"imageIndex":57},{"imageOffset":1149076,"symbol":"_CFPlugInUnscheduleForUnloading","symbolLocation":92,"imageIndex":58},{"imageOffset":824080,"symbol":"_CFBundleLoadExecutableAndReturnError","symbolLocation":176,"imageIndex":58},{"imageOffset":669004,"symbol":"CFBundleGetFunctionPointerForName","symbolLocation":52,"imageIndex":58},{"imageOffset":1604,"symbol":"darwin_set_process_title","symbolLocation":108,"imageIndex":54},{"imageOffset":4036,"symbol":"set_ps_display","symbolLocation":108,"imageIndex":54},{"imageOffset":2184,"symbol":"spt_setproctitle","symbolLocation":88,"imageIndex":54},{"imageOffset":775452,"symbol":"cfunction_call","symbolLocation":76,"imageIndex":1},{"imageOffset":391996,"symbol":"_PyObject_MakeTpCall","symbolLocation":120,"imageIndex":1},{"imageOffset":1612992,"symbol":"_PyEval_EvalFrameDefault","symbolLocation":8696,"imageIndex":1},{"imageOffset":394548,"symbol":"_PyVectorcall_Call","symbolLocation":152,"imageIndex":1},{"imageOffset":2656856,"symbol":"partial_call","symbolLocation":124,"imageIndex":1},{"imageOffset":391996,"symbol":"_PyObject_MakeTpCall","symbolLocation":120,"imageIndex":1},{"imageOffset":1626560,"symbol":"_PyEval_EvalFrameDefault","symbolLocation":22264,"imageIndex":1},{"imageOffset":1603660,"symbol":"PyEval_EvalCode","symbolLocation":200,"imageIndex":1},{"imageOffset":2064828,"symbol":"run_eval_code_obj","symbolLocation":104,"imageIndex":1},{"imageOffset":2063364,"symbol":"run_mod","symbolLocation":168,"imageIndex":1},{"imageOffset":2057744,"symbol":"_PyRun_StringFlagsWithName","symbolLocation":148,"imageIndex":1},{"imageOffset":2057248,"symbol":"_PyRun_SimpleStringFlagsWithName","symbolLocation":144,"imageIndex":1},{"imageOffset":2211124,"symbol":"Py_RunMain","symbolLocation":808,"imageIndex":1},{"imageOffset":2212816,"symbol":"pymain_main","symbolLocation":304,"imageIndex":1},{"imageOffset":2212976,"symbol":"Py_BytesMain","symbolLocation":40,"imageIndex":1},{"imageOffset":36180,"symbol":"start","symbolLocation":7184,"imageIndex":59}]}],
+  "usedImages" : [
+  {
+    "source" : "P",
+    "arch" : "arm64",
+    "base" : 4331716608,
+    "CFBundleShortVersionString" : "3.13.7",
+    "CFBundleIdentifier" : "org.python.python",
+    "size" : 16384,
+    "uuid" : "b45e3280-10cc-31fc-bef8-6734370791e8",
+    "path" : "\/opt\/homebrew\/*\/Python.framework\/Versions\/3.13\/Resources\/Python.app\/Contents\/MacOS\/Python",
+    "name" : "Python",
+    "CFBundleVersion" : "3.13.7"
+  },
+  {
+    "source" : "P",
+    "arch" : "arm64",
+    "base" : 4340957184,
+    "CFBundleShortVersionString" : "3.13.7, (c) 2001-2024 Python Software Foundation.",
+    "CFBundleIdentifier" : "org.python.python",
+    "size" : 3719168,
+    "uuid" : "158fcce0-09a8-32ac-8f09-4756e54b1db2",
+    "path" : "\/opt\/homebrew\/*\/Python.framework\/Versions\/3.13\/Python",
+    "name" : "Python",
+    "CFBundleVersion" : "3.13.7"
+  },
+  {
+    "source" : "P",
+    "arch" : "arm64",
+    "base" : 4335173632,
+    "size" : 32768,
+    "uuid" : "4e920024-304a-3cda-baf9-bc97f261c26f",
+    "path" : "\/opt\/homebrew\/*\/Python.framework\/Versions\/3.13\/lib\/python3.13\/lib-dynload\/_struct.cpython-313-darwin.so",
+    "name" : "_struct.cpython-313-darwin.so"
+  },
+  {
+    "source" : "P",
+    "arch" : "arm64",
+    "base" : 4338139136,
+    "size" : 98304,
+    "uuid" : "6f96475c-80a1-3fe2-aee8-f21164f5a65f",
+    "path" : "\/opt\/homebrew\/*\/Python.framework\/Versions\/3.13\/lib\/python3.13\/lib-dynload\/_pickle.cpython-313-darwin.so",
+    "name" : "_pickle.cpython-313-darwin.so"
+  },
+  {
+    "source" : "P",
+    "arch" : "arm64",
+    "base" : 4340744192,
+    "size" : 65536,
+    "uuid" : "54e39cd9-6bda-3a02-bd71-0f182506d887",
+    "path" : "\/opt\/homebrew\/*\/Python.framework\/Versions\/3.13\/lib\/python3.13\/lib-dynload\/_socket.cpython-313-darwin.so",
+    "name" : "_socket.cpython-313-darwin.so"
+  },
+  {
+    "source" : "P",
+    "arch" : "arm64",
+    "base" : 4335386624,
+    "size" : 49152,
+    "uuid" : "a017c5ac-21a4-388a-8838-9340e581f4cc",
+    "path" : "\/opt\/homebrew\/*\/Python.framework\/Versions\/3.13\/lib\/python3.13\/lib-dynload\/math.cpython-313-darwin.so",
+    "name" : "math.cpython-313-darwin.so"
+  },
+  {
+    "source" : "P",
+    "arch" : "arm64",
+    "base" : 4335271936,
+    "size" : 32768,
+    "uuid" : "7edaa8b9-cbf8-3143-81ec-8536f27f95c4",
+    "path" : "\/opt\/homebrew\/*\/Python.framework\/Versions\/3.13\/lib\/python3.13\/lib-dynload\/select.cpython-313-darwin.so",
+    "name" : "select.cpython-313-darwin.so"
+  },
+  {
+    "source" : "P",
+    "arch" : "arm64",
+    "base" : 4418895872,
+    "size" : 32768,
+    "uuid" : "e98137a6-d45a-35de-b187-aaf9f5d8486e",
+    "path" : "\/opt\/homebrew\/*\/Python.framework\/Versions\/3.13\/lib\/python3.13\/lib-dynload\/array.cpython-313-darwin.so",
+    "name" : "array.cpython-313-darwin.so"
+  },
+  {
+    "source" : "P",
+    "arch" : "arm64",
+    "base" : 4338319360,
+    "size" : 16384,
+    "uuid" : "e95c6b4d-9070-3406-8e60-c216f047d1ce",
+    "path" : "\/opt\/homebrew\/*\/Python.framework\/Versions\/3.13\/lib\/python3.13\/lib-dynload\/fcntl.cpython-313-darwin.so",
+    "name" : "fcntl.cpython-313-darwin.so"
+  },
+  {
+    "source" : "P",
+    "arch" : "arm64",
+    "base" : 4418994176,
+    "size" : 16384,
+    "uuid" : "20358054-e422-3a82-b615-41adfc445ea6",
+    "path" : "\/opt\/homebrew\/*\/Python.framework\/Versions\/3.13\/lib\/python3.13\/lib-dynload\/_posixsubprocess.cpython-313-darwin.so",
+    "name" : "_posixsubprocess.cpython-313-darwin.so"
+  },
+  {
+    "source" : "P",
+    "arch" : "arm64",
+    "base" : 4419076096,
+    "size" : 16384,
+    "uuid" : "58accfc7-b9c8-3dfd-974c-0430ded17c04",
+    "path" : "\/opt\/homebrew\/*\/Python.framework\/Versions\/3.13\/lib\/python3.13\/lib-dynload\/_multiprocessing.cpython-313-darwin.so",
+    "name" : "_multiprocessing.cpython-313-darwin.so"
+  },
+  {
+    "source" : "P",
+    "arch" : "arm64",
+    "base" : 4419158016,
+    "size" : 16384,
+    "uuid" : "bdf50ff6-f170-32e7-81d5-5a7ec628bdf7",
+    "path" : "\/opt\/homebrew\/*\/Python.framework\/Versions\/3.13\/lib\/python3.13\/lib-dynload\/_posixshmem.cpython-313-darwin.so",
+    "name" : "_posixshmem.cpython-313-darwin.so"
+  },
+  {
+    "source" : "P",
+    "arch" : "arm64",
+    "base" : 4420435968,
+    "size" : 65536,
+    "uuid" : "558278d6-cb8d-3355-a479-b7e174ba371e",
+    "path" : "\/opt\/homebrew\/*\/Python.framework\/Versions\/3.13\/lib\/python3.13\/lib-dynload\/_datetime.cpython-313-darwin.so",
+    "name" : "_datetime.cpython-313-darwin.so"
+  },
+  {
+    "source" : "P",
+    "arch" : "arm64",
+    "base" : 4420288512,
+    "size" : 32768,
+    "uuid" : "83ab9fcc-4cbc-30a6-93ab-78fce46a105e",
+    "path" : "\/opt\/homebrew\/*\/Python.framework\/Versions\/3.13\/lib\/python3.13\/lib-dynload\/_json.cpython-313-darwin.so",
+    "name" : "_json.cpython-313-darwin.so"
+  },
+  {
+    "source" : "P",
+    "arch" : "arm64",
+    "base" : 4420583424,
+    "size" : 16384,
+    "uuid" : "ad5f7e6b-3060-3c74-90fc-867ee66fee53",
+    "path" : "\/opt\/homebrew\/*\/Python.framework\/Versions\/3.13\/lib\/python3.13\/lib-dynload\/grp.cpython-313-darwin.so",
+    "name" : "grp.cpython-313-darwin.so"
+  },
+  {
+    "source" : "P",
+    "arch" : "arm64",
+    "base" : 4421713920,
+    "size" : 16384,
+    "uuid" : "b4c163a5-36e2-31f6-9bec-9b25533fed45",
+    "path" : "\/opt\/homebrew\/*\/Python.framework\/Versions\/3.13\/lib\/python3.13\/lib-dynload\/binascii.cpython-313-darwin.so",
+    "name" : "binascii.cpython-313-darwin.so"
+  },
+  {
+    "source" : "P",
+    "arch" : "arm64",
+    "base" : 4422844416,
+    "size" : 16384,
+    "uuid" : "189bc494-c69d-3e51-8a6e-534e3e4f260f",
+    "path" : "\/opt\/homebrew\/*\/Python.framework\/Versions\/3.13\/lib\/python3.13\/lib-dynload\/_opcode.cpython-313-darwin.so",
+    "name" : "_opcode.cpython-313-darwin.so"
+  },
+  {
+    "source" : "P",
+    "arch" : "arm64",
+    "base" : 4426072064,
+    "size" : 32768,
+    "uuid" : "93caa44b-bd42-3d27-ad07-09911116a789",
+    "path" : "\/opt\/homebrew\/*\/Python.framework\/Versions\/3.13\/lib\/python3.13\/lib-dynload\/zlib.cpython-313-darwin.so",
+    "name" : "zlib.cpython-313-darwin.so"
+  },
+  {
+    "source" : "P",
+    "arch" : "arm64",
+    "base" : 4426170368,
+    "size" : 16384,
+    "uuid" : "761bf692-8183-3bfe-b59b-98a3e77728bb",
+    "path" : "\/opt\/homebrew\/*\/Python.framework\/Versions\/3.13\/lib\/python3.13\/lib-dynload\/_bz2.cpython-313-darwin.so",
+    "name" : "_bz2.cpython-313-darwin.so"
+  },
+  {
+    "source" : "P",
+    "arch" : "arm64",
+    "base" : 4426252288,
+    "size" : 32768,
+    "uuid" : "3249dfc1-69b8-3eea-b947-23e2b29149d2",
+    "path" : "\/opt\/homebrew\/*\/Python.framework\/Versions\/3.13\/lib\/python3.13\/lib-dynload\/_lzma.cpython-313-darwin.so",
+    "name" : "_lzma.cpython-313-darwin.so"
+  },
+  {
+    "source" : "P",
+    "arch" : "arm64",
+    "base" : 4426547200,
+    "size" : 131072,
+    "uuid" : "7c71fb65-18fa-38c4-90c6-c0d044f94717",
+    "path" : "\/opt\/homebrew\/*\/liblzma.5.dylib",
+    "name" : "liblzma.5.dylib"
+  },
+  {
+    "source" : "P",
+    "arch" : "arm64",
+    "base" : 4426350592,
+    "size" : 16384,
+    "uuid" : "34ceaa2d-8bd9-37ad-b760-c966d99166c1",
+    "path" : "\/opt\/homebrew\/*\/Python.framework\/Versions\/3.13\/lib\/python3.13\/lib-dynload\/_bisect.cpython-313-darwin.so",
+    "name" : "_bisect.cpython-313-darwin.so"
+  },
+  {
+    "source" : "P",
+    "arch" : "arm64",
+    "base" : 4426432512,
+    "size" : 16384,
+    "uuid" : "fab1a069-4c7d-3f94-9a0c-e2a84a0e6aff",
+    "path" : "\/opt\/homebrew\/*\/Python.framework\/Versions\/3.13\/lib\/python3.13\/lib-dynload\/_random.cpython-313-darwin.so",
+    "name" : "_random.cpython-313-darwin.so"
+  },
+  {
+    "source" : "P",
+    "arch" : "arm64",
+    "base" : 4340891648,
+    "size" : 16384,
+    "uuid" : "1cfcd404-b4fb-3824-827e-f4cd420e2d0e",
+    "path" : "\/Users\/USER\/Downloads\/*\/cimmutabledict.cpython-313-darwin.so",
+    "name" : "cimmutabledict.cpython-313-darwin.so"
+  },
+  {
+    "source" : "P",
+    "arch" : "arm64",
+    "base" : 4427038720,
+    "size" : 65536,
+    "uuid" : "4877a82b-c19b-3acf-bb7a-86a5cdf860f0",
+    "path" : "\/Users\/USER\/Downloads\/*\/_greenlet.cpython-313-darwin.so",
+    "name" : "_greenlet.cpython-313-darwin.so"
+  },
+  {
+    "source" : "P",
+    "arch" : "arm64",
+    "base" : 4426743808,
+    "size" : 16384,
+    "uuid" : "067f95d3-3623-3e1a-aa7e-2e272f3f68c7",
+    "path" : "\/opt\/homebrew\/*\/Python.framework\/Versions\/3.13\/lib\/python3.13\/lib-dynload\/_heapq.cpython-313-darwin.so",
+    "name" : "_heapq.cpython-313-darwin.so"
+  },
+  {
+    "source" : "P",
+    "arch" : "arm64",
+    "base" : 4427431936,
+    "size" : 114688,
+    "uuid" : "0e7b2b08-d0c4-39a0-ab48-118754b0e091",
+    "path" : "\/opt\/homebrew\/*\/Python.framework\/Versions\/3.13\/lib\/python3.13\/lib-dynload\/_ssl.cpython-313-darwin.so",
+    "name" : "_ssl.cpython-313-darwin.so"
+  },
+  {
+    "source" : "P",
+    "arch" : "arm64",
+    "base" : 4428546048,
+    "size" : 589824,
+    "uuid" : "acbf0e43-164e-340d-85a0-b954d7acd563",
+    "path" : "\/opt\/homebrew\/*\/libssl.3.dylib",
+    "name" : "libssl.3.dylib"
+  },
+  {
+    "source" : "P",
+    "arch" : "arm64",
+    "base" : 4434132992,
+    "size" : 3276800,
+    "uuid" : "fc7d1eef-a57f-3bc6-abbc-6aabc0d055c6",
+    "path" : "\/opt\/homebrew\/*\/libcrypto.3.dylib",
+    "name" : "libcrypto.3.dylib"
+  },
+  {
+    "source" : "P",
+    "arch" : "arm64",
+    "base" : 4426825728,
+    "size" : 16384,
+    "uuid" : "eb0076e6-535e-3e17-8ca8-248b9606a775",
+    "path" : "\/opt\/homebrew\/*\/Python.framework\/Versions\/3.13\/lib\/python3.13\/lib-dynload\/_contextvars.cpython-313-darwin.so",
+    "name" : "_contextvars.cpython-313-darwin.so"
+  },
+  {
+    "source" : "P",
+    "arch" : "arm64",
+    "base" : 4427202560,
+    "size" : 49152,
+    "uuid" : "c0a3385a-2da6-3aac-bdc8-873d22da7761",
+    "path" : "\/opt\/homebrew\/*\/Python.framework\/Versions\/3.13\/lib\/python3.13\/lib-dynload\/_asyncio.cpython-313-darwin.so",
+    "name" : "_asyncio.cpython-313-darwin.so"
+  },
+  {
+    "source" : "P",
+    "arch" : "arm64",
+    "base" : 4426907648,
+    "size" : 32768,
+    "uuid" : "f79b400f-a739-3bf6-a095-8fd9f3bf7af9",
+    "path" : "\/opt\/homebrew\/*\/Python.framework\/Versions\/3.13\/lib\/python3.13\/lib-dynload\/_hashlib.cpython-313-darwin.so",
+    "name" : "_hashlib.cpython-313-darwin.so"
+  },
+  {
+    "source" : "P",
+    "arch" : "arm64",
+    "base" : 4427333632,
+    "size" : 32768,
+    "uuid" : "09a96c0c-4916-3018-ad1d-ba6965040367",
+    "path" : "\/opt\/homebrew\/*\/Python.framework\/Versions\/3.13\/lib\/python3.13\/lib-dynload\/_blake2.cpython-313-darwin.so",
+    "name" : "_blake2.cpython-313-darwin.so"
+  },
+  {
+    "source" : "P",
+    "arch" : "arm64",
+    "base" : 4427857920,
+    "size" : 114688,
+    "uuid" : "f6a4528b-95b3-34e2-b69e-70e72a47b1f1",
+    "path" : "\/opt\/homebrew\/*\/Python.framework\/Versions\/3.13\/lib\/python3.13\/lib-dynload\/_decimal.cpython-313-darwin.so",
+    "name" : "_decimal.cpython-313-darwin.so"
+  },
+  {
+    "source" : "P",
+    "arch" : "arm64",
+    "base" : 4428054528,
+    "size" : 114688,
+    "uuid" : "a90fd8ec-2e82-33de-9d8b-1a1eb800c02a",
+    "path" : "\/opt\/homebrew\/*\/libmpdec.4.0.1.dylib",
+    "name" : "libmpdec.4.0.1.dylib"
+  },
+  {
+    "source" : "P",
+    "arch" : "arm64",
+    "base" : 4427661312,
+    "size" : 16384,
+    "uuid" : "be9fb33b-d22a-32dc-8cf7-6ec80013d2e7",
+    "path" : "\/Users\/USER\/Downloads\/*\/cprocessors.cpython-313-darwin.so",
+    "name" : "cprocessors.cpython-313-darwin.so"
+  },
+  {
+    "source" : "P",
+    "arch" : "arm64",
+    "base" : 4427726848,
+    "size" : 16384,
+    "uuid" : "f9428b35-5434-3806-a080-7cef8299dd74",
+    "path" : "\/Users\/USER\/Downloads\/*\/cresultproxy.cpython-313-darwin.so",
+    "name" : "cresultproxy.cpython-313-darwin.so"
+  },
+  {
+    "source" : "P",
+    "arch" : "arm64",
+    "base" : 4428251136,
+    "size" : 16384,
+    "uuid" : "03396887-fd21-30e4-b79f-b9a617236270",
+    "path" : "\/opt\/homebrew\/*\/Python.framework\/Versions\/3.13\/lib\/python3.13\/lib-dynload\/_queue.cpython-313-darwin.so",
+    "name" : "_queue.cpython-313-darwin.so"
+  },
+  {
+    "source" : "P",
+    "arch" : "arm64",
+    "base" : 4428333056,
+    "size" : 16384,
+    "uuid" : "c68a44e9-d3eb-39b9-a990-5a1586c1ff11",
+    "path" : "\/opt\/homebrew\/*\/Python.framework\/Versions\/3.13\/lib\/python3.13\/lib-dynload\/_uuid.cpython-313-darwin.so",
+    "name" : "_uuid.cpython-313-darwin.so"
+  },
+  {
+    "source" : "P",
+    "arch" : "arm64",
+    "base" : 4446191616,
+    "size" : 409600,
+    "uuid" : "81714234-fb3c-3fb2-a2ae-50528ff6a7e7",
+    "path" : "\/Users\/USER\/Downloads\/*\/_pendulum.cpython-313-darwin.so",
+    "name" : "_pendulum.cpython-313-darwin.so"
+  },
+  {
+    "source" : "P",
+    "arch" : "arm64",
+    "base" : 4428414976,
+    "size" : 32768,
+    "uuid" : "d9c2852b-5869-3542-95d7-33bac5e3a8e0",
+    "path" : "\/opt\/homebrew\/*\/Python.framework\/Versions\/3.13\/lib\/python3.13\/lib-dynload\/_zoneinfo.cpython-313-darwin.so",
+    "name" : "_zoneinfo.cpython-313-darwin.so"
+  },
+  {
+    "source" : "P",
+    "arch" : "arm64",
+    "base" : 4433805312,
+    "size" : 81920,
+    "uuid" : "3d6257ab-381c-325c-9f2c-801e9dc118cd",
+    "path" : "\/opt\/homebrew\/*\/Python.framework\/Versions\/3.13\/lib\/python3.13\/lib-dynload\/_sqlite3.cpython-313-darwin.so",
+    "name" : "_sqlite3.cpython-313-darwin.so"
+  },
+  {
+    "source" : "P",
+    "arch" : "arm64",
+    "base" : 4448976896,
+    "size" : 1064960,
+    "uuid" : "77da57aa-d371-3300-9309-cc4728c92bcd",
+    "path" : "\/opt\/homebrew\/*\/libsqlite3.3.50.4.dylib",
+    "name" : "libsqlite3.3.50.4.dylib"
+  },
+  {
+    "source" : "P",
+    "arch" : "arm64",
+    "base" : 4454498304,
+    "size" : 3948544,
+    "uuid" : "04fdb30b-b2cb-3089-bedf-fef372cd9d17",
+    "path" : "\/Users\/USER\/Downloads\/*\/_pydantic_core.cpython-313-darwin.so",
+    "name" : "_pydantic_core.cpython-313-darwin.so"
+  },
+  {
+    "source" : "P",
+    "arch" : "arm64",
+    "base" : 4433625088,
+    "size" : 32768,
+    "uuid" : "0ea440c7-123b-388d-a2db-77c02240e75c",
+    "path" : "\/Users\/USER\/Downloads\/*\/cext.cpython-313-darwin.so",
+    "name" : "cext.cpython-313-darwin.so"
+  },
+  {
+    "source" : "P",
+    "arch" : "arm64",
+    "base" : 4458758144,
+    "size" : 688128,
+    "uuid" : "695e86a0-ed26-38cb-99c8-da7ef6af5e2f",
+    "path" : "\/opt\/homebrew\/*\/Python.framework\/Versions\/3.13\/lib\/python3.13\/lib-dynload\/unicodedata.cpython-313-darwin.so",
+    "name" : "unicodedata.cpython-313-darwin.so"
+  },
+  {
+    "source" : "P",
+    "arch" : "arm64",
+    "base" : 4433707008,
+    "size" : 16384,
+    "uuid" : "e47cf7a6-6c71-388d-b461-a132a3c3cd2a",
+    "path" : "\/opt\/homebrew\/*\/Python.framework\/Versions\/3.13\/lib\/python3.13\/lib-dynload\/termios.cpython-313-darwin.so",
+    "name" : "termios.cpython-313-darwin.so"
+  },
+  {
+    "source" : "P",
+    "arch" : "arm64",
+    "base" : 4485136384,
+    "size" : 7651328,
+    "uuid" : "6f7210a5-b0c3-3ba4-9724-763319638abb",
+    "path" : "\/Users\/USER\/Downloads\/*\/_rust.abi3.so",
+    "name" : "_rust.abi3.so"
+  },
+  {
+    "source" : "P",
+    "arch" : "arm64",
+    "base" : 4463706112,
+    "size" : 131072,
+    "uuid" : "28fd3595-faf5-32ac-bd22-f81db4b47044",
+    "path" : "\/Users\/USER\/Downloads\/*\/_cffi_backend.cpython-313-darwin.so",
+    "name" : "_cffi_backend.cpython-313-darwin.so"
+  },
+  {
+    "source" : "P",
+    "arch" : "arm64",
+    "base" : 4427792384,
+    "size" : 16384,
+    "uuid" : "17ab7e07-a7ac-3a0c-84e0-4812ffab207b",
+    "path" : "\/Users\/USER\/Downloads\/*\/_speedups.cpython-313-darwin.so",
+    "name" : "_speedups.cpython-313-darwin.so"
+  },
+  {
+    "source" : "P",
+    "arch" : "arm64",
+    "base" : 4469538816,
+    "size" : 294912,
+    "uuid" : "a211fdb5-dd09-3ada-8ccf-c6008ed3574c",
+    "path" : "\/Users\/USER\/Downloads\/*\/_core.cpython-313-darwin.so",
+    "name" : "_core.cpython-313-darwin.so"
+  },
+  {
+    "source" : "P",
+    "arch" : "arm64",
+    "base" : 4433985536,
+    "size" : 16384,
+    "uuid" : "b285f465-90e0-349f-8a48-109109da4174",
+    "path" : "\/opt\/homebrew\/*\/Python.framework\/Versions\/3.13\/lib\/python3.13\/lib-dynload\/_scproxy.cpython-313-darwin.so",
+    "name" : "_scproxy.cpython-313-darwin.so"
+  },
+  {
+    "source" : "P",
+    "arch" : "arm64",
+    "base" : 4448763904,
+    "size" : 16384,
+    "uuid" : "2ed57300-629c-3fae-92ec-a586670ca31a",
+    "path" : "\/opt\/homebrew\/*\/Python.framework\/Versions\/3.13\/lib\/python3.13\/lib-dynload\/mmap.cpython-313-darwin.so",
+    "name" : "mmap.cpython-313-darwin.so"
+  },
+  {
+    "source" : "P",
+    "arch" : "arm64",
+    "base" : 4469325824,
+    "size" : 81920,
+    "uuid" : "d950efa6-34bb-377b-87fb-3ef5c1b62da5",
+    "path" : "\/opt\/homebrew\/*\/Python.framework\/Versions\/3.13\/lib\/python3.13\/lib-dynload\/_ctypes.cpython-313-darwin.so",
+    "name" : "_ctypes.cpython-313-darwin.so"
+  },
+  {
+    "source" : "P",
+    "arch" : "arm64",
+    "base" : 4434067456,
+    "size" : 16384,
+    "uuid" : "f69fb268-774c-3823-a38d-e212f7fbefb9",
+    "path" : "\/Users\/USER\/Downloads\/*\/_setproctitle.cpython-313-darwin.so",
+    "name" : "_setproctitle.cpython-313-darwin.so"
+  },
+  {
+    "source" : "P",
+    "arch" : "arm64",
+    "base" : 4504240128,
+    "size" : 32768,
+    "uuid" : "ef74aa03-792a-3bf4-8ef0-a1468320c511",
+    "path" : "\/Users\/USER\/Downloads\/*\/_psutil_osx.abi3.so",
+    "name" : "_psutil_osx.abi3.so"
+  },
+  {
+    "source" : "P",
+    "arch" : "arm64",
+    "base" : 4504338432,
+    "size" : 16384,
+    "uuid" : "747c0138-c667-3801-8e80-79a16c02be0a",
+    "path" : "\/Users\/USER\/Downloads\/*\/_psutil_posix.abi3.so",
+    "name" : "_psutil_posix.abi3.so"
+  },
+  {
+    "source" : "P",
+    "arch" : "arm64e",
+    "base" : 6830477312,
+    "size" : 133088,
+    "uuid" : "28139651-ffe2-3795-95ac-1c7cb27a3a9b",
+    "path" : "\/usr\/lib\/system\/libsystem_trace.dylib",
+    "name" : "libsystem_trace.dylib"
+  },
+  {
+    "source" : "P",
+    "arch" : "arm64e",
+    "base" : 6833717248,
+    "CFBundleShortVersionString" : "6.9",
+    "CFBundleIdentifier" : "com.apple.CoreFoundation",
+    "size" : 5558144,
+    "uuid" : "edb39786-80b1-3bff-b6c3-e33f2e3ca867",
+    "path" : "\/System\/Library\/Frameworks\/CoreFoundation.framework\/Versions\/A\/CoreFoundation",
+    "name" : "CoreFoundation",
+    "CFBundleVersion" : "4040.1.401"
+  },
+  {
+    "source" : "P",
+    "arch" : "arm64e",
+    "base" : 6829494272,
+    "size" : 651124,
+    "uuid" : "abfd3247-50ac-3c8e-b72a-83710166e982",
+    "path" : "\/usr\/lib\/dyld",
+    "name" : "dyld"
+  },
+  {
+    "size" : 0,
+    "source" : "A",
+    "base" : 0,
+    "uuid" : "00000000-0000-0000-0000-000000000000"
+  },
+  {
+    "source" : "P",
+    "arch" : "arm64e",
+    "base" : 6833180672,
+    "size" : 246880,
+    "uuid" : "2eb73bf1-8c71-3e1f-a160-6da83dc82606",
+    "path" : "\/usr\/lib\/system\/libsystem_kernel.dylib",
+    "name" : "libsystem_kernel.dylib"
+  }
+],
+  "sharedCache" : {
+  "base" : 6828425216,
+  "size" : 5557583872,
+  "uuid" : "4300eabe-4963-34ab-a648-3d68753cf4e1"
+},
+  "legacyInfo" : {
+  "threadTriggered" : {
+
+  }
+},
+  "logWritingSignature" : "d6b5d973a4bed9467e1214bd56b7b5652ad59009",
+  "trialInfo" : {
+  "rollouts" : [
+    {
+      "rolloutId" : "6297d96be2c9387df974efa4",
+      "factorPackIds" : [
+
+      ],
+      "deploymentId" : 240000032
+    },
+    {
+      "rolloutId" : "5ffde50ce2aacd000d47a95f",
+      "factorPackIds" : [
+
+      ],
+      "deploymentId" : 240000500
+    }
+  ],
+  "experiments" : [
+
+  ]
+}
+}

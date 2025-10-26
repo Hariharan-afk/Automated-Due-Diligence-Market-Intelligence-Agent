@@ -1,0 +1,45 @@
+services:
+  airflow:
+    image: apache/airflow:2.8.0-python3.10
+    ports:
+      - "8080:8080"
+    environment:
+      AIRFLOW__CORE__LOAD_EXAMPLES: 'false'
+      NEWS_API_KEY: 'd95b2db0967748a69be7b951bed9e4bc'
+      PYTHONPATH: '/opt/airflow:/opt/airflow/src'
+    volumes:
+      - ./dags:/opt/airflow/dags
+      - ./src:/opt/airflow/src
+      - ./data:/opt/airflow/data
+      - ./logs:/opt/airflow/logs
+      - airflow-data:/opt/airflow
+    user: "50000:0"
+    entrypoint: /bin/bash
+    command:
+      - -c
+      - |
+        echo "📦 Installing Python packages..."
+        pip install -q pandas numpy requests Wikipedia-API beautifulsoup4 lxml python-dotenv
+        
+        echo "🔧 Initializing Airflow..."
+        airflow db migrate
+        
+        echo "👤 Creating user..."
+        airflow users create \
+          --username saumith \
+          --firstname Saumith \
+          --lastname Devarasetty \
+          --role Admin \
+          --email saumith123saket@gmail.com \
+          --password saumith 2>/dev/null || echo "User exists"
+        
+        echo "⚙️  Setting variables..."
+        airflow variables set target_company "Apple" 2>/dev/null || true
+        airflow variables set news_api_key "d95b2db0967748a69be7b951bed9e4bc" 2>/dev/null || true
+        
+        echo "🚀 Starting Airflow..."
+        airflow standalone
+    restart: always
+
+volumes:
+  airflow-data:

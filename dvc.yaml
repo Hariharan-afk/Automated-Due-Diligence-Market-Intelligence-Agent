@@ -1,0 +1,87 @@
+stages:
+  data_acquisition:
+    cmd: python scripts/run_pipeline.py --stage acquisition --company "${COMPANY}"
+    deps:
+      - src/data_acquisition.py
+      - data/company_tickers.json
+    params:
+      - config.yaml:
+          - news_api_key
+          - data_sources
+    outs:
+      - data/raw:
+          cache: true
+          persist: true
+    metrics:
+      - data/metrics/acquisition_metrics.json:
+          cache: false
+    always_changed: true
+
+  data_preprocessing:
+    cmd: python scripts/run_pipeline.py --stage preprocessing --input data/raw/latest.json
+    deps:
+      - src/data_preprocessing.py
+      - data/raw
+    outs:
+      - data/processed:
+          cache: true
+          persist: true
+    metrics:
+      - data/metrics/preprocessing_metrics.json:
+          cache: false
+
+  schema_validation:
+    cmd: python scripts/run_pipeline.py --stage validation --input data/processed/latest.json
+    deps:
+      - src/schema_validator.py
+      - data/processed
+    outs:
+      - data/quality_reports:
+          cache: false
+    metrics:
+      - data/metrics/quality_metrics.json:
+          cache: false
+
+  bias_detection:
+    cmd: python scripts/run_pipeline.py --stage bias --input data/processed/latest.json
+    deps:
+      - src/bias_detector.py
+      - data/processed
+    outs:
+      - data/bias_reports:
+          cache: false
+    metrics:
+      - data/metrics/bias_metrics.json:
+          cache: false
+
+  database_storage:
+    cmd: python scripts/run_pipeline.py --stage storage --input data/processed/latest.json
+    deps:
+      - src/db_manager.py
+      - data/processed
+    outs:
+      - data/company_data.db:
+          cache: true
+          persist: true
+    metrics:
+      - data/metrics/storage_metrics.json:
+          cache: false
+
+plots:
+  - data/metrics/quality_metrics.json:
+      x: timestamp
+      y:
+        data/metrics/quality_metrics.json: quality_score
+      title: Data Quality Score Over Time
+      
+  - data/metrics/acquisition_metrics.json:
+      x: company
+      y:
+        data/metrics/acquisition_metrics.json: news_count
+      title: News Articles per Company
+      
+  - data/metrics/bias_metrics.json:
+      x: company
+      y:
+        data/metrics/bias_metrics.json: fairness_score
+      title: Fairness Score per Company
