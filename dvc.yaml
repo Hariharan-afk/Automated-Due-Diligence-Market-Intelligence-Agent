@@ -77,31 +77,26 @@ stages:
 
 plots:
   - data/metrics/quality_metrics.json:
-      x: timestamp
-      y:
-        data/metrics/quality_metrics.json: quality_score
-      title: Data Quality Score Over Time
+      x: company
+      y: quality_score
+      title: Data Quality Score by Company
 
   - data/metrics/acquisition_metrics.json:
       x: company
-      y:
-        data/metrics/acquisition_metrics.json: news_count
+      y: news_count
       title: News Articles per Company
 
   - data/metrics/bias_metrics.json:
       x: company
-      y:
-        data/metrics/bias_metrics.json: fairness_score
+      y: fairness_score
       title: Fairness Score per Company
 
   - data/metrics/acquisition_metrics.json:
       x: company
-      y:
-        data/metrics/acquisition_metrics.json: sec_filings_count
+      y: sec_filings_count
       title: SEC Filings per Company
 
   - data/metrics/preprocessing_metrics.json:
       x: company
-      y:
-        data/metrics/preprocessing_metrics.json: sec_total_tables
+      y: sec_total_tables
       title: Total Tables in SEC Filings

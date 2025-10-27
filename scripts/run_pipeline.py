@@ -128,8 +128,23 @@ class PipelineRunner:
             "timestamp": datetime.now().strftime("%Y-%m-%d %H:%M:%S")
         }
 
-        with open("data/metrics/acquisition_metrics.json", "w", encoding='utf-8') as f:
-            json.dump(metrics, f, indent=2)
+        # Append to array for time-series plotting
+        metrics_file = "data/metrics/acquisition_metrics.json"
+        if os.path.exists(metrics_file):
+            with open(metrics_file, "r", encoding='utf-8') as f:
+                try:
+                    all_metrics = json.load(f)
+                    if not isinstance(all_metrics, list):
+                        all_metrics = [all_metrics]
+                except:
+                    all_metrics = []
+        else:
+            all_metrics = []
+
+        all_metrics.append(metrics)
+
+        with open(metrics_file, "w", encoding='utf-8') as f:
+            json.dump(all_metrics, f, indent=2)
 
         # Log results
         logger.info(f"  📰 News articles fetched: {result['metadata']['news_count']}")
@@ -156,8 +171,23 @@ class PipelineRunner:
             "timestamp": datetime.now().strftime("%Y-%m-%d %H:%M:%S")
         }
 
-        with open("data/metrics/preprocessing_metrics.json", "w", encoding='utf-8') as f:
-            json.dump(metrics, f, indent=2)
+        # Append to array for time-series plotting
+        metrics_file = "data/metrics/preprocessing_metrics.json"
+        if os.path.exists(metrics_file):
+            with open(metrics_file, "r", encoding='utf-8') as f:
+                try:
+                    all_metrics = json.load(f)
+                    if not isinstance(all_metrics, list):
+                        all_metrics = [all_metrics]
+                except:
+                    all_metrics = []
+        else:
+            all_metrics = []
+
+        all_metrics.append(metrics)
+
+        with open(metrics_file, "w", encoding='utf-8') as f:
+            json.dump(all_metrics, f, indent=2)
 
         logger.info(f"✅ Preprocessing complete: {result['statistics']['total_news_articles']} articles processed")
         return result
@@ -179,8 +209,23 @@ class PipelineRunner:
             "timestamp": datetime.now().strftime("%Y-%m-%d %H:%M:%S")
         }
 
-        with open("data/metrics/quality_metrics.json", "w", encoding='utf-8') as f:
-            json.dump(metrics, f, indent=2)
+        # Append to array for time-series plotting
+        metrics_file = "data/metrics/quality_metrics.json"
+        if os.path.exists(metrics_file):
+            with open(metrics_file, "r", encoding='utf-8') as f:
+                try:
+                    all_metrics = json.load(f)
+                    if not isinstance(all_metrics, list):
+                        all_metrics = [all_metrics]
+                except:
+                    all_metrics = []
+        else:
+            all_metrics = []
+
+        all_metrics.append(metrics)
+
+        with open(metrics_file, "w", encoding='utf-8') as f:
+            json.dump(all_metrics, f, indent=2)
 
         logger.info(f"✅ Validation complete: Quality Score = {quality_score:.1f}/100")
 
@@ -198,16 +243,37 @@ class PipelineRunner:
 
         # Save bias metrics for DVC
         os.makedirs("data/metrics", exist_ok=True)
+
+        # Handle NaN values from fairness score
+        fairness_score = report['fairness_metrics']['overall_fairness_score']
+        if fairness_score != fairness_score:  # Check for NaN
+            fairness_score = 0.0
+
         metrics = {
             "company": processed_data.get('company_name', 'unknown'),
             "bias_detected": report['bias_detected'],
-            "fairness_score": report['fairness_metrics']['overall_fairness_score'],
+            "fairness_score": fairness_score,
             "bias_findings_count": len(report['bias_findings']),
             "timestamp": datetime.now().strftime("%Y-%m-%d %H:%M:%S")
         }
 
-        with open("data/metrics/bias_metrics.json", "w", encoding='utf-8') as f:
-            json.dump(metrics, f, indent=2)
+        # Append to array for time-series plotting
+        metrics_file = "data/metrics/bias_metrics.json"
+        if os.path.exists(metrics_file):
+            with open(metrics_file, "r", encoding='utf-8') as f:
+                try:
+                    all_metrics = json.load(f)
+                    if not isinstance(all_metrics, list):
+                        all_metrics = [all_metrics]
+                except:
+                    all_metrics = []
+        else:
+            all_metrics = []
+
+        all_metrics.append(metrics)
+
+        with open(metrics_file, "w", encoding='utf-8') as f:
+            json.dump(all_metrics, f, indent=2)
 
         if report['bias_detected']:
             logger.warning(f"⚠️ Bias detected: {len(report['bias_findings'])} issues found")
@@ -283,8 +349,23 @@ class PipelineRunner:
                 "timestamp": datetime.now().strftime("%Y-%m-%d %H:%M:%S")
             }
 
-            with open("data/metrics/storage_metrics.json", "w", encoding='utf-8') as f:
-                json.dump(metrics, f, indent=2)
+            # Append to array for time-series plotting
+            metrics_file = "data/metrics/storage_metrics.json"
+            if os.path.exists(metrics_file):
+                with open(metrics_file, "r", encoding='utf-8') as f:
+                    try:
+                        all_metrics = json.load(f)
+                        if not isinstance(all_metrics, list):
+                            all_metrics = [all_metrics]
+                    except:
+                        all_metrics = []
+            else:
+                all_metrics = []
+
+            all_metrics.append(metrics)
+
+            with open(metrics_file, "w", encoding='utf-8') as f:
+                json.dump(all_metrics, f, indent=2)
 
             logger.info(f"✅ Storage complete: {len(processed_data['news_articles'])} articles, {sec_count} SEC filings stored")
 
