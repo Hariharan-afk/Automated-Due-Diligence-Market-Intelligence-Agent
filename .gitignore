@@ -1,0 +1,73 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyc
+*.pyo
+*.egg-info/
+.Python
+
+# Virtual Environment - DON'T UPLOAD
+venv/
+env/
+ENV/
+virtualenv/
+
+# Airflow Generated Files
+airflow/
+!airflow/.gitkeep
+airflow.db
+airflow.cfg
+*.pid
+
+# Data Files (Tracked by DVC)
+data/raw/*
+data/processed/*
+data/*.db
+data/*.sqlite
+data/statistics/*
+data/quality_reports/*
+data/bias_reports/*
+data/metrics/*
+
+# Keep ticker file
+!data/company_tickers.json
+
+# DVC Cache
+.dvc/cache
+.dvc/tmp
+
+# Logs
+logs/*.log
+*.log
+logs/
+*.ips
+.env
+.env.*
+
+# Exports
+exports/*.csv
+exports/*.json
+
+# IDE
+.vscode/
+.idea/
+*.swp
+.DS_Store
+
+# Test Coverage
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Temporary
+tmp/
+temp/
+*.tmp
+*.bak
+
+# OS Files
+Thumbs.db
+.DS_Store
+
+# AI Assistant Files
+.claude/
