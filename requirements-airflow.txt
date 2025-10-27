@@ -1,0 +1,11 @@
+cat > requirements-airflow.txt << 'EOF'
+pandas>=2.2.0
+numpy>=1.26.0
+requests==2.31.0
+Wikipedia-API==0.6.0
+beautifulsoup4==4.12.2
+lxml>=5.1.0
+python-dotenv==1.0.0
+EOF
+
+echo "✅ requirements-airflow.txt created!"
