@@ -401,7 +401,9 @@ airflow scheduler              # Terminal 2
 - ✅ Email alerts on failure
 - ✅ XCom for data passing between tasks
 
-**📘 See [AIRFLOW_SETUP.md](AIRFLOW_SETUP.md) for complete guide, Gantt analysis, and optimization strategies**
+**📘 Documentation**:
+- [AIRFLOW_SETUP.md](AIRFLOW_SETUP.md) - Complete Airflow setup and usage guide
+- [AIRFLOW_GANTT_SUMMARY.md](AIRFLOW_GANTT_SUMMARY.md) - Comprehensive Gantt chart analysis, bottleneck identification, and optimization strategies
 
 ---
 
