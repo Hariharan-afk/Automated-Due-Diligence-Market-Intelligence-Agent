@@ -256,15 +256,16 @@ def store_to_database(**context):
                 insert_sec_filing(
                     conn,
                     company_id=company_id,
-                    ticker=filing_data['ticker'],
-                    cik=filing_data['cik'],
-                    filing_type=filing_data['filing_type'],
-                    filing_date=filing_data['filing_date'],
+                    ticker=filing_data.get('ticker', processed_data['ticker']),
+                    cik=filing_data.get('cik', ''),
+                    filing_type=filing_data.get('filing_type', filing_type),
+                    filing_date=filing_data.get('filing_date', ''),
                     fiscal_year=filing_data.get('fiscal_year', 0),
                     fiscal_period=filing_data.get('fiscal_period', ''),
-                    accession_number=filing_data['accession_number'],
+                    accession_number=filing_data.get('accession_number', ''),
                     filing_url=filing_data.get('filing_url', ''),
-                    sections=json.dumps(filing_data['sections'])
+                    sections=json.dumps(filing_data.get('sections', {})),
+                    extraction_date=datetime.now().strftime("%Y-%m-%d %H:%M:%S")
                 )
                 sec_count += 1
 
