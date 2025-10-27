@@ -1,0 +1,170 @@
+schema: '2.0'
+stages:
+  data_acquisition:
+    cmd: python scripts/run_pipeline.py --stage acquisition --company "Apple Inc"
+    deps:
+    - path: data/company_tickers.json
+      hash: md5
+      md5: 5b8bf0485a46856c5927509f73273c6c
+      size: 1023062
+    - path: src/data_acquisition.py
+      hash: md5
+      md5: 6d7524dce847abdefa94eab027f670d7
+      size: 21943
+    - path: src/sec_fetcher.py
+      hash: md5
+      md5: fd87bc008a3ada2d1b31f3d259e576bd
+      size: 20531
+    params:
+      params.yaml:
+        company: Apple Inc
+      config/config.yaml:
+        data_sources:
+          wikipedia:
+            enabled: true
+            user_agent: CompanyResearchPipeline/1.0 (research@example.com)
+            language: en
+            extract_format: WIKI
+          news_api:
+            enabled: true
+            max_articles: 20
+            language: en
+            sort_by: publishedAt
+          gdelt:
+            enabled: true
+            max_records: 20
+            source_country: US
+            source_language: ENGLISH
+        news_api_key: ${NEWS_API_KEY}
+        sec_api:
+          base_url: https://api.sec-api.io
+          use_free_api: true
+          cache_enabled: true
+          rate_limit:
+            calls_per_minute: 10
+            max_retries: 3
+            backoff_factor: 2.0
+          filings:
+            types:
+            - 10-K
+            - 10-Q
+            years_to_fetch: 3
+            sections_to_extract:
+              10-K:
+              - '1'
+              - 1A
+              - '7'
+              - '8'
+              10-Q:
+              - part1item1
+              - part1item2
+              - part2item1a
+    outs:
+    - path: data/metrics/acquisition_metrics.json
+      hash: md5
+      md5: 8874829b3dd660ae43644dc7892297d1
+      size: 169
+    - path: data/raw
+      hash: md5
+      md5: d4c3220069ebe013d0428e593ed1ea8a.dir
+      size: 2990106
+      nfiles: 18
+  data_preprocessing:
+    cmd: python scripts/run_pipeline.py --stage preprocessing --input data/raw/latest.json
+    deps:
+    - path: data/raw
+      hash: md5
+      md5: bcccbf5e950bfe13bc68c4a15a061cba.dir
+      size: 1946374
+      nfiles: 15
+    - path: src/chunking.py
+      hash: md5
+      md5: 4efeea746cd7b387209e6ca63ee32343
+      size: 34266
+    - path: src/data_preprocessing.py
+      hash: md5
+      md5: 448bae716489f6c49bfadc0a2e911e47
+      size: 19211
+    params:
+      config/config.yaml:
+        chunking:
+          chunk_size: 500
+          overlap: 50
+          preserve_tables: true
+          table_context_paragraphs: 2
+          min_chunk_size: 100
+    outs:
+    - path: data/metrics/preprocessing_metrics.json
+      hash: md5
+      md5: 2d0120c677ac6e1a8866a77d60166210
+      size: 204
+    - path: data/processed
+      hash: md5
+      md5: 86b354cb352c46936c28dc59a20fb4e0.dir
+      size: 753242
+      nfiles: 7
+  schema_validation:
+    cmd: python scripts/run_pipeline.py --stage validation --input data/processed/latest.json
+    deps:
+    - path: data/processed
+      hash: md5
+      md5: 86b354cb352c46936c28dc59a20fb4e0.dir
+      size: 753242
+      nfiles: 7
+    - path: src/schema_validator.py
+      hash: md5
+      md5: e3a2415b64d9f4f4fca82a8396bcc8c2
+      size: 20612
+    outs:
+    - path: data/metrics/quality_metrics.json
+      hash: md5
+      md5: 0e7f5ddbcbeb3d672b442b535c4bb2ff
+      size: 145
+    - path: data/quality_reports
+      hash: md5
+      md5: 5727b52faa9782045ad89d72ce4cfb4c.dir
+      size: 687
+      nfiles: 1
+  bias_detection:
+    cmd: python scripts/run_pipeline.py --stage bias --input data/processed/latest.json
+    deps:
+    - path: data/processed
+      hash: md5
+      md5: 86b354cb352c46936c28dc59a20fb4e0.dir
+      size: 753242
+      nfiles: 7
+    - path: src/bias_detector.py
+      hash: md5
+      md5: 23414d4a1ea57aeeab3805191717d91c
+      size: 25189
+    outs:
+    - path: data/bias_reports
+      hash: md5
+      md5: 4c3a86f53a411cca731ed466d9478567.dir
+      size: 6522
+      nfiles: 1
+    - path: data/metrics/bias_metrics.json
+      hash: md5
+      md5: 6b28065def52b6641ab520ad7156e6ef
+      size: 151
+  database_storage:
+    cmd: python scripts/run_pipeline.py --stage storage --input data/processed/latest.json
+    deps:
+    - path: data/processed
+      hash: md5
+      md5: 86b354cb352c46936c28dc59a20fb4e0.dir
+      size: 753242
+      nfiles: 7
+    - path: src/db_manager.py
+      hash: md5
+      md5: 036e3e6a3206fde67a99fbe53b176e32
+      size: 12763
+    outs:
+    - path: data/company_data.db
+      hash: md5
+      md5: 5a777c649f70a5714c1ca78c6d2d8e1e
+      size: 77824
+    - path: data/metrics/storage_metrics.json
+      hash: md5
+      md5: 1af342ba6afe1f1a9961bb14bc28e9bb
+      size: 145

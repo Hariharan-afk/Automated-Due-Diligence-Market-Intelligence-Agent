@@ -1,0 +1,18 @@
+# DVC Pipeline Parameters
+
+# Single company mode (for testing)
+company: "Apple Inc"
+
+# Multiple companies mode (for batch processing)
+companies:
+  - "Apple Inc"
+  - "Microsoft Corporation"
+  - "Alphabet Inc"
+  - "Tesla Inc"
+  - "NVIDIA Corporation"
+  - "Amazon.com Inc"
+  - "Meta Platforms Inc"
+
+# Optional: You can add other pipeline parameters here
+# fetch_sec_filings: true
+# max_news_articles: 20

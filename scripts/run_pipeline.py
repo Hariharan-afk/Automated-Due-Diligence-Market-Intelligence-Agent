@@ -8,6 +8,10 @@ import os
 import json
 import logging
 from datetime import datetime
+from dotenv import load_dotenv
+
+# Load environment variables from .env file
+load_dotenv()
 
 # Add src to path
 sys.path.append(os.path.join(os.path.dirname(__file__), '..', 'src'))
@@ -19,15 +23,23 @@ from bias_detector import BiasDetector
 from db_manager import init_db, insert_company, insert_article, insert_sec_filing
 import sqlite3
 
-# Configure logging
+# Configure logging with UTF-8 encoding for Windows compatibility
 logging.basicConfig(
     level=logging.INFO,
     format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
     handlers=[
-        logging.FileHandler('logs/pipeline.log'),
-        logging.StreamHandler()
+        logging.FileHandler('logs/pipeline.log', encoding='utf-8'),
+        logging.StreamHandler(sys.stdout)
     ]
 )
+# Reconfigure StreamHandler to use UTF-8 for emoji support on Windows
+for handler in logging.root.handlers:
+    if isinstance(handler, logging.StreamHandler) and not isinstance(handler, logging.FileHandler):
+        try:
+            handler.stream = open(sys.stdout.fileno(), mode='w', encoding='utf-8', buffering=1, closefd=False)
+        except Exception:
+            pass  # Fall back to default if UTF-8 reconfiguration fails
+
 logger = logging.getLogger(__name__)
 
 
@@ -100,10 +112,28 @@ class PipelineRunner:
 
         result = pipeline.fetch_company_data(company, fetch_sec=self.fetch_sec)
 
+        # Calculate SEC filings count
+        sec_count = 0
+        if self.fetch_sec and 'sec_filings' in result and result['sec_filings'] is not None:
+            sec_count = len([f for f in result['sec_filings'].values() if f and 'error' not in f])
+
+        # Save acquisition metrics for DVC
+        os.makedirs("data/metrics", exist_ok=True)
+        metrics = {
+            "company": result['company_name'],
+            "ticker": result['ticker'],
+            "news_count": result['metadata']['news_count'],
+            "sec_filings_count": sec_count,
+            "wikipedia_fetched": 'error' not in result.get('wikipedia', {}),
+            "timestamp": datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+        }
+
+        with open("data/metrics/acquisition_metrics.json", "w", encoding='utf-8') as f:
+            json.dump(metrics, f, indent=2)
+
         # Log results
         logger.info(f"  📰 News articles fetched: {result['metadata']['news_count']}")
-        if self.fetch_sec and 'sec_filings' in result:
-            sec_count = len([f for f in result['sec_filings'].values() if f and 'error' not in f])
+        if sec_count > 0:
             logger.info(f"  📄 SEC filings fetched: {sec_count}")
 
         logger.info(f"✅ Acquisition complete")
@@ -113,6 +143,22 @@ class PipelineRunner:
         """Run preprocessing stage"""
         pipeline = DataPreprocessingPipeline()
         result = pipeline.process_company_data(raw_data)
+
+        # Save preprocessing metrics for DVC
+        os.makedirs("data/metrics", exist_ok=True)
+        metrics = {
+            "company": result['company_name'],
+            "ticker": result['ticker'],
+            "total_news_articles": result['statistics']['total_news_articles'],
+            "news_sources_count": len(result['statistics']['news_sources']),
+            "sec_total_sections": result['statistics'].get('sec_filings', {}).get('total_sections', 0),
+            "sec_total_tables": result['statistics'].get('sec_filings', {}).get('total_tables', 0),
+            "timestamp": datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+        }
+
+        with open("data/metrics/preprocessing_metrics.json", "w", encoding='utf-8') as f:
+            json.dump(metrics, f, indent=2)
+
         logger.info(f"✅ Preprocessing complete: {result['statistics']['total_news_articles']} articles processed")
         return result
     
@@ -120,27 +166,54 @@ class PipelineRunner:
         """Run validation stage"""
         reporter = DataQualityReport()
         report = reporter.generate_report(processed_data)
-        
+
         quality_score = report['overall_quality_score']
+
+        # Save quality metrics for DVC
+        os.makedirs("data/metrics", exist_ok=True)
+        metrics = {
+            "company": processed_data.get('company_name', 'unknown'),
+            "quality_score": quality_score,
+            "schema_valid": report['schema_validation']['valid'],
+            "anomaly_count": report['anomaly_detection']['anomaly_count'],
+            "timestamp": datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+        }
+
+        with open("data/metrics/quality_metrics.json", "w", encoding='utf-8') as f:
+            json.dump(metrics, f, indent=2)
+
         logger.info(f"✅ Validation complete: Quality Score = {quality_score:.1f}/100")
-        
+
         if not report['schema_validation']['valid']:
             logger.error("❌ Schema validation failed!")
             for error in report['schema_validation']['errors']:
                 logger.error(f"  - {error}")
-        
+
         return report
     
     def run_bias_detection(self, processed_data: dict) -> dict:
         """Run bias detection stage"""
         detector = BiasDetector()
         report = detector.analyze_data(processed_data)
-        
+
+        # Save bias metrics for DVC
+        os.makedirs("data/metrics", exist_ok=True)
+        metrics = {
+            "company": processed_data.get('company_name', 'unknown'),
+            "bias_detected": report['bias_detected'],
+            "fairness_score": report['fairness_metrics']['overall_fairness_score'],
+            "bias_findings_count": len(report['bias_findings']),
+            "timestamp": datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+        }
+
+        with open("data/metrics/bias_metrics.json", "w", encoding='utf-8') as f:
+            json.dump(metrics, f, indent=2)
+
         if report['bias_detected']:
             logger.warning(f"⚠️ Bias detected: {len(report['bias_findings'])} issues found")
         else:
             logger.info("✅ No significant bias detected")
-        
+
         return report
     
     def run_storage(self, processed_data: dict):
@@ -151,12 +224,17 @@ class PipelineRunner:
 
         try:
             # Insert company
+            # Handle missing Wikipedia data gracefully
+            wiki_data = processed_data.get('wikipedia', {})
+            summary = wiki_data.get('summary', 'No summary available')[:1000] if wiki_data.get('summary') else 'No summary available'
+            url = wiki_data.get('url', '')
+
             company_id = insert_company(
                 conn,
                 name=processed_data['company_name'],
                 ticker=processed_data['ticker'],
-                summary=processed_data['wikipedia']['summary'][:1000],
-                url=processed_data['wikipedia']['url'],
+                summary=summary,
+                url=url,
                 timestamp=datetime.now().strftime("%Y-%m-%d %H:%M:%S")
             )
 
@@ -193,6 +271,20 @@ class PipelineRunner:
                     sec_count += 1
 
             conn.commit()
+
+            # Save storage metrics for DVC
+            os.makedirs("data/metrics", exist_ok=True)
+            metrics = {
+                "company": processed_data['company_name'],
+                "ticker": processed_data['ticker'],
+                "articles_stored": len(processed_data['news_articles']),
+                "sec_filings_stored": sec_count,
+                "timestamp": datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+            }
+
+            with open("data/metrics/storage_metrics.json", "w", encoding='utf-8') as f:
+                json.dump(metrics, f, indent=2)
+
             logger.info(f"✅ Storage complete: {len(processed_data['news_articles'])} articles, {sec_count} SEC filings stored")
 
         finally:
@@ -320,34 +412,34 @@ Examples:
         if not args.input:
             print("Error: --input required for preprocessing stage")
             sys.exit(1)
-        with open(args.input, 'r') as f:
+        with open(args.input, 'r', encoding='utf-8') as f:
             raw_data = json.load(f)
         runner.run_preprocessing(raw_data)
         success = True
-    
+
     elif args.stage == 'validation':
         if not args.input:
             print("Error: --input required for validation stage")
             sys.exit(1)
-        with open(args.input, 'r') as f:
+        with open(args.input, 'r', encoding='utf-8') as f:
             processed_data = json.load(f)
         runner.run_validation(processed_data)
         success = True
-    
+
     elif args.stage == 'bias':
         if not args.input:
             print("Error: --input required for bias detection stage")
             sys.exit(1)
-        with open(args.input, 'r') as f:
+        with open(args.input, 'r', encoding='utf-8') as f:
             processed_data = json.load(f)
         runner.run_bias_detection(processed_data)
         success = True
-    
+
     elif args.stage == 'storage':
         if not args.input:
             print("Error: --input required for storage stage")
             sys.exit(1)
-        with open(args.input, 'r') as f:
+        with open(args.input, 'r', encoding='utf-8') as f:
             processed_data = json.load(f)
         runner.run_storage(processed_data)
         success = True

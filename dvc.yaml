@@ -1,12 +1,14 @@
 stages:
   data_acquisition:
-    cmd: python scripts/run_pipeline.py --stage acquisition --company "${COMPANY}"
+    cmd: python scripts/run_pipeline.py --stage acquisition --company "${company}"
     deps:
       - src/data_acquisition.py
       - src/sec_fetcher.py
       - data/company_tickers.json
     params:
-      - config.yaml:
+      - params.yaml:
+          - company
+      - config/config.yaml:
           - news_api_key
           - data_sources
           - sec_api
@@ -26,7 +28,7 @@ stages:
       - src/chunking.py
       - data/raw
     params:
-      - config.yaml:
+      - config/config.yaml:
           - chunking
     outs:
       - data/processed:

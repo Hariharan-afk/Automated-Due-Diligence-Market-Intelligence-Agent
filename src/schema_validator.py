@@ -99,6 +99,10 @@ class SchemaValidator:
                     if filing_type in sec_filings:
                         filing = sec_filings[filing_type]
 
+                        # Skip if filing is None or empty
+                        if filing is None:
+                            continue
+
                         if "error" in filing:
                             warnings.append(f"{filing_type} contains error: {filing.get('error')}")
                             continue

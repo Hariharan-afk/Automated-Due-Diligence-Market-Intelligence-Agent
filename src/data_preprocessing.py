@@ -384,7 +384,9 @@ class DataPreprocessingPipeline:
         sec_validations = {}
         if "sec_filings" in raw_data:
             logger.info("  📄 Processing SEC filings...")
-            sec_processed = self.sec_processor.process(raw_data.get("sec_filings", {}))
+            result = self.sec_processor.process(raw_data.get("sec_filings", {}))
+            # Handle case where process returns None (no SEC filings available)
+            sec_processed = result if result is not None else {}
 
             # Validate each filing
             for filing_type, filing_data in sec_processed.items():
@@ -471,13 +473,19 @@ class DataPreprocessingPipeline:
     @staticmethod
     def _save_processed_data(data: Dict):
         """Save processed data to file"""
+        import shutil
         os.makedirs("data/processed", exist_ok=True)
         filename = f"data/processed/{data['company_name'].replace(' ', '_')}_processed_{datetime.now().strftime('%Y%m%d_%H%M%S')}.json"
-        
+
         with open(filename, 'w', encoding='utf-8') as f:
             json.dump(data, f, indent=4, ensure_ascii=False)
-        
+
+        # Create latest.json as a copy of the most recent file for the pipeline
+        latest_file = "data/processed/latest.json"
+        shutil.copy2(filename, latest_file)
+
         logger.info(f"💾 Processed data saved to: {filename}")
+        logger.info(f"💾 Latest copy created at: {latest_file}")
 
 
 def main():

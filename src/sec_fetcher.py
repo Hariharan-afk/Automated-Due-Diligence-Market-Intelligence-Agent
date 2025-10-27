@@ -10,6 +10,7 @@ from pathlib import Path
 from typing import Dict, List, Optional, Any
 from datetime import datetime, timedelta
 from dataclasses import dataclass, asdict
+import logging
 
 import requests
 from tenacity import (
@@ -19,10 +20,23 @@ from tenacity import (
     retry_if_exception_type
 )
 
-from .utils.logger import get_logger
-from .utils.config import get_config
-
-logger = get_logger("sec_fetcher")
+# Try relative imports first (package), fall back to absolute (script)
+try:
+    from .utils.logger import get_logger
+    from .utils.config import get_config
+    logger = get_logger("sec_fetcher")
+except ImportError:
+    # Fallback for standalone execution
+    logger = logging.getLogger("sec_fetcher")
+    def get_config():
+        """Fallback config loader"""
+        import yaml
+        import os
+        config_path = "config/config.yaml"
+        if os.path.exists(config_path):
+            with open(config_path, 'r') as f:
+                return yaml.safe_load(f)
+        return {}
 
 
 @dataclass
@@ -75,8 +89,21 @@ class SECFetcher:
             use_cache: Whether to check cache before fetching
         """
         self.config = get_config()
-        self.api_key = api_key or self.config.sec_api_key
-        self.use_cache = use_cache and self.config.sec_api.cache_enabled
+
+        # Handle both dict and object-style config access
+        import os
+        if isinstance(self.config, dict):
+            self.api_key = api_key or os.getenv('SEC_API_KEY') or self.config.get('sec_api_key', '')
+            sec_api_config = self.config.get('sec_api', {})
+            cache_enabled = sec_api_config.get('cache_enabled', True)
+            rate_limit_config = sec_api_config.get('rate_limit', {})
+            self.rate_limit = rate_limit_config.get('calls_per_minute', 10)
+        else:
+            self.api_key = api_key or self.config.sec_api_key
+            cache_enabled = self.config.sec_api.cache_enabled
+            self.rate_limit = self.config.sec_api.rate_limit.calls_per_minute
+
+        self.use_cache = use_cache and cache_enabled
 
         # Session for requests
         self.session = requests.Session()
@@ -85,7 +112,6 @@ class SECFetcher:
         })
 
         # Rate limiting
-        self.rate_limit = self.config.sec_api.rate_limit.calls_per_minute
         self.last_request_time = 0
         self.min_request_interval = 60.0 / self.rate_limit
 
@@ -96,7 +122,14 @@ class SECFetcher:
 
     def _load_company_tickers(self) -> Dict[str, Dict]:
         """Load company tickers from local JSON file."""
-        ticker_file = Path(self.config.ticker_file.get("path", "data/company_tickers.json"))
+        # Handle both dict and object-style config access
+        if isinstance(self.config, dict):
+            ticker_config = self.config.get('ticker_file', {})
+            ticker_path = ticker_config.get('path', 'data/company_tickers.json') if isinstance(ticker_config, dict) else 'data/company_tickers.json'
+        else:
+            ticker_path = self.config.ticker_file.get("path", "data/company_tickers.json")
+
+        ticker_file = Path(ticker_path)
 
         if not ticker_file.exists():
             logger.warning(f"Ticker file not found: {ticker_file}")
@@ -217,7 +250,9 @@ class SECFetcher:
         """
         try:
             # Use SEC submissions API (free)
-            url = f"{self.SEC_EDGAR_BASE}/submissions/CIK{cik}.json"
+            # CIK must be zero-padded to 10 digits
+            cik_padded = str(cik).zfill(10)
+            url = f"{self.SEC_EDGAR_BASE}/submissions/CIK{cik_padded}.json"
 
             logger.debug(f"Fetching filings list from free API: {url}")
             response = self._fetch_free_url(url)
@@ -322,7 +357,14 @@ class SECFetcher:
             sections = {}
 
             # Define sections based on filing type
-            sections_config = self.config.sec_api.filings.sections_to_extract.get(filing_type, [])
+            # Handle both dict and object-style config access
+            if isinstance(self.config, dict):
+                sec_api_config = self.config.get('sec_api', {})
+                filings_config = sec_api_config.get('filings', {})
+                sections_to_extract = filings_config.get('sections_to_extract', {})
+                sections_config = sections_to_extract.get(filing_type, [])
+            else:
+                sections_config = self.config.sec_api.filings.sections_to_extract.get(filing_type, [])
 
             if filing_type == "10-K":
                 section_names = {
@@ -417,7 +459,14 @@ class SECFetcher:
                 company_name = self.get_company_name(ticker) or ""
 
             # Determine date range
-            years_to_fetch = self.config.sec_api.filings.years_to_fetch
+            # Handle both dict and object-style config access
+            if isinstance(self.config, dict):
+                sec_api_config = self.config.get('sec_api', {})
+                filings_config = sec_api_config.get('filings', {})
+                years_to_fetch = filings_config.get('years_to_fetch', 3)
+            else:
+                years_to_fetch = self.config.sec_api.filings.years_to_fetch
+
             end_date = datetime.now()
             start_date = end_date - timedelta(days=365 * years_to_fetch)
 

@@ -12,16 +12,32 @@ import time
 import logging
 from datetime import datetime
 from typing import Dict, List, Optional, Tuple
+from dotenv import load_dotenv
 
-# Configure logging
+# Load environment variables from .env file
+load_dotenv()
+
+# Ensure logs directory exists
+os.makedirs('logs', exist_ok=True)
+
+# Configure logging with UTF-8 encoding for Windows compatibility
+import sys
 logging.basicConfig(
     level=logging.INFO,
     format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
     handlers=[
-        logging.FileHandler('logs/data_acquisition.log'),
-        logging.StreamHandler()
+        logging.FileHandler('logs/data_acquisition.log', encoding='utf-8'),
+        logging.StreamHandler(sys.stdout)
     ]
 )
+# Reconfigure StreamHandler to use UTF-8 for emoji support on Windows
+for handler in logging.root.handlers:
+    if isinstance(handler, logging.StreamHandler) and not isinstance(handler, logging.FileHandler):
+        try:
+            handler.stream = open(sys.stdout.fileno(), mode='w', encoding='utf-8', buffering=1, closefd=False)
+        except Exception:
+            pass  # Fall back to default if UTF-8 reconfiguration fails
+
 logger = logging.getLogger(__name__)
 
 
@@ -359,7 +375,13 @@ class DataAcquisitionPipeline:
 
         # Initialize SEC fetcher (will use config if no key provided)
         try:
-            from .sec_fetcher import SECFetcher
+            # Try relative import first (when used as package)
+            try:
+                from .sec_fetcher import SECFetcher
+            except ImportError:
+                # Fall back to absolute import (when used as script)
+                from sec_fetcher import SECFetcher
+
             self.sec_fetcher = SECFetcher(api_key=sec_api_key)
             logger.info("✅ SEC Fetcher initialized")
         except Exception as e:
@@ -496,13 +518,19 @@ class DataAcquisitionPipeline:
     
     def _save_results(self, result: Dict):
         """Save results to JSON file"""
+        import shutil
         os.makedirs("data/raw", exist_ok=True)
         filename = f"data/raw/{result['company_name'].replace(' ', '_')}_{datetime.now().strftime('%Y%m%d_%H%M%S')}.json"
-        
+
         with open(filename, 'w', encoding='utf-8') as f:
             json.dump(result, f, indent=4, ensure_ascii=False)
-        
+
+        # Create latest.json as a copy of the most recent file for the pipeline
+        latest_file = "data/raw/latest.json"
+        shutil.copy2(filename, latest_file)
+
         logger.info(f"💾 Results saved to: {filename}")
+        logger.info(f"💾 Latest copy created at: {latest_file}")
 
 
 def main():
