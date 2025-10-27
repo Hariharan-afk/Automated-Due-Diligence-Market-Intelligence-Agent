@@ -213,8 +213,8 @@ class SECFilingPreprocessor:
                 "statistics": {}
             }
 
-            # Process each section
-            sections = filing_data.get("sections", {})
+            # Process each section (use sections_data which contains the actual text)
+            sections = filing_data.get("sections_data", {})
             if sections:
                 for section_name, section_text in sections.items():
                     cleaned_text = self._clean_section(section_text)
@@ -333,8 +333,8 @@ class SECFilingPreprocessor:
                 validation["is_valid"] = False
                 validation["errors"].append(f"Missing required field: {field}")
 
-        # Check sections content
-        sections = filing_data.get("sections", {})
+        # Check sections content (use sections_data which contains the actual text)
+        sections = filing_data.get("sections_data", {})
         if not sections:
             validation["is_valid"] = False
             validation["errors"].append("No sections found in filing")
