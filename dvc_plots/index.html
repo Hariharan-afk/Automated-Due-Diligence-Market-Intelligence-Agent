@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <title>DVC Plot</title>
+    
+
+    <script src="https://cdn.jsdelivr.net/npm/vega@5.20.2"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-lite@5.2.0"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.18.2"></script>
+    
+    <style>
+        table {
+            border-spacing: 15px;
+        }
+    </style>
+</head>
+<body>
+    
+    <div id = "data_metrics_quality_metrics_json">
+        <script type = "text/javascript">
+            var spec = {"$schema": "https://vega.github.io/schema/vega-lite/v5.json", "data": {"values": [{"company": "Apple Inc.", "quality_score": 90.0, "schema_valid": true, "anomaly_count": 2, "timestamp": "2025-10-27 15:56:58", "rev": "workspace"}]}, "title": "Data Quality Score by Company", "width": 300, "height": 300, "params": [{"name": "smooth", "value": 0.001, "bind": {"input": "range", "min": 0.001, "max": 1, "step": 0.001}}], "layer": [{"mark": "line", "encoding": {"x": {"field": "company", "type": "quantitative", "title": "company"}, "y": {"field": "quality_score", "type": "quantitative", "title": "quality_score", "scale": {"zero": false}}, "color": {"field": "rev", "type": "nominal"}, "tooltip": [{"field": "company", "title": "company", "type": "quantitative"}, {"field": "quality_score", "title": "quality_score", "type": "quantitative"}]}, "transform": [{"loess": "quality_score", "on": "company", "groupby": ["rev", "filename", "field", "filename::field"], "bandwidth": {"signal": "smooth"}}]}, {"mark": {"type": "line", "opacity": 0.2}, "encoding": {"x": {"field": "company", "type": "quantitative", "title": "company"}, "y": {"field": "quality_score", "type": "quantitative", "title": "quality_score", "scale": {"zero": false}}, "color": {"field": "rev", "type": "nominal"}, "tooltip": [{"field": "company", "title": "company", "type": "quantitative"}, {"field": "quality_score", "title": "quality_score", "type": "quantitative"}]}}, {"mark": {"type": "circle", "size": 10, "tooltip": {"content": "encoding"}}, "encoding": {"x": {"aggregate": "max", "field": "company", "type": "quantitative", "title": "company"}, "y": {"aggregate": {"argmax": "company"}, "field": "quality_score", "type": "quantitative", "title": "quality_score", "scale": {"zero": false}}, "color": {"field": "rev", "type": "nominal"}}}]};
+            vegaEmbed('#data_metrics_quality_metrics_json', spec);
+        </script>
+    </div>
+    
+
+    <div id = "data_metrics_acquisition_metrics_json">
+        <script type = "text/javascript">
+            var spec = {"$schema": "https://vega.github.io/schema/vega-lite/v5.json", "data": {"values": [{"company": "Apple Inc.", "ticker": "AAPL", "news_count": 20, "sec_filings_count": 2, "wikipedia_fetched": true, "timestamp": "2025-10-27 15:56:57", "rev": "workspace"}]}, "title": "SEC Filings per Company", "width": 300, "height": 300, "params": [{"name": "smooth", "value": 0.001, "bind": {"input": "range", "min": 0.001, "max": 1, "step": 0.001}}], "layer": [{"mark": "line", "encoding": {"x": {"field": "company", "type": "quantitative", "title": "company"}, "y": {"field": "sec_filings_count", "type": "quantitative", "title": "sec_filings_count", "scale": {"zero": false}}, "color": {"field": "rev", "type": "nominal"}, "tooltip": [{"field": "company", "title": "company", "type": "quantitative"}, {"field": "sec_filings_count", "title": "sec_filings_count", "type": "quantitative"}]}, "transform": [{"loess": "sec_filings_count", "on": "company", "groupby": ["rev", "filename", "field", "filename::field"], "bandwidth": {"signal": "smooth"}}]}, {"mark": {"type": "line", "opacity": 0.2}, "encoding": {"x": {"field": "company", "type": "quantitative", "title": "company"}, "y": {"field": "sec_filings_count", "type": "quantitative", "title": "sec_filings_count", "scale": {"zero": false}}, "color": {"field": "rev", "type": "nominal"}, "tooltip": [{"field": "company", "title": "company", "type": "quantitative"}, {"field": "sec_filings_count", "title": "sec_filings_count", "type": "quantitative"}]}}, {"mark": {"type": "circle", "size": 10, "tooltip": {"content": "encoding"}}, "encoding": {"x": {"aggregate": "max", "field": "company", "type": "quantitative", "title": "company"}, "y": {"aggregate": {"argmax": "company"}, "field": "sec_filings_count", "type": "quantitative", "title": "sec_filings_count", "scale": {"zero": false}}, "color": {"field": "rev", "type": "nominal"}}}]};
+            vegaEmbed('#data_metrics_acquisition_metrics_json', spec);
+        </script>
+    </div>
+    
+
+    <div id = "data_metrics_bias_metrics_json">
+        <script type = "text/javascript">
+            var spec = {"$schema": "https://vega.github.io/schema/vega-lite/v5.json", "data": {"values": [{"company": "Apple Inc.", "bias_detected": true, "fairness_score": 0.0, "bias_findings_count": 1, "timestamp": "2025-10-27 15:56:59", "rev": "workspace"}]}, "title": "Fairness Score per Company", "width": 300, "height": 300, "params": [{"name": "smooth", "value": 0.001, "bind": {"input": "range", "min": 0.001, "max": 1, "step": 0.001}}], "layer": [{"mark": "line", "encoding": {"x": {"field": "company", "type": "quantitative", "title": "company"}, "y": {"field": "fairness_score", "type": "quantitative", "title": "fairness_score", "scale": {"zero": false}}, "color": {"field": "rev", "type": "nominal"}, "tooltip": [{"field": "company", "title": "company", "type": "quantitative"}, {"field": "fairness_score", "title": "fairness_score", "type": "quantitative"}]}, "transform": [{"loess": "fairness_score", "on": "company", "groupby": ["rev", "filename", "field", "filename::field"], "bandwidth": {"signal": "smooth"}}]}, {"mark": {"type": "line", "opacity": 0.2}, "encoding": {"x": {"field": "company", "type": "quantitative", "title": "company"}, "y": {"field": "fairness_score", "type": "quantitative", "title": "fairness_score", "scale": {"zero": false}}, "color": {"field": "rev", "type": "nominal"}, "tooltip": [{"field": "company", "title": "company", "type": "quantitative"}, {"field": "fairness_score", "title": "fairness_score", "type": "quantitative"}]}}, {"mark": {"type": "circle", "size": 10, "tooltip": {"content": "encoding"}}, "encoding": {"x": {"aggregate": "max", "field": "company", "type": "quantitative", "title": "company"}, "y": {"aggregate": {"argmax": "company"}, "field": "fairness_score", "type": "quantitative", "title": "fairness_score", "scale": {"zero": false}}, "color": {"field": "rev", "type": "nominal"}}}]};
+            vegaEmbed('#data_metrics_bias_metrics_json', spec);
+        </script>
+    </div>
+    
+
+    <div id = "data_metrics_preprocessing_metrics_json">
+        <script type = "text/javascript">
+            var spec = {"$schema": "https://vega.github.io/schema/vega-lite/v5.json", "data": {"values": [{"company": "Apple Inc.", "ticker": "AAPL", "total_news_articles": 20, "news_sources_count": 16, "sec_total_sections": 7, "sec_total_tables": 41, "timestamp": "2025-10-27 15:56:58", "rev": "workspace"}]}, "title": "Total Tables in SEC Filings", "width": 300, "height": 300, "params": [{"name": "smooth", "value": 0.001, "bind": {"input": "range", "min": 0.001, "max": 1, "step": 0.001}}], "layer": [{"mark": "line", "encoding": {"x": {"field": "company", "type": "quantitative", "title": "company"}, "y": {"field": "sec_total_tables", "type": "quantitative", "title": "sec_total_tables", "scale": {"zero": false}}, "color": {"field": "rev", "type": "nominal"}, "tooltip": [{"field": "company", "title": "company", "type": "quantitative"}, {"field": "sec_total_tables", "title": "sec_total_tables", "type": "quantitative"}]}, "transform": [{"loess": "sec_total_tables", "on": "company", "groupby": ["rev", "filename", "field", "filename::field"], "bandwidth": {"signal": "smooth"}}]}, {"mark": {"type": "line", "opacity": 0.2}, "encoding": {"x": {"field": "company", "type": "quantitative", "title": "company"}, "y": {"field": "sec_total_tables", "type": "quantitative", "title": "sec_total_tables", "scale": {"zero": false}}, "color": {"field": "rev", "type": "nominal"}, "tooltip": [{"field": "company", "title": "company", "type": "quantitative"}, {"field": "sec_total_tables", "title": "sec_total_tables", "type": "quantitative"}]}}, {"mark": {"type": "circle", "size": 10, "tooltip": {"content": "encoding"}}, "encoding": {"x": {"aggregate": "max", "field": "company", "type": "quantitative", "title": "company"}, "y": {"aggregate": {"argmax": "company"}, "field": "sec_total_tables", "type": "quantitative", "title": "sec_total_tables", "scale": {"zero": false}}, "color": {"field": "rev", "type": "nominal"}}}]};
+            vegaEmbed('#data_metrics_preprocessing_metrics_json', spec);
+        </script>
+    </div>
+    
+</body>
+</html>
