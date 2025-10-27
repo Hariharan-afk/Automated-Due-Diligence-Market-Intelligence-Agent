@@ -4,6 +4,40 @@
 
 A production-ready data pipeline that automates company research by fetching data from Wikipedia, news sources, and SEC filings (10-K/10-Q), with comprehensive data validation, bias detection, and RAG-ready chunking.
 
+## 🎭 **Pipeline Orchestration: Airflow (PRIMARY) + DVC (Secondary)**
+
+This project uses a **two-tier orchestration architecture**:
+
+```
+┌─────────────────────────────────────────┐
+│   🎯 APACHE AIRFLOW (PRIMARY)           │
+│   Production Workflow Orchestrator       │
+├─────────────────────────────────────────┤
+│  ✅ Task Scheduling & Execution         │
+│  ✅ Real-time Monitoring & Gantt Charts │
+│  ✅ Error Handling & Automatic Retries  │
+│  ✅ Email/Slack Alerting                │
+│  ✅ XCom for Data Passing               │
+│  ✅ Dynamic Workflows                   │
+└─────────────────────────────────────────┘
+              ↕️ Complements
+┌─────────────────────────────────────────┐
+│   📦 DVC (SECONDARY)                    │
+│   Data Versioning & Experiment Tracking │
+├─────────────────────────────────────────┤
+│  ✅ Data Version Control                │
+│  ✅ Metrics Tracking & Visualization    │
+│  ✅ Experiment Reproducibility          │
+│  ✅ Git Integration                     │
+└─────────────────────────────────────────┘
+```
+
+**Why Two Systems?**
+- **Airflow**: Handles *execution* - scheduling, monitoring, error recovery, production deployments
+- **DVC**: Handles *versioning* - data tracking, experiment history, reproducibility
+
+**Read more**: See [AIRFLOW_SETUP.md](AIRFLOW_SETUP.md) for complete orchestration guide
+
 ---
 
 ## 🎯 What This Does
@@ -310,40 +344,106 @@ pytest tests/test_sec_fetcher.py::TestSECFetcher -v
 
 ## 🔄 MLOps Components
 
-### 1. Airflow Orchestration
+### 1. **Airflow Orchestration (PRIMARY METHOD - Production Ready)**
+
+**Apache Airflow** is the main orchestration engine for production deployments.
 
 ```bash
-# Start Airflow
-docker-compose -f docker-compose-airflow.yml up -d
+# Set AIRFLOW_HOME
+export AIRFLOW_HOME=$(pwd)  # Linux/Mac
+# $env:AIRFLOW_HOME = (Get-Location).Path  # Windows PowerShell
+
+# Initialize Airflow database
+airflow db init
+
+# Create admin user
+airflow users create \
+    --username admin \
+    --firstname Admin \
+    --lastname User \
+    --role Admin \
+    --email admin@example.com \
+    --password admin
+
+# Start services (run in separate terminals)
+airflow webserver --port 8080  # Terminal 1
+airflow scheduler              # Terminal 2
 
 # Access UI: http://localhost:8080
-# Credentials: admin / admin
+# Login: admin / admin
 
-# DAG includes:
-# - Data acquisition (Wikipedia + News + SEC)
-# - Preprocessing
-# - Schema validation
-# - Bias detection
-# - Database storage
-# - Alert checks
+# Configure variables in Web UI (Admin → Variables):
+# - target_company: "Apple Inc"
+# - news_api_key: your_key_here
+# - sec_api_key: your_key_here
+# - fetch_sec_filings: "true"
+
+# Enable DAG and trigger manually or wait for @daily schedule
 ```
 
-### 2. DVC Pipeline (Data Versioning)
+**DAG Structure (9 Tasks)**:
+1. `initialize_database` - Set up SQLite database
+2. `acquire_company_data` - Fetch Wikipedia, News, SEC (~60s)
+3. `preprocess_data` - Clean and transform (~10s)
+4. `validate_schema` - Quality checks (~5s)
+5. `detect_anomalies` - Find data issues (~3s)
+6. `detect_bias` - Fairness analysis (~5s)
+7. `store_to_database` - Persist data (~5s)
+8. `generate_statistics` - Create summary (~2s)
+9. `check_and_alert` - Send notifications (~1s)
+
+**Total Pipeline Duration**: ~90-120 seconds per company
+
+**Monitoring Features**:
+- ✅ Real-time Gantt chart (view bottlenecks)
+- ✅ Task-level logs
+- ✅ Automatic retries (2 retries, 5min backoff)
+- ✅ Email alerts on failure
+- ✅ XCom for data passing between tasks
+
+**📘 See [AIRFLOW_SETUP.md](AIRFLOW_SETUP.md) for complete guide, Gantt analysis, and optimization strategies**
+
+---
+
+### 2. **DVC Pipeline (SECONDARY - For Versioning & Reproducibility)**
+
+**DVC complements Airflow** by providing data versioning and experiment tracking.
 
 ```bash
-# Initialize DVC
+# Initialize DVC (already done)
 dvc init
 
-# Run pipeline
-COMPANY=Apple dvc repro
+# Run entire pipeline locally
+dvc repro
 
-# Track data
+# Run specific stage
+dvc repro data_preprocessing
+
+# View metrics and plots
+dvc metrics show
+dvc plots show
+
+# Track data versions
 dvc add data/raw data/processed
 
-# Version control
+# Commit to Git
 git add dvc.yaml dvc.lock .dvc/config
 git commit -m "Pipeline v1.0 with SEC integration"
 ```
+
+**When to use DVC**:
+- ✅ Quick local testing and iteration
+- ✅ Data version control
+- ✅ Experiment tracking
+- ✅ Reproducibility validation
+- ✅ Metrics visualization
+
+**When to use Airflow**:
+- ✅ Production deployments
+- ✅ Scheduled runs (@daily, @weekly)
+- ✅ Real-time monitoring needed
+- ✅ Error recovery and alerting
+- ✅ Complex task dependencies
 
 ### 3. Logging & Monitoring
 
