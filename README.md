@@ -366,7 +366,7 @@ docker-compose build --no-cache
 
 ## 📝 License
 
-This project is part of an MLOps course assignment.
+This project is part of an MLOps course Project.
 
 ---
 
