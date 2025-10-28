@@ -21,6 +21,9 @@ airflow.cfg
 *.pid
 webserver_config.py
 
+# Docker volumes
+postgres-db-volume/
+
 # Data Files (Tracked by DVC)
 data/raw/*
 data/processed/*
