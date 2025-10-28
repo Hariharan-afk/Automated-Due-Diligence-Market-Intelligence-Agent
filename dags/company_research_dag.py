@@ -100,7 +100,7 @@ default_args = {
 
 # DAG definition
 dag = DAG(
-    'company_research_pipeline',
+    'Research_Data_Pipeline',
     default_args=default_args,
     description='End-to-end company research data pipeline with proper XCom handling',
     schedule_interval='@daily',
@@ -284,23 +284,82 @@ def detect_bias_task(**context):
         logger.error(f"❌ Bias detection failed: {e}", exc_info=True)
         raise
 
+def mitigate_bias_task(**context):
+    """Mitigate bias in the data and return cleaned data"""
+    ti = context['ti']
+
+    try:
+        logger.info("🧩 Mitigating bias in processed data...")
+
+        # Pull the bias report and processed data
+        bias_report = safe_xcom_pull(ti, 'bias_report', task_ids='detect_bias')
+        processed_data = safe_xcom_pull(ti, 'processed_data', task_ids='preprocess_data')
+
+        if not bias_report or not processed_data:
+            logger.warning("No bias report or data found – skipping mitigation.")
+            safe_xcom_push(ti, 'mitigated_data', processed_data)  # Pass through original
+            return {"status": "skipped"}
+
+        # Apply mitigation if bias was detected
+        if bias_report.get('bias_detected', False):
+            logger.info("⚖️ Bias detected. Applying mitigation strategies...")
+            
+            # Get bias findings from the report
+            bias_findings = bias_report.get('bias_findings', [])
+            
+            # Use the BiasDetector's mitigation method
+            detector = BiasDetector()
+            mitigated_data = detector.mitigate_bias(bias_findings, processed_data)
+            
+            # Get mitigation actions that were applied
+            mitigation_actions = mitigated_data.get('mitigation_actions', [])
+            mitigation_summary = '; '.join(mitigation_actions)
+            
+            logger.info(f"✅ Applied {len(mitigation_actions)} mitigation actions")
+            
+        else:
+            logger.info("✅ No bias detected – no mitigation required.")
+            mitigated_data = processed_data
+            mitigation_summary = "No bias detected – no mitigation required."
+
+        # Push mitigated data to XCom for storage task
+        safe_xcom_push(ti, 'mitigated_data', mitigated_data)
+        safe_xcom_push(ti, 'mitigation_summary', mitigation_summary)
+        
+        logger.info(f"✅ Bias mitigation complete: {mitigation_summary}")
+
+        return {
+            "status": "success", 
+            "message": mitigation_summary,
+            "actions_count": len(mitigated_data.get('mitigation_actions', []))
+        }
+
+    except Exception as e:
+        logger.error(f"❌ Bias mitigation failed: {e}", exc_info=True)
+        # If mitigation fails, pass through original data
+        processed_data = safe_xcom_pull(ti, 'processed_data', task_ids='preprocess_data')
+        safe_xcom_push(ti, 'mitigated_data', processed_data)
+        raise
 
 def store_to_database_task(**context):
     """Store processed data to database"""
     ti = context['ti']
 
     try:
-        # Pull processed data
-        processed_data = safe_xcom_pull(ti, 'processed_data', task_ids='preprocess_data')
+        # Pull MITIGATED data instead of processed data
+        processed_data = safe_xcom_pull(ti, 'mitigated_data', task_ids='mitigate_bias')
+        
+        # Fallback to original processed data if mitigation failed
+        if not processed_data:
+            logger.warning("Mitigated data not found, using original processed data")
+            processed_data = safe_xcom_pull(ti, 'processed_data', task_ids='preprocess_data')
 
         logger.info("💾 Storing data to database...")
 
-        # Store to database using PathResolver
+        # Rest of your storage code remains the same...
         db_path = str(path_resolver.get_db_path())
 
-        # Use context manager for proper connection handling
         with sqlite3.connect(db_path, timeout=30.0) as conn:
-
             # Insert company
             company_id = insert_company(
                 conn,
@@ -311,7 +370,7 @@ def store_to_database_task(**context):
                 timestamp=datetime.now().strftime("%Y-%m-%d %H:%M:%S")
             )
 
-            # Insert articles
+            # Insert articles (now potentially mitigated)
             article_count = 0
             for article in processed_data.get('news_articles', []):
                 insert_article(
@@ -346,7 +405,6 @@ def store_to_database_task(**context):
                     sec_count += 1
 
             conn.commit()
-            # Connection automatically closed by context manager
         
         logger.info(f"✅ Stored {article_count} articles and {sec_count} SEC filings")
         
@@ -368,12 +426,14 @@ def generate_statistics_task(**context):
         quality_score = safe_xcom_pull(ti, 'quality_score', task_ids='validate_schema')
         anomaly_count = safe_xcom_pull(ti, 'anomaly_count', task_ids='detect_anomalies')
         bias_report = safe_xcom_pull(ti, 'bias_report', task_ids='detect_bias')
+        mitigation_summary = safe_xcom_pull(ti, 'mitigation_summary', task_ids='mitigate_bias')
 
         statistics = {
             "quality_score": quality_score,
             "anomaly_count": anomaly_count,
-            "fairness_score": bias_report.get('fairness_score', 0),
+            "fairness_score": bias_report.get('fairness_metrics', {}).get('overall_fairness_score', 0),
             "bias_detected": bias_report.get('bias_detected', False),
+            "mitigation_applied": mitigation_summary or "N/A",
             "timestamp": datetime.now().isoformat()
         }
 
@@ -464,6 +524,12 @@ detect_bias = PythonOperator(
     dag=dag,
 )
 
+mitigate_bias = PythonOperator(
+    task_id='mitigate_bias',
+    python_callable=mitigate_bias_task,
+    dag=dag,
+)
+
 store_db = PythonOperator(
     task_id='store_to_database',
     python_callable=store_to_database_task,
@@ -482,8 +548,13 @@ check_alerts = PythonOperator(
     dag=dag,
 )
 
-# Define task dependencies
+
+# Task dependency definitions
 init_db_task >> acquire_data >> preprocess
+
+# Parallel validation and bias detection
 preprocess >> validate >> detect_anomalies
-preprocess >> detect_bias
-[detect_anomalies, detect_bias] >> store_db >> generate_stats >> check_alerts
+preprocess >> detect_bias >> mitigate_bias
+
+# Wait for both branches before storing
+[detect_anomalies, mitigate_bias] >> store_db >> generate_stats >> check_alerts
