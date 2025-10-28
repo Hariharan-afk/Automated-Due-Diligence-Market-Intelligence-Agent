@@ -11,6 +11,7 @@ from typing import Dict, List, Any
 from datetime import datetime
 import os
 from bs4 import BeautifulSoup
+from pathlib import Path
 
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
@@ -472,21 +473,31 @@ class DataPreprocessingPipeline:
 
     @staticmethod
     def _save_processed_data(data: Dict):
-        """Save processed data to file"""
+        """Save processed data to file with permission-safe copying"""
         import shutil
-        os.makedirs("data/processed", exist_ok=True)
-        filename = f"data/processed/{data['company_name'].replace(' ', '_')}_processed_{datetime.now().strftime('%Y%m%d_%H%M%S')}.json"
+    
+        # Use proper path resolution instead of hardcoded paths
+        processed_dir = Path("data/processed")
+        processed_dir.mkdir(parents=True, exist_ok=True)
+    
+        filename = processed_dir / f"{data['company_name'].replace(' ', '_')}_processed_{datetime.now().strftime('%Y%m%d_%H%M%S')}.json"
 
         with open(filename, 'w', encoding='utf-8') as f:
             json.dump(data, f, indent=4, ensure_ascii=False)
 
-        # Create latest.json as a copy of the most recent file for the pipeline
-        latest_file = "data/processed/latest.json"
-        shutil.copy2(filename, latest_file)
-
-        logger.info(f"💾 Processed data saved to: {filename}")
-        logger.info(f"💾 Latest copy created at: {latest_file}")
-
+        # ✅ Use read/write instead of copy2 to avoid permission issues
+        latest_file = processed_dir / "latest.json"
+        try:
+            # Read the content and write to latest.json
+            with open(filename, 'r', encoding='utf-8') as src:
+                content = src.read()
+            with open(latest_file, 'w', encoding='utf-8') as dst:
+                dst.write(content)
+            logger.info(f"💾 Processed data saved to: {filename}")
+            logger.info(f"💾 Latest copy created at: {latest_file}")
+        except PermissionError as e:
+            logger.warning(f"⚠️ Could not create latest.json copy: {e}")
+            logger.info(f"💾 Processed data saved to: {filename} (latest.json skipped)")
 
 def main():
     """Example usage"""

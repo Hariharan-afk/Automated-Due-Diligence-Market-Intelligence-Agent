@@ -10,6 +10,11 @@ from typing import Any, Dict, Optional
 from dataclasses import dataclass, field
 from dotenv import load_dotenv
 
+# Import PathResolver
+try:
+    from .path_resolver import PathResolver
+except ImportError:
+    from path_resolver import PathResolver
 
 # Load environment variables from .env file
 load_dotenv()
@@ -125,8 +130,10 @@ class ConfigManager:
         Args:
             config_path: Path to config.yaml file. Defaults to config/config.yaml
         """
+        self.path_resolver = PathResolver()
+
         if config_path is None:
-            config_path = Path("config/config.yaml")
+            config_path = self.path_resolver.get_config_path()
         else:
             config_path = Path(config_path)
 
@@ -139,7 +146,7 @@ class ConfigManager:
 
         # Load from YAML if exists
         if self.config_path.exists():
-            with open(self.config_path, 'r') as f:
+            with open(self.config_path, 'r', encoding='utf-8') as f:
                 config_dict = yaml.safe_load(f) or {}
 
         # Override with environment variables

@@ -13,12 +13,23 @@ import logging
 from datetime import datetime
 from typing import Dict, List, Optional, Tuple
 from dotenv import load_dotenv
+from pathlib import Path
+
+# Import PathResolver
+try:
+    from .utils.path_resolver import PathResolver
+except ImportError:
+    from utils.path_resolver import PathResolver
 
 # Load environment variables from .env file
 load_dotenv()
 
+# Initialize path resolver
+path_resolver = PathResolver()
+
 # Ensure logs directory exists
-os.makedirs('logs', exist_ok=True)
+log_dir = path_resolver.get_log_path()
+log_dir.mkdir(parents=True, exist_ok=True)
 
 # Configure logging with UTF-8 encoding for Windows compatibility
 import sys
@@ -26,7 +37,7 @@ logging.basicConfig(
     level=logging.INFO,
     format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
     handlers=[
-        logging.FileHandler('logs/data_acquisition.log', encoding='utf-8'),
+        logging.FileHandler(path_resolver.get_log_path('data_acquisition.log'), encoding='utf-8'),
         logging.StreamHandler(sys.stdout)
     ]
 )
@@ -368,7 +379,13 @@ class NewsAPIFetcher:
 class DataAcquisitionPipeline:
     """Main data acquisition pipeline"""
 
-    def __init__(self, news_api_key: str, ticker_file: str = "data/company_tickers.json", sec_api_key: Optional[str] = None):
+    def __init__(self, news_api_key: str, ticker_file: Optional[str] = None, sec_api_key: Optional[str] = None):
+        self.path_resolver = PathResolver()
+
+        # Use default ticker file if none provided
+        if ticker_file is None:
+            ticker_file = str(self.path_resolver.get_data_path(filename='company_tickers.json'))
+
         self.ticker_matcher = CompanyTickerMatcher(ticker_file)
         self.wiki_fetcher = WikipediaDataFetcher()
         self.news_fetcher = NewsAPIFetcher(news_api_key)
@@ -517,31 +534,45 @@ class DataAcquisitionPipeline:
         return result
     
     def _save_results(self, result: Dict):
-        """Save results to JSON file"""
-        import shutil
-        os.makedirs("data/raw", exist_ok=True)
-        filename = f"data/raw/{result['company_name'].replace(' ', '_')}_{datetime.now().strftime('%Y%m%d_%H%M%S')}.json"
+        """Save results to JSON file with permission-safe copying"""
+        # Use PathResolver for data directory
+        raw_data_dir = self.path_resolver.get_data_path('raw')
+        raw_data_dir.mkdir(parents=True, exist_ok=True)
+
+        timestamp = datetime.now().strftime('%Y%m%d_%H%M%S')
+        company_name = result['company_name'].replace(' ', '_')
+        filename = raw_data_dir / f"{company_name}_{timestamp}.json"
 
         with open(filename, 'w', encoding='utf-8') as f:
             json.dump(result, f, indent=4, ensure_ascii=False)
 
-        # Create latest.json as a copy of the most recent file for the pipeline
-        latest_file = "data/raw/latest.json"
-        shutil.copy2(filename, latest_file)
-
-        logger.info(f"💾 Results saved to: {filename}")
-        logger.info(f"💾 Latest copy created at: {latest_file}")
+        # Create latest.json using read/write instead of copy2
+        latest_file = raw_data_dir / "latest.json"
+        try:
+            # Read the content and write to latest.json
+            with open(filename, 'r', encoding='utf-8') as src:
+                content = src.read()
+            with open(latest_file, 'w', encoding='utf-8') as dst:
+                dst.write(content)
+            logger.info(f"💾 Results saved to: {filename}")
+            logger.info(f"💾 Latest copy created at: {latest_file}")
+        except PermissionError as e:
+            logger.warning(f"⚠️ Could not create latest.json copy: {e}")
+            logger.info(f"💾 Results saved to: {filename} (latest.json skipped)")
 
 
 def main():
     """Example usage"""
-    NEWS_API_KEY = os.getenv("NEWS_API_KEY", "d95b2db0967748a69be7b951bed9e4bc")
+    NEWS_API_KEY = os.getenv("NEWS_API_KEY")
     SEC_API_KEY = os.getenv("SEC_API_KEY")
+
+    if not NEWS_API_KEY:
+        raise ValueError("NEWS_API_KEY environment variable not set. Please set it in .env file.")
 
     pipeline = DataAcquisitionPipeline(NEWS_API_KEY, sec_api_key=SEC_API_KEY)
 
     user_input = input("Enter company name or ticker: ")
-    result = pipeline.fetch_company_data(user_input)
+    result = pipeline.fetch_all_data(user_input, save_to_file=True)
 
     print(f"\n{'='*50}")
     print(f"Company: {result['company_name']}")

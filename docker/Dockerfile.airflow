@@ -14,7 +14,7 @@ USER airflow
 # Copy requirements
 COPY requirements.txt /tmp/requirements.txt
 
-# Install Python dependencies
+# Install Python dependencies (let Airflow manage SQLAlchemy version)
 RUN pip install --no-cache-dir --user \
     wikipedia-api==0.6.0 \
     newsapi-python==0.2.7 \
@@ -27,8 +27,7 @@ RUN pip install --no-cache-dir --user \
     fairlearn==0.9.0 \
     python-dotenv==1.0.0 \
     tiktoken==0.5.1 \
-    tenacity==8.2.3 \
-    sqlalchemy==2.0.23
+    tenacity==8.2.3
 
 # Set working directory
 WORKDIR /opt/airflow

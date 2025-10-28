@@ -1,6 +1,6 @@
 """
-Airflow DAG for Company Research Data Pipeline - FINAL FIXED VERSION
-Handles numpy serialization for XCom
+Airflow DAG for Company Research Data Pipeline - FIXED VERSION
+Proper XCom serialization handling with PathResolver
 """
 
 from airflow import DAG
@@ -14,18 +14,77 @@ import sys
 import os
 import numpy as np
 import pandas as pd
+from decimal import Decimal
+from pathlib import Path
 
-# Add src to path
-sys.path.append(os.path.join(os.path.dirname(__file__), '..', 'src'))
+# Add src to path using proper path resolution
+PROJECT_ROOT = Path(__file__).parent.parent
+sys.path.insert(0, str(PROJECT_ROOT / 'src'))
 
 from data_acquisition import DataAcquisitionPipeline
 from data_preprocessing import DataPreprocessingPipeline
 from schema_validator import DataQualityReport
 from bias_detector import BiasDetector
 from db_manager import init_db, insert_company, insert_article, insert_sec_filing
+from utils.path_resolver import PathResolver
 import sqlite3
 
 logger = logging.getLogger(__name__)
+
+# Initialize path resolver for the DAG
+path_resolver = PathResolver()
+
+
+def convert_to_json_serializable(obj):
+    """
+    Recursively convert numpy/pandas types to Python native types
+    for JSON serialization in XCom
+    """
+    if isinstance(obj, dict):
+        return {key: convert_to_json_serializable(value) for key, value in obj.items()}
+    elif isinstance(obj, (list, tuple)):
+        return [convert_to_json_serializable(item) for item in obj]
+    elif isinstance(obj, np.integer):
+        return int(obj)
+    elif isinstance(obj, np.floating):
+        return float(obj)
+    elif isinstance(obj, np.ndarray):
+        return obj.tolist()
+    elif isinstance(obj, pd.DataFrame):
+        return obj.to_dict('records')
+    elif isinstance(obj, pd.Series):
+        return obj.to_list()
+    elif isinstance(obj, (pd.Timestamp, datetime)):
+        return obj.isoformat()
+    elif isinstance(obj, Decimal):
+        return float(obj)
+    elif pd.isna(obj):
+        return None
+    else:
+        return obj
+
+
+def safe_xcom_push(ti, key: str, value: any):
+    """Safely push data to XCom with serialization"""
+    try:
+        serialized_value = convert_to_json_serializable(value)
+        ti.xcom_push(key=key, value=serialized_value)
+        logger.info(f"Successfully pushed {key} to XCom")
+    except Exception as e:
+        logger.error(f"Failed to push {key} to XCom: {e}")
+        raise
+
+
+def safe_xcom_pull(ti, key: str, task_ids: str = None):
+    """Safely pull data from XCom"""
+    try:
+        value = ti.xcom_pull(key=key, task_ids=task_ids)
+        logger.info(f"Successfully pulled {key} from XCom")
+        return value
+    except Exception as e:
+        logger.error(f"Failed to pull {key} from XCom: {e}")
+        raise
+
 
 # Default arguments
 default_args = {
@@ -36,382 +95,395 @@ default_args = {
     'email_on_retry': False,
     'retries': 2,
     'retry_delay': timedelta(minutes=5),
+    'execution_timeout': timedelta(minutes=30),
 }
 
 # DAG definition
 dag = DAG(
     'company_research_pipeline',
     default_args=default_args,
-    description='End-to-end company research data pipeline',
+    description='End-to-end company research data pipeline with proper XCom handling',
     schedule_interval='@daily',
     start_date=days_ago(1),
     catchup=False,
     tags=['research', 'data-pipeline', 'mlops'],
+    max_active_runs=1,
 )
 
 
-def convert_to_json_serializable(obj):
-    """Convert numpy/pandas types to Python native types for JSON serialization"""
-    if isinstance(obj, dict):
-        return {key: convert_to_json_serializable(value) for key, value in obj.items()}
-    elif isinstance(obj, list):
-        return [convert_to_json_serializable(item) for item in obj]
-    elif isinstance(obj, (np.integer, np.int64, np.int32)):
-        return int(obj)
-    elif isinstance(obj, (np.floating, np.float64, np.float32)):
-        return float(obj)
-    elif isinstance(obj, np.ndarray):
-        return obj.tolist()
-    elif pd.isna(obj):
-        return None
-    else:
-        return obj
-
-
-def initialize_database(**context):
-    """Task 1: Initialize database"""
-    logger.info("🔧 Initializing database...")
-    
-    db_path = "data/company_data.db"
-    init_db(db_path)
-    
-    context['task_instance'].xcom_push(key='db_path', value=db_path)
-    logger.info("✅ Database initialized")
-
-
-def acquire_company_data(**context):
-    """Task 2: Acquire data from Wikipedia, News APIs, and SEC filings"""
-    logger.info("📥 Starting data acquisition...")
-
-    company_input = Variable.get("target_company", default_var="Apple")
-    news_api_key = Variable.get("news_api_key", default_var="d95b2db0967748a69be7b951bed9e4bc")
-    sec_api_key = Variable.get("sec_api_key", default_var=os.getenv("SEC_API_KEY", ""))
-    fetch_sec = Variable.get("fetch_sec_filings", default_var="true").lower() == "true"
-
-    pipeline = DataAcquisitionPipeline(
-        news_api_key=news_api_key,
-        ticker_file="data/company_tickers.json",
-        sec_api_key=sec_api_key if sec_api_key else None
-    )
-
+def initialize_database_task(**context):
+    """Initialize the SQLite database"""
     try:
-        result = pipeline.fetch_company_data(company_input, fetch_sec=fetch_sec)
+        logger.info("Initializing database...")
 
-        context['task_instance'].xcom_push(key='raw_data', value=json.dumps(result))
-        context['task_instance'].xcom_push(key='company_name', value=result['company_name'])
+        # Use PathResolver for database path
+        db_path = str(path_resolver.get_db_path())
+        db_dir = Path(db_path).parent
+        db_dir.mkdir(parents=True, exist_ok=True)
 
-        # Log SEC status
-        if fetch_sec and 'sec_filings' in result:
-            sec_count = len([f for f in result['sec_filings'].values() if f and 'error' not in f])
-            logger.info(f"  📄 Fetched {sec_count} SEC filings")
-
-        logger.info(f"✅ Data acquired for: {result['company_name']}")
-
+        init_db(db_path)
+        logger.info(f"✅ Database initialized successfully at: {db_path}")
+        return {"status": "success", "db_path": db_path}
     except Exception as e:
-        logger.error(f"❌ Data acquisition failed: {e}")
+        logger.error(f"❌ Database initialization failed: {e}", exc_info=True)
         raise
 
 
-def preprocess_data(**context):
-    """Task 3: Clean and preprocess acquired data"""
-    logger.info("🔄 Starting data preprocessing...")
-    
-    ti = context['task_instance']
-    raw_data_json = ti.xcom_pull(task_ids='acquire_company_data', key='raw_data')
-    raw_data = json.loads(raw_data_json)
-    
-    pipeline = DataPreprocessingPipeline()
-    
-    try:
-        processed_data = pipeline.process_company_data(raw_data)
-        
-        ti.xcom_push(key='processed_data', value=json.dumps(processed_data))
-        
-        logger.info(f"✅ Data preprocessed for: {processed_data['company_name']}")
-        
-    except Exception as e:
-        logger.error(f"❌ Preprocessing failed: {e}")
-        raise
-
-
-def validate_schema(**context):
-    """Task 4: Validate data schema"""
-    logger.info("🔍 Validating data schema...")
-    
-    ti = context['task_instance']
-    processed_data_json = ti.xcom_pull(task_ids='preprocess_data', key='processed_data')
-    processed_data = json.loads(processed_data_json)
-    
-    reporter = DataQualityReport()
-    quality_report = reporter.generate_report(processed_data)
-    
-    # Convert and push to XCom
-    serializable_report = convert_to_json_serializable(quality_report)
-    ti.xcom_push(key='quality_report', value=json.dumps(serializable_report))
-    
-    if not quality_report['schema_validation']['valid']:
-        logger.error("❌ Schema validation failed!")
-        raise ValueError(f"Schema validation errors: {quality_report['schema_validation']['errors']}")
-    
-    quality_score = quality_report['overall_quality_score']
-    logger.info(f"📊 Quality Score: {quality_score}/100")
-    
-    if quality_score < 50:
-        logger.warning(f"⚠️ Low quality score: {quality_score}/100")
-        ti.xcom_push(key='send_alert', value=True)
-    
-    logger.info("✅ Schema validation passed")
-
-
-def detect_anomalies(**context):
-    """Task 5: Detect data anomalies"""
-    logger.info("🔍 Detecting anomalies...")
-    
-    ti = context['task_instance']
-    quality_report_json = ti.xcom_pull(task_ids='validate_schema', key='quality_report')
-    quality_report = json.loads(quality_report_json)
-    
-    anomalies = quality_report['anomaly_detection']
-    
-    if anomalies['has_anomalies']:
-        logger.warning(f"⚠️ Found {anomalies['anomaly_count']} anomalies")
-        
-        for anomaly in anomalies['anomalies']:
-            if anomaly['severity'] == 'error':
-                logger.error(f"CRITICAL: {anomaly['message']}")
-            elif anomaly['severity'] == 'warning':
-                logger.warning(f"WARNING: {anomaly['message']}")
-        
-        if anomalies['severity_breakdown']['error'] > 0:
-            ti.xcom_push(key='send_alert', value=True)
-    else:
-        logger.info("✅ No anomalies detected")
-
-
-def detect_bias(**context):
-    """Task 6: Detect bias in data"""
-    logger.info("⚖️ Detecting bias...")
-    
-    ti = context['task_instance']
-    processed_data_json = ti.xcom_pull(task_ids='preprocess_data', key='processed_data')
-    processed_data = json.loads(processed_data_json)
-    
-    detector = BiasDetector()
-    bias_report = detector.analyze_data(processed_data)
-    
-    # Convert to JSON-serializable before pushing to XCom
-    serializable_report = convert_to_json_serializable(bias_report)
-    ti.xcom_push(key='bias_report', value=json.dumps(serializable_report))
-    
-    if bias_report['bias_detected']:
-        logger.warning(f"⚠️ Bias detected: {len(bias_report['bias_findings'])} issues")
-        for finding in bias_report['bias_findings']:
-            logger.warning(f"  - [{finding['severity']}] {finding['description']}")
-    else:
-        logger.info("✅ No significant bias detected")
-
-
-def store_to_database(**context):
-    """Task 7: Store validated data to database"""
-    logger.info("💾 Storing data to database...")
-
-    ti = context['task_instance']
-
-    processed_data_json = ti.xcom_pull(task_ids='preprocess_data', key='processed_data')
-    processed_data = json.loads(processed_data_json)
-
-    db_path = ti.xcom_pull(task_ids='initialize_database', key='db_path')
+def acquire_company_data_task(**context):
+    """Fetch company data from multiple sources"""
+    ti = context['ti']
 
     try:
-        conn = sqlite3.connect(db_path)
+        # Get company from Airflow Variables
+        target_company = Variable.get("target_company", default_var="Apple Inc")
+        logger.info(f"📥 Acquiring data for: {target_company}")
 
-        company_id = insert_company(
-            conn,
-            name=processed_data['company_name'],
-            ticker=processed_data['ticker'],
-            summary=processed_data['wikipedia']['summary'][:1000],
-            url=processed_data['wikipedia']['url'],
-            timestamp=datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+        # Get API keys from Airflow Variables or environment
+        news_api_key = Variable.get("news_api_key", default_var=os.getenv("NEWS_API_KEY"))
+        sec_api_key = Variable.get("sec_api_key", default_var=os.getenv("SEC_API_KEY"))
+
+        if not news_api_key:
+            raise ValueError("NEWS_API_KEY not found in Airflow Variables or environment")
+
+        # Initialize pipeline with API keys
+        pipeline = DataAcquisitionPipeline(
+            news_api_key=news_api_key,
+            sec_api_key=sec_api_key
         )
 
-        # Store news articles
-        for article in processed_data['news_articles']:
-            insert_article(
-                conn,
-                company_id=company_id,
-                title=article['title'],
-                url=article['url'],
-                source=article['source'],
-                date=article['published_date'],
-                summary=article.get('description', '')[:500]
-            )
-
-        logger.info(f"  📰 Stored {len(processed_data['news_articles'])} articles")
-
-        # Store SEC filings
-        sec_filings = processed_data.get('sec_filings', {})
-        sec_count = 0
-        for filing_type, filing_data in sec_filings.items():
-            if filing_data and 'error' not in filing_data:
-                insert_sec_filing(
-                    conn,
-                    company_id=company_id,
-                    ticker=filing_data.get('ticker', processed_data['ticker']),
-                    cik=filing_data.get('cik', ''),
-                    filing_type=filing_data.get('filing_type', filing_type),
-                    filing_date=filing_data.get('filing_date', ''),
-                    fiscal_year=filing_data.get('fiscal_year', 0),
-                    fiscal_period=filing_data.get('fiscal_period', ''),
-                    accession_number=filing_data.get('accession_number', ''),
-                    filing_url=filing_data.get('filing_url', ''),
-                    sections=json.dumps(filing_data.get('sections', {})),
-                    extraction_date=datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-                )
-                sec_count += 1
-
-        if sec_count > 0:
-            logger.info(f"  📄 Stored {sec_count} SEC filings")
-
-        conn.close()
-
-        logger.info(f"✅ Stored all data for {processed_data['company_name']}")
-
+        # Fetch data
+        result = pipeline.fetch_company_data(target_company)
+        
+        # Safe XCom push
+        safe_xcom_push(ti, 'raw_data', result)
+        safe_xcom_push(ti, 'company_name', result.get('company_name'))
+        safe_xcom_push(ti, 'ticker', result.get('ticker'))
+        
+        # Log metrics
+        news_count = result.get('metadata', {}).get('news_count', 0)
+        sec_count = len(result.get('sec_filings', {}))
+        logger.info(f"✅ Acquired {news_count} news articles and {sec_count} SEC filings")
+        
+        return {"status": "success", "news_count": news_count, "sec_count": sec_count}
+        
     except Exception as e:
-        logger.error(f"❌ Database storage failed: {e}")
+        logger.error(f"❌ Data acquisition failed: {e}", exc_info=True)
         raise
 
 
-def generate_statistics(**context):
-    """Task 8: Generate data statistics and summary"""
-    logger.info("📊 Generating statistics...")
+def preprocess_data_task(**context):
+    """Preprocess the raw data"""
+    ti = context['ti']
     
-    ti = context['task_instance']
-    processed_data_json = ti.xcom_pull(task_ids='preprocess_data', key='processed_data')
-    quality_report_json = ti.xcom_pull(task_ids='validate_schema', key='quality_report')
-    bias_report_json = ti.xcom_pull(task_ids='detect_bias', key='bias_report')
-    
-    processed_data = json.loads(processed_data_json)
-    quality_report = json.loads(quality_report_json)
-    bias_report = json.loads(bias_report_json)
-    
-    # Get SEC statistics
-    sec_stats = processed_data.get('statistics', {}).get('sec_filings', {})
+    try:
+        # Pull raw data from XCom
+        raw_data = safe_xcom_pull(ti, 'raw_data', task_ids='acquire_company_data')
+        
+        if not raw_data:
+            raise ValueError("No raw data received from acquisition task")
+        
+        logger.info(f"🔄 Preprocessing data for: {raw_data.get('company_name')}")
+        
+        # Process data
+        pipeline = DataPreprocessingPipeline()
+        processed_data = pipeline.process_company_data(raw_data)
+        
+        # Safe XCom push
+        safe_xcom_push(ti, 'processed_data', processed_data)
+        
+        # Log metrics
+        article_count = processed_data.get('statistics', {}).get('total_news_articles', 0)
+        logger.info(f"✅ Processed {article_count} articles")
+        
+        return {"status": "success", "article_count": article_count}
+        
+    except Exception as e:
+        logger.error(f"❌ Preprocessing failed: {e}", exc_info=True)
+        raise
 
-    statistics = {
-        "company": processed_data['company_name'],
-        "ticker": processed_data['ticker'],
-        "pipeline_run": datetime.now().isoformat(),
-        "data_sources": {
-            "wikipedia": "success" if "error" not in processed_data['wikipedia'] else "failed",
-            "news_articles": len(processed_data['news_articles']),
-            "sec_filings": {
-                "total": len([f for f in processed_data.get('sec_filings', {}).values() if f and 'error' not in f]),
-                "types": sec_stats.get('filings_available', []),
-                "fiscal_years": sec_stats.get('fiscal_years', [])
-            }
-        },
-        "quality": {
-            "score": quality_report['overall_quality_score'],
-            "anomalies": quality_report['anomaly_detection']['anomaly_count'],
-            "validation_errors": len(quality_report['schema_validation']['errors'])
-        },
-        "bias": {
-            "fairness_score": bias_report['fairness_metrics']['overall_fairness_score'],
-            "bias_detected": bias_report['bias_detected'],
-            "findings_count": len(bias_report['bias_findings'])
-        },
-        "content_metrics": {
-            "wikipedia_word_count": processed_data['wikipedia'].get('word_count', 0),
-            "news_sources": processed_data['statistics'].get('news_sources', []),
-            "date_range": processed_data['statistics'].get('date_range', {}),
-            "sec_metrics": {
-                "total_sections": sec_stats.get('total_sections', 0),
-                "total_words": sec_stats.get('total_words', 0),
-                "total_tables": sec_stats.get('total_tables', 0)
-            }
+
+def validate_schema_task(**context):
+    """Validate data schema and quality"""
+    ti = context['ti']
+    
+    try:
+        # Pull processed data
+        processed_data = safe_xcom_pull(ti, 'processed_data', task_ids='preprocess_data')
+        
+        logger.info("🔍 Validating data schema and quality...")
+        
+        # Generate quality report
+        reporter = DataQualityReport()
+        report = reporter.generate_report(processed_data)
+        
+        # Safe XCom push
+        safe_xcom_push(ti, 'quality_report', report)
+        safe_xcom_push(ti, 'quality_score', report.get('overall_quality_score'))
+        
+        quality_score = report.get('overall_quality_score', 0)
+        logger.info(f"✅ Quality Score: {quality_score:.1f}/100")
+        
+        return {"status": "success", "quality_score": quality_score}
+        
+    except Exception as e:
+        logger.error(f"❌ Schema validation failed: {e}", exc_info=True)
+        raise
+
+
+def detect_anomalies_task(**context):
+    """Detect anomalies in the data"""
+    ti = context['ti']
+    
+    try:
+        # Pull processed data
+        processed_data = safe_xcom_pull(ti, 'processed_data', task_ids='preprocess_data')
+        
+        logger.info("🔍 Detecting anomalies...")
+        
+        # Pull quality report for anomalies
+        quality_report = safe_xcom_pull(ti, 'quality_report', task_ids='validate_schema')
+        anomalies = quality_report.get('anomaly_detection', {}).get('anomalies', [])
+        
+        # Safe XCom push
+        safe_xcom_push(ti, 'anomalies', anomalies)
+        safe_xcom_push(ti, 'anomaly_count', len(anomalies))
+        
+        logger.info(f"✅ Found {len(anomalies)} anomalies")
+        
+        return {"status": "success", "anomaly_count": len(anomalies)}
+        
+    except Exception as e:
+        logger.error(f"❌ Anomaly detection failed: {e}", exc_info=True)
+        raise
+
+
+def detect_bias_task(**context):
+    """Detect bias in the data"""
+    ti = context['ti']
+    
+    try:
+        # Pull processed data
+        processed_data = safe_xcom_pull(ti, 'processed_data', task_ids='preprocess_data')
+        
+        logger.info("⚖️ Detecting bias...")
+        
+        # Run bias detection
+        detector = BiasDetector()
+        bias_report = detector.analyze_data(processed_data)
+        
+        # Safe XCom push
+        safe_xcom_push(ti, 'bias_report', bias_report)
+        safe_xcom_push(ti, 'bias_detected', bias_report.get('bias_detected', False))
+        
+        fairness_score = bias_report.get('fairness_metrics', {}).get('overall_fairness_score', 0)
+        logger.info(f"✅ Fairness Score: {fairness_score:.1f}/100")
+        
+        return {"status": "success", "fairness_score": fairness_score}
+        
+    except Exception as e:
+        logger.error(f"❌ Bias detection failed: {e}", exc_info=True)
+        raise
+
+
+def store_to_database_task(**context):
+    """Store processed data to database"""
+    ti = context['ti']
+
+    try:
+        # Pull processed data
+        processed_data = safe_xcom_pull(ti, 'processed_data', task_ids='preprocess_data')
+
+        logger.info("💾 Storing data to database...")
+
+        # Store to database using PathResolver
+        db_path = str(path_resolver.get_db_path())
+
+        # Use context manager for proper connection handling
+        with sqlite3.connect(db_path, timeout=30.0) as conn:
+
+            # Insert company
+            company_id = insert_company(
+                conn,
+                name=processed_data['company_name'],
+                ticker=processed_data['ticker'],
+                summary=processed_data.get('wikipedia', {}).get('summary', ''),
+                url=processed_data.get('wikipedia', {}).get('url', ''),
+                timestamp=datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+            )
+
+            # Insert articles
+            article_count = 0
+            for article in processed_data.get('news_articles', []):
+                insert_article(
+                    conn,
+                    company_id=company_id,
+                    title=article['title'],
+                    url=article['url'],
+                    source=article['source'],
+                    date=article['published_date'],
+                    summary=article.get('description', '')[:500]
+                )
+                article_count += 1
+
+            # Insert SEC filings
+            sec_count = 0
+            for filing_type, filing_data in processed_data.get('sec_filings', {}).items():
+                if filing_data and 'error' not in filing_data:
+                    insert_sec_filing(
+                        conn,
+                        company_id=company_id,
+                        ticker=filing_data.get('ticker', processed_data['ticker']),
+                        cik=filing_data.get('cik', ''),
+                        filing_type=filing_data.get('filing_type', filing_type),
+                        filing_date=filing_data.get('filing_date', ''),
+                        fiscal_year=filing_data.get('fiscal_year', 0),
+                        fiscal_period=filing_data.get('fiscal_period', ''),
+                        accession_number=filing_data.get('accession_number', ''),
+                        filing_url=filing_data.get('filing_url', ''),
+                        sections=json.dumps(filing_data.get('sections', {})),
+                        extraction_date=datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+                    )
+                    sec_count += 1
+
+            conn.commit()
+            # Connection automatically closed by context manager
+        
+        logger.info(f"✅ Stored {article_count} articles and {sec_count} SEC filings")
+        
+        return {"status": "success", "article_count": article_count, "sec_count": sec_count}
+        
+    except Exception as e:
+        logger.error(f"❌ Database storage failed: {e}", exc_info=True)
+        raise
+
+
+def generate_statistics_task(**context):
+    """Generate final statistics"""
+    ti = context['ti']
+
+    try:
+        logger.info("📊 Generating statistics...")
+
+        # Pull all metrics
+        quality_score = safe_xcom_pull(ti, 'quality_score', task_ids='validate_schema')
+        anomaly_count = safe_xcom_pull(ti, 'anomaly_count', task_ids='detect_anomalies')
+        bias_report = safe_xcom_pull(ti, 'bias_report', task_ids='detect_bias')
+
+        statistics = {
+            "quality_score": quality_score,
+            "anomaly_count": anomaly_count,
+            "fairness_score": bias_report.get('fairness_score', 0),
+            "bias_detected": bias_report.get('bias_detected', False),
+            "timestamp": datetime.now().isoformat()
         }
-    }
-    
-    os.makedirs("data/statistics", exist_ok=True)
-    stats_file = f"data/statistics/{processed_data['company_name'].replace(' ', '_')}_stats.json"
-    with open(stats_file, 'w') as f:
-        json.dump(statistics, f, indent=4)
-    
-    ti.xcom_push(key='statistics', value=json.dumps(statistics))
-    
-    logger.info(f"✅ Statistics generated: {stats_file}")
+
+        # Save statistics using PathResolver
+        metrics_dir = path_resolver.get_data_path('metrics')
+        metrics_dir.mkdir(parents=True, exist_ok=True)
+        stats_file = metrics_dir / "pipeline_statistics.json"
+
+        with open(stats_file, "w", encoding='utf-8') as f:
+            json.dump(statistics, f, indent=2)
+        
+        logger.info("✅ Statistics generated")
+        
+        return statistics
+        
+    except Exception as e:
+        logger.error(f"❌ Statistics generation failed: {e}", exc_info=True)
+        raise
 
 
-def check_and_alert(**context):
-    """Task 9: Check if alerts needed and send"""
-    ti = context['task_instance']
+def check_and_alert_task(**context):
+    """Check quality thresholds and send alerts if needed"""
+    ti = context['ti']
     
-    send_alert = ti.xcom_pull(task_ids='detect_anomalies', key='send_alert')
-    
-    if send_alert:
-        logger.warning("🚨 Alerts triggered - sending notification...")
-        return "alert_required"
-    else:
-        logger.info("✅ No alerts needed")
-        return "no_alert"
+    try:
+        logger.info("🔔 Checking alert conditions...")
+        
+        # Pull metrics
+        quality_score = safe_xcom_pull(ti, 'quality_score', task_ids='validate_schema')
+        anomaly_count = safe_xcom_pull(ti, 'anomaly_count', task_ids='detect_anomalies')
+        
+        # Check thresholds
+        alerts = []
+        
+        if quality_score < 70:
+            alerts.append(f"⚠️ Low quality score: {quality_score:.1f}/100")
+        
+        if anomaly_count > 5:
+            alerts.append(f"⚠️ High anomaly count: {anomaly_count}")
+        
+        if alerts:
+            logger.warning(f"Alerts triggered: {', '.join(alerts)}")
+            # Here you would call alert_manager.py to send emails/Slack
+        else:
+            logger.info("✅ All quality checks passed")
+        
+        return {"status": "success", "alerts": alerts}
+        
+    except Exception as e:
+        logger.error(f"❌ Alert check failed: {e}", exc_info=True)
+        raise
 
 
 # Define tasks
-task_init_db = PythonOperator(
+init_db_task = PythonOperator(
     task_id='initialize_database',
-    python_callable=initialize_database,
+    python_callable=initialize_database_task,
     dag=dag,
 )
 
-task_acquire = PythonOperator(
+acquire_data = PythonOperator(
     task_id='acquire_company_data',
-    python_callable=acquire_company_data,
+    python_callable=acquire_company_data_task,
     dag=dag,
 )
 
-task_preprocess = PythonOperator(
+preprocess = PythonOperator(
     task_id='preprocess_data',
-    python_callable=preprocess_data,
+    python_callable=preprocess_data_task,
     dag=dag,
 )
 
-task_validate = PythonOperator(
+validate = PythonOperator(
     task_id='validate_schema',
-    python_callable=validate_schema,
+    python_callable=validate_schema_task,
     dag=dag,
 )
 
-task_anomaly = PythonOperator(
+detect_anomalies = PythonOperator(
     task_id='detect_anomalies',
-    python_callable=detect_anomalies,
+    python_callable=detect_anomalies_task,
     dag=dag,
 )
 
-task_bias = PythonOperator(
+detect_bias = PythonOperator(
     task_id='detect_bias',
-    python_callable=detect_bias,
+    python_callable=detect_bias_task,
     dag=dag,
 )
 
-task_store = PythonOperator(
+store_db = PythonOperator(
     task_id='store_to_database',
-    python_callable=store_to_database,
+    python_callable=store_to_database_task,
     dag=dag,
 )
 
-task_stats = PythonOperator(
+generate_stats = PythonOperator(
     task_id='generate_statistics',
-    python_callable=generate_statistics,
+    python_callable=generate_statistics_task,
     dag=dag,
 )
 
-task_alert = PythonOperator(
+check_alerts = PythonOperator(
     task_id='check_and_alert',
-    python_callable=check_and_alert,
+    python_callable=check_and_alert_task,
     dag=dag,
 )
 
 # Define task dependencies
-task_init_db >> task_acquire >> task_preprocess >> task_validate
-task_validate >> task_anomaly >> task_bias >> task_store
-task_store >> task_stats >> task_alert
+init_db_task >> acquire_data >> preprocess
+preprocess >> validate >> detect_anomalies
+preprocess >> detect_bias
+[detect_anomalies, detect_bias] >> store_db >> generate_stats >> check_alerts

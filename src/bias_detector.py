@@ -12,6 +12,7 @@ from datetime import datetime
 from collections import Counter
 import statistics
 import os
+from pathlib import Path
 
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
@@ -548,10 +549,10 @@ class BiasDetector:
         recent_count = (dates >= thirty_days_ago).sum()
         
         return recent_count / len(dates)
-    
+
     @staticmethod
     def _save_report(report: Dict):
-        """Save bias analysis report"""
+        """Save bias analysis report with permission-safe approach"""
         import numpy as np
         
         def convert_to_json_serializable(obj):
@@ -571,16 +572,21 @@ class BiasDetector:
             else:
                 return obj
         
-        os.makedirs("data/bias_reports", exist_ok=True)
+        # Create directory if it doesn't exist
+        bias_reports_dir = Path("data/bias_reports")
+        bias_reports_dir.mkdir(parents=True, exist_ok=True)
         
         # Convert all numpy/pandas types to JSON-serializable types
         serializable_report = convert_to_json_serializable(report)
         
-        filename = f"data/bias_reports/{report['company_name'].replace(' ', '_')}_bias_report.json"
-        with open(filename, 'w') as f:
-            json.dump(serializable_report, f, indent=4)
+        filename = bias_reports_dir / f"{report['company_name'].replace(' ', '_')}_bias_report.json"
         
-        logger.info(f"💾 Bias report saved to: {filename}")
+        try:
+            with open(filename, 'w', encoding='utf-8') as f:
+                json.dump(serializable_report, f, indent=4, ensure_ascii=False)
+            logger.info(f"💾 Bias report saved to: {filename}")
+        except PermissionError as e:
+            logger.warning(f"⚠️ Could not save bias report: {e}")
 
 
 def main():

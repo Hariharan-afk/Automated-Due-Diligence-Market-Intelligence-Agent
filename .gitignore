@@ -42,12 +42,13 @@ data/metrics/*
 .dvc/tmp
 
 # Logs
-logs/*.log
-*.log
 logs/
+*.log
 *.ips
+
+# Environment Variables - NEVER COMMIT
 .env
-.env.*
+.env.example
 
 # Exports
 exports/*.csv
