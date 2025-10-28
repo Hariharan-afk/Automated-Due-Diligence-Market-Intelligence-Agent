@@ -403,7 +403,17 @@ airflow scheduler              # Terminal 2
 
 **📘 Documentation**:
 - [AIRFLOW_SETUP.md](AIRFLOW_SETUP.md) - Complete Airflow setup and usage guide
+- [AIRFLOW_TESTING_GUIDE.md](AIRFLOW_TESTING_GUIDE.md) - Step-by-step guide to test the DAG and capture Gantt charts
 - [AIRFLOW_GANTT_SUMMARY.md](AIRFLOW_GANTT_SUMMARY.md) - Comprehensive Gantt chart analysis, bottleneck identification, and optimization strategies
+
+**🚀 Quick Start Testing**:
+```bash
+# Windows
+test_airflow.bat
+
+# Linux/Mac
+./test_airflow.sh
+```
 
 ---
 

@@ -14,10 +14,12 @@ virtualenv/
 
 # Airflow Generated Files
 airflow/
+airflow_home/
 !airflow/.gitkeep
 airflow.db
 airflow.cfg
 *.pid
+webserver_config.py
 
 # Data Files (Tracked by DVC)
 data/raw/*
