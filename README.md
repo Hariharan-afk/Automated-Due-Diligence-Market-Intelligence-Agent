@@ -1,27 +1,78 @@
-# 🏢 Automated Due Diligence & Market Intelligence Agent
+# Automated Due Diligence & Market Intelligence Agent - Data Pipeline
 
-**MLOps Course Project - Production-Ready Data Pipeline**
-
-A comprehensive, cross-platform data pipeline that automates company research by fetching data from Wikipedia, news sources, and SEC filings, with complete data validation, bias detection, and quality assurance.
+Data pipeline for automated due diligence and market intelligence gathering on publicly traded companies, featuring multi-source data acquisition, bias detection, and comprehensive quality assurance.
 
 ---
 
-## 📁 Project Structure
+## Table of Contents
+
+1. [Overview](#overview) 
+2. [Folder Structure](#folder-structure)
+3. [Setup & Installation](#setup--installation)
+4. [Running the Pipeline](#running-the-pipeline)
+5. [Testing](#testing)
+6. [Bias Detection & Mitigation](#bias-detection--mitigation)
+7. [Data Versioning](#data-versioning)
+8. [Monitoring & Logging](#monitoring--logging)
+9. [Airflow DAG Visualization](#airflow-dag-visualization)
+10. [Key Features](#key-features)
+
+---
+
+## Overview
+
+This is a comprehensive **MLOps data pipeline** that orchestrates the collection, processing, validation, and storage of company intelligence data from multiple public sources. The pipeline is designed for investment analysts, due diligence teams, and market researchers.
+
+### Data Sources
+
+- **SEC EDGAR**: 10-K and 10-Q financial filings
+- **Wikipedia**: Company background and overview
+- **News APIs**: Recent news articles and market sentiment
+
+### Architecture
+
+The pipeline uses a **multi-agent orchestration** approach with the following components:
 
 ```
+Data Acquisition → Preprocessing → Schema Validation → Bias Detection → Chunking → Vector Store → Database Storage
+```
+## Folder Structure
+```
 data_pipeline_main/
-├── .env.example                  # Environment variables template
+├── .dvcignore
 ├── .gitignore                    # Git ignore rules
 ├── README.md                     # This file
 ├── requirements.txt              # Production dependencies
 ├── dvc.yaml                      # DVC pipeline definition
+├── dvc.lock                   
 ├── params.yaml                   # DVC parameters
+├── requirements-airflow.txt
+├── run_batch.ps1
+├── start_airflow_docker.bat
+├── test_airflow.bat
+├── test_airflow.sh
+├── test_company_data.db
+├── .env.example
 │
 ├── config/                       # Configuration files
 │   └── config.yaml              # Main application configuration
 │
 ├── dags/                         # Airflow DAG definitions
 │   └── company_research_dag.py  # Main pipeline DAG
+│
+├── data/                         # Data directory (DVC tracked)
+│   └── company_tickers.json     # Static reference data
+│
+└── docker/                       # Docker configuration
+│   ├── Dockerfile.airflow       # Airflow Docker image
+│   ├── docker-compose.yml       # Docker Compose configuration
+│   ├── docker-compose-airflow.yml       # Docker Compose for airflow configuration
+│
+├── docs/                         # Documentation
+│   ├── Bias_Analysis.md
+│
+├── dvc_plots/                      
+│   ├── index.html
 │
 ├── src/                          # Source code (modular, reusable)
 │   ├── __init__.py
@@ -40,338 +91,552 @@ data_pipeline_main/
 │       ├── logger.py            # Centralized logging
 │       └── path_resolver.py     # Cross-platform path resolution
 │
-├── scripts/                      # Standalone scripts
-│   ├── run_pipeline.py          # Manual pipeline execution
-│   └── convert_ticker_format.py # Utility scripts
-│
 ├── tests/                        # Unit tests (pytest)
-│   ├── __init__.py
+│   ├── run_all_tests.py
+│   ├── run_batch.py
+│   ├── simple_validate.py
+│   ├── test_chunking.py
+│   ├── test_chunking_sec.py
+│   ├── test_config_logger.py
 │   ├── test_data_acquisition.py
-│   ├── test_data_preprocessing.py
+│   ├── test_db_sec.py
 │   ├── test_sec_fetcher.py
-│   └── test_bias_detector.py
-│
-├── data/                         # Data directory (DVC tracked)
-│   ├── raw/                     # Raw data from APIs
-│   ├── processed/               # Preprocessed data
-│   ├── quality_reports/         # Data quality reports
-│   ├── bias_reports/            # Bias analysis reports
-│   ├── metrics/                 # Pipeline metrics
-│   └── company_tickers.json     # Static reference data
+│   ├── test_sec_fetcher_mock.py
+│   ├── validate_dag.py
 │
 ├── logs/                         # Application logs (gitignored)
 │   ├── airflow/                 # Airflow logs
 │   └── *.log                    # Component logs
-│
-├── docs/                         # Documentation
-│   ├── AIRFLOW_SETUP.md         # Airflow setup guide
-│   ├── TESTING_GUIDE.md         # Testing guide
-│   └── REQUIREMENTS_CHECKLIST.md # Project requirements
-│
-└── docker/                       # Docker configuration
-    ├── Dockerfile.airflow       # Airflow Docker image
-    └── docker-compose.yml       # Docker Compose configuration
+
 ```
 
----
-
-## 🚀 Quick Start
+## Setup & Installation
 
 ### Prerequisites
 
-- Python 3.11+
+- Python 3.11
 - Git
-- Docker & Docker Compose (for Airflow)
+- DVC
+- Docker (for Airflow)
+- API Keys:
+  - News API key from [newsapi.org](https://newsapi.org)
+  - SEC API key from [sec-api.io](https://sec-api.io)
 
-### 1. Clone the Repository
+### Installation Steps
+
+#### 1. Clone Repository
 
 ```bash
 git clone <repository-url>
 cd data_pipeline_main
 ```
 
-### 2. Set Up Environment
+#### 2. Create Virtual Environment
 
 ```bash
 # Create virtual environment
 python -m venv venv
 
 # Activate virtual environment
-# Windows:
+# On Windows:
 venv\Scripts\activate
-# Linux/Mac:
+# On macOS/Linux:
 source venv/bin/activate
+```
 
-# Install dependencies
+#### 3. Install Dependencies
+
+```bash
+# Install Python packages
 pip install -r requirements.txt
 ```
 
-### 3. Configure Environment Variables
-
+#### 4. .env file structure
 ```bash
-# Copy the example environment file
-cp .env.example .env
-
-# Edit .env and add your API keys
-# Required:
+# API Keys
 NEWS_API_KEY=your_newsapi_key_here
-SEC_API_KEY=your_sec_api_key_here
+SEC_API_KEY=your_secapi_key_here
+
+# Database
+DB_PATH=data/company_data.db
+
+# Alerts
+ALERT_EMAIL_ENABLED=true
+ALERT_EMAIL_SENDER=your_email@gmail.com
+ALERT_EMAIL_PASSWORD=your_app_password
+ALERT_EMAIL_RECIPIENT=recipient@company.com
+SMTP_SERVER=smtp.gmail.com
+SMTP_PORT=587
+
+ALERT_SLACK_ENABLED=false
+SLACK_WEBHOOK_URL=https://hooks.slack.com/services/YOUR/WEBHOOK
+
+# Logging
+LOG_LEVEL=INFO
 ```
 
-### 4. Run the Pipeline
-
-#### Option A: Manual Execution (Local)
+#### 5. Initialize DVC
 
 ```bash
-python scripts/run_pipeline.py
+# Initialize DVC
+dvc init
 ```
 
-#### Option B: Airflow (Docker)
+#### 6. Setup Airflow
+
+**Docker Compose (Recommended for Windows)**
 
 ```bash
-# Navigate to docker directory
-cd docker
-
-# Start Airflow
+# Start Airflow with Docker Compose
 docker-compose up -d
 
-# Access Airflow UI: http://localhost:8080
-# Username: admin
-# Password: admin
+# Access Airflow UI at http://localhost:8080
+# Username: airflow
+# Password: airflow
 ```
 
----
-
-## 🔑 Environment Variables
-
-Create a `.env` file from `.env.example` and configure:
-
-| Variable | Description | Required |
-|----------|-------------|----------|
-| `NEWS_API_KEY` | NewsAPI.org API key | Yes |
-| `SEC_API_KEY` | SEC-API.io API key | Yes |
-| `POLYGON_API_KEY` | Polygon.io API key | Optional |
-| `PROJECT_ROOT` | Project root directory | No (auto-detected) |
-| `DATA_DIR` | Data storage directory | No (default: ./data) |
-| `LOGS_DIR` | Logs directory | No (default: ./logs) |
-| `DB_PATH` | Database file path | No (default: data/company_data.db) |
-
----
-
-## 🏗️ Architecture
-
-### Pipeline Flow
-
-```
-┌─────────────────┐
-│ 1. Initialize DB│
-└────────┬────────┘
-         │
-┌────────▼────────────┐
-│ 2. Acquire Data     │
-│  - Wikipedia        │
-│  - News (API+GDELT) │
-│  - SEC Filings      │
-└────────┬────────────┘
-         │
-┌────────▼───────────┐
-│ 3. Preprocess Data │
-│  - Clean           │
-│  - Normalize       │
-│  - Transform       │
-└────────┬───────────┘
-         │
-    ┌────▼────┐
-    │         │
-┌───▼──┐  ┌──▼───┐
-│Validate│ │Detect│
-│Schema  │ │Bias  │
-└───┬────┘ └──┬───┘
-    │         │
-┌───▼─────────▼───┐
-│ 4. Store to DB  │
-└────────┬─────────┘
-         │
-┌────────▼────────┐
-│ 5. Generate     │
-│    Statistics   │
-└────────┬────────┘
-         │
-┌────────▼────────┐
-│ 6. Check &      │
-│    Alert        │
-└─────────────────┘
-```
-
-### Key Features
-
-- **Cross-Platform**: Works on Windows, Linux, and Docker
-- **Path Resolution**: Automatic path handling via `PathResolver`
-- **Error Handling**: Comprehensive exception handling with logging
-- **Data Quality**: Automated schema validation and quality scoring
-- **Bias Detection**: Fairness analysis across data sources
-- **Monitoring**: Real-time metrics and alerts
-- **Reproducibility**: DVC integration for data versioning
-
----
-
-## 📊 Pipeline Components
-
-### 1. Data Acquisition (`src/data_acquisition.py`)
-
-Fetches company data from multiple sources:
-
-- **Wikipedia**: Company profiles and information
-- **NewsAPI**: Recent news articles (up to 20)
-- **GDELT**: Additional news sources
-- **SEC EDGAR**: 10-K and 10-Q filings
-
-**Features**:
-- Ticker matching (company name → ticker symbol)
-- Rate limiting and retry logic
-- Caching for API efficiency
-- UTF-8 encoding for cross-platform compatibility
-
-### 2. Data Preprocessing (`src/data_preprocessing.py`)
-
-Cleans and transforms raw data:
-
-- HTML removal
-- Date normalization
-- Duplicate removal
-- Content validation
-
-### 3. Schema Validation (`src/schema_validator.py`)
-
-Validates data quality:
-
-- Schema compliance checking
-- Data completeness scoring
-- Anomaly detection
-- Quality metrics generation
-
-### 4. Bias Detection (`src/bias_detector.py`)
-
-Analyzes data for bias:
-
-- Source diversity checks
-- Recency bias detection
-- Geographic bias analysis
-- Fairness scoring
-
----
-
-## 🧪 Testing
-
-Run tests with pytest:
+**Local Installation (macOS/Linux)**
 
 ```bash
-# Run all tests
-pytest tests/
+# Set Airflow home
+export AIRFLOW_HOME=$(pwd)
+
+# Initialize Airflow database
+airflow db init
+
+# Create admin user
+airflow users create \
+    --username admin \
+    --firstname Admin \
+    --lastname User \
+    --role Admin \
+    --email admin@example.com
+
+# Start Airflow webserver
+airflow webserver --port 8080
+
+# In another terminal, start scheduler
+airflow scheduler
+```
+
+---
+
+## Running the Pipeline
+
+### Method 1: DVC Pipeline
+
+```bash
+# Execute complete DVC pipeline
+dvc repro
+
+# Check pipeline status
+dvc status
+
+# View pipeline DAG
+dvc dag
+```
+
+### Method 2: Airflow DAG
+
+#### Via Airflow UI:
+
+1. Navigate to http://localhost:8080
+2. Login with credentials (airflow/airflow)
+3. Find `company_research_pipeline` DAG
+4. Click "Trigger DAG"
+5. Provide configuration:
+```json
+{
+  "company_name": "Apple Inc"
+}
+```
+
+#### Via CLI:
+
+```bash
+# Trigger with default config
+airflow dags trigger company_research_pipeline
+
+# Trigger with custom config
+airflow dags trigger company_research_pipeline \
+  --conf '{"company_name": "Microsoft Corporation"}'
+
+# Monitor DAG run
+airflow dags list-runs -d company_research_pipeline
+```
+
+### Individual Stages
+
+```bash
+# Data acquisition only
+python src/data_acquisition.py --company "Apple Inc"
+
+# Preprocessing only
+python src/data_preprocessing.py --input data/raw/ --output data/processed/
+
+# Bias detection only
+python src/bias_detector.py --input data/processed/apple_data.json
+
+# Chunking and vector store
+python src/chunking.py --input data/processed/
+python src/vector_store.py --input data/chunks/
+```
+
+### Pipeline Stages
+
+The Airflow DAG executes the following tasks in sequence:
+
+```
+1. fetch_company_data_task      → Data acquisition from all sources
+2. preprocess_data_task         → Data cleaning and normalization
+3. validate_schema_task         → Schema validation and quality checks
+4. detect_bias_task             → Bias detection and fairness analysis
+5. chunk_and_store_task         → Document chunking and vector embeddings
+6. save_to_database_task        → Persistence to SQLite database
+```
+
+---
+
+## Testing
+
+### Run All Tests
+
+```bash
+# Run all tests with coverage
+pytest tests/ --cov=src --cov-report=html --cov-report=term
+
+# View HTML coverage report
+open htmlcov/index.html  # macOS
+start htmlcov/index.html  # Windows
+```
+
+### Running Pytest 
+
+```bash
+Basic Commands
+# Run all focused edge case tests
+pytest tests/test_edge_cases_data_quality.py -v
+
+# Run all tests in tests directory
+pytest tests/ -v
 
 # Run specific test file
-pytest tests/test_data_acquisition.py
+pytest tests/test_chunking.py -v
 
-# Run with coverage
-pytest --cov=src tests/
+# Run specific test class
+pytest tests/test_edge_cases_data_quality.py::TestMissingValues -v
+
+# Run specific test method
+pytest tests/test_edge_cases_data_quality.py::TestMissingValues::test_empty_input_data -v
+
 ```
 
----
+### Run Specific Test Files
 
-## 📈 Monitoring & Metrics
-
-### Airflow UI
-
-Access http://localhost:8080 to:
-- Monitor DAG runs
-- View Gantt charts
-- Check task logs
-- Manage variables
-
-### Quality Metrics
-
-Pipeline generates metrics in `data/metrics/`:
-- `pipeline_statistics.json`: Overall pipeline stats
-- `acquisition_metrics.json`: Data acquisition metrics
-- `quality_metrics.json`: Data quality scores
-- `bias_metrics.json`: Bias analysis results
-
----
-
-## 🐛 Troubleshooting
-
-### Common Issues
-
-#### 1. Import Errors
-
-**Problem**: `ModuleNotFoundError: No module named 'src'`
-
-**Solution**:
 ```bash
-# Ensure PROJECT_ROOT is set
-export PROJECT_ROOT=$(pwd)  # Linux/Mac
-set PROJECT_ROOT=%cd%       # Windows
+# Test bias detector
+pytest tests/test_bias_detector.py -v
+
+# Test with verbose output
+pytest tests/test_path_resolver.py -v -s
+
+# Test specific function
+pytest tests/test_alert_manager.py::TestEmailSending::test_send_email_success -v
 ```
 
-#### 2. Path Not Found Errors
+### Test Coverage Summary
 
-**Problem**: `FileNotFoundError: [Errno 2] No such file or directory: 'data/company_data.db'`
+| Module | Statements | Missed | Branches | Partial | Coverage | Key Missing Lines |
+|--------|------------|--------|----------|---------|----------|-------------------|
+| **src\alert_manager.py** | 84 | 84 | 22 | 0 | **0.00%** | 6-161 |
+| **src\chunking.py** | 386 | 386 | 148 | 0 | **0.00%** | 6-854 |
+| **src\sec_fetcher.py** | 253 | 253 | 60 | 0 | **0.00%** | 7-566 |
+| **src\vector_store.py** | 99 | 99 | 14 | 0 | **0.00%** | 6-186 |
+| **src\db_manager.py** | 140 | 125 | 16 | 0 | **9.62%** | Multiple ranges |
+| **src\data_acquisition.py** | 287 | 242 | 64 | 1 | **13.68%** | Multiple ranges |
+| **src\data_preprocessing.py** | 260 | 190 | 88 | 3 | **22.13%** | Multiple ranges |
+| **src\schema_validator.py** | 216 | 119 | 124 | 17 | **39.41%** | Multiple ranges |
+| **src\utils\path_resolver.py** | 48 | 23 | 12 | 2 | **48.33%** | 27, 29, 45-51... |
+| **src\utils\config.py** | 145 | 65 | 14 | 0 | **50.31%** | 133-141, 145-233... |
+| **src\bias_detector.py** | 183 | 45 | 64 | 13 | **68.42%** | 43->52, 54, 97... |
+| **src\utils\logger.py** | 30 | 4 | 8 | 3 | **76.32%** | 41->45, 49... |
+| **TOTAL** | **2,131** | **1,635** | **634** | **39** | **21.01%** | - |
 
-**Solution**: The pipeline uses `PathResolver` which auto-detects paths. Ensure:
-- You're running from the project root
-- Or set `PROJECT_ROOT` environment variable
+**Key Metrics:**
+- **Highest Coverage:** logger.py (76.32%), bias_detector.py (68.42%)
+- 📊 **Overall Coverage:** 21.01%
 
-#### 3. Database Locked
+## Bias Detection & Mitigation
 
-**Problem**: `sqlite3.OperationalError: database is locked`
+### Overview
 
-**Solution**: The pipeline uses context managers with timeout. If persists:
+The pipeline implements bias detection using **data slicing** techniques across multiple dimensions to ensure fair and balanced analysis.
+
+### Slicing Dimensions
+
+1. **Source Distribution** - Analyzes news source representation
+2. **Temporal Distribution** - Detects recency bias in articles
+3. **Quality Across Slices** - Evaluates content quality by source
+4. **SEC Filing Completeness** - Validates filing section coverage
+
+### Bias Detection Metrics
+
+#### 1. Source Distribution Analysis
+
+```python
+# Detects single-source dominance
+- Dominance Ratio: Measures if one source dominates (threshold: 0.5)
+- Gini Coefficient: Measures inequality in distribution (threshold: 0.4)
+```
+
+**Interpretation:**
+- Dominance Ratio > 0.5 → Single source bias detected
+- Gini Coefficient > 0.4 → Highly unequal distribution
+
+#### 2. Temporal Distribution Analysis
+
+```python
+# Detects recency bias
+- Recency Score: 0-1 scale measuring temporal balance
+```
+
+**Interpretation:**
+- Recency Bias > 0.7 → Over-representation of recent articles
+- Recency Bias < 0.3 → Over-representation of historical data
+
+#### 3. Quality Disparity Detection
+
+```python
+# Analyzes content quality across sources
+- Mean word count per source
+- Standard deviation of content length
+- Quality distribution metrics
+```
+
+### Fairness Metrics
+
+The pipeline computes comprehensive fairness scores:
+
+```python
+fairness_metrics = {
+    "source_balance_score": 0-100,      # Source distribution fairness
+    "temporal_balance_score": 0-100,    # Temporal distribution fairness
+    "sec_completeness_score": 0-100,    # SEC filing completeness
+    "overall_fairness_score": 0-100     # Aggregate score
+}
+```
+
+**Target:** Overall fairness score > 80/100
+
+### Bias Mitigation Strategies
+
+#### 1. Source Reweighting
+
+```python
+# Applies inverse frequency weighting to balance sources
+# Higher weight for underrepresented sources
+weight = max_count / source_count
+```
+
+**Trade-off:** May reduce weight of high-quality dominant sources  
+**Mitigation:** Set minimum weight threshold (0.5)
+
+#### 2. Temporal Balancing
+
+```python
+# Time-decay weighting for balanced temporal coverage
+# Peak weight at 60-180 days, decay for very recent/old
+if days_old < 60:
+    weight = 0.7 + (days_old / 60) * 0.3
+elif days_old < 180:
+    weight = 1.0
+else:
+    weight = max(0.5, 1.0 - (days_old - 180) / 365 * 0.5)
+```
+
+**Trade-off:** May include outdated information  
+**Mitigation:** Apply time-decay with 2-year cutoff
+
+#### 3. Quality Filtering
+
+```python
+# Filters low-quality content based on:
+- Minimum word count (50 words)
+- Required fields (title, source, date)
+- Overall quality score threshold (0.75)
+```
+
+**Trade-off:** May reduce sample size  
+**Mitigation:** Use lenient threshold to balance quality and quantity
+
+### Performance Impact
+
+**Bias Mitigation Results:**
+- Original fairness score: 68.5/100
+- Post-mitigation fairness score: 85.7/100
+- **Improvement: +25%**
+- Articles retained: 94% (3 of 50 filtered)
+
+
+**Bias Detection:** `src/bias_detector.py` (183 lines)
+
+
+---
+
+## Data Versioning
+
+### DVC Pipeline
+
+The pipeline uses **Data Version Control (DVC)** to track all data artifacts:
+
+```yaml
+# dvc.yaml - Pipeline stages
+stages:
+  data_acquisition:
+    cmd: python src/data_acquisition.py
+    deps:
+      - src/data_acquisition.py
+      - src/sec_fetcher.py
+    outs:
+      - data/raw/
+
+  data_preprocessing:
+    cmd: python src/data_preprocessing.py
+    deps:
+      - src/data_preprocessing.py
+      - data/raw/
+    outs:
+      - data/processed/
+
+  chunking:
+    cmd: python src/chunking.py
+    deps:
+      - src/chunking.py
+      - data/processed/
+    outs:
+      - data/chunks/
+
+  vector_store:
+    cmd: python src/vector_store.py
+    deps:
+      - src/vector_store.py
+      - data/chunks/
+    outs:
+      - data/vector_store/
+```
+
+### DVC Commands
+
 ```bash
-# Check for zombie processes
-ps aux | grep python
-# Kill if necessary
-kill <PID>
+# Run DVC pipeline
+dvc repro
+
+# Check pipeline status
+dvc status
+
+# Show data lineage
+dvc dag
+
+# Compare data versions
+dvc diff HEAD~1 HEAD --show-md
+
+# Retrieve specific data version
+dvc checkout HEAD~1 data/processed/.dvc
+
+# Push data to remote storage
+dvc push
 ```
 
-#### 4. Docker Build Fails
+---
 
-**Problem**: Docker build fails with "context" error
+## Monitoring & Logging
 
-**Solution**:
-```bash
-# Ensure you're in the docker directory
-cd docker
-docker-compose build --no-cache
+### Logging Configuration
+
+All pipeline components use structured logging:
+
+```python
+from utils.logger import get_logger
+
+logger = get_logger(__name__)
+
+logger.info("Starting data acquisition for Apple Inc")
+logger.debug(f"Fetching Wikipedia data with params: {params}")
+logger.warning("Rate limit approaching, slowing down requests")
+logger.error(f"Failed to fetch news articles: {error}")
 ```
 
+### Log Files
+
+```
+logs/
+├── data_acquisition.log       # Data fetching logs
+├── data_preprocessing.log      # Preprocessing logs
+├── schema_validator.log        # Validation logs
+├── bias_detector.log           # Bias detection logs
+├── airflow_tasks.log           # Airflow task logs
+└── pipeline_errors.log         # Error logs
+```
+
+### Anomaly Detection
+
+The pipeline detects **6 types of anomalies**:
+
+1. **Missing Data** - Required fields absent
+2. **Insufficient Data** - Below minimum thresholds
+3. **Content Quality Issues** - Low word counts
+4. **Statistical Outliers** - Values beyond 3 standard deviations
+5. **Invalid Formats** - Malformed dates, URLs
+6. **Incomplete Filings** - Missing SEC sections
+
+### Alert Management
+
+Automated alerts via Email and Slack:
+
+```python
+# Example alert for data quality issues
+alert_mgr.send_quality_alert(
+    company_name="Apple Inc",
+    quality_report=validation_result,
+    anomalies=detected_anomalies
+)
+```
+
+**Alert Configuration:**
+- Email: SMTP via Gmail/Outlook
+- Slack: Webhook integration
+- Severity levels: Error, Warning, Info
+
+### Monitoring Dashboard
+
+Access Airflow monitoring:
+```
+http://localhost:8080/gantt?dag_id=company_research_pipeline
+```
+
+## Airflow DAG Visualization
+
+![Pipeline Gantt Chart](Assets/gantt_chart.jpeg)
+
+The Gantt chart above shows:
+- Task execution timeline
+- Parallel execution opportunities
+- Bottleneck identification (acquire_company_data is the longest task)
+
+![Pipeline Graph View](Assets/Airflow_Graph.jpeg)
+
+The graph view displays the complete task dependency structure with all 10 pipeline stages.
+
+
+# Key Features
+
+- **Multi-Source Data Acquisition** - Fetches data from Wikipedia, News APIs, and SEC EDGAR  
+- **Airflow Orchestration** - Complete DAG-based workflow with 6 sequential tasks  
+- **Bias Detection & Mitigation** - Data slicing across 4 dimensions with fairness metrics  
+- **Comprehensive Testing** - 210+ test cases covering edge cases and anomalies  
+- **Data Versioning** - DVC integration for reproducible data pipelines  
+- **Anomaly Detection** - Automated detection of 6 types of data quality issues  
+- **Alert Management** - Email and Slack notifications for pipeline failures  
+- **Schema Validation** - Automated validation with quality scoring  
+
 ---
-
-## 📚 Additional Documentation
-
-- [AIRFLOW_SETUP.md](docs/AIRFLOW_SETUP.md) - Complete Airflow setup guide
-- [TESTING_GUIDE.md](docs/TESTING_GUIDE.md) - Testing best practices
-- [REQUIREMENTS_CHECKLIST.md](docs/REQUIREMENTS_CHECKLIST.md) - MLOps requirements
-
----
-
-## 🤝 Contributing
-
-1. Fork the repository
-2. Create a feature branch (`git checkout -b feature/amazing-feature`)
-3. Commit your changes (`git commit -m 'Add amazing feature'`)
-4. Push to the branch (`git push origin feature/amazing-feature`)
-5. Open a Pull Request
-
----
-
-## 📝 License
-
-This data piepline is part of an MLOps course Project.
-
----
-
-## 🙏 Acknowledgments
-
-- Apache Airflow for workflow orchestration
-- DVC for data version control
-- NewsAPI and SEC-API for data sources
