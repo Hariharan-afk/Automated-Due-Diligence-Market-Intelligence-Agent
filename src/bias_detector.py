@@ -216,27 +216,51 @@ class BiasDetector:
         findings = []
         dominance = source.get("dominance_ratio", 0)
         if dominance and dominance > 0.6:
-            findings.append({"type": "source_dominance", "severity": "high"})
+            findings.append({
+                "type": "source_dominance",
+                "severity": "high",
+                "description": "One news source dominates the dataset (>60% of articles)"
+            })
 
         total_sources = source.get("total_sources", 0)
         if total_sources < 3:
-            findings.append({"type": "low_source_diversity", "severity": "medium"})
+            findings.append({
+                "type": "low_source_diversity",
+                "severity": "medium",
+                "description": "Low source diversity - less than 3 unique news sources"
+            })
 
         recency = temporal.get("recency_bias", 0) or 0
         if recency > 0.7:
-            findings.append({"type": "recency_bias", "severity": "medium"})
+            findings.append({
+                "type": "recency_bias",
+                "severity": "medium",
+                "description": "Recent articles dominate the dataset (recency bias detected)"
+            })
 
         coverage = sec.get("filing_type_coverage", {})
         if not coverage.get("has_both", True):
-            findings.append({"type": "incomplete_filing_coverage", "severity": "medium"})
+            findings.append({
+                "type": "incomplete_filing_coverage",
+                "severity": "medium",
+                "description": "Missing either 10-K or 10-Q filings"
+            })
 
         for t, s in sec.get("section_completeness", {}).items():
             if s.get("completeness_ratio", 1) < 0.8:
-                findings.append({"type": "incomplete_sections", "severity": "low"})
+                findings.append({
+                    "type": "incomplete_sections",
+                    "severity": "low",
+                    "description": f"SEC {t} filing has incomplete sections (<80% completeness)"
+                })
 
         fiscal = sec.get("fiscal_year_distribution", {})
         if not fiscal.get("is_continuous", True):
-            findings.append({"type": "discontinuous_fiscal_years", "severity": "low"})
+            findings.append({
+                "type": "discontinuous_fiscal_years",
+                "severity": "low",
+                "description": "Fiscal year data has gaps (not continuous)"
+            })
 
         return findings
 

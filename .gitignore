@@ -79,3 +79,7 @@ Thumbs.db
 .claude/
 nul
 nuldvc_plots/
+
+# Markdown Files
+MLOPS_SUBMISSION.md
+TESTING_SUMMARY.md

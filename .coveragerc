@@ -1,0 +1,79 @@
+[run]
+# Source code directory to measure coverage
+source = src
+
+# Files to omit from coverage
+omit =
+    */tests/*
+    */test_*.py
+    */__pycache__/*
+    */site-packages/*
+    */venv/*
+    */env/*
+    */.venv/*
+    */run_all_tests.py
+    */__init__.py
+
+# Enable branch coverage
+branch = True
+
+# Run tests in parallel for faster execution
+parallel = True
+
+[report]
+# Reporting precision
+precision = 2
+
+# Show missing lines in report
+show_missing = True
+
+# Sort coverage report by coverage percentage
+sort = Cover
+
+# Lines to exclude from coverage
+exclude_lines =
+    # Standard pragma
+    pragma: no cover
+
+    # Don't complain about missing debug-only code
+    def __repr__
+    def __str__
+
+    # Don't complain if tests don't hit defensive assertion code
+    raise AssertionError
+    raise NotImplementedError
+    raise ValueError
+
+    # Don't complain if non-runnable code isn't run
+    if __name__ == .__main__.:
+    if __name__==.__main__.:
+
+    # Don't complain about abstract methods
+    @abstractmethod
+    @abc.abstractmethod
+
+    # Type checking blocks
+    if TYPE_CHECKING:
+    if typing.TYPE_CHECKING:
+
+    # Defensive programming
+    except ImportError:
+    except ModuleNotFoundError:
+
+    # Pass statements
+    pass
+
+[html]
+# Directory for HTML coverage report
+directory = htmlcov
+
+# Title for HTML report
+title = Data Pipeline Coverage Report
+
+[xml]
+# Output file for XML coverage report (for CI/CD)
+output = coverage.xml
+
+[json]
+# Output file for JSON coverage report
+output = coverage.json
