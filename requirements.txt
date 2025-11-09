@@ -1,0 +1,13 @@
+python-dotenv
+groq
+sec-api
+sentence-transformers
+langchain
+langchain-text-splitters
+nltk
+qdrant-client
+psycopg2-binary
+numpy
+torch
+tqdm
+requests
