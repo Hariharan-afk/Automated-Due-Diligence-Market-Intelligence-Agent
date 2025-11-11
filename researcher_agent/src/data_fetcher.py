@@ -1,59 +1,8 @@
-# # researcher_agent/src/data_fetcher.py
-# import json
-# from sec_api import QueryApi
-# import os
-# from researcher_agent.src.query_parser import QueryParser, CompanyResolver
-# from groq import Groq
-# import utils.config
-
-
-# def fetch_sec_filings(ticker: str, start_date: str, end_date: str):
-#     queryApi = QueryApi(api_key=utils.config.SEC_API_KEY)
-#     search_query = f'ticker:{ticker} AND formType:"10-K" AND filedAt:[{start_date} TO {end_date}]'
-
-#     parameters = {
-#         "query": search_query,
-#         "from": "0",
-#         "size": "50",
-#         "sort": [{"filedAt": {"order": "desc"}}],
-#     }
-
-#     response = queryApi.get_filings(parameters)
-#     return response
-
-# # import json
-
-# # print("Apple's 10-K filing metdata:")
-# # print(json.dumps(response["filings"][0], indent=2))
-
-
-# groq_client = Groq(api_key = utils.config.QUERY_PARSER_MODEL_API_KEY)
-# parser = QueryParser(groq_client)
-
-# # Parse a query
-# result = parser.parse_query(
-#     "Can you analyze Amazon's financial health and growth potential over the last 3 years?"
-# )
-# print(result)
-
-# resolver = CompanyResolver()
-
-# # Company_Ticker = resolver.resolve(result['company'])
-# company_info = resolver.resolve(result['company'])
-# print(company_info)
-# # Output: {'cik': '0000320193', 'name': 'Apple Inc.', 'ticker': 'AAPL'}
-
-# # Example usage
-# response = fetch_sec_filings(company_info['ticker'], "2021-01-01", "2024-12-31")
-# print(f"Number of 10-K filings from {company_info['title']} between 2021 and 2024:\n {response['total']['value']}")
-
-
-
-
 # researcher_agent/src/data_fetcher.py
 import json
 import time
 from typing import Dict, List, Optional
+from datetime import datetime, timedelta
 from sec_api import QueryApi, ExtractorApi
 from groq import Groq
 
@@ -67,44 +16,90 @@ class SECDataFetcher:
         self.query_api = QueryApi(api_key=config.SEC_API_KEY)
         self.extractor_api = ExtractorApi(api_key=config.SEC_API_KEY)
         self.rate_limit_delay = 1.0 / config.SEC_API_RATE_LIMIT  # seconds between requests
+
+    def _convert_time_horizon_to_dates(self, time_horizon: str) -> tuple[str, str]:
+        """
+        Convert time_horizon string to start and end dates
+        
+        Args:
+            time_horizon: One of "current_year", "last_3_years", "last_5_years", "custom"
+            
+        Returns:
+            Tuple of (start_date, end_date) in format "YYYY-MM-DD"
+        """
+        end_date = datetime.now()
+        
+        horizon_map = {
+            "current_year": timedelta(days=365),
+            "last_3_years": timedelta(days=3*365),
+            "last_5_years": timedelta(days=5*365)
+        }
+        
+        time_delta = horizon_map.get(time_horizon, timedelta(days=365))
+        start_date = end_date - time_delta
+        
+        return start_date.strftime("%Y-%m-%d"), end_date.strftime("%Y-%m-%d")
     
-    def fetch_latest_filing(
+    def fetch_sec_filings(
         self, 
         ticker: str, 
-        filing_type: str = "10-K"
-    ) -> Optional[Dict]:
+        time_horizon: str = "current_year",
+        filing_types: List[str] = None,
+        max_filings: int = 100
+    ) -> List[Dict]:
         """
-        Fetch metadata for the most recent filing of a specific type
+        Fetch multiple filings of specified types within a timeline
         
         Args:
             ticker: Company ticker symbol
-            filing_type: Type of filing (10-K, 10-Q, etc.)
+            time_horizon: Time period to search ("current_year", "last_3_years", "last_5_years")
+            filing_types: List of filing types to fetch (default: ["10-K", "10-Q"])
+            max_filings: Maximum number of filings to return
             
         Returns:
-            Filing metadata dictionary or None if not found
+            List of filing metadata dictionaries
         """
+        if filing_types is None:
+            filing_types = ["10-K", "10-Q"]
+        
         try:
+            # Convert time horizon to dates
+            start_date, end_date = self._convert_time_horizon_to_dates(time_horizon)
+            
+            # Build form types query string
+            form_types_query = " OR ".join([f'formType:"{ft}"' for ft in filing_types])
+            
+            # Construct query
             query = {
-                "query": f'ticker:{ticker} AND formType:"{filing_type}"',
+                "query": f'ticker:{ticker} AND ({form_types_query}) AND filedAt:[{start_date} TO {end_date}]',
                 "from": "0",
-                "size": "1",
+                "size": str(max_filings),
                 "sort": [{"filedAt": {"order": "desc"}}]
             }
             
+            print(f"\nSearching for {', '.join(filing_types)} filings for {ticker}")
+            print(f"Date range: {start_date} to {end_date}")
+            
             response = self.query_api.get_filings(query)
             
-            if not response.get('filings'):
-                print(f"No {filing_type} filings found for {ticker}")
-                return None
+            filings = response.get('filings', [])
             
-            filing = response['filings'][0]
-            print(f"✓ Found {filing_type} for {ticker}: Filed {filing['filedAt']}")
+            if not filings:
+                print(f"✗ No filings found for {ticker} in specified timeline")
+                return []
             
-            return filing
+            print(f"✓ Found {len(filings)} filing(s)")
+            
+            # Print summary
+            for filing in filings:
+                print(f"  - {filing['formType']:6s} | {filing['filedAt']} | {filing['companyName']}")
+            
+            return filings
             
         except Exception as e:
-            print(f"✗ Error fetching filing metadata: {e}")
-            return None
+            print(f"✗ Error fetching filings: {e}")
+            return []
+
     
     def extract_sections(
         self, 
@@ -162,42 +157,110 @@ class SECDataFetcher:
         
         return extracted_sections
     
-    def fetch_filing_with_sections(
-        self, 
-        ticker: str, 
-        filing_type: str = "10-K"
-    ) -> Optional[Dict]:
+    # def fetch_filing_with_sections(
+    #     self, 
+    #     ticker: str, 
+    #     filing_type: str = "10-K"
+    # ) -> Optional[Dict]:
+    #     """
+    #     Complete workflow: Fetch filing metadata and extract all sections
+        
+    #     Args:
+    #         ticker: Company ticker symbol
+    #         filing_type: Type of filing
+            
+    #     Returns:
+    #         Dictionary containing filing metadata and extracted sections
+    #     """
+    #     # Step 1: Get filing metadata
+    #     filing_metadata = self.fetch_latest_filing(ticker, filing_type)
+        
+    #     if not filing_metadata:
+    #         return None
+        
+    #     # Step 2: Extract sections
+    #     print(f"\nExtracting sections from {filing_type}...")
+    #     sections = self.extract_sections(
+    #         filing_metadata['linkToFilingDetails'],
+    #         filing_type
+    #     )
+        
+    #     if not sections:
+    #         print(f"✗ No sections could be extracted from {filing_type}")
+    #         return None
+        
+    #     return {
+    #         'filing_metadata': filing_metadata,
+    #         'sections': sections
+    #     }
+    
+    
+    def fetch_filings_with_sections(
+        self,
+        ticker: str,
+        time_horizon: str = "current_year",
+        filing_types: List[str] = None,
+        max_filings: int = 10,
+        extract_sections: bool = True
+    ) -> List[Dict]:
         """
-        Complete workflow: Fetch filing metadata and extract all sections
+        Fetch multiple filings within a timeline and optionally extract sections
         
         Args:
             ticker: Company ticker symbol
-            filing_type: Type of filing
+            time_horizon: Time period to search
+            filing_types: List of filing types to fetch
+            max_filings: Maximum number of filings to process
+            extract_sections: Whether to extract sections (can be slow for many filings)
             
         Returns:
-            Dictionary containing filing metadata and extracted sections
+            List of dictionaries containing filing metadata and extracted sections
         """
-        # Step 1: Get filing metadata
-        filing_metadata = self.fetch_latest_filing(ticker, filing_type)
-        
-        if not filing_metadata:
-            return None
-        
-        # Step 2: Extract sections
-        print(f"\nExtracting sections from {filing_type}...")
-        sections = self.extract_sections(
-            filing_metadata['linkToFilingDetails'],
-            filing_type
+        # Step 1: Get all filings in timeline
+        filings = self.fetch_sec_filings(
+            ticker=ticker,
+            time_horizon=time_horizon,
+            filing_types=filing_types,
+            max_filings=max_filings
         )
         
-        if not sections:
-            print(f"✗ No sections could be extracted from {filing_type}")
-            return None
+        if not filings:
+            return []
         
-        return {
-            'filing_metadata': filing_metadata,
-            'sections': sections
-        }
+        results = []
+        
+        # Step 2: Process each filing
+        for i, filing in enumerate(filings, 1):
+            filing_type = filing['formType']
+            print(f"\n[{i}/{len(filings)}] Processing {filing_type} filed on {filing['filedAt']}")
+            
+            result = {
+                'filing_metadata': filing,
+                'sections': {}
+            }
+            
+            # Step 3: Extract sections if requested
+            if extract_sections:
+                try:
+                    sections = self.extract_sections(
+                        filing['linkToFilingDetails'],
+                        filing_type
+                    )
+                    result['sections'] = sections
+                except Exception as e:
+                    print(f"✗ Error extracting sections: {e}")
+            
+            results.append(result)
+            
+            # Rate limiting between filings
+            if i < len(filings):
+                time.sleep(self.rate_limit_delay)
+        
+        print(f"\n{'='*60}")
+        print(f"Successfully processed {len(results)} filing(s)")
+        print(f"{'='*60}")
+        
+        return results
 
 
 # # Example usage and testing
@@ -249,3 +312,49 @@ class SECDataFetcher:
 #         print(f"Filed: {filing_data['filing_metadata']['filedAt']}")
 #         print(f"Sections extracted: {len(filing_data['sections'])}")
 #         print(f"{'='*60}")
+
+# Example usage and testing
+if __name__ == "__main__":
+    from researcher_agent.src.query_parser import QueryParser, CompanyResolver
+    
+    # Initialize
+    groq_client = Groq(api_key=config.QUERY_PARSER_MODEL_API_KEY)
+    parser = QueryParser(groq_client)
+    resolver = CompanyResolver()
+    fetcher = SECDataFetcher()
+    
+    # Parse query
+    result = parser.parse_query(
+        "Can you analyze Amazon's financial health and growth potential over the last 3 years?"
+    )
+    print(f"\nParsed Query: {json.dumps(result, indent=2)}")
+    
+    # Resolve company
+    company_info = resolver.resolve(result['company'])
+    print(f"\nResolved Company: {json.dumps(company_info, indent=2)}")
+    
+    # NEW: Fetch multiple filings (10-K and 10-Q) within timeline
+    print(f"\n{'='*60}")
+    print(f"FETCHING MULTIPLE FILINGS BY TIMELINE")
+    print(f"{'='*60}")
+
+    filing_data_list = fetcher.fetch_filings_with_sections(
+        ticker=company_info['ticker'],
+        time_horizon=result['time_horizon'],  # Uses parsed time horizon
+        filing_types=["10-K", "10-Q"],
+        max_filings=10,
+        extract_sections=True  # Set to False for faster metadata-only retrieval
+    )
+    
+    # Display summary
+    if filing_data_list:
+        print(f"\n{'='*60}")
+        print(f"SUMMARY")
+        print(f"{'='*60}")
+        for filing_data in filing_data_list:
+            metadata = filing_data['filing_metadata']
+            sections = filing_data['sections']
+            print(f"\n{metadata['formType']} | {metadata['filedAt']}")
+            print(f"  Company: {metadata['companyName']}")
+            print(f"  Sections: {len(sections)}")
+            print(f"  Total content: {sum(len(s) for s in sections.values()):,} characters")
