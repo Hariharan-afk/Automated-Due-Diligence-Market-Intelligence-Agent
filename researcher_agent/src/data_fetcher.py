@@ -283,78 +283,28 @@ class SECDataFetcher:
 #     company_info = resolver.resolve(result['company'])
 #     print(f"\nResolved Company: {json.dumps(company_info, indent=2)}")
     
-#     # Fetch 10-K filing
-#     print(f"\nFetching 10-K filing for {company_info['ticker']}...")
-#     filing_data = fetcher.fetch_filing_with_sections(
-#         company_info['ticker'],
-#         "10-K"
+#     # NEW: Fetch multiple filings (10-K and 10-Q) within timeline
+#     print(f"\n{'='*60}")
+#     print(f"FETCHING MULTIPLE FILINGS BY TIMELINE")
+#     print(f"{'='*60}")
+
+#     filing_data_list = fetcher.fetch_filings_with_sections(
+#         ticker=company_info['ticker'],
+#         time_horizon=result['time_horizon'],  # Uses parsed time horizon
+#         filing_types=["10-K", "10-Q"],
+#         max_filings=10,
+#         extract_sections=True  # Set to False for faster metadata-only retrieval
 #     )
     
-#     if filing_data:
+#     # Display summary
+#     if filing_data_list:
 #         print(f"\n{'='*60}")
-#         print(f"Successfully fetched {filing_data['filing_metadata']['formType']}")
-#         print(f"Company: {filing_data['filing_metadata']['companyName']}")
-#         print(f"Filed: {filing_data['filing_metadata']['filedAt']}")
-#         print(f"Sections extracted: {len(filing_data['sections'])}")
+#         print(f"SUMMARY")
 #         print(f"{'='*60}")
-
-#     # Fetching 10-Q filing
-#     print(f"\nFetching 10-Q filing for {company_info['ticker']}...")
-#     filing_data = fetcher.fetch_filing_with_sections(
-#         company_info['ticker'],
-#         "10-Q"
-#     )
-
-#     if filing_data:
-#         print(f"\n{'='*60}")
-#         print(f"Successfully fetched {filing_data['filing_metadata']['formType']}")
-#         print(f"Company: {filing_data['filing_metadata']['companyName']}")
-#         print(f"Filed: {filing_data['filing_metadata']['filedAt']}")
-#         print(f"Sections extracted: {len(filing_data['sections'])}")
-#         print(f"{'='*60}")
-
-# Example usage and testing
-if __name__ == "__main__":
-    from researcher_agent.src.query_parser import QueryParser, CompanyResolver
-    
-    # Initialize
-    groq_client = Groq(api_key=config.QUERY_PARSER_MODEL_API_KEY)
-    parser = QueryParser(groq_client)
-    resolver = CompanyResolver()
-    fetcher = SECDataFetcher()
-    
-    # Parse query
-    result = parser.parse_query(
-        "Can you analyze Amazon's financial health and growth potential over the last 3 years?"
-    )
-    print(f"\nParsed Query: {json.dumps(result, indent=2)}")
-    
-    # Resolve company
-    company_info = resolver.resolve(result['company'])
-    print(f"\nResolved Company: {json.dumps(company_info, indent=2)}")
-    
-    # NEW: Fetch multiple filings (10-K and 10-Q) within timeline
-    print(f"\n{'='*60}")
-    print(f"FETCHING MULTIPLE FILINGS BY TIMELINE")
-    print(f"{'='*60}")
-
-    filing_data_list = fetcher.fetch_filings_with_sections(
-        ticker=company_info['ticker'],
-        time_horizon=result['time_horizon'],  # Uses parsed time horizon
-        filing_types=["10-K", "10-Q"],
-        max_filings=10,
-        extract_sections=True  # Set to False for faster metadata-only retrieval
-    )
-    
-    # Display summary
-    if filing_data_list:
-        print(f"\n{'='*60}")
-        print(f"SUMMARY")
-        print(f"{'='*60}")
-        for filing_data in filing_data_list:
-            metadata = filing_data['filing_metadata']
-            sections = filing_data['sections']
-            print(f"\n{metadata['formType']} | {metadata['filedAt']}")
-            print(f"  Company: {metadata['companyName']}")
-            print(f"  Sections: {len(sections)}")
-            print(f"  Total content: {sum(len(s) for s in sections.values()):,} characters")
+#         for filing_data in filing_data_list:
+#             metadata = filing_data['filing_metadata']
+#             sections = filing_data['sections']
+#             print(f"\n{metadata['formType']} | {metadata['filedAt']}")
+#             print(f"  Company: {metadata['companyName']}")
+#             print(f"  Sections: {len(sections)}")
+#             print(f"  Total content: {sum(len(s) for s in sections.values()):,} characters")
