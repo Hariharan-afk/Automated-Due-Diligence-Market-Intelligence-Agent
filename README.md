@@ -15,7 +15,8 @@ Data pipeline for automated due diligence and market intelligence gathering on p
 7. [Data Versioning](#data-versioning)
 8. [Monitoring & Logging](#monitoring--logging)
 9. [Airflow DAG Visualization](#airflow-dag-visualization)
-10. [Key Features](#key-features)
+10. [Airflow Alerts](#airflow-alerts)
+11. [Key Features](#key-features)
 
 ---
 
@@ -61,19 +62,42 @@ data_pipeline_main/
 │   └── company_research_dag.py  # Main pipeline DAG
 │
 ├── data/                         # Data directory (DVC tracked)
-│   └── company_tickers.json     # Static reference data
-│
-└── docker/                       # Docker configuration
+│   ├── company_tickers.json      # Static reference data    
+│   ├── company_data.db
+│   ├── bias_reports/             #Bias reports     
+│   │      └── Apple_Inc._bias_report.json
+│   ├── metrics/                  #metric_reports
+│   │      ├── acquisition_metrics.json
+│   │      ├── bias_metrics.json
+│   │      ├── preprocessing_metrics.json
+│   │      ├── quality_metrics.json
+│   │      └── storage_metrics.json
+│   ├── processed/                #Processed Data
+│   │      ├── Apple_Inc._processed_20251111_215828.json #Apple Processed Data
+│   │      └── latest.json
+│   ├── quality_reports/          #quality reports
+│   │      └── Apple_Inc._bias_report.json
+│   └── raw/                      #Raw Data
+│         └── Apple_Inc._20251111_215828.json #Apple Raw Data
+│ 
+├── docker/                       # Docker configuration
 │   ├── Dockerfile.airflow       # Airflow Docker image
 │   ├── docker-compose.yml       # Docker Compose configuration
-│   ├── docker-compose-airflow.yml       # Docker Compose for airflow configuration
+│   ├── docker-compose-airflow.yml       # Docker Compose for airflow 
 │
 ├── docs/                         # Documentation
 │   ├── Bias_Analysis.md
 │
 ├── dvc_plots/                      
-│   ├── index.html
-│
+│   └── index.html
+│ 
+├── logs/                         #Log files                        
+│   ├── data_acquisition.log      
+│   ├── pipeline.log
+│   ├── utils.log
+│   ├── dag_processor_manager/
+│   │      └── dag_processor_manager.log
+│ 
 ├── src/                          # Source code (modular, reusable)
 │   ├── __init__.py
 │   ├── data_acquisition.py      # Data fetching from APIs
@@ -103,10 +127,6 @@ data_pipeline_main/
 │   ├── test_sec_fetcher.py
 │   ├── test_sec_fetcher_mock.py
 │   ├── validate_dag.py
-│
-├── logs/                         # Application logs (gitignored)
-│   ├── airflow/                 # Airflow logs
-│   └── *.log                    # Component logs
 
 ```
 
@@ -626,6 +646,20 @@ The Gantt chart above shows:
 ![Pipeline Graph View](Assets/Airflow_Graph.jpeg)
 
 The graph view displays the complete task dependency structure with all 10 pipeline stages.
+
+## Airflow Alerts:
+
+![Airflow Alert Success](Assets/Airflow_email_Success.png)
+
+This displays the alert Email sent using Airflow. This is triggered upon the success of the pipeline. 
+
+![Airflow Alert Warning](Assets/Airflow_email_Warning.png)
+
+This displays the alert Email sent using Airflow. This is triggered upon a Warning for an anomoly present in the pipeline. 
+
+![Airflow Alert Failure](Assets/Airflow_email_Failure.png)
+
+This displays the alert Email sent using Airflow. This is triggered upon the Failure in any part of the pipeline.
 
 
 # Key Features

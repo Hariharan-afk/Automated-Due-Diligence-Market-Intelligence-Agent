@@ -5,43 +5,45 @@
     "analysis": {
         "news": {
             "source_distribution": {
-                "total_sources": 15,
+                "total_sources": 16,
                 "distribution": {
                     "SiliconANGLE News": 3,
                     "Biztoc.com": 2,
-                    "Macdailynews.com": 2,
                     "GlobeNewswire": 2,
+                    "Variety": 1,
                     "Digitimes": 1,
                     "SoraNews24": 1,
                     "OilPrice.com": 1,
+                    "Digiday": 1,
+                    "Macdailynews.com": 1,
                     "Activistpost.com": 1,
                     "PetaPixel": 1,
                     "Motley Fool Australia": 1,
                     "Wtaj.com": 1,
                     "Financial Post": 1,
                     "Barchart.com": 1,
-                    "Fortune": 1,
-                    "Plos.org": 1
+                    "Fortune": 1
                 },
                 "percentages": {
                     "SiliconANGLE News": 15.0,
                     "Biztoc.com": 10.0,
-                    "Macdailynews.com": 10.0,
                     "GlobeNewswire": 10.0,
+                    "Variety": 5.0,
                     "Digitimes": 5.0,
                     "SoraNews24": 5.0,
                     "OilPrice.com": 5.0,
+                    "Digiday": 5.0,
+                    "Macdailynews.com": 5.0,
                     "Activistpost.com": 5.0,
                     "PetaPixel": 5.0,
                     "Motley Fool Australia": 5.0,
                     "Wtaj.com": 5.0,
                     "Financial Post": 5.0,
                     "Barchart.com": 5.0,
-                    "Fortune": 5.0,
-                    "Plos.org": 5.0
+                    "Fortune": 5.0
                 },
                 "dominance_ratio": 0.15,
-                "gini_coefficient": -0.19333333333333336
+                "gini_coefficient": -0.16874999999999996
             },
             "temporal_distribution": {
                 "date_range": {
@@ -54,8 +56,8 @@
                 "recency_bias": 1.0
             },
             "quality_across_slices": {
-                "mean_word_count": 34.45,
-                "std_word_count": 3.0689446154389266
+                "mean_word_count": 34.25,
+                "std_word_count": 3.2747036828583918
             }
         },
         "sec": {
@@ -98,11 +100,11 @@
         }
     },
     "fairness_metrics": {
-        "source_balance_score": 95.30000000000001,
+        "source_balance_score": 94.5625,
         "temporal_fairness_score": 0,
         "filing_coverage_score": 100.0,
         "section_completeness_score": 100.0,
-        "overall_fairness_score": 73.82
+        "overall_fairness_score": 73.64
     },
     "bias_findings": [
         {
@@ -115,7 +117,7 @@
     "recommendations": [
         "Include older articles to reduce recency skew."
     ],
-    "timestamp": "2025-11-11T21:58:28.789894",
+    "timestamp": "2025-11-12T05:51:17.545516",
     "mitigation_actions": [
         "No mitigation required."
     ]

@@ -5,7 +5,7 @@
         "valid": true,
         "errors": [],
         "warnings": [],
-        "timestamp": "2025-11-11T21:58:28.780482"
+        "timestamp": "2025-11-12T05:51:17.520671"
     },
     "anomaly_detection": {
         "has_anomalies": true,
@@ -29,12 +29,12 @@
             "warning": 2,
             "info": 0
         },
-        "timestamp": "2025-11-11T21:58:28.780482"
+        "timestamp": "2025-11-12T05:51:17.522021"
     },
     "overall_quality_score": 90.0,
     "recommendations": [
         "Review: 10-Q section 'Risk Factors' unusually short: 161 words",
         "Review: 10-Q has only 0 tables"
     ],
-    "timestamp": "2025-11-11T21:58:28.781489"
+    "timestamp": "2025-11-12T05:51:17.522417"
 }

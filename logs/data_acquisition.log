@@ -171,3 +171,16 @@
 2025-11-11 21:58:30,798 - __main__ - INFO - ✅ Storage complete: 20 articles, 2 SEC filings stored
 2025-11-11 21:58:30,803 - __main__ - INFO - 
 ✅ Pipeline completed successfully for: AAPL
+2025-11-12 00:42:04,760 - src.alert_manager - INFO - 📧 Email alerts enabled - sending to niranjansathishusa@gmail.com
+2025-11-12 00:42:06,511 - src.alert_manager - INFO - ✅ Email alert sent to niranjansathishusa@gmail.com
+2025-11-12 00:42:17,638 - src.alert_manager - INFO - 📧 Email alerts enabled - sending to niranjansathishusa@gmail.com
+2025-11-12 00:42:17,639 - src.alert_manager - INFO - 🔔 Sending combined alert for Apple Inc. (TEST)
+2025-11-12 00:42:18,818 - src.alert_manager - INFO - ✅ Email alert sent to niranjansathishusa@gmail.com
+2025-11-12 00:43:31,534 - src.alert_manager - INFO - 📧 Email alerts enabled - sending to niranjansathishusa@gmail.com
+2025-11-12 00:43:31,535 - src.alert_manager - INFO - ✅ Sending success notification for Apple Inc. (TEST)
+2025-11-12 00:43:32,809 - src.alert_manager - INFO - ✅ Email alert sent to niranjansathishusa@gmail.com
+2025-11-12 00:43:52,612 - src.alert_manager - INFO - 📧 Email alerts enabled - sending to niranjansathishusa@gmail.com
+2025-11-12 00:43:52,612 - src.alert_manager - INFO - 🔔 Sending quality alert for Test Company
+2025-11-12 00:43:54,423 - src.alert_manager - INFO - ✅ Email alert sent to niranjansathishusa@gmail.com
+2025-11-12 00:43:54,424 - src.alert_manager - INFO - 🔔 Sending bias alert for Test Company
+2025-11-12 00:43:55,665 - src.alert_manager - INFO - ✅ Email alert sent to niranjansathishusa@gmail.com

@@ -32,6 +32,13 @@ services:
       - _AIRFLOW_WWW_USER_CREATE=true
       - _AIRFLOW_WWW_USER_USERNAME=admin
       - _AIRFLOW_WWW_USER_PASSWORD=admin
+      - AIRFLOW__SMTP__SMTP_HOST=${SMTP_SERVER}
+      - AIRFLOW__SMTP__SMTP_PORT=${SMTP_PORT}
+      - AIRFLOW__SMTP__SMTP_USER=${ALERT_EMAIL_SENDER}
+      - AIRFLOW__SMTP__SMTP_PASSWORD=${ALERT_EMAIL_PASSWORD}
+      - AIRFLOW__SMTP__SMTP_MAIL_FROM=${ALERT_EMAIL_SENDER}
+      - AIRFLOW__SMTP__SMTP_STARTTLS=True
+      - AIRFLOW__SMTP__SMTP_SSL=False
     volumes:
       - ../dags:/opt/airflow/dags
       - ../src:/opt/airflow/src
@@ -62,6 +69,13 @@ services:
       - AIRFLOW__DATABASE__SQL_ALCHEMY_CONN=postgresql+psycopg2://airflow:airflow@postgres/airflow
       - AIRFLOW__CORE__LOAD_EXAMPLES=False
       - AIRFLOW__CORE__DAGS_ARE_PAUSED_AT_CREATION=False
+      - AIRFLOW__SMTP__SMTP_HOST=${SMTP_SERVER}
+      - AIRFLOW__SMTP__SMTP_PORT=${SMTP_PORT}
+      - AIRFLOW__SMTP__SMTP_USER=${ALERT_EMAIL_SENDER}
+      - AIRFLOW__SMTP__SMTP_PASSWORD=${ALERT_EMAIL_PASSWORD}
+      - AIRFLOW__SMTP__SMTP_MAIL_FROM=${ALERT_EMAIL_SENDER}
+      - AIRFLOW__SMTP__SMTP_STARTTLS=True
+      - AIRFLOW__SMTP__SMTP_SSL=False
     volumes:
       - ../dags:/opt/airflow/dags
       - ../src:/opt/airflow/src
@@ -92,6 +106,13 @@ services:
       - AIRFLOW__DATABASE__SQL_ALCHEMY_CONN=postgresql+psycopg2://airflow:airflow@postgres/airflow
       - AIRFLOW__CORE__LOAD_EXAMPLES=False
       - AIRFLOW__CORE__DAGS_ARE_PAUSED_AT_CREATION=False
+      - AIRFLOW__SMTP__SMTP_HOST=${SMTP_SERVER}
+      - AIRFLOW__SMTP__SMTP_PORT=${SMTP_PORT}
+      - AIRFLOW__SMTP__SMTP_USER=${ALERT_EMAIL_SENDER}
+      - AIRFLOW__SMTP__SMTP_PASSWORD=${ALERT_EMAIL_PASSWORD}
+      - AIRFLOW__SMTP__SMTP_MAIL_FROM=${ALERT_EMAIL_SENDER}
+      - AIRFLOW__SMTP__SMTP_STARTTLS=True
+      - AIRFLOW__SMTP__SMTP_SSL=False
     volumes:
       - ../dags:/opt/airflow/dags
       - ../src:/opt/airflow/src

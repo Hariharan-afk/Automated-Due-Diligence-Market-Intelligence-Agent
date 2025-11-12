@@ -1,5 +1,5 @@
 {
-    "query": "AAPL",
+    "query": "Apple Inc.",
     "ticker": "AAPL",
     "company_name": "Apple Inc.",
     "cik": "320193",
@@ -380,9 +380,25 @@
             "Adelphia Communications Corporation",
             "Adeo"
         ],
-        "timestamp": "2025-11-11T21:57:39.986603"
+        "timestamp": "2025-11-12T05:50:24.663172"
     },
     "news_articles": [
+        {
+            "title": "Publishers swap traffic angst for strategy in Q3 earnings",
+            "url": "http://digiday.com/media/publishers-swap-traffic-angst-for-strategy-in-q3-earnings/",
+            "source": "Digiday",
+            "published_date": "2025-11-11T05:01:00Z",
+            "description": "There's a tone shift in publishers’ Q3 earnings: focus on video, direct audiences and AI licensing to offset search-driven ad revenue declines.",
+            "content": "The tone has flipped: instead of lamenting lost clicks, publishers are outlining where and how theyre building sustainable growth.Thats been a key throughline in third-quarter publisher earnings call… [+7330 chars]"
+        },
+        {
+            "title": "Sony Lifts Forecast as Music Division Soars on ‘Demon Slayer’ Boom",
+            "url": "https://variety.com/2025/film/news/sony-quarterly-earnings-2025-demon-slayer-1236574634/",
+            "source": "Variety",
+            "published_date": "2025-11-11T03:32:24Z",
+            "description": "Sony Group Corporation lifted its annual earnings forecast after posting double-digit profit growth for the July–September quarter, fueled by strong performances in its music and image sensor businesses that offset softness in gaming and consumer electronics.…",
+            "content": "Sony Group Corporation lifted its annual earnings forecast after posting double-digit profit growth for the July–September quarter, fueled by strong performances in its music and image sensor busines… [+3547 chars]"
+        },
         {
             "title": "EU set to relax data protection rules to boost AI growth",
             "url": "https://siliconangle.com/2025/11/10/eu-set-relax-data-protection-rules-boost-ai-growth/",
@@ -526,22 +542,6 @@
             "published_date": "2025-11-10T14:08:59Z",
             "description": "Manufacturers are moving beyond basic automation toward a new era powered by data and decision intelligence. As cloud technologies mature and artificial intelligence systems take on more complex tasks, the manufacturing industry’s focus is turning to how thes…",
             "content": "Manufacturers are moving beyond basic automation toward a new era powered by data and decision intelligence. As cloud technologies mature and artificial intelligence systems take on more complex task… [+6406 chars]"
-        },
-        {
-            "title": "Apple preps major new satellite connectivity features for iPhones and Apple Watches",
-            "url": "https://macdailynews.com/2025/11/10/apple-preps-major-new-satellite-connectivity-features-for-iphones-and-apple-watches/",
-            "source": "Macdailynews.com",
-            "published_date": "2025-11-10T14:00:15Z",
-            "description": "Apple introduced Emergency SOS via Satellite with the iPhone 14 in 2022, enabling users without cellular coverage to reach emergency…\nThe post Apple preps major new satellite connectivity features for iPhones and Apple Watches appeared first on MacDailyNews.",
-            "content": "Apple’s Emergency SOS via satellite icon\r\nApple introduced Emergency SOS via Satellite with the iPhone 14 in 2022, enabling users without cellular coverage to reach emergency responders through satel… [+2628 chars]"
-        },
-        {
-            "title": "People with heart failure, sarcopenia and chagas disease: A systematic review and meta-analysis",
-            "url": "https://journals.plos.org/plosntds/article?id=10.1371/journal.pntd.0013699",
-            "source": "Plos.org",
-            "published_date": "2025-11-10T14:00:00Z",
-            "description": "Author summary A systematic review of randomized controlled trials, cohort studies, cross-sectional studies, and case-control studies was carried out to estimate the prevalence of sarcopenia in people with heart failure (HF) and assess whether there is a diff…",
-            "content": "Citation: Premaor MO, Mendes SdA, Vieira GHSA, Braga CD, Santos AF, Ferreira DSA, et al. (2025) People with heart failure, sarcopenia and chagas disease: A systematic review and meta-analysis. PLoS N… [+24399 chars]"
         }
     ],
     "sec_filings": {
@@ -580,7 +580,7 @@
             "filing_url": "https://www.sec.gov/Archives/edgar/data/320193/000032019325000073/aapl-20250628.htm"
         }
     },
-    "timestamp": "2025-11-11T21:58:28.663198",
+    "timestamp": "2025-11-12T05:51:13.204355",
     "metadata": {
         "wiki_success": true,
         "news_count": 20,

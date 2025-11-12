@@ -27,6 +27,7 @@ from schema_validator import DataQualityReport
 from bias_detector import BiasDetector
 from db_manager import init_db, insert_company, insert_article, insert_sec_filing
 from utils.path_resolver import PathResolver
+from alert_manager import AlertManager
 import sqlite3
 
 logger = logging.getLogger(__name__)
@@ -461,29 +462,118 @@ def check_and_alert_task(**context):
     try:
         logger.info("🔔 Checking alert conditions...")
         
-        # Pull metrics
+        # Pull metrics from previous tasks
         quality_score = safe_xcom_pull(ti, 'quality_score', task_ids='validate_schema')
         anomaly_count = safe_xcom_pull(ti, 'anomaly_count', task_ids='detect_anomalies')
+        company_name = safe_xcom_pull(ti, 'company_name', task_ids='acquire_company_data')
+        bias_report = safe_xcom_pull(ti, 'bias_report', task_ids='detect_bias')
         
-        # Check thresholds
+        # Get article and SEC counts from raw data
+        raw_data = safe_xcom_pull(ti, 'raw_data', task_ids='acquire_company_data')
+        article_count = raw_data.get('metadata', {}).get('news_count', 0) if raw_data else 0
+        sec_count = len(raw_data.get('sec_filings', {})) if raw_data else 0
+        
+        # Initialize alert manager
+        alert_manager = AlertManager()
+        
+        # Check thresholds and collect alerts
         alerts = []
         
         if quality_score < 70:
-            alerts.append(f"⚠️ Low quality score: {quality_score:.1f}/100")
+            alerts.append(f"⚠️ Low quality score: {quality_score:.1f}/100 (threshold: 70)")
         
         if anomaly_count > 5:
-            alerts.append(f"⚠️ High anomaly count: {anomaly_count}")
+            alerts.append(f"⚠️ High anomaly count: {anomaly_count} (threshold: 5)")
         
+        # Check for bias
+        bias_detected = False
+        fairness_score = 0
+        if bias_report:
+            bias_detected = bias_report.get('bias_detected', False)
+            fairness_score = bias_report.get('fairness_metrics', {}).get('overall_fairness_score', 0)
+            
+            if bias_detected and fairness_score < 70:
+                alerts.append(f"⚠️ Bias detected - Fairness score: {fairness_score:.1f}/100")
+        
+        # Determine what to do based on alerts
         if alerts:
-            logger.warning(f"Alerts triggered: {', '.join(alerts)}")
-            # Here you would call alert_manager.py to send emails/Slack
+            logger.warning(f"⚠️ {len(alerts)} alert(s) triggered: {', '.join(alerts)}")
+            
+            # Prepare additional info for email
+            additional_info = {
+                'articles_processed': article_count,
+                'sec_filings_processed': sec_count,
+                'bias_detected': bias_detected,
+                'fairness_score': f"{fairness_score:.1f}/100" if bias_detected else 'N/A'
+            }
+            
+            # Send combined alert email
+            email_sent = alert_manager.send_combined_alert(
+                company_name=company_name or "Unknown Company",
+                quality_score=quality_score,
+                anomaly_count=anomaly_count,
+                alerts=alerts,
+                additional_info=additional_info
+            )
+            
+            if email_sent:
+                logger.info("✅ Alert email sent successfully")
+            else:
+                logger.warning("⚠️ Alert email not sent (disabled or failed)")
+            
+            return {
+                "status": "alerts_triggered",
+                "alert_count": len(alerts),
+                "alerts": alerts,
+                "email_sent": email_sent
+            }
+                
         else:
-            logger.info("✅ All quality checks passed")
-        
-        return {"status": "success", "alerts": alerts}
+            logger.info("✅ All quality checks passed - no alerts needed")
+            
+            # Optionally send success notification
+            # Uncomment these lines if you want success emails:
+            alert_manager.send_success_notification(
+                company_name=company_name or "Unknown Company",
+                quality_score=quality_score,
+                article_count=article_count,
+                sec_count=sec_count
+            )
+            
+            return {
+                "status": "success",
+                "alert_count": 0,
+                "quality_score": quality_score,
+                "anomaly_count": anomaly_count
+            }
         
     except Exception as e:
         logger.error(f"❌ Alert check failed: {e}", exc_info=True)
+        
+        # Try to send failure notification
+        try:
+            alert_manager = AlertManager()
+            company_name = safe_xcom_pull(ti, 'company_name', task_ids='acquire_company_data') or "Unknown"
+            
+            # Send simple error email
+            alert_manager.send_email(
+                subject=f"❌ Pipeline Error: {company_name}",
+                body=f"The alert check task failed with error:\n\n{str(e)}\n\nPlease check Airflow logs for details.",
+                html_body=f"""
+                <html>
+                <body>
+                    <h2 style="color: #f44336;">❌ Pipeline Error</h2>
+                    <p><strong>Company:</strong> {company_name}</p>
+                    <p><strong>Error:</strong></p>
+                    <pre style="background-color: #f5f5f5; padding: 10px;">{str(e)}</pre>
+                    <p>Please check Airflow logs for details.</p>
+                </body>
+                </html>
+                """
+            )
+        except Exception as email_error:
+            logger.error(f"Failed to send failure notification: {email_error}")
+        
         raise
 
 

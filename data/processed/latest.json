@@ -1,5 +1,5 @@
 {
-    "query": "AAPL",
+    "query": "Apple Inc.",
     "ticker": "AAPL",
     "company_name": "Apple Inc.",
     "cik": "320193",
@@ -11,9 +11,29 @@
         "word_count": 13620,
         "section_count": 50,
         "has_infobox": true,
-        "timestamp": "2025-11-11T21:57:39.986603"
+        "timestamp": "2025-11-12T05:50:24.663172"
     },
     "news_articles": [
+        {
+            "title": "Publishers swap traffic angst for strategy in Q3 earnings",
+            "url": "http://digiday.com/media/publishers-swap-traffic-angst-for-strategy-in-q3-earnings/",
+            "source": "Digiday",
+            "published_date": "2025-11-11",
+            "description": "Theres a tone shift in publishers Q3 earnings: focus on video, direct audiences and AI licensing to offset search-driven ad revenue declines.",
+            "content": "The tone has flipped: instead of lamenting lost clicks, publishers are outlining where and how theyre building sustainable growth.Thats been a key throughline in third-quarter publisher earnings call 7330 chars",
+            "word_count": 30,
+            "has_content": true
+        },
+        {
+            "title": "Sony Lifts Forecast as Music Division Soars on Demon Slayer Boom",
+            "url": "https://variety.com/2025/film/news/sony-quarterly-earnings-2025-demon-slayer-1236574634/",
+            "source": "Variety",
+            "published_date": "2025-11-11",
+            "description": "Sony Group Corporation lifted its annual earnings forecast after posting double-digit profit growth for the JulySeptember quarter, fueled by strong performances in its music and image sensor businesses that offset softness in gaming and consumer electronics.",
+            "content": "Sony Group Corporation lifted its annual earnings forecast after posting double-digit profit growth for the JulySeptember quarter, fueled by strong performances in its music and image sensor busines 3547 chars",
+            "word_count": 30,
+            "has_content": true
+        },
         {
             "title": "EU set to relax data protection rules to boost AI growth",
             "url": "https://siliconangle.com/2025/11/10/eu-set-relax-data-protection-rules-boost-ai-growth/",
@@ -193,26 +213,6 @@
             "content": "Manufacturers are moving beyond basic automation toward a new era powered by data and decision intelligence. As cloud technologies mature and artificial intelligence systems take on more complex task 6406 chars",
             "word_count": 31,
             "has_content": true
-        },
-        {
-            "title": "Apple preps major new satellite connectivity features for iPhones and Apple Watches",
-            "url": "https://macdailynews.com/2025/11/10/apple-preps-major-new-satellite-connectivity-features-for-iphones-and-apple-watches/",
-            "source": "Macdailynews.com",
-            "published_date": "2025-11-10",
-            "description": "Apple introduced Emergency SOS via Satellite with the iPhone 14 in 2022, enabling users without cellular coverage to reach emergency The post Apple preps major new satellite connectivity features for iPhones and Apple Watches appeared first on MacDailyNews.",
-            "content": "Apples Emergency SOS via satellite icon Apple introduced Emergency SOS via Satellite with the iPhone 14 in 2022, enabling users without cellular coverage to reach emergency responders through satel 2628 chars",
-            "word_count": 31,
-            "has_content": true
-        },
-        {
-            "title": "People with heart failure, sarcopenia and chagas disease: A systematic review and meta-analysis",
-            "url": "https://journals.plos.org/plosntds/article?id=10.1371/journal.pntd.0013699",
-            "source": "Plos.org",
-            "published_date": "2025-11-10",
-            "description": "Author summary A systematic review of randomized controlled trials, cohort studies, cross-sectional studies, and case-control studies was carried out to estimate the prevalence of sarcopenia in people with heart failure HF and assess whether there is a diff",
-            "content": "Citation: Premaor MO, Mendes SdA, Vieira GHSA, Braga CD, Santos AF, Ferreira DSA, et al. 2025 People with heart failure, sarcopenia and chagas disease: A systematic review and meta-analysis. PLoS N 24399 chars",
-            "word_count": 33,
-            "has_content": true
         }
     ],
     "sec_filings": {
@@ -326,21 +326,22 @@
         "total_news_articles": 20,
         "wikipedia_word_count": 13620,
         "news_sources": [
-            "Plos.org",
+            "Wtaj.com",
+            "Fortune",
+            "Macdailynews.com",
+            "SoraNews24",
+            "Barchart.com",
+            "Digiday",
+            "Financial Post",
+            "Motley Fool Australia",
             "GlobeNewswire",
             "Digitimes",
-            "SoraNews24",
-            "Macdailynews.com",
-            "Wtaj.com",
-            "SiliconANGLE News",
-            "Activistpost.com",
-            "OilPrice.com",
-            "Barchart.com",
-            "Fortune",
             "PetaPixel",
+            "Activistpost.com",
+            "SiliconANGLE News",
             "Biztoc.com",
-            "Financial Post",
-            "Motley Fool Australia"
+            "Variety",
+            "OilPrice.com"
         ],
         "date_range": {
             "earliest": "2025-11-10",
@@ -359,5 +360,5 @@
             ]
         }
     },
-    "timestamp": "2025-11-11T21:58:28.754231"
+    "timestamp": "2025-11-12T05:51:15.350534"
 }
