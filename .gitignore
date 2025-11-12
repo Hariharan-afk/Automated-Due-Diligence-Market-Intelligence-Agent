@@ -24,15 +24,15 @@ webserver_config.py
 # Docker volumes
 postgres-db-volume/
 
-# Data Files (Tracked by DVC)
-data/raw/*
-data/processed/*
-data/*.db
-data/*.sqlite
-data/statistics/*
-data/quality_reports/*
-data/bias_reports/*
-data/metrics/*
+# # Data Files (Tracked by DVC)
+# data/raw/*
+# data/processed/*
+# data/*.db
+# data/*.sqlite
+# data/statistics/*
+# data/quality_reports/*
+# data/bias_reports/*
+# data/metrics/*
 
 # Keep ticker file
 !data/company_tickers.json
@@ -42,9 +42,9 @@ data/metrics/*
 .dvc/tmp
 
 # Logs
-logs/
-*.log
-*.ips
+# logs/
+# *.log
+# *.ips
 
 # Environment Variables - NEVER COMMIT
 .env.example

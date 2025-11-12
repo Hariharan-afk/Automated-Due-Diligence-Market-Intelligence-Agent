@@ -1,0 +1,37 @@
+{
+    "company_name": "MICROSOFT CORP",
+    "ticker": "MSFT",
+    "schema_validation": {
+        "valid": true,
+        "errors": [],
+        "warnings": [
+            "Missing recommended field: wikipedia.title",
+            "Missing recommended field: wikipedia.summary",
+            "Missing recommended field: wikipedia.url"
+        ],
+        "timestamp": "2025-11-11T21:57:16.427235"
+    },
+    "anomaly_detection": {
+        "has_anomalies": true,
+        "anomaly_count": 1,
+        "anomalies": [
+            {
+                "type": "sec_10-q_few_tables",
+                "severity": "warning",
+                "message": "10-Q has only 0 tables",
+                "value": 0
+            }
+        ],
+        "severity_breakdown": {
+            "error": 0,
+            "warning": 1,
+            "info": 0
+        },
+        "timestamp": "2025-11-11T21:57:16.428242"
+    },
+    "overall_quality_score": 80.0,
+    "recommendations": [
+        "Review: 10-Q has only 0 tables"
+    ],
+    "timestamp": "2025-11-11T21:57:16.428242"
+}

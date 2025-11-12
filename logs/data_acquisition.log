@@ -1,0 +1,173 @@
+2025-11-11 21:56:26,598 - __main__ - INFO - ============================================================
+2025-11-11 21:56:26,598 - __main__ - INFO - Starting full pipeline for: MSFT
+2025-11-11 21:56:26,599 - __main__ - INFO - ============================================================
+2025-11-11 21:56:26,599 - __main__ - INFO - 
+🔄 Stage 1: Data Acquisition
+2025-11-11 21:56:26,622 - data_acquisition - INFO - ✅ Loaded 10142 tickers from JSON file
+2025-11-11 21:56:26,622 - wikipediaapi - INFO - Wikipedia: language=en, user_agent: CompanyResearchPipeline/1.0 (research@example.com) (Wikipedia-API/0.6.0; https://github.com/martin-majlis/Wikipedia-API/), extract_format=1
+2025-11-11 21:56:26,714 - sec_fetcher - INFO - Loaded 10142 company tickers
+2025-11-11 21:56:26,716 - sec_fetcher - INFO - SEC Fetcher initialized (cache: True)
+2025-11-11 21:56:26,716 - data_acquisition - INFO - ✅ SEC Fetcher initialized
+2025-11-11 21:56:26,717 - data_acquisition - INFO - 🚀 Starting data acquisition for: MSFT
+2025-11-11 21:56:26,720 - data_acquisition - INFO - ✅ Matched ticker: MSFT -> MICROSOFT CORP
+2025-11-11 21:56:26,720 - data_acquisition - INFO - 🔍 Fetching Wikipedia data for: MICROSOFT CORP
+2025-11-11 21:56:26,721 - wikipediaapi - INFO - Request URL: https://en.wikipedia.org/w/api.php?action=query&prop=info&titles=MICROSOFT CORP&inprop=protection|talkid|watched|watchers|visitingwatchers|notificationtimestamp|subjectid|url|readable|preload|displaytitle
+2025-11-11 21:56:27,180 - data_acquisition - WARNING - ⚠️ Wikipedia page not found for: MICROSOFT CORP
+2025-11-11 21:56:27,532 - data_acquisition - ERROR - ❌ Wikipedia search failed: Expecting value: line 1 column 1 (char 0)
+2025-11-11 21:56:27,534 - data_acquisition - INFO - 🔍 Fetching news from NewsAPI for: MICROSOFT CORP
+2025-11-11 21:56:28,039 - data_acquisition - INFO - ✅ Fetched 20 articles from NewsAPI
+2025-11-11 21:56:28,040 - data_acquisition - INFO - 🔍 Fetching SEC filings for: MSFT
+2025-11-11 21:56:28,041 - sec_fetcher - INFO - Fetching 10-K list for MSFT (789019) using FREE API
+2025-11-11 21:56:28,860 - sec_fetcher - INFO - Found 3 filings for CIK 789019 using free API
+2025-11-11 21:56:28,860 - sec_fetcher - INFO - Latest 10-K: 0000950170-25-100235 filed on 2025-07-30
+2025-11-11 21:56:28,860 - sec_fetcher - WARNING - Error checking cache: attempted relative import with no known parent package
+2025-11-11 21:56:28,861 - sec_fetcher - INFO - Filing 0000950170-25-100235 not cached, extracting using PAID API
+2025-11-11 21:56:34,784 - sec_fetcher - INFO - Extracted Business (49686 chars)
+2025-11-11 21:56:40,220 - sec_fetcher - INFO - Extracted Risk Factors (69661 chars)
+2025-11-11 21:56:46,172 - sec_fetcher - INFO - Extracted MD&A (55269 chars)
+2025-11-11 21:56:52,169 - sec_fetcher - INFO - Extracted Financial Statements (169909 chars)
+2025-11-11 21:56:52,169 - sec_fetcher - INFO - Extracted 4 sections using PAID API
+2025-11-11 21:56:52,169 - sec_fetcher - INFO - Successfully fetched 10-K for MSFT
+2025-11-11 21:56:52,170 - data_acquisition - INFO - ✅ Fetched 10-K: 0000950170-25-100235
+2025-11-11 21:56:52,170 - sec_fetcher - INFO - Fetching 10-Q list for MSFT (789019) using FREE API
+2025-11-11 21:56:58,240 - sec_fetcher - INFO - Found 9 filings for CIK 789019 using free API
+2025-11-11 21:56:58,240 - sec_fetcher - INFO - Latest 10-Q: 0001193125-25-256321 filed on 2025-10-29
+2025-11-11 21:56:58,240 - sec_fetcher - WARNING - Error checking cache: attempted relative import with no known parent package
+2025-11-11 21:56:58,240 - sec_fetcher - INFO - Filing 0001193125-25-256321 not cached, extracting using PAID API
+2025-11-11 21:57:04,151 - sec_fetcher - INFO - Extracted Financial Statements (115839 chars)
+2025-11-11 21:57:10,156 - sec_fetcher - INFO - Extracted MD&A (51962 chars)
+2025-11-11 21:57:16,207 - sec_fetcher - INFO - Extracted Risk Factors (70180 chars)
+2025-11-11 21:57:16,207 - sec_fetcher - INFO - Extracted 3 sections using PAID API
+2025-11-11 21:57:16,207 - sec_fetcher - INFO - Successfully fetched 10-Q for MSFT
+2025-11-11 21:57:16,207 - data_acquisition - INFO - ✅ Fetched 10-Q: 0001193125-25-256321
+2025-11-11 21:57:16,284 - data_acquisition - INFO - 💾 Results saved to: F:\Study\Sem 3\MLops Project\Data_pipeline_final\Automated-Due-Diligence-Market-Intelligence-Agent\data\raw\MICROSOFT_CORP_20251111_215716.json
+2025-11-11 21:57:16,285 - data_acquisition - INFO - 💾 Latest copy created at: F:\Study\Sem 3\MLops Project\Data_pipeline_final\Automated-Due-Diligence-Market-Intelligence-Agent\data\raw\latest.json
+2025-11-11 21:57:16,286 - data_acquisition - INFO - ✅ Data acquisition complete for: MICROSOFT CORP
+2025-11-11 21:57:16,287 - __main__ - INFO -   📰 News articles fetched: 20
+2025-11-11 21:57:16,287 - __main__ - INFO -   📄 SEC filings fetched: 2
+2025-11-11 21:57:16,288 - __main__ - INFO - ✅ Acquisition complete
+2025-11-11 21:57:16,295 - __main__ - INFO - 
+🔄 Stage 2: Data Preprocessing
+2025-11-11 21:57:16,295 - data_preprocessing - INFO - 🔄 Processing data for: MICROSOFT CORP
+2025-11-11 21:57:16,311 - data_preprocessing - INFO -   📄 Processing SEC filings...
+2025-11-11 21:57:16,373 - data_preprocessing - WARNING -   ⚠️  10-K validation failed: ['Missing required field: ticker', 'No sections found in filing']
+2025-11-11 21:57:16,373 - data_preprocessing - WARNING -   ⚠️  10-Q validation failed: ['Missing required field: ticker', 'No sections found in filing']
+2025-11-11 21:57:16,423 - data_preprocessing - INFO - 💾 Processed data saved to: data\processed\MICROSOFT_CORP_processed_20251111_215716.json
+2025-11-11 21:57:16,424 - data_preprocessing - INFO - 💾 Latest copy created at: data\processed\latest.json
+2025-11-11 21:57:16,424 - data_preprocessing - INFO - ✅ Processing complete for: MICROSOFT CORP
+2025-11-11 21:57:16,425 - __main__ - INFO - ✅ Preprocessing complete: 20 articles processed
+2025-11-11 21:57:16,425 - __main__ - INFO - 
+🔄 Stage 3: Schema Validation & Quality Check
+2025-11-11 21:57:16,427 - schema_validator - INFO - 📊 Generating quality report for: MICROSOFT CORP
+2025-11-11 21:57:16,427 - schema_validator - INFO - 🔍 Validating schema for: MICROSOFT CORP
+2025-11-11 21:57:16,427 - schema_validator - INFO - ✅ Schema validation passed
+2025-11-11 21:57:16,427 - schema_validator - INFO - 🔍 Detecting anomalies for: MICROSOFT CORP
+2025-11-11 21:57:16,428 - schema_validator - WARNING - ⚠️ Detected 1 anomalies
+2025-11-11 21:57:16,429 - schema_validator - INFO - 💾 Quality report saved to: data/quality_reports/MICROSOFT_CORP_quality_report.json
+2025-11-11 21:57:16,429 - schema_validator - INFO - ✅ Quality report complete. Score: 80.0/100
+2025-11-11 21:57:16,431 - __main__ - INFO - ✅ Validation complete: Quality Score = 80.0/100
+2025-11-11 21:57:16,432 - __main__ - INFO - 
+🔄 Stage 4: Bias Detection
+2025-11-11 21:57:16,432 - bias_detector - INFO - 🔍 Analyzing bias for: MICROSOFT CORP
+2025-11-11 21:57:16,487 - bias_detector - INFO - 💾 Bias report saved to: data\bias_reports\MICROSOFT_CORP_bias_report.json
+2025-11-11 21:57:16,487 - bias_detector - INFO - ✅ Bias analysis complete. Findings: 1
+2025-11-11 21:57:16,488 - __main__ - WARNING - ⚠️ Bias detected: 1 issues found
+2025-11-11 21:57:16,488 - __main__ - INFO - 
+🔄 Stage 5: Database Storage
+2025-11-11 21:57:16,488 - db_manager - INFO - 🔧 Initializing database: data/company_data.db
+2025-11-11 21:57:16,536 - db_manager - INFO - ✅ Database initialized successfully
+2025-11-11 21:57:16,690 - db_manager - INFO - ✅ Inserted company: MICROSOFT CORP (ID: 2)
+2025-11-11 21:57:18,678 - db_manager - INFO - ✅ Inserted SEC filing:  10-K 0000950170-25-100235 (ID: 1)
+2025-11-11 21:57:18,787 - db_manager - INFO - ✅ Inserted SEC filing:  10-Q 0001193125-25-256321 (ID: 2)
+2025-11-11 21:57:18,788 - __main__ - INFO - ✅ Storage complete: 20 articles, 2 SEC filings stored
+2025-11-11 21:57:18,793 - __main__ - INFO - 
+✅ Pipeline completed successfully for: MSFT
+2025-11-11 21:57:38,342 - __main__ - INFO - ============================================================
+2025-11-11 21:57:38,342 - __main__ - INFO - Starting full pipeline for: AAPL
+2025-11-11 21:57:38,342 - __main__ - INFO - ============================================================
+2025-11-11 21:57:38,343 - __main__ - INFO - 
+🔄 Stage 1: Data Acquisition
+2025-11-11 21:57:38,366 - data_acquisition - INFO - ✅ Loaded 10142 tickers from JSON file
+2025-11-11 21:57:38,367 - wikipediaapi - INFO - Wikipedia: language=en, user_agent: CompanyResearchPipeline/1.0 (research@example.com) (Wikipedia-API/0.6.0; https://github.com/martin-majlis/Wikipedia-API/), extract_format=1
+2025-11-11 21:57:38,462 - sec_fetcher - INFO - Loaded 10142 company tickers
+2025-11-11 21:57:38,462 - sec_fetcher - INFO - SEC Fetcher initialized (cache: True)
+2025-11-11 21:57:38,462 - data_acquisition - INFO - ✅ SEC Fetcher initialized
+2025-11-11 21:57:38,462 - data_acquisition - INFO - 🚀 Starting data acquisition for: AAPL
+2025-11-11 21:57:38,465 - data_acquisition - INFO - ✅ Matched ticker: AAPL -> Apple Inc.
+2025-11-11 21:57:38,466 - data_acquisition - INFO - 🔍 Fetching Wikipedia data for: Apple Inc.
+2025-11-11 21:57:38,466 - wikipediaapi - INFO - Request URL: https://en.wikipedia.org/w/api.php?action=query&prop=info&titles=Apple Inc.&inprop=protection|talkid|watched|watchers|visitingwatchers|notificationtimestamp|subjectid|url|readable|preload|displaytitle
+2025-11-11 21:57:39,267 - wikipediaapi - INFO - Request URL: https://en.wikipedia.org/w/api.php?action=query&prop=extracts&titles=Apple Inc.&explaintext=1&exsectionformat=wiki
+2025-11-11 21:57:39,475 - wikipediaapi - INFO - Request URL: https://en.wikipedia.org/w/api.php?action=query&prop=categories&titles=Apple Inc.&cllimit=500
+2025-11-11 21:57:39,574 - wikipediaapi - INFO - Request URL: https://en.wikipedia.org/w/api.php?action=query&prop=links&titles=Apple Inc.&pllimit=500
+2025-11-11 21:57:39,667 - wikipediaapi - INFO - Request URL: https://en.wikipedia.org/w/api.php?action=query&prop=links&titles=Apple Inc.&pllimit=500&plcontinue=856|0|Diodes_Incorporated
+2025-11-11 21:57:39,764 - wikipediaapi - INFO - Request URL: https://en.wikipedia.org/w/api.php?action=query&prop=links&titles=Apple Inc.&pllimit=500&plcontinue=856|0|List_of_iPad_accessories&format=json&redirects=1
+2025-11-11 21:57:39,870 - wikipediaapi - INFO - Request URL: https://en.wikipedia.org/w/api.php?action=query&prop=links&titles=Apple Inc.&pllimit=500&plcontinue=856|0|Sony&format=json&redirects=1
+2025-11-11 21:57:39,986 - data_acquisition - INFO - ✅ Successfully fetched Wikipedia data for: Apple Inc.
+2025-11-11 21:57:39,987 - data_acquisition - INFO - 🔍 Fetching news from NewsAPI for: Apple Inc.
+2025-11-11 21:57:40,508 - data_acquisition - INFO - ✅ Fetched 20 articles from NewsAPI
+2025-11-11 21:57:40,509 - data_acquisition - INFO - 🔍 Fetching SEC filings for: AAPL
+2025-11-11 21:57:40,510 - sec_fetcher - INFO - Fetching 10-K list for AAPL (320193) using FREE API
+2025-11-11 21:57:41,259 - sec_fetcher - INFO - Found 3 filings for CIK 320193 using free API
+2025-11-11 21:57:41,260 - sec_fetcher - INFO - Latest 10-K: 0000320193-25-000079 filed on 2025-10-31
+2025-11-11 21:57:41,260 - sec_fetcher - WARNING - Error checking cache: attempted relative import with no known parent package
+2025-11-11 21:57:41,260 - sec_fetcher - INFO - Filing 0000320193-25-000079 not cached, extracting using PAID API
+2025-11-11 21:57:47,102 - sec_fetcher - INFO - Extracted Business (16644 chars)
+2025-11-11 21:57:52,648 - sec_fetcher - INFO - Extracted Risk Factors (69877 chars)
+2025-11-11 21:57:58,670 - sec_fetcher - INFO - Extracted MD&A (18851 chars)
+2025-11-11 21:58:04,702 - sec_fetcher - INFO - Extracted Financial Statements (68862 chars)
+2025-11-11 21:58:04,702 - sec_fetcher - INFO - Extracted 4 sections using PAID API
+2025-11-11 21:58:04,702 - sec_fetcher - INFO - Successfully fetched 10-K for AAPL
+2025-11-11 21:58:04,703 - data_acquisition - INFO - ✅ Fetched 10-K: 0000320193-25-000079
+2025-11-11 21:58:04,703 - sec_fetcher - INFO - Fetching 10-Q list for AAPL (320193) using FREE API
+2025-11-11 21:58:10,701 - sec_fetcher - INFO - Found 9 filings for CIK 320193 using free API
+2025-11-11 21:58:10,701 - sec_fetcher - INFO - Latest 10-Q: 0000320193-25-000073 filed on 2025-08-01
+2025-11-11 21:58:10,701 - sec_fetcher - WARNING - Error checking cache: attempted relative import with no known parent package
+2025-11-11 21:58:10,701 - sec_fetcher - INFO - Filing 0000320193-25-000073 not cached, extracting using PAID API
+2025-11-11 21:58:16,646 - sec_fetcher - INFO - Extracted Financial Statements (29805 chars)
+2025-11-11 21:58:22,623 - sec_fetcher - INFO - Extracted MD&A (20539 chars)
+2025-11-11 21:58:28,661 - sec_fetcher - INFO - Extracted Risk Factors (1060 chars)
+2025-11-11 21:58:28,662 - sec_fetcher - INFO - Extracted 3 sections using PAID API
+2025-11-11 21:58:28,662 - sec_fetcher - INFO - Successfully fetched 10-Q for AAPL
+2025-11-11 21:58:28,662 - data_acquisition - INFO - ✅ Fetched 10-Q: 0000320193-25-000073
+2025-11-11 21:58:28,714 - data_acquisition - INFO - 💾 Results saved to: F:\Study\Sem 3\MLops Project\Data_pipeline_final\Automated-Due-Diligence-Market-Intelligence-Agent\data\raw\Apple_Inc._20251111_215828.json
+2025-11-11 21:58:28,714 - data_acquisition - INFO - 💾 Latest copy created at: F:\Study\Sem 3\MLops Project\Data_pipeline_final\Automated-Due-Diligence-Market-Intelligence-Agent\data\raw\latest.json
+2025-11-11 21:58:28,716 - data_acquisition - INFO - ✅ Data acquisition complete for: Apple Inc.
+2025-11-11 21:58:28,717 - __main__ - INFO -   📰 News articles fetched: 20
+2025-11-11 21:58:28,717 - __main__ - INFO -   📄 SEC filings fetched: 2
+2025-11-11 21:58:28,717 - __main__ - INFO - ✅ Acquisition complete
+2025-11-11 21:58:28,721 - __main__ - INFO - 
+🔄 Stage 2: Data Preprocessing
+2025-11-11 21:58:28,721 - data_preprocessing - INFO - 🔄 Processing data for: Apple Inc.
+2025-11-11 21:58:28,734 - data_preprocessing - INFO -   📄 Processing SEC filings...
+2025-11-11 21:58:28,754 - data_preprocessing - WARNING -   ⚠️  10-K validation failed: ['Missing required field: ticker', 'No sections found in filing']
+2025-11-11 21:58:28,754 - data_preprocessing - WARNING -   ⚠️  10-Q validation failed: ['Missing required field: ticker', 'No sections found in filing']
+2025-11-11 21:58:28,777 - data_preprocessing - INFO - 💾 Processed data saved to: data\processed\Apple_Inc._processed_20251111_215828.json
+2025-11-11 21:58:28,778 - data_preprocessing - INFO - 💾 Latest copy created at: data\processed\latest.json
+2025-11-11 21:58:28,778 - data_preprocessing - INFO - ✅ Processing complete for: Apple Inc.
+2025-11-11 21:58:28,778 - __main__ - INFO - ✅ Preprocessing complete: 20 articles processed
+2025-11-11 21:58:28,778 - __main__ - INFO - 
+🔄 Stage 3: Schema Validation & Quality Check
+2025-11-11 21:58:28,778 - schema_validator - INFO - 📊 Generating quality report for: Apple Inc.
+2025-11-11 21:58:28,780 - schema_validator - INFO - 🔍 Validating schema for: Apple Inc.
+2025-11-11 21:58:28,780 - schema_validator - INFO - ✅ Schema validation passed
+2025-11-11 21:58:28,780 - schema_validator - INFO - 🔍 Detecting anomalies for: Apple Inc.
+2025-11-11 21:58:28,781 - schema_validator - WARNING - ⚠️ Detected 2 anomalies
+2025-11-11 21:58:28,781 - schema_validator - INFO - 💾 Quality report saved to: data/quality_reports/Apple_Inc._quality_report.json
+2025-11-11 21:58:28,782 - schema_validator - INFO - ✅ Quality report complete. Score: 90.0/100
+2025-11-11 21:58:28,783 - __main__ - INFO - ✅ Validation complete: Quality Score = 90.0/100
+2025-11-11 21:58:28,783 - __main__ - INFO - 
+🔄 Stage 4: Bias Detection
+2025-11-11 21:58:28,784 - bias_detector - INFO - 🔍 Analyzing bias for: Apple Inc.
+2025-11-11 21:58:28,790 - bias_detector - INFO - 💾 Bias report saved to: data\bias_reports\Apple_Inc._bias_report.json
+2025-11-11 21:58:28,790 - bias_detector - INFO - ✅ Bias analysis complete. Findings: 1
+2025-11-11 21:58:28,793 - __main__ - WARNING - ⚠️ Bias detected: 1 issues found
+2025-11-11 21:58:28,793 - __main__ - INFO - 
+🔄 Stage 5: Database Storage
+2025-11-11 21:58:28,793 - db_manager - INFO - 🔧 Initializing database: data/company_data.db
+2025-11-11 21:58:28,794 - db_manager - INFO - ✅ Database initialized successfully
+2025-11-11 21:58:28,944 - db_manager - INFO - ✅ Inserted company: Apple Inc. (ID: 3)
+2025-11-11 21:58:30,697 - db_manager - INFO - ✅ Inserted SEC filing:  10-K 0000320193-25-000079 (ID: 3)
+2025-11-11 21:58:30,796 - db_manager - INFO - ✅ Inserted SEC filing:  10-Q 0000320193-25-000073 (ID: 4)
+2025-11-11 21:58:30,798 - __main__ - INFO - ✅ Storage complete: 20 articles, 2 SEC filings stored
+2025-11-11 21:58:30,803 - __main__ - INFO - 
+✅ Pipeline completed successfully for: AAPL

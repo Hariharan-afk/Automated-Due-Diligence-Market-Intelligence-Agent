@@ -1,0 +1,122 @@
+{
+    "company_name": "Apple Inc.",
+    "total_articles": 20,
+    "total_sec_filings": 2,
+    "analysis": {
+        "news": {
+            "source_distribution": {
+                "total_sources": 15,
+                "distribution": {
+                    "SiliconANGLE News": 3,
+                    "Biztoc.com": 2,
+                    "Macdailynews.com": 2,
+                    "GlobeNewswire": 2,
+                    "Digitimes": 1,
+                    "SoraNews24": 1,
+                    "OilPrice.com": 1,
+                    "Activistpost.com": 1,
+                    "PetaPixel": 1,
+                    "Motley Fool Australia": 1,
+                    "Wtaj.com": 1,
+                    "Financial Post": 1,
+                    "Barchart.com": 1,
+                    "Fortune": 1,
+                    "Plos.org": 1
+                },
+                "percentages": {
+                    "SiliconANGLE News": 15.0,
+                    "Biztoc.com": 10.0,
+                    "Macdailynews.com": 10.0,
+                    "GlobeNewswire": 10.0,
+                    "Digitimes": 5.0,
+                    "SoraNews24": 5.0,
+                    "OilPrice.com": 5.0,
+                    "Activistpost.com": 5.0,
+                    "PetaPixel": 5.0,
+                    "Motley Fool Australia": 5.0,
+                    "Wtaj.com": 5.0,
+                    "Financial Post": 5.0,
+                    "Barchart.com": 5.0,
+                    "Fortune": 5.0,
+                    "Plos.org": 5.0
+                },
+                "dominance_ratio": 0.15,
+                "gini_coefficient": -0.19333333333333336
+            },
+            "temporal_distribution": {
+                "date_range": {
+                    "earliest": "2025-11-10",
+                    "latest": "2025-11-11"
+                },
+                "monthly_distribution": {
+                    "2025-11": 20
+                },
+                "recency_bias": 1.0
+            },
+            "quality_across_slices": {
+                "mean_word_count": 34.45,
+                "std_word_count": 3.0689446154389266
+            }
+        },
+        "sec": {
+            "fiscal_year_distribution": {
+                "years_covered": [
+                    2025
+                ],
+                "is_continuous": true
+            },
+            "filing_type_coverage": {
+                "types_available": [
+                    "10-K",
+                    "10-Q"
+                ],
+                "has_10k": true,
+                "has_10q": true,
+                "has_both": true,
+                "balance_score": 1.0
+            },
+            "section_completeness": {
+                "10-K": {
+                    "expected": 4,
+                    "actual": 4,
+                    "completeness_ratio": 1.0
+                },
+                "10-Q": {
+                    "expected": 3,
+                    "actual": 3,
+                    "completeness_ratio": 1.0
+                }
+            },
+            "company_size_indicators": {
+                "10-K": {
+                    "total_words": 25337
+                },
+                "10-Q": {
+                    "total_words": 7941
+                }
+            }
+        }
+    },
+    "fairness_metrics": {
+        "source_balance_score": 95.30000000000001,
+        "temporal_fairness_score": 0,
+        "filing_coverage_score": 100.0,
+        "section_completeness_score": 100.0,
+        "overall_fairness_score": 73.82
+    },
+    "bias_findings": [
+        {
+            "type": "recency_bias",
+            "severity": "medium",
+            "description": "Recent articles dominate the dataset (recency bias detected)"
+        }
+    ],
+    "bias_detected": true,
+    "recommendations": [
+        "Include older articles to reduce recency skew."
+    ],
+    "timestamp": "2025-11-11T21:58:28.789894",
+    "mitigation_actions": [
+        "No mitigation required."
+    ]
+}

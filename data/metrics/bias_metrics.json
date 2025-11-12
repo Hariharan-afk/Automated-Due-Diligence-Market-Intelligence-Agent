@@ -1,0 +1,16 @@
+[
+  {
+    "company": "MICROSOFT CORP",
+    "bias_detected": true,
+    "fairness_score": 73.97,
+    "bias_findings_count": 1,
+    "timestamp": "2025-11-11 21:57:16"
+  },
+  {
+    "company": "Apple Inc.",
+    "bias_detected": true,
+    "fairness_score": 73.82,
+    "bias_findings_count": 1,
+    "timestamp": "2025-11-11 21:58:28"
+  }
+]

@@ -1,0 +1,40 @@
+{
+    "company_name": "Apple Inc.",
+    "ticker": "AAPL",
+    "schema_validation": {
+        "valid": true,
+        "errors": [],
+        "warnings": [],
+        "timestamp": "2025-11-11T21:58:28.780482"
+    },
+    "anomaly_detection": {
+        "has_anomalies": true,
+        "anomaly_count": 2,
+        "anomalies": [
+            {
+                "type": "sec_10-q_short_section",
+                "severity": "warning",
+                "message": "10-Q section 'Risk Factors' unusually short: 161 words",
+                "value": 161
+            },
+            {
+                "type": "sec_10-q_few_tables",
+                "severity": "warning",
+                "message": "10-Q has only 0 tables",
+                "value": 0
+            }
+        ],
+        "severity_breakdown": {
+            "error": 0,
+            "warning": 2,
+            "info": 0
+        },
+        "timestamp": "2025-11-11T21:58:28.780482"
+    },
+    "overall_quality_score": 90.0,
+    "recommendations": [
+        "Review: 10-Q section 'Risk Factors' unusually short: 161 words",
+        "Review: 10-Q has only 0 tables"
+    ],
+    "timestamp": "2025-11-11T21:58:28.781489"
+}

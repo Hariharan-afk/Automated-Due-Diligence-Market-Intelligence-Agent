@@ -1,0 +1,16 @@
+[
+  {
+    "company": "MICROSOFT CORP",
+    "ticker": "MSFT",
+    "articles_stored": 20,
+    "sec_filings_stored": 2,
+    "timestamp": "2025-11-11 21:57:18"
+  },
+  {
+    "company": "Apple Inc.",
+    "ticker": "AAPL",
+    "articles_stored": 20,
+    "sec_filings_stored": 2,
+    "timestamp": "2025-11-11 21:58:30"
+  }
+]

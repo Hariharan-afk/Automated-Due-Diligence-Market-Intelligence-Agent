@@ -1,0 +1,112 @@
+{
+    "company_name": "MICROSOFT CORP",
+    "total_articles": 20,
+    "total_sec_filings": 2,
+    "analysis": {
+        "news": {
+            "source_distribution": {
+                "total_sources": 10,
+                "distribution": {
+                    "SiliconANGLE News": 4,
+                    "BleepingComputer": 4,
+                    "Yahoo Entertainment": 4,
+                    "GlobeNewswire": 2,
+                    "Nature.com": 1,
+                    "CNET": 1,
+                    "Barchart.com": 1,
+                    "Biztoc.com": 1,
+                    "Fortune": 1,
+                    "MarketWatch": 1
+                },
+                "percentages": {
+                    "SiliconANGLE News": 20.0,
+                    "BleepingComputer": 20.0,
+                    "Yahoo Entertainment": 20.0,
+                    "GlobeNewswire": 10.0,
+                    "Nature.com": 5.0,
+                    "CNET": 5.0,
+                    "Barchart.com": 5.0,
+                    "Biztoc.com": 5.0,
+                    "Fortune": 5.0,
+                    "MarketWatch": 5.0
+                },
+                "dominance_ratio": 0.2,
+                "gini_coefficient": -0.33000000000000007
+            },
+            "temporal_distribution": {
+                "date_range": {
+                    "earliest": "2025-11-08",
+                    "latest": "2025-11-11"
+                },
+                "monthly_distribution": {
+                    "2025-11": 20
+                },
+                "recency_bias": 1.0
+            },
+            "quality_across_slices": {
+                "mean_word_count": 34.0,
+                "std_word_count": 4.507304013896134
+            }
+        },
+        "sec": {
+            "fiscal_year_distribution": {
+                "years_covered": [
+                    2025
+                ],
+                "is_continuous": true
+            },
+            "filing_type_coverage": {
+                "types_available": [
+                    "10-K",
+                    "10-Q"
+                ],
+                "has_10k": true,
+                "has_10q": true,
+                "has_both": true,
+                "balance_score": 1.0
+            },
+            "section_completeness": {
+                "10-K": {
+                    "expected": 4,
+                    "actual": 4,
+                    "completeness_ratio": 1.0
+                },
+                "10-Q": {
+                    "expected": 3,
+                    "actual": 3,
+                    "completeness_ratio": 1.0
+                }
+            },
+            "company_size_indicators": {
+                "10-K": {
+                    "total_words": 47615
+                },
+                "10-Q": {
+                    "total_words": 32701
+                }
+            }
+        }
+    },
+    "fairness_metrics": {
+        "source_balance_score": 95.89999999999999,
+        "temporal_fairness_score": 0,
+        "filing_coverage_score": 100.0,
+        "section_completeness_score": 100.0,
+        "overall_fairness_score": 73.97
+    },
+    "bias_findings": [
+        {
+            "type": "recency_bias",
+            "severity": "medium",
+            "description": "Recent articles dominate the dataset (recency bias detected)"
+        }
+    ],
+    "bias_detected": true,
+    "recommendations": [
+        "Include older articles to reduce recency skew."
+    ],
+    "timestamp": "2025-11-11T21:57:16.485920",
+    "mitigation_actions": [
+        "No mitigation required."
+    ]
+}

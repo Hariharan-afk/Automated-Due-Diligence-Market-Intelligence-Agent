@@ -1,0 +1,18 @@
+[
+  {
+    "company": "MICROSOFT CORP",
+    "ticker": "MSFT",
+    "news_count": 20,
+    "sec_filings_count": 2,
+    "wikipedia_fetched": false,
+    "timestamp": "2025-11-11 21:57:16"
+  },
+  {
+    "company": "Apple Inc.",
+    "ticker": "AAPL",
+    "news_count": 20,
+    "sec_filings_count": 2,
+    "wikipedia_fetched": true,
+    "timestamp": "2025-11-11 21:58:28"
+  }
+]
