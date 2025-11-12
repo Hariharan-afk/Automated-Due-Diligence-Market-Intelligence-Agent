@@ -47,7 +47,7 @@ postgres-db-volume/
 # *.ips
 
 # Environment Variables - NEVER COMMIT
-.env.example
+.env
 
 # Exports
 exports/*.csv
