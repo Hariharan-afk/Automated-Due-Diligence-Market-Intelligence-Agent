@@ -4,7 +4,6 @@ __pycache__/
 *.py[cod]
 .venv/
 venv/
-data/
 *.log
 logs/
 docker/logs/
@@ -16,3 +15,20 @@ docker/init-scripts/
 Archive.zip
 *.zip
 *.tar.gz
+
+# Data - exclude everything except validation
+data/*
+!data/validation/
+data/validation/*
+!data/validation/ground_truth.json
+
+# MLflow
+mlruns/
+mlartifacts/
+
+# Validation results (generated files)
+results/
+temp_reports/
+
+# Model registry (local versions)
+model_registry/

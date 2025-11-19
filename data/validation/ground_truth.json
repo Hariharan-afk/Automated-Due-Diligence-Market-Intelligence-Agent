@@ -1,0 +1,67 @@
+{
+  "created_at": "2025-11-18T19:57:24.016989",
+  "description": "Ground truth dataset for retrieval evaluation",
+  "version": "1.0",
+  "queries": [
+    {
+      "query": "What are Apple's main revenue sources?",
+      "ticker": "AAPL",
+      "category": "revenue",
+      "relevant_chunks": []
+    },
+    {
+      "query": "What are the regulatory risks facing tech companies?",
+      "ticker": null,
+      "category": "risk",
+      "relevant_chunks": []
+    },
+    {
+      "query": "Describe Microsoft's cloud computing business",
+      "ticker": "MSFT",
+      "category": "business_model",
+      "relevant_chunks": []
+    },
+    {
+      "query": "What is Amazon's AI and machine learning strategy?",
+      "ticker": "AMZN",
+      "category": "technology",
+      "relevant_chunks": []
+    },
+    {
+      "query": "Tesla's manufacturing capacity and production numbers",
+      "ticker": "TSLA",
+      "category": "operations",
+      "relevant_chunks": []
+    },
+    {
+      "query": "Google's advertising revenue trends",
+      "ticker": "GOOGL",
+      "category": "revenue",
+      "relevant_chunks": []
+    },
+    {
+      "query": "What are the cybersecurity risks mentioned in filings?",
+      "ticker": null,
+      "category": "risk",
+      "relevant_chunks": []
+    },
+    {
+      "query": "R&D spending and innovation initiatives",
+      "ticker": null,
+      "category": "innovation",
+      "relevant_chunks": []
+    },
+    {
+      "query": "Supply chain dependencies and risks",
+      "ticker": null,
+      "category": "risk",
+      "relevant_chunks": []
+    },
+    {
+      "query": "Employee headcount and talent strategy",
+      "ticker": null,
+      "category": "hr",
+      "relevant_chunks": []
+    }
+  ]
+}
