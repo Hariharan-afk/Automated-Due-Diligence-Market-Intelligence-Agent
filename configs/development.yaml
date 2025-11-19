@@ -1,0 +1,166 @@
+# Combined Data Pipeline Configuration - Development Environment
+
+environment: development
+
+database:
+  postgres:
+    host: localhost  # Use localhost when running scripts from host machine
+    port: 5432
+    database: due_diligence_dev
+    user: pipeline_user
+    password: ${POSTGRES_PASSWORD}  # From environment variable
+
+  qdrant:
+    host: localhost  # Use localhost when running scripts from host machine
+    port: 6333
+    grpc_port: 6334
+    collection: due_diligence_kb
+
+storage:
+  type: local
+  base_path: ./data
+  # Future: support for s3, gcs
+  # s3:
+  #   bucket: due-diligence-data
+  #   region: us-east-1
+
+pipeline:
+  # Default chunking (can be overridden per source type)
+  chunk_size: 512
+  chunk_overlap: 50
+  batch_size: 32
+  embedding_model: all-mpnet-base-v2
+
+  # Source-specific chunking (see sections_config.yaml for SEC details)
+  chunking:
+    sec:
+      # Section-specific sizes defined in sections_config.yaml
+      use_section_specific: true
+      default_chunk_size: 512
+      default_overlap: 50
+
+    wikipedia:
+      chunk_size: 512
+      chunk_overlap: 50
+
+    news:
+      chunk_size: 512
+      chunk_overlap: 50
+
+apis:
+  # SEC Edgar API
+  sec:
+    base_url: https://data.sec.gov
+    rate_limit: 10  # requests per second
+    user_agent: "University Research Pipeline research@university.edu"
+
+    # Date range for fetching filings
+    fetch_start_date: "2024-01-01"
+    fetch_end_date: null  # null = today
+
+    # Pagination
+    max_results_per_query: 50
+    fetch_all_pages: true
+
+    # sec-api.io (if using paid service)
+    api_key: ${SEC_API_KEY}  # Optional, from environment
+
+  # Groq LLM API (for table summarization)
+  groq:
+    api_key: ${GROQ_API_KEY}
+    model: "llama-3.1-8b-instant"
+    max_tokens: 500
+    temperature: 0.1
+    top_p: 0.9
+    timeout: 30
+    track_usage: true
+    log_api_calls: true
+
+  # NewsAPI
+  newsapi:
+    api_key: ${NEWSAPI_KEY}
+    rate_limit: 1000  # per day (free tier)
+    fetch_days: 3  # Last N days
+    relevance_threshold: 0.3
+    language: en
+
+  # GDELT (backup news source)
+  gdelt:
+    base_url: https://api.gdeltproject.org/api/v2/doc/doc
+    rate_limit: 10
+    fetch_days: 3
+
+# Data retention policies
+retention:
+  news_articles:
+    days: 3  # Delete news older than 3 days
+
+  cache:
+    table_summaries:
+      days: 30  # Keep LLM summaries for 30 days
+    api_responses:
+      days: 7  # Keep API response cache for 7 days
+
+  sec_filings:
+    permanent: true  # Never delete SEC filings
+
+  wikipedia:
+    permanent: true  # Keep Wikipedia, update in place
+
+# Airflow scheduling
+scheduling:
+  sec_filings:
+    schedule: "0 0 * * *"  # Daily at midnight
+    initial_backfill: true  # Fetch historical data on first run
+
+  wikipedia:
+    schedule: "0 3 * * 0"  # Sundays at 3 AM
+
+  news:
+    schedule: "0 */6 * * *"  # Every 6 hours
+
+  cleanup:
+    schedule: "0 1 * * *"  # Daily at 1 AM
+
+logging:
+  level: DEBUG
+  format: json
+  file: ./monitoring/logs/pipeline.log
+  max_bytes: 10485760  # 10MB
+  backup_count: 5
+
+# Data quality thresholds
+data_quality:
+  min_chunk_tokens: 50  # Minimum tokens per chunk
+  max_chunk_tokens: 1024  # Maximum tokens per chunk
+  min_text_length: 100  # Minimum characters for valid text
+  english_threshold: 0.7  # 70% English words required
+
+  # Embedding validation
+  embedding_dimension: 768
+  check_normalization: true
+
+  # Completeness checks
+  sec_filing:
+    min_sections: 2  # At least 2 sections required
+    min_chunks_per_filing: 5
+
+  wikipedia:
+    min_chunks_per_page: 3
+
+  news:
+    min_chunks_per_article: 1
+
+# Monitoring and alerting
+monitoring:
+  prometheus:
+    enabled: false  # Set to true for production
+    port: 9090
+
+  grafana:
+    enabled: false
+    port: 3000
+
+  alerts:
+    email: research@university.edu
+    slack_webhook: ${SLACK_WEBHOOK}  # Optional

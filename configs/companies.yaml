@@ -1,0 +1,32 @@
+# data-pipeline/configs/companies.yaml
+
+companies:
+  - ticker: AAPL
+    name: Apple Inc.
+    cik: "0000320193"
+    sector: Technology
+    industry: Consumer Electronics
+    
+  - ticker: MSFT
+    name: Microsoft Corporation
+    cik: "0000789019"
+    sector: Technology
+    industry: Software
+    
+  - ticker: GOOGL
+    name: Alphabet Inc.
+    cik: "0001652044"
+    sector: Technology
+    industry: Internet Services
+    
+  - ticker: AMZN
+    name: Amazon.com Inc.
+    cik: "0001018724"
+    sector: Consumer Cyclical
+    industry: Internet Retail
+    
+  - ticker: TSLA
+    name: Tesla Inc.
+    cik: "0001318605"
+    sector: Consumer Cyclical
+    industry: Auto Manufacturers
