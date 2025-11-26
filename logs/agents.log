@@ -1,0 +1,1674 @@
+2025-11-23 03:08:42,880 INFO [Analyser] Decomposing query: 'Compare TechCorp and FinanceInc revenue growth in 2024'
+2025-11-23 03:08:43,710 INFO [Analyser] Generated 5 sub-queries:
+2025-11-23 03:08:43,711 INFO [Analyser]   1. TechCorp 2024 revenue
+2025-11-23 03:08:43,712 INFO [Analyser]   2. TechCorp 2023 revenue
+2025-11-23 03:08:43,713 INFO [Analyser]   3. FinanceInc 2024 revenue
+2025-11-23 03:08:43,713 INFO [Analyser]   4. FinanceInc 2023 revenue
+2025-11-23 03:08:43,714 INFO [Analyser]   5. Calculate revenue growth rate
+2025-11-23 03:08:43,715 INFO [Researcher] Researching 5 sub-queries...
+2025-11-23 03:08:43,715 INFO [Researcher] Sub-query 1: 'TechCorp 2024 revenue'
+2025-11-23 03:08:45,973 INFO [Researcher]   → Retrieved 5 chunks (avg score: 10.027)
+2025-11-23 03:08:45,983 INFO [Researcher] Sub-query 2: 'TechCorp 2023 revenue'
+2025-11-23 03:08:46,274 INFO [Researcher]   → Retrieved 5 chunks (avg score: 10.255)
+2025-11-23 03:08:46,274 INFO [Researcher] Sub-query 3: 'FinanceInc 2024 revenue'
+2025-11-23 03:08:46,572 INFO [Researcher]   → Retrieved 5 chunks (avg score: 9.774)
+2025-11-23 03:08:46,573 INFO [Researcher] Sub-query 4: 'FinanceInc 2023 revenue'
+2025-11-23 03:08:46,882 INFO [Researcher]   → Retrieved 5 chunks (avg score: 9.959)
+2025-11-23 03:08:46,882 INFO [Researcher] Sub-query 5: 'Calculate revenue growth rate'
+2025-11-23 03:08:47,256 INFO [Researcher]   → Retrieved 5 chunks (avg score: -5.385)
+2025-11-23 03:08:47,256 INFO [Researcher] Total chunks retrieved: 25
+2025-11-23 03:08:47,257 INFO [Synthesiser] Generating answer...
+2025-11-23 03:08:50,347 INFO [Synthesiser] Answer generated (confidence: 6.93)
+2025-11-23 03:09:11,782 INFO [Analyser] Decomposing query: 'Investment oppurtunities on apple'
+2025-11-23 03:09:12,519 INFO [Analyser] Generated 5 sub-queries:
+2025-11-23 03:09:12,519 INFO [Analyser]   1. Apple stock analysis and financial performance
+2025-11-23 03:09:12,522 INFO [Analyser]   2. Apple's competitive landscape and market share
+2025-11-23 03:09:12,522 INFO [Analyser]   3. Apple's future growth prospects and investment risks
+2025-11-23 03:09:12,522 INFO [Analyser]   4. Analyst ratings and price targets for Apple stock
+2025-11-23 03:09:12,522 INFO [Analyser]   5. Apple's dividend history and shareholder returns
+2025-11-23 03:09:12,523 INFO [Researcher] Researching 5 sub-queries...
+2025-11-23 03:09:12,524 INFO [Researcher] Sub-query 1: 'Apple stock analysis and financial performance'
+2025-11-23 03:09:12,829 INFO [Researcher]   → Retrieved 5 chunks (avg score: -10.530)
+2025-11-23 03:09:12,830 INFO [Researcher] Sub-query 2: 'Apple's competitive landscape and market share'
+2025-11-23 03:09:13,146 INFO [Researcher]   → Retrieved 5 chunks (avg score: -9.569)
+2025-11-23 03:09:13,146 INFO [Researcher] Sub-query 3: 'Apple's future growth prospects and investment risks'
+2025-11-23 03:09:13,436 INFO [Researcher]   → Retrieved 5 chunks (avg score: -10.983)
+2025-11-23 03:09:13,436 INFO [Researcher] Sub-query 4: 'Analyst ratings and price targets for Apple stock'
+2025-11-23 03:09:13,720 INFO [Researcher]   → Retrieved 5 chunks (avg score: -10.885)
+2025-11-23 03:09:13,721 INFO [Researcher] Sub-query 5: 'Apple's dividend history and shareholder returns'
+2025-11-23 03:09:14,019 INFO [Researcher]   → Retrieved 5 chunks (avg score: -11.151)
+2025-11-23 03:09:14,020 INFO [Researcher] Total chunks retrieved: 25
+2025-11-23 03:09:14,020 INFO [Synthesiser] Generating answer...
+2025-11-23 03:09:23,498 INFO [Synthesiser] Answer generated (confidence: -10.62)
+2025-11-23 08:28:58,569 INFO [Analyser] Decomposing query: 'Compare TechCorp and FinanceInc revenue growth in 2024'
+2025-11-23 08:28:59,540 INFO [Analyser] Generated 4 sub-queries:
+2025-11-23 08:28:59,541 INFO [Analyser]   1. What was TechCorp's revenue growth in 2024?
+2025-11-23 08:28:59,542 INFO [Analyser]   2. What was FinanceInc's revenue growth in 2024?
+2025-11-23 08:28:59,543 INFO [Analyser]   3. What is TechCorp's industry sector?
+2025-11-23 08:28:59,544 INFO [Analyser]   4. What is FinanceInc's industry sector?
+2025-11-23 08:28:59,546 INFO [Researcher] Researching 4 sub-queries...
+2025-11-23 08:28:59,547 INFO [Researcher] Sub-query 1: 'What was TechCorp's revenue growth in 2024?'
+2025-11-23 08:29:01,621 INFO [Researcher]   → Retrieved 5 chunks (avg score: 9.193)
+2025-11-23 08:29:01,624 INFO [Researcher] Sub-query 2: 'What was FinanceInc's revenue growth in 2024?'
+2025-11-23 08:29:01,915 INFO [Researcher]   → Retrieved 5 chunks (avg score: 8.995)
+2025-11-23 08:29:01,920 INFO [Researcher] Sub-query 3: 'What is TechCorp's industry sector?'
+2025-11-23 08:29:02,217 INFO [Researcher]   → Retrieved 5 chunks (avg score: 3.924)
+2025-11-23 08:29:02,218 INFO [Researcher] Sub-query 4: 'What is FinanceInc's industry sector?'
+2025-11-23 08:29:02,498 INFO [Researcher]   → Retrieved 5 chunks (avg score: 3.775)
+2025-11-23 08:29:02,499 INFO [Researcher] Total chunks retrieved: 20
+2025-11-23 08:29:02,502 INFO [Synthesiser] Generating answer...
+2025-11-23 08:29:06,196 INFO [Synthesiser] Answer generated (confidence: 6.47)
+2025-11-23 08:29:35,594 INFO [Analyser] Decomposing query: 'What is the profit loss of FinanceInc'
+2025-11-23 08:29:36,154 INFO [Analyser] Generated 4 sub-queries:
+2025-11-23 08:29:36,156 INFO [Analyser]   1. FinanceInc financial performance
+2025-11-23 08:29:36,157 INFO [Analyser]   2. FinanceInc profit margin
+2025-11-23 08:29:36,157 INFO [Analyser]   3. FinanceInc revenue and expenses
+2025-11-23 08:29:36,158 INFO [Analyser]   4. FinanceInc net income
+2025-11-23 08:29:36,161 INFO [Researcher] Researching 4 sub-queries...
+2025-11-23 08:29:36,161 INFO [Researcher] Sub-query 1: 'FinanceInc financial performance'
+2025-11-23 08:29:36,406 INFO [Researcher]   → Retrieved 5 chunks (avg score: 4.268)
+2025-11-23 08:29:36,408 INFO [Researcher] Sub-query 2: 'FinanceInc profit margin'
+2025-11-23 08:29:36,681 INFO [Researcher]   → Retrieved 5 chunks (avg score: 3.484)
+2025-11-23 08:29:36,682 INFO [Researcher] Sub-query 3: 'FinanceInc revenue and expenses'
+2025-11-23 08:29:36,960 INFO [Researcher]   → Retrieved 5 chunks (avg score: 6.840)
+2025-11-23 08:29:36,964 INFO [Researcher] Sub-query 4: 'FinanceInc net income'
+2025-11-23 08:29:37,238 INFO [Researcher]   → Retrieved 5 chunks (avg score: 5.874)
+2025-11-23 08:29:37,240 INFO [Researcher] Total chunks retrieved: 20
+2025-11-23 08:29:37,242 INFO [Synthesiser] Generating answer...
+2025-11-23 08:29:38,008 INFO [Synthesiser] Answer generated (confidence: 5.12)
+2025-11-23 21:00:18,886 INFO [Analyser] Decomposing query: 'Compare TechCorp and FinanceInc revenue growth in 2024'
+2025-11-23 21:00:19,932 INFO [Analyser] Generated 5 sub-queries:
+2025-11-23 21:00:19,933 INFO [Analyser]   1. TechCorp 2024 revenue
+2025-11-23 21:00:19,934 INFO [Analyser]   2. FinanceInc 2024 revenue
+2025-11-23 21:00:19,934 INFO [Analyser]   3. TechCorp revenue growth 2024
+2025-11-23 21:00:19,934 INFO [Analyser]   4. FinanceInc revenue growth 2024
+2025-11-23 21:00:19,935 INFO [Analyser]   5. Compare TechCorp and FinanceInc 2024 revenue growth
+2025-11-23 21:00:19,960 INFO [Researcher] Researching 5 sub-queries...
+2025-11-23 21:00:19,960 INFO [Researcher] Sub-query 1: 'TechCorp 2024 revenue'
+2025-11-23 21:00:22,210 INFO [Researcher]   → Retrieved 5 chunks (avg score: 10.061)
+2025-11-23 21:00:22,210 INFO [Researcher] Sub-query 2: 'FinanceInc 2024 revenue'
+2025-11-23 21:00:22,562 INFO [Researcher]   → Retrieved 5 chunks (avg score: 9.801)
+2025-11-23 21:00:22,563 INFO [Researcher] Sub-query 3: 'TechCorp revenue growth 2024'
+2025-11-23 21:00:23,011 INFO [Researcher]   → Retrieved 5 chunks (avg score: 9.942)
+2025-11-23 21:00:23,011 INFO [Researcher] Sub-query 4: 'FinanceInc revenue growth 2024'
+2025-11-23 21:00:23,357 INFO [Researcher]   → Retrieved 5 chunks (avg score: 9.717)
+2025-11-23 21:00:23,358 INFO [Researcher] Sub-query 5: 'Compare TechCorp and FinanceInc 2024 revenue growth'
+2025-11-23 21:00:23,735 INFO [Researcher]   → Retrieved 5 chunks (avg score: 6.865)
+2025-11-23 21:00:23,735 INFO [Researcher] Total chunks retrieved: 25
+2025-11-23 21:00:23,736 INFO [Synthesiser] Generating answer...
+2025-11-23 21:00:27,615 INFO [Synthesiser] Answer generated (confidence: 9.28)
+2025-11-24 04:12:18,145 INFO [Analyser] Decomposing query: 'What is the profit loss of apple'
+2025-11-24 04:12:19,340 INFO [Analyser] Generated 5 sub-queries:
+2025-11-24 04:12:19,352 INFO [Analyser]   1. What is Apple's net income for the most recent fiscal year?
+2025-11-24 04:12:19,354 INFO [Analyser]   2. What is Apple's gross profit margin for the last 5 years?
+2025-11-24 04:12:19,355 INFO [Analyser]   3. What are Apple's operating expenses for the most recent fiscal year?
+2025-11-24 04:12:19,355 INFO [Analyser]   4. What are Apple's total revenues for the most recent fiscal year?
+2025-11-24 04:12:19,356 INFO [Analyser]   5. What is Apple's cost of goods sold (COGS) for the most recent fiscal year?
+2025-11-24 04:12:19,359 INFO [Researcher] Researching 5 sub-queries...
+2025-11-24 04:12:19,360 INFO [Researcher] Sub-query 1: 'What is Apple's net income for the most recent fiscal year?'
+2025-11-24 04:12:22,055 INFO [Researcher]   → Retrieved 5 chunks (avg score: -10.813)
+2025-11-24 04:12:22,057 INFO [Researcher] Sub-query 2: 'What is Apple's gross profit margin for the last 5 years?'
+2025-11-24 04:12:22,504 INFO [Researcher]   → Retrieved 5 chunks (avg score: -10.584)
+2025-11-24 04:12:22,506 INFO [Researcher] Sub-query 3: 'What are Apple's operating expenses for the most recent fiscal year?'
+2025-11-24 04:12:22,848 INFO [Researcher]   → Retrieved 5 chunks (avg score: -11.233)
+2025-11-24 04:12:22,849 INFO [Researcher] Sub-query 4: 'What are Apple's total revenues for the most recent fiscal year?'
+2025-11-24 04:12:23,267 INFO [Researcher]   → Retrieved 5 chunks (avg score: -8.678)
+2025-11-24 04:12:23,268 INFO [Researcher] Sub-query 5: 'What is Apple's cost of goods sold (COGS) for the most recent fiscal year?'
+2025-11-24 04:12:23,607 INFO [Researcher]   → Retrieved 5 chunks (avg score: -10.550)
+2025-11-24 04:12:23,608 INFO [Researcher] Total chunks retrieved: 25
+2025-11-24 04:12:23,611 INFO [Synthesiser] Generating answer...
+2025-11-24 04:12:24,238 INFO [Synthesiser] Answer generated (confidence: -10.37)
+2025-11-24 04:16:44,161 INFO [Analyser] Decomposing query: 'What is the financial situation of amazon?'
+2025-11-24 04:16:45,205 INFO [Analyser] Generated 5 sub-queries:
+2025-11-24 04:16:45,206 INFO [Analyser]   1. What is Amazon's current revenue and profitability?
+2025-11-24 04:16:45,207 INFO [Analyser]   2. What is Amazon's debt and cash flow situation?
+2025-11-24 04:16:45,208 INFO [Analyser]   3. What are Amazon's recent investments and acquisitions?
+2025-11-24 04:16:45,209 INFO [Analyser]   4. What are analysts' ratings and price targets for Amazon stock?
+2025-11-24 04:16:45,210 INFO [Analyser]   5. What are the key risks and opportunities facing Amazon?
+2025-11-24 04:16:45,212 INFO [Researcher] Researching 5 sub-queries...
+2025-11-24 04:16:45,213 INFO [Researcher] Sub-query 1: 'What is Amazon's current revenue and profitability?'
+2025-11-24 04:16:45,832 INFO [Researcher]   → Retrieved 5 chunks (avg score: -8.445)
+2025-11-24 04:16:45,833 INFO [Researcher] Sub-query 2: 'What is Amazon's debt and cash flow situation?'
+2025-11-24 04:16:46,267 INFO [Researcher]   → Retrieved 5 chunks (avg score: -11.376)
+2025-11-24 04:16:46,275 INFO [Researcher] Sub-query 3: 'What are Amazon's recent investments and acquisitions?'
+2025-11-24 04:16:46,747 INFO [Researcher]   → Retrieved 5 chunks (avg score: -11.120)
+2025-11-24 04:16:46,748 INFO [Researcher] Sub-query 4: 'What are analysts' ratings and price targets for Amazon stock?'
+2025-11-24 04:16:47,117 INFO [Researcher]   → Retrieved 5 chunks (avg score: -10.752)
+2025-11-24 04:16:47,118 INFO [Researcher] Sub-query 5: 'What are the key risks and opportunities facing Amazon?'
+2025-11-24 04:16:47,867 INFO [Researcher]   → Retrieved 5 chunks (avg score: -11.338)
+2025-11-24 04:16:47,875 INFO [Researcher] Total chunks retrieved: 25
+2025-11-24 04:16:47,881 INFO [Synthesiser] Generating answer...
+2025-11-24 04:16:57,204 INFO [Synthesiser] Answer generated (confidence: -10.61)
+2025-11-24 04:31:45,301 INFO [Analyser] Decomposing query: 'What is the revenue of amazon'
+2025-11-24 04:31:46,640 INFO [Analyser] Generated 5 sub-queries:
+2025-11-24 04:31:46,641 INFO [Analyser]   1. What is Amazon's total annual revenue?
+2025-11-24 04:31:46,642 INFO [Analyser]   2. What is Amazon's most recent quarterly revenue?
+2025-11-24 04:31:46,643 INFO [Analyser]   3. What is Amazon's revenue by business segment (e.g., AWS, e-commerce, advertising)?
+2025-11-24 04:31:46,644 INFO [Analyser]   4. What is the year-over-year revenue growth rate for Amazon?
+2025-11-24 04:31:46,645 INFO [Analyser]   5. What are the historical revenue figures for Amazon over the past 5 years?
+2025-11-24 04:31:46,648 INFO [Researcher] Researching 5 sub-queries...
+2025-11-24 04:31:46,649 INFO [Researcher] Sub-query 1: 'What is Amazon's total annual revenue?'
+2025-11-24 04:31:52,811 INFO [Researcher]   → Retrieved 5 chunks (avg score: -3.139)
+2025-11-24 04:31:52,813 INFO [Researcher] Sub-query 2: 'What is Amazon's most recent quarterly revenue?'
+2025-11-24 04:31:59,281 INFO [Researcher]   → Retrieved 5 chunks (avg score: -6.041)
+2025-11-24 04:31:59,282 INFO [Researcher] Sub-query 3: 'What is Amazon's revenue by business segment (e.g., AWS, e-commerce, advertising)?'
+2025-11-24 04:32:06,527 INFO [Researcher]   → Retrieved 5 chunks (avg score: -1.754)
+2025-11-24 04:32:06,533 INFO [Researcher] Sub-query 4: 'What is the year-over-year revenue growth rate for Amazon?'
+2025-11-24 04:32:13,191 INFO [Researcher]   → Retrieved 5 chunks (avg score: -4.442)
+2025-11-24 04:32:13,193 INFO [Researcher] Sub-query 5: 'What are the historical revenue figures for Amazon over the past 5 years?'
+2025-11-24 04:32:19,930 INFO [Researcher]   → Retrieved 5 chunks (avg score: -4.196)
+2025-11-24 04:32:19,931 INFO [Researcher] Total chunks retrieved: 25
+2025-11-24 04:32:19,935 INFO [Synthesiser] Generating answer...
+2025-11-24 04:32:20,677 INFO [Synthesiser] Answer generated (confidence: -3.91)
+2025-11-24 04:38:58,600 INFO [Analyser] Decomposing query: 'Amazon'
+2025-11-24 04:38:59,500 INFO [Analyser] Generated 5 sub-queries:
+2025-11-24 04:38:59,501 INFO [Analyser]   1. Amazon stock price and financial performance
+2025-11-24 04:38:59,502 INFO [Analyser]   2. Amazon business segments and revenue breakdown
+2025-11-24 04:38:59,503 INFO [Analyser]   3. Amazon recent acquisitions and strategic initiatives
+2025-11-24 04:38:59,504 INFO [Analyser]   4. Amazon competitive landscape and market share
+2025-11-24 04:38:59,505 INFO [Analyser]   5. Amazon risks and opportunities analysis
+2025-11-24 04:38:59,507 INFO [Researcher] Researching 5 sub-queries...
+2025-11-24 04:38:59,508 INFO [Researcher] Sub-query 1: 'Amazon stock price and financial performance'
+2025-11-24 04:39:04,742 INFO [Researcher]   → Retrieved 5 chunks (avg score: -1.131)
+2025-11-24 04:39:04,743 INFO [Researcher] Sub-query 2: 'Amazon business segments and revenue breakdown'
+2025-11-24 04:39:09,742 INFO [Researcher]   → Retrieved 5 chunks (avg score: -0.319)
+2025-11-24 04:39:09,744 INFO [Researcher] Sub-query 3: 'Amazon recent acquisitions and strategic initiatives'
+2025-11-24 04:39:14,661 INFO [Researcher]   → Retrieved 5 chunks (avg score: -1.951)
+2025-11-24 04:39:14,662 INFO [Researcher] Sub-query 4: 'Amazon competitive landscape and market share'
+2025-11-24 04:39:19,879 INFO [Researcher]   → Retrieved 5 chunks (avg score: -4.524)
+2025-11-24 04:39:19,880 INFO [Researcher] Sub-query 5: 'Amazon risks and opportunities analysis'
+2025-11-24 04:39:25,317 INFO [Researcher]   → Retrieved 5 chunks (avg score: -2.026)
+2025-11-24 04:39:25,318 INFO [Researcher] Total chunks retrieved: 25
+2025-11-24 04:39:25,321 INFO [Synthesiser] Generating answer...
+2025-11-24 04:39:32,770 INFO [Synthesiser] Answer generated (confidence: -1.99)
+2025-11-24 04:40:01,492 INFO [Analyser] Decomposing query: 'What is the financial state of microsoft?'
+2025-11-24 04:40:02,351 INFO [Analyser] Generated 5 sub-queries:
+2025-11-24 04:40:02,352 INFO [Analyser]   1. Microsoft revenue and profit trends
+2025-11-24 04:40:02,353 INFO [Analyser]   2. Microsoft balance sheet analysis: assets, liabilities, and equity
+2025-11-24 04:40:02,354 INFO [Analyser]   3. Microsoft cash flow statement analysis: operating, investing, and financing activities
+2025-11-24 04:40:02,355 INFO [Analyser]   4. Microsoft key financial ratios: profitability, liquidity, and solvency
+2025-11-24 04:40:02,356 INFO [Analyser]   5. Microsoft stock performance and market capitalization
+2025-11-24 04:40:02,359 INFO [Researcher] Researching 5 sub-queries...
+2025-11-24 04:40:02,360 INFO [Researcher] Sub-query 1: 'Microsoft revenue and profit trends'
+2025-11-24 04:40:07,768 INFO [Researcher]   → Retrieved 5 chunks (avg score: 2.907)
+2025-11-24 04:40:07,769 INFO [Researcher] Sub-query 2: 'Microsoft balance sheet analysis: assets, liabilities, and equity'
+2025-11-24 04:40:13,095 INFO [Researcher]   → Retrieved 5 chunks (avg score: 6.951)
+2025-11-24 04:40:13,096 INFO [Researcher] Sub-query 3: 'Microsoft cash flow statement analysis: operating, investing, and financing activities'
+2025-11-24 04:40:18,585 INFO [Researcher]   → Retrieved 5 chunks (avg score: 2.033)
+2025-11-24 04:40:18,586 INFO [Researcher] Sub-query 4: 'Microsoft key financial ratios: profitability, liquidity, and solvency'
+2025-11-24 04:40:24,972 INFO [Researcher]   → Retrieved 5 chunks (avg score: -1.498)
+2025-11-24 04:40:24,976 INFO [Researcher] Sub-query 5: 'Microsoft stock performance and market capitalization'
+2025-11-24 04:40:30,722 INFO [Researcher]   → Retrieved 5 chunks (avg score: -0.871)
+2025-11-24 04:40:30,723 INFO [Researcher] Total chunks retrieved: 25
+2025-11-24 04:40:30,726 INFO [Synthesiser] Generating answer...
+2025-11-24 04:40:43,482 INFO [Synthesiser] Answer generated (confidence: 1.90)
+2025-11-24 06:56:43,849 INFO [Analyser] Decomposing query: 'Analyze the financial health of Tesla based on recent news and SEC filings'
+2025-11-24 06:56:45,685 INFO [Analyser] Generated 5 sub-queries:
+2025-11-24 06:56:45,687 INFO [Analyser]   1. What are the key financial metrics (revenue, profit margins, cash flow, debt) for Tesla in the most recent quarter and year based on SEC filings?
+2025-11-24 06:56:45,688 INFO [Analyser]   2. What are the significant financial risks and opportunities identified in Tesla's recent 10-K and 10-Q filings?
+2025-11-24 06:56:45,689 INFO [Analyser]   3. What is the current analyst consensus on Tesla's financial performance and future outlook based on recent news and financial reports?
+2025-11-24 06:56:45,690 INFO [Analyser]   4. How has Tesla's stock price and market capitalization reacted to recent financial news and SEC filings?
+2025-11-24 06:56:45,691 INFO [Analyser]   5. What are the capital expenditure plans and investment strategies outlined in Tesla's recent SEC filings, and how might they impact future financial performance?
+2025-11-24 06:56:45,701 INFO [Researcher] Researching 5 sub-queries...
+2025-11-24 06:56:45,701 INFO [Researcher] Sub-query 1: 'What are the key financial metrics (revenue, profit margins, cash flow, debt) for Tesla in the most recent quarter and year based on SEC filings?'
+2025-11-24 06:56:53,764 INFO [Researcher]   → Retrieved 5 chunks (avg score: -1.798)
+2025-11-24 06:56:53,765 INFO [Researcher] Sub-query 2: 'What are the significant financial risks and opportunities identified in Tesla's recent 10-K and 10-Q filings?'
+2025-11-24 06:56:58,741 INFO [Researcher]   → Retrieved 5 chunks (avg score: -1.131)
+2025-11-24 06:56:58,753 INFO [Researcher] Sub-query 3: 'What is the current analyst consensus on Tesla's financial performance and future outlook based on recent news and financial reports?'
+2025-11-24 06:57:03,933 INFO [Researcher]   → Retrieved 5 chunks (avg score: -3.826)
+2025-11-24 06:57:03,937 INFO [Researcher] Sub-query 4: 'How has Tesla's stock price and market capitalization reacted to recent financial news and SEC filings?'
+2025-11-24 06:57:09,133 INFO [Researcher]   → Retrieved 5 chunks (avg score: -5.264)
+2025-11-24 06:57:09,134 INFO [Researcher] Sub-query 5: 'What are the capital expenditure plans and investment strategies outlined in Tesla's recent SEC filings, and how might they impact future financial performance?'
+2025-11-24 06:57:14,851 INFO [Researcher]   → Retrieved 5 chunks (avg score: -5.514)
+2025-11-24 06:57:14,853 INFO [Researcher] Total chunks retrieved: 25
+2025-11-24 06:57:14,856 INFO [Synthesiser] Generating answer...
+2025-11-24 06:57:25,933 INFO [Synthesiser] Answer generated (confidence: -3.51)
+2025-11-24 08:17:53,365 INFO [Analyser] Decomposing query: 'Analyze the financial health of Tesla based on recent news and SEC filings'
+2025-11-24 08:17:55,400 INFO [Analyser] Generated 5 sub-queries:
+2025-11-24 08:17:55,401 INFO [Analyser]   1. What are Tesla's recent financial performance metrics (revenue, profit margins, EPS) as reported in SEC filings?
+2025-11-24 08:17:55,402 INFO [Analyser]   2. What are the key financial risks and opportunities identified for Tesla in recent 10-K and 10-Q filings?
+2025-11-24 08:17:55,403 INFO [Analyser]   3. What is the current sentiment regarding Tesla's financial health based on recent news articles and financial analysis reports?
+2025-11-24 08:17:55,404 INFO [Analyser]   4. How has Tesla's cash flow and debt level changed in the most recent reporting periods according to SEC filings?
+2025-11-24 08:17:55,404 INFO [Analyser]   5. What are analysts' forecasts for Tesla's future financial performance, and what are the key assumptions driving these forecasts based on recent news and reports?
+2025-11-24 08:17:55,407 INFO [Researcher] Researching 5 sub-queries...
+2025-11-24 08:17:55,408 INFO [Researcher] Sub-query 1: 'What are Tesla's recent financial performance metrics (revenue, profit margins, EPS) as reported in SEC filings?'
+2025-11-24 08:18:01,659 INFO [Researcher]   → Retrieved 5 chunks (avg score: -2.579)
+2025-11-24 08:18:01,660 INFO [Researcher] Sub-query 2: 'What are the key financial risks and opportunities identified for Tesla in recent 10-K and 10-Q filings?'
+2025-11-24 08:18:06,186 INFO [Researcher]   → Retrieved 5 chunks (avg score: -1.408)
+2025-11-24 08:18:06,187 INFO [Researcher] Sub-query 3: 'What is the current sentiment regarding Tesla's financial health based on recent news articles and financial analysis reports?'
+2025-11-24 08:18:10,722 INFO [Researcher]   → Retrieved 5 chunks (avg score: -6.416)
+2025-11-24 08:18:10,723 INFO [Researcher] Sub-query 4: 'How has Tesla's cash flow and debt level changed in the most recent reporting periods according to SEC filings?'
+2025-11-24 08:18:15,606 INFO [Researcher]   → Retrieved 5 chunks (avg score: -6.368)
+2025-11-24 08:18:15,607 INFO [Researcher] Sub-query 5: 'What are analysts' forecasts for Tesla's future financial performance, and what are the key assumptions driving these forecasts based on recent news and reports?'
+2025-11-24 08:18:20,249 INFO [Researcher]   → Retrieved 5 chunks (avg score: -3.039)
+2025-11-24 08:18:20,250 INFO [Researcher] Total chunks retrieved: 25
+2025-11-24 08:18:20,254 INFO [Synthesiser] Generating answer...
+2025-11-24 08:18:27,699 INFO [Synthesiser] Answer generated (confidence: -3.96)
+2025-11-25 04:35:56,954 INFO [Analyser] Decomposing query: 'Operating lease right-of-use assets 2025 24823 and 2024 18961'
+2025-11-25 04:35:58,049 INFO [Analyser] Generated 5 sub-queries:
+2025-11-25 04:35:58,050 INFO [Analyser]   1. Operating lease right-of-use assets definition
+2025-11-25 04:35:58,051 INFO [Analyser]   2. Operating lease right-of-use assets 2025 value
+2025-11-25 04:35:58,051 INFO [Analyser]   3. Operating lease right-of-use assets 2024 value
+2025-11-25 04:35:58,052 INFO [Analyser]   4. Operating lease right-of-use assets trends analysis
+2025-11-25 04:35:58,053 INFO [Analyser]   5. Accounting standards for operating lease right-of-use assets
+2025-11-25 04:35:58,054 INFO [Researcher] Researching 5 sub-queries...
+2025-11-25 04:35:58,054 INFO [Researcher] Sub-query 1: 'Operating lease right-of-use assets definition'
+2025-11-25 04:36:05,843 INFO [Researcher]   → Retrieved 5 chunks (avg score: 3.366)
+2025-11-25 04:36:05,844 INFO [Researcher] Sub-query 2: 'Operating lease right-of-use assets 2025 value'
+2025-11-25 04:36:11,711 INFO [Researcher]   → Retrieved 5 chunks (avg score: 4.498)
+2025-11-25 04:36:11,712 INFO [Researcher] Sub-query 3: 'Operating lease right-of-use assets 2024 value'
+2025-11-25 04:36:16,956 INFO [Researcher]   → Retrieved 5 chunks (avg score: 4.977)
+2025-11-25 04:36:16,958 INFO [Researcher] Sub-query 4: 'Operating lease right-of-use assets trends analysis'
+2025-11-25 04:36:21,844 INFO [Researcher]   → Retrieved 5 chunks (avg score: 2.169)
+2025-11-25 04:36:21,856 INFO [Researcher] Sub-query 5: 'Accounting standards for operating lease right-of-use assets'
+2025-11-25 04:36:27,011 INFO [Researcher]   → Retrieved 5 chunks (avg score: 2.553)
+2025-11-25 04:36:27,014 INFO [Researcher] Total chunks retrieved: 25
+2025-11-25 04:36:27,015 INFO [Synthesiser] Generating answer...
+2025-11-25 04:36:33,831 INFO [Synthesiser] Answer generated (confidence: 3.51)
+2025-11-25 04:36:34,841 INFO [Analyser] Decomposing query: 'Rothschild & Co Redburn downgrades Amazon stock due to generative AI concerns'
+2025-11-25 04:36:35,665 INFO [Analyser] Generated 5 sub-queries:
+2025-11-25 04:36:35,667 INFO [Analyser]   1. Rothschild & Co Redburn Amazon stock downgrade
+2025-11-25 04:36:35,668 INFO [Analyser]   2. Amazon stock price target Rothschild & Co Redburn
+2025-11-25 04:36:35,679 INFO [Analyser]   3. Generative AI impact on Amazon business model
+2025-11-25 04:36:35,680 INFO [Analyser]   4. Analyst ratings of Amazon stock
+2025-11-25 04:36:35,682 INFO [Analyser]   5. Redburn Research reports on Amazon
+2025-11-25 04:36:35,683 INFO [Researcher] Researching 5 sub-queries...
+2025-11-25 04:36:35,684 INFO [Researcher] Sub-query 1: 'Rothschild & Co Redburn Amazon stock downgrade'
+2025-11-25 04:36:40,738 INFO [Researcher]   → Retrieved 5 chunks (avg score: -4.133)
+2025-11-25 04:36:40,739 INFO [Researcher] Sub-query 2: 'Amazon stock price target Rothschild & Co Redburn'
+2025-11-25 04:36:45,443 INFO [Researcher]   → Retrieved 5 chunks (avg score: -1.438)
+2025-11-25 04:36:45,446 INFO [Researcher] Sub-query 3: 'Generative AI impact on Amazon business model'
+2025-11-25 04:36:50,170 INFO [Researcher]   → Retrieved 5 chunks (avg score: 1.949)
+2025-11-25 04:36:50,172 INFO [Researcher] Sub-query 4: 'Analyst ratings of Amazon stock'
+2025-11-25 04:36:54,758 INFO [Researcher]   → Retrieved 5 chunks (avg score: -0.355)
+2025-11-25 04:36:54,759 INFO [Researcher] Sub-query 5: 'Redburn Research reports on Amazon'
+2025-11-25 04:36:59,754 INFO [Researcher]   → Retrieved 5 chunks (avg score: -5.743)
+2025-11-25 04:36:59,756 INFO [Researcher] Total chunks retrieved: 25
+2025-11-25 04:36:59,757 INFO [Synthesiser] Generating answer...
+2025-11-25 04:37:02,570 INFO [Synthesiser] Answer generated (confidence: -1.94)
+2025-11-25 04:37:03,579 INFO [Analyser] Decomposing query: 'Apple Inc. segment revenue and income data for the three and six month periods ended March 29, 2025 and March 30, 2024'
+2025-11-25 04:37:04,904 INFO [Analyser] Generated 5 sub-queries:
+2025-11-25 04:37:04,905 INFO [Analyser]   1. Apple Inc. segment revenue for Q2 2025 and Q2 2024
+2025-11-25 04:37:04,906 INFO [Analyser]   2. Apple Inc. segment operating income for Q2 2025 and Q2 2024
+2025-11-25 04:37:04,907 INFO [Analyser]   3. Apple Inc. segment revenue for the first six months of fiscal year 2025 and 2024
+2025-11-25 04:37:04,908 INFO [Analyser]   4. Apple Inc. segment operating income for the first six months of fiscal year 2025 and 2024
+2025-11-25 04:37:04,909 INFO [Analyser]   5. Apple Inc. quarterly and year-to-date financial results for the periods ended March 29, 2025 and March 30, 2024
+2025-11-25 04:37:04,910 INFO [Researcher] Researching 5 sub-queries...
+2025-11-25 04:37:04,910 INFO [Researcher] Sub-query 1: 'Apple Inc. segment revenue for Q2 2025 and Q2 2024'
+2025-11-25 04:37:09,794 INFO [Researcher]   → Retrieved 5 chunks (avg score: 5.933)
+2025-11-25 04:37:09,795 INFO [Researcher] Sub-query 2: 'Apple Inc. segment operating income for Q2 2025 and Q2 2024'
+2025-11-25 04:37:14,405 INFO [Researcher]   → Retrieved 5 chunks (avg score: 5.349)
+2025-11-25 04:37:14,406 INFO [Researcher] Sub-query 3: 'Apple Inc. segment revenue for the first six months of fiscal year 2025 and 2024'
+2025-11-25 04:37:18,926 INFO [Researcher]   → Retrieved 5 chunks (avg score: 5.713)
+2025-11-25 04:37:18,931 INFO [Researcher] Sub-query 4: 'Apple Inc. segment operating income for the first six months of fiscal year 2025 and 2024'
+2025-11-25 04:37:23,650 INFO [Researcher]   → Retrieved 5 chunks (avg score: 4.546)
+2025-11-25 04:37:23,652 INFO [Researcher] Sub-query 5: 'Apple Inc. quarterly and year-to-date financial results for the periods ended March 29, 2025 and March 30, 2024'
+2025-11-25 04:37:28,773 INFO [Researcher]   → Retrieved 5 chunks (avg score: 7.245)
+2025-11-25 04:37:28,774 INFO [Researcher] Total chunks retrieved: 25
+2025-11-25 04:37:28,775 INFO [Synthesiser] Generating answer...
+2025-11-25 04:37:31,187 INFO [Synthesiser] Answer generated (confidence: 5.76)
+2025-11-25 04:37:32,193 INFO [Analyser] Decomposing query: 'Amazon net sales for North America, International, and AWS for the three and six months ended June 30, 2023 and 2024'
+2025-11-25 04:37:33,302 INFO [Analyser] Generated 6 sub-queries:
+2025-11-25 04:37:33,306 INFO [Analyser]   1. Amazon net sales North America Q2 2023 and 2024
+2025-11-25 04:37:33,307 INFO [Analyser]   2. Amazon net sales International Q2 2023 and 2024
+2025-11-25 04:37:33,310 INFO [Analyser]   3. Amazon AWS net sales Q2 2023 and 2024
+2025-11-25 04:37:33,311 INFO [Analyser]   4. Amazon net sales North America H1 2023 and 2024
+2025-11-25 04:37:33,313 INFO [Analyser]   5. Amazon net sales International H1 2023 and 2024
+2025-11-25 04:37:33,313 INFO [Analyser]   6. Amazon AWS net sales H1 2023 and 2024
+2025-11-25 04:37:33,316 INFO [Researcher] Researching 6 sub-queries...
+2025-11-25 04:37:33,317 INFO [Researcher] Sub-query 1: 'Amazon net sales North America Q2 2023 and 2024'
+2025-11-25 04:37:37,996 INFO [Researcher]   → Retrieved 5 chunks (avg score: 5.478)
+2025-11-25 04:37:37,997 INFO [Researcher] Sub-query 2: 'Amazon net sales International Q2 2023 and 2024'
+2025-11-25 04:37:43,011 INFO [Researcher]   → Retrieved 5 chunks (avg score: 4.533)
+2025-11-25 04:37:43,012 INFO [Researcher] Sub-query 3: 'Amazon AWS net sales Q2 2023 and 2024'
+2025-11-25 04:37:47,428 INFO [Researcher]   → Retrieved 5 chunks (avg score: 5.098)
+2025-11-25 04:37:47,429 INFO [Researcher] Sub-query 4: 'Amazon net sales North America H1 2023 and 2024'
+2025-11-25 04:37:52,201 INFO [Researcher]   → Retrieved 5 chunks (avg score: 4.326)
+2025-11-25 04:37:52,213 INFO [Researcher] Sub-query 5: 'Amazon net sales International H1 2023 and 2024'
+2025-11-25 04:37:56,796 INFO [Researcher]   → Retrieved 5 chunks (avg score: 2.319)
+2025-11-25 04:37:56,797 INFO [Researcher] Sub-query 6: 'Amazon AWS net sales H1 2023 and 2024'
+2025-11-25 04:38:01,405 INFO [Researcher]   → Retrieved 5 chunks (avg score: 3.877)
+2025-11-25 04:38:01,406 INFO [Researcher] Total chunks retrieved: 30
+2025-11-25 04:38:01,407 INFO [Synthesiser] Generating answer...
+2025-11-25 04:38:06,779 INFO [Synthesiser] Answer generated (confidence: 4.27)
+2025-11-25 04:38:07,786 INFO [Analyser] Decomposing query: 'December 31, 2023 unrealized losses on securities less than 12 months and 12 months or greater'
+2025-11-25 04:38:08,841 INFO [Analyser] Generated 4 sub-queries:
+2025-11-25 04:38:08,844 INFO [Analyser]   1. Unrealized losses on securities as of December 31, 2023
+2025-11-25 04:38:08,846 INFO [Analyser]   2. Unrealized losses on securities held for less than 12 months as of December 31, 2023
+2025-11-25 04:38:08,859 INFO [Analyser]   3. Unrealized losses on securities held for 12 months or greater as of December 31, 2023
+2025-11-25 04:38:08,860 INFO [Analyser]   4. Definition of 'securities' for financial reporting purposes
+2025-11-25 04:38:08,860 INFO [Researcher] Researching 4 sub-queries...
+2025-11-25 04:38:08,861 INFO [Researcher] Sub-query 1: 'Unrealized losses on securities as of December 31, 2023'
+2025-11-25 04:38:13,874 INFO [Researcher]   → Retrieved 5 chunks (avg score: 8.625)
+2025-11-25 04:38:13,875 INFO [Researcher] Sub-query 2: 'Unrealized losses on securities held for less than 12 months as of December 31, 2023'
+2025-11-25 04:38:18,785 INFO [Researcher]   → Retrieved 5 chunks (avg score: 5.694)
+2025-11-25 04:38:18,786 INFO [Researcher] Sub-query 3: 'Unrealized losses on securities held for 12 months or greater as of December 31, 2023'
+2025-11-25 04:38:23,670 INFO [Researcher]   → Retrieved 5 chunks (avg score: 5.182)
+2025-11-25 04:38:23,671 INFO [Researcher] Sub-query 4: 'Definition of 'securities' for financial reporting purposes'
+2025-11-25 04:38:28,594 INFO [Researcher]   → Retrieved 5 chunks (avg score: 1.428)
+2025-11-25 04:38:28,599 INFO [Researcher] Total chunks retrieved: 20
+2025-11-25 04:38:28,599 INFO [Synthesiser] Generating answer...
+2025-11-25 04:38:30,887 INFO [Synthesiser] Answer generated (confidence: 5.23)
+2025-11-25 04:38:31,892 INFO [Analyser] Decomposing query: 'Microsoft fiscal year 2024 second quarter highlights'
+2025-11-25 04:38:32,716 INFO [Analyser] Generated 5 sub-queries:
+2025-11-25 04:38:32,718 INFO [Analyser]   1. Microsoft FY24 Q2 revenue
+2025-11-25 04:38:32,719 INFO [Analyser]   2. Microsoft FY24 Q2 earnings per share
+2025-11-25 04:38:32,721 INFO [Analyser]   3. Microsoft FY24 Q2 key product highlights
+2025-11-25 04:38:32,721 INFO [Analyser]   4. Microsoft FY24 Q2 financial performance
+2025-11-25 04:38:32,722 INFO [Analyser]   5. Microsoft FY24 Q2 segment performance
+2025-11-25 04:38:32,723 INFO [Researcher] Researching 5 sub-queries...
+2025-11-25 04:38:32,724 INFO [Researcher] Sub-query 1: 'Microsoft FY24 Q2 revenue'
+2025-11-25 04:38:37,730 INFO [Researcher]   → Retrieved 5 chunks (avg score: 1.983)
+2025-11-25 04:38:37,735 INFO [Researcher] Sub-query 2: 'Microsoft FY24 Q2 earnings per share'
+2025-11-25 04:38:42,240 INFO [Researcher]   → Retrieved 5 chunks (avg score: -0.514)
+2025-11-25 04:38:42,241 INFO [Researcher] Sub-query 3: 'Microsoft FY24 Q2 key product highlights'
+2025-11-25 04:38:46,684 INFO [Researcher]   → Retrieved 5 chunks (avg score: -3.578)
+2025-11-25 04:38:46,685 INFO [Researcher] Sub-query 4: 'Microsoft FY24 Q2 financial performance'
+2025-11-25 04:38:51,528 INFO [Researcher]   → Retrieved 5 chunks (avg score: 0.982)
+2025-11-25 04:38:51,529 INFO [Researcher] Sub-query 5: 'Microsoft FY24 Q2 segment performance'
+2025-11-25 04:38:56,267 INFO [Researcher]   → Retrieved 5 chunks (avg score: 1.861)
+2025-11-25 04:38:56,268 INFO [Researcher] Total chunks retrieved: 25
+2025-11-25 04:38:56,269 INFO [Synthesiser] Generating answer...
+2025-11-25 04:38:59,749 INFO [Synthesiser] Answer generated (confidence: 0.15)
+2025-11-25 04:39:00,757 INFO [Analyser] Decomposing query: 'Employee Stock Purchase Plan shares purchased and average price per share for 2025, 2024, and 2023'
+2025-11-25 04:39:01,772 INFO [Analyser] Generated 6 sub-queries:
+2025-11-25 04:39:01,773 INFO [Analyser]   1. Employee Stock Purchase Plan (ESPP) shares purchased in 2025
+2025-11-25 04:39:01,774 INFO [Analyser]   2. Employee Stock Purchase Plan (ESPP) average purchase price per share in 2025
+2025-11-25 04:39:01,775 INFO [Analyser]   3. Employee Stock Purchase Plan (ESPP) shares purchased in 2024
+2025-11-25 04:39:01,776 INFO [Analyser]   4. Employee Stock Purchase Plan (ESPP) average purchase price per share in 2024
+2025-11-25 04:39:01,776 INFO [Analyser]   5. Employee Stock Purchase Plan (ESPP) shares purchased in 2023
+2025-11-25 04:39:01,777 INFO [Analyser]   6. Employee Stock Purchase Plan (ESPP) average purchase price per share in 2023
+2025-11-25 04:39:01,778 INFO [Researcher] Researching 6 sub-queries...
+2025-11-25 04:39:01,778 INFO [Researcher] Sub-query 1: 'Employee Stock Purchase Plan (ESPP) shares purchased in 2025'
+2025-11-25 04:39:06,472 INFO [Researcher]   → Retrieved 5 chunks (avg score: 5.672)
+2025-11-25 04:39:06,473 INFO [Researcher] Sub-query 2: 'Employee Stock Purchase Plan (ESPP) average purchase price per share in 2025'
+2025-11-25 04:39:11,614 INFO [Researcher]   → Retrieved 5 chunks (avg score: 4.626)
+2025-11-25 04:39:11,615 INFO [Researcher] Sub-query 3: 'Employee Stock Purchase Plan (ESPP) shares purchased in 2024'
+2025-11-25 04:39:16,170 INFO [Researcher]   → Retrieved 5 chunks (avg score: 6.055)
+2025-11-25 04:39:16,171 INFO [Researcher] Sub-query 4: 'Employee Stock Purchase Plan (ESPP) average purchase price per share in 2024'
+2025-11-25 04:39:20,717 INFO [Researcher]   → Retrieved 5 chunks (avg score: 4.872)
+2025-11-25 04:39:20,729 INFO [Researcher] Sub-query 5: 'Employee Stock Purchase Plan (ESPP) shares purchased in 2023'
+2025-11-25 04:39:25,501 INFO [Researcher]   → Retrieved 5 chunks (avg score: 6.027)
+2025-11-25 04:39:25,502 INFO [Researcher] Sub-query 6: 'Employee Stock Purchase Plan (ESPP) average purchase price per share in 2023'
+2025-11-25 04:39:30,337 INFO [Researcher]   → Retrieved 5 chunks (avg score: 4.908)
+2025-11-25 04:39:30,339 INFO [Researcher] Total chunks retrieved: 30
+2025-11-25 04:39:30,340 INFO [Synthesiser] Generating answer...
+2025-11-25 04:39:33,241 INFO [Synthesiser] Answer generated (confidence: 5.36)
+2025-11-25 04:39:34,249 INFO [Analyser] Decomposing query: 'Statement of Stockholders’ Equity for the Three Months Ended September 30, 2024 including settlement of warrants and issuance of common stock for equity incentive awards'
+2025-11-25 04:39:35,171 INFO [Analyser] Generated 4 sub-queries:
+2025-11-25 04:39:35,173 INFO [Analyser]   1. Statement of Stockholders' Equity for the Three Months Ended September 30, 2024
+2025-11-25 04:39:35,174 INFO [Analyser]   2. Stock warrant settlement activity during Q3 2024
+2025-11-25 04:39:35,175 INFO [Analyser]   3. Common stock issuance related to equity incentive awards during Q3 2024
+2025-11-25 04:39:35,176 INFO [Analyser]   4. Changes in equity related to stock-based compensation for Q3 2024
+2025-11-25 04:39:35,189 INFO [Researcher] Researching 4 sub-queries...
+2025-11-25 04:39:35,190 INFO [Researcher] Sub-query 1: 'Statement of Stockholders' Equity for the Three Months Ended September 30, 2024'
+2025-11-25 04:39:39,907 INFO [Researcher]   → Retrieved 5 chunks (avg score: 6.788)
+2025-11-25 04:39:39,909 INFO [Researcher] Sub-query 2: 'Stock warrant settlement activity during Q3 2024'
+2025-11-25 04:39:44,381 INFO [Researcher]   → Retrieved 5 chunks (avg score: 1.525)
+2025-11-25 04:39:44,387 INFO [Researcher] Sub-query 3: 'Common stock issuance related to equity incentive awards during Q3 2024'
+2025-11-25 04:39:49,307 INFO [Researcher]   → Retrieved 5 chunks (avg score: 3.452)
+2025-11-25 04:39:49,308 INFO [Researcher] Sub-query 4: 'Changes in equity related to stock-based compensation for Q3 2024'
+2025-11-25 04:39:53,890 INFO [Researcher]   → Retrieved 5 chunks (avg score: 5.898)
+2025-11-25 04:39:53,893 INFO [Researcher] Total chunks retrieved: 20
+2025-11-25 04:39:53,894 INFO [Synthesiser] Generating answer...
+2025-11-25 04:39:58,190 INFO [Synthesiser] Answer generated (confidence: 4.42)
+2025-11-25 04:39:59,197 INFO [Analyser] Decomposing query: 'Financial results for the year ended June 30, 2024 compared to June 30, 2023, including revenue, net income, and diluted earnings per share.'
+2025-11-25 04:40:00,288 INFO [Analyser] Generated 5 sub-queries:
+2025-11-25 04:40:00,290 INFO [Analyser]   1. Revenue for the year ended June 30, 2024
+2025-11-25 04:40:00,291 INFO [Analyser]   2. Revenue for the year ended June 30, 2023
+2025-11-25 04:40:00,293 INFO [Analyser]   3. Net income for the year ended June 30, 2024 compared to June 30, 2023
+2025-11-25 04:40:00,294 INFO [Analyser]   4. Diluted earnings per share (EPS) for the year ended June 30, 2024 compared to June 30, 2023
+2025-11-25 04:40:00,294 INFO [Analyser]   5. Financial results for the year ended June 30, 2024 compared to June 30, 2023
+2025-11-25 04:40:00,295 INFO [Researcher] Researching 5 sub-queries...
+2025-11-25 04:40:00,296 INFO [Researcher] Sub-query 1: 'Revenue for the year ended June 30, 2024'
+2025-11-25 04:40:05,008 INFO [Researcher]   → Retrieved 5 chunks (avg score: 8.816)
+2025-11-25 04:40:05,013 INFO [Researcher] Sub-query 2: 'Revenue for the year ended June 30, 2023'
+2025-11-25 04:40:09,543 INFO [Researcher]   → Retrieved 5 chunks (avg score: 8.829)
+2025-11-25 04:40:09,545 INFO [Researcher] Sub-query 3: 'Net income for the year ended June 30, 2024 compared to June 30, 2023'
+2025-11-25 04:40:14,310 INFO [Researcher]   → Retrieved 5 chunks (avg score: 9.097)
+2025-11-25 04:40:14,311 INFO [Researcher] Sub-query 4: 'Diluted earnings per share (EPS) for the year ended June 30, 2024 compared to June 30, 2023'
+2025-11-25 04:40:18,976 INFO [Researcher]   → Retrieved 5 chunks (avg score: 6.995)
+2025-11-25 04:40:18,979 INFO [Researcher] Sub-query 5: 'Financial results for the year ended June 30, 2024 compared to June 30, 2023'
+2025-11-25 04:40:24,111 INFO [Researcher]   → Retrieved 5 chunks (avg score: 8.555)
+2025-11-25 04:40:24,115 INFO [Researcher] Total chunks retrieved: 25
+2025-11-25 04:40:24,116 INFO [Synthesiser] Generating answer...
+2025-11-25 04:40:33,311 INFO [Synthesiser] Answer generated (confidence: 8.46)
+2025-11-25 04:40:34,318 INFO [Analyser] Decomposing query: 'Accrued expenses and other current liabilities table'
+2025-11-25 04:40:34,986 INFO [Analyser] Generated 5 sub-queries:
+2025-11-25 04:40:34,988 INFO [Analyser]   1. Definition of accrued expenses
+2025-11-25 04:40:34,990 INFO [Analyser]   2. Examples of items included in accrued expenses
+2025-11-25 04:40:34,992 INFO [Analyser]   3. Definition of other current liabilities
+2025-11-25 04:40:34,993 INFO [Analyser]   4. Examples of items included in other current liabilities
+2025-11-25 04:40:34,994 INFO [Analyser]   5. Accrued expenses and other current liabilities table format and components
+2025-11-25 04:40:34,995 INFO [Researcher] Researching 5 sub-queries...
+2025-11-25 04:40:34,995 INFO [Researcher] Sub-query 1: 'Definition of accrued expenses'
+2025-11-25 04:40:40,010 INFO [Researcher]   → Retrieved 5 chunks (avg score: 3.990)
+2025-11-25 04:40:40,011 INFO [Researcher] Sub-query 2: 'Examples of items included in accrued expenses'
+2025-11-25 04:40:44,787 INFO [Researcher]   → Retrieved 5 chunks (avg score: 3.478)
+2025-11-25 04:40:44,788 INFO [Researcher] Sub-query 3: 'Definition of other current liabilities'
+2025-11-25 04:40:49,328 INFO [Researcher]   → Retrieved 5 chunks (avg score: 4.264)
+2025-11-25 04:40:49,329 INFO [Researcher] Sub-query 4: 'Examples of items included in other current liabilities'
+2025-11-25 04:40:53,912 INFO [Researcher]   → Retrieved 5 chunks (avg score: 4.719)
+2025-11-25 04:40:53,913 INFO [Researcher] Sub-query 5: 'Accrued expenses and other current liabilities table format and components'
+2025-11-25 04:40:58,846 INFO [Researcher]   → Retrieved 5 chunks (avg score: 8.272)
+2025-11-25 04:40:58,847 INFO [Researcher] Total chunks retrieved: 25
+2025-11-25 04:40:58,847 INFO [Synthesiser] Generating answer...
+2025-11-25 04:41:09,210 INFO [Synthesiser] Answer generated (confidence: 4.94)
+2025-11-25 04:41:10,216 INFO [Analyser] Decomposing query: 'GAAP to non-GAAP reconciliation Item 2'
+2025-11-25 04:41:10,989 INFO [Analyser] Generated 5 sub-queries:
+2025-11-25 04:41:10,990 INFO [Analyser]   1. GAAP to non-GAAP reconciliation definition
+2025-11-25 04:41:10,991 INFO [Analyser]   2. GAAP to non-GAAP reconciliation examples
+2025-11-25 04:41:10,991 INFO [Analyser]   3. SEC regulations for GAAP to non-GAAP reconciliation
+2025-11-25 04:41:10,992 INFO [Analyser]   4. Item 2 of GAAP to non-GAAP reconciliation
+2025-11-25 04:41:10,993 INFO [Analyser]   5. Common adjustments in GAAP to non-GAAP reconciliation
+2025-11-25 04:41:10,993 INFO [Researcher] Researching 5 sub-queries...
+2025-11-25 04:41:10,994 INFO [Researcher] Sub-query 1: 'GAAP to non-GAAP reconciliation definition'
+2025-11-25 04:41:15,859 INFO [Researcher]   → Retrieved 5 chunks (avg score: 4.715)
+2025-11-25 04:41:15,860 INFO [Researcher] Sub-query 2: 'GAAP to non-GAAP reconciliation examples'
+2025-11-25 04:41:20,466 INFO [Researcher]   → Retrieved 5 chunks (avg score: 4.259)
+2025-11-25 04:41:20,467 INFO [Researcher] Sub-query 3: 'SEC regulations for GAAP to non-GAAP reconciliation'
+2025-11-25 04:41:25,251 INFO [Researcher]   → Retrieved 5 chunks (avg score: 4.992)
+2025-11-25 04:41:25,252 INFO [Researcher] Sub-query 4: 'Item 2 of GAAP to non-GAAP reconciliation'
+2025-11-25 04:41:29,942 INFO [Researcher]   → Retrieved 5 chunks (avg score: 6.038)
+2025-11-25 04:41:29,944 INFO [Researcher] Sub-query 5: 'Common adjustments in GAAP to non-GAAP reconciliation'
+2025-11-25 04:41:34,504 INFO [Researcher]   → Retrieved 5 chunks (avg score: 2.618)
+2025-11-25 04:41:34,505 INFO [Researcher] Total chunks retrieved: 25
+2025-11-25 04:41:34,506 INFO [Synthesiser] Generating answer...
+2025-11-25 04:41:37,544 INFO [Synthesiser] Answer generated (confidence: 4.52)
+2025-11-25 04:41:38,551 INFO [Analyser] Decomposing query: 'costs allocated to segments legal information technology human resources finance excise taxes field selling'
+2025-11-25 04:41:39,720 INFO [Analyser] Generated 5 sub-queries:
+2025-11-25 04:41:39,722 INFO [Analyser]   1. Cost allocation methods for business segments
+2025-11-25 04:41:39,723 INFO [Analyser]   2. Cost allocation to legal, information technology, human resources, and finance departments
+2025-11-25 04:41:39,724 INFO [Analyser]   3. Allocation of excise taxes within a company
+2025-11-25 04:41:39,725 INFO [Analyser]   4. Cost allocation strategies for field selling expenses
+2025-11-25 04:41:39,726 INFO [Analyser]   5. Accounting standards and best practices for segment cost allocation
+2025-11-25 04:41:39,727 INFO [Researcher] Researching 5 sub-queries...
+2025-11-25 04:41:39,728 INFO [Researcher] Sub-query 1: 'Cost allocation methods for business segments'
+2025-11-25 04:41:44,784 INFO [Researcher]   → Retrieved 5 chunks (avg score: 4.917)
+2025-11-25 04:41:44,786 INFO [Researcher] Sub-query 2: 'Cost allocation to legal, information technology, human resources, and finance departments'
+2025-11-25 04:41:49,410 INFO [Researcher]   → Retrieved 5 chunks (avg score: 4.996)
+2025-11-25 04:41:49,411 INFO [Researcher] Sub-query 3: 'Allocation of excise taxes within a company'
+2025-11-25 04:41:53,888 INFO [Researcher]   → Retrieved 5 chunks (avg score: 1.639)
+2025-11-25 04:41:53,893 INFO [Researcher] Sub-query 4: 'Cost allocation strategies for field selling expenses'
+2025-11-25 04:41:58,541 INFO [Researcher]   → Retrieved 5 chunks (avg score: 2.877)
+2025-11-25 04:41:58,542 INFO [Researcher] Sub-query 5: 'Accounting standards and best practices for segment cost allocation'
+2025-11-25 04:42:03,322 INFO [Researcher]   → Retrieved 5 chunks (avg score: 0.055)
+2025-11-25 04:42:03,323 INFO [Researcher] Total chunks retrieved: 25
+2025-11-25 04:42:03,324 INFO [Synthesiser] Generating answer...
+2025-11-25 04:42:05,722 INFO [Synthesiser] Answer generated (confidence: 2.90)
+2025-11-25 04:42:06,737 INFO [Analyser] Decomposing query: 'variable interest entities assets and liabilities elimination intercompany transactions'
+2025-11-25 04:42:07,679 INFO [Analyser] Generated 5 sub-queries:
+2025-11-25 04:42:07,680 INFO [Analyser]   1. Variable interest entities (VIEs) accounting definition
+2025-11-25 04:42:07,681 INFO [Analyser]   2. Consolidation of VIEs: elimination of intercompany transactions
+2025-11-25 04:42:07,682 INFO [Analyser]   3. Elimination of intercompany assets and liabilities in consolidated financial statements
+2025-11-25 04:42:07,683 INFO [Analyser]   4. Accounting for assets and liabilities of variable interest entities
+2025-11-25 04:42:07,694 INFO [Analyser]   5. VIE consolidation: impact on financial statements
+2025-11-25 04:42:07,695 INFO [Researcher] Researching 5 sub-queries...
+2025-11-25 04:42:07,696 INFO [Researcher] Sub-query 1: 'Variable interest entities (VIEs) accounting definition'
+2025-11-25 04:42:12,686 INFO [Researcher]   → Retrieved 5 chunks (avg score: 4.094)
+2025-11-25 04:42:12,687 INFO [Researcher] Sub-query 2: 'Consolidation of VIEs: elimination of intercompany transactions'
+2025-11-25 04:42:17,388 INFO [Researcher]   → Retrieved 5 chunks (avg score: 2.029)
+2025-11-25 04:42:17,389 INFO [Researcher] Sub-query 3: 'Elimination of intercompany assets and liabilities in consolidated financial statements'
+2025-11-25 04:42:22,590 INFO [Researcher]   → Retrieved 5 chunks (avg score: 5.078)
+2025-11-25 04:42:22,591 INFO [Researcher] Sub-query 4: 'Accounting for assets and liabilities of variable interest entities'
+2025-11-25 04:42:27,597 INFO [Researcher]   → Retrieved 5 chunks (avg score: 3.214)
+2025-11-25 04:42:27,598 INFO [Researcher] Sub-query 5: 'VIE consolidation: impact on financial statements'
+2025-11-25 04:42:32,093 INFO [Researcher]   → Retrieved 5 chunks (avg score: 3.585)
+2025-11-25 04:42:32,094 INFO [Researcher] Total chunks retrieved: 25
+2025-11-25 04:42:32,095 INFO [Synthesiser] Generating answer...
+2025-11-25 04:42:34,023 INFO [Synthesiser] Answer generated (confidence: 3.60)
+2025-11-25 04:42:35,032 INFO [Analyser] Decomposing query: 'MyPower customer notes receivable balance September 30 2025 and December 31 2024'
+2025-11-25 04:42:35,739 INFO [Analyser] Generated 5 sub-queries:
+2025-11-25 04:42:35,741 INFO [Analyser]   1. MyPower customer notes receivable balance September 30 2025
+2025-11-25 04:42:35,742 INFO [Analyser]   2. MyPower customer notes receivable balance December 31 2024
+2025-11-25 04:42:35,742 INFO [Analyser]   3. Definition of 'customer notes receivable'
+2025-11-25 04:42:35,743 INFO [Analyser]   4. MyPower financial statements 2024
+2025-11-25 04:42:35,744 INFO [Analyser]   5. MyPower financial statements 2025
+2025-11-25 04:42:35,745 INFO [Researcher] Researching 5 sub-queries...
+2025-11-25 04:42:35,746 INFO [Researcher] Sub-query 1: 'MyPower customer notes receivable balance September 30 2025'
+2025-11-25 04:42:40,531 INFO [Researcher]   → Retrieved 5 chunks (avg score: 8.958)
+2025-11-25 04:42:40,532 INFO [Researcher] Sub-query 2: 'MyPower customer notes receivable balance December 31 2024'
+2025-11-25 04:42:45,151 INFO [Researcher]   → Retrieved 5 chunks (avg score: 10.115)
+2025-11-25 04:42:45,155 INFO [Researcher] Sub-query 3: 'Definition of 'customer notes receivable''
+2025-11-25 04:42:49,883 INFO [Researcher]   → Retrieved 5 chunks (avg score: -7.942)
+2025-11-25 04:42:49,886 INFO [Researcher] Sub-query 4: 'MyPower financial statements 2024'
+2025-11-25 04:42:54,352 INFO [Researcher]   → Retrieved 5 chunks (avg score: 6.186)
+2025-11-25 04:42:54,358 INFO [Researcher] Sub-query 5: 'MyPower financial statements 2025'
+2025-11-25 04:42:59,098 INFO [Researcher]   → Retrieved 5 chunks (avg score: 5.831)
+2025-11-25 04:42:59,099 INFO [Researcher] Total chunks retrieved: 25
+2025-11-25 04:42:59,099 INFO [Synthesiser] Generating answer...
+2025-11-25 04:43:00,531 INFO [Synthesiser] Answer generated (confidence: 4.63)
+2025-11-25 04:43:01,537 INFO [Analyser] Decomposing query: 'ASU No. 2023-08 crypto assets accounting disclosure 2024 recast'
+2025-11-25 04:43:02,597 INFO [Analyser] Generated 5 sub-queries:
+2025-11-25 04:43:02,599 INFO [Analyser]   1. ASU 2023-08 crypto assets accounting disclosure requirements
+2025-11-25 04:43:02,599 INFO [Analyser]   2. ASU 2023-08 effective date and transition guidance
+2025-11-25 04:43:02,600 INFO [Analyser]   3. Impact of ASU 2023-08 on 2024 financial reporting
+2025-11-25 04:43:02,601 INFO [Analyser]   4. Recasting financial statements for crypto assets under ASU 2023-08
+2025-11-25 04:43:02,602 INFO [Analyser]   5. Examples of ASU 2023-08 crypto asset disclosure
+2025-11-25 04:43:02,603 INFO [Researcher] Researching 5 sub-queries...
+2025-11-25 04:43:02,603 INFO [Researcher] Sub-query 1: 'ASU 2023-08 crypto assets accounting disclosure requirements'
+2025-11-25 04:43:07,510 INFO [Researcher]   → Retrieved 5 chunks (avg score: 8.877)
+2025-11-25 04:43:07,511 INFO [Researcher] Sub-query 2: 'ASU 2023-08 effective date and transition guidance'
+2025-11-25 04:43:12,226 INFO [Researcher]   → Retrieved 5 chunks (avg score: 4.411)
+2025-11-25 04:43:12,227 INFO [Researcher] Sub-query 3: 'Impact of ASU 2023-08 on 2024 financial reporting'
+2025-11-25 04:43:16,684 INFO [Researcher]   → Retrieved 5 chunks (avg score: 6.292)
+2025-11-25 04:43:16,685 INFO [Researcher] Sub-query 4: 'Recasting financial statements for crypto assets under ASU 2023-08'
+2025-11-25 04:43:21,345 INFO [Researcher]   → Retrieved 5 chunks (avg score: 7.253)
+2025-11-25 04:43:21,346 INFO [Researcher] Sub-query 5: 'Examples of ASU 2023-08 crypto asset disclosure'
+2025-11-25 04:43:26,760 INFO [Researcher]   → Retrieved 5 chunks (avg score: 6.579)
+2025-11-25 04:43:26,761 INFO [Researcher] Total chunks retrieved: 25
+2025-11-25 04:43:26,762 INFO [Synthesiser] Generating answer...
+2025-11-25 04:43:30,581 INFO [Synthesiser] Answer generated (confidence: 6.68)
+2025-11-25 04:43:31,589 INFO [Analyser] Decomposing query: 'Equity securities sold total sale price March 31, 2023 March 31, 2024'
+2025-11-25 04:43:32,730 INFO [Analyser] Generated 5 sub-queries:
+2025-11-25 04:43:32,731 INFO [Analyser]   1. Equity securities sales March 31, 2023
+2025-11-25 04:43:32,733 INFO [Analyser]   2. Total sale price of equity securities sold March 31, 2023
+2025-11-25 04:43:32,734 INFO [Analyser]   3. Equity securities sales March 31, 2024
+2025-11-25 04:43:32,736 INFO [Analyser]   4. Total sale price of equity securities sold March 31, 2024
+2025-11-25 04:43:32,737 INFO [Analyser]   5. Equity securities sales comparison March 31, 2023 vs March 31, 2024
+2025-11-25 04:43:32,739 INFO [Researcher] Researching 5 sub-queries...
+2025-11-25 04:43:32,741 INFO [Researcher] Sub-query 1: 'Equity securities sales March 31, 2023'
+2025-11-25 04:43:37,550 INFO [Researcher]   → Retrieved 5 chunks (avg score: 7.248)
+2025-11-25 04:43:37,551 INFO [Researcher] Sub-query 2: 'Total sale price of equity securities sold March 31, 2023'
+2025-11-25 04:43:42,282 INFO [Researcher]   → Retrieved 5 chunks (avg score: 6.299)
+2025-11-25 04:43:42,283 INFO [Researcher] Sub-query 3: 'Equity securities sales March 31, 2024'
+2025-11-25 04:43:46,755 INFO [Researcher]   → Retrieved 5 chunks (avg score: 7.385)
+2025-11-25 04:43:46,756 INFO [Researcher] Sub-query 4: 'Total sale price of equity securities sold March 31, 2024'
+2025-11-25 04:43:51,242 INFO [Researcher]   → Retrieved 5 chunks (avg score: 6.163)
+2025-11-25 04:43:51,246 INFO [Researcher] Sub-query 5: 'Equity securities sales comparison March 31, 2023 vs March 31, 2024'
+2025-11-25 04:43:55,818 INFO [Researcher]   → Retrieved 5 chunks (avg score: 6.403)
+2025-11-25 04:43:55,819 INFO [Researcher] Total chunks retrieved: 25
+2025-11-25 04:43:55,820 INFO [Synthesiser] Generating answer...
+2025-11-25 04:43:59,169 INFO [Synthesiser] Answer generated (confidence: 6.70)
+2025-11-25 04:44:00,179 INFO [Analyser] Decomposing query: 'Derivative assets and liabilities level 1, level 2, level 3 March 31 2024 June 30 2023'
+2025-11-25 04:44:01,147 INFO [Analyser] Generated 4 sub-queries:
+2025-11-25 04:44:01,148 INFO [Analyser]   1. Derivative assets and liabilities fair value hierarchy levels (Level 1, Level 2, Level 3) as of March 31, 2024
+2025-11-25 04:44:01,149 INFO [Analyser]   2. Derivative assets and liabilities fair value hierarchy levels (Level 1, Level 2, Level 3) as of June 30, 2023
+2025-11-25 04:44:01,150 INFO [Analyser]   3. Definition of Level 1, Level 2, and Level 3 fair value hierarchy for derivative assets and liabilities
+2025-11-25 04:44:01,151 INFO [Analyser]   4. Accounting standards for derivative assets and liabilities fair value measurement
+2025-11-25 04:44:01,152 INFO [Researcher] Researching 4 sub-queries...
+2025-11-25 04:44:01,153 INFO [Researcher] Sub-query 1: 'Derivative assets and liabilities fair value hierarchy levels (Level 1, Level 2, Level 3) as of March 31, 2024'
+2025-11-25 04:44:05,980 INFO [Researcher]   → Retrieved 5 chunks (avg score: 4.898)
+2025-11-25 04:44:05,981 INFO [Researcher] Sub-query 2: 'Derivative assets and liabilities fair value hierarchy levels (Level 1, Level 2, Level 3) as of June 30, 2023'
+2025-11-25 04:44:10,669 INFO [Researcher]   → Retrieved 5 chunks (avg score: 4.694)
+2025-11-25 04:44:10,670 INFO [Researcher] Sub-query 3: 'Definition of Level 1, Level 2, and Level 3 fair value hierarchy for derivative assets and liabilities'
+2025-11-25 04:44:15,324 INFO [Researcher]   → Retrieved 5 chunks (avg score: 6.070)
+2025-11-25 04:44:15,325 INFO [Researcher] Sub-query 4: 'Accounting standards for derivative assets and liabilities fair value measurement'
+2025-11-25 04:44:19,863 INFO [Researcher]   → Retrieved 5 chunks (avg score: 5.557)
+2025-11-25 04:44:19,874 INFO [Researcher] Total chunks retrieved: 20
+2025-11-25 04:44:19,875 INFO [Synthesiser] Generating answer...
+2025-11-25 04:44:21,638 INFO [Synthesiser] Answer generated (confidence: 5.30)
+2025-11-25 04:44:22,645 INFO [Analyser] Decomposing query: 'Operating lease cost 2021 2022 2023'
+2025-11-25 04:44:23,486 INFO [Analyser] Generated 5 sub-queries:
+2025-11-25 04:44:23,488 INFO [Analyser]   1. Operating lease expense 2021
+2025-11-25 04:44:23,489 INFO [Analyser]   2. Operating lease expense 2022
+2025-11-25 04:44:23,490 INFO [Analyser]   3. Operating lease expense 2023
+2025-11-25 04:44:23,491 INFO [Analyser]   4. Operating lease payments 2021 2022 2023
+2025-11-25 04:44:23,492 INFO [Analyser]   5. Operating lease cost of right-of-use assets 2021 2022 2023
+2025-11-25 04:44:23,493 INFO [Researcher] Researching 5 sub-queries...
+2025-11-25 04:44:23,494 INFO [Researcher] Sub-query 1: 'Operating lease expense 2021'
+2025-11-25 04:44:28,752 INFO [Researcher]   → Retrieved 5 chunks (avg score: 3.908)
+2025-11-25 04:44:28,753 INFO [Researcher] Sub-query 2: 'Operating lease expense 2022'
+2025-11-25 04:44:33,332 INFO [Researcher]   → Retrieved 5 chunks (avg score: 4.963)
+2025-11-25 04:44:33,334 INFO [Researcher] Sub-query 3: 'Operating lease expense 2023'
+2025-11-25 04:44:37,892 INFO [Researcher]   → Retrieved 5 chunks (avg score: 5.832)
+2025-11-25 04:44:37,894 INFO [Researcher] Sub-query 4: 'Operating lease payments 2021 2022 2023'
+2025-11-25 04:44:42,705 INFO [Researcher]   → Retrieved 5 chunks (avg score: 5.835)
+2025-11-25 04:44:42,716 INFO [Researcher] Sub-query 5: 'Operating lease cost of right-of-use assets 2021 2022 2023'
+2025-11-25 04:44:47,305 INFO [Researcher]   → Retrieved 5 chunks (avg score: 5.315)
+2025-11-25 04:44:47,306 INFO [Researcher] Total chunks retrieved: 25
+2025-11-25 04:44:47,307 INFO [Synthesiser] Generating answer...
+2025-11-25 04:44:50,118 INFO [Synthesiser] Answer generated (confidence: 5.17)
+2025-11-25 04:44:51,125 INFO [Analyser] Decomposing query: 'What was Microsoft's effective tax rate for the three months ended March 31, 2024 and 2023, and what were the primary reasons for the change?'
+2025-11-25 04:44:52,160 INFO [Analyser] Generated 4 sub-queries:
+2025-11-25 04:44:52,162 INFO [Analyser]   1. What was Microsoft's effective tax rate for the three months ended March 31, 2024?
+2025-11-25 04:44:52,164 INFO [Analyser]   2. What was Microsoft's effective tax rate for the three months ended March 31, 2023?
+2025-11-25 04:44:52,165 INFO [Analyser]   3. What were the primary reasons for the change in Microsoft's effective tax rate between the three months ended March 31, 2023 and the three months ended March 31, 2024?
+2025-11-25 04:44:52,166 INFO [Analyser]   4. Where can I find Microsoft's financial statements for the quarter ended March 31, 2024 and March 31, 2023?
+2025-11-25 04:44:52,167 INFO [Researcher] Researching 4 sub-queries...
+2025-11-25 04:44:52,168 INFO [Researcher] Sub-query 1: 'What was Microsoft's effective tax rate for the three months ended March 31, 2024?'
+2025-11-25 04:44:56,778 INFO [Researcher]   → Retrieved 5 chunks (avg score: 7.433)
+2025-11-25 04:44:56,779 INFO [Researcher] Sub-query 2: 'What was Microsoft's effective tax rate for the three months ended March 31, 2023?'
+2025-11-25 04:45:01,420 INFO [Researcher]   → Retrieved 5 chunks (avg score: 7.496)
+2025-11-25 04:45:01,423 INFO [Researcher] Sub-query 3: 'What were the primary reasons for the change in Microsoft's effective tax rate between the three months ended March 31, 2023 and the three months ended March 31, 2024?'
+2025-11-25 04:45:06,079 INFO [Researcher]   → Retrieved 5 chunks (avg score: 5.848)
+2025-11-25 04:45:06,080 INFO [Researcher] Sub-query 4: 'Where can I find Microsoft's financial statements for the quarter ended March 31, 2024 and March 31, 2023?'
+2025-11-25 04:45:10,513 INFO [Researcher]   → Retrieved 5 chunks (avg score: 3.984)
+2025-11-25 04:45:10,514 INFO [Researcher] Total chunks retrieved: 20
+2025-11-25 04:45:10,515 INFO [Synthesiser] Generating answer...
+2025-11-25 04:45:12,866 INFO [Synthesiser] Answer generated (confidence: 6.19)
+2025-11-25 04:45:13,874 INFO [Analyser] Decomposing query: 'impairment of intangible assets 2025 2024 2023 residual value'
+2025-11-25 04:45:14,695 INFO [Analyser] Generated 5 sub-queries:
+2025-11-25 04:45:14,697 INFO [Analyser]   1. impairment of intangible assets 2025
+2025-11-25 04:45:14,698 INFO [Analyser]   2. impairment of intangible assets 2024
+2025-11-25 04:45:14,699 INFO [Analyser]   3. impairment of intangible assets 2023
+2025-11-25 04:45:14,699 INFO [Analyser]   4. intangible assets residual value
+2025-11-25 04:45:14,700 INFO [Analyser]   5. impairment loss calculation intangible assets
+2025-11-25 04:45:14,701 INFO [Researcher] Researching 5 sub-queries...
+2025-11-25 04:45:14,702 INFO [Researcher] Sub-query 1: 'impairment of intangible assets 2025'
+2025-11-25 04:45:19,444 INFO [Researcher]   → Retrieved 5 chunks (avg score: 3.928)
+2025-11-25 04:45:19,445 INFO [Researcher] Sub-query 2: 'impairment of intangible assets 2024'
+2025-11-25 04:45:24,262 INFO [Researcher]   → Retrieved 5 chunks (avg score: 4.911)
+2025-11-25 04:45:24,266 INFO [Researcher] Sub-query 3: 'impairment of intangible assets 2023'
+2025-11-25 04:45:29,300 INFO [Researcher]   → Retrieved 5 chunks (avg score: 5.206)
+2025-11-25 04:45:29,301 INFO [Researcher] Sub-query 4: 'intangible assets residual value'
+2025-11-25 04:45:33,989 INFO [Researcher]   → Retrieved 5 chunks (avg score: 3.889)
+2025-11-25 04:45:33,990 INFO [Researcher] Sub-query 5: 'impairment loss calculation intangible assets'
+2025-11-25 04:45:38,590 INFO [Researcher]   → Retrieved 5 chunks (avg score: 3.660)
+2025-11-25 04:45:38,591 INFO [Researcher] Total chunks retrieved: 25
+2025-11-25 04:45:38,592 INFO [Synthesiser] Generating answer...
+2025-11-25 04:45:46,942 INFO [Synthesiser] Answer generated (confidence: 4.32)
+2025-11-25 06:50:43,039 INFO [Analyser] Decomposing query: 'Operating lease right-of-use assets 2025 24823 and 2024 18961'
+2025-11-25 06:50:44,394 INFO [Analyser] Generated 5 sub-queries:
+2025-11-25 06:50:44,395 INFO [Analyser]   1. Operating lease right-of-use assets definition
+2025-11-25 06:50:44,397 INFO [Analyser]   2. Operating lease right-of-use assets 2025
+2025-11-25 06:50:44,398 INFO [Analyser]   3. Operating lease right-of-use assets 2024
+2025-11-25 06:50:44,398 INFO [Analyser]   4. Operating lease right-of-use assets value 24823
+2025-11-25 06:50:44,399 INFO [Analyser]   5. Operating lease right-of-use assets value 18961
+2025-11-25 06:50:44,400 INFO [Researcher] Researching 5 sub-queries...
+2025-11-25 06:50:44,401 INFO [Researcher] Sub-query 1: 'Operating lease right-of-use assets definition'
+2025-11-25 06:50:52,769 INFO [Researcher]   → Retrieved 5 chunks (avg score: 3.366)
+2025-11-25 06:50:52,771 INFO [Researcher] Sub-query 2: 'Operating lease right-of-use assets 2025'
+2025-11-25 06:50:59,275 INFO [Researcher]   → Retrieved 5 chunks (avg score: 4.429)
+2025-11-25 06:50:59,277 INFO [Researcher] Sub-query 3: 'Operating lease right-of-use assets 2024'
+2025-11-25 06:51:05,064 INFO [Researcher]   → Retrieved 5 chunks (avg score: 4.971)
+2025-11-25 06:51:05,065 INFO [Researcher] Sub-query 4: 'Operating lease right-of-use assets value 24823'
+2025-11-25 06:51:10,110 INFO [Researcher]   → Retrieved 5 chunks (avg score: 1.447)
+2025-11-25 06:51:10,112 INFO [Researcher] Sub-query 5: 'Operating lease right-of-use assets value 18961'
+2025-11-25 06:51:14,905 INFO [Researcher]   → Retrieved 5 chunks (avg score: 1.698)
+2025-11-25 06:51:14,906 INFO [Researcher] Total chunks retrieved: 25
+2025-11-25 06:51:14,908 INFO [Synthesiser] Generating answer...
+2025-11-25 06:51:16,739 INFO [Synthesiser] Answer generated (confidence: 3.18)
+2025-11-25 06:51:17,747 INFO [Analyser] Decomposing query: 'Rothschild & Co Redburn downgrades Amazon stock due to generative AI concerns'
+2025-11-25 06:51:18,501 INFO [Analyser] Generated 5 sub-queries:
+2025-11-25 06:51:18,502 INFO [Analyser]   1. Rothschild & Co Redburn Amazon downgrade
+2025-11-25 06:51:18,503 INFO [Analyser]   2. Amazon stock generative AI impact
+2025-11-25 06:51:18,504 INFO [Analyser]   3. Analyst ratings Amazon stock
+2025-11-25 06:51:18,616 INFO [Analyser]   4. Redburn Partners Amazon stock analysis
+2025-11-25 06:51:18,617 INFO [Analyser]   5. Generative AI competition Amazon business
+2025-11-25 06:51:18,618 INFO [Researcher] Researching 5 sub-queries...
+2025-11-25 06:51:18,619 INFO [Researcher] Sub-query 1: 'Rothschild & Co Redburn Amazon downgrade'
+2025-11-25 06:51:24,471 INFO [Researcher]   → Retrieved 5 chunks (avg score: -3.986)
+2025-11-25 06:51:24,474 INFO [Researcher] Sub-query 2: 'Amazon stock generative AI impact'
+2025-11-25 06:51:29,740 INFO [Researcher]   → Retrieved 5 chunks (avg score: 1.364)
+2025-11-25 06:51:29,744 INFO [Researcher] Sub-query 3: 'Analyst ratings Amazon stock'
+2025-11-25 06:51:34,921 INFO [Researcher]   → Retrieved 5 chunks (avg score: -0.111)
+2025-11-25 06:51:34,922 INFO [Researcher] Sub-query 4: 'Redburn Partners Amazon stock analysis'
+2025-11-25 06:51:39,998 INFO [Researcher]   → Retrieved 5 chunks (avg score: -1.977)
+2025-11-25 06:51:39,999 INFO [Researcher] Sub-query 5: 'Generative AI competition Amazon business'
+2025-11-25 06:51:45,526 INFO [Researcher]   → Retrieved 5 chunks (avg score: 2.116)
+2025-11-25 06:51:45,539 INFO [Researcher] Total chunks retrieved: 25
+2025-11-25 06:51:45,540 INFO [Synthesiser] Generating answer...
+2025-11-25 06:51:48,662 INFO [Synthesiser] Answer generated (confidence: -0.52)
+2025-11-25 06:51:49,670 INFO [Analyser] Decomposing query: 'Apple Inc. segment revenue and income data for the three and six month periods ended March 29, 2025 and March 30, 2024'
+2025-11-25 06:51:51,004 INFO [Analyser] Generated 5 sub-queries:
+2025-11-25 06:51:51,005 INFO [Analyser]   1. Apple Inc. segment revenue for Q2 2025 and Q2 2024
+2025-11-25 06:51:51,006 INFO [Analyser]   2. Apple Inc. segment operating income for Q2 2025 and Q2 2024
+2025-11-25 06:51:51,007 INFO [Analyser]   3. Apple Inc. segment revenue for the six months ended March 29, 2025 and March 30, 2024
+2025-11-25 06:51:51,008 INFO [Analyser]   4. Apple Inc. segment operating income for the six months ended March 29, 2025 and March 30, 2024
+2025-11-25 06:51:51,009 INFO [Analyser]   5. Apple Inc. financial reporting dates March 29, 2025 and March 30, 2024
+2025-11-25 06:51:51,010 INFO [Researcher] Researching 5 sub-queries...
+2025-11-25 06:51:51,010 INFO [Researcher] Sub-query 1: 'Apple Inc. segment revenue for Q2 2025 and Q2 2024'
+2025-11-25 06:51:56,755 INFO [Researcher]   → Retrieved 5 chunks (avg score: 5.933)
+2025-11-25 06:51:56,756 INFO [Researcher] Sub-query 2: 'Apple Inc. segment operating income for Q2 2025 and Q2 2024'
+2025-11-25 06:52:01,542 INFO [Researcher]   → Retrieved 5 chunks (avg score: 5.349)
+2025-11-25 06:52:01,548 INFO [Researcher] Sub-query 3: 'Apple Inc. segment revenue for the six months ended March 29, 2025 and March 30, 2024'
+2025-11-25 06:52:06,787 INFO [Researcher]   → Retrieved 5 chunks (avg score: 9.070)
+2025-11-25 06:52:06,789 INFO [Researcher] Sub-query 4: 'Apple Inc. segment operating income for the six months ended March 29, 2025 and March 30, 2024'
+2025-11-25 06:52:12,006 INFO [Researcher]   → Retrieved 5 chunks (avg score: 8.364)
+2025-11-25 06:52:12,011 INFO [Researcher] Sub-query 5: 'Apple Inc. financial reporting dates March 29, 2025 and March 30, 2024'
+2025-11-25 06:52:18,659 INFO [Researcher]   → Retrieved 5 chunks (avg score: 7.783)
+2025-11-25 06:52:18,665 INFO [Researcher] Total chunks retrieved: 25
+2025-11-25 06:52:18,675 INFO [Synthesiser] Generating answer...
+2025-11-25 06:52:21,303 INFO [Synthesiser] Answer generated (confidence: 7.30)
+2025-11-25 06:52:22,310 INFO [Analyser] Decomposing query: 'Amazon net sales for North America, International, and AWS for the three and six months ended June 30, 2023 and 2024'
+2025-11-25 06:52:23,669 INFO [Analyser] Generated 6 sub-queries:
+2025-11-25 06:52:23,670 INFO [Analyser]   1. Amazon net sales North America Q2 2023 and 2024
+2025-11-25 06:52:23,671 INFO [Analyser]   2. Amazon net sales International Q2 2023 and 2024
+2025-11-25 06:52:23,672 INFO [Analyser]   3. Amazon AWS net sales Q2 2023 and 2024
+2025-11-25 06:52:23,673 INFO [Analyser]   4. Amazon net sales North America first six months 2023 and 2024
+2025-11-25 06:52:23,673 INFO [Analyser]   5. Amazon net sales International first six months 2023 and 2024
+2025-11-25 06:52:23,674 INFO [Analyser]   6. Amazon AWS net sales first six months 2023 and 2024
+2025-11-25 06:52:23,675 INFO [Researcher] Researching 6 sub-queries...
+2025-11-25 06:52:23,677 INFO [Researcher] Sub-query 1: 'Amazon net sales North America Q2 2023 and 2024'
+2025-11-25 06:52:29,231 INFO [Researcher]   → Retrieved 5 chunks (avg score: 5.478)
+2025-11-25 06:52:29,232 INFO [Researcher] Sub-query 2: 'Amazon net sales International Q2 2023 and 2024'
+2025-11-25 06:52:34,266 INFO [Researcher]   → Retrieved 5 chunks (avg score: 4.533)
+2025-11-25 06:52:34,272 INFO [Researcher] Sub-query 3: 'Amazon AWS net sales Q2 2023 and 2024'
+2025-11-25 06:52:39,604 INFO [Researcher]   → Retrieved 5 chunks (avg score: 5.098)
+2025-11-25 06:52:39,607 INFO [Researcher] Sub-query 4: 'Amazon net sales North America first six months 2023 and 2024'
+2025-11-25 06:52:44,750 INFO [Researcher]   → Retrieved 5 chunks (avg score: 5.190)
+2025-11-25 06:52:44,752 INFO [Researcher] Sub-query 5: 'Amazon net sales International first six months 2023 and 2024'
+2025-11-25 06:52:49,687 INFO [Researcher]   → Retrieved 5 chunks (avg score: 5.213)
+2025-11-25 06:52:49,688 INFO [Researcher] Sub-query 6: 'Amazon AWS net sales first six months 2023 and 2024'
+2025-11-25 06:52:54,552 INFO [Researcher]   → Retrieved 5 chunks (avg score: 5.155)
+2025-11-25 06:52:54,554 INFO [Researcher] Total chunks retrieved: 30
+2025-11-25 06:52:54,556 INFO [Synthesiser] Generating answer...
+2025-11-25 06:52:59,669 INFO [Synthesiser] Answer generated (confidence: 5.11)
+2025-11-25 06:53:00,675 INFO [Analyser] Decomposing query: 'December 31, 2023 unrealized losses on securities less than 12 months and 12 months or greater'
+2025-11-25 06:53:01,595 INFO [Analyser] Generated 3 sub-queries:
+2025-11-25 06:53:01,596 INFO [Analyser]   1. Unrealized losses on securities as of December 31, 2023
+2025-11-25 06:53:01,598 INFO [Analyser]   2. Unrealized losses on securities held less than 12 months as of December 31, 2023
+2025-11-25 06:53:01,598 INFO [Analyser]   3. Unrealized losses on securities held 12 months or greater as of December 31, 2023
+2025-11-25 06:53:01,599 INFO [Researcher] Researching 3 sub-queries...
+2025-11-25 06:53:01,600 INFO [Researcher] Sub-query 1: 'Unrealized losses on securities as of December 31, 2023'
+2025-11-25 06:53:06,378 INFO [Researcher]   → Retrieved 5 chunks (avg score: 8.625)
+2025-11-25 06:53:06,379 INFO [Researcher] Sub-query 2: 'Unrealized losses on securities held less than 12 months as of December 31, 2023'
+2025-11-25 06:53:10,868 INFO [Researcher]   → Retrieved 5 chunks (avg score: 5.596)
+2025-11-25 06:53:10,869 INFO [Researcher] Sub-query 3: 'Unrealized losses on securities held 12 months or greater as of December 31, 2023'
+2025-11-25 06:53:15,384 INFO [Researcher]   → Retrieved 5 chunks (avg score: 5.239)
+2025-11-25 06:53:15,386 INFO [Researcher] Total chunks retrieved: 15
+2025-11-25 06:53:15,387 INFO [Synthesiser] Generating answer...
+2025-11-25 06:53:17,162 INFO [Synthesiser] Answer generated (confidence: 6.49)
+2025-11-25 06:53:18,166 INFO [Analyser] Decomposing query: 'Microsoft fiscal year 2024 second quarter highlights'
+2025-11-25 06:53:19,174 INFO [Analyser] Generated 5 sub-queries:
+2025-11-25 06:53:19,176 INFO [Analyser]   1. Microsoft FY24 Q2 earnings release
+2025-11-25 06:53:19,178 INFO [Analyser]   2. Microsoft fiscal year 2024 Q2 financial performance
+2025-11-25 06:53:19,179 INFO [Analyser]   3. Microsoft Q2 FY24 key achievements
+2025-11-25 06:53:19,180 INFO [Analyser]   4. Microsoft FY24 Q2 revenue by segment
+2025-11-25 06:53:19,181 INFO [Analyser]   5. Microsoft FY24 Q2 earnings call transcript
+2025-11-25 06:53:19,193 INFO [Researcher] Researching 5 sub-queries...
+2025-11-25 06:53:19,193 INFO [Researcher] Sub-query 1: 'Microsoft FY24 Q2 earnings release'
+2025-11-25 06:53:24,190 INFO [Researcher]   → Retrieved 5 chunks (avg score: -1.903)
+2025-11-25 06:53:24,191 INFO [Researcher] Sub-query 2: 'Microsoft fiscal year 2024 Q2 financial performance'
+2025-11-25 06:53:29,180 INFO [Researcher]   → Retrieved 5 chunks (avg score: 4.779)
+2025-11-25 06:53:29,181 INFO [Researcher] Sub-query 3: 'Microsoft Q2 FY24 key achievements'
+2025-11-25 06:53:33,949 INFO [Researcher]   → Retrieved 5 chunks (avg score: -5.085)
+2025-11-25 06:53:33,950 INFO [Researcher] Sub-query 4: 'Microsoft FY24 Q2 revenue by segment'
+2025-11-25 06:53:38,454 INFO [Researcher]   → Retrieved 5 chunks (avg score: 2.413)
+2025-11-25 06:53:38,455 INFO [Researcher] Sub-query 5: 'Microsoft FY24 Q2 earnings call transcript'
+2025-11-25 06:53:43,261 INFO [Researcher]   → Retrieved 5 chunks (avg score: -5.605)
+2025-11-25 06:53:43,262 INFO [Researcher] Total chunks retrieved: 25
+2025-11-25 06:53:43,263 INFO [Synthesiser] Generating answer...
+2025-11-25 06:53:49,636 INFO [Synthesiser] Answer generated (confidence: -1.08)
+2025-11-25 06:53:50,646 INFO [Analyser] Decomposing query: 'Employee Stock Purchase Plan shares purchased and average price per share for 2025, 2024, and 2023'
+2025-11-25 06:53:51,965 INFO [Analyser] Generated 6 sub-queries:
+2025-11-25 06:53:51,967 INFO [Analyser]   1. Employee Stock Purchase Plan (ESPP) shares purchased in 2025
+2025-11-25 06:53:51,968 INFO [Analyser]   2. Employee Stock Purchase Plan (ESPP) average purchase price per share in 2025
+2025-11-25 06:53:51,979 INFO [Analyser]   3. Employee Stock Purchase Plan (ESPP) shares purchased in 2024
+2025-11-25 06:53:51,980 INFO [Analyser]   4. Employee Stock Purchase Plan (ESPP) average purchase price per share in 2024
+2025-11-25 06:53:51,981 INFO [Analyser]   5. Employee Stock Purchase Plan (ESPP) shares purchased in 2023
+2025-11-25 06:53:51,981 INFO [Analyser]   6. Employee Stock Purchase Plan (ESPP) average purchase price per share in 2023
+2025-11-25 06:53:51,982 INFO [Researcher] Researching 6 sub-queries...
+2025-11-25 06:53:51,983 INFO [Researcher] Sub-query 1: 'Employee Stock Purchase Plan (ESPP) shares purchased in 2025'
+2025-11-25 06:53:56,994 INFO [Researcher]   → Retrieved 5 chunks (avg score: 5.672)
+2025-11-25 06:53:56,995 INFO [Researcher] Sub-query 2: 'Employee Stock Purchase Plan (ESPP) average purchase price per share in 2025'
+2025-11-25 06:54:01,645 INFO [Researcher]   → Retrieved 5 chunks (avg score: 4.626)
+2025-11-25 06:54:01,646 INFO [Researcher] Sub-query 3: 'Employee Stock Purchase Plan (ESPP) shares purchased in 2024'
+2025-11-25 06:54:06,365 INFO [Researcher]   → Retrieved 5 chunks (avg score: 6.055)
+2025-11-25 06:54:06,366 INFO [Researcher] Sub-query 4: 'Employee Stock Purchase Plan (ESPP) average purchase price per share in 2024'
+2025-11-25 06:54:11,065 INFO [Researcher]   → Retrieved 5 chunks (avg score: 4.872)
+2025-11-25 06:54:11,071 INFO [Researcher] Sub-query 5: 'Employee Stock Purchase Plan (ESPP) shares purchased in 2023'
+2025-11-25 06:54:15,702 INFO [Researcher]   → Retrieved 5 chunks (avg score: 6.027)
+2025-11-25 06:54:15,706 INFO [Researcher] Sub-query 6: 'Employee Stock Purchase Plan (ESPP) average purchase price per share in 2023'
+2025-11-25 06:54:20,438 INFO [Researcher]   → Retrieved 5 chunks (avg score: 4.908)
+2025-11-25 06:54:20,439 INFO [Researcher] Total chunks retrieved: 30
+2025-11-25 06:54:20,440 INFO [Synthesiser] Generating answer...
+2025-11-25 06:54:23,897 INFO [Synthesiser] Answer generated (confidence: 5.36)
+2025-11-25 06:54:24,906 INFO [Analyser] Decomposing query: 'Statement of Stockholders’ Equity for the Three Months Ended September 30, 2024 including settlement of warrants and issuance of common stock for equity incentive awards'
+2025-11-25 06:54:25,896 INFO [Analyser] Generated 4 sub-queries:
+2025-11-25 06:54:25,899 INFO [Analyser]   1. Statement of Stockholders' Equity for the Three Months Ended September 30, 2024
+2025-11-25 06:54:25,901 INFO [Analyser]   2. Stock warrant settlement activity September 30, 2024
+2025-11-25 06:54:25,902 INFO [Analyser]   3. Common stock issuance related to equity incentive awards September 30, 2024
+2025-11-25 06:54:25,903 INFO [Analyser]   4. Changes in equity related to warrants and stock awards Q3 2024
+2025-11-25 06:54:25,904 INFO [Researcher] Researching 4 sub-queries...
+2025-11-25 06:54:25,905 INFO [Researcher] Sub-query 1: 'Statement of Stockholders' Equity for the Three Months Ended September 30, 2024'
+2025-11-25 06:54:30,675 INFO [Researcher]   → Retrieved 5 chunks (avg score: 6.788)
+2025-11-25 06:54:30,677 INFO [Researcher] Sub-query 2: 'Stock warrant settlement activity September 30, 2024'
+2025-11-25 06:54:35,178 INFO [Researcher]   → Retrieved 5 chunks (avg score: 5.000)
+2025-11-25 06:54:35,179 INFO [Researcher] Sub-query 3: 'Common stock issuance related to equity incentive awards September 30, 2024'
+2025-11-25 06:54:39,741 INFO [Researcher]   → Retrieved 5 chunks (avg score: 5.012)
+2025-11-25 06:54:39,742 INFO [Researcher] Sub-query 4: 'Changes in equity related to warrants and stock awards Q3 2024'
+2025-11-25 06:54:44,280 INFO [Researcher]   → Retrieved 5 chunks (avg score: 4.164)
+2025-11-25 06:54:44,281 INFO [Researcher] Total chunks retrieved: 20
+2025-11-25 06:54:44,282 INFO [Synthesiser] Generating answer...
+2025-11-25 06:54:51,172 INFO [Synthesiser] Answer generated (confidence: 5.24)
+2025-11-25 06:54:52,179 INFO [Analyser] Decomposing query: 'Financial results for the year ended June 30, 2024 compared to June 30, 2023, including revenue, net income, and diluted earnings per share.'
+2025-11-25 06:54:53,485 INFO [Analyser] Generated 5 sub-queries:
+2025-11-25 06:54:53,488 INFO [Analyser]   1. Revenue for the year ended June 30, 2024
+2025-11-25 06:54:53,489 INFO [Analyser]   2. Revenue for the year ended June 30, 2023
+2025-11-25 06:54:53,490 INFO [Analyser]   3. Net income for the year ended June 30, 2024 compared to June 30, 2023
+2025-11-25 06:54:53,491 INFO [Analyser]   4. Diluted earnings per share (EPS) for the year ended June 30, 2024 compared to June 30, 2023
+2025-11-25 06:54:53,492 INFO [Analyser]   5. Financial results for the year ended June 30, 2024 compared to June 30, 2023
+2025-11-25 06:54:53,493 INFO [Researcher] Researching 5 sub-queries...
+2025-11-25 06:54:53,494 INFO [Researcher] Sub-query 1: 'Revenue for the year ended June 30, 2024'
+2025-11-25 06:54:58,517 INFO [Researcher]   → Retrieved 5 chunks (avg score: 8.816)
+2025-11-25 06:54:58,518 INFO [Researcher] Sub-query 2: 'Revenue for the year ended June 30, 2023'
+2025-11-25 06:55:02,953 INFO [Researcher]   → Retrieved 5 chunks (avg score: 8.829)
+2025-11-25 06:55:02,954 INFO [Researcher] Sub-query 3: 'Net income for the year ended June 30, 2024 compared to June 30, 2023'
+2025-11-25 06:55:07,335 INFO [Researcher]   → Retrieved 5 chunks (avg score: 9.097)
+2025-11-25 06:55:07,336 INFO [Researcher] Sub-query 4: 'Diluted earnings per share (EPS) for the year ended June 30, 2024 compared to June 30, 2023'
+2025-11-25 06:55:12,219 INFO [Researcher]   → Retrieved 5 chunks (avg score: 6.995)
+2025-11-25 06:55:12,220 INFO [Researcher] Sub-query 5: 'Financial results for the year ended June 30, 2024 compared to June 30, 2023'
+2025-11-25 06:55:16,901 INFO [Researcher]   → Retrieved 5 chunks (avg score: 8.555)
+2025-11-25 06:55:16,902 INFO [Researcher] Total chunks retrieved: 25
+2025-11-25 06:55:16,903 INFO [Synthesiser] Generating answer...
+2025-11-25 06:55:29,888 INFO [Synthesiser] Answer generated (confidence: 8.46)
+2025-11-25 06:55:30,896 INFO [Analyser] Decomposing query: 'Accrued expenses and other current liabilities table'
+2025-11-25 06:55:31,574 INFO [Analyser] Generated 5 sub-queries:
+2025-11-25 06:55:31,575 INFO [Analyser]   1. Definition of accrued expenses
+2025-11-25 06:55:31,576 INFO [Analyser]   2. Examples of accrued expenses
+2025-11-25 06:55:31,577 INFO [Analyser]   3. Components of other current liabilities
+2025-11-25 06:55:31,578 INFO [Analyser]   4. Accrued expenses vs. other current liabilities
+2025-11-25 06:55:31,579 INFO [Analyser]   5. Presentation of accrued expenses and other current liabilities on the balance sheet
+2025-11-25 06:55:31,580 INFO [Researcher] Researching 5 sub-queries...
+2025-11-25 06:55:31,581 INFO [Researcher] Sub-query 1: 'Definition of accrued expenses'
+2025-11-25 06:55:36,555 INFO [Researcher]   → Retrieved 5 chunks (avg score: 3.990)
+2025-11-25 06:55:36,556 INFO [Researcher] Sub-query 2: 'Examples of accrued expenses'
+2025-11-25 06:55:40,824 INFO [Researcher]   → Retrieved 5 chunks (avg score: 3.408)
+2025-11-25 06:55:40,825 INFO [Researcher] Sub-query 3: 'Components of other current liabilities'
+2025-11-25 06:55:45,529 INFO [Researcher]   → Retrieved 5 chunks (avg score: 5.103)
+2025-11-25 06:55:45,530 INFO [Researcher] Sub-query 4: 'Accrued expenses vs. other current liabilities'
+2025-11-25 06:55:50,113 INFO [Researcher]   → Retrieved 5 chunks (avg score: 8.233)
+2025-11-25 06:55:50,114 INFO [Researcher] Sub-query 5: 'Presentation of accrued expenses and other current liabilities on the balance sheet'
+2025-11-25 06:55:54,814 INFO [Researcher]   → Retrieved 5 chunks (avg score: 8.141)
+2025-11-25 06:55:54,815 INFO [Researcher] Total chunks retrieved: 25
+2025-11-25 06:55:54,817 INFO [Synthesiser] Generating answer...
+2025-11-25 06:55:59,585 INFO [Synthesiser] Answer generated (confidence: 5.77)
+2025-11-25 06:56:00,588 INFO [Analyser] Decomposing query: 'GAAP to non-GAAP reconciliation Item 2'
+2025-11-25 06:56:01,332 INFO [Analyser] Generated 5 sub-queries:
+2025-11-25 06:56:01,333 INFO [Analyser]   1. GAAP to non-GAAP reconciliation definition
+2025-11-25 06:56:01,334 INFO [Analyser]   2. GAAP to non-GAAP reconciliation examples
+2025-11-25 06:56:01,335 INFO [Analyser]   3. Item 2 financial statement analysis
+2025-11-25 06:56:01,336 INFO [Analyser]   4. SEC guidance on GAAP to non-GAAP reconciliation
+2025-11-25 06:56:01,337 INFO [Analyser]   5. Common adjustments in GAAP to non-GAAP reconciliation
+2025-11-25 06:56:01,338 INFO [Researcher] Researching 5 sub-queries...
+2025-11-25 06:56:01,338 INFO [Researcher] Sub-query 1: 'GAAP to non-GAAP reconciliation definition'
+2025-11-25 06:56:06,731 INFO [Researcher]   → Retrieved 5 chunks (avg score: 4.715)
+2025-11-25 06:56:06,735 INFO [Researcher] Sub-query 2: 'GAAP to non-GAAP reconciliation examples'
+2025-11-25 06:56:11,365 INFO [Researcher]   → Retrieved 5 chunks (avg score: 4.259)
+2025-11-25 06:56:11,365 INFO [Researcher] Sub-query 3: 'Item 2 financial statement analysis'
+2025-11-25 06:56:16,062 INFO [Researcher]   → Retrieved 5 chunks (avg score: 5.127)
+2025-11-25 06:56:16,063 INFO [Researcher] Sub-query 4: 'SEC guidance on GAAP to non-GAAP reconciliation'
+2025-11-25 06:56:21,445 INFO [Researcher]   → Retrieved 5 chunks (avg score: 3.328)
+2025-11-25 06:56:21,450 INFO [Researcher] Sub-query 5: 'Common adjustments in GAAP to non-GAAP reconciliation'
+2025-11-25 06:56:26,177 INFO [Researcher]   → Retrieved 5 chunks (avg score: 2.618)
+2025-11-25 06:56:26,178 INFO [Researcher] Total chunks retrieved: 25
+2025-11-25 06:56:26,179 INFO [Synthesiser] Generating answer...
+2025-11-25 06:56:39,535 INFO [Synthesiser] Answer generated (confidence: 4.01)
+2025-11-25 06:56:40,543 INFO [Analyser] Decomposing query: 'costs allocated to segments legal information technology human resources finance excise taxes field selling'
+2025-11-25 06:56:41,251 INFO [Analyser] Generated 5 sub-queries:
+2025-11-25 06:56:41,253 INFO [Analyser]   1. cost allocation to business segments
+2025-11-25 06:56:41,254 INFO [Analyser]   2. cost allocation to legal departments
+2025-11-25 06:56:41,255 INFO [Analyser]   3. cost allocation to information technology departments
+2025-11-25 06:56:41,256 INFO [Analyser]   4. cost allocation to human resources and finance departments
+2025-11-25 06:56:41,256 INFO [Analyser]   5. cost allocation of excise taxes and field selling expenses
+2025-11-25 06:56:41,257 INFO [Researcher] Researching 5 sub-queries...
+2025-11-25 06:56:41,258 INFO [Researcher] Sub-query 1: 'cost allocation to business segments'
+2025-11-25 06:56:46,047 INFO [Researcher]   → Retrieved 5 chunks (avg score: 5.832)
+2025-11-25 06:56:46,048 INFO [Researcher] Sub-query 2: 'cost allocation to legal departments'
+2025-11-25 06:56:50,602 INFO [Researcher]   → Retrieved 5 chunks (avg score: -1.513)
+2025-11-25 06:56:50,603 INFO [Researcher] Sub-query 3: 'cost allocation to information technology departments'
+2025-11-25 06:56:55,398 INFO [Researcher]   → Retrieved 5 chunks (avg score: -1.096)
+2025-11-25 06:56:55,399 INFO [Researcher] Sub-query 4: 'cost allocation to human resources and finance departments'
+2025-11-25 06:57:00,299 INFO [Researcher]   → Retrieved 5 chunks (avg score: -0.395)
+2025-11-25 06:57:00,300 INFO [Researcher] Sub-query 5: 'cost allocation of excise taxes and field selling expenses'
+2025-11-25 06:57:04,950 INFO [Researcher]   → Retrieved 5 chunks (avg score: 4.751)
+2025-11-25 06:57:04,951 INFO [Researcher] Total chunks retrieved: 25
+2025-11-25 06:57:04,952 INFO [Synthesiser] Generating answer...
+2025-11-25 06:57:08,212 INFO [Synthesiser] Answer generated (confidence: 1.52)
+2025-11-25 06:57:09,219 INFO [Analyser] Decomposing query: 'variable interest entities assets and liabilities elimination intercompany transactions'
+2025-11-25 06:57:10,139 INFO [Analyser] Generated 5 sub-queries:
+2025-11-25 06:57:10,151 INFO [Analyser]   1. Variable interest entity (VIE) asset consolidation
+2025-11-25 06:57:10,152 INFO [Analyser]   2. Variable interest entity (VIE) liability consolidation
+2025-11-25 06:57:10,153 INFO [Analyser]   3. Elimination of intercompany transactions in consolidated financial statements
+2025-11-25 06:57:10,154 INFO [Analyser]   4. Accounting for intercompany transactions within variable interest entities
+2025-11-25 06:57:10,155 INFO [Analyser]   5. Consolidated financial statements: assets and liabilities of variable interest entities
+2025-11-25 06:57:10,156 INFO [Researcher] Researching 5 sub-queries...
+2025-11-25 06:57:10,157 INFO [Researcher] Sub-query 1: 'Variable interest entity (VIE) asset consolidation'
+2025-11-25 06:57:15,025 INFO [Researcher]   → Retrieved 5 chunks (avg score: 5.087)
+2025-11-25 06:57:15,026 INFO [Researcher] Sub-query 2: 'Variable interest entity (VIE) liability consolidation'
+2025-11-25 06:57:19,489 INFO [Researcher]   → Retrieved 5 chunks (avg score: 4.462)
+2025-11-25 06:57:19,490 INFO [Researcher] Sub-query 3: 'Elimination of intercompany transactions in consolidated financial statements'
+2025-11-25 06:57:24,333 INFO [Researcher]   → Retrieved 5 chunks (avg score: 4.302)
+2025-11-25 06:57:24,335 INFO [Researcher] Sub-query 4: 'Accounting for intercompany transactions within variable interest entities'
+2025-11-25 06:57:29,656 INFO [Researcher]   → Retrieved 5 chunks (avg score: 3.708)
+2025-11-25 06:57:29,659 INFO [Researcher] Sub-query 5: 'Consolidated financial statements: assets and liabilities of variable interest entities'
+2025-11-25 06:57:35,105 INFO [Researcher]   → Retrieved 5 chunks (avg score: 5.810)
+2025-11-25 06:57:35,106 INFO [Researcher] Total chunks retrieved: 25
+2025-11-25 06:57:35,108 INFO [Synthesiser] Generating answer...
+2025-11-25 06:57:42,380 INFO [Synthesiser] Answer generated (confidence: 4.67)
+2025-11-25 06:57:43,387 INFO [Analyser] Decomposing query: 'MyPower customer notes receivable balance September 30 2025 and December 31 2024'
+2025-11-25 06:57:44,278 INFO [Analyser] Generated 5 sub-queries:
+2025-11-25 06:57:44,279 INFO [Analyser]   1. MyPower customer notes receivable balance September 30, 2025
+2025-11-25 06:57:44,280 INFO [Analyser]   2. MyPower customer notes receivable balance December 31, 2024
+2025-11-25 06:57:44,281 INFO [Analyser]   3. Definition of customer notes receivable
+2025-11-25 06:57:44,282 INFO [Analyser]   4. MyPower financial statements 2024
+2025-11-25 06:57:44,283 INFO [Analyser]   5. MyPower financial statements 2025
+2025-11-25 06:57:44,284 INFO [Researcher] Researching 5 sub-queries...
+2025-11-25 06:57:44,285 INFO [Researcher] Sub-query 1: 'MyPower customer notes receivable balance September 30, 2025'
+2025-11-25 06:57:49,174 INFO [Researcher]   → Retrieved 5 chunks (avg score: 8.958)
+2025-11-25 06:57:49,175 INFO [Researcher] Sub-query 2: 'MyPower customer notes receivable balance December 31, 2024'
+2025-11-25 06:57:53,884 INFO [Researcher]   → Retrieved 5 chunks (avg score: 10.101)
+2025-11-25 06:57:53,885 INFO [Researcher] Sub-query 3: 'Definition of customer notes receivable'
+2025-11-25 06:57:58,809 INFO [Researcher]   → Retrieved 5 chunks (avg score: 2.489)
+2025-11-25 06:57:58,810 INFO [Researcher] Sub-query 4: 'MyPower financial statements 2024'
+2025-11-25 06:58:03,850 INFO [Researcher]   → Retrieved 5 chunks (avg score: 6.186)
+2025-11-25 06:58:03,852 INFO [Researcher] Sub-query 5: 'MyPower financial statements 2025'
+2025-11-25 06:58:08,700 INFO [Researcher]   → Retrieved 5 chunks (avg score: 5.831)
+2025-11-25 06:58:08,701 INFO [Researcher] Total chunks retrieved: 25
+2025-11-25 06:58:08,702 INFO [Synthesiser] Generating answer...
+2025-11-25 06:58:10,021 INFO [Synthesiser] Answer generated (confidence: 6.71)
+2025-11-25 06:58:11,028 INFO [Analyser] Decomposing query: 'ASU No. 2023-08 crypto assets accounting disclosure 2024 recast'
+2025-11-25 06:58:11,996 INFO [Analyser] Generated 5 sub-queries:
+2025-11-25 06:58:11,998 INFO [Analyser]   1. ASU 2023-08 crypto asset accounting disclosure requirements
+2025-11-25 06:58:11,999 INFO [Analyser]   2. SEC disclosure requirements for crypto assets 2024
+2025-11-25 06:58:12,000 INFO [Analyser]   3. Recasting financial statements due to ASU 2023-08
+2025-11-25 06:58:12,002 INFO [Analyser]   4. Impact of ASU 2023-08 on crypto asset reporting
+2025-11-25 06:58:12,003 INFO [Analyser]   5. Examples of ASU 2023-08 crypto asset disclosures
+2025-11-25 06:58:12,005 INFO [Researcher] Researching 5 sub-queries...
+2025-11-25 06:58:12,006 INFO [Researcher] Sub-query 1: 'ASU 2023-08 crypto asset accounting disclosure requirements'
+2025-11-25 06:58:17,600 INFO [Researcher]   → Retrieved 5 chunks (avg score: 8.809)
+2025-11-25 06:58:17,601 INFO [Researcher] Sub-query 2: 'SEC disclosure requirements for crypto assets 2024'
+2025-11-25 06:58:22,679 INFO [Researcher]   → Retrieved 5 chunks (avg score: 6.659)
+2025-11-25 06:58:22,681 INFO [Researcher] Sub-query 3: 'Recasting financial statements due to ASU 2023-08'
+2025-11-25 06:58:29,523 INFO [Researcher]   → Retrieved 5 chunks (avg score: 5.820)
+2025-11-25 06:58:29,533 INFO [Researcher] Sub-query 4: 'Impact of ASU 2023-08 on crypto asset reporting'
+2025-11-25 06:58:36,644 INFO [Researcher]   → Retrieved 5 chunks (avg score: 6.892)
+2025-11-25 06:58:36,646 INFO [Researcher] Sub-query 5: 'Examples of ASU 2023-08 crypto asset disclosures'
+2025-11-25 06:58:42,487 INFO [Researcher]   → Retrieved 5 chunks (avg score: 6.569)
+2025-11-25 06:58:42,489 INFO [Researcher] Total chunks retrieved: 25
+2025-11-25 06:58:42,492 INFO [Synthesiser] Generating answer...
+2025-11-25 06:58:45,475 INFO [Synthesiser] Answer generated (confidence: 6.95)
+2025-11-25 06:58:46,488 INFO [Analyser] Decomposing query: 'Equity securities sold total sale price March 31, 2023 March 31, 2024'
+2025-11-25 06:58:47,554 INFO [Analyser] Generated 5 sub-queries:
+2025-11-25 06:58:47,556 INFO [Analyser]   1. Equity securities sales total revenue March 31, 2023
+2025-11-25 06:58:47,557 INFO [Analyser]   2. Equity securities sales total revenue March 31, 2024
+2025-11-25 06:58:47,558 INFO [Analyser]   3. Equity securities sold price March 31, 2023
+2025-11-25 06:58:47,559 INFO [Analyser]   4. Equity securities sold price March 31, 2024
+2025-11-25 06:58:47,560 INFO [Analyser]   5. Equity securities sales comparison March 31, 2023 vs March 31, 2024
+2025-11-25 06:58:47,561 INFO [Researcher] Researching 5 sub-queries...
+2025-11-25 06:58:47,562 INFO [Researcher] Sub-query 1: 'Equity securities sales total revenue March 31, 2023'
+2025-11-25 06:58:54,278 INFO [Researcher]   → Retrieved 5 chunks (avg score: 6.074)
+2025-11-25 06:58:54,280 INFO [Researcher] Sub-query 2: 'Equity securities sales total revenue March 31, 2024'
+2025-11-25 06:59:01,362 INFO [Researcher]   → Retrieved 5 chunks (avg score: 6.493)
+2025-11-25 06:59:01,363 INFO [Researcher] Sub-query 3: 'Equity securities sold price March 31, 2023'
+2025-11-25 06:59:07,455 INFO [Researcher]   → Retrieved 5 chunks (avg score: 7.253)
+2025-11-25 06:59:07,485 INFO [Researcher] Sub-query 4: 'Equity securities sold price March 31, 2024'
+2025-11-25 06:59:12,633 INFO [Researcher]   → Retrieved 5 chunks (avg score: 7.980)
+2025-11-25 06:59:12,635 INFO [Researcher] Sub-query 5: 'Equity securities sales comparison March 31, 2023 vs March 31, 2024'
+2025-11-25 06:59:17,158 INFO [Researcher]   → Retrieved 5 chunks (avg score: 6.403)
+2025-11-25 06:59:17,162 INFO [Researcher] Total chunks retrieved: 25
+2025-11-25 06:59:17,162 INFO [Synthesiser] Generating answer...
+2025-11-25 06:59:18,380 INFO [Synthesiser] Answer generated (confidence: 6.84)
+2025-11-25 06:59:19,382 INFO [Analyser] Decomposing query: 'Derivative assets and liabilities level 1, level 2, level 3 March 31 2024 June 30 2023'
+2025-11-25 06:59:20,634 INFO [Analyser] Generated 4 sub-queries:
+2025-11-25 06:59:20,635 INFO [Analyser]   1. Derivative assets and liabilities fair value hierarchy levels (Level 1, Level 2, Level 3) March 31, 2024
+2025-11-25 06:59:20,636 INFO [Analyser]   2. Derivative assets and liabilities fair value hierarchy levels (Level 1, Level 2, Level 3) June 30, 2023
+2025-11-25 06:59:20,637 INFO [Analyser]   3. Definition of Level 1, Level 2, and Level 3 fair value hierarchy for derivative instruments
+2025-11-25 06:59:20,638 INFO [Analyser]   4. Accounting standards for derivative asset and liability classification within the fair value hierarchy
+2025-11-25 06:59:20,639 INFO [Researcher] Researching 4 sub-queries...
+2025-11-25 06:59:20,639 INFO [Researcher] Sub-query 1: 'Derivative assets and liabilities fair value hierarchy levels (Level 1, Level 2, Level 3) March 31, 2024'
+2025-11-25 06:59:25,535 INFO [Researcher]   → Retrieved 5 chunks (avg score: 4.822)
+2025-11-25 06:59:25,536 INFO [Researcher] Sub-query 2: 'Derivative assets and liabilities fair value hierarchy levels (Level 1, Level 2, Level 3) June 30, 2023'
+2025-11-25 06:59:30,169 INFO [Researcher]   → Retrieved 5 chunks (avg score: 4.665)
+2025-11-25 06:59:30,170 INFO [Researcher] Sub-query 3: 'Definition of Level 1, Level 2, and Level 3 fair value hierarchy for derivative instruments'
+2025-11-25 06:59:35,329 INFO [Researcher]   → Retrieved 5 chunks (avg score: 6.069)
+2025-11-25 06:59:35,330 INFO [Researcher] Sub-query 4: 'Accounting standards for derivative asset and liability classification within the fair value hierarchy'
+2025-11-25 06:59:40,073 INFO [Researcher]   → Retrieved 5 chunks (avg score: 3.768)
+2025-11-25 06:59:40,075 INFO [Researcher] Total chunks retrieved: 20
+2025-11-25 06:59:40,076 INFO [Synthesiser] Generating answer...
+2025-11-25 06:59:44,726 INFO [Synthesiser] Answer generated (confidence: 4.83)
+2025-11-25 06:59:45,733 INFO [Analyser] Decomposing query: 'Operating lease cost 2021 2022 2023'
+2025-11-25 06:59:46,495 INFO [Analyser] Generated 5 sub-queries:
+2025-11-25 06:59:46,497 INFO [Analyser]   1. Operating lease cost 2021
+2025-11-25 06:59:46,498 INFO [Analyser]   2. Operating lease cost 2022
+2025-11-25 06:59:46,499 INFO [Analyser]   3. Operating lease cost 2023
+2025-11-25 06:59:46,499 INFO [Analyser]   4. Operating lease expense 2021 2022 2023
+2025-11-25 06:59:46,500 INFO [Analyser]   5. Operating lease obligations 2021 2022 2023
+2025-11-25 06:59:46,501 INFO [Researcher] Researching 5 sub-queries...
+2025-11-25 06:59:46,502 INFO [Researcher] Sub-query 1: 'Operating lease cost 2021'
+2025-11-25 06:59:51,334 INFO [Researcher]   → Retrieved 5 chunks (avg score: 3.100)
+2025-11-25 06:59:51,336 INFO [Researcher] Sub-query 2: 'Operating lease cost 2022'
+2025-11-25 06:59:56,069 INFO [Researcher]   → Retrieved 5 chunks (avg score: 5.216)
+2025-11-25 06:59:56,070 INFO [Researcher] Sub-query 3: 'Operating lease cost 2023'
+2025-11-25 07:00:00,814 INFO [Researcher]   → Retrieved 5 chunks (avg score: 6.072)
+2025-11-25 07:00:00,815 INFO [Researcher] Sub-query 4: 'Operating lease expense 2021 2022 2023'
+2025-11-25 07:00:05,427 INFO [Researcher]   → Retrieved 5 chunks (avg score: 4.557)
+2025-11-25 07:00:05,428 INFO [Researcher] Sub-query 5: 'Operating lease obligations 2021 2022 2023'
+2025-11-25 07:00:10,368 INFO [Researcher]   → Retrieved 5 chunks (avg score: 4.512)
+2025-11-25 07:00:10,370 INFO [Researcher] Total chunks retrieved: 25
+2025-11-25 07:00:10,370 INFO [Synthesiser] Generating answer...
+2025-11-25 07:00:15,721 INFO [Synthesiser] Answer generated (confidence: 4.69)
+2025-11-25 07:00:16,728 INFO [Analyser] Decomposing query: 'What was Microsoft's effective tax rate for the three months ended March 31, 2024 and 2023, and what were the primary reasons for the change?'
+2025-11-25 07:00:18,428 INFO [Analyser] Generated 5 sub-queries:
+2025-11-25 07:00:18,430 INFO [Analyser]   1. What was Microsoft's effective tax rate for the three months ended March 31, 2024?
+2025-11-25 07:00:18,431 INFO [Analyser]   2. What was Microsoft's effective tax rate for the three months ended March 31, 2023?
+2025-11-25 07:00:18,431 INFO [Analyser]   3. What were the primary reasons for the change in Microsoft's effective tax rate between the three months ended March 31, 2023 and the three months ended March 31, 2024?
+2025-11-25 07:00:18,432 INFO [Analyser]   4. Find Microsoft's financial statements for the quarter ended March 31, 2024.
+2025-11-25 07:00:18,433 INFO [Analyser]   5. Find Microsoft's financial statements for the quarter ended March 31, 2023.
+2025-11-25 07:00:18,434 INFO [Researcher] Researching 5 sub-queries...
+2025-11-25 07:00:18,434 INFO [Researcher] Sub-query 1: 'What was Microsoft's effective tax rate for the three months ended March 31, 2024?'
+2025-11-25 07:00:23,613 INFO [Researcher]   → Retrieved 5 chunks (avg score: 7.433)
+2025-11-25 07:00:23,614 INFO [Researcher] Sub-query 2: 'What was Microsoft's effective tax rate for the three months ended March 31, 2023?'
+2025-11-25 07:00:28,982 INFO [Researcher]   → Retrieved 5 chunks (avg score: 7.496)
+2025-11-25 07:00:28,983 INFO [Researcher] Sub-query 3: 'What were the primary reasons for the change in Microsoft's effective tax rate between the three months ended March 31, 2023 and the three months ended March 31, 2024?'
+2025-11-25 07:00:34,056 INFO [Researcher]   → Retrieved 5 chunks (avg score: 5.848)
+2025-11-25 07:00:34,061 INFO [Researcher] Sub-query 4: 'Find Microsoft's financial statements for the quarter ended March 31, 2024.'
+2025-11-25 07:00:39,793 INFO [Researcher]   → Retrieved 5 chunks (avg score: 3.901)
+2025-11-25 07:00:39,794 INFO [Researcher] Sub-query 5: 'Find Microsoft's financial statements for the quarter ended March 31, 2023.'
+2025-11-25 07:00:44,652 INFO [Researcher]   → Retrieved 5 chunks (avg score: 3.702)
+2025-11-25 07:00:44,654 INFO [Researcher] Total chunks retrieved: 25
+2025-11-25 07:00:44,655 INFO [Synthesiser] Generating answer...
+2025-11-25 07:00:46,850 INFO [Synthesiser] Answer generated (confidence: 5.68)
+2025-11-25 07:00:47,861 INFO [Analyser] Decomposing query: 'impairment of intangible assets 2025 2024 2023 residual value'
+2025-11-25 07:00:48,622 INFO [Analyser] Generated 5 sub-queries:
+2025-11-25 07:00:48,623 INFO [Analyser]   1. impairment of intangible assets 2025
+2025-11-25 07:00:48,624 INFO [Analyser]   2. impairment of intangible assets 2024
+2025-11-25 07:00:48,625 INFO [Analyser]   3. impairment of intangible assets 2023
+2025-11-25 07:00:48,626 INFO [Analyser]   4. intangible assets residual value
+2025-11-25 07:00:48,627 INFO [Analyser]   5. accounting for intangible asset impairment
+2025-11-25 07:00:48,628 INFO [Researcher] Researching 5 sub-queries...
+2025-11-25 07:00:48,628 INFO [Researcher] Sub-query 1: 'impairment of intangible assets 2025'
+2025-11-25 07:00:54,162 INFO [Researcher]   → Retrieved 5 chunks (avg score: 3.928)
+2025-11-25 07:00:54,164 INFO [Researcher] Sub-query 2: 'impairment of intangible assets 2024'
+2025-11-25 07:00:59,517 INFO [Researcher]   → Retrieved 5 chunks (avg score: 4.911)
+2025-11-25 07:00:59,518 INFO [Researcher] Sub-query 3: 'impairment of intangible assets 2023'
+2025-11-25 07:01:04,753 INFO [Researcher]   → Retrieved 5 chunks (avg score: 5.206)
+2025-11-25 07:01:04,754 INFO [Researcher] Sub-query 4: 'intangible assets residual value'
+2025-11-25 07:01:09,537 INFO [Researcher]   → Retrieved 5 chunks (avg score: 3.889)
+2025-11-25 07:01:09,538 INFO [Researcher] Sub-query 5: 'accounting for intangible asset impairment'
+2025-11-25 07:01:14,237 INFO [Researcher]   → Retrieved 5 chunks (avg score: 3.278)
+2025-11-25 07:01:14,238 INFO [Researcher] Total chunks retrieved: 25
+2025-11-25 07:01:14,241 INFO [Synthesiser] Generating answer...
+2025-11-25 07:01:21,664 INFO [Synthesiser] Answer generated (confidence: 4.24)
+2025-11-26 06:10:09,836 INFO [Analyser] Decomposing query: 'Operating lease right-of-use assets 2025 24823 and 2024 18961'
+2025-11-26 06:10:11,062 INFO [Analyser] Generated 5 sub-queries:
+2025-11-26 06:10:11,063 INFO [Analyser]   1. Operating lease right-of-use assets definition
+2025-11-26 06:10:11,064 INFO [Analyser]   2. Operating lease right-of-use assets 2025 value
+2025-11-26 06:10:11,064 INFO [Analyser]   3. Operating lease right-of-use assets 2024 value
+2025-11-26 06:10:11,065 INFO [Analyser]   4. Compare operating lease right-of-use assets 2024 vs 2025
+2025-11-26 06:10:11,066 INFO [Analyser]   5. Operating lease right-of-use assets financial statement impact
+2025-11-26 06:10:11,067 INFO [Researcher] Researching 5 sub-queries...
+2025-11-26 06:10:11,068 INFO [Researcher] Sub-query 1: 'Operating lease right-of-use assets definition'
+2025-11-26 06:10:19,849 INFO [Researcher]   → Retrieved 5 chunks (avg score: 3.366)
+2025-11-26 06:10:19,850 INFO [Researcher] Sub-query 2: 'Operating lease right-of-use assets 2025 value'
+2025-11-26 06:10:25,359 INFO [Researcher]   → Retrieved 5 chunks (avg score: 4.498)
+2025-11-26 06:10:25,360 INFO [Researcher] Sub-query 3: 'Operating lease right-of-use assets 2024 value'
+2025-11-26 06:10:30,412 INFO [Researcher]   → Retrieved 5 chunks (avg score: 4.977)
+2025-11-26 06:10:30,416 INFO [Researcher] Sub-query 4: 'Compare operating lease right-of-use assets 2024 vs 2025'
+2025-11-26 06:10:35,781 INFO [Researcher]   → Retrieved 5 chunks (avg score: 3.547)
+2025-11-26 06:10:35,788 INFO [Researcher] Sub-query 5: 'Operating lease right-of-use assets financial statement impact'
+2025-11-26 06:10:40,622 INFO [Researcher]   → Retrieved 5 chunks (avg score: 2.480)
+2025-11-26 06:10:40,623 INFO [Researcher] Total chunks retrieved: 25
+2025-11-26 06:10:40,624 INFO [Synthesiser] Generating answer...
+2025-11-26 06:10:43,301 INFO [Synthesiser] Answer generated (confidence: 3.77)
+2025-11-26 06:10:44,309 INFO [Analyser] Decomposing query: 'Rothschild & Co Redburn downgrades Amazon stock due to generative AI concerns'
+2025-11-26 06:10:45,332 INFO [Analyser] Generated 5 sub-queries:
+2025-11-26 06:10:45,333 INFO [Analyser]   1. Rothschild & Co Redburn Amazon downgrade
+2025-11-26 06:10:45,335 INFO [Analyser]   2. Amazon stock price impact of analyst downgrades
+2025-11-26 06:10:45,335 INFO [Analyser]   3. Generative AI impact on Amazon business model
+2025-11-26 06:10:45,336 INFO [Analyser]   4. Analyst concerns regarding Amazon and generative AI
+2025-11-26 06:10:45,337 INFO [Analyser]   5. Redburn Research Amazon stock analysis
+2025-11-26 06:10:45,338 INFO [Researcher] Researching 5 sub-queries...
+2025-11-26 06:10:45,339 INFO [Researcher] Sub-query 1: 'Rothschild & Co Redburn Amazon downgrade'
+2025-11-26 06:10:50,874 INFO [Researcher]   → Retrieved 5 chunks (avg score: -3.986)
+2025-11-26 06:10:50,875 INFO [Researcher] Sub-query 2: 'Amazon stock price impact of analyst downgrades'
+2025-11-26 06:10:56,099 INFO [Researcher]   → Retrieved 5 chunks (avg score: -1.811)
+2025-11-26 06:10:56,102 INFO [Researcher] Sub-query 3: 'Generative AI impact on Amazon business model'
+2025-11-26 06:11:01,686 INFO [Researcher]   → Retrieved 5 chunks (avg score: 1.949)
+2025-11-26 06:11:01,688 INFO [Researcher] Sub-query 4: 'Analyst concerns regarding Amazon and generative AI'
+2025-11-26 06:11:07,574 INFO [Researcher]   → Retrieved 5 chunks (avg score: 0.465)
+2025-11-26 06:11:07,576 INFO [Researcher] Sub-query 5: 'Redburn Research Amazon stock analysis'
+2025-11-26 06:11:13,288 INFO [Researcher]   → Retrieved 5 chunks (avg score: -1.920)
+2025-11-26 06:11:13,290 INFO [Researcher] Total chunks retrieved: 25
+2025-11-26 06:11:13,292 INFO [Synthesiser] Generating answer...
+2025-11-26 06:11:16,717 INFO [Synthesiser] Answer generated (confidence: -1.06)
+2025-11-26 06:11:17,729 INFO [Analyser] Decomposing query: 'Apple Inc. segment revenue and income data for the three and six month periods ended March 29, 2025 and March 30, 2024'
+2025-11-26 06:11:19,239 INFO [Analyser] Generated 5 sub-queries:
+2025-11-26 06:11:19,241 INFO [Analyser]   1. Apple Inc. segment revenue for Q2 2025 and Q2 2024
+2025-11-26 06:11:19,250 INFO [Analyser]   2. Apple Inc. segment operating income for Q2 2025 and Q2 2024
+2025-11-26 06:11:19,251 INFO [Analyser]   3. Apple Inc. segment revenue for the six months ended March 29, 2025 and March 30, 2024
+2025-11-26 06:11:19,252 INFO [Analyser]   4. Apple Inc. segment operating income for the six months ended March 29, 2025 and March 30, 2024
+2025-11-26 06:11:19,253 INFO [Analyser]   5. Apple Inc. financial reporting dates March 29, 2025 and March 30, 2024
+2025-11-26 06:11:19,254 INFO [Researcher] Researching 5 sub-queries...
+2025-11-26 06:11:19,254 INFO [Researcher] Sub-query 1: 'Apple Inc. segment revenue for Q2 2025 and Q2 2024'
+2025-11-26 06:11:24,377 INFO [Researcher]   → Retrieved 5 chunks (avg score: 5.933)
+2025-11-26 06:11:24,379 INFO [Researcher] Sub-query 2: 'Apple Inc. segment operating income for Q2 2025 and Q2 2024'
+2025-11-26 06:11:29,113 INFO [Researcher]   → Retrieved 5 chunks (avg score: 5.349)
+2025-11-26 06:11:29,114 INFO [Researcher] Sub-query 3: 'Apple Inc. segment revenue for the six months ended March 29, 2025 and March 30, 2024'
+2025-11-26 06:11:34,175 INFO [Researcher]   → Retrieved 5 chunks (avg score: 9.070)
+2025-11-26 06:11:34,176 INFO [Researcher] Sub-query 4: 'Apple Inc. segment operating income for the six months ended March 29, 2025 and March 30, 2024'
+2025-11-26 06:11:39,147 INFO [Researcher]   → Retrieved 5 chunks (avg score: 8.364)
+2025-11-26 06:11:39,148 INFO [Researcher] Sub-query 5: 'Apple Inc. financial reporting dates March 29, 2025 and March 30, 2024'
+2025-11-26 06:11:44,233 INFO [Researcher]   → Retrieved 5 chunks (avg score: 7.783)
+2025-11-26 06:11:44,235 INFO [Researcher] Total chunks retrieved: 25
+2025-11-26 06:11:44,236 INFO [Synthesiser] Generating answer...
+2025-11-26 06:11:48,253 INFO [Synthesiser] Answer generated (confidence: 7.30)
+2025-11-26 06:11:49,259 INFO [Analyser] Decomposing query: 'Amazon net sales for North America, International, and AWS for the three and six months ended June 30, 2023 and 2024'
+2025-11-26 06:11:50,550 INFO [Analyser] Generated 6 sub-queries:
+2025-11-26 06:11:50,551 INFO [Analyser]   1. Amazon net sales North America Q2 2023 and 2024
+2025-11-26 06:11:50,552 INFO [Analyser]   2. Amazon net sales International Q2 2023 and 2024
+2025-11-26 06:11:50,554 INFO [Analyser]   3. Amazon AWS net sales Q2 2023 and 2024
+2025-11-26 06:11:50,555 INFO [Analyser]   4. Amazon net sales North America H1 2023 and 2024
+2025-11-26 06:11:50,556 INFO [Analyser]   5. Amazon net sales International H1 2023 and 2024
+2025-11-26 06:11:50,556 INFO [Analyser]   6. Amazon AWS net sales H1 2023 and 2024
+2025-11-26 06:11:50,557 INFO [Researcher] Researching 6 sub-queries...
+2025-11-26 06:11:50,558 INFO [Researcher] Sub-query 1: 'Amazon net sales North America Q2 2023 and 2024'
+2025-11-26 06:11:55,588 INFO [Researcher]   → Retrieved 5 chunks (avg score: 5.478)
+2025-11-26 06:11:55,590 INFO [Researcher] Sub-query 2: 'Amazon net sales International Q2 2023 and 2024'
+2025-11-26 06:12:00,832 INFO [Researcher]   → Retrieved 5 chunks (avg score: 4.533)
+2025-11-26 06:12:00,834 INFO [Researcher] Sub-query 3: 'Amazon AWS net sales Q2 2023 and 2024'
+2025-11-26 06:12:06,885 INFO [Researcher]   → Retrieved 5 chunks (avg score: 5.098)
+2025-11-26 06:12:06,888 INFO [Researcher] Sub-query 4: 'Amazon net sales North America H1 2023 and 2024'
+2025-11-26 06:12:12,892 INFO [Researcher]   → Retrieved 5 chunks (avg score: 4.326)
+2025-11-26 06:12:12,893 INFO [Researcher] Sub-query 5: 'Amazon net sales International H1 2023 and 2024'
+2025-11-26 06:12:17,996 INFO [Researcher]   → Retrieved 5 chunks (avg score: 2.319)
+2025-11-26 06:12:17,997 INFO [Researcher] Sub-query 6: 'Amazon AWS net sales H1 2023 and 2024'
+2025-11-26 06:12:23,037 INFO [Researcher]   → Retrieved 5 chunks (avg score: 3.877)
+2025-11-26 06:12:23,038 INFO [Researcher] Total chunks retrieved: 30
+2025-11-26 06:12:23,040 INFO [Synthesiser] Generating answer...
+2025-11-26 06:12:27,278 INFO [Synthesiser] Answer generated (confidence: 4.27)
+2025-11-26 06:12:28,285 INFO [Analyser] Decomposing query: 'December 31, 2023 unrealized losses on securities less than 12 months and 12 months or greater'
+2025-11-26 06:12:29,146 INFO [Analyser] Generated 3 sub-queries:
+2025-11-26 06:12:29,148 INFO [Analyser]   1. Unrealized losses on securities as of December 31, 2023
+2025-11-26 06:12:29,149 INFO [Analyser]   2. Unrealized losses on securities held less than 12 months as of December 31, 2023
+2025-11-26 06:12:29,150 INFO [Analyser]   3. Unrealized losses on securities held 12 months or greater as of December 31, 2023
+2025-11-26 06:12:29,151 INFO [Researcher] Researching 3 sub-queries...
+2025-11-26 06:12:29,151 INFO [Researcher] Sub-query 1: 'Unrealized losses on securities as of December 31, 2023'
+2025-11-26 06:12:34,395 INFO [Researcher]   → Retrieved 5 chunks (avg score: 8.625)
+2025-11-26 06:12:34,396 INFO [Researcher] Sub-query 2: 'Unrealized losses on securities held less than 12 months as of December 31, 2023'
+2025-11-26 06:12:39,219 INFO [Researcher]   → Retrieved 5 chunks (avg score: 5.596)
+2025-11-26 06:12:39,220 INFO [Researcher] Sub-query 3: 'Unrealized losses on securities held 12 months or greater as of December 31, 2023'
+2025-11-26 06:12:44,137 INFO [Researcher]   → Retrieved 5 chunks (avg score: 5.239)
+2025-11-26 06:12:44,138 INFO [Researcher] Total chunks retrieved: 15
+2025-11-26 06:12:44,139 INFO [Synthesiser] Generating answer...
+2025-11-26 06:12:45,207 INFO [Synthesiser] Answer generated (confidence: 6.49)
+2025-11-26 06:12:46,213 INFO [Analyser] Decomposing query: 'Microsoft fiscal year 2024 second quarter highlights'
+2025-11-26 06:12:47,046 INFO [Analyser] Generated 5 sub-queries:
+2025-11-26 06:12:47,047 INFO [Analyser]   1. Microsoft FY24 Q2 earnings release
+2025-11-26 06:12:47,048 INFO [Analyser]   2. Microsoft fiscal year 2024 Q2 revenue
+2025-11-26 06:12:47,049 INFO [Analyser]   3. Microsoft FY24 Q2 key performance indicators
+2025-11-26 06:12:47,050 INFO [Analyser]   4. Microsoft FY24 Q2 financial highlights
+2025-11-26 06:12:47,051 INFO [Analyser]   5. Microsoft FY24 Q2 operating income
+2025-11-26 06:12:47,052 INFO [Researcher] Researching 5 sub-queries...
+2025-11-26 06:12:47,054 INFO [Researcher] Sub-query 1: 'Microsoft FY24 Q2 earnings release'
+2025-11-26 06:12:52,737 INFO [Researcher]   → Retrieved 5 chunks (avg score: -1.903)
+2025-11-26 06:12:52,738 INFO [Researcher] Sub-query 2: 'Microsoft fiscal year 2024 Q2 revenue'
+2025-11-26 06:12:57,470 INFO [Researcher]   → Retrieved 5 chunks (avg score: 7.128)
+2025-11-26 06:12:57,471 INFO [Researcher] Sub-query 3: 'Microsoft FY24 Q2 key performance indicators'
+2025-11-26 06:13:02,281 INFO [Researcher]   → Retrieved 5 chunks (avg score: 0.345)
+2025-11-26 06:13:02,283 INFO [Researcher] Sub-query 4: 'Microsoft FY24 Q2 financial highlights'
+2025-11-26 06:13:07,444 INFO [Researcher]   → Retrieved 5 chunks (avg score: -1.300)
+2025-11-26 06:13:07,446 INFO [Researcher] Sub-query 5: 'Microsoft FY24 Q2 operating income'
+2025-11-26 06:13:12,383 INFO [Researcher]   → Retrieved 5 chunks (avg score: 2.943)
+2025-11-26 06:13:12,385 INFO [Researcher] Total chunks retrieved: 25
+2025-11-26 06:13:12,386 INFO [Synthesiser] Generating answer...
+2025-11-26 06:13:19,960 INFO [Synthesiser] Answer generated (confidence: 1.44)
+2025-11-26 06:13:20,983 INFO [Analyser] Decomposing query: 'Employee Stock Purchase Plan shares purchased and average price per share for 2025, 2024, and 2023'
+2025-11-26 06:13:22,060 INFO [Analyser] Generated 6 sub-queries:
+2025-11-26 06:13:22,061 INFO [Analyser]   1. Employee Stock Purchase Plan (ESPP) shares purchased in 2025
+2025-11-26 06:13:22,062 INFO [Analyser]   2. Employee Stock Purchase Plan (ESPP) average purchase price per share in 2025
+2025-11-26 06:13:22,063 INFO [Analyser]   3. Employee Stock Purchase Plan (ESPP) shares purchased in 2024
+2025-11-26 06:13:22,064 INFO [Analyser]   4. Employee Stock Purchase Plan (ESPP) average purchase price per share in 2024
+2025-11-26 06:13:22,065 INFO [Analyser]   5. Employee Stock Purchase Plan (ESPP) shares purchased in 2023
+2025-11-26 06:13:22,066 INFO [Analyser]   6. Employee Stock Purchase Plan (ESPP) average purchase price per share in 2023
+2025-11-26 06:13:22,067 INFO [Researcher] Researching 6 sub-queries...
+2025-11-26 06:13:22,068 INFO [Researcher] Sub-query 1: 'Employee Stock Purchase Plan (ESPP) shares purchased in 2025'
+2025-11-26 06:13:26,890 INFO [Researcher]   → Retrieved 5 chunks (avg score: 5.672)
+2025-11-26 06:13:26,891 INFO [Researcher] Sub-query 2: 'Employee Stock Purchase Plan (ESPP) average purchase price per share in 2025'
+2025-11-26 06:13:31,884 INFO [Researcher]   → Retrieved 5 chunks (avg score: 4.626)
+2025-11-26 06:13:31,888 INFO [Researcher] Sub-query 3: 'Employee Stock Purchase Plan (ESPP) shares purchased in 2024'
+2025-11-26 06:13:36,975 INFO [Researcher]   → Retrieved 5 chunks (avg score: 6.055)
+2025-11-26 06:13:36,981 INFO [Researcher] Sub-query 4: 'Employee Stock Purchase Plan (ESPP) average purchase price per share in 2024'
+2025-11-26 06:13:41,905 INFO [Researcher]   → Retrieved 5 chunks (avg score: 4.872)
+2025-11-26 06:13:41,907 INFO [Researcher] Sub-query 5: 'Employee Stock Purchase Plan (ESPP) shares purchased in 2023'
+2025-11-26 06:13:46,862 INFO [Researcher]   → Retrieved 5 chunks (avg score: 6.027)
+2025-11-26 06:13:46,863 INFO [Researcher] Sub-query 6: 'Employee Stock Purchase Plan (ESPP) average purchase price per share in 2023'
+2025-11-26 06:13:52,010 INFO [Researcher]   → Retrieved 5 chunks (avg score: 4.908)
+2025-11-26 06:13:52,012 INFO [Researcher] Total chunks retrieved: 30
+2025-11-26 06:13:52,013 INFO [Synthesiser] Generating answer...
+2025-11-26 06:13:55,454 INFO [Synthesiser] Answer generated (confidence: 5.36)
+2025-11-26 06:13:56,466 INFO [Analyser] Decomposing query: 'Statement of Stockholders’ Equity for the Three Months Ended September 30, 2024 including settlement of warrants and issuance of common stock for equity incentive awards'
+2025-11-26 06:13:57,403 INFO [Analyser] Generated 4 sub-queries:
+2025-11-26 06:13:57,405 INFO [Analyser]   1. Statement of Stockholders' Equity for Q3 2024
+2025-11-26 06:13:57,406 INFO [Analyser]   2. Changes in Equity related to Warrant Settlement
+2025-11-26 06:13:57,407 INFO [Analyser]   3. Common Stock Issuance for Equity Incentive Awards in Q3 2024
+2025-11-26 06:13:57,419 INFO [Analyser]   4. Stockholders' Equity Report September 30, 2024
+2025-11-26 06:13:57,421 INFO [Researcher] Researching 4 sub-queries...
+2025-11-26 06:13:57,422 INFO [Researcher] Sub-query 1: 'Statement of Stockholders' Equity for Q3 2024'
+2025-11-26 06:14:02,630 INFO [Researcher]   → Retrieved 5 chunks (avg score: 4.926)
+2025-11-26 06:14:02,631 INFO [Researcher] Sub-query 2: 'Changes in Equity related to Warrant Settlement'
+2025-11-26 06:14:08,162 INFO [Researcher]   → Retrieved 5 chunks (avg score: -2.518)
+2025-11-26 06:14:08,164 INFO [Researcher] Sub-query 3: 'Common Stock Issuance for Equity Incentive Awards in Q3 2024'
+2025-11-26 06:14:13,001 INFO [Researcher]   → Retrieved 5 chunks (avg score: 3.845)
+2025-11-26 06:14:13,002 INFO [Researcher] Sub-query 4: 'Stockholders' Equity Report September 30, 2024'
+2025-11-26 06:14:18,381 INFO [Researcher]   → Retrieved 5 chunks (avg score: 7.039)
+2025-11-26 06:14:18,388 INFO [Researcher] Total chunks retrieved: 20
+2025-11-26 06:14:18,390 INFO [Synthesiser] Generating answer...
+2025-11-26 06:14:23,187 INFO [Synthesiser] Answer generated (confidence: 3.32)
+2025-11-26 06:14:24,194 INFO [Analyser] Decomposing query: 'Financial results for the year ended June 30, 2024 compared to June 30, 2023, including revenue, net income, and diluted earnings per share.'
+2025-11-26 06:14:25,407 INFO [Analyser] Generated 5 sub-queries:
+2025-11-26 06:14:25,409 INFO [Analyser]   1. Revenue for the year ended June 30, 2024
+2025-11-26 06:14:25,411 INFO [Analyser]   2. Revenue for the year ended June 30, 2023
+2025-11-26 06:14:25,412 INFO [Analyser]   3. Net income for the year ended June 30, 2024 compared to June 30, 2023
+2025-11-26 06:14:25,413 INFO [Analyser]   4. Diluted earnings per share (EPS) for the year ended June 30, 2024 compared to June 30, 2023
+2025-11-26 06:14:25,414 INFO [Analyser]   5. Financial results for the year ended June 30, 2024 compared to June 30, 2023
+2025-11-26 06:14:25,415 INFO [Researcher] Researching 5 sub-queries...
+2025-11-26 06:14:25,416 INFO [Researcher] Sub-query 1: 'Revenue for the year ended June 30, 2024'
+2025-11-26 06:14:30,426 INFO [Researcher]   → Retrieved 5 chunks (avg score: 8.816)
+2025-11-26 06:14:30,428 INFO [Researcher] Sub-query 2: 'Revenue for the year ended June 30, 2023'
+2025-11-26 06:14:35,278 INFO [Researcher]   → Retrieved 5 chunks (avg score: 8.829)
+2025-11-26 06:14:35,280 INFO [Researcher] Sub-query 3: 'Net income for the year ended June 30, 2024 compared to June 30, 2023'
+2025-11-26 06:14:40,533 INFO [Researcher]   → Retrieved 5 chunks (avg score: 9.097)
+2025-11-26 06:14:40,539 INFO [Researcher] Sub-query 4: 'Diluted earnings per share (EPS) for the year ended June 30, 2024 compared to June 30, 2023'
+2025-11-26 06:14:45,470 INFO [Researcher]   → Retrieved 5 chunks (avg score: 6.995)
+2025-11-26 06:14:45,471 INFO [Researcher] Sub-query 5: 'Financial results for the year ended June 30, 2024 compared to June 30, 2023'
+2025-11-26 06:14:50,380 INFO [Researcher]   → Retrieved 5 chunks (avg score: 8.555)
+2025-11-26 06:14:50,387 INFO [Researcher] Total chunks retrieved: 25
+2025-11-26 06:14:50,388 INFO [Synthesiser] Generating answer...
+2025-11-26 06:14:58,984 INFO [Synthesiser] Answer generated (confidence: 8.46)
+2025-11-26 06:14:59,991 INFO [Analyser] Decomposing query: 'Accrued expenses and other current liabilities table'
+2025-11-26 06:15:00,656 INFO [Analyser] Generated 5 sub-queries:
+2025-11-26 06:15:00,658 INFO [Analyser]   1. Definition of accrued expenses
+2025-11-26 06:15:00,660 INFO [Analyser]   2. Components of other current liabilities
+2025-11-26 06:15:00,661 INFO [Analyser]   3. Examples of accrued expenses
+2025-11-26 06:15:00,662 INFO [Analyser]   4. Examples of other current liabilities
+2025-11-26 06:15:00,663 INFO [Analyser]   5. Accounting treatment of accrued expenses and other current liabilities
+2025-11-26 06:15:00,664 INFO [Researcher] Researching 5 sub-queries...
+2025-11-26 06:15:00,665 INFO [Researcher] Sub-query 1: 'Definition of accrued expenses'
+2025-11-26 06:15:06,276 INFO [Researcher]   → Retrieved 5 chunks (avg score: 3.990)
+2025-11-26 06:15:06,277 INFO [Researcher] Sub-query 2: 'Components of other current liabilities'
+2025-11-26 06:15:11,020 INFO [Researcher]   → Retrieved 5 chunks (avg score: 5.103)
+2025-11-26 06:15:11,021 INFO [Researcher] Sub-query 3: 'Examples of accrued expenses'
+2025-11-26 06:15:15,177 INFO [Researcher]   → Retrieved 5 chunks (avg score: 3.408)
+2025-11-26 06:15:15,178 INFO [Researcher] Sub-query 4: 'Examples of other current liabilities'
+2025-11-26 06:15:19,878 INFO [Researcher]   → Retrieved 5 chunks (avg score: 4.996)
+2025-11-26 06:15:19,879 INFO [Researcher] Sub-query 5: 'Accounting treatment of accrued expenses and other current liabilities'
+2025-11-26 06:15:24,842 INFO [Researcher]   → Retrieved 5 chunks (avg score: 4.881)
+2025-11-26 06:15:24,844 INFO [Researcher] Total chunks retrieved: 25
+2025-11-26 06:15:24,844 INFO [Synthesiser] Generating answer...
+2025-11-26 06:15:28,240 INFO [Synthesiser] Answer generated (confidence: 4.48)
+2025-11-26 06:15:29,244 INFO [Analyser] Decomposing query: 'GAAP to non-GAAP reconciliation Item 2'
+2025-11-26 06:15:30,036 INFO [Analyser] Generated 5 sub-queries:
+2025-11-26 06:15:30,037 INFO [Analyser]   1. GAAP to non-GAAP reconciliation definition
+2025-11-26 06:15:30,038 INFO [Analyser]   2. GAAP to non-GAAP reconciliation Item 2 examples
+2025-11-26 06:15:30,039 INFO [Analyser]   3. SEC regulations for GAAP to non-GAAP reconciliation disclosures
+2025-11-26 06:15:30,040 INFO [Analyser]   4. Common adjustments in GAAP to non-GAAP reconciliation
+2025-11-26 06:15:30,041 INFO [Analyser]   5. Analysis of Item 2 in GAAP to non-GAAP reconciliations
+2025-11-26 06:15:30,042 INFO [Researcher] Researching 5 sub-queries...
+2025-11-26 06:15:30,043 INFO [Researcher] Sub-query 1: 'GAAP to non-GAAP reconciliation definition'
+2025-11-26 06:15:35,272 INFO [Researcher]   → Retrieved 5 chunks (avg score: 4.715)
+2025-11-26 06:15:35,276 INFO [Researcher] Sub-query 2: 'GAAP to non-GAAP reconciliation Item 2 examples'
+2025-11-26 06:15:39,929 INFO [Researcher]   → Retrieved 5 chunks (avg score: 5.125)
+2025-11-26 06:15:39,930 INFO [Researcher] Sub-query 3: 'SEC regulations for GAAP to non-GAAP reconciliation disclosures'
+2025-11-26 06:15:44,650 INFO [Researcher]   → Retrieved 5 chunks (avg score: 3.945)
+2025-11-26 06:15:44,654 INFO [Researcher] Sub-query 4: 'Common adjustments in GAAP to non-GAAP reconciliation'
+2025-11-26 06:15:49,697 INFO [Researcher]   → Retrieved 5 chunks (avg score: 2.618)
+2025-11-26 06:15:49,702 INFO [Researcher] Sub-query 5: 'Analysis of Item 2 in GAAP to non-GAAP reconciliations'
+2025-11-26 06:15:54,519 INFO [Researcher]   → Retrieved 5 chunks (avg score: 4.670)
+2025-11-26 06:15:54,522 INFO [Researcher] Total chunks retrieved: 25
+2025-11-26 06:15:54,523 INFO [Synthesiser] Generating answer...
+2025-11-26 06:15:58,135 INFO [Synthesiser] Answer generated (confidence: 4.21)
+2025-11-26 06:15:59,141 INFO [Analyser] Decomposing query: 'costs allocated to segments legal information technology human resources finance excise taxes field selling'
+2025-11-26 06:16:00,527 INFO [Analyser] Generated 5 sub-queries:
+2025-11-26 06:16:00,529 INFO [Analyser]   1. Cost allocation methods for business segments
+2025-11-26 06:16:00,530 INFO [Analyser]   2. Cost allocation to legal, information technology, human resources, and finance departments
+2025-11-26 06:16:00,531 INFO [Analyser]   3. Allocation of excise taxes as a business expense
+2025-11-26 06:16:00,532 INFO [Analyser]   4. Cost allocation strategies for field selling expenses
+2025-11-26 06:16:00,532 INFO [Analyser]   5. Accounting treatment of allocated costs
+2025-11-26 06:16:00,533 INFO [Researcher] Researching 5 sub-queries...
+2025-11-26 06:16:00,534 INFO [Researcher] Sub-query 1: 'Cost allocation methods for business segments'
+2025-11-26 06:16:05,479 INFO [Researcher]   → Retrieved 5 chunks (avg score: 4.917)
+2025-11-26 06:16:05,482 INFO [Researcher] Sub-query 2: 'Cost allocation to legal, information technology, human resources, and finance departments'
+2025-11-26 06:16:10,145 INFO [Researcher]   → Retrieved 5 chunks (avg score: 4.996)
+2025-11-26 06:16:10,150 INFO [Researcher] Sub-query 3: 'Allocation of excise taxes as a business expense'
+2025-11-26 06:16:15,054 INFO [Researcher]   → Retrieved 5 chunks (avg score: 2.497)
+2025-11-26 06:16:15,055 INFO [Researcher] Sub-query 4: 'Cost allocation strategies for field selling expenses'
+2025-11-26 06:16:19,771 INFO [Researcher]   → Retrieved 5 chunks (avg score: 2.877)
+2025-11-26 06:16:19,772 INFO [Researcher] Sub-query 5: 'Accounting treatment of allocated costs'
+2025-11-26 06:16:24,758 INFO [Researcher]   → Retrieved 5 chunks (avg score: 1.236)
+2025-11-26 06:16:24,759 INFO [Researcher] Total chunks retrieved: 25
+2025-11-26 06:16:24,760 INFO [Synthesiser] Generating answer...
+2025-11-26 06:16:27,801 INFO [Synthesiser] Answer generated (confidence: 3.30)
+2025-11-26 06:16:28,805 INFO [Analyser] Decomposing query: 'variable interest entities assets and liabilities elimination intercompany transactions'
+2025-11-26 06:16:30,306 INFO [Analyser] Generated 5 sub-queries:
+2025-11-26 06:16:30,307 INFO [Analyser]   1. Variable Interest Entities (VIEs) definition and characteristics
+2025-11-26 06:16:30,308 INFO [Analyser]   2. Accounting for VIE assets and liabilities: consolidation and disclosure requirements
+2025-11-26 06:16:30,309 INFO [Analyser]   3. Elimination of intercompany transactions in consolidated financial statements involving VIEs
+2025-11-26 06:16:30,310 INFO [Analyser]   4. Impact of intercompany transactions on VIE consolidation: examples and analysis
+2025-11-26 06:16:30,311 INFO [Analyser]   5. Financial reporting standards for VIEs: recent changes and interpretations
+2025-11-26 06:16:30,312 INFO [Researcher] Researching 5 sub-queries...
+2025-11-26 06:16:30,312 INFO [Researcher] Sub-query 1: 'Variable Interest Entities (VIEs) definition and characteristics'
+2025-11-26 06:16:35,867 INFO [Researcher]   → Retrieved 5 chunks (avg score: 3.534)
+2025-11-26 06:16:35,868 INFO [Researcher] Sub-query 2: 'Accounting for VIE assets and liabilities: consolidation and disclosure requirements'
+2025-11-26 06:16:40,643 INFO [Researcher]   → Retrieved 5 chunks (avg score: -0.420)
+2025-11-26 06:16:40,644 INFO [Researcher] Sub-query 3: 'Elimination of intercompany transactions in consolidated financial statements involving VIEs'
+2025-11-26 06:16:45,753 INFO [Researcher]   → Retrieved 5 chunks (avg score: 3.477)
+2025-11-26 06:16:45,755 INFO [Researcher] Sub-query 4: 'Impact of intercompany transactions on VIE consolidation: examples and analysis'
+2025-11-26 06:16:50,464 INFO [Researcher]   → Retrieved 5 chunks (avg score: 0.557)
+2025-11-26 06:16:50,465 INFO [Researcher] Sub-query 5: 'Financial reporting standards for VIEs: recent changes and interpretations'
+2025-11-26 06:16:55,270 INFO [Researcher]   → Retrieved 5 chunks (avg score: -1.456)
+2025-11-26 06:16:55,271 INFO [Researcher] Total chunks retrieved: 25
+2025-11-26 06:16:55,272 INFO [Synthesiser] Generating answer...
+2025-11-26 06:16:59,938 INFO [Synthesiser] Answer generated (confidence: 1.14)
+2025-11-26 06:17:00,948 INFO [Analyser] Decomposing query: 'MyPower customer notes receivable balance September 30 2025 and December 31 2024'
+2025-11-26 06:17:01,908 INFO [Analyser] Generated 5 sub-queries:
+2025-11-26 06:17:01,914 INFO [Analyser]   1. MyPower customer notes receivable September 30 2025
+2025-11-26 06:17:01,915 INFO [Analyser]   2. MyPower customer notes receivable December 31 2024
+2025-11-26 06:17:01,916 INFO [Analyser]   3. Notes receivable definition
+2025-11-26 06:17:01,917 INFO [Analyser]   4. MyPower financial statements 2024
+2025-11-26 06:17:01,919 INFO [Analyser]   5. MyPower financial statements 2025
+2025-11-26 06:17:01,921 INFO [Researcher] Researching 5 sub-queries...
+2025-11-26 06:17:01,922 INFO [Researcher] Sub-query 1: 'MyPower customer notes receivable September 30 2025'
+2025-11-26 06:17:06,916 INFO [Researcher]   → Retrieved 5 chunks (avg score: 8.423)
+2025-11-26 06:17:06,917 INFO [Researcher] Sub-query 2: 'MyPower customer notes receivable December 31 2024'
+2025-11-26 06:17:11,745 INFO [Researcher]   → Retrieved 5 chunks (avg score: 9.649)
+2025-11-26 06:17:11,746 INFO [Researcher] Sub-query 3: 'Notes receivable definition'
+2025-11-26 06:17:16,448 INFO [Researcher]   → Retrieved 5 chunks (avg score: 1.839)
+2025-11-26 06:17:16,449 INFO [Researcher] Sub-query 4: 'MyPower financial statements 2024'
+2025-11-26 06:17:21,489 INFO [Researcher]   → Retrieved 5 chunks (avg score: 6.186)
+2025-11-26 06:17:21,490 INFO [Researcher] Sub-query 5: 'MyPower financial statements 2025'
+2025-11-26 06:17:26,152 INFO [Researcher]   → Retrieved 5 chunks (avg score: 5.831)
+2025-11-26 06:17:26,153 INFO [Researcher] Total chunks retrieved: 25
+2025-11-26 06:17:26,155 INFO [Synthesiser] Generating answer...
+2025-11-26 06:17:27,458 INFO [Synthesiser] Answer generated (confidence: 6.39)
+2025-11-26 06:17:28,465 INFO [Analyser] Decomposing query: 'ASU No. 2023-08 crypto assets accounting disclosure 2024 recast'
+2025-11-26 06:17:29,637 INFO [Analyser] Generated 5 sub-queries:
+2025-11-26 06:17:29,639 INFO [Analyser]   1. ASU 2023-08 crypto assets accounting disclosure requirements
+2025-11-26 06:17:29,640 INFO [Analyser]   2. ASU 2023-08 effective date and transition guidance
+2025-11-26 06:17:29,641 INFO [Analyser]   3. SEC comment letters on ASU 2023-08 crypto asset accounting
+2025-11-26 06:17:29,642 INFO [Analyser]   4. Impact of ASU 2023-08 on 2024 financial statements
+2025-11-26 06:17:29,643 INFO [Analyser]   5. Recasting prior period financial statements under ASU 2023-08
+2025-11-26 06:17:29,644 INFO [Researcher] Researching 5 sub-queries...
+2025-11-26 06:17:29,645 INFO [Researcher] Sub-query 1: 'ASU 2023-08 crypto assets accounting disclosure requirements'
+2025-11-26 06:17:34,636 INFO [Researcher]   → Retrieved 5 chunks (avg score: 8.877)
+2025-11-26 06:17:34,637 INFO [Researcher] Sub-query 2: 'ASU 2023-08 effective date and transition guidance'
+2025-11-26 06:17:39,298 INFO [Researcher]   → Retrieved 5 chunks (avg score: 4.411)
+2025-11-26 06:17:39,300 INFO [Researcher] Sub-query 3: 'SEC comment letters on ASU 2023-08 crypto asset accounting'
+2025-11-26 06:17:44,253 INFO [Researcher]   → Retrieved 5 chunks (avg score: 6.294)
+2025-11-26 06:17:44,254 INFO [Researcher] Sub-query 4: 'Impact of ASU 2023-08 on 2024 financial statements'
+2025-11-26 06:17:49,004 INFO [Researcher]   → Retrieved 5 chunks (avg score: 6.413)
+2025-11-26 06:17:49,005 INFO [Researcher] Sub-query 5: 'Recasting prior period financial statements under ASU 2023-08'
+2025-11-26 06:17:53,642 INFO [Researcher]   → Retrieved 5 chunks (avg score: 6.225)
+2025-11-26 06:17:53,643 INFO [Researcher] Total chunks retrieved: 25
+2025-11-26 06:17:53,645 INFO [Synthesiser] Generating answer...
+2025-11-26 06:17:59,391 INFO [Synthesiser] Answer generated (confidence: 6.44)
+2025-11-26 06:18:00,398 INFO [Analyser] Decomposing query: 'Equity securities sold total sale price March 31, 2023 March 31, 2024'
+2025-11-26 06:18:01,222 INFO [Analyser] Generated 4 sub-queries:
+2025-11-26 06:18:01,224 INFO [Analyser]   1. Equity securities sold total sale price March 31, 2023
+2025-11-26 06:18:01,225 INFO [Analyser]   2. Equity securities sold total sale price March 31, 2024
+2025-11-26 06:18:01,226 INFO [Analyser]   3. Definition of equity securities for financial reporting
+2025-11-26 06:18:01,227 INFO [Analyser]   4. Calculation of total sale price for equity securities
+2025-11-26 06:18:01,228 INFO [Researcher] Researching 4 sub-queries...
+2025-11-26 06:18:01,229 INFO [Researcher] Sub-query 1: 'Equity securities sold total sale price March 31, 2023'
+2025-11-26 06:18:06,736 INFO [Researcher]   → Retrieved 5 chunks (avg score: 6.291)
+2025-11-26 06:18:06,737 INFO [Researcher] Sub-query 2: 'Equity securities sold total sale price March 31, 2024'
+2025-11-26 06:18:11,309 INFO [Researcher]   → Retrieved 5 chunks (avg score: 6.179)
+2025-11-26 06:18:11,311 INFO [Researcher] Sub-query 3: 'Definition of equity securities for financial reporting'
+2025-11-26 06:18:16,203 INFO [Researcher]   → Retrieved 5 chunks (avg score: -0.753)
+2025-11-26 06:18:16,204 INFO [Researcher] Sub-query 4: 'Calculation of total sale price for equity securities'
+2025-11-26 06:18:20,914 INFO [Researcher]   → Retrieved 5 chunks (avg score: 3.708)
+2025-11-26 06:18:20,916 INFO [Researcher] Total chunks retrieved: 20
+2025-11-26 06:18:20,917 INFO [Synthesiser] Generating answer...
+2025-11-26 06:18:22,750 INFO [Synthesiser] Answer generated (confidence: 3.86)
+2025-11-26 06:18:23,758 INFO [Analyser] Decomposing query: 'Derivative assets and liabilities level 1, level 2, level 3 March 31 2024 June 30 2023'
+2025-11-26 06:18:24,801 INFO [Analyser] Generated 4 sub-queries:
+2025-11-26 06:18:24,802 INFO [Analyser]   1. Derivative assets and liabilities fair value hierarchy levels (Level 1, Level 2, Level 3) as of March 31, 2024
+2025-11-26 06:18:24,803 INFO [Analyser]   2. Derivative assets and liabilities fair value hierarchy levels (Level 1, Level 2, Level 3) as of June 30, 2023
+2025-11-26 06:18:24,804 INFO [Analyser]   3. Definition of Level 1, Level 2, and Level 3 fair value hierarchy for derivative assets and liabilities
+2025-11-26 06:18:24,805 INFO [Analyser]   4. Accounting standards and regulations for derivative asset and liability classification in fair value hierarchy
+2025-11-26 06:18:24,806 INFO [Researcher] Researching 4 sub-queries...
+2025-11-26 06:18:24,807 INFO [Researcher] Sub-query 1: 'Derivative assets and liabilities fair value hierarchy levels (Level 1, Level 2, Level 3) as of March 31, 2024'
+2025-11-26 06:18:29,645 INFO [Researcher]   → Retrieved 5 chunks (avg score: 4.898)
+2025-11-26 06:18:29,646 INFO [Researcher] Sub-query 2: 'Derivative assets and liabilities fair value hierarchy levels (Level 1, Level 2, Level 3) as of June 30, 2023'
+2025-11-26 06:18:34,561 INFO [Researcher]   → Retrieved 5 chunks (avg score: 4.694)
+2025-11-26 06:18:34,562 INFO [Researcher] Sub-query 3: 'Definition of Level 1, Level 2, and Level 3 fair value hierarchy for derivative assets and liabilities'
+2025-11-26 06:18:39,414 INFO [Researcher]   → Retrieved 5 chunks (avg score: 6.070)
+2025-11-26 06:18:39,415 INFO [Researcher] Sub-query 4: 'Accounting standards and regulations for derivative asset and liability classification in fair value hierarchy'
+2025-11-26 06:18:44,372 INFO [Researcher]   → Retrieved 5 chunks (avg score: 3.369)
+2025-11-26 06:18:44,373 INFO [Researcher] Total chunks retrieved: 20
+2025-11-26 06:18:44,374 INFO [Synthesiser] Generating answer...
+2025-11-26 06:18:46,511 INFO [Synthesiser] Answer generated (confidence: 4.76)
+2025-11-26 06:18:47,520 INFO [Analyser] Decomposing query: 'Operating lease cost 2021 2022 2023'
+2025-11-26 06:18:48,559 INFO [Analyser] Generated 5 sub-queries:
+2025-11-26 06:18:48,561 INFO [Analyser]   1. Operating lease expense 2021
+2025-11-26 06:18:48,562 INFO [Analyser]   2. Operating lease expense 2022
+2025-11-26 06:18:48,563 INFO [Analyser]   3. Operating lease expense 2023
+2025-11-26 06:18:48,564 INFO [Analyser]   4. Operating lease payments 2021 2022 2023
+2025-11-26 06:18:48,564 INFO [Analyser]   5. Operating lease liabilities 2021 2022 2023
+2025-11-26 06:18:48,565 INFO [Researcher] Researching 5 sub-queries...
+2025-11-26 06:18:48,566 INFO [Researcher] Sub-query 1: 'Operating lease expense 2021'
+2025-11-26 06:18:53,424 INFO [Researcher]   → Retrieved 5 chunks (avg score: 3.908)
+2025-11-26 06:18:53,425 INFO [Researcher] Sub-query 2: 'Operating lease expense 2022'
+2025-11-26 06:18:58,134 INFO [Researcher]   → Retrieved 5 chunks (avg score: 4.963)
+2025-11-26 06:18:58,135 INFO [Researcher] Sub-query 3: 'Operating lease expense 2023'
+2025-11-26 06:19:02,944 INFO [Researcher]   → Retrieved 5 chunks (avg score: 5.832)
+2025-11-26 06:19:02,948 INFO [Researcher] Sub-query 4: 'Operating lease payments 2021 2022 2023'
+2025-11-26 06:19:07,762 INFO [Researcher]   → Retrieved 5 chunks (avg score: 5.835)
+2025-11-26 06:19:07,768 INFO [Researcher] Sub-query 5: 'Operating lease liabilities 2021 2022 2023'
+2025-11-26 06:19:13,789 INFO [Researcher]   → Retrieved 5 chunks (avg score: 3.683)
+2025-11-26 06:19:13,798 INFO [Researcher] Total chunks retrieved: 25
+2025-11-26 06:19:13,801 INFO [Synthesiser] Generating answer...
+2025-11-26 06:19:17,054 INFO [Synthesiser] Answer generated (confidence: 4.84)
+2025-11-26 06:19:18,062 INFO [Analyser] Decomposing query: 'What was Microsoft's effective tax rate for the three months ended March 31, 2024 and 2023, and what were the primary reasons for the change?'
+2025-11-26 06:19:19,213 INFO [Analyser] Generated 5 sub-queries:
+2025-11-26 06:19:19,214 INFO [Analyser]   1. What was Microsoft's effective tax rate for the three months ended March 31, 2024?
+2025-11-26 06:19:19,215 INFO [Analyser]   2. What was Microsoft's effective tax rate for the three months ended March 31, 2023?
+2025-11-26 06:19:19,216 INFO [Analyser]   3. What were the primary reasons for the change in Microsoft's effective tax rate between the three months ended March 31, 2023 and the three months ended March 31, 2024?
+2025-11-26 06:19:19,217 INFO [Analyser]   4. Microsoft tax expense Q3 2024
+2025-11-26 06:19:19,218 INFO [Analyser]   5. Microsoft tax expense Q3 2023
+2025-11-26 06:19:19,219 INFO [Researcher] Researching 5 sub-queries...
+2025-11-26 06:19:19,220 INFO [Researcher] Sub-query 1: 'What was Microsoft's effective tax rate for the three months ended March 31, 2024?'
+2025-11-26 06:19:24,990 INFO [Researcher]   → Retrieved 5 chunks (avg score: 7.433)
+2025-11-26 06:19:24,991 INFO [Researcher] Sub-query 2: 'What was Microsoft's effective tax rate for the three months ended March 31, 2023?'
+2025-11-26 06:19:29,725 INFO [Researcher]   → Retrieved 5 chunks (avg score: 7.496)
+2025-11-26 06:19:29,727 INFO [Researcher] Sub-query 3: 'What were the primary reasons for the change in Microsoft's effective tax rate between the three months ended March 31, 2023 and the three months ended March 31, 2024?'
+2025-11-26 06:19:35,146 INFO [Researcher]   → Retrieved 5 chunks (avg score: 5.848)
+2025-11-26 06:19:35,148 INFO [Researcher] Sub-query 4: 'Microsoft tax expense Q3 2024'
+2025-11-26 06:19:40,295 INFO [Researcher]   → Retrieved 5 chunks (avg score: 2.739)
+2025-11-26 06:19:40,296 INFO [Researcher] Sub-query 5: 'Microsoft tax expense Q3 2023'
+2025-11-26 06:19:45,258 INFO [Researcher]   → Retrieved 5 chunks (avg score: 2.386)
+2025-11-26 06:19:45,261 INFO [Researcher] Total chunks retrieved: 25
+2025-11-26 06:19:45,262 INFO [Synthesiser] Generating answer...
+2025-11-26 06:19:48,092 INFO [Synthesiser] Answer generated (confidence: 5.18)
+2025-11-26 06:19:49,101 INFO [Analyser] Decomposing query: 'impairment of intangible assets 2025 2024 2023 residual value'
+2025-11-26 06:19:49,880 INFO [Analyser] Generated 5 sub-queries:
+2025-11-26 06:19:49,881 INFO [Analyser]   1. impairment of intangible assets 2025
+2025-11-26 06:19:49,882 INFO [Analyser]   2. impairment of intangible assets 2024
+2025-11-26 06:19:49,883 INFO [Analyser]   3. impairment of intangible assets 2023
+2025-11-26 06:19:49,884 INFO [Analyser]   4. intangible assets residual value
+2025-11-26 06:19:49,885 INFO [Analyser]   5. impairment loss calculation intangible assets
+2025-11-26 06:19:49,886 INFO [Researcher] Researching 5 sub-queries...
+2025-11-26 06:19:49,887 INFO [Researcher] Sub-query 1: 'impairment of intangible assets 2025'
+2025-11-26 06:19:55,077 INFO [Researcher]   → Retrieved 5 chunks (avg score: 3.928)
+2025-11-26 06:19:55,078 INFO [Researcher] Sub-query 2: 'impairment of intangible assets 2024'
+2025-11-26 06:19:59,915 INFO [Researcher]   → Retrieved 5 chunks (avg score: 4.911)
+2025-11-26 06:19:59,917 INFO [Researcher] Sub-query 3: 'impairment of intangible assets 2023'
+2025-11-26 06:20:04,567 INFO [Researcher]   → Retrieved 5 chunks (avg score: 5.206)
+2025-11-26 06:20:04,568 INFO [Researcher] Sub-query 4: 'intangible assets residual value'
+2025-11-26 06:20:09,994 INFO [Researcher]   → Retrieved 5 chunks (avg score: 3.889)
+2025-11-26 06:20:09,995 INFO [Researcher] Sub-query 5: 'impairment loss calculation intangible assets'
+2025-11-26 06:20:14,882 INFO [Researcher]   → Retrieved 5 chunks (avg score: 3.660)
+2025-11-26 06:20:14,884 INFO [Researcher] Total chunks retrieved: 25
+2025-11-26 06:20:14,888 INFO [Synthesiser] Generating answer...
+2025-11-26 06:20:23,142 INFO [Synthesiser] Answer generated (confidence: 4.32)
+2025-11-26 06:27:05,822 INFO [Analyser] Decomposing query: 'Operating lease right-of-use assets 2025 24823 and 2024 18961'
+2025-11-26 06:27:07,103 INFO [Analyser] Generated 5 sub-queries:
+2025-11-26 06:27:07,105 INFO [Analyser]   1. Operating lease right-of-use assets definition
+2025-11-26 06:27:07,108 INFO [Analyser]   2. Operating lease right-of-use assets 2025 value
+2025-11-26 06:27:07,112 INFO [Analyser]   3. Operating lease right-of-use assets 2024 value
+2025-11-26 06:27:07,115 INFO [Analyser]   4. Operating lease right-of-use assets 2025 vs 2024 comparison
+2025-11-26 06:27:07,120 INFO [Analyser]   5. Accounting treatment of operating lease right-of-use assets
+2025-11-26 06:27:07,123 INFO [Researcher] Researching 5 sub-queries...
+2025-11-26 06:27:07,125 INFO [Researcher] Sub-query 1: 'Operating lease right-of-use assets definition'
+2025-11-26 06:27:14,534 INFO [Researcher]   → Retrieved 5 chunks (avg score: 3.366)
+2025-11-26 06:27:14,535 INFO [Researcher] Sub-query 2: 'Operating lease right-of-use assets 2025 value'
+2025-11-26 06:27:26,718 INFO [Researcher]   → Retrieved 5 chunks (avg score: 4.498)
+2025-11-26 06:27:26,723 INFO [Researcher] Sub-query 3: 'Operating lease right-of-use assets 2024 value'
+2025-11-26 06:27:39,256 INFO [Researcher]   → Retrieved 5 chunks (avg score: 4.977)
+2025-11-26 06:27:39,258 INFO [Researcher] Sub-query 4: 'Operating lease right-of-use assets 2025 vs 2024 comparison'
+2025-11-26 06:27:49,571 INFO [Researcher]   → Retrieved 5 chunks (avg score: 3.671)
+2025-11-26 06:27:49,575 INFO [Researcher] Sub-query 5: 'Accounting treatment of operating lease right-of-use assets'
+2025-11-26 06:27:55,434 INFO [Researcher]   → Retrieved 5 chunks (avg score: 2.205)
+2025-11-26 06:27:55,437 INFO [Researcher] Total chunks retrieved: 25
+2025-11-26 06:27:55,439 INFO [Synthesiser] Generating answer...
+2025-11-26 06:27:58,045 INFO [Synthesiser] Answer generated (confidence: 3.74)
+2025-11-26 06:27:59,054 INFO [Analyser] Decomposing query: 'Rothschild & Co Redburn downgrades Amazon stock due to generative AI concerns'
+2025-11-26 06:27:59,921 INFO [Analyser] Generated 5 sub-queries:
+2025-11-26 06:27:59,922 INFO [Analyser]   1. Rothschild & Co Redburn Amazon downgrade
+2025-11-26 06:27:59,923 INFO [Analyser]   2. Amazon stock price impact of analyst downgrades
+2025-11-26 06:27:59,924 INFO [Analyser]   3. Generative AI impact on Amazon business model
+2025-11-26 06:27:59,924 INFO [Analyser]   4. Analyst concerns regarding Amazon and generative AI
+2025-11-26 06:27:59,925 INFO [Analyser]   5. Redburn Research Amazon stock analysis
+2025-11-26 06:27:59,926 INFO [Researcher] Researching 5 sub-queries...
+2025-11-26 06:27:59,927 INFO [Researcher] Sub-query 1: 'Rothschild & Co Redburn Amazon downgrade'
+2025-11-26 06:28:04,910 INFO [Researcher]   → Retrieved 5 chunks (avg score: -3.986)
+2025-11-26 06:28:04,911 INFO [Researcher] Sub-query 2: 'Amazon stock price impact of analyst downgrades'
+2025-11-26 06:28:09,496 INFO [Researcher]   → Retrieved 5 chunks (avg score: -1.811)
+2025-11-26 06:28:09,498 INFO [Researcher] Sub-query 3: 'Generative AI impact on Amazon business model'
+2025-11-26 06:28:14,544 INFO [Researcher]   → Retrieved 5 chunks (avg score: 1.949)
+2025-11-26 06:28:14,545 INFO [Researcher] Sub-query 4: 'Analyst concerns regarding Amazon and generative AI'
+2025-11-26 06:28:19,601 INFO [Researcher]   → Retrieved 5 chunks (avg score: 0.465)
+2025-11-26 06:28:19,603 INFO [Researcher] Sub-query 5: 'Redburn Research Amazon stock analysis'
+2025-11-26 06:28:25,317 INFO [Researcher]   → Retrieved 5 chunks (avg score: -1.920)
+2025-11-26 06:28:25,319 INFO [Researcher] Total chunks retrieved: 25
+2025-11-26 06:28:25,320 INFO [Synthesiser] Generating answer...
+2025-11-26 06:28:28,585 INFO [Synthesiser] Answer generated (confidence: -1.06)
+2025-11-26 06:28:29,599 INFO [Analyser] Decomposing query: 'Apple Inc. segment revenue and income data for the three and six month periods ended March 29, 2025 and March 30, 2024'
+2025-11-26 06:28:30,988 INFO [Analyser] Generated 5 sub-queries:
+2025-11-26 06:28:30,990 INFO [Analyser]   1. Apple Inc. segment revenue for Q2 2025 and Q2 2024
+2025-11-26 06:28:30,991 INFO [Analyser]   2. Apple Inc. segment operating income for Q2 2025 and Q2 2024
+2025-11-26 06:28:30,992 INFO [Analyser]   3. Apple Inc. segment revenue for the six months ended March 29, 2025 and March 30, 2024
+2025-11-26 06:28:30,993 INFO [Analyser]   4. Apple Inc. segment operating income for the six months ended March 29, 2025 and March 30, 2024
+2025-11-26 06:28:30,993 INFO [Analyser]   5. Apple Inc. financial reporting calendar for Q2 2025 and Q2 2024
+2025-11-26 06:28:30,994 INFO [Researcher] Researching 5 sub-queries...
+2025-11-26 06:28:30,995 INFO [Researcher] Sub-query 1: 'Apple Inc. segment revenue for Q2 2025 and Q2 2024'
+2025-11-26 06:28:35,908 INFO [Researcher]   → Retrieved 5 chunks (avg score: 5.933)
+2025-11-26 06:28:35,909 INFO [Researcher] Sub-query 2: 'Apple Inc. segment operating income for Q2 2025 and Q2 2024'
+2025-11-26 06:28:40,611 INFO [Researcher]   → Retrieved 5 chunks (avg score: 5.349)
+2025-11-26 06:28:40,612 INFO [Researcher] Sub-query 3: 'Apple Inc. segment revenue for the six months ended March 29, 2025 and March 30, 2024'
+2025-11-26 06:28:45,455 INFO [Researcher]   → Retrieved 5 chunks (avg score: 9.070)
+2025-11-26 06:28:45,456 INFO [Researcher] Sub-query 4: 'Apple Inc. segment operating income for the six months ended March 29, 2025 and March 30, 2024'
+2025-11-26 06:28:50,629 INFO [Researcher]   → Retrieved 5 chunks (avg score: 8.364)
+2025-11-26 06:28:50,630 INFO [Researcher] Sub-query 5: 'Apple Inc. financial reporting calendar for Q2 2025 and Q2 2024'
+2025-11-26 06:28:55,546 INFO [Researcher]   → Retrieved 5 chunks (avg score: 5.325)
+2025-11-26 06:28:55,547 INFO [Researcher] Total chunks retrieved: 25
+2025-11-26 06:28:55,548 INFO [Synthesiser] Generating answer...
+2025-11-26 06:28:59,865 INFO [Synthesiser] Answer generated (confidence: 6.81)
+2025-11-26 06:34:42,542 INFO [Analyser] Decomposing query: 'Operating lease right-of-use assets 2025 24823 and 2024 18961'
+2025-11-26 06:34:43,656 INFO [Analyser] Generated 5 sub-queries:
+2025-11-26 06:34:43,657 INFO [Analyser]   1. Operating lease right-of-use assets definition
+2025-11-26 06:34:43,658 INFO [Analyser]   2. Operating lease right-of-use assets 2025 value
+2025-11-26 06:34:43,658 INFO [Analyser]   3. Operating lease right-of-use assets 2024 value
+2025-11-26 06:34:43,659 INFO [Analyser]   4. Operating lease right-of-use assets 2025 vs 2024 comparison
+2025-11-26 06:34:43,660 INFO [Analyser]   5. Financial statement analysis operating lease right-of-use assets
+2025-11-26 06:34:43,661 INFO [Researcher] Researching 5 sub-queries...
+2025-11-26 06:34:43,662 INFO [Researcher] Sub-query 1: 'Operating lease right-of-use assets definition'
+2025-11-26 06:34:48,721 INFO [Researcher]   → Retrieved 5 chunks (avg score: 3.366)
+2025-11-26 06:34:48,722 INFO [Researcher] Sub-query 2: 'Operating lease right-of-use assets 2025 value'
+2025-11-26 06:34:53,541 INFO [Researcher]   → Retrieved 5 chunks (avg score: 4.498)
+2025-11-26 06:34:53,542 INFO [Researcher] Sub-query 3: 'Operating lease right-of-use assets 2024 value'
+2025-11-26 06:34:58,701 INFO [Researcher]   → Retrieved 5 chunks (avg score: 4.977)
+2025-11-26 06:34:58,702 INFO [Researcher] Sub-query 4: 'Operating lease right-of-use assets 2025 vs 2024 comparison'
+2025-11-26 06:35:03,573 INFO [Researcher]   → Retrieved 5 chunks (avg score: 3.671)
+2025-11-26 06:35:03,574 INFO [Researcher] Sub-query 5: 'Financial statement analysis operating lease right-of-use assets'
+2025-11-26 06:35:08,205 INFO [Researcher]   → Retrieved 5 chunks (avg score: 3.145)
+2025-11-26 06:35:08,211 INFO [Researcher] Total chunks retrieved: 25
+2025-11-26 06:35:08,212 INFO [Synthesiser] Generating answer...
+2025-11-26 06:35:10,815 INFO [Synthesiser] Answer generated (confidence: 3.93)
+2025-11-26 06:35:11,822 INFO [Analyser] Decomposing query: 'Rothschild & Co Redburn downgrades Amazon stock due to generative AI concerns'
+2025-11-26 06:35:12,805 INFO [Analyser] Generated 5 sub-queries:
+2025-11-26 06:35:12,806 INFO [Analyser]   1. Rothschild & Co Redburn Amazon downgrade
+2025-11-26 06:35:12,808 INFO [Analyser]   2. Amazon stock price target changes
+2025-11-26 06:35:12,809 INFO [Analyser]   3. Generative AI impact on Amazon business
+2025-11-26 06:35:12,810 INFO [Analyser]   4. Analyst opinions on Amazon's AI strategy
+2025-11-26 06:35:12,811 INFO [Analyser]   5. Redburn Research reports on Amazon
+2025-11-26 06:35:12,812 INFO [Researcher] Researching 5 sub-queries...
+2025-11-26 06:35:12,813 INFO [Researcher] Sub-query 1: 'Rothschild & Co Redburn Amazon downgrade'
+2025-11-26 06:35:17,943 INFO [Researcher]   → Retrieved 5 chunks (avg score: -3.986)
+2025-11-26 06:35:17,944 INFO [Researcher] Sub-query 2: 'Amazon stock price target changes'
+2025-11-26 06:35:22,873 INFO [Researcher]   → Retrieved 5 chunks (avg score: 0.379)
+2025-11-26 06:35:22,874 INFO [Researcher] Sub-query 3: 'Generative AI impact on Amazon business'
+2025-11-26 06:35:28,245 INFO [Researcher]   → Retrieved 5 chunks (avg score: 2.241)
+2025-11-26 06:35:28,247 INFO [Researcher] Sub-query 4: 'Analyst opinions on Amazon's AI strategy'
+2025-11-26 06:35:33,021 INFO [Researcher]   → Retrieved 5 chunks (avg score: -4.704)
+2025-11-26 06:35:33,022 INFO [Researcher] Sub-query 5: 'Redburn Research reports on Amazon'
+2025-11-26 06:35:38,086 INFO [Researcher]   → Retrieved 5 chunks (avg score: -5.743)
+2025-11-26 06:35:38,087 INFO [Researcher] Total chunks retrieved: 25
+2025-11-26 06:35:38,089 INFO [Synthesiser] Generating answer...
+2025-11-26 06:35:42,312 INFO [Synthesiser] Answer generated (confidence: -2.36)
+2025-11-26 06:35:43,322 INFO [Analyser] Decomposing query: 'Apple Inc. segment revenue and income data for the three and six month periods ended March 29, 2025 and March 30, 2024'
+2025-11-26 06:35:44,681 INFO [Analyser] Generated 5 sub-queries:
+2025-11-26 06:35:44,682 INFO [Analyser]   1. Apple Inc. segment revenue for Q2 2025 and Q2 2024
+2025-11-26 06:35:44,683 INFO [Analyser]   2. Apple Inc. segment operating income for Q2 2025 and Q2 2024
+2025-11-26 06:35:44,683 INFO [Analyser]   3. Apple Inc. segment revenue for the first six months of fiscal year 2025 and 2024
+2025-11-26 06:35:44,685 INFO [Analyser]   4. Apple Inc. segment operating income for the first six months of fiscal year 2025 and 2024
+2025-11-26 06:35:44,685 INFO [Analyser]   5. Apple Inc. fiscal calendar for 2025 and 2024
+2025-11-26 06:35:44,686 INFO [Researcher] Researching 5 sub-queries...
+2025-11-26 06:35:44,687 INFO [Researcher] Sub-query 1: 'Apple Inc. segment revenue for Q2 2025 and Q2 2024'
+2025-11-26 06:35:55,182 INFO [Researcher]   → Retrieved 5 chunks (avg score: 5.933)
+2025-11-26 06:35:55,184 INFO [Researcher] Sub-query 2: 'Apple Inc. segment operating income for Q2 2025 and Q2 2024'
+2025-11-26 06:36:02,274 INFO [Researcher]   → Retrieved 5 chunks (avg score: 5.349)
+2025-11-26 06:36:02,279 INFO [Researcher] Sub-query 3: 'Apple Inc. segment revenue for the first six months of fiscal year 2025 and 2024'
+2025-11-26 06:36:07,900 INFO [Researcher]   → Retrieved 5 chunks (avg score: 5.713)
+2025-11-26 06:36:07,903 INFO [Researcher] Sub-query 4: 'Apple Inc. segment operating income for the first six months of fiscal year 2025 and 2024'
+2025-11-26 06:36:14,152 INFO [Researcher]   → Retrieved 5 chunks (avg score: 4.546)
+2025-11-26 06:36:14,154 INFO [Researcher] Sub-query 5: 'Apple Inc. fiscal calendar for 2025 and 2024'
+2025-11-26 06:36:21,050 INFO [Researcher]   → Retrieved 5 chunks (avg score: 6.037)
+2025-11-26 06:36:21,052 INFO [Researcher] Total chunks retrieved: 25
+2025-11-26 06:36:21,055 INFO [Synthesiser] Generating answer...
+2025-11-26 06:36:24,192 INFO [Synthesiser] Answer generated (confidence: 5.52)
+2025-11-26 06:38:34,906 INFO [Analyser] Decomposing query: 'Operating lease right-of-use assets 2025 24823 and 2024 18961'
+2025-11-26 06:38:36,009 INFO [Analyser] Generated 5 sub-queries:
+2025-11-26 06:38:36,009 INFO [Analyser]   1. Operating lease right-of-use assets definition
+2025-11-26 06:38:36,010 INFO [Analyser]   2. Operating lease right-of-use assets 2025 value
+2025-11-26 06:38:36,011 INFO [Analyser]   3. Operating lease right-of-use assets 2024 value
+2025-11-26 06:38:36,012 INFO [Analyser]   4. Operating lease right-of-use assets comparison 2024 vs 2025
+2025-11-26 06:38:36,013 INFO [Analyser]   5. Financial statement analysis operating lease right-of-use assets
+2025-11-26 06:38:36,014 INFO [Researcher] Researching 5 sub-queries...
+2025-11-26 06:38:36,015 INFO [Researcher] Sub-query 1: 'Operating lease right-of-use assets definition'
+2025-11-26 06:38:41,557 INFO [Researcher]   → Retrieved 5 chunks (avg score: 3.366)
+2025-11-26 06:38:41,559 INFO [Researcher] Sub-query 2: 'Operating lease right-of-use assets 2025 value'
+2025-11-26 06:38:46,783 INFO [Researcher]   → Retrieved 5 chunks (avg score: 4.498)
+2025-11-26 06:38:46,788 INFO [Researcher] Sub-query 3: 'Operating lease right-of-use assets 2024 value'
+2025-11-26 06:38:52,291 INFO [Researcher]   → Retrieved 5 chunks (avg score: 4.977)
+2025-11-26 06:38:52,292 INFO [Researcher] Sub-query 4: 'Operating lease right-of-use assets comparison 2024 vs 2025'
+2025-11-26 06:38:59,036 INFO [Researcher]   → Retrieved 5 chunks (avg score: 3.834)
+2025-11-26 06:38:59,038 INFO [Researcher] Sub-query 5: 'Financial statement analysis operating lease right-of-use assets'
+2025-11-26 06:39:04,676 INFO [Researcher]   → Retrieved 5 chunks (avg score: 3.145)
+2025-11-26 06:39:04,678 INFO [Researcher] Total chunks retrieved: 25
+2025-11-26 06:39:04,679 INFO [Synthesiser] Generating answer...
+2025-11-26 06:39:07,331 INFO [Synthesiser] Answer generated (confidence: 3.96)
+2025-11-26 06:39:08,339 INFO [Analyser] Decomposing query: 'Rothschild & Co Redburn downgrades Amazon stock due to generative AI concerns'
+2025-11-26 06:39:09,193 INFO [Analyser] Generated 5 sub-queries:
+2025-11-26 06:39:09,196 INFO [Analyser]   1. Rothschild & Co Redburn Amazon downgrade
+2025-11-26 06:39:09,197 INFO [Analyser]   2. Amazon stock price impact of analyst downgrades
+2025-11-26 06:39:09,199 INFO [Analyser]   3. Generative AI impact on Amazon business model
+2025-11-26 06:39:09,201 INFO [Analyser]   4. Analyst concerns regarding Amazon and generative AI
+2025-11-26 06:39:09,203 INFO [Analyser]   5. Redburn Research Amazon stock analysis
+2025-11-26 06:39:09,204 INFO [Researcher] Researching 5 sub-queries...
+2025-11-26 06:39:09,206 INFO [Researcher] Sub-query 1: 'Rothschild & Co Redburn Amazon downgrade'
+2025-11-26 06:39:14,276 INFO [Researcher]   → Retrieved 5 chunks (avg score: -3.986)
+2025-11-26 06:39:14,280 INFO [Researcher] Sub-query 2: 'Amazon stock price impact of analyst downgrades'
+2025-11-26 06:39:19,267 INFO [Researcher]   → Retrieved 5 chunks (avg score: -1.811)
+2025-11-26 06:39:19,268 INFO [Researcher] Sub-query 3: 'Generative AI impact on Amazon business model'
+2025-11-26 06:39:24,259 INFO [Researcher]   → Retrieved 5 chunks (avg score: 1.949)
+2025-11-26 06:39:24,260 INFO [Researcher] Sub-query 4: 'Analyst concerns regarding Amazon and generative AI'
+2025-11-26 06:39:30,027 INFO [Researcher]   → Retrieved 5 chunks (avg score: 0.465)
+2025-11-26 06:39:30,028 INFO [Researcher] Sub-query 5: 'Redburn Research Amazon stock analysis'
+2025-11-26 06:39:34,888 INFO [Researcher]   → Retrieved 5 chunks (avg score: -1.920)
+2025-11-26 06:39:34,891 INFO [Researcher] Total chunks retrieved: 25
+2025-11-26 06:39:34,893 INFO [Synthesiser] Generating answer...
+2025-11-26 06:39:37,886 INFO [Synthesiser] Answer generated (confidence: -1.06)
+2025-11-26 06:39:38,897 INFO [Analyser] Decomposing query: 'Apple Inc. segment revenue and income data for the three and six month periods ended March 29, 2025 and March 30, 2024'
+2025-11-26 06:39:40,099 INFO [Analyser] Generated 5 sub-queries:
+2025-11-26 06:39:40,100 INFO [Analyser]   1. Apple Inc. segment revenue for Q2 2025 and Q2 2024
+2025-11-26 06:39:40,101 INFO [Analyser]   2. Apple Inc. segment operating income for Q2 2025 and Q2 2024
+2025-11-26 06:39:40,103 INFO [Analyser]   3. Apple Inc. segment revenue for the six months ended March 29, 2025 and March 30, 2024
+2025-11-26 06:39:40,105 INFO [Analyser]   4. Apple Inc. segment operating income for the six months ended March 29, 2025 and March 30, 2024
+2025-11-26 06:39:40,106 INFO [Analyser]   5. Apple Inc. financial reporting dates March 29, 2025 and March 30, 2024
+2025-11-26 06:39:40,107 INFO [Researcher] Researching 5 sub-queries...
+2025-11-26 06:39:40,108 INFO [Researcher] Sub-query 1: 'Apple Inc. segment revenue for Q2 2025 and Q2 2024'
+2025-11-26 06:39:45,350 INFO [Researcher]   → Retrieved 5 chunks (avg score: 5.933)
+2025-11-26 06:39:45,351 INFO [Researcher] Sub-query 2: 'Apple Inc. segment operating income for Q2 2025 and Q2 2024'
+2025-11-26 06:39:50,227 INFO [Researcher]   → Retrieved 5 chunks (avg score: 5.349)
+2025-11-26 06:39:50,233 INFO [Researcher] Sub-query 3: 'Apple Inc. segment revenue for the six months ended March 29, 2025 and March 30, 2024'
+2025-11-26 06:39:55,391 INFO [Researcher]   → Retrieved 5 chunks (avg score: 9.070)
+2025-11-26 06:39:55,392 INFO [Researcher] Sub-query 4: 'Apple Inc. segment operating income for the six months ended March 29, 2025 and March 30, 2024'
+2025-11-26 06:40:00,326 INFO [Researcher]   → Retrieved 5 chunks (avg score: 8.364)
+2025-11-26 06:40:00,327 INFO [Researcher] Sub-query 5: 'Apple Inc. financial reporting dates March 29, 2025 and March 30, 2024'
+2025-11-26 06:40:05,386 INFO [Researcher]   → Retrieved 5 chunks (avg score: 7.783)
+2025-11-26 06:40:05,390 INFO [Researcher] Total chunks retrieved: 25
+2025-11-26 06:40:05,391 INFO [Synthesiser] Generating answer...
+2025-11-26 06:40:12,090 INFO [Synthesiser] Answer generated (confidence: 7.30)

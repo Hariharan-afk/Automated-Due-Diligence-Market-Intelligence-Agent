@@ -36,12 +36,12 @@ vertex-key.json
 .vscode/
 .idea/
 
-# Logs
-logs/
-*.log
+# # Logs
+# logs/
+# *.log
 
-# Results
-results/
+# # Results
+# results/
 
 # Docker
 docker-compose.override.yml
