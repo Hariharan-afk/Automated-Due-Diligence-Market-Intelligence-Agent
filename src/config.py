@@ -84,6 +84,6 @@ LOGGING_CONFIG = {
 # ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
 BIAS_CONFIG = {
-    "min_score_threshold": 0.2,  # Groups below this score get boosted
+    "min_score_threshold": 0.5,  # Groups below this score get boosted
     "boost_factor": 1.05          # 5% boost to retrieval scores
 }
