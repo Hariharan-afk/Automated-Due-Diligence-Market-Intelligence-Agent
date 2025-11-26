@@ -1,0 +1,124 @@
+{
+    "query": "GOGL",
+    "ticker": null,
+    "company_name": "GOGL",
+    "cik": null,
+    "wikipedia": {
+        "error": "No Wikipedia page found for GOGL"
+    },
+    "news_articles": [
+        {
+            "title": "Golden Ocean , CMB . TECH Set August 20 Target For Closing",
+            "url": "https://www.marinelink.com/news/golden-ocean-cmbtech-set-august-target-528837",
+            "source": "N/A",
+            "published_date": "2025-08-11",
+            "description": "",
+            "content": "",
+            "word_count": 0,
+            "has_content": false
+        },
+        {
+            "title": "Golden Ocean Shareholders Approve Merger with CMB . TECH , Creating Maritime Giant",
+            "url": "https://gcaptain.com/golden-ocean-shareholders-approve-merger-with-cmb-tech-creating-maritime-giant/",
+            "source": "N/A",
+            "published_date": "2025-08-20",
+            "description": "",
+            "content": "",
+            "word_count": 0,
+            "has_content": false
+        },
+        {
+            "title": "GOGL - Update on the CMB . TECH Merger Process",
+            "url": "https://www.globenewswire.com/news-release/2025/08/11/3130619/0/en/GOGL-Update-on-the-CMB-TECH-Merger-Process.html",
+            "source": "N/A",
+            "published_date": "2025-08-11",
+            "description": "",
+            "content": "",
+            "word_count": 0,
+            "has_content": false
+        },
+        {
+            "title": "PRESS RELEASE : Golden Ocean SGM results",
+            "url": "https://www.globenewswire.com/news-release/2025/08/19/3135845/0/en/PRESS-RELEASE-Golden-Ocean-SGM-results.html",
+            "source": "N/A",
+            "published_date": "2025-08-19",
+            "description": "",
+            "content": "",
+            "word_count": 0,
+            "has_content": false
+        },
+        {
+            "title": "Press release : Publication of exemption document",
+            "url": "https://www.globenewswire.com/news-release/2025/08/14/3133969/0/en/Press-release-Publication-of-exemption-document.html",
+            "source": "N/A",
+            "published_date": "2025-08-14",
+            "description": "",
+            "content": "",
+            "word_count": 0,
+            "has_content": false
+        },
+        {
+            "title": "Bermuda Public Companies Update , Summer 2025  Conyers",
+            "url": "https://www.jdsupra.com/legalnews/bermuda-public-companies-update-summer-2431087/",
+            "source": "N/A",
+            "published_date": "2025-08-20",
+            "description": "",
+            "content": "",
+            "word_count": 0,
+            "has_content": false
+        },
+        {
+            "title": "Iron Ore Demand Fuels Capesize Rally , But Coal Outlook Dims for Bulk Shipping",
+            "url": "https://markets.financialcontent.com/stocks/article/marketminute-2025-10-21-iron-ore-demand-fuels-capesize-rally-but-coal-outlook-dims-for-bulk-shipping",
+            "source": "N/A",
+            "published_date": "2025-10-21",
+            "description": "",
+            "content": "",
+            "word_count": 0,
+            "has_content": false
+        },
+        {
+            "title": "Star Bulk Carriers Corp . Welcomes Mikkel Storm Weum to Board , Signaling Potential Strategic Shifts",
+            "url": "https://markets.financialcontent.com/stocks/article/marketminute-2025-10-3-star-bulk-carriers-corp-welcomes-mikkel-storm-weum-to-board-signaling-potential-strategic-shifts",
+            "source": "N/A",
+            "published_date": "2025-10-03",
+            "description": "",
+            "content": "",
+            "word_count": 0,
+            "has_content": false
+        },
+        {
+            "title": "Star Bulk Bolsters Board with Maritime Investment Veteran Mikkel Storm Weum",
+            "url": "https://markets.financialcontent.com/stocks/article/marketminute-2025-10-3-star-bulk-bolsters-board-with-maritime-investment-veteran-mikkel-storm-weum",
+            "source": "N/A",
+            "published_date": "2025-10-03",
+            "description": "",
+            "content": "",
+            "word_count": 0,
+            "has_content": false
+        }
+    ],
+    "sec_filings": {},
+    "validations": {
+        "sec_filings": {}
+    },
+    "statistics": {
+        "total_news_articles": 9,
+        "wikipedia_word_count": 0,
+        "news_sources": [
+            "N/A"
+        ],
+        "date_range": {
+            "earliest": "2025-08-11",
+            "latest": "2025-10-21"
+        },
+        "sec_filings": {
+            "filings_available": [],
+            "total_sections": 0,
+            "total_words": 0,
+            "total_tables": 0,
+            "fiscal_years": []
+        }
+    },
+    "timestamp": "2025-10-27T21:54:51.064110"
+}

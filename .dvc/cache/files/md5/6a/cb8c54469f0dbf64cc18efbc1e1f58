@@ -1,0 +1,96 @@
+{
+    "query": "GOGL",
+    "ticker": null,
+    "company_name": "GOGL",
+    "cik": null,
+    "wikipedia": {
+        "error": "No Wikipedia page found for GOGL"
+    },
+    "news_articles": [
+        {
+            "title": "Golden Ocean , CMB . TECH Set August 20 Target For Closing",
+            "url": "https://www.marinelink.com/news/golden-ocean-cmbtech-set-august-target-528837",
+            "source": "N/A",
+            "published_date": "20250811T153000Z",
+            "description": "",
+            "content": ""
+        },
+        {
+            "title": "Golden Ocean Shareholders Approve Merger with CMB . TECH , Creating Maritime Giant",
+            "url": "https://gcaptain.com/golden-ocean-shareholders-approve-merger-with-cmb-tech-creating-maritime-giant/",
+            "source": "N/A",
+            "published_date": "20250820T014500Z",
+            "description": "",
+            "content": ""
+        },
+        {
+            "title": "GOGL - Update on the CMB . TECH Merger Process",
+            "url": "https://www.globenewswire.com/news-release/2025/08/11/3130619/0/en/GOGL-Update-on-the-CMB-TECH-Merger-Process.html",
+            "source": "N/A",
+            "published_date": "20250811T073000Z",
+            "description": "",
+            "content": ""
+        },
+        {
+            "title": "PRESS RELEASE : Golden Ocean SGM results",
+            "url": "https://www.globenewswire.com/news-release/2025/08/19/3135845/0/en/PRESS-RELEASE-Golden-Ocean-SGM-results.html",
+            "source": "N/A",
+            "published_date": "20250819T150000Z",
+            "description": "",
+            "content": ""
+        },
+        {
+            "title": "Press release : Publication of exemption document",
+            "url": "https://www.globenewswire.com/news-release/2025/08/14/3133969/0/en/Press-release-Publication-of-exemption-document.html",
+            "source": "N/A",
+            "published_date": "20250814T214500Z",
+            "description": "",
+            "content": ""
+        },
+        {
+            "title": "Bermuda Public Companies Update , Summer 2025 | Conyers",
+            "url": "https://www.jdsupra.com/legalnews/bermuda-public-companies-update-summer-2431087/",
+            "source": "N/A",
+            "published_date": "20250820T170000Z",
+            "description": "",
+            "content": ""
+        },
+        {
+            "title": "Iron Ore Demand Fuels Capesize Rally , But Coal Outlook Dims for Bulk Shipping",
+            "url": "https://markets.financialcontent.com/stocks/article/marketminute-2025-10-21-iron-ore-demand-fuels-capesize-rally-but-coal-outlook-dims-for-bulk-shipping",
+            "source": "N/A",
+            "published_date": "20251021T151500Z",
+            "description": "",
+            "content": ""
+        },
+        {
+            "title": "Star Bulk Carriers Corp . Welcomes Mikkel Storm Weum to Board , Signaling Potential Strategic Shifts",
+            "url": "https://markets.financialcontent.com/stocks/article/marketminute-2025-10-3-star-bulk-carriers-corp-welcomes-mikkel-storm-weum-to-board-signaling-potential-strategic-shifts",
+            "source": "N/A",
+            "published_date": "20251003T220000Z",
+            "description": "",
+            "content": ""
+        },
+        {
+            "title": "Star Bulk Bolsters Board with Maritime Investment Veteran Mikkel Storm Weum",
+            "url": "https://markets.financialcontent.com/stocks/article/marketminute-2025-10-3-star-bulk-bolsters-board-with-maritime-investment-veteran-mikkel-storm-weum",
+            "source": "N/A",
+            "published_date": "20251003T210000Z",
+            "description": "",
+            "content": ""
+        }
+    ],
+    "sec_filings": null,
+    "timestamp": "2025-10-27T21:54:51.031249",
+    "metadata": {
+        "wiki_success": false,
+        "news_count": 9,
+        "sec_10k_available": false,
+        "sec_10q_available": false,
+        "data_sources": [
+            "Wikipedia",
+            "NewsAPI",
+            "GDELT"
+        ]
+    }
+}

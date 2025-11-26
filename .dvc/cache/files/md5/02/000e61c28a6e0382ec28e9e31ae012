@@ -1,0 +1,305 @@
+{
+    "query": "MICROSOFT CORP",
+    "ticker": "MSFT",
+    "company_name": "MICROSOFT CORP",
+    "cik": "789019",
+    "wikipedia": {
+        "error": "No Wikipedia page found for MICROSOFT CORP"
+    },
+    "news_articles": [
+        {
+            "title": "Australia sues Microsoft over misleading AI offer",
+            "url": "https://www.yahoo.com/news/articles/australia-sues-microsoft-over-misleading-010535279.html",
+            "source": "Yahoo Entertainment",
+            "published_date": "2025-10-27",
+            "description": "Australias competition watchdog accused Microsoft on Monday of misleading people into paying for its AI assistant Copilot.But there was a partly hidden...",
+            "content": "Australias competition watchdog accused Microsoft on Monday of misleading people into paying for its AI assistant Copilot. The authority said it had filed a suit in the Federal Court against Micros 1709 chars",
+            "word_count": 33,
+            "has_content": true
+        },
+        {
+            "title": "Asian stocks rally as trade tensions ease, gold drops",
+            "url": "https://economictimes.indiatimes.com/markets/stocks/news/asian-stocks-rally-as-trade-tensions-ease-gold-drops/articleshow/124837368.cms",
+            "source": "The Times of India",
+            "published_date": "2025-10-27",
+            "description": "Signs of a nearing US-China trade deal sparked a broad market rally, boosting stocks, oil, and copper, while Treasuries and gold declined. Investors are anticipating a potential accord, with top negotiators reporting progress on contentious issues. This devel",
+            "content": "Signs that the US and China were nearing a trade deal triggered a cross-asset rally, lifting stocks, oil and copper along with China-exposed currencies such as the Australian dollar. Treasuries and g 3433 chars",
+            "word_count": 34,
+            "has_content": true
+        },
+        {
+            "title": "Wall Street: A make-or-break week with big tech earnings",
+            "url": "https://economictimes.indiatimes.com/markets/stocks/news/wall-street-a-make-or-break-week-with-big-tech-earnings/articleshow/124837231.cms",
+            "source": "The Times of India",
+            "published_date": "2025-10-27",
+            "description": "Key tech giants, including Microsoft, Alphabet, Meta, and Apple, are set to report earnings this week, with investor focus on their artificial intelligence outlooks. Strong earnings season performance has bolstered the SP 500, but sustained gains hinge on a",
+            "content": "Two days this week are likely to dictate the direction of the US stock market for the remainder of the year. On Wednesday and Thursday, five firms that account for about a quarter of the SP 500  1700 chars",
+            "word_count": 40,
+            "has_content": true
+        },
+        {
+            "title": "Australia takes Microsoft to court, says it misled 2.7 million customers",
+            "url": "https://www.channelnewsasia.com/business/australia-takes-microsoft-court-says-it-misled-27-million-customers-5426441",
+            "source": "CNA",
+            "published_date": "2025-10-26",
+            "description": "Australias competition watchdog said on Monday said it has filed proceedings in the Federal Court against Microsoft Australia and its parent company Microsoft Corp for allegedly misleading about 2.7 million Australian customers.The Australian Competition and",
+            "content": "Australias competition watchdog said on Monday said it has filed proceedings in the Federal Court against Microsoft Australia and its parent company Microsoft Corp for allegedly misleading about 2.7 251 chars",
+            "word_count": 31,
+            "has_content": true
+        },
+        {
+            "title": "Australia takes Microsoft to court, says it misled 2.7 million customers",
+            "url": "https://www.channelnewsasia.com/business/australia-sues-microsoft-over-ai-linked-subscription-price-hikes-5426441",
+            "source": "CNA",
+            "published_date": "2025-10-26",
+            "description": "Australias competition regulator on Monday sued Microsoft, accusing it of misleading customers into paying higher prices for Microsoft 365 subscriptions after bundling its AI assistant Copilot into personal and family plans.The Australian Competition and Con",
+            "content": "Australias competition regulator on Monday sued Microsoft, accusing it of misleading customers into paying higher prices for Microsoft 365 subscriptions after bundling its AI assistant Copilot into  1719 chars",
+            "word_count": 30,
+            "has_content": true
+        },
+        {
+            "title": "Stock market today: Dow, SP 500, Nasdaq head toward records as Trump stokes hopes US-China trade deal is near",
+            "url": "https://finance.yahoo.com/news/live/stock-market-today-dow-sp-500-nasdaq-head-toward-records-as-trump-stokes-hopes-us-china-trade-deal-is-near-225050682.html",
+            "source": "Yahoo Entertainment",
+            "published_date": "2025-10-26",
+            "description": "Wall Street is in an upbeat mood as it gears up for a pivotal week featuring the Federal Reserves expected interest rate cut and a barrage of Big Tech...",
+            "content": "US stocks climbed toward their latest records on Monday amid promising signs that a US-China trade deal will cap President Trumps long-awaited meeting with Chinese President Xi later this week. The 11144 chars",
+            "word_count": 33,
+            "has_content": true
+        },
+        {
+            "title": "Microsofts AI Chief Criticizes ChatGPTs Erotica Features Despite 13 Billion OpenAI Investment",
+            "url": "https://biztoc.com/x/9e0876d9c67771af",
+            "source": "Biztoc.com",
+            "published_date": "2025-10-26",
+            "description": "In a move that sets it apart from competitors, Microsoft Corp. NASDAQ:MSFT has chosen not to develop simulated erotica for its chatbot users. During a summit last week, Microsofts AI CEO Mustafa Suleyman warned that such capabilities could pose significa",
+            "content": "In a move that sets it apart from competitors, Microsoft Corp. NASDAQ:MSFT has chosen not to develop simulated erotica for its chatbot users.During a summit last week, Microsofts AI CEO Mustafa Sul 139 chars",
+            "word_count": 34,
+            "has_content": true
+        },
+        {
+            "title": "AIs war on journalism will decide the fate of the free press",
+            "url": "https://www.euractiv.com/opinion/ais-war-on-journalism-will-decide-the-fate-of-the-free-press/",
+            "source": "EURACTIV",
+            "published_date": "2025-10-26",
+            "description": "The EUs approach to how artificial intelligence uses journalistic work could determine whether the free press survives the digital age  or vanishes into the data stream",
+            "content": "A quiet war is underway in Europe one that will decide whether journalism remains a pillar of democracy, or dissolves into the hum of the data economy. For years, news organisations have had an un 5455 chars",
+            "word_count": 37,
+            "has_content": true
+        },
+        {
+            "title": "AI factories: Data centers of the future",
+            "url": "https://siliconangle.com/2025/10/25/ai-factories-data-centers-future/",
+            "source": "SiliconANGLE News",
+            "published_date": "2025-10-25",
+            "description": "The data center as we know it is being reimagined as an AI factory  a power- and data-optimized plant that turns energy and information into intelligence at industrial scale. The tech stack is flipping from general purpose central processing unit-centric s",
+            "content": "The data center as we know it is being reimagined as an AI factory a power- and data-optimized plant that turns energy and information into intelligence at industrial scale. The tech stack is flippi 27102 chars",
+            "word_count": 36,
+            "has_content": true
+        },
+        {
+            "title": "Wall Street Is Worried About an AI BubbleHeres the Sector Where Stock Prices Really Stand Out",
+            "url": "https://www.investopedia.com/wall-street-is-worried-about-an-ai-bubble-the-sector-where-stock-prices-really-stand-out-11835209",
+            "source": "Investopedia",
+            "published_date": "2025-10-25",
+            "description": "The AI buildout has lifted the sales and stocks of companies across various sectors, but none have seen their valuations rise as dramatically as power...",
+            "content": "Spencer Platt  Getty Images The AI rally has boosted the sales and stocks of companies across a range of industries. Optimism about artificial intelligence has lifted the prices of stocks 5841 chars",
+            "word_count": 33,
+            "has_content": true
+        },
+        {
+            "title": "US stocks hit record high after soft CPI, led by tech mega-cap gains",
+            "url": "https://www.bloomberg.com/news/articles/2025-10-24/s-p-500-rallies-after-soft-cpi-intel-soars-on-healthy-earnings",
+            "source": "Bloomberg",
+            "published_date": "2025-10-25",
+            "description": "US stocks closed at a new high on Friday, as traders cheered softer-than-anticipated inflation data that underpinned expectations for Federal Reserve interest-rate cuts. Technology giants including Nvidia Corp, Apple Inc and Broadcom Inc led gains in the SP ",
+            "content": "US stocks closed at a new high on Friday, as traders cheered softer-than-anticipated inflation data that underpinned expectations for Federal Reserve interest-rate cuts. Technology giants including N 4515 chars",
+            "word_count": 29,
+            "has_content": true
+        },
+        {
+            "title": "Cramers week ahead: Fed meeting and earnings from Big Tech",
+            "url": "https://www.cnbc.com/2025/10/24/cramers-week-ahead-fed-meeting-and-earnings-from-big-tech.html",
+            "source": "CNBC",
+            "published_date": "2025-10-24",
+            "description": "CNBCs Jim Cramer walked investors through a jam-packed week of earnings season.",
+            "content": "As Wall Street approaches the heigh of earnings season, CNBCs Jim Cramer pinpointed the most important events happening next week including the Federal Reserves meeting and earnings from Big Tech.  4664 chars",
+            "word_count": 33,
+            "has_content": true
+        },
+        {
+            "title": "SP 500 Hits Record After Soft CPI, Led by Tech Mega-Cap Gains",
+            "url": "https://financialpost.com/pmn/business-pmn/sp-500-hits-record-after-soft-cpi-led-by-tech-mega-cap-gains",
+            "source": "Financial Post",
+            "published_date": "2025-10-24",
+            "description": "US stocks closed at a new high on Friday, as traders cheered softer-than-anticipated inflation data that underpinned expectations for Federal Reserve interest-rate cuts. Technology giants including Nvidia Corp., Apple Inc. and Broadcom Inc. led gains in the S",
+            "content": "Bloomberg US stocks closed at a new high on Friday, as traders cheered softer-than-anticipated inflation data that underpinned expectations for Federal Reserve interest-rate cuts. Technology giants 4824 chars",
+            "word_count": 28,
+            "has_content": true
+        },
+        {
+            "title": "New company knowledge feature enables ChatGPT to search files in external services",
+            "url": "https://siliconangle.com/2025/10/24/new-company-knowledge-feature-enables-chatgpt-search-files-external-services/",
+            "source": "SiliconANGLE News",
+            "published_date": "2025-10-24",
+            "description": "OpenAI has updated ChatGPT with a new feature that enables the chatbot to analyze data users keep in third-party services. The capability, which is known simply as company knowledge, made its debut on Thursday. Its included in ChatGPTs Business, Enterpris",
+            "content": "OpenAI has updated ChatGPT with a new feature that enables the chatbot to analyze data users keep in third-party services. The capability, which is known simply as company knowledge, made its debut  4460 chars",
+            "word_count": 35,
+            "has_content": true
+        },
+        {
+            "title": "Brookfield in Talks to Revive Abandoned South Carolina Project",
+            "url": "https://financialpost.com/pmn/business-pmn/brookfield-in-talks-to-revive-abandoned-south-carolina-project",
+            "source": "Financial Post",
+            "published_date": "2025-10-24",
+            "description": "South Carolina utility Santee Cooper is in talks with Brookfield Asset Management to revive a long-abandoned nuclear project as surging US demand for electricity renews interest in atomic energy.",
+            "content": "Bloomberg South Carolina utility Santee Cooper is in talks with Brookfield Asset Management to revive a long-abandoned nuclear project as surging US demand for electricity renews interest in atomic 4965 chars",
+            "word_count": 31,
+            "has_content": true
+        },
+        {
+            "title": "Power Stocks Stumble as Investors See Cracks in AI-Fueled Rally",
+            "url": "https://financialpost.com/pmn/business-pmn/power-stocks-stumble-as-investors-see-cracks-in-ai-fueled-rally",
+            "source": "Financial Post",
+            "published_date": "2025-10-24",
+            "description": "For most of the year, it looked like power demand from AI was insatiable, sending investors rushing into shares of the companies that generate electricity. Whether coal-fired, wind-driven or nuclear, generators across the board saw dizzying rallies.",
+            "content": "Bloomberg For most of the year, it looked like power demand from AI was insatiable, sending investors rushing into shares of the companies that generate electricity. Whether coal-fired, wind-driven 5515 chars",
+            "word_count": 31,
+            "has_content": true
+        },
+        {
+            "title": "Other Barks  Bites for Friday, October 24: SCOTUS Denies Cert in Home Floorplan Copyright Case; EPO Says Research Institution Patents Nearly Doubled Since 2001; and Fourth Circuit Appears Likely to Nix New Blackbeard Copyright Appeal",
+            "url": "https://ipwatchdog.com/2025/10/24/other-barks-bites-epo-research-institution-patents-doubled/",
+            "source": "IPWatchdog.com",
+            "published_date": "2025-10-24",
+            "description": "This week in Other Barks  Bites: Centripetal Networks gets a chance to get a new panel of administrative patent judges at the PTAB despite losing its bias argument at the Federal Circuit; the Supreme Court denies a petition for certiorari appealing the Eight",
+            "content": "Bites noun: more meaty news to sink your teeth into. Barks noun: peripheral noise worth your attention. Want to have your doggies featured in one of our future Barks  Bites Columns? Sen 12668 chars",
+            "word_count": 35,
+            "has_content": true
+        },
+        {
+            "title": "Inter-alpha-trypsin inhibitor heavy chain 4 ITIH4 in saliva of pigs: evaluation of two commercially available ELISA kits for its measurement and distribution of its main components",
+            "url": "https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0335133",
+            "source": "Plos.org",
+            "published_date": "2025-10-24",
+            "description": "Inter-alpha-trypsin inhibitor protein heavy chain 4 ITIH4, also named porcine major acute phase protein Pig-MAP, is a positive acute phase protein APP in pigs and can be measured in plasma and also in saliva to assess the animal health. The objectives o",
+            "content": "Abstract Inter-alpha-trypsin inhibitor protein heavy chain 4 ITIH4, also named porcine major acute phase protein Pig-MAP, is a positive acute phase protein APP in pigs and can be measured in p 39799 chars",
+            "word_count": 33,
+            "has_content": true
+        },
+        {
+            "title": "Carahsoft and Partners Showcase Education, Cybersecurity and AI Solutions at Educause Annual Conference on October 27-30, 2025 in Nashville, TN",
+            "url": "https://www.globenewswire.com/news-release/2025/10/24/3172882/0/en/Carahsoft-and-Partners-Showcase-Education-Cybersecurity-and-AI-Solutions-at-Educause-Annual-Conference-on-October-27-30-2025-in-Nashville-TN.html",
+            "source": "GlobeNewswire",
+            "published_date": "2025-10-24",
+            "description": "More Than 90 Technology Partners Demo Innovation in Higher Education IT More Than 90 Technology Partners Demo Innovation in Higher Education IT",
+            "content": "RESTON, Va., Oct. 24, 2025 GLOBE NEWSWIRE -- Carahsoft Technology Corp., The Trusted Education IT Solutions Provider will be joined by more than 90 of its technology partners at the Educause Annua 6275 chars",
+            "word_count": 34,
+            "has_content": true
+        },
+        {
+            "title": "Amazons AWS shows signs of weakness as competitors charge ahead",
+            "url": "https://www.bloomberg.com/news/features/2025-10-24/amazon-s-aws-is-slowed-by-bloat-as-competitors-clinch-ai-deals",
+            "source": "Bloomberg",
+            "published_date": "2025-10-24",
+            "description": "Three years into an AI boom spawned by OpenAIs revolutionary ChatGPT, AWS is widely perceived as trailing its tech peers in AI",
+            "content": "Its no exaggeration to say Amazon.com Inc. invented the cloud business. Amazon Web Services took the corporate data center apart and split it into pieces, building pay-as-you go services delivered wi 18992 chars",
+            "word_count": 33,
+            "has_content": true
+        }
+    ],
+    "sec_filings": {
+        "10-K": {
+            "ticker": "",
+            "company_name": "",
+            "cik": "",
+            "filing_type": "10-K",
+            "filing_date": "2025-07-30",
+            "fiscal_year": 2025,
+            "fiscal_period": "FY",
+            "accession_number": "0000950170-25-100235",
+            "filing_url": "https://www.sec.gov/Archives/edgar/data/789019/000095017025100235/msft-20250630.htm",
+            "sections": {},
+            "statistics": {
+                "total_sections": 0,
+                "total_words": 0,
+                "total_tables": 0
+            }
+        },
+        "10-Q": {
+            "ticker": "",
+            "company_name": "",
+            "cik": "",
+            "filing_type": "10-Q",
+            "filing_date": "2025-04-30",
+            "fiscal_year": 2025,
+            "fiscal_period": "Q",
+            "accession_number": "0000950170-25-061046",
+            "filing_url": "https://www.sec.gov/Archives/edgar/data/789019/000095017025061046/msft-20250331.htm",
+            "sections": {},
+            "statistics": {
+                "total_sections": 0,
+                "total_words": 0,
+                "total_tables": 0
+            }
+        }
+    },
+    "validations": {
+        "sec_filings": {
+            "10-K": {
+                "is_valid": false,
+                "errors": [
+                    "Missing required field: ticker",
+                    "Missing required field: sections",
+                    "No sections found in filing"
+                ],
+                "warnings": []
+            },
+            "10-Q": {
+                "is_valid": false,
+                "errors": [
+                    "Missing required field: ticker",
+                    "Missing required field: sections",
+                    "No sections found in filing"
+                ],
+                "warnings": []
+            }
+        }
+    },
+    "statistics": {
+        "total_news_articles": 20,
+        "wikipedia_word_count": 0,
+        "news_sources": [
+            "Biztoc.com",
+            "EURACTIV",
+            "The Times of India",
+            "Investopedia",
+            "Bloomberg",
+            "Financial Post",
+            "IPWatchdog.com",
+            "GlobeNewswire",
+            "Yahoo Entertainment",
+            "SiliconANGLE News",
+            "CNA",
+            "Plos.org",
+            "CNBC"
+        ],
+        "date_range": {
+            "earliest": "2025-10-24",
+            "latest": "2025-10-27"
+        },
+        "sec_filings": {
+            "filings_available": [
+                "10-K",
+                "10-Q"
+            ],
+            "total_sections": 0,
+            "total_words": 0,
+            "total_tables": 0,
+            "fiscal_years": [
+                2025
+            ]
+        }
+    },
+    "timestamp": "2025-10-27T22:29:53.256552"
+}

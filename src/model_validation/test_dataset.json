@@ -1,0 +1,27 @@
+{
+  "generated_at": "now",
+  "source": "synthetic_qdrant",
+  "test_cases": [
+    {
+      "query_id": "SYN_001",
+      "query": "Operating lease right-of-use assets 2025 24823 and 2024 18961",
+      "target_chunk_id": "03e24362-2183-52be-9ec7-718a23af9d3d",
+      "target_chunk_text": "|  |  |  |  |  |  |  |  |  |\n| --- | --- | --- | --- | --- | --- | --- | --- | --- |\n|  |  |  |  |  |  |  |  |  |\n| (In millions, except lease term and discount rate) |  |  | |  |  |  | |  |\n|  |  |  ...",
+      "company": "Microsoft Corporation"
+    },
+    {
+      "query_id": "SYN_002",
+      "query": "Rothschild & Co Redburn downgrades Amazon stock due to generative AI concerns",
+      "target_chunk_id": "01ba25d9-fa64-5d33-8aa0-0ddba9ca1457",
+      "target_chunk_text": "Amazon.com, Inc. (NASDAQ:AMZN) is one of the AI Stocks Making Moves on Wall Street. On November 18, Rothschild & Co Redburn\u2019s Alexander Haissl downgraded the stock to \u201cNeutral\u201d from buy with a $250 pr...",
+      "company": "Amazon.com Inc."
+    },
+    {
+      "query_id": "SYN_003",
+      "query": "Apple Inc. segment revenue and income data for the three and six month periods ended March 29, 2025 and March 30, 2024",
+      "target_chunk_id": "04ad21ed-a1f6-552b-a560-9e3520c77e5a",
+      "target_chunk_text": "**Table Description:** **Segment Revenue and Income by Reportable Segment**\n\nThis table presents revenue and income data by reportable segment for Apple Inc. for the three- and six-month periods ended...",
+      "company": "Apple Inc."
+    }
+  ]
+}

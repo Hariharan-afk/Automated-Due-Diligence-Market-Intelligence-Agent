@@ -1,0 +1,23 @@
+services:
+  ml-app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: ml-app
+    environment:
+      - QDRANT_URL=${QDRANT_URL}
+      - QDRANT_API_KEY=${QDRANT_API_KEY}
+      - QDRANT_COLLECTION=${QDRANT_COLLECTION:-financial_data}
+      - GOOGLE_APPLICATION_CREDENTIALS=/app/vertex-key.json
+      - GCP_PROJECT_ID=your-project-id
+      - GCP_LOCATION=us-central1
+    volumes:
+      - ./src:/app/src
+
+      - ./logs:/app/logs
+      - ./results:/app/results
+      - type: bind
+        source: ./vertex-key.json
+        target: /app/vertex-key.json
+        read_only: true
+    command: ["tail", "-f", "/dev/null"]

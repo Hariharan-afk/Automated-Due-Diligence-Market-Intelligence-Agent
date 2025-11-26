@@ -1,0 +1,202 @@
+{
+    "query": "AMZN",
+    "ticker": "AMZN",
+    "company_name": "AMAZON COM INC",
+    "cik": "1018724",
+    "wikipedia": {
+        "error": "No Wikipedia page found for AMAZON COM INC"
+    },
+    "news_articles": [
+        {
+            "title": "Is Amazon ( AMZN ) One of the Most Profitable Stocks of the Last 5 Years ? ",
+            "url": "https://finance.yahoo.com/news/amazon-amzn-one-most-profitable-133520232.html",
+            "source": "N/A",
+            "published_date": "20251012T143000Z",
+            "description": "",
+            "content": ""
+        },
+        {
+            "title": "Pershing Square Holding New Addition : Amazon . com ( AMZN ) ",
+            "url": "https://www.insidermonkey.com/blog/pershing-square-holdings-new-addition-amazon-com-amzn-1603072/",
+            "source": "N/A",
+            "published_date": "20250904T160000Z",
+            "description": "",
+            "content": ""
+        },
+        {
+            "title": "Morgan Stanley Sees Growth in Amazon ( AMZN ) Fresh Grocery Expansion , Keeps Overweight Rating",
+            "url": "https://finance.yahoo.com/news/morgan-stanley-sees-growth-amazon-044611629.html",
+            "source": "N/A",
+            "published_date": "20250920T093000Z",
+            "description": "",
+            "content": ""
+        },
+        {
+            "title": "Amazon . com ( AMZN ): Procore Technologies , Inc . Signs Multi - year SCA With AWS",
+            "url": "https://www.insidermonkey.com/blog/amazon-com-amzn-procore-technologies-inc-signs-multi-year-sca-with-aws-1599417/",
+            "source": "N/A",
+            "published_date": "20250829T050000Z",
+            "description": "",
+            "content": ""
+        },
+        {
+            "title": "Morgan Stanley Sees Growth in Amazon ( AMZN ) Fresh Grocery Expansion , Keeps Overweight Rating",
+            "url": "https://www.insidermonkey.com/blog/morgan-stanley-sees-growth-in-amazons-amzn-fresh-grocery-expansion-keeps-overweight-rating-1611437/",
+            "source": "N/A",
+            "published_date": "20250919T054500Z",
+            "description": "",
+            "content": ""
+        },
+        {
+            "title": "Amazon ( AMZN ) Launches $5 RxPass Medication Subscription in Texas",
+            "url": "https://finance.yahoo.com/news/amazon-amzn-launches-5-rxpass-185030269.html",
+            "source": "N/A",
+            "published_date": "20250918T063000Z",
+            "description": "",
+            "content": ""
+        },
+        {
+            "title": "  We Were So Worried About  Amazon . com , Inc . ( AMZN ), Says Jim Cramer",
+            "url": "https://finance.yahoo.com/news/were-worried-amazon-com-inc-190530622.html",
+            "source": "N/A",
+            "published_date": "20250920T203000Z",
+            "description": "",
+            "content": ""
+        },
+        {
+            "title": "Amazon ( AMZN ) Launches $5 RxPass Medication Subscription in Texas",
+            "url": "https://www.insidermonkey.com/blog/amazon-amzn-launches-5-rxpass-medication-subscription-in-texas-1609505/",
+            "source": "N/A",
+            "published_date": "20250916T210000Z",
+            "description": "",
+            "content": ""
+        },
+        {
+            "title": "Amazon AI Chip Executive Joins Arm to Build Complete Chips",
+            "url": "https://finance.yahoo.com/news/amazon-ai-chip-executive-joins-051946956.html",
+            "source": "N/A",
+            "published_date": "20250824T223000Z",
+            "description": "",
+            "content": ""
+        },
+        {
+            "title": "JetBlue To Be The First Airline To Implement Amazon . com ( AMZN ) Project Kuiper Satellite Technology",
+            "url": "https://finance.yahoo.com/news/jetblue-first-airline-implement-amazon-142924170.html",
+            "source": "N/A",
+            "published_date": "20250909T224500Z",
+            "description": "",
+            "content": ""
+        },
+        {
+            "title": "Is Amazon ( AMZN ) Logistics Advantage Enough to Win Grocery Market Share ? ",
+            "url": "https://finance.yahoo.com/news/amazon-amzn-logistics-advantage-enough-042654453.html",
+            "source": "N/A",
+            "published_date": "20250830T091500Z",
+            "description": "",
+            "content": ""
+        },
+        {
+            "title": "Is Amazon ( AMZN ) Logistics Advantage Enough to Win Grocery Market Share ? ",
+            "url": "https://www.insidermonkey.com/blog/is-amazons-amzn-logistics-advantage-enough-to-win-grocery-market-share-1599166/",
+            "source": "N/A",
+            "published_date": "20250829T063000Z",
+            "description": "",
+            "content": ""
+        },
+        {
+            "title": "  We Were So Worried About  Amazon . com , Inc . ( AMZN ), Says Jim Cramer",
+            "url": "https://www.insidermonkey.com/blog/we-were-so-worried-about-amazon-com-inc-amzn-says-jim-cramer-1613302/",
+            "source": "N/A",
+            "published_date": "20250920T200000Z",
+            "description": "",
+            "content": ""
+        },
+        {
+            "title": "Jim Cramer Continues His 180 Degree Flip On Amazon . com , Inc . ( AMZN ) ",
+            "url": "https://finance.yahoo.com/news/jim-cramer-continues-180-degree-173548833.html",
+            "source": "N/A",
+            "published_date": "20250831T184500Z",
+            "description": "",
+            "content": ""
+        },
+        {
+            "title": "Bernstein Reaffirms Its  Buy  Rating on Amazon . com ( AMZN ) with $250 Price Target",
+            "url": "https://finance.yahoo.com/news/bernstein-reaffirms-buy-rating-amazon-092549820.html",
+            "source": "N/A",
+            "published_date": "20251024T184500Z",
+            "description": "",
+            "content": ""
+        },
+        {
+            "title": "Analyst Explains Why Amazon . com ( AMZN ) is a  Tactical Winner  ",
+            "url": "https://finance.yahoo.com/news/analyst-explains-why-amazon-com-112527310.html",
+            "source": "N/A",
+            "published_date": "20250913T131500Z",
+            "description": "",
+            "content": ""
+        },
+        {
+            "title": "JMP Securities Keeps Market Outperform Rating for Amazon ( AMZN ) ",
+            "url": "https://finance.yahoo.com/news/jmp-securities-keeps-market-outperform-040658244.html",
+            "source": "N/A",
+            "published_date": "20250927T081500Z",
+            "description": "",
+            "content": ""
+        },
+        {
+            "title": "Amazon ( AMZN ) Launches Multi - Channel Fulfillment for Non - Amazon Marketplaces , Boosting Retailer Sales",
+            "url": "https://www.insidermonkey.com/blog/amazon-amzn-launches-multi-channel-fulfillment-for-non-amazon-marketplaces-boosting-retailer-sales-1613905/",
+            "source": "N/A",
+            "published_date": "20250924T161500Z",
+            "description": "",
+            "content": ""
+        },
+        {
+            "title": "Analyst Explains Why Amazon . com ( AMZN ) Stock Can Move  Quite a Bit Higher  Soon",
+            "url": "https://finance.yahoo.com/news/analyst-explains-why-amazon-com-135657254.html",
+            "source": "N/A",
+            "published_date": "20251002T143000Z",
+            "description": "",
+            "content": ""
+        },
+        {
+            "title": "  I Love Amazon ( AMZN ), Says Jim Cramer As He Discusses AI Partner Anthropic",
+            "url": "https://finance.yahoo.com/news/love-amazon-amzn-says-jim-193953355.html",
+            "source": "N/A",
+            "published_date": "20251025T181500Z",
+            "description": "",
+            "content": ""
+        }
+    ],
+    "sec_filings": {
+        "10-K": {
+            "accession_number": "0001018724-25-000004",
+            "filing_date": "2025-02-07",
+            "fiscal_year": 2025,
+            "sections": [],
+            "sections_data": {},
+            "filing_url": "https://www.sec.gov/Archives/edgar/data/1018724/000101872425000004/amzn-20241231.htm"
+        },
+        "10-Q": {
+            "accession_number": "0001018724-25-000086",
+            "filing_date": "2025-08-01",
+            "fiscal_year": 2025,
+            "sections": [],
+            "sections_data": {},
+            "filing_url": "https://www.sec.gov/Archives/edgar/data/1018724/000101872425000086/amzn-20250630.htm"
+        }
+    },
+    "timestamp": "2025-10-28T00:37:20.998769",
+    "metadata": {
+        "wiki_success": false,
+        "news_count": 20,
+        "sec_10k_available": true,
+        "sec_10q_available": true,
+        "data_sources": [
+            "Wikipedia",
+            "NewsAPI",
+            "GDELT",
+            "SEC EDGAR"
+        ]
+    }
+}

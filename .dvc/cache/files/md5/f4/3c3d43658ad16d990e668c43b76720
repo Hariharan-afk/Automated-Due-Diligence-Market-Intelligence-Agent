@@ -1,0 +1,395 @@
+{
+    "query": "AVGO",
+    "ticker": "AVGO",
+    "company_name": "Broadcom Inc.",
+    "cik": "1730168",
+    "wikipedia": {
+        "title": "Broadcom",
+        "summary": "Broadcom Inc. is an American multinational designer, developer, manufacturer, and global supplier of a wide range of semiconductor and infrastructure software products. Broadcom's product offerings serve the data center, networking, software, broadband, wireless, storage, and industrial markets. As of 2025—amid the AI boom—Broadcom is one of the largest companies globally, and could be considered part of the Big Tech group and the Magnificent Seven, replacing Tesla.\nIn December 2024, Broadcom became the 12th company to surpass a $1 trillion market cap, and as of September 2025, it remains the most recent company to reach that milestone. As of 2024, some 58% of Broadcom's revenue came from its semiconductor-based products and 42% from its infrastructure software products and services.\nTan Hock Eng is the company's president and CEO. The company is headquartered in Palo Alto, California. Avago Technologies Limited changed its name to Broadcom to acquire Broadcom Corporation in January 2016. Avago's ticker symbol AVGO now represents the merged entity. The Broadcom Corporation ticker symbol BRCM was retired. Initially the merged entity was known as Broadcom Limited, before assuming the current name in November 2017.\nIn October 2019, the European Union issued an interim antitrust order against Broadcom concerning anticompetitive business practices which allegedly violate European Union competition law.\nIn May 2022, Broadcom announced an agreement to acquire VMware in a cash-and-stock transaction valued at $69 billion. The acquisition was closed on November 22, 2023.",
+        "full_text": "Broadcom Inc. is an American multinational designer, developer, manufacturer, and global supplier of a wide range of semiconductor and infrastructure software products. Broadcom's product offerings serve the data center, networking, software, broadband, wireless, storage, and industrial markets. As of 2025—amid the AI boom—Broadcom is one of the largest companies globally, and could be considered part of the Big Tech group and the Magnificent Seven, replacing Tesla.\nIn December 2024, Broadcom became the 12th company to surpass a $1 trillion market cap, and as of September 2025, it remains the most recent company to reach that milestone. As of 2024, some 58% of Broadcom's revenue came from its semiconductor-based products and 42% from its infrastructure software products and services.\nTan Hock Eng is the company's president and CEO. The company is headquartered in Palo Alto, California. Avago Technologies Limited changed its name to Broadcom to acquire Broadcom Corporation in January 2016. Avago's ticker symbol AVGO now represents the merged entity. The Broadcom Corporation ticker symbol BRCM was retired. Initially the merged entity was known as Broadcom Limited, before assuming the current name in November 2017.\nIn October 2019, the European Union issued an interim antitrust order against Broadcom concerning anticompetitive business practices which allegedly violate European Union competition law.\nIn May 2022, Broadcom announced an agreement to acquire VMware in a cash-and-stock transaction valued at $69 billion. The acquisition was closed on November 22, 2023.\n\nHistory\nOrigin in Hewlett-Packard\nThe company that would later become Broadcom Inc. was established in 1961 as HP Associates, a semiconductor products division of Hewlett-Packard.\nThe division separated from Hewlett-Packard as part of the Agilent Technologies spinoff in 1999.\n\nFormation of Avago Technologies\nKKR and Silver Lake Partners acquired the Semiconductor Products Group of Agilent Technologies in 2005 for $2.6 billion and formed Avago Technologies. Avago Technologies agreed to sell its I/O solutions unit to PMC-Sierra for $42.5 million in October 2005.\nIn August 2008, the company filed an initial public offering of $400 million. In October 2008, Avago Technologies acquired Infineon Technologies' Munich-based bulk acoustic wave business for €21.5 million.\nOn 6 August 2009, Avago Technologies went public on NASDAQ with the ticker symbol AVGO.\n\nAvago Technologies announced its agreement to acquire CyOptics, an optical chip and component supplier, for $400 million in April 2013. The acquisition aimed to expand Avago Technologies' fiber optics product portfolio. In October 2013, Avago Technologies invested $5 million in Amantys, a power electronics technology provider, as part of a strategic investment agreement between the two companies.\nAvago Technologies announced its agreement to acquire LSI Corporation in December 2013 for $6.6 billion. The acquisition helped move Avago Technologies away from specialized products and towards a more mainstream industry, which included chips, especially storage for data centers.\nThe company sold its SSD controller business to Seagate Technology in May 2014. In August 2014, the company was the ninth-largest semiconductor company. Avago Technologies agreed to sell LSI's Axxia Networking business to Intel for $650 million. The company also agreed to buy PLX Technology, an integrated circuits designer, for $309 million. In February 2015, it was announced that Avago Technologies Limited had reached an agreement to acquire Emulex Corporation for $8 per share in cash.\n\nAcquisition of and change of name to Broadcom Limited\nOn 28 May 2015, Avago announced that it would buy Broadcom Corporation for $37 billion ($17 billion cash and $20 billion in shares). Avago was the nominal survivor, but the combined company would be named Broadcom Ltd. It would have annual revenue of $15 billion and a market value of $77 billion. Broadcom Corp. strengthened Avago Technologies' patent position significantly in sectors such as mobile, the data center, and the Internet of Things and made the company the ninth largest holder of patents among the top semiconductor vendors, according to an analysis by technology consulting firm LexInnova. According to the company's website, the transaction closed on 1 February 2016.\nIn May 2016, Cypress Semiconductor announced that it will acquire Broadcom Corporation's full portfolio of IoT products for $550 million. Under the deal, Cypress acquires Broadcom's IoT products and intellectual property for Wi-Fi, Bluetooth and Zigbee connectivity, as well as Broadcom's WICED platform and SDK for developers. The deal combined Broadcom's developer tools and connectivity technologies for IoT devices with Cypress' own programmable system-on-a-chip (SoC) products that provide memory, computing and graphics processing for low-power devices.\n\nForeign investment reviews and change of name to Broadcom Inc.\nIn 2016, Broadcom proposed merging with Brocade Communications Systems. The acquisition proposal included a $5.5 billion price and was offered in cash. It was delayed for review by the Committee on Foreign Investment in the United States. On 2 November 2017, Broadcom announced it would relocate its legal address from Singapore to Delaware, which would avoid the review. This action was linked to the parent company being renamed from Broadcom Limited to Broadcom Inc. The pre-2016-merger Broadcom, Broadcom Corporation, remains a wholly owned subsidiary of the renamed parent Broadcom Inc.\n\nIn mid-November 2017, Broadcom proposed to purchase Qualcomm for US$130 billion, which was rebuffed by Qualcomm's board. The proposed hostile takeover, which was later revised to $117 billion, was blocked by the Trump administration by an executive order that cited national security concerns. Specifically, the Committee on Foreign Investment in the United States expressed concerns. Broadcom, then headquartered in Singapore, was considered too close to China and chipmaker Huawei. \"A shift to Chinese dominance in 5G would have substantial negative national security consequences for the United States,\" CFIUS said. \"While the United States remains dominant in the standards-setting space currently, China would likely compete robustly to fill any void left by Qualcomm as a result of this hostile takeover.\" However, critics of the move stated that the decision was motivated by competitiveness more than security concerns. Broadcom withdrew its takeover bid two days after the executive order. Observers have stated that President Trump's decision was as consistent with the balance of trade objectives as it was with security concerns.\n\nMove into software\nHistorically a semiconductor-based-only company, the failure of the Qualcomm bid led Broadcom and its CEO to look at acquiring infrastructure software as an alternative way of growing in size. On 11 July 2018, news sources reported that Broadcom and CA Technologies agreed on terms for an $18.9 billion acquisition. CA Technologies, formerly known as Computer Associates, was a longtime giant in software for mainframe computers that had expanded its offerings into software for cloud computing. And on 5 November 2018, Broadcom announced that it had completed the acquisition of CA Technologies.\nOn 9 August 2019, news sources reported that Broadcom had decided to acquire the enterprise security business of Symantec Corporation (the consumer software portion of which is now known as Gen Digital) for $10.7 billion in cash. The deal continued Broadcom's push into software critical for corporate infrastructure. And on 4 November 2019, Broadcom announced that it had completed the acquisition of the business, as well as the Symantec name and brand.\nIn 2019, Broadcom was announced the fifth best performing stock of the 2010s, with a total return of 1,956%.\n\nAnti-competitive practices investigations\nIn January 2018, it was reported that the FTC had been investigating Broadcom for several months for engaging in anti-competitive tactics while negotiating with customers. In 2021, Broadcom agreed to settle the antitrust complaint, in which the U.S. Federal Trade Commission claimed that the company abused its monopoly power using restrictive contract terms and threats of retaliation against customers the company deemed \"disloyal.\" \nIn October 2019, Broadcom was ordered by the European Commission to stop allegedly anticompetitive practices. \nIn 2021, Broadcom agreed to settle the antitrust complaint which claimed it had abused its monopoly power through restrictive contract terms and threats of retaliation against non-compliant customers. Such contract terms are alleged to stifle innovation and harm competition in the global supply market. European Competition Commissioner Margrethe Vestager said that Broadcom's contract terms with six main customers would \"create serious and irreversible harm to competition\" if no action were taken. The  company agreed to a commitment to suspend agreements containing exclusivity or quasi-exclusivity arrangements and a commitment not to enter into such agreements for seven years.\n\nPatent suits\nIn 2017, Broadcom filed patent suits against smart TV manufacturers. The U.S. International Trade Commission ruled in favor of the smart TV manufacturers.\nIn 2020, Broadcom sued Netflix over multiple patent infringements. Critics have argued that Broadcom is suing Netflix for being more successful, citing the declining number of traditional pay television subscribers due to the rise of streaming services. The Leichtman Research Group calculated that the largest pay TV providers in the U.S. – representing about 95% of the market – lost about 4,915,000 net video subscribers in 2019. Regular customers each pay $231 a year for their boxes, totaling almost $20 billion per year in profit for the cable industry.\n\n2020s\nOn January 7, 2020, Accenture PLC agreed to acquire Symantec's 300-person cybersecurity services division from Broadcom. In February 2020, Broadcom announced the world's first WiFi 6E client device, the BCM4389.\nIn early 2020, Raspberry Pi inc revealed that their new boards would have a Broadcom BCM2711 chip.\nIn May 2022, Broadcom announced their deal to acquire the virtualization and cloud computing software vendor VMware for $61 billion in a combination of cash and stock, with Broadcom assuming $8 billion in VMware debt. In November 2022, the UK's Competition and Markets Authority regulator announced it would investigate whether the Broadcom Inc. acquisition of VMware Inc. would \"result in a substantial lessening of competition within any market or markets in the United Kingdom for goods or services\". The European Commission also said it was investigating the proposed acquisition, and as a result, Broadcom and VMware extended the planned completion date out to May 26, 2023. On May 19, 2023, as both UK and EU regulators had yet to complete their investigations, the completion date was formally extended to August 26, 2023, and was later further extended to as late as November 26, 2023.\nOn November 21, 2023, Broadcom Inc. announced its plan to finalize the $69 billion acquisition of VMware Inc. on the following Wednesday. This acquisition, one of the largest in the technology sector, received global regulatory scrutiny, including from China, which approved the deal with specific conditions. These conditions require VMware's server software to be compatible with local hardware and not restrict customers from using Broadcom's hardware products. Despite concerns over rising China-U.S. tensions, the approval from China, which was the last regulatory hurdle, allowed the deal to proceed. The transaction closed on November 22, 2023. On completion, CEO Hock Tan announced that the company would relocate its headquarters in San Jose to the VMware campus in Palo Alto. In February 2024, Broadcom sold the end-user computing division, which it inherited from the VMware acquisition, to KKR for $4 billion.\n\nCorporate affairs\nFinances\nFor the fiscal year 2023, Broadcom reported earnings of US$14.1 billion, with an annual revenue of US$35.8 billion, an increase of 7.9% over the previous fiscal cycle.\n\nOwnership\nThe 10 largest shareholders of Broadcom in early 2024 were:\n\nThe Vanguard Group (10.03%)\nBlackRock (7.63%)\nCapital World Investors (4.53%)\nCapital International Investors (4.04%)\nState Street Corporation (3.95%)\nGeode Capital Management (2.12%)\nInsiders (2.04%)\nCapital Research Global Investors (1.98%)\nFidelity Investments (1.94%)\nMorgan Stanley (1.52%)\nBank of America (1.46%)\n\nProducts\nBroadcom sells a range of semiconductor and infrastructure software applications that serve the data center (mainframes), networking, software, broadband, wireless, and storage and industrial markets. Common applications for its products include: data center networking, home connectivity, broadband access, telecommunications equipment, smartphones, base stations, data center servers and storage, factory automation, power generation and alternative energy systems, displays, and mainframe operations and management, and application software development.\nBroadcom's core technologies and franchise products include networking devices, optical technologies, network interface controllers and data storage.\n\nVendors have included Broadcom NICs in their products. For example, select Dell PowerEdge blade servers have Broadcom-powered Ethernet port adapters as an add-in card. Other vendors such as Apple, Hewlett Packard Enterprise, and Raspberry Pi also use Broadcom NICs.\n\nVulnerabilities in SoC WiFi stack\nIn April 2017, Google's Project Zero investigated Broadcom's SoC WiFi stack and found that it lacked \"all basic exploit mitigations - including stack cookies, safe unlinking and access permission protection,\" allowing \"full device takeover by Wi-Fi proximity alone, requiring no user interaction.\" Numerous smartphones, such as by Apple, Samsung and Google were affected.\n\nJericho2\nJericho2 is a programmable Ethernet switch chip that has up to 10 Tbit/s switching capacity per device.\n\nTomahawk 3\nTomahawk 3 series supports high-density, standards-based 400GbE, 200GbE, and 100GbE switching and routing for hyperscale cloud networks. Broadcom divulged that it is bringing two variants of the Tomahawk-3 to market. The first can provide up to 12.8 Tbit/s total chip bandwidth and contains 256 integrated SerDes, supporting 32 ports at 400 Gbit/s, 64 ports at 200 Gbit/s, and 128 ports at 100 Gbit/s. The second variant of the Tomahawk-3 has 160 of the 256 SerDes available and delivers 8 Tbit/s of aggregate bandwidth. Broadcom is suggesting 80 ports at 100 Gbit/s; or 48 ports at 100 Gbit/s plus either 8 ports at 400 Gbit/s or 16 ports at 200 Gbit/s; or 96 ports at 50 Gbit/s plus either 8 ports at 400 Gbit/s or 16 ports at 200 Gbit/s. The Tomahawk 4 reached a speed of 25.6 Tbit/s while the Tomahawk 5 has a maximum speed of 51.2 Tbit/s.\n\nSoftware\nBroadcom has expanded from its original hardware base and also offers enterprise software products.\n\nSymantec Enterprise Security\nBroadcom operates its enterprise security business under the Symantec brand. It purchased the suite of enterprise security products from Symantec Corporation in 2019, after which Symantec Corporation changed its name to NortonLifeLock.\n\nBizOps technology\nBroadcom also offers products for supporting BizOps, including:\n\nClarity – product portfolio management\nRally – agile development\nBlaze CT – Shift-left testing\nDX Operational Intelligence – AIOps\nAgile Requirements Designer – model-based testing optimization of processes\n\nXPU\nBroadcom uses the term XPU to refer to custom ASIC chips developed in collaboration with major hyperscale clients—such as Google, Meta Platforms and ByteDance—that are tailored for specialized AI workloads.\nBroadcom has co-developed Google's Tensor Processing Unit (TPU) chips by translating Google's architecture and specifications into manufacturable silicon, providing proprietary technologies like SerDes high-speed interfaces, overseeing ASIC design, and managing chip fabrication and packaging through third-party foundries such as TSMC, covering all generations since the program's inception. Similarly, Meta's Training and Inference Accelerator (MTIA) chips, first introduced in 2023, were co-developed by Broadcom. In 2024, Broadcom began collaborating with OpenAI to co-develop a custom inference chip, as part of an effort to diversify beyond reliance on Nvidia GPUs amid growing demand.\n\nReferences\nExternal links\nOfficial website \nBroadcom on OpenSecrets, a website that tracks and publishes data on campaign finance and lobbying \nBusiness data for Broadcom Inc.:",
+        "url": "https://en.wikipedia.org/wiki/Broadcom",
+        "sections": [
+            {
+                "title": "History",
+                "level": 0,
+                "text": ""
+            },
+            {
+                "title": "Origin in Hewlett-Packard",
+                "level": 1,
+                "text": "The company that would later become Broadcom Inc. was established in 1961 as HP Associates, a semiconductor products division of Hewlett-Packard.\nThe division separated from Hewlett-Packard as part of the Agilent Technologies spinoff in 1999."
+            },
+            {
+                "title": "Formation of Avago Technologies",
+                "level": 1,
+                "text": "KKR and Silver Lake Partners acquired the Semiconductor Products Group of Agilent Technologies in 2005 for $2.6 billion and formed Avago Technologies. Avago Technologies agreed to sell its I/O solutions unit to PMC-Sierra for $42.5 million in October 2005.\nIn August 2008, the company filed an initial public offering of $400 million. In October 2008, Avago Technologies acquired Infineon Technologies' Munich-based bulk acoustic wave business for €21.5 million.\nOn 6 August 2009, Avago Technologies "
+            },
+            {
+                "title": "Acquisition of and change of name to Broadcom Limited",
+                "level": 1,
+                "text": "On 28 May 2015, Avago announced that it would buy Broadcom Corporation for $37 billion ($17 billion cash and $20 billion in shares). Avago was the nominal survivor, but the combined company would be named Broadcom Ltd. It would have annual revenue of $15 billion and a market value of $77 billion. Broadcom Corp. strengthened Avago Technologies' patent position significantly in sectors such as mobile, the data center, and the Internet of Things and made the company the ninth largest holder of pate"
+            },
+            {
+                "title": "Foreign investment reviews and change of name to Broadcom Inc.",
+                "level": 1,
+                "text": "In 2016, Broadcom proposed merging with Brocade Communications Systems. The acquisition proposal included a $5.5 billion price and was offered in cash. It was delayed for review by the Committee on Foreign Investment in the United States. On 2 November 2017, Broadcom announced it would relocate its legal address from Singapore to Delaware, which would avoid the review. This action was linked to the parent company being renamed from Broadcom Limited to Broadcom Inc. The pre-2016-merger Broadcom, "
+            },
+            {
+                "title": "Move into software",
+                "level": 1,
+                "text": "Historically a semiconductor-based-only company, the failure of the Qualcomm bid led Broadcom and its CEO to look at acquiring infrastructure software as an alternative way of growing in size. On 11 July 2018, news sources reported that Broadcom and CA Technologies agreed on terms for an $18.9 billion acquisition. CA Technologies, formerly known as Computer Associates, was a longtime giant in software for mainframe computers that had expanded its offerings into software for cloud computing. And "
+            },
+            {
+                "title": "Anti-competitive practices investigations",
+                "level": 1,
+                "text": "In January 2018, it was reported that the FTC had been investigating Broadcom for several months for engaging in anti-competitive tactics while negotiating with customers. In 2021, Broadcom agreed to settle the antitrust complaint, in which the U.S. Federal Trade Commission claimed that the company abused its monopoly power using restrictive contract terms and threats of retaliation against customers the company deemed \"disloyal.\" \nIn October 2019, Broadcom was ordered by the European Commission"
+            },
+            {
+                "title": "Patent suits",
+                "level": 1,
+                "text": "In 2017, Broadcom filed patent suits against smart TV manufacturers. The U.S. International Trade Commission ruled in favor of the smart TV manufacturers.\nIn 2020, Broadcom sued Netflix over multiple patent infringements. Critics have argued that Broadcom is suing Netflix for being more successful, citing the declining number of traditional pay television subscribers due to the rise of streaming services. The Leichtman Research Group calculated that the largest pay TV providers in the U.S. – rep"
+            },
+            {
+                "title": "2020s",
+                "level": 1,
+                "text": "On January 7, 2020, Accenture PLC agreed to acquire Symantec's 300-person cybersecurity services division from Broadcom. In February 2020, Broadcom announced the world's first WiFi 6E client device, the BCM4389.\nIn early 2020, Raspberry Pi inc revealed that their new boards would have a Broadcom BCM2711 chip.\nIn May 2022, Broadcom announced their deal to acquire the virtualization and cloud computing software vendor VMware for $61 billion in a combination of cash and stock, with Broadcom assumin"
+            },
+            {
+                "title": "Corporate affairs",
+                "level": 0,
+                "text": ""
+            },
+            {
+                "title": "Finances",
+                "level": 1,
+                "text": "For the fiscal year 2023, Broadcom reported earnings of US$14.1 billion, with an annual revenue of US$35.8 billion, an increase of 7.9% over the previous fiscal cycle."
+            },
+            {
+                "title": "Ownership",
+                "level": 1,
+                "text": "The 10 largest shareholders of Broadcom in early 2024 were:\n\nThe Vanguard Group (10.03%)\nBlackRock (7.63%)\nCapital World Investors (4.53%)\nCapital International Investors (4.04%)\nState Street Corporation (3.95%)\nGeode Capital Management (2.12%)\nInsiders (2.04%)\nCapital Research Global Investors (1.98%)\nFidelity Investments (1.94%)\nMorgan Stanley (1.52%)\nBank of America (1.46%)"
+            },
+            {
+                "title": "Products",
+                "level": 0,
+                "text": "Broadcom sells a range of semiconductor and infrastructure software applications that serve the data center (mainframes), networking, software, broadband, wireless, and storage and industrial markets. Common applications for its products include: data center networking, home connectivity, broadband access, telecommunications equipment, smartphones, base stations, data center servers and storage, factory automation, power generation and alternative energy systems, displays, and mainframe operatio"
+            },
+            {
+                "title": "Vulnerabilities in SoC WiFi stack",
+                "level": 1,
+                "text": "In April 2017, Google's Project Zero investigated Broadcom's SoC WiFi stack and found that it lacked \"all basic exploit mitigations - including stack cookies, safe unlinking and access permission protection,\" allowing \"full device takeover by Wi-Fi proximity alone, requiring no user interaction.\" Numerous smartphones, such as by Apple, Samsung and Google were affected."
+            },
+            {
+                "title": "Jericho2",
+                "level": 1,
+                "text": "Jericho2 is a programmable Ethernet switch chip that has up to 10 Tbit/s switching capacity per device."
+            },
+            {
+                "title": "Tomahawk 3",
+                "level": 1,
+                "text": "Tomahawk 3 series supports high-density, standards-based 400GbE, 200GbE, and 100GbE switching and routing for hyperscale cloud networks. Broadcom divulged that it is bringing two variants of the Tomahawk-3 to market. The first can provide up to 12.8 Tbit/s total chip bandwidth and contains 256 integrated SerDes, supporting 32 ports at 400 Gbit/s, 64 ports at 200 Gbit/s, and 128 ports at 100 Gbit/s. The second variant of the Tomahawk-3 has 160 of the 256 SerDes available and delivers 8 Tbit/s of "
+            },
+            {
+                "title": "Software",
+                "level": 1,
+                "text": "Broadcom has expanded from its original hardware base and also offers enterprise software products."
+            },
+            {
+                "title": "Symantec Enterprise Security",
+                "level": 2,
+                "text": "Broadcom operates its enterprise security business under the Symantec brand. It purchased the suite of enterprise security products from Symantec Corporation in 2019, after which Symantec Corporation changed its name to NortonLifeLock."
+            },
+            {
+                "title": "BizOps technology",
+                "level": 2,
+                "text": "Broadcom also offers products for supporting BizOps, including:\n\nClarity – product portfolio management\nRally – agile development\nBlaze CT – Shift-left testing\nDX Operational Intelligence – AIOps\nAgile Requirements Designer – model-based testing optimization of processes"
+            },
+            {
+                "title": "XPU",
+                "level": 1,
+                "text": "Broadcom uses the term XPU to refer to custom ASIC chips developed in collaboration with major hyperscale clients—such as Google, Meta Platforms and ByteDance—that are tailored for specialized AI workloads.\nBroadcom has co-developed Google's Tensor Processing Unit (TPU) chips by translating Google's architecture and specifications into manufacturable silicon, providing proprietary technologies like SerDes high-speed interfaces, overseeing ASIC design, and managing chip fabrication and packaging "
+            },
+            {
+                "title": "References",
+                "level": 0,
+                "text": ""
+            },
+            {
+                "title": "External links",
+                "level": 0,
+                "text": "Official website \nBroadcom on OpenSecrets, a website that tracks and publishes data on campaign finance and lobbying \nBusiness data for Broadcom Inc.:"
+            }
+        ],
+        "categories": [
+            "Category:1961 establishments in California",
+            "Category:2009 initial public offerings",
+            "Category:All articles to be expanded",
+            "Category:All articles with unsourced statements",
+            "Category:American companies established in 1961",
+            "Category:Articles to be expanded from April 2016",
+            "Category:Articles with short description",
+            "Category:Articles with unsourced statements from May 2023",
+            "Category:Broadcom",
+            "Category:Companies based in Palo Alto, California",
+            "Category:Companies in the Dow Jones Global Titans 50",
+            "Category:Companies in the Nasdaq-100",
+            "Category:Companies listed on the Nasdaq",
+            "Category:Computer companies of the United States",
+            "Category:Computer hardware companies",
+            "Category:Computer storage companies",
+            "Category:Electronics companies established in 1961",
+            "Category:Fabless semiconductor companies",
+            "Category:Pages with non-numeric formatnum arguments",
+            "Category:Semiconductor companies of the United States",
+            "Category:Short description matches Wikidata",
+            "Category:Use dmy dates from September 2016",
+            "Category:Wikipedia articles needing clarification from December 2024"
+        ],
+        "links": [
+            "3M",
+            "ADP (company)",
+            "AI boom",
+            "AMD",
+            "ASE Group",
+            "ASML Holding",
+            "AVX Corporation",
+            "Accenture",
+            "Achronix",
+            "Actel",
+            "Adobe Inc.",
+            "Agilent Technologies",
+            "AirPort",
+            "Airbnb",
+            "Alphabet Inc.",
+            "Altera",
+            "Amazon (company)",
+            "American Electric Power",
+            "Amgen",
+            "Amkor Technology",
+            "Ampere Computing",
+            "Amphenol",
+            "Analog Devices",
+            "AppLovin",
+            "Apple Inc.",
+            "Apple silicon",
+            "Applied Materials",
+            "Arm Holdings",
+            "Ars Technica",
+            "Asset",
+            "AstraZeneca",
+            "Atari Corporation",
+            "Atlassian",
+            "Atmel",
+            "Autodesk",
+            "Avago (TV channel)",
+            "Axon Enterprise",
+            "BLU Products",
+            "Baker Hughes",
+            "Bank of America",
+            "Big Tech",
+            "Biogen",
+            "BlackRock",
+            "Booking Holdings",
+            "Bose Corporation",
+            "Broadcom Corporation",
+            "Brocade Communications Systems",
+            "ByteDance",
+            "CA Technologies",
+            "CDW"
+        ],
+        "timestamp": "2025-10-27T21:51:34.404559"
+    },
+    "news_articles": [
+        {
+            "title": "Stock market today: Dow, S&P 500, Nasdaq head toward records as Trump stokes hopes US-China trade deal is near",
+            "url": "https://finance.yahoo.com/news/live/stock-market-today-dow-sp-500-nasdaq-head-toward-records-as-trump-stokes-hopes-us-china-trade-deal-is-near-225050682.html",
+            "source": "Yahoo Entertainment",
+            "published_date": "2025-10-26T22:50:50Z",
+            "description": "Wall Street is in an upbeat mood as it gears up for a pivotal week featuring the Federal Reserve’s expected interest rate cut and a barrage of Big Tech...",
+            "content": "US stocks climbed toward their latest records on Monday amid promising signs that a US-China trade deal will cap President Trump's long-awaited meeting with Chinese President Xi later this week.\r\nThe… [+11144 chars]"
+        },
+        {
+            "title": "AI factories: Data centers of the future",
+            "url": "https://siliconangle.com/2025/10/25/ai-factories-data-centers-future/",
+            "source": "SiliconANGLE News",
+            "published_date": "2025-10-25T19:49:07Z",
+            "description": "The data center as we know it is being reimagined as an “AI factory” – a power- and data-optimized plant that turns energy and information into intelligence at industrial scale. The tech stack is flipping from general purpose central processing unit-centric s…",
+            "content": "The data center as we know it is being reimagined as an AI factory a power- and data-optimized plant that turns energy and information into intelligence at industrial scale.\r\nThe tech stack is flippi… [+27102 chars]"
+        },
+        {
+            "title": "US stocks hit record high after soft CPI, led by tech mega-cap gains",
+            "url": "https://www.bloomberg.com/news/articles/2025-10-24/s-p-500-rallies-after-soft-cpi-intel-soars-on-healthy-earnings",
+            "source": "Bloomberg",
+            "published_date": "2025-10-25T04:40:42Z",
+            "description": "US stocks closed at a new high on Friday, as traders cheered softer-than-anticipated inflation data that underpinned expectations for Federal Reserve interest-rate cuts. Technology giants including Nvidia Corp, Apple Inc and Broadcom Inc led gains in the S&P …",
+            "content": "US stocks closed at a new high on Friday, as traders cheered softer-than-anticipated inflation data that underpinned expectations for Federal Reserve interest-rate cuts. Technology giants including N… [+4515 chars]"
+        },
+        {
+            "title": "S&P 500 Hits Record After Soft CPI, Led by Tech Mega-Cap Gains",
+            "url": "https://financialpost.com/pmn/business-pmn/sp-500-hits-record-after-soft-cpi-led-by-tech-mega-cap-gains",
+            "source": "Financial Post",
+            "published_date": "2025-10-24T21:45:00Z",
+            "description": "US stocks closed at a new high on Friday, as traders cheered softer-than-anticipated inflation data that underpinned expectations for Federal Reserve interest-rate cuts. Technology giants including Nvidia Corp., Apple Inc. and Broadcom Inc. led gains in the S…",
+            "content": "(Bloomberg) US stocks closed at a new high on Friday, as traders cheered softer-than-anticipated inflation data that underpinned expectations for Federal Reserve interest-rate cuts. Technology giants… [+4824 chars]"
+        },
+        {
+            "title": "Stocks Rally to Record Highs on Favorable US CPI Report",
+            "url": "https://www.barchart.com/story/news/35668522/stocks-rally-to-record-highs-on-favorable-us-cpi-report",
+            "source": "Barchart.com",
+            "published_date": "2025-10-24T20:46:20Z",
+            "description": "The S&P 500 Index ($SPX ) (SPY ) on Friday rose by +0.79%, the Dow Jones Industrials Index ($DOWI ) (DIA ) rose by +1.01%, and the Nasdaq 100 Index ($IUXX ) ...",
+            "content": "The S&amp;P 500 Index ($SPX) (SPY) on Friday rose by +0.79%, the Dow Jones Industrials Index ($DOWI) (DIA) rose by +1.01%, and the Nasdaq 100 Index ($IUXX) (QQQ) rose by +1.04%.  December E-mini S&am… [+7155 chars]"
+        },
+        {
+            "title": "Carahsoft and Partners Showcase Education, Cybersecurity and AI Solutions at Educause Annual Conference on October 27-30, 2025 in Nashville, TN",
+            "url": "https://www.globenewswire.com/news-release/2025/10/24/3172882/0/en/Carahsoft-and-Partners-Showcase-Education-Cybersecurity-and-AI-Solutions-at-Educause-Annual-Conference-on-October-27-30-2025-in-Nashville-TN.html",
+            "source": "GlobeNewswire",
+            "published_date": "2025-10-24T13:35:00Z",
+            "description": "More Than 90 Technology Partners Demo Innovation in Higher Education IT More Than 90 Technology Partners Demo Innovation in Higher Education IT",
+            "content": "RESTON, Va., Oct. 24, 2025 (GLOBE NEWSWIRE) -- Carahsoft Technology Corp., The Trusted Education IT Solutions Provider® will be joined by more than 90 of its technology partners at the Educause Annua… [+6275 chars]"
+        },
+        {
+            "title": "Granular Permissions Market Report 2025, with Competitive Landscape and Company Profiles of Major and Innovative Companies",
+            "url": "https://www.globenewswire.com/news-release/2025/10/24/3172736/28124/en/Granular-Permissions-Market-Report-2025-with-Competitive-Landscape-and-Company-Profiles-of-Major-and-Innovative-Companies.html",
+            "source": "GlobeNewswire",
+            "published_date": "2025-10-24T11:25:00Z",
+            "description": "Opportunities in the granular permissions market include growing demand for detailed access control in multi-cloud environments, real-time permission management, automated regulatory compliance, and adaptive access solutions, driven by increasing cybersecurit…",
+            "content": "Dublin, Oct. 24, 2025 (GLOBE NEWSWIRE) -- The \"Granular Permissions Market Report 2025\" has been added to ResearchAndMarkets.com's offering.\r\nThe granular permissions market size has grown rapidly in… [+7872 chars]"
+        },
+        {
+            "title": "How Celestica rose from the dot-com ashes to ride the AI boom",
+            "url": "https://financialpost.com/technology/celestica-rises-from-dot-com-ashes-to-ai-boom",
+            "source": "Financial Post",
+            "published_date": "2025-10-24T10:00:54Z",
+            "description": "This 31-year veteran of Canada's tech scene has shot from near obscurity to stock stardom on the AI juggernaut — and there's no slowdown in sight",
+            "content": "Boujelbene said Celestica is likely to retain its position as a hardware supplier of choice. Its position as a preferred vendor for Google LLC and Amazon, which were the first to adopt ethernet in AI… [+3178 chars]"
+        },
+        {
+            "title": "Anthropic strikes multibillion-dollar deal with Google to access a million TPUs",
+            "url": "https://siliconangle.com/2025/10/23/anthropic-strikes-multibillion-dollar-deal-google-access-million-tpus/",
+            "source": "SiliconANGLE News",
+            "published_date": "2025-10-24T01:08:37Z",
+            "description": "Google LLC has struck a deal with the artificial intelligence startup Anthropic PBC that could be worth tens of billions of dollars. The deal will give Anthropic access to up to one million of Google Cloud’s tensor processing units or TPUs, which it wants to …",
+            "content": "Google LLC has struck a deal with the artificial intelligence startup Anthropic PBC that could be worth tens of billions of dollars.\r\nThe deal will give Anthropic access to up to one million of Googl… [+5859 chars]"
+        },
+        {
+            "title": "Barclays Downgrades Marvell (MRVL) as AI Chip Market Leans Toward Broadcom",
+            "url": "https://finance.yahoo.com/news/barclays-downgrades-marvell-mrvl-ai-190050780.html",
+            "source": "Yahoo Entertainment",
+            "published_date": "2025-10-23T19:00:50Z",
+            "description": "Marvell Technology, Inc. (NASDAQ:MRVL) is one of the Trending AI Stocks on Wall Street’s Radar. On October 20, Barclays analyst Tom O’Malley downgraded the...",
+            "content": "Marvell Technology, Inc. (NASDAQ:MRVL) is one of the Trending AI Stocks on Wall Streets Radar. On October 20, Barclays analyst Tom OMalley downgraded the stock from \"Overweight\" to \"Equalweight\" with… [+1722 chars]"
+        },
+        {
+            "title": "Mizuho Sees Anthropic as Broadcom’s (AVGO) Fourth Hyperscale ASIC Partner, Raises Target",
+            "url": "https://finance.yahoo.com/news/mizuho-sees-anthropic-broadcom-avgo-185116379.html",
+            "source": "Yahoo Entertainment",
+            "published_date": "2025-10-23T18:51:16Z",
+            "description": "Broadcom Inc. (NASDAQ:AVGO) is one of the Trending AI Stocks on Wall Street’s Radar. On October 21, Mizuho reiterated the stock as “Outperform” and raised...",
+            "content": "Broadcom Inc. (NASDAQ:AVGO) is one of the Trending AI Stocks on Wall Streets Radar. On October 21, Mizuho reiterated the stock as Outperform and raised its price target to $435 per share from $430. T… [+2132 chars]"
+        },
+        {
+            "title": "US stock market today: Wall Street climbed 0.3% – Dow, S&P 500 and Nasdaq all rise as tech stocks drive rebound; gold and oil surge",
+            "url": "https://economictimes.indiatimes.com/news/international/us/us-stock-market-today-wall-street-climbed-0-3-dow-sp-500-and-nasdaq-all-rise-as-tech-stocks-drive-rebound-gold-and-oil-surge/articleshow/124765682.cms",
+            "source": "The Times of India",
+            "published_date": "2025-10-23T15:57:31Z",
+            "description": "US stock market today saw gains as investors reacted to rising oil prices and fresh earnings reports. Dow, S&P 500, and Nasdaq all moved higher. Oil jumped more than 5%, boosting energy stocks. Tesla and IBM disappointed in earnings, while quantum computing c…",
+            "content": "U.S. stock market saw significant movements on Thursday, with major indices recording gains after a volatile trading week. Investors reacted strongly to a combination of rising oil prices, corporate … [+10555 chars]"
+        },
+        {
+            "title": "How Many Stocks Outperform the Stock Market?",
+            "url": "https://awealthofcommonsense.com/2025/10/how-many-stocks-outperform-the-stock-market/",
+            "source": "Awealthofcommonsense.com",
+            "published_date": "2025-10-23T13:30:43Z",
+            "description": "A reader asks: Could you talk about what percentage of stocks that are beating the S&P over the last 5 years also beat the S&P the 5 years before that? I’m curious what names appear in both lists, with factors like pre- and post-COVID, and pre- and post-AI pl…",
+            "content": "A reader asks:\r\nCould you talk about what percentage of stocks that are beating the S&amp;P over the last 5 years also beat the S&amp;P the 5 years before that? I’m curious what names appear in both … [+6329 chars]"
+        },
+        {
+            "title": "Stacy Rasgon Says AI Trade Slowdown Not Expected Until At Least 2027, Continues to Like Broadcom (AVGO)",
+            "url": "https://biztoc.com/x/45602daa200c83e2",
+            "source": "Biztoc.com",
+            "published_date": "2025-10-23T13:11:28Z",
+            "description": "Stacy Rasgon Says AI Trade Slowdown Not Expected Until At Least 2027, Continues to Like Broadcom (AVGO)\nWe recently published Top 10 Trending Stocks Everyone’s Watching in Q4. Broadcom Inc (NASDAQ:AVGO) is one of the trending stocks everyone's watching.\nStacy…",
+            "content": "Stacy Rasgon Says AI Trade Slowdown Not Expected Until At Least 2027, Continues to Like Broadcom (AVGO)We recently published Top 10 Trending Stocks Everyones Watching in Q4. Broadcom Inc (NASDAQ:AVGO… [+143 chars]"
+        },
+        {
+            "title": "Stacy Rasgon Says AI Trade Slowdown Not Expected Until At Least 2027, Continues to Like Broadcom (AVGO)",
+            "url": "https://finance.yahoo.com/news/stacy-rasgon-says-ai-trade-125752245.html",
+            "source": "Yahoo Entertainment",
+            "published_date": "2025-10-23T12:57:52Z",
+            "description": "We recently published Top 10 Trending Stocks Everyone’s Watching in Q4. Broadcom Inc (NASDAQ:AVGO) is one of the trending stocks everyone’s watching. Stacy...",
+            "content": "We recently published Top 10 Trending Stocks Everyones Watching in Q4. Broadcom Inc (NASDAQ:AVGO) is one of the trending stocks everyone's watching.\r\nStacy Rasgon, Bernstein U.S. semiconductor managi… [+2276 chars]"
+        },
+        {
+            "title": "Evercore Keeps Bullish Stance on Broadcom (AVGO) Following OpenAI Deal",
+            "url": "https://finance.yahoo.com/news/evercore-keeps-bullish-stance-broadcom-092544476.html",
+            "source": "Yahoo Entertainment",
+            "published_date": "2025-10-23T09:25:44Z",
+            "description": "With significant hedge fund interest, Broadcom Inc. (NASDAQ:AVGO) secures a spot on our list of the 13 best Fortune 500 stocks to invest in now. On October...",
+            "content": "With significant hedge fund interest, Broadcom Inc. (NASDAQ:AVGO) secures a spot on our list of the 13 best Fortune 500 stocks to invest in now.\r\nEvercore Keeps Bullish Stance on Broadcom (AVGO) Foll… [+1824 chars]"
+        },
+        {
+            "title": "Broadcom Inc. (AVGO): A Bull Case Theory",
+            "url": "https://finance.yahoo.com/news/broadcom-inc-avgo-bull-case-213630772.html",
+            "source": "Yahoo Entertainment",
+            "published_date": "2025-10-22T21:36:30Z",
+            "description": "We came across a bullish thesis on Broadcom Inc. on TechIt_alt’s Substack. In this article, we will summarize the bulls’ thesis on AVGO. Broadcom Inc.’s...",
+            "content": "We came across a bullish thesis on Broadcom Inc. on TechIt_alts Substack. In this article, we will summarize the bulls thesis on AVGO. Broadcom Inc.'s share was trading at $344.13 as of Ocotber 14th.… [+2616 chars]"
+        },
+        {
+            "title": "Analyst Says This AI Stock Will ‘Break Out to New Highs’",
+            "url": "https://finance.yahoo.com/news/analyst-says-ai-stock-break-130029869.html",
+            "source": "Yahoo Entertainment",
+            "published_date": "2025-10-22T13:00:29Z",
+            "description": "We recently published 10 Stock News You Should Not Miss as Tom Lee Reiterates Bullish Market Outlook Amid AI Catalysts. Datadog, Inc. (NASDAQ:DDOG) is one of...",
+            "content": "We recently published 10 Stock News You Should Not Miss as Tom Lee Reiterates Bullish Market Outlook Amid AI Catalysts. Datadog, Inc. (NASDAQ:DDOG) is one of the stock news you should not miss.\r\nJose… [+2342 chars]"
+        },
+        {
+            "title": "Evercore ISI Reiterates Outperform on Arista Networks (ANET), Adds Stock to TAP OP List Ahead of Q3 Earnings",
+            "url": "https://finance.yahoo.com/news/evercore-isi-reiterates-outperform-arista-212022119.html",
+            "source": "Yahoo Entertainment",
+            "published_date": "2025-10-21T21:20:22Z",
+            "description": "Arista Networks Inc (NYSE:ANET) is one of the AI Stocks Making Moves on Wall Street. On October 20, Evercore ISI analyst Amit Daryanani reiterated an...",
+            "content": "Arista Networks Inc (NYSE:ANET) is one of the AI Stocks Making Moves on Wall Street. On October 20, Evercore ISI analyst Amit Daryanani reiterated an Outperform rating on the stock with a $175.00 pri… [+2080 chars]"
+        },
+        {
+            "title": "25 Best Stocks to Own in the 4th Quarter",
+            "url": "https://biztoc.com/x/1328079f63aa50c2",
+            "source": "Biztoc.com",
+            "published_date": "2025-10-21T16:28:30Z",
+            "description": "Almost one month into the final quarter of 2025, Wall Street has seen no shortage of volatility thanks to U.S.-China trade talks, rare-earth buzz, geopolitical tensions between Russia and Ukraine, AI, and more. However, if you're looking for a historically \"s…",
+            "content": "Almost one month into the final quarter of 2025, Wall Street has seen no shortage of volatility thanks to U.S.-China trade talks, rare-earth buzz, geopolitical tensions between Russia and Ukraine, AI… [+149 chars]"
+        }
+    ],
+    "sec_filings": {
+        "10-K": {
+            "accession_number": "0001730168-24-000139",
+            "filing_date": "2024-12-20",
+            "fiscal_year": 2024,
+            "sections": [],
+            "sections_data": {},
+            "filing_url": "https://www.sec.gov/Archives/edgar/data/1730168/000173016824000139/avgo-20241103.htm"
+        },
+        "10-Q": {
+            "accession_number": "0001730168-25-000098",
+            "filing_date": "2025-09-10",
+            "fiscal_year": 2025,
+            "sections": [],
+            "sections_data": {},
+            "filing_url": "https://www.sec.gov/Archives/edgar/data/1730168/000173016825000098/avgo-20250803.htm"
+        }
+    },
+    "timestamp": "2025-10-27T21:51:41.193733",
+    "metadata": {
+        "wiki_success": true,
+        "news_count": 20,
+        "sec_10k_available": true,
+        "sec_10q_available": true,
+        "data_sources": [
+            "Wikipedia",
+            "NewsAPI",
+            "GDELT",
+            "SEC EDGAR"
+        ]
+    }
+}
