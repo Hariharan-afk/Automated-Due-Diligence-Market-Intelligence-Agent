@@ -1,27 +1,291 @@
 {
-  "generated_at": "now",
-  "source": "synthetic_qdrant",
+  "generated_at": "2025-11-20T18:36:22.653788",
+  "num_test_cases": 15,
   "test_cases": [
     {
-      "query_id": "SYN_001",
-      "query": "Operating lease right-of-use assets 2025 24823 and 2024 18961",
-      "target_chunk_id": "03e24362-2183-52be-9ec7-718a23af9d3d",
-      "target_chunk_text": "|  |  |  |  |  |  |  |  |  |\n| --- | --- | --- | --- | --- | --- | --- | --- | --- |\n|  |  |  |  |  |  |  |  |  |\n| (In millions, except lease term and discount rate) |  |  | |  |  |  | |  |\n|  |  |  ...",
-      "company": "Microsoft Corporation"
+      "query_id": "TECH_01",
+      "query": "What is TechCorp?",
+      "company": "TechCorp",
+      "ticker": "TECH",
+      "expected_answer_contains": [
+        "TechCorp",
+        "leading company",
+        "Founded"
+      ],
+      "required_sources": [
+        "wikipedia"
+      ],
+      "required_sections": [
+        "Company Overview"
+      ],
+      "evaluation_type": "contains"
     },
     {
-      "query_id": "SYN_002",
-      "query": "Rothschild & Co Redburn downgrades Amazon stock due to generative AI concerns",
-      "target_chunk_id": "01ba25d9-fa64-5d33-8aa0-0ddba9ca1457",
-      "target_chunk_text": "Amazon.com, Inc. (NASDAQ:AMZN) is one of the AI Stocks Making Moves on Wall Street. On November 18, Rothschild & Co Redburn\u2019s Alexander Haissl downgraded the stock to \u201cNeutral\u201d from buy with a $250 pr...",
-      "company": "Amazon.com Inc."
+      "query_id": "TECH_02",
+      "query": "What was TechCorp's revenue in Q1 2024?",
+      "company": "TechCorp",
+      "ticker": "TECH",
+      "expected_answer_contains": [
+        "revenue",
+        "Q1 2024",
+        "$",
+        "M"
+      ],
+      "required_sources": [
+        "sec"
+      ],
+      "required_sections": [
+        "Financial Performance"
+      ],
+      "evaluation_type": "contains"
     },
     {
-      "query_id": "SYN_003",
-      "query": "Apple Inc. segment revenue and income data for the three and six month periods ended March 29, 2025 and March 30, 2024",
-      "target_chunk_id": "04ad21ed-a1f6-552b-a560-9e3520c77e5a",
-      "target_chunk_text": "**Table Description:** **Segment Revenue and Income by Reportable Segment**\n\nThis table presents revenue and income data by reportable segment for Apple Inc. for the three- and six-month periods ended...",
-      "company": "Apple Inc."
+      "query_id": "TECH_03",
+      "query": "Analyze TechCorp's revenue growth over the past year",
+      "company": "TechCorp",
+      "ticker": "TECH",
+      "expected_answer_contains": [
+        "growth",
+        "revenue",
+        "%"
+      ],
+      "required_sources": [
+        "sec"
+      ],
+      "required_sections": [
+        "Financial Performance",
+        "Growth Analysis"
+      ],
+      "evaluation_type": "contains"
+    },
+    {
+      "query_id": "TECH_04",
+      "query": "What are the latest developments at TechCorp?",
+      "company": "TechCorp",
+      "ticker": "TECH",
+      "expected_answer_contains": [
+        "TechCorp",
+        "news"
+      ],
+      "required_sources": [
+        "news"
+      ],
+      "required_sections": [
+        "Recent Developments"
+      ],
+      "evaluation_type": "contains"
+    },
+    {
+      "query_id": "TECH_05",
+      "query": "Provide a comprehensive due diligence report for TechCorp",
+      "company": "TechCorp",
+      "ticker": "TECH",
+      "expected_answer_contains": [
+        "TechCorp",
+        "revenue",
+        "founded"
+      ],
+      "required_sources": [
+        "sec",
+        "wikipedia",
+        "news"
+      ],
+      "required_sections": [
+        "Company Overview",
+        "Financial Performance",
+        "Recent Developments"
+      ],
+      "evaluation_type": "comprehensive"
+    },
+    {
+      "query_id": "FIN_01",
+      "query": "What is FinanceInc?",
+      "company": "FinanceInc",
+      "ticker": "FIN",
+      "expected_answer_contains": [
+        "FinanceInc",
+        "leading company",
+        "Founded"
+      ],
+      "required_sources": [
+        "wikipedia"
+      ],
+      "required_sections": [
+        "Company Overview"
+      ],
+      "evaluation_type": "contains"
+    },
+    {
+      "query_id": "FIN_02",
+      "query": "What was FinanceInc's revenue in Q1 2024?",
+      "company": "FinanceInc",
+      "ticker": "FIN",
+      "expected_answer_contains": [
+        "revenue",
+        "Q1 2024",
+        "$",
+        "M"
+      ],
+      "required_sources": [
+        "sec"
+      ],
+      "required_sections": [
+        "Financial Performance"
+      ],
+      "evaluation_type": "contains"
+    },
+    {
+      "query_id": "FIN_03",
+      "query": "Analyze FinanceInc's revenue growth over the past year",
+      "company": "FinanceInc",
+      "ticker": "FIN",
+      "expected_answer_contains": [
+        "growth",
+        "revenue",
+        "%"
+      ],
+      "required_sources": [
+        "sec"
+      ],
+      "required_sections": [
+        "Financial Performance",
+        "Growth Analysis"
+      ],
+      "evaluation_type": "contains"
+    },
+    {
+      "query_id": "FIN_04",
+      "query": "What are the latest developments at FinanceInc?",
+      "company": "FinanceInc",
+      "ticker": "FIN",
+      "expected_answer_contains": [
+        "FinanceInc",
+        "news"
+      ],
+      "required_sources": [
+        "news"
+      ],
+      "required_sections": [
+        "Recent Developments"
+      ],
+      "evaluation_type": "contains"
+    },
+    {
+      "query_id": "FIN_05",
+      "query": "Provide a comprehensive due diligence report for FinanceInc",
+      "company": "FinanceInc",
+      "ticker": "FIN",
+      "expected_answer_contains": [
+        "FinanceInc",
+        "revenue",
+        "founded"
+      ],
+      "required_sources": [
+        "sec",
+        "wikipedia",
+        "news"
+      ],
+      "required_sections": [
+        "Company Overview",
+        "Financial Performance",
+        "Recent Developments"
+      ],
+      "evaluation_type": "comprehensive"
+    },
+    {
+      "query_id": "HLTH_01",
+      "query": "What is HealthPlus?",
+      "company": "HealthPlus",
+      "ticker": "HLTH",
+      "expected_answer_contains": [
+        "HealthPlus",
+        "leading company",
+        "Founded"
+      ],
+      "required_sources": [
+        "wikipedia"
+      ],
+      "required_sections": [
+        "Company Overview"
+      ],
+      "evaluation_type": "contains"
+    },
+    {
+      "query_id": "HLTH_02",
+      "query": "What was HealthPlus's revenue in Q1 2024?",
+      "company": "HealthPlus",
+      "ticker": "HLTH",
+      "expected_answer_contains": [
+        "revenue",
+        "Q1 2024",
+        "$",
+        "M"
+      ],
+      "required_sources": [
+        "sec"
+      ],
+      "required_sections": [
+        "Financial Performance"
+      ],
+      "evaluation_type": "contains"
+    },
+    {
+      "query_id": "HLTH_03",
+      "query": "Analyze HealthPlus's revenue growth over the past year",
+      "company": "HealthPlus",
+      "ticker": "HLTH",
+      "expected_answer_contains": [
+        "growth",
+        "revenue",
+        "%"
+      ],
+      "required_sources": [
+        "sec"
+      ],
+      "required_sections": [
+        "Financial Performance",
+        "Growth Analysis"
+      ],
+      "evaluation_type": "contains"
+    },
+    {
+      "query_id": "HLTH_04",
+      "query": "What are the latest developments at HealthPlus?",
+      "company": "HealthPlus",
+      "ticker": "HLTH",
+      "expected_answer_contains": [
+        "HealthPlus",
+        "news"
+      ],
+      "required_sources": [
+        "news"
+      ],
+      "required_sections": [
+        "Recent Developments"
+      ],
+      "evaluation_type": "contains"
+    },
+    {
+      "query_id": "HLTH_05",
+      "query": "Provide a comprehensive due diligence report for HealthPlus",
+      "company": "HealthPlus",
+      "ticker": "HLTH",
+      "expected_answer_contains": [
+        "HealthPlus",
+        "revenue",
+        "founded"
+      ],
+      "required_sources": [
+        "sec",
+        "wikipedia",
+        "news"
+      ],
+      "required_sections": [
+        "Company Overview",
+        "Financial Performance",
+        "Recent Developments"
+      ],
+      "evaluation_type": "comprehensive"
     }
   ]
 }
