@@ -271,14 +271,16 @@ class ValidationPipeline:
         return {
             'all_criteria_met': all_passed,
             'criteria': criteria,
-            'summary': "✅ ALL ACCEPTANCE CRITERIA MET" if all_passed else "❌ SOME CRITERIA NOT MET"
+            'summary': summary,
+            'acceptance_criteria': acceptance,
+            'detailed_results': self.results
         }
     
     def save_results(self, filepath: str = None):
         """Save results to JSON file"""
         if filepath is None:
             timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
-            filepath = f"src/model_validation/results_{timestamp}.json"
+            filepath = f"src/model_validation/reports/results_{timestamp}.json"
         
         summary = self.compute_summary_statistics()
         acceptance = self.check_acceptance_criteria(summary)

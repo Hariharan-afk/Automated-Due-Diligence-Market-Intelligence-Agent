@@ -1672,3 +1672,438 @@
 2025-11-26 06:40:05,390 INFO [Researcher] Total chunks retrieved: 25
 2025-11-26 06:40:05,391 INFO [Synthesiser] Generating answer...
 2025-11-26 06:40:12,090 INFO [Synthesiser] Answer generated (confidence: 7.30)
+2025-11-26 08:25:53,830 INFO [Analyser] Decomposing query: 'Alphabet share repurchase program September 30 2025'
+2025-11-26 08:25:55,098 INFO [Analyser] Generated 5 sub-queries:
+2025-11-26 08:25:55,100 INFO [Analyser]   1. Alphabet share repurchase program details
+2025-11-26 08:25:55,101 INFO [Analyser]   2. Alphabet stock buyback history
+2025-11-26 08:25:55,103 INFO [Analyser]   3. Alphabet financial reports September 30 2025
+2025-11-26 08:25:55,104 INFO [Analyser]   4. GOOGL share repurchase authorization
+2025-11-26 08:25:55,105 INFO [Analyser]   5. Alphabet capital allocation strategy
+2025-11-26 08:25:55,106 INFO [Researcher] Researching 5 sub-queries...
+2025-11-26 08:25:55,107 INFO [Researcher] Sub-query 1: 'Alphabet share repurchase program details'
+2025-11-26 08:26:04,436 INFO [Researcher]   → Retrieved 5 chunks (avg score: 3.771)
+2025-11-26 08:26:04,439 INFO [Researcher] Sub-query 2: 'Alphabet stock buyback history'
+2025-11-26 08:26:10,122 INFO [Researcher]   → Retrieved 5 chunks (avg score: -0.128)
+2025-11-26 08:26:10,123 INFO [Researcher] Sub-query 3: 'Alphabet financial reports September 30 2025'
+2025-11-26 08:26:16,294 INFO [Researcher]   → Retrieved 5 chunks (avg score: 6.275)
+2025-11-26 08:26:16,295 INFO [Researcher] Sub-query 4: 'GOOGL share repurchase authorization'
+2025-11-27 02:57:47,928 INFO [Analyser] Decomposing query: 'Alphabet share repurchase program September 30 2025'
+2025-11-27 02:57:49,019 INFO [Analyser] Generated 5 sub-queries:
+2025-11-27 02:57:49,022 INFO [Analyser]   1. Alphabet share repurchase program details
+2025-11-27 02:57:49,023 INFO [Analyser]   2. Alphabet stock buyback history
+2025-11-27 02:57:49,024 INFO [Analyser]   3. Alphabet financial statements September 30 2025
+2025-11-27 02:57:49,024 INFO [Analyser]   4. GOOGL share repurchase authorization
+2025-11-27 02:57:49,030 INFO [Analyser]   5. Alphabet capital allocation strategy
+2025-11-27 02:57:49,031 INFO [Researcher] Researching 5 sub-queries...
+2025-11-27 02:57:49,032 INFO [Researcher] Sub-query 1: 'Alphabet share repurchase program details'
+2025-11-27 02:58:00,218 INFO [Researcher]   → Retrieved 5 chunks (avg score: 3.771)
+2025-11-27 02:58:00,220 INFO [Researcher] Sub-query 2: 'Alphabet stock buyback history'
+2025-11-27 02:58:06,024 INFO [Researcher]   → Retrieved 5 chunks (avg score: -0.128)
+2025-11-27 02:58:06,029 INFO [Researcher] Sub-query 3: 'Alphabet financial statements September 30 2025'
+2025-11-27 02:58:11,499 INFO [Researcher]   → Retrieved 5 chunks (avg score: 6.899)
+2025-11-27 02:58:11,502 INFO [Researcher] Sub-query 4: 'GOOGL share repurchase authorization'
+2025-11-27 02:58:16,715 INFO [Researcher]   → Retrieved 5 chunks (avg score: 0.660)
+2025-11-27 02:58:16,717 INFO [Researcher] Sub-query 5: 'Alphabet capital allocation strategy'
+2025-11-27 02:58:22,257 INFO [Researcher]   → Retrieved 5 chunks (avg score: -2.624)
+2025-11-27 02:58:22,258 INFO [Researcher] Total chunks retrieved: 25
+2025-11-27 02:58:22,262 INFO [Synthesiser] Generating answer...
+2025-11-27 02:58:24,193 INFO [Synthesiser] Answer generated (confidence: 1.72)
+2025-11-27 02:58:25,223 INFO [Analyser] Decomposing query: 'Company's uncertain tax positions and IRS audit for 2014-2017 and 2004-2013, including Notices of Proposed Adjustment related to intercompany transfer pricing and the expected resolution timeline.'
+2025-11-27 02:58:26,510 INFO [Analyser] Generated 5 sub-queries:
+2025-11-27 02:58:26,512 INFO [Analyser]   1. Company's uncertain tax positions 2014-2017 and 2004-2013
+2025-11-27 02:58:26,514 INFO [Analyser]   2. IRS audit details for company 2014-2017 and 2004-2013
+2025-11-27 02:58:26,519 INFO [Analyser]   3. Notices of Proposed Adjustment related to intercompany transfer pricing for company 2014-2017 and 2004-2013
+2025-11-27 02:58:26,522 INFO [Analyser]   4. Expected resolution timeline for company's uncertain tax positions and IRS audit findings 2014-2017 and 2004-2013
+2025-11-27 02:58:26,527 INFO [Analyser]   5. Company's tax risk disclosures 2014-2017 and 2004-2013
+2025-11-27 02:58:26,554 INFO [Researcher] Researching 5 sub-queries...
+2025-11-27 02:58:26,555 INFO [Researcher] Sub-query 1: 'Company's uncertain tax positions 2014-2017 and 2004-2013'
+2025-11-27 02:58:31,747 INFO [Researcher]   → Retrieved 5 chunks (avg score: 3.479)
+2025-11-27 02:58:31,748 INFO [Researcher] Sub-query 2: 'IRS audit details for company 2014-2017 and 2004-2013'
+2025-11-27 02:58:37,190 INFO [Researcher]   → Retrieved 5 chunks (avg score: 4.660)
+2025-11-27 02:58:37,191 INFO [Researcher] Sub-query 3: 'Notices of Proposed Adjustment related to intercompany transfer pricing for company 2014-2017 and 2004-2013'
+2025-11-27 02:58:42,472 INFO [Researcher]   → Retrieved 5 chunks (avg score: 6.879)
+2025-11-27 02:58:42,473 INFO [Researcher] Sub-query 4: 'Expected resolution timeline for company's uncertain tax positions and IRS audit findings 2014-2017 and 2004-2013'
+2025-11-27 02:58:48,164 INFO [Researcher]   → Retrieved 5 chunks (avg score: 5.944)
+2025-11-27 02:58:48,166 INFO [Researcher] Sub-query 5: 'Company's tax risk disclosures 2014-2017 and 2004-2013'
+2025-11-27 02:58:54,128 INFO [Researcher]   → Retrieved 5 chunks (avg score: -1.664)
+2025-11-27 02:58:54,130 INFO [Researcher] Total chunks retrieved: 25
+2025-11-27 02:58:54,135 INFO [Synthesiser] Generating answer...
+2025-11-27 02:58:57,365 INFO [Synthesiser] Answer generated (confidence: 3.86)
+2025-11-27 02:58:58,373 INFO [Analyser] Decomposing query: 'GAAP to non-GAAP reconciliation Item 2'
+2025-11-27 02:58:59,108 INFO [Analyser] Generated 5 sub-queries:
+2025-11-27 02:58:59,109 INFO [Analyser]   1. GAAP to non-GAAP reconciliation definition
+2025-11-27 02:58:59,110 INFO [Analyser]   2. GAAP to non-GAAP reconciliation examples
+2025-11-27 02:58:59,111 INFO [Analyser]   3. SEC regulations for GAAP to non-GAAP reconciliation
+2025-11-27 02:58:59,113 INFO [Analyser]   4. Item 2 of GAAP to non-GAAP reconciliation: purpose and content
+2025-11-27 02:58:59,114 INFO [Analyser]   5. Common adjustments in GAAP to non-GAAP reconciliation Item 2
+2025-11-27 02:58:59,115 INFO [Researcher] Researching 5 sub-queries...
+2025-11-27 02:58:59,118 INFO [Researcher] Sub-query 1: 'GAAP to non-GAAP reconciliation definition'
+2025-11-27 02:59:04,745 INFO [Researcher]   → Retrieved 5 chunks (avg score: 4.715)
+2025-11-27 02:59:04,746 INFO [Researcher] Sub-query 2: 'GAAP to non-GAAP reconciliation examples'
+2025-11-27 02:59:10,623 INFO [Researcher]   → Retrieved 5 chunks (avg score: 4.259)
+2025-11-27 02:59:10,626 INFO [Researcher] Sub-query 3: 'SEC regulations for GAAP to non-GAAP reconciliation'
+2025-11-27 02:59:16,503 INFO [Researcher]   → Retrieved 5 chunks (avg score: 4.992)
+2025-11-27 02:59:16,504 INFO [Researcher] Sub-query 4: 'Item 2 of GAAP to non-GAAP reconciliation: purpose and content'
+2025-11-27 02:59:22,177 INFO [Researcher]   → Retrieved 5 chunks (avg score: 4.069)
+2025-11-27 02:59:22,180 INFO [Researcher] Sub-query 5: 'Common adjustments in GAAP to non-GAAP reconciliation Item 2'
+2025-11-27 02:59:27,702 INFO [Researcher]   → Retrieved 5 chunks (avg score: 2.795)
+2025-11-27 02:59:27,704 INFO [Researcher] Total chunks retrieved: 25
+2025-11-27 02:59:27,705 INFO [Synthesiser] Generating answer...
+2025-11-27 02:59:31,079 INFO [Synthesiser] Answer generated (confidence: 4.17)
+2025-11-27 02:59:32,083 INFO [Analyser] Decomposing query: 'Fair value level, adjusted cost basis, and unrealized gains/losses of debt and equity investments as of June 30, 2023'
+2025-11-27 02:59:33,053 INFO [Analyser] Generated 5 sub-queries:
+2025-11-27 02:59:33,054 INFO [Analyser]   1. Fair value of debt investments as of June 30, 2023
+2025-11-27 02:59:33,055 INFO [Analyser]   2. Fair value of equity investments as of June 30, 2023
+2025-11-27 02:59:33,056 INFO [Analyser]   3. Adjusted cost basis of debt and equity investments as of June 30, 2023
+2025-11-27 02:59:33,057 INFO [Analyser]   4. Unrealized gains/losses on debt investments as of June 30, 2023
+2025-11-27 02:59:33,058 INFO [Analyser]   5. Unrealized gains/losses on equity investments as of June 30, 2023
+2025-11-27 02:59:33,059 INFO [Researcher] Researching 5 sub-queries...
+2025-11-27 02:59:33,059 INFO [Researcher] Sub-query 1: 'Fair value of debt investments as of June 30, 2023'
+2025-11-27 02:59:38,626 INFO [Researcher]   → Retrieved 5 chunks (avg score: 6.949)
+2025-11-27 02:59:38,627 INFO [Researcher] Sub-query 2: 'Fair value of equity investments as of June 30, 2023'
+2025-11-27 02:59:43,768 INFO [Researcher]   → Retrieved 5 chunks (avg score: 9.056)
+2025-11-27 02:59:43,771 INFO [Researcher] Sub-query 3: 'Adjusted cost basis of debt and equity investments as of June 30, 2023'
+2025-11-27 02:59:48,437 INFO [Researcher]   → Retrieved 5 chunks (avg score: 6.021)
+2025-11-27 02:59:48,439 INFO [Researcher] Sub-query 4: 'Unrealized gains/losses on debt investments as of June 30, 2023'
+2025-11-27 02:59:53,529 INFO [Researcher]   → Retrieved 5 chunks (avg score: 8.277)
+2025-11-27 02:59:53,530 INFO [Researcher] Sub-query 5: 'Unrealized gains/losses on equity investments as of June 30, 2023'
+2025-11-27 02:59:58,821 INFO [Researcher]   → Retrieved 5 chunks (avg score: 5.747)
+2025-11-27 02:59:58,823 INFO [Researcher] Total chunks retrieved: 25
+2025-11-27 02:59:58,824 INFO [Synthesiser] Generating answer...
+2025-11-27 03:00:04,799 INFO [Synthesiser] Answer generated (confidence: 7.21)
+2025-11-27 03:00:05,804 INFO [Analyser] Decomposing query: 'Tesla Total revenues Three Months Ended June 30, 2024 25,500 2023 24,927 Six Months Ended June 30, 2024 46,801 2023 48,256'
+2025-11-27 03:00:07,012 INFO [Analyser] Generated 5 sub-queries:
+2025-11-27 03:00:07,014 INFO [Analyser]   1. Tesla total revenue for the three months ended June 30, 2024
+2025-11-27 03:00:07,015 INFO [Analyser]   2. Tesla total revenue for the three months ended June 30, 2023
+2025-11-27 03:00:07,016 INFO [Analyser]   3. Tesla total revenue for the six months ended June 30, 2024
+2025-11-27 03:00:07,017 INFO [Analyser]   4. Tesla total revenue for the six months ended June 30, 2023
+2025-11-27 03:00:07,019 INFO [Analyser]   5. Compare Tesla's total revenue growth between the three-month periods ending June 30, 2024 and June 30, 2023, and the six-month periods ending June 30, 2024 and June 30, 2023
+2025-11-27 03:00:07,020 INFO [Researcher] Researching 5 sub-queries...
+2025-11-27 03:00:07,021 INFO [Researcher] Sub-query 1: 'Tesla total revenue for the three months ended June 30, 2024'
+2025-11-27 03:00:12,536 INFO [Researcher]   → Retrieved 5 chunks (avg score: 7.384)
+2025-11-27 03:00:12,537 INFO [Researcher] Sub-query 2: 'Tesla total revenue for the three months ended June 30, 2023'
+2025-11-27 03:00:17,505 INFO [Researcher]   → Retrieved 5 chunks (avg score: 7.356)
+2025-11-27 03:00:17,506 INFO [Researcher] Sub-query 3: 'Tesla total revenue for the six months ended June 30, 2024'
+2025-11-27 03:00:22,487 INFO [Researcher]   → Retrieved 5 chunks (avg score: 7.117)
+2025-11-27 03:00:22,488 INFO [Researcher] Sub-query 4: 'Tesla total revenue for the six months ended June 30, 2023'
+2025-11-27 03:00:27,761 INFO [Researcher]   → Retrieved 5 chunks (avg score: 7.111)
+2025-11-27 03:00:27,763 INFO [Researcher] Sub-query 5: 'Compare Tesla's total revenue growth between the three-month periods ending June 30, 2024 and June 30, 2023, and the six-month periods ending June 30, 2024 and June 30, 2023'
+2025-11-27 03:00:33,175 INFO [Researcher]   → Retrieved 5 chunks (avg score: 5.550)
+2025-11-27 03:00:33,176 INFO [Researcher] Total chunks retrieved: 25
+2025-11-27 03:00:33,177 INFO [Synthesiser] Generating answer...
+2025-11-27 03:00:34,739 INFO [Synthesiser] Answer generated (confidence: 6.90)
+2025-11-27 03:00:35,748 INFO [Analyser] Decomposing query: 'Alphabet Inc table'
+2025-11-27 03:00:36,358 INFO [Analyser] Generated 5 sub-queries:
+2025-11-27 03:00:36,359 INFO [Analyser]   1. Alphabet Inc. financial performance
+2025-11-27 03:00:36,360 INFO [Analyser]   2. Alphabet Inc. stock information
+2025-11-27 03:00:36,361 INFO [Analyser]   3. Alphabet Inc. organizational structure
+2025-11-27 03:00:36,362 INFO [Analyser]   4. Alphabet Inc. revenue by segment
+2025-11-27 03:00:36,363 INFO [Analyser]   5. Alphabet Inc. key financial ratios
+2025-11-27 03:00:36,364 INFO [Researcher] Researching 5 sub-queries...
+2025-11-27 03:00:36,366 INFO [Researcher] Sub-query 1: 'Alphabet Inc. financial performance'
+2025-11-27 03:00:41,575 INFO [Researcher]   → Retrieved 5 chunks (avg score: 3.692)
+2025-11-27 03:00:41,576 INFO [Researcher] Sub-query 2: 'Alphabet Inc. stock information'
+2025-11-27 03:00:46,485 INFO [Researcher]   → Retrieved 5 chunks (avg score: 5.209)
+2025-11-27 03:00:46,486 INFO [Researcher] Sub-query 3: 'Alphabet Inc. organizational structure'
+2025-11-27 03:00:50,982 INFO [Researcher]   → Retrieved 5 chunks (avg score: 0.735)
+2025-11-27 03:00:50,984 INFO [Researcher] Sub-query 4: 'Alphabet Inc. revenue by segment'
+2025-11-27 03:00:56,186 INFO [Researcher]   → Retrieved 5 chunks (avg score: 4.688)
+2025-11-27 03:00:56,187 INFO [Researcher] Sub-query 5: 'Alphabet Inc. key financial ratios'
+2025-11-27 03:01:01,376 INFO [Researcher]   → Retrieved 5 chunks (avg score: 3.105)
+2025-11-27 03:01:01,377 INFO [Researcher] Total chunks retrieved: 25
+2025-11-27 03:01:01,379 INFO [Synthesiser] Generating answer...
+2025-11-27 03:01:06,097 INFO [Synthesiser] Answer generated (confidence: 3.49)
+2025-11-27 03:01:07,102 INFO [Analyser] Decomposing query: 'Free cash flow 2023 2024 operating investing financing activities'
+2025-11-27 03:01:07,812 INFO [Analyser] Generated 5 sub-queries:
+2025-11-27 03:01:07,813 INFO [Analyser]   1. Free cash flow definition and calculation
+2025-11-27 03:01:07,814 INFO [Analyser]   2. Free cash flow 2023
+2025-11-27 03:01:07,815 INFO [Analyser]   3. Free cash flow 2024
+2025-11-27 03:01:07,816 INFO [Analyser]   4. Operating activities impact on free cash flow
+2025-11-27 03:01:07,818 INFO [Analyser]   5. Investing and financing activities impact on free cash flow
+2025-11-27 03:01:07,820 INFO [Researcher] Researching 5 sub-queries...
+2025-11-27 03:01:07,821 INFO [Researcher] Sub-query 1: 'Free cash flow definition and calculation'
+2025-11-27 03:01:13,160 INFO [Researcher]   → Retrieved 5 chunks (avg score: 5.900)
+2025-11-27 03:01:13,161 INFO [Researcher] Sub-query 2: 'Free cash flow 2023'
+2025-11-27 03:01:17,607 INFO [Researcher]   → Retrieved 5 chunks (avg score: 7.310)
+2025-11-27 03:01:17,609 INFO [Researcher] Sub-query 3: 'Free cash flow 2024'
+2025-11-27 03:01:22,233 INFO [Researcher]   → Retrieved 5 chunks (avg score: 7.381)
+2025-11-27 03:01:22,238 INFO [Researcher] Sub-query 4: 'Operating activities impact on free cash flow'
+2025-11-27 03:01:27,165 INFO [Researcher]   → Retrieved 5 chunks (avg score: 6.114)
+2025-11-27 03:01:27,171 INFO [Researcher] Sub-query 5: 'Investing and financing activities impact on free cash flow'
+2025-11-27 03:01:31,929 INFO [Researcher]   → Retrieved 5 chunks (avg score: 4.347)
+2025-11-27 03:01:31,931 INFO [Researcher] Total chunks retrieved: 25
+2025-11-27 03:01:31,934 INFO [Synthesiser] Generating answer...
+2025-11-27 03:01:37,661 INFO [Synthesiser] Answer generated (confidence: 6.21)
+2025-11-27 03:01:38,668 INFO [Analyser] Decomposing query: 'JPMorgan Chase lawsuit against Tesla regarding stock warrant agreement and Elon Musk's 2018 Twitter post.'
+2025-11-27 03:01:39,551 INFO [Analyser] Generated 5 sub-queries:
+2025-11-27 03:01:39,553 INFO [Analyser]   1. JPMorgan Chase lawsuit against Tesla stock warrant agreement details
+2025-11-27 03:01:39,554 INFO [Analyser]   2. Elon Musk 2018 Twitter post impact on Tesla stock price
+2025-11-27 03:01:39,565 INFO [Analyser]   3. Legal arguments in JPMorgan Chase lawsuit against Tesla
+2025-11-27 03:01:39,566 INFO [Analyser]   4. Financial implications of JPMorgan Chase vs Tesla lawsuit outcome
+2025-11-27 03:01:39,568 INFO [Analyser]   5. Timeline of events: JPMorgan Chase Tesla stock warrant dispute and Elon Musk tweet
+2025-11-27 03:01:39,569 INFO [Researcher] Researching 5 sub-queries...
+2025-11-27 03:01:39,570 INFO [Researcher] Sub-query 1: 'JPMorgan Chase lawsuit against Tesla stock warrant agreement details'
+2025-11-27 03:01:44,584 INFO [Researcher]   → Retrieved 5 chunks (avg score: 6.214)
+2025-11-27 03:01:44,585 INFO [Researcher] Sub-query 2: 'Elon Musk 2018 Twitter post impact on Tesla stock price'
+2025-11-27 03:01:49,293 INFO [Researcher]   → Retrieved 5 chunks (avg score: 5.281)
+2025-11-27 03:01:49,295 INFO [Researcher] Sub-query 3: 'Legal arguments in JPMorgan Chase lawsuit against Tesla'
+2025-11-27 03:01:54,135 INFO [Researcher]   → Retrieved 5 chunks (avg score: 6.063)
+2025-11-27 03:01:54,136 INFO [Researcher] Sub-query 4: 'Financial implications of JPMorgan Chase vs Tesla lawsuit outcome'
+2025-11-27 03:01:59,554 INFO [Researcher]   → Retrieved 5 chunks (avg score: 3.694)
+2025-11-27 03:01:59,556 INFO [Researcher] Sub-query 5: 'Timeline of events: JPMorgan Chase Tesla stock warrant dispute and Elon Musk tweet'
+2025-11-27 03:02:04,625 INFO [Researcher]   → Retrieved 5 chunks (avg score: 3.404)
+2025-11-27 03:02:04,627 INFO [Researcher] Total chunks retrieved: 25
+2025-11-27 03:02:04,628 INFO [Synthesiser] Generating answer...
+2025-11-27 03:02:08,850 INFO [Synthesiser] Answer generated (confidence: 4.93)
+2025-11-27 03:02:09,860 INFO [Analyser] Decomposing query: 'Net cash provided by operating activities for the nine months ended September 30 2023 and 2024'
+2025-11-27 03:02:10,739 INFO [Analyser] Generated 5 sub-queries:
+2025-11-27 03:02:10,741 INFO [Analyser]   1. Net cash provided by operating activities September 30 2023
+2025-11-27 03:02:10,742 INFO [Analyser]   2. Net cash provided by operating activities September 30 2024
+2025-11-27 03:02:10,743 INFO [Analyser]   3. Operating cash flow nine months ended September 30 2023
+2025-11-27 03:02:10,744 INFO [Analyser]   4. Operating cash flow nine months ended September 30 2024
+2025-11-27 03:02:10,745 INFO [Analyser]   5. Cash flow from operations Q3 2023 and 2024
+2025-11-27 03:02:10,745 INFO [Researcher] Researching 5 sub-queries...
+2025-11-27 03:02:10,746 INFO [Researcher] Sub-query 1: 'Net cash provided by operating activities September 30 2023'
+2025-11-27 03:02:15,802 INFO [Researcher]   → Retrieved 5 chunks (avg score: 8.689)
+2025-11-27 03:02:15,803 INFO [Researcher] Sub-query 2: 'Net cash provided by operating activities September 30 2024'
+2025-11-27 03:02:20,686 INFO [Researcher]   → Retrieved 5 chunks (avg score: 8.874)
+2025-11-27 03:02:20,691 INFO [Researcher] Sub-query 3: 'Operating cash flow nine months ended September 30 2023'
+2025-11-27 03:02:26,278 INFO [Researcher]   → Retrieved 5 chunks (avg score: 8.063)
+2025-11-27 03:02:26,282 INFO [Researcher] Sub-query 4: 'Operating cash flow nine months ended September 30 2024'
+2025-11-27 03:02:32,831 INFO [Researcher]   → Retrieved 5 chunks (avg score: 8.054)
+2025-11-27 03:02:32,836 INFO [Researcher] Sub-query 5: 'Cash flow from operations Q3 2023 and 2024'
+2025-11-27 03:02:38,832 INFO [Researcher]   → Retrieved 5 chunks (avg score: 6.485)
+2025-11-27 03:02:38,834 INFO [Researcher] Total chunks retrieved: 25
+2025-11-27 03:02:38,835 INFO [Synthesiser] Generating answer...
+2025-11-27 03:02:42,136 INFO [Synthesiser] Answer generated (confidence: 8.03)
+2025-11-27 03:02:43,145 INFO [Analyser] Decomposing query: 'Alphabet Inc. equity investments carrying values first quarter 2025'
+2025-11-27 03:02:43,889 INFO [Analyser] Generated 5 sub-queries:
+2025-11-27 03:02:43,890 INFO [Analyser]   1. Alphabet Inc. equity investments
+2025-11-27 03:02:43,890 INFO [Analyser]   2. Alphabet Inc. Q1 2025 financial results
+2025-11-27 03:02:43,891 INFO [Analyser]   3. Alphabet Inc. equity investments carrying value
+2025-11-27 03:02:43,892 INFO [Analyser]   4. Alphabet Inc. equity portfolio holdings
+2025-11-27 03:02:43,894 INFO [Analyser]   5. Alphabet Inc. investment gains and losses Q1 2025
+2025-11-27 03:02:43,895 INFO [Researcher] Researching 5 sub-queries...
+2025-11-27 03:02:43,895 INFO [Researcher] Sub-query 1: 'Alphabet Inc. equity investments'
+2025-11-27 03:02:48,124 INFO [Researcher]   → Retrieved 5 chunks (avg score: 7.901)
+2025-11-27 03:02:48,125 INFO [Researcher] Sub-query 2: 'Alphabet Inc. Q1 2025 financial results'
+2025-11-27 03:02:52,986 INFO [Researcher]   → Retrieved 5 chunks (avg score: 4.758)
+2025-11-27 03:02:52,987 INFO [Researcher] Sub-query 3: 'Alphabet Inc. equity investments carrying value'
+2025-11-27 03:02:57,988 INFO [Researcher]   → Retrieved 5 chunks (avg score: 9.150)
+2025-11-27 03:02:57,990 INFO [Researcher] Sub-query 4: 'Alphabet Inc. equity portfolio holdings'
+2025-11-27 03:03:03,049 INFO [Researcher]   → Retrieved 5 chunks (avg score: 3.505)
+2025-11-27 03:03:03,051 INFO [Researcher] Sub-query 5: 'Alphabet Inc. investment gains and losses Q1 2025'
+2025-11-27 03:03:08,367 INFO [Researcher]   → Retrieved 5 chunks (avg score: 6.232)
+2025-11-27 03:03:08,369 INFO [Researcher] Total chunks retrieved: 25
+2025-11-27 03:03:08,370 INFO [Synthesiser] Generating answer...
+2025-11-27 03:03:09,825 INFO [Synthesiser] Answer generated (confidence: 6.31)
+2025-11-27 03:03:10,830 INFO [Analyser] Decomposing query: 'Segment operating income for the three months ended June 29, 2024 and July 1, 2023, and nine months ended June 29, 2024 and July 1, 2023.'
+2025-11-27 03:03:11,714 INFO [Analyser] Generated 4 sub-queries:
+2025-11-27 03:03:11,716 INFO [Analyser]   1. Operating income by segment for the three months ended June 29, 2024
+2025-11-27 03:03:11,717 INFO [Analyser]   2. Operating income by segment for the three months ended July 1, 2023
+2025-11-27 03:03:11,718 INFO [Analyser]   3. Operating income by segment for the nine months ended June 29, 2024
+2025-11-27 03:03:11,730 INFO [Analyser]   4. Operating income by segment for the nine months ended July 1, 2023
+2025-11-27 03:03:11,731 INFO [Researcher] Researching 4 sub-queries...
+2025-11-27 03:03:11,732 INFO [Researcher] Sub-query 1: 'Operating income by segment for the three months ended June 29, 2024'
+2025-11-27 03:03:16,787 INFO [Researcher]   → Retrieved 5 chunks (avg score: 8.620)
+2025-11-27 03:03:16,788 INFO [Researcher] Sub-query 2: 'Operating income by segment for the three months ended July 1, 2023'
+2025-11-27 03:03:21,816 INFO [Researcher]   → Retrieved 5 chunks (avg score: 7.777)
+2025-11-27 03:03:21,818 INFO [Researcher] Sub-query 3: 'Operating income by segment for the nine months ended June 29, 2024'
+2025-11-27 03:03:27,489 INFO [Researcher]   → Retrieved 5 chunks (avg score: 8.293)
+2025-11-27 03:03:27,490 INFO [Researcher] Sub-query 4: 'Operating income by segment for the nine months ended July 1, 2023'
+2025-11-27 03:03:32,724 INFO [Researcher]   → Retrieved 5 chunks (avg score: 7.735)
+2025-11-27 03:03:32,725 INFO [Researcher] Total chunks retrieved: 20
+2025-11-27 03:03:32,727 INFO [Synthesiser] Generating answer...
+2025-11-27 03:03:34,514 INFO [Synthesiser] Answer generated (confidence: 8.11)
+2025-11-27 03:03:35,519 INFO [Analyser] Decomposing query: 'Amazon net sales for North America, International, and AWS for the three and six months ended June 30, 2023 and 2024.'
+2025-11-27 03:03:36,519 INFO [Analyser] Generated 6 sub-queries:
+2025-11-27 03:03:36,528 INFO [Analyser]   1. Amazon net sales North America Q2 2023 and 2024
+2025-11-27 03:03:36,535 INFO [Analyser]   2. Amazon net sales International Q2 2023 and 2024
+2025-11-27 03:03:36,536 INFO [Analyser]   3. Amazon net sales AWS Q2 2023 and 2024
+2025-11-27 03:03:36,537 INFO [Analyser]   4. Amazon net sales North America H1 2023 and 2024
+2025-11-27 03:03:36,538 INFO [Analyser]   5. Amazon net sales International H1 2023 and 2024
+2025-11-27 03:03:36,540 INFO [Analyser]   6. Amazon net sales AWS H1 2023 and 2024
+2025-11-27 03:03:36,541 INFO [Researcher] Researching 6 sub-queries...
+2025-11-27 03:03:36,542 INFO [Researcher] Sub-query 1: 'Amazon net sales North America Q2 2023 and 2024'
+2025-11-27 03:03:41,454 INFO [Researcher]   → Retrieved 5 chunks (avg score: 5.478)
+2025-11-27 03:03:41,456 INFO [Researcher] Sub-query 2: 'Amazon net sales International Q2 2023 and 2024'
+2025-11-27 03:03:47,069 INFO [Researcher]   → Retrieved 5 chunks (avg score: 4.533)
+2025-11-27 03:03:47,070 INFO [Researcher] Sub-query 3: 'Amazon net sales AWS Q2 2023 and 2024'
+2025-11-27 03:03:52,394 INFO [Researcher]   → Retrieved 5 chunks (avg score: 4.867)
+2025-11-27 03:03:52,396 INFO [Researcher] Sub-query 4: 'Amazon net sales North America H1 2023 and 2024'
+2025-11-27 03:03:57,327 INFO [Researcher]   → Retrieved 5 chunks (avg score: 4.326)
+2025-11-27 03:03:57,328 INFO [Researcher] Sub-query 5: 'Amazon net sales International H1 2023 and 2024'
+2025-11-27 03:04:02,883 INFO [Researcher]   → Retrieved 5 chunks (avg score: 2.319)
+2025-11-27 03:04:02,885 INFO [Researcher] Sub-query 6: 'Amazon net sales AWS H1 2023 and 2024'
+2025-11-27 03:04:08,026 INFO [Researcher]   → Retrieved 5 chunks (avg score: 3.816)
+2025-11-27 03:04:08,027 INFO [Researcher] Total chunks retrieved: 30
+2025-11-27 03:04:08,029 INFO [Synthesiser] Generating answer...
+2025-11-27 03:04:12,210 INFO [Synthesiser] Answer generated (confidence: 4.22)
+2025-11-27 03:04:13,218 INFO [Analyser] Decomposing query: 'debt maturity schedule as of June 30 2024'
+2025-11-27 03:04:13,896 INFO [Analyser] Generated 5 sub-queries:
+2025-11-27 03:04:13,898 INFO [Analyser]   1. Debt maturity schedule definition
+2025-11-27 03:04:13,899 INFO [Analyser]   2. Debt maturity schedule as of June 30, 2024
+2025-11-27 03:04:13,900 INFO [Analyser]   3. Debt outstanding as of June 30, 2024
+2025-11-27 03:04:13,902 INFO [Analyser]   4. Debt repayment schedule examples
+2025-11-27 03:04:13,903 INFO [Analyser]   5. How to create a debt maturity schedule
+2025-11-27 03:04:13,904 INFO [Researcher] Researching 5 sub-queries...
+2025-11-27 03:04:13,905 INFO [Researcher] Sub-query 1: 'Debt maturity schedule definition'
+2025-11-27 03:04:19,072 INFO [Researcher]   → Retrieved 5 chunks (avg score: -1.637)
+2025-11-27 03:04:19,073 INFO [Researcher] Sub-query 2: 'Debt maturity schedule as of June 30, 2024'
+2025-11-27 03:04:23,793 INFO [Researcher]   → Retrieved 5 chunks (avg score: 6.481)
+2025-11-27 03:04:23,794 INFO [Researcher] Sub-query 3: 'Debt outstanding as of June 30, 2024'
+2025-11-27 03:04:29,189 INFO [Researcher]   → Retrieved 5 chunks (avg score: 8.740)
+2025-11-27 03:04:29,190 INFO [Researcher] Sub-query 4: 'Debt repayment schedule examples'
+2025-11-27 03:04:34,006 INFO [Researcher]   → Retrieved 5 chunks (avg score: -2.071)
+2025-11-27 03:04:34,007 INFO [Researcher] Sub-query 5: 'How to create a debt maturity schedule'
+2025-11-27 03:04:39,368 INFO [Researcher]   → Retrieved 5 chunks (avg score: -5.900)
+2025-11-27 03:04:39,369 INFO [Researcher] Total chunks retrieved: 25
+2025-11-27 03:04:39,370 INFO [Synthesiser] Generating answer...
+2025-11-27 03:04:45,632 INFO [Synthesiser] Answer generated (confidence: 1.12)
+2025-11-27 03:04:46,638 INFO [Analyser] Decomposing query: 'Ongoing privacy investigations and lawsuits faced by the company in the U.S. and the EU.'
+2025-11-27 03:04:47,495 INFO [Analyser] Generated 5 sub-queries:
+2025-11-27 03:04:47,497 INFO [Analyser]   1. Privacy investigations involving [Company Name] in the United States
+2025-11-27 03:04:47,498 INFO [Analyser]   2. Lawsuits against [Company Name] related to privacy in the United States
+2025-11-27 03:04:47,499 INFO [Analyser]   3. Privacy investigations involving [Company Name] in the European Union
+2025-11-27 03:04:47,500 INFO [Analyser]   4. Lawsuits against [Company Name] related to privacy in the European Union
+2025-11-27 03:04:47,501 INFO [Analyser]   5. [Company Name] data privacy compliance issues in the US and EU
+2025-11-27 03:04:47,502 INFO [Researcher] Researching 5 sub-queries...
+2025-11-27 03:04:47,503 INFO [Researcher] Sub-query 1: 'Privacy investigations involving [Company Name] in the United States'
+2025-11-27 03:04:52,363 INFO [Researcher]   → Retrieved 5 chunks (avg score: -0.775)
+2025-11-27 03:04:52,364 INFO [Researcher] Sub-query 2: 'Lawsuits against [Company Name] related to privacy in the United States'
+2025-11-27 03:04:57,053 INFO [Researcher]   → Retrieved 5 chunks (avg score: 1.021)
+2025-11-27 03:04:57,054 INFO [Researcher] Sub-query 3: 'Privacy investigations involving [Company Name] in the European Union'
+2025-11-27 03:05:02,107 INFO [Researcher]   → Retrieved 5 chunks (avg score: 1.149)
+2025-11-27 03:05:02,108 INFO [Researcher] Sub-query 4: 'Lawsuits against [Company Name] related to privacy in the European Union'
+2025-11-27 03:05:06,811 INFO [Researcher]   → Retrieved 5 chunks (avg score: 1.839)
+2025-11-27 03:05:06,822 INFO [Researcher] Sub-query 5: '[Company Name] data privacy compliance issues in the US and EU'
+2025-11-27 03:05:12,034 INFO [Researcher]   → Retrieved 5 chunks (avg score: 2.262)
+2025-11-27 03:05:12,036 INFO [Researcher] Total chunks retrieved: 25
+2025-11-27 03:05:12,038 INFO [Synthesiser] Generating answer...
+2025-11-27 03:05:32,711 INFO [Synthesiser] Answer generated (confidence: 1.10)
+2025-11-27 03:05:33,722 INFO [Analyser] Decomposing query: 'Microsoft goodwill Activision Blizzard integration'
+2025-11-27 03:05:34,479 INFO [Analyser] Generated 5 sub-queries:
+2025-11-27 03:05:34,480 INFO [Analyser]   1. Microsoft Activision Blizzard acquisition goodwill impact
+2025-11-27 03:05:34,481 INFO [Analyser]   2. Microsoft Activision Blizzard integration financial analysis
+2025-11-27 03:05:34,482 INFO [Analyser]   3. Microsoft goodwill impairment risk Activision Blizzard
+2025-11-27 03:05:34,483 INFO [Analyser]   4. Accounting treatment of Activision Blizzard acquisition by Microsoft
+2025-11-27 03:05:34,486 INFO [Analyser]   5. Microsoft's strategy for Activision Blizzard integration
+2025-11-27 03:05:34,487 INFO [Researcher] Researching 5 sub-queries...
+2025-11-27 03:05:34,488 INFO [Researcher] Sub-query 1: 'Microsoft Activision Blizzard acquisition goodwill impact'
+2025-11-27 03:05:39,308 INFO [Researcher]   → Retrieved 5 chunks (avg score: 5.446)
+2025-11-27 03:05:39,309 INFO [Researcher] Sub-query 2: 'Microsoft Activision Blizzard integration financial analysis'
+2025-11-27 03:05:44,101 INFO [Researcher]   → Retrieved 5 chunks (avg score: 2.496)
+2025-11-27 03:05:44,102 INFO [Researcher] Sub-query 3: 'Microsoft goodwill impairment risk Activision Blizzard'
+2025-11-27 03:05:50,458 INFO [Researcher]   → Retrieved 5 chunks (avg score: 3.378)
+2025-11-27 03:05:50,471 INFO [Researcher] Sub-query 4: 'Accounting treatment of Activision Blizzard acquisition by Microsoft'
+2025-11-27 03:05:58,154 INFO [Researcher]   → Retrieved 5 chunks (avg score: 3.707)
+2025-11-27 03:05:58,155 INFO [Researcher] Sub-query 5: 'Microsoft's strategy for Activision Blizzard integration'
+2025-11-27 03:06:05,486 INFO [Researcher]   → Retrieved 5 chunks (avg score: 0.859)
+2025-11-27 03:06:05,488 INFO [Researcher] Total chunks retrieved: 25
+2025-11-27 03:06:05,490 INFO [Synthesiser] Generating answer...
+2025-11-27 03:06:11,129 INFO [Synthesiser] Answer generated (confidence: 3.18)
+2025-11-27 03:37:53,183 INFO [Analyser] Decomposing query: 'Alphabet share repurchase program September 30 2025'
+2025-11-27 03:37:54,123 INFO [Analyser] Generated 5 sub-queries:
+2025-11-27 03:37:54,125 INFO [Analyser]   1. Alphabet share repurchase program
+2025-11-27 03:37:54,127 INFO [Analyser]   2. Alphabet stock buyback history
+2025-11-27 03:37:54,127 INFO [Analyser]   3. Alphabet share repurchase authorization amount
+2025-11-27 03:37:54,128 INFO [Analyser]   4. Alphabet share repurchase program details September 30 2025
+2025-11-27 03:37:54,129 INFO [Analyser]   5. GOOGL share repurchase program
+2025-11-27 03:37:54,131 INFO [Researcher] Researching 5 sub-queries...
+2025-11-27 03:37:54,132 INFO [Researcher] Sub-query 1: 'Alphabet share repurchase program'
+2025-11-27 03:38:03,654 INFO [Researcher]   → Retrieved 5 chunks (avg score: 5.275)
+2025-11-27 03:38:03,658 INFO [Researcher] Sub-query 2: 'Alphabet stock buyback history'
+2025-11-27 03:38:09,497 INFO [Researcher]   → Retrieved 5 chunks (avg score: -0.128)
+2025-11-27 03:38:09,498 INFO [Researcher] Sub-query 3: 'Alphabet share repurchase authorization amount'
+2025-11-27 03:38:14,760 INFO [Researcher]   → Retrieved 5 chunks (avg score: 6.046)
+2025-11-27 03:38:14,761 INFO [Researcher] Sub-query 4: 'Alphabet share repurchase program details September 30 2025'
+2025-11-27 03:38:20,049 INFO [Researcher]   → Retrieved 5 chunks (avg score: 6.287)
+2025-11-27 03:38:20,053 INFO [Researcher] Sub-query 5: 'GOOGL share repurchase program'
+2025-11-27 03:38:25,563 INFO [Researcher]   → Retrieved 5 chunks (avg score: 2.957)
+2025-11-27 03:38:25,597 INFO [Researcher] Total chunks retrieved: 25
+2025-11-27 03:38:25,599 INFO [Synthesiser] Generating answer...
+2025-11-27 03:38:28,363 INFO [Synthesiser] Answer generated (confidence: 4.09)
+2025-11-27 03:38:29,373 INFO [Analyser] Decomposing query: 'Amazon net sales for North America, International, and AWS for the three and six months ended June 30, 2023 and 2024.'
+2025-11-27 03:38:30,377 INFO [Analyser] Generated 6 sub-queries:
+2025-11-27 03:38:30,379 INFO [Analyser]   1. Amazon net sales North America Q2 2023 and 2024
+2025-11-27 03:38:30,381 INFO [Analyser]   2. Amazon net sales International Q2 2023 and 2024
+2025-11-27 03:38:30,382 INFO [Analyser]   3. Amazon net sales AWS Q2 2023 and 2024
+2025-11-27 03:38:30,383 INFO [Analyser]   4. Amazon net sales North America H1 2023 and 2024
+2025-11-27 03:38:30,384 INFO [Analyser]   5. Amazon net sales International H1 2023 and 2024
+2025-11-27 03:38:30,385 INFO [Analyser]   6. Amazon net sales AWS H1 2023 and 2024
+2025-11-27 03:38:30,390 INFO [Researcher] Researching 6 sub-queries...
+2025-11-27 03:38:30,392 INFO [Researcher] Sub-query 1: 'Amazon net sales North America Q2 2023 and 2024'
+2025-11-27 03:38:35,673 INFO [Researcher]   → Retrieved 5 chunks (avg score: 5.478)
+2025-11-27 03:38:35,674 INFO [Researcher] Sub-query 2: 'Amazon net sales International Q2 2023 and 2024'
+2025-11-27 03:38:40,647 INFO [Researcher]   → Retrieved 5 chunks (avg score: 4.533)
+2025-11-27 03:38:40,652 INFO [Researcher] Sub-query 3: 'Amazon net sales AWS Q2 2023 and 2024'
+2025-11-27 03:38:45,508 INFO [Researcher]   → Retrieved 5 chunks (avg score: 4.867)
+2025-11-27 03:38:45,515 INFO [Researcher] Sub-query 4: 'Amazon net sales North America H1 2023 and 2024'
+2025-11-27 03:38:50,376 INFO [Researcher]   → Retrieved 5 chunks (avg score: 4.326)
+2025-11-27 03:38:50,377 INFO [Researcher] Sub-query 5: 'Amazon net sales International H1 2023 and 2024'
+2025-11-27 03:38:55,526 INFO [Researcher]   → Retrieved 5 chunks (avg score: 2.319)
+2025-11-27 03:38:55,527 INFO [Researcher] Sub-query 6: 'Amazon net sales AWS H1 2023 and 2024'
+2025-11-27 03:39:00,628 INFO [Researcher]   → Retrieved 5 chunks (avg score: 3.816)
+2025-11-27 03:39:00,634 INFO [Researcher] Total chunks retrieved: 30
+2025-11-27 03:39:00,635 INFO [Synthesiser] Generating answer...
+2025-11-27 03:39:02,943 INFO [Synthesiser] Answer generated (confidence: 4.22)
+2025-11-27 03:39:03,952 INFO [Analyser] Decomposing query: 'debt maturity schedule as of June 30 2024'
+2025-11-27 03:39:04,721 INFO [Analyser] Generated 4 sub-queries:
+2025-11-27 03:39:04,724 INFO [Analyser]   1. debt maturity schedule definition
+2025-11-27 03:39:04,727 INFO [Analyser]   2. debt maturity schedule as of June 30, 2024
+2025-11-27 03:39:04,729 INFO [Analyser]   3. debt obligations maturing after June 30, 2024
+2025-11-27 03:39:04,730 INFO [Analyser]   4. types of debt included in a debt maturity schedule
+2025-11-27 03:39:04,731 INFO [Researcher] Researching 4 sub-queries...
+2025-11-27 03:39:04,731 INFO [Researcher] Sub-query 1: 'debt maturity schedule definition'
+2025-11-27 03:39:09,990 INFO [Researcher]   → Retrieved 5 chunks (avg score: -1.637)
+2025-11-27 03:39:09,993 INFO [Researcher] Sub-query 2: 'debt maturity schedule as of June 30, 2024'
+2025-11-27 03:39:14,883 INFO [Researcher]   → Retrieved 5 chunks (avg score: 6.481)
+2025-11-27 03:39:14,886 INFO [Researcher] Sub-query 3: 'debt obligations maturing after June 30, 2024'
+2025-11-27 03:39:20,058 INFO [Researcher]   → Retrieved 5 chunks (avg score: 7.033)
+2025-11-27 03:39:20,060 INFO [Researcher] Sub-query 4: 'types of debt included in a debt maturity schedule'
+2025-11-27 03:39:25,342 INFO [Researcher]   → Retrieved 5 chunks (avg score: -1.738)
+2025-11-27 03:39:25,345 INFO [Researcher] Total chunks retrieved: 20
+2025-11-27 03:39:25,347 INFO [Synthesiser] Generating answer...
+2025-11-27 03:39:33,021 INFO [Synthesiser] Answer generated (confidence: 2.54)
+2025-11-27 03:39:34,026 INFO [Analyser] Decomposing query: 'Ongoing privacy investigations and lawsuits faced by the company in the U.S. and the EU.'
+2025-11-27 03:39:34,739 INFO [Analyser] Generated 5 sub-queries:
+2025-11-27 03:39:34,742 INFO [Analyser]   1. Privacy investigations involving [Company Name] in the United States
+2025-11-27 03:39:34,744 INFO [Analyser]   2. Privacy lawsuits involving [Company Name] in the United States
+2025-11-27 03:39:34,746 INFO [Analyser]   3. Privacy investigations involving [Company Name] in the European Union
+2025-11-27 03:39:34,747 INFO [Analyser]   4. Privacy lawsuits involving [Company Name] in the European Union
+2025-11-27 03:39:34,748 INFO [Analyser]   5. [Company Name] data privacy compliance issues
+2025-11-27 03:39:34,750 INFO [Researcher] Researching 5 sub-queries...
+2025-11-27 03:39:34,753 INFO [Researcher] Sub-query 1: 'Privacy investigations involving [Company Name] in the United States'
+2025-11-27 03:39:40,228 INFO [Researcher]   → Retrieved 5 chunks (avg score: -0.775)
+2025-11-27 03:39:40,229 INFO [Researcher] Sub-query 2: 'Privacy lawsuits involving [Company Name] in the United States'
+2025-11-27 03:39:45,949 INFO [Researcher]   → Retrieved 5 chunks (avg score: -0.040)
+2025-11-27 03:39:45,951 INFO [Researcher] Sub-query 3: 'Privacy investigations involving [Company Name] in the European Union'
+2025-11-27 03:39:50,918 INFO [Researcher]   → Retrieved 5 chunks (avg score: 1.149)
+2025-11-27 03:39:50,921 INFO [Researcher] Sub-query 4: 'Privacy lawsuits involving [Company Name] in the European Union'
+2025-11-27 03:39:56,093 INFO [Researcher]   → Retrieved 5 chunks (avg score: 0.441)
+2025-11-27 03:39:56,099 INFO [Researcher] Sub-query 5: '[Company Name] data privacy compliance issues'
+2025-11-27 03:40:01,513 INFO [Researcher]   → Retrieved 5 chunks (avg score: -0.351)
+2025-11-27 03:40:01,519 INFO [Researcher] Total chunks retrieved: 25
+2025-11-27 03:40:01,520 INFO [Synthesiser] Generating answer...
+2025-11-27 03:40:04,770 INFO [Synthesiser] Answer generated (confidence: 0.08)
+2025-11-27 03:40:05,779 INFO [Analyser] Decomposing query: 'Microsoft goodwill Activision Blizzard integration'
+2025-11-27 03:40:06,585 INFO [Analyser] Generated 5 sub-queries:
+2025-11-27 03:40:06,587 INFO [Analyser]   1. Microsoft acquisition of Activision Blizzard goodwill impact
+2025-11-27 03:40:06,589 INFO [Analyser]   2. Microsoft Activision Blizzard integration financial analysis
+2025-11-27 03:40:06,590 INFO [Analyser]   3. Activision Blizzard goodwill valuation pre and post acquisition
+2025-11-27 03:40:06,591 INFO [Analyser]   4. Microsoft financial statements goodwill Activision Blizzard
+2025-11-27 03:40:06,592 INFO [Analyser]   5. Risk factors Microsoft Activision Blizzard integration goodwill impairment
+2025-11-27 03:40:06,598 INFO [Researcher] Researching 5 sub-queries...
+2025-11-27 03:40:06,599 INFO [Researcher] Sub-query 1: 'Microsoft acquisition of Activision Blizzard goodwill impact'
+2025-11-27 03:40:11,791 INFO [Researcher]   → Retrieved 5 chunks (avg score: 5.926)
+2025-11-27 03:40:11,792 INFO [Researcher] Sub-query 2: 'Microsoft Activision Blizzard integration financial analysis'
+2025-11-27 03:40:17,074 INFO [Researcher]   → Retrieved 5 chunks (avg score: 2.496)
+2025-11-27 03:40:17,080 INFO [Researcher] Sub-query 3: 'Activision Blizzard goodwill valuation pre and post acquisition'
+2025-11-27 03:40:22,859 INFO [Researcher]   → Retrieved 5 chunks (avg score: 5.219)
+2025-11-27 03:40:22,861 INFO [Researcher] Sub-query 4: 'Microsoft financial statements goodwill Activision Blizzard'
+2025-11-27 03:40:28,017 INFO [Researcher]   → Retrieved 5 chunks (avg score: 3.356)
+2025-11-27 03:40:28,020 INFO [Researcher] Sub-query 5: 'Risk factors Microsoft Activision Blizzard integration goodwill impairment'
+2025-11-27 03:40:33,034 INFO [Researcher]   → Retrieved 5 chunks (avg score: 2.784)
+2025-11-27 03:40:33,036 INFO [Researcher] Total chunks retrieved: 25
+2025-11-27 03:40:33,036 INFO [Synthesiser] Generating answer...
+2025-11-27 03:40:38,941 INFO [Synthesiser] Answer generated (confidence: 3.96)

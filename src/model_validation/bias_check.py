@@ -284,10 +284,15 @@ def main():
         exit_code = 0
 
     # Save report
-    with open("src/model_validation/bias_report.json", "w") as f:
+    report_path = "src/model_validation/reports/bias_report.json"
+    with open(report_path, "w") as f:
         json.dump(report, f, indent=4, cls=NumpyEncoder)
 
-    print(f"\n✅ Bias report saved to src/model_validation/bias_report.json")
+    print(f"\n✅ Bias report saved to {report_path}")
+
+    # Save Markdown report
+    md_path = "src/model_validation/reports/bias_report.md"
+    save_markdown_report(report, md_path)
 
     # CI/CD GATEKEEPER
     # Fail if overall score is too low
@@ -297,6 +302,54 @@ def main():
 
     print("✅ SUCCESS: Model passed validation thresholds.")
     sys.exit(0)
+
+
+def save_markdown_report(report: Dict, filepath: str):
+    """
+    Generate a Markdown table from the bias report.
+    """
+    with open(filepath, "w") as f:
+        f.write("# 📊 Model Validation & Bias Report\n\n")
+        
+        # Global Metrics
+        f.write("## 🌍 Global Metrics\n\n")
+        f.write("| Metric | Value |\n")
+        f.write("| :--- | :--- |\n")
+        glob = report["global"]
+        f.write(f"| **Overall Score** | {glob['global_avg_overall_score']:.2%} |\n")
+        f.write(f"| **Success Rate** | {glob['global_avg_success_rate']:.1%} |\n")
+        f.write(f"| **Retrieval Recall** | {glob['global_avg_retrieval_recall']:.2%} |\n")
+        f.write(f"| **Citation F1** | {glob['global_avg_citation_f1']:.2%} |\n")
+        f.write(f"| **Max Group Gap** | {glob['max_gap']:.2%} (Limit: {glob['max_allowed_gap']:.0%}) |\n")
+        f.write("\n")
+
+        # Per-Group Metrics
+        f.write("## 👥 Per-Group Metrics\n\n")
+        f.write("| Group | Tests | Success Rate | Overall Score | Groundedness | Relevancy | Citation F1 | Retrieval Recall |\n")
+        f.write("| :--- | :---: | :---: | :---: | :---: | :---: | :---: | :---: |\n")
+        
+        for group_id, stats in report["per_group"].items():
+            f.write(f"| **{group_id}** | {stats['num_tests']} | {stats['success_rate']:.1%} | "
+                    f"{stats['avg_overall_score']:.2%} | {stats['avg_groundedness']:.2%} | "
+                    f"{stats['avg_relevancy']:.2%} | {stats['avg_citation_f1']:.2%} | "
+                    f"{stats['avg_retrieval_recall']:.2%} |\n")
+        
+        f.write("\n")
+        
+        # Pass/Fail Status
+        if report["failures"]["per_group_thresholds"] or report["failures"]["disparity_failure"]:
+            f.write("## ❌ Status: FAILED\n\n")
+            if report["failures"]["per_group_thresholds"]:
+                f.write("### Per-Group Issues\n")
+                for msg in report["failures"]["per_group_thresholds"]:
+                    f.write(f"- {msg}\n")
+            if report["failures"]["disparity_failure"]:
+                f.write(f"\n### Disparity Issue\n")
+                f.write(f"- Max gap {glob['max_gap']:.2%} exceeds limit {glob['max_allowed_gap']:.2%}\n")
+        else:
+            f.write("## ✅ Status: PASSED\n")
+
+    print(f"✅ Markdown report saved to {filepath}")
 
 
 if __name__ == "__main__":
