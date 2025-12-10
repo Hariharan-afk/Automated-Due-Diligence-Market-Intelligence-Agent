@@ -21,10 +21,16 @@ wheels/
 .installed.cfg
 *.egg
 
+#Folders
+Saumith_Models_2/
+DEVIL_IS_NEAR/
+DEVIL_IS_NEAR.zip
+
 # Virtual Environment
 venv/
 Agent.venv/
 ENV/
+Deployment.venv/
 
 # Environment Variables
 .env
@@ -42,6 +48,7 @@ logs/
 
 # Results
 results/
+src/model_validation/reports/
 
 # Docker
 docker-compose.override.yml

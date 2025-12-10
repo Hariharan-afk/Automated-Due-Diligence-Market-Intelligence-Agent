@@ -1,0 +1,247 @@
+name: Unified CI/CD Pipeline
+
+on:
+  push:
+    branches: [ "**" ]
+  pull_request:
+    branches: [ "**" ]
+
+env:
+  # Configuration
+  PYTHON_VERSION: "3.11"
+  VALIDATION_THRESHOLD: 0.2
+  
+  # GCP Config
+  PROJECT_ID: ${{ secrets.GCP_PROJECT_ID }}
+  GAR_LOCATION: us-central1
+  REPOSITORY: agents-repo
+  GKE_CLUSTER: agent-cluster
+  GKE_ZONE: us-central1-a
+  
+  # Images
+  API_IMAGE: agent-api
+  UI_IMAGE: agent-ui
+  
+  # Cloud Run
+  UI_SERVICE: agent-ui
+  UI_REGION: us-central1
+
+jobs:
+  # =================================================================================
+  # JOB 1: VALIDATION & TESTING (CI)
+  # =================================================================================
+  check-and-validate:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+    
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: ${{ env.PYTHON_VERSION }}
+        
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install flake8
+        if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+        # Ensure validation deps are installed
+        pip install numpy python-dotenv qdrant-client google-cloud-aiplatform
+        
+    - name: Lint with flake8
+      run: |
+        # stop the build if there are Python syntax errors or undefined names
+        flake8 . --count --select=E9,F63,F7,F82 --show-source --statistics
+        # exit-zero treats all errors as warnings
+        flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
+
+    - name: Authenticate to Google Cloud (for Validation)
+      uses: google-github-actions/auth@v1
+      with:
+        credentials_json: ${{ secrets.GCP_SA_KEY }}
+
+    - name: Set up Cloud SDK
+      uses: google-github-actions/setup-gcloud@v1
+
+    # Generate Synthetic Data
+    - name: Generate Synthetic Test Data
+      env:
+        QDRANT_URL: ${{ secrets.QDRANT_URL }}
+        QDRANT_API_KEY: ${{ secrets.QDRANT_API_KEY }}
+        QDRANT_COLLECTION_NAME: ${{ secrets.QDRANT_COLLECTION_NAME }}
+      run: |
+        python src/model_validation/generate_synthetic_test.py
+        
+    # Run Validation & Bias Check
+    - name: Run Model Validation & Bias Check
+      id: validation
+      env:
+        QDRANT_URL: ${{ secrets.QDRANT_URL }}
+        QDRANT_API_KEY: ${{ secrets.QDRANT_API_KEY }}
+        QDRANT_COLLECTION_NAME: ${{ secrets.QDRANT_COLLECTION_NAME }}
+        OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+      run: |
+        # Run validator with threshold
+        python src/model_validation/validator.py --threshold ${{ env.VALIDATION_THRESHOLD }}
+        
+    - name: Upload Bias Report
+      if: always()
+      uses: actions/upload-artifact@v4
+      with:
+        name: bias-report
+        path: src/model_validation/bias_report.json
+
+  # =================================================================================
+  # JOB 2: BUILD & PUSH API (CD Part 1)
+  # =================================================================================
+  build-push-api:
+    needs: check-and-validate
+    runs-on: ubuntu-latest
+    if: github.event_name == 'push' # Only build/deploy on push, not PR (unless requested)
+    steps:
+    - uses: actions/checkout@v3
+
+    - id: 'auth'
+      uses: 'google-github-actions/auth@v1'
+      with:
+        credentials_json: '${{ secrets.GCP_SA_KEY }}'
+
+    - name: Set up Cloud SDK
+      uses: google-github-actions/setup-gcloud@v1
+
+    - name: Configure Docker
+      run: |
+        gcloud auth configure-docker ${{ env.GAR_LOCATION }}-docker.pkg.dev
+
+    # Create Secrets Files for API Docker Build
+    - name: Create Secrets Files
+      run: |
+        echo '${{ secrets.GCP_SA_KEY }}' > vertex-key.json
+        echo "GCP_PROJECT_ID=${{ secrets.GCP_PROJECT_ID }}" > .env
+        echo "QDRANT_URL=${{ secrets.QDRANT_URL }}" >> .env
+        echo "QDRANT_API_KEY=${{ secrets.QDRANT_API_KEY }}" >> .env
+        echo "QDRANT_COLLECTION_NAME=${{ secrets.QDRANT_COLLECTION_NAME }}" >> .env
+        echo "OPENAI_API_KEY=${{ secrets.OPENAI_API_KEY }}" >> .env
+        echo "GOOGLE_APPLICATION_CREDENTIALS=/app/vertex-key.json" >> .env
+
+    - name: Build and Push API Container
+      run: |
+        docker build -t ${{ env.GAR_LOCATION }}-docker.pkg.dev/${{ env.PROJECT_ID }}/${{ env.REPOSITORY }}/${{ env.API_IMAGE }}:${{ github.sha }} .
+        docker push ${{ env.GAR_LOCATION }}-docker.pkg.dev/${{ env.PROJECT_ID }}/${{ env.REPOSITORY }}/${{ env.API_IMAGE }}:${{ github.sha }}
+        docker tag ${{ env.GAR_LOCATION }}-docker.pkg.dev/${{ env.PROJECT_ID }}/${{ env.REPOSITORY }}/${{ env.API_IMAGE }}:${{ github.sha }} ${{ env.GAR_LOCATION }}-docker.pkg.dev/${{ env.PROJECT_ID }}/${{ env.REPOSITORY }}/${{ env.API_IMAGE }}:latest
+        docker push ${{ env.GAR_LOCATION }}-docker.pkg.dev/${{ env.PROJECT_ID }}/${{ env.REPOSITORY }}/${{ env.API_IMAGE }}:latest
+
+  # =================================================================================
+  # JOB 3: DEPLOY API TO GKE (CD Part 2)
+  # =================================================================================
+  deploy-api-gke:
+    needs: build-push-api
+    runs-on: ubuntu-latest
+    if: github.event_name == 'push'
+    steps:
+    - uses: actions/checkout@v3
+
+    - uses: 'google-github-actions/auth@v1'
+      with:
+        credentials_json: '${{ secrets.GCP_SA_KEY }}'
+
+    - uses: google-github-actions/setup-gcloud@v1
+      with:
+        project_id: ${{ env.PROJECT_ID }}
+        install_components: 'gke-gcloud-auth-plugin'
+
+    - name: Deploy to GKE
+      id: deploy
+      run: |
+        gcloud container clusters get-credentials ${{ env.GKE_CLUSTER }} --zone ${{ env.GKE_ZONE }} --project ${{ env.PROJECT_ID }}
+        
+        kubectl set image deployment/agent-api agent-api=${{ env.GAR_LOCATION }}-docker.pkg.dev/${{ env.PROJECT_ID }}/${{ env.REPOSITORY }}/${{ env.API_IMAGE }}:${{ github.sha }}
+        
+        if ! kubectl rollout status deployment/agent-api --timeout=60s; then
+            echo "❌ Deployment failed!"
+            exit 1
+        fi
+
+    - name: Rollback API
+      if: failure() && steps.deploy.outcome == 'failure'
+      run: |
+        echo "⚠️ Rolling back API deployment..."
+        gcloud container clusters get-credentials ${{ env.GKE_CLUSTER }} --zone ${{ env.GKE_ZONE }}
+        kubectl rollout undo deployment/agent-api
+
+  # =================================================================================
+  # JOB 4: BUILD & DEPLOY UI TO CLOUD RUN
+  # =================================================================================
+  build-deploy-ui:
+    needs: check-and-validate
+    runs-on: ubuntu-latest
+    if: github.event_name == 'push'
+    steps:
+    - uses: actions/checkout@v3
+
+    - uses: 'google-github-actions/auth@v1'
+      with:
+        credentials_json: '${{ secrets.GCP_SA_KEY }}'
+
+    - uses: google-github-actions/setup-gcloud@v1
+
+    - name: Configure Docker
+      run: |
+        gcloud auth configure-docker ${{ env.GAR_LOCATION }}-docker.pkg.dev
+
+    # Create Secrets for UI (similar to API, assuming it needs them)
+    # Note: Streamlit typically just needs access to the API URL, but if it imports src logic directly it might need credentials.
+    # Dockerfile.frontend copies .env, so we recreate it.
+    - name: Create Secrets Files
+      run: |
+        echo '${{ secrets.GCP_SA_KEY }}' > vertex-key.json
+        echo "GCP_PROJECT_ID=${{ secrets.GCP_PROJECT_ID }}" > .env
+        # Add API URL if needed, or other vars
+        echo "QDRANT_URL=${{ secrets.QDRANT_URL }}" >> .env
+        echo "GOOGLE_APPLICATION_CREDENTIALS=/app/vertex-key.json" >> .env
+        # If UI connects to API via internal K8s Service, we might need External IP for Cloud Run...
+        # For now, we assume it's correctly configured in env or code.
+
+    - name: Build and Push UI Container
+      run: |
+        docker build -f Dockerfile.frontend -t ${{ env.GAR_LOCATION }}-docker.pkg.dev/${{ env.PROJECT_ID }}/${{ env.REPOSITORY }}/${{ env.UI_IMAGE }}:${{ github.sha }} .
+        docker push ${{ env.GAR_LOCATION }}-docker.pkg.dev/${{ env.PROJECT_ID }}/${{ env.REPOSITORY }}/${{ env.UI_IMAGE }}:${{ github.sha }}
+
+    - name: Deploy to Cloud Run
+      run: |
+        gcloud run deploy ${{ env.UI_SERVICE }} \
+          --image ${{ env.GAR_LOCATION }}-docker.pkg.dev/${{ env.PROJECT_ID }}/${{ env.REPOSITORY }}/${{ env.UI_IMAGE }}:${{ github.sha }} \
+          --region ${{ env.UI_REGION }} \
+          --platform managed \
+          --allow-unauthenticated \
+          --port 8501
+
+  # =================================================================================
+  # JOB 5: NOTIFICATION
+  # =================================================================================
+  notification:
+    needs: [deploy-api-gke, build-deploy-ui]
+    runs-on: ubuntu-latest
+    if: success() # Only run if deployments succeeded
+    steps:
+      - name: Send Email Notification
+        uses: dawidd6/action-send-mail@v3
+        with:
+          server_address: ${{ secrets.EMAIL_HOST }}
+          server_port: ${{ secrets.EMAIL_PORT }}
+          username: ${{ secrets.EMAIL_USERNAME }}
+          password: ${{ secrets.EMAIL_PASSWORD }}
+          subject: "✅ Deployment Successful: ${{ github.repository }} - ${{ github.sha }}"
+          body: |
+            Deployment completed successfully!
+            
+            Repository: ${{ github.repository }}
+            Commit: ${{ github.sha }}
+            Branch: ${{ github.ref_name }}
+            
+            API Image: ${{ env.GAR_LOCATION }}-docker.pkg.dev/${{ env.PROJECT_ID }}/${{ env.REPOSITORY }}/${{ env.API_IMAGE }}:${{ github.sha }}
+            UI Image: ${{ env.GAR_LOCATION }}-docker.pkg.dev/${{ env.PROJECT_ID }}/${{ env.REPOSITORY }}/${{ env.UI_IMAGE }}:${{ github.sha }}
+            
+            View Action: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+          to: ${{ secrets.EMAIL_TO }}
+          from: ${{ secrets.EMAIL_FROM }}

@@ -4,15 +4,16 @@ sys.path.append('.')
 from typing import List, Dict
 import numpy as np
 from src.agents.base_agent import BaseAgent
-from src.tools.gcp_client import chat_completion, get_gcp_client
+from src.tools.local_client import get_local_client
 from src.config import AGENT_CONFIG
+from src.utils.helpers import extract_json
 
 class SynthesiserAgent(BaseAgent):
     """Generates comprehensive answer from retrieved information"""
     
     def __init__(self):
         super().__init__("Synthesiser")
-        self.client = get_gcp_client()
+        self.client = get_local_client()
         self.temperature = AGENT_CONFIG["synthesiser"]["temperature"]
     
     def execute(self, query: str, chunks: List[Dict]) -> Dict:
@@ -42,38 +43,46 @@ class SynthesiserAgent(BaseAgent):
         # Format context
         context = self._format_context(chunks)
         
-        prompt = f"""You are a financial analyst. Answer the query based ONLY on the provided documents.
+        prompt = f"""You are a Senior Financial Analyst. Synthesize the provided research chunks into a comprehensive answer for the user's query.
 
 User Query: {query}
 
-Retrieved Documents:
+Research Data:
 {context}
 
 Instructions:
-1. Provide a comprehensive answer
-2. Cite sources using [Company - Source - Date] format
-3. If information conflicts, mention both perspectives
-4. Be objective and factual
+1. Answer the query DIRECTLY based on the provided data.
+2. Structure your answer as a professional financial report (Markdown format).
+3. You MUST use the following structure:
+   - **Executive Summary**: A concise 2-3 sentence summary of the answer.
+   - **Key Findings**: Bullet points highlighting the most important numbers and facts.
+   - **Detailed Analysis**: In-depth explanation of the data, trends, and context.
+   - **Data Gaps/Limitations**: Explicitly state what information is missing (e.g., "Full year 2024 data not yet available").
+4. Use bold text for key figures (e.g., **$102.5 billion**).
+5. Maintain a professional, objective tone.
+6. Do NOT use conversational filler.
+7. Do NOT include a "Sources" section at the end (this will be added automatically).
 
-Answer:"""
+Output Format:
+Return ONLY the report text in Markdown.
+"""
         
         response = self.client.chat_completion(
             messages=[{"role": "user", "content": prompt}],
             temperature=self.temperature
         )
         
-        # Extract sources
+        # No JSON parsing needed - response IS the report
+        final_answer = response
+
+        # Extract sources from chunks
         sources = self._extract_sources(chunks)
         
-        # Calculate confidence
-        confidence = np.mean([c.get('final_score', 0) for c in chunks])
-        
-        self.log(f"Answer generated (confidence: {confidence:.2f})")
+        self.log(f"Answer generated")
         
         return {
-            'answer': response,
-            'sources': sources,
-            'confidence': float(confidence)
+            'answer': final_answer,
+            'sources': sources
         }
     
     def _format_context(self, chunks: List[Dict]) -> str:

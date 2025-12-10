@@ -20,11 +20,17 @@ class GCPClient:
     """Unified client for GCP Vertex AI"""
     
     def __init__(self):
+        import os
+        print(f"DEBUG: GCP_PROJECT_ID={GCP_PROJECT_ID}")
+        print(f"DEBUG: GOOGLE_APPLICATION_CREDENTIALS={os.environ.get('GOOGLE_APPLICATION_CREDENTIALS')}")
+        print(f"DEBUG: EMBEDDING_MODEL={EMBEDDING_CONFIG['model']}")
+        print(f"DEBUG: LLM_MODEL={AGENT_CONFIG['planner']['model']}")
+        
         self.embedding_model = TextEmbeddingModel.from_pretrained(
             EMBEDDING_CONFIG["model"]
         )
         self.chat_model = GenerativeModel(
-            AGENT_CONFIG["analyser"]["model"]
+            AGENT_CONFIG["planner"]["model"]
         )
         print(f"✅ GCP Client initialized (Project: {GCP_PROJECT_ID})")
     
@@ -72,12 +78,33 @@ class GCPClient:
             elif msg["role"] == "user":
                 prompt += msg["content"]
         
-        response = self.chat_model.generate_content(
-            prompt,
-            generation_config={"temperature": temperature}
-        )
+        # Retry logic for Rate Limits (429)
+        max_retries = 5
+        base_delay = 5
         
-        return response.text
+        import time
+        from google.api_core.exceptions import ResourceExhausted
+        
+        for attempt in range(max_retries + 1):
+            try:
+                response = self.chat_model.generate_content(
+                    prompt,
+                    generation_config={"temperature": temperature}
+                )
+                return response.text
+                
+            except ResourceExhausted as e:
+                if attempt == max_retries:
+                    print(f"❌ Rate limit exceeded after {max_retries} retries.")
+                    raise e
+                
+                wait_time = base_delay * (2 ** attempt)  # Exponential backoff
+                print(f"⚠️ Rate limit hit. Waiting {wait_time}s before retry {attempt + 1}/{max_retries}...")
+                time.sleep(wait_time)
+                
+            except Exception as e:
+                # Re-raise other errors immediately
+                raise e
 
 # Singleton
 _gcp_client = None

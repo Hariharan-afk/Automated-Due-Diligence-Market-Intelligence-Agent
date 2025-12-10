@@ -11,8 +11,8 @@ sys.path.append('.')
 from typing import List, Dict
 import numpy as np
 from qdrant_client import QdrantClient
-from qdrant_client import QdrantClient
-from src.tools.gcp_client import get_gcp_client
+from qdrant_client.http import models
+from src.tools.local_client import get_local_client
 from src.config import QDRANT_CONFIG, EMBEDDING_CONFIG, SEARCH_CONFIG
 from rank_bm25 import BM25Okapi
 
@@ -29,7 +29,7 @@ class HybridSearchEngine:
             api_key=QDRANT_CONFIG["api_key"]
         )
         self.collection_name = QDRANT_CONFIG["collection_name"]
-        self.gcp_client = get_gcp_client()
+        self.local_client = get_local_client()
         self.alpha = SEARCH_CONFIG["alpha"]
         
         # Load all chunks for BM25
@@ -37,6 +37,8 @@ class HybridSearchEngine:
         self.chunks = self._load_all_chunks()
         self._build_bm25_index()
         print(f"✅ Indexed {len(self.chunks)} chunks")
+        if self.chunks:
+            print(f"🔍 DEBUG: First chunk metadata: {self.chunks[0]['metadata']}")
     
     def _load_all_chunks(self) -> List[Dict]:
         """Load all chunks from Qdrant for BM25"""
@@ -71,66 +73,103 @@ class HybridSearchEngine:
         tokenized = [chunk['raw_chunk'].lower().split() for chunk in self.chunks]
         self.bm25 = BM25Okapi(tokenized)
     
-    def search(self, query: str, top_k: int = 20) -> List[Dict]:
+    def search(self, query: str, top_k: int = 20, source_filter: str = None) -> List[Dict]:
         """
         Hybrid search: alpha * semantic + (1-alpha) * keyword
         
         Args:
             query: Search query
             top_k: Number of results
+            source_filter: Optional source type to filter by (e.g., 'sec', 'news', 'wikipedia')
         
         Returns:
             List of chunks with scores
         """
-        # 1. Semantic search (Qdrant) - FIXED API call
-        query_embedding = self.gcp_client.get_embedding(query)
+        # 1. Semantic search (Qdrant)
+        query_embedding = self.local_client.get_embedding(query)
+        
+        # Create Qdrant filter if source_filter is provided
+        qdrant_filter = None
+        if source_filter:
+            qdrant_filter = models.Filter(
+                must=[
+                    models.FieldCondition(
+                        key="data_source_type",
+                        match=models.MatchValue(value=source_filter)
+                    )
+                ]
+            )
         
         # Use query() method instead of search() in newer Qdrant versions
         try:
             vector_results = self.client.query_points(
                 collection_name=self.collection_name,
                 query=query_embedding,
-                limit=len(self.chunks)
+                query_filter=qdrant_filter,
+                limit=len(self.chunks) # Get many to rerank
             ).points
         except AttributeError:
             # Fallback to search() if query_points doesn't exist
             vector_results = self.client.search(
                 collection_name=self.collection_name,
                 query_vector=query_embedding,
+                query_filter=qdrant_filter,
                 limit=len(self.chunks)
             )
         
-        # Map to scores
-        vector_scores = {}
-        for result in vector_results:
-            chunk_id = result.payload.get("chunk_id")
-            score = result.score if hasattr(result, 'score') else 0.0
-            vector_scores[chunk_id] = score
+        # Map vector scores
+        sem_scores = {point.id: point.score for point in vector_results}
         
-        # 2. BM25 search
+        # 2. Keyword search (BM25)
         tokenized_query = query.lower().split()
         bm25_scores = self.bm25.get_scores(tokenized_query)
         
+        # Normalize scores
+        def normalize(scores):
+            if len(scores) == 0: return []
+            min_s, max_s = min(scores), max(scores)
+            if max_s == min_s: return [0.5] * len(scores)
+            return [(s - min_s) / (max_s - min_s) for s in scores]
+            
         # 3. Combine scores
         combined_results = []
+        
+        # Get normalized BM25 scores for filtered chunks
+        # Note: self.bm25.get_scores returns scores for ALL chunks in index order
+        # We only care about the ones that match our filter
+        
+        # Create a map of chunk_id -> combined_score
+        # We need to iterate through ALL chunks to match BM25 indices
+        
+        all_bm25_norm = normalize(bm25_scores)
+        
+        # Get max semantic score for normalization (approximate)
+        max_sem = max(sem_scores.values()) if sem_scores else 1.0
+        
         for i, chunk in enumerate(self.chunks):
-            chunk_id = chunk['chunk_id']
+            # Apply filter
+            if source_filter and chunk['metadata'].get('data_source_type') != source_filter:
+                continue
+                
+            # Get semantic score (default 0 if not in vector results)
+            # Note: Qdrant uses UUIDs or ints for IDs. 
+            # We need to match Qdrant ID with our chunk ID
+            # In _load_all_chunks we stored point.id as "id"
             
-            v_score = vector_scores.get(chunk_id, 0.0)
-            b_score = bm25_scores[i]
+            sem_score = sem_scores.get(chunk['id'], 0.0)
+            # Normalize sem_score roughly
+            sem_score_norm = sem_score / max_sem if max_sem > 0 else 0
             
-            # Normalize BM25
-            max_bm25 = max(bm25_scores) if max(bm25_scores) > 0 else 1
-            b_score_norm = b_score / max_bm25
+            kw_score_norm = all_bm25_norm[i]
             
-            # Hybrid score
-            combined_score = self.alpha * v_score + (1 - self.alpha) * b_score_norm
+            final_score = (self.alpha * sem_score_norm) + ((1 - self.alpha) * kw_score_norm)
             
             combined_results.append({
                 **chunk,
-                "score": combined_score
+                "final_score": final_score
             })
+            
+        # Sort by final score
+        combined_results.sort(key=lambda x: x['final_score'], reverse=True)
         
-        # Sort and return top-k
-        combined_results.sort(key=lambda x: x['score'], reverse=True)
         return combined_results[:top_k]

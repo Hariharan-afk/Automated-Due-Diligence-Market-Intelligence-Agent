@@ -6,6 +6,9 @@ Generates synthetic test cases by reverse-engineering queries from actual Qdrant
 import sys
 sys.path.append('.')
 
+from dotenv import load_dotenv
+load_dotenv()
+
 import json
 import random
 from typing import List, Dict
@@ -13,7 +16,7 @@ from qdrant_client import QdrantClient
 from src.config import QDRANT_CONFIG
 from src.tools.gcp_client import get_gcp_client
 
-def generate_synthetic_data(num_samples: int = 20, output_file: str = "src/model_validation/test_dataset.json"):
+def generate_synthetic_data(num_samples: int = 5, output_file: str = "src/model_validation/golden_dataset.json"):
     print(f"🔄 Connecting to Qdrant: {QDRANT_CONFIG['url']}...")
     
     client = QdrantClient(
@@ -67,11 +70,13 @@ def generate_synthetic_data(num_samples: int = 20, output_file: str = "src/model
         Read this financial text chunk and generate a specific search query that would lead to finding this chunk.
         
         Chunk: "{chunk_text}"
+        Company: "{company}"
         
         Rules:
-        1. The query must be specific (mention company name if available).
+        1. The query MUST explicitly include the company name: "{company}".
         2. The query must be answerable by the chunk.
-        3. Return ONLY the query string. No quotes.
+        3. Do NOT use pronouns like "the company" or "its". Use the actual name.
+        4. Return ONLY the query string. No quotes.
         
         Query:"""
         
@@ -81,12 +86,50 @@ def generate_synthetic_data(num_samples: int = 20, output_file: str = "src/model
                 temperature=0.2
             ).strip().replace('"', '')
             
+            # Sanitize company name for ID
+            safe_company = "".join(c for c in company if c.isalnum()).upper()[:10]
+            if not safe_company:
+                safe_company = "UNKNOWN"
+            
+            # 3. Generate Golden Answer
+            answer_prompt = f"""You are an expert financial analyst.
+            Based ONLY on the provided text chunk, write a concise, ground-truth answer to the query: "{query}"
+            
+            Chunk: "{chunk_text}"
+            
+            Rules:
+            1. Be direct and factual.
+            2. If the chunk doesn't fully answer, state what is known.
+            3. Max 2 sentences.
+            3. Max 2 sentences.
+            """
+            
+            golden_answer = gcp_client.chat_completion(
+                messages=[{"role": "user", "content": answer_prompt}],
+                temperature=0.0
+            ).strip()
+            
+            # 4. Mock Metadata for Bias Testing (Randomly assigned for now if not in Qdrant)
+            sectors = ["Technology", "Finance", "Healthcare", "Energy", "Consumer Discretionary"]
+            market_caps = ["Large Cap", "Mid Cap", "Small Cap"]
+            
+            metadata = {
+                "sector": point.payload.get('sector') or random.choice(sectors),
+                "market_cap": point.payload.get('market_cap') or random.choice(market_caps),
+                "region": "North America"
+            }
+
+            # Use payload chunk_id if available, else point ID
+            target_id = point.payload.get('chunk_id') or point.id
+
             test_cases.append({
-                "query_id": f"SYN_{i:03d}",
+                "query_id": f"{safe_company}_{i:03d}",
                 "query": query,
-                "target_chunk_id": point.id,
-                "target_chunk_text": chunk_text[:200] + "...", # Store preview
-                "company": company
+                "target_chunk_id": target_id,
+                "target_chunk_text": chunk_text[:200] + "...", 
+                "company": company,
+                "golden_answer": golden_answer,
+                "metadata": metadata
             })
             print(f"  [{i}/{len(selected_points)}] Generated: {query}")
             

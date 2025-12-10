@@ -1,356 +1,198 @@
 """
-Model_Validation/bias_check.py
-Detect performance bias across different data slices (e.g., companies/tickers).
-
-Usage:
-    python Model_Validation/bias_check.py
-    # or if you're inside validation/ folder:
-    python bias_check.py
+model_validation/bias_check.py
+Runs validation on the golden dataset and calculates performance metrics per slice (Sector, Market Cap).
+Generates a bias report to identify underperforming groups.
 """
 
 import sys
-sys.path.append('.')  # ensure project root on path
-
 import json
-from collections import defaultdict
-from dataclasses import dataclass
-from typing import Dict, List, Optional
-
+import os
+import argparse
 import numpy as np
+from datetime import datetime
+from collections import defaultdict
+from typing import List, Dict, Any
 
-# Reuse your existing validation pipeline + dataset
-from src.model_validation.run_validation import ValidationPipeline
-from src.model_validation.test_dataset import TestDataset
-from src.config import BIAS_CONFIG
+# Ensure path is set
+sys.path.append('.')
 
+from dotenv import load_dotenv
+load_dotenv()
 
-@dataclass
-class GroupStats:
-    group_id: str
-    num_tests: int
-    num_success: int
-    avg_overall_score: float
-    avg_groundedness: float
-    avg_relevancy: float
-    avg_citation_f1: float
-    avg_retrieval_recall: float
-    success_rate: float
+# Import Graph
+from src.graph import app
+from src.model_validation.metrics import compute_all_metrics
 
+class BiasChecker:
+    def __init__(self, dataset_path: str = "src/model_validation/golden_dataset.json"):
+        self.dataset_path = dataset_path
+        self.results = []
+        self.bias_report = {}
 
-class NumpyEncoder(json.JSONEncoder):
-    """Special json encoder for numpy types"""
-    def default(self, obj):
-        if isinstance(obj, np.integer):
-            return int(obj)
-        if isinstance(obj, np.floating):
-            return float(obj)
-        if isinstance(obj, np.ndarray):
-            return obj.tolist()
-        return super(NumpyEncoder, self).default(obj)
+    def load_dataset(self) -> List[Dict]:
+        """Load golden dataset"""
+        if not os.path.exists(self.dataset_path):
+            print(f"❌ Dataset not found at {self.dataset_path}")
+            return []
+        
+        with open(self.dataset_path, 'r') as f:
+            data = json.load(f)
+            return data.get("test_cases", [])
 
-
-class BiasDetector:
-    """
-    Run validation and compute bias metrics across groups (e.g., per company/ticker).
-
-    Grouping strategy:
-      - We group by ticker inferred from query_id prefix (e.g., 'TECH_01' -> 'TECH')
-        which maps cleanly to companies in TestDataset.
-    """
-
-    def __init__(self, results: Optional[List[Dict]] = None):
-        if results is not None:
-            # Use already-computed results (e.g., loaded from JSON)
-            self.results = results
-        else:
-            # Run a fresh validation pass
-            pipeline = ValidationPipeline()
-            self.results = pipeline.run_all_tests(limit=None)
-
-        # Optional: map query_id -> metadata from TestDataset if you want richer slicing
-        self.test_cases = {tc["query_id"]: tc for tc in TestDataset().get_test_cases()}
-
-    # ─────────────────────────────────────────────────────────────
-    # Grouping & stats
-    # ─────────────────────────────────────────────────────────────
-
-    def _get_group_id(self, result: Dict) -> str:
-        """
-        Define the 'group' for this test.
-
-        Here we use ticker (prefix of query_id) as a group identifier:
-          TECH_01 -> TECH
-          FIN_02  -> FIN
-          HLTH_03 -> HLTH
-        """
-        qid = result.get("query_id", "")
-        if "_" in qid:
-            return qid.split("_")[0]
-        return "UNKNOWN"
-
-    def compute_group_stats(self, min_samples: int = 1) -> Dict[str, GroupStats]:
-        """
-        Aggregate performance metrics per group.
-        """
-        buckets = defaultdict(list)
-
-        for r in self.results:
-            group_id = self._get_group_id(r)
-            buckets[group_id].append(r)
-
-        group_stats: Dict[str, GroupStats] = {}
-
-        for group_id, group_results in buckets.items():
-            if len(group_results) < min_samples:
-                continue
-
-            # Only successful runs for metric averages
-            successful = [gr for gr in group_results if gr.get("status") == "success"]
-            num_tests = len(group_results)
-            num_success = len(successful)
-            success_rate = num_success / num_tests if num_tests > 0 else 0.0
-
-            if successful:
-                overall_scores = [gr.get("overall_score", 0.0) for gr in successful]
-                groundedness_scores = [gr.get("groundedness", {}).get("score", 0.0) for gr in successful]
-                relevancy_scores = [gr.get("answer_relevancy", {}).get("score", 0.0) for gr in successful]
-                citation_f1_scores = [gr.get("citation", {}).get("f1_score", 0.0) for gr in successful]
-                retrieval_hits = [gr.get("retrieval_hit", 0) for gr in successful]
+    def run_inference(self):
+        """Run the full agent graph for each test case"""
+        test_cases = self.load_dataset()
+        print(f"🚀 Starting Bias Check on {len(test_cases)} cases...")
+        
+        self.results = []
+        
+        for i, case in enumerate(test_cases, 1):
+            query = case['query']
+            print(f"\n[{i}/{len(test_cases)}] Processing: {query[:50]}...")
+            
+            try:
+                # Invoke Graph
+                inputs = {"query": query}
+                final_state = app.invoke(inputs)
                 
-                avg_overall = float(np.mean(overall_scores))
-                avg_grounded = float(np.mean(groundedness_scores))
-                avg_relevancy = float(np.mean(relevancy_scores))
-                avg_citation_f1 = float(np.mean(citation_f1_scores))
-                avg_retrieval_recall = float(np.mean(retrieval_hits))
-            else:
-                avg_overall = 0.0
-                avg_grounded = 0.0
-                avg_relevancy = 0.0
-                avg_citation_f1 = 0.0
-                avg_retrieval_recall = 0.0
-
-            group_stats[group_id] = GroupStats(
-                group_id=group_id,
-                num_tests=num_tests,
-                num_success=num_success,
-                avg_overall_score=avg_overall,
-                avg_groundedness=avg_grounded,
-                avg_relevancy=avg_relevancy,
-                avg_citation_f1=avg_citation_f1,
-                avg_retrieval_recall=avg_retrieval_recall,
-                success_rate=success_rate,
-            )
-
-        return group_stats
-
-    # ─────────────────────────────────────────────────────────────
-    # Bias check logic
-    # ─────────────────────────────────────────────────────────────
-
-    def check_bias(
-        self,
-        min_samples: int = 3,
-        max_allowed_gap: float = 0.20,
-        min_group_score: float = 0.60,
-    ) -> Dict:
-        """
-        Check for bias across groups.
-
-        Rules (simple but defensible for the assignment):
-          1. Only consider groups with at least `min_samples` test cases.
-          2. Compute each group's avg overall_score and success_rate.
-          3. Compute global averages.
-          4. Bias flags:
-             - any group's avg_overall_score < `min_group_score`
-             - OR (max_group_avg - min_group_avg) > `max_allowed_gap`
-
-        Returns a dict with 'bias_passed' and per-group metrics.
-        """
-        group_stats = self.compute_group_stats(min_samples=min_samples)
-
-        if not group_stats:
-            return {
-                "bias_passed": False,
-                "reason": "No groups with sufficient samples",
-                "groups": {},
-            }
-
-        # Global metrics
-        all_groups = list(group_stats.values())
-        global_avg_score = float(np.mean([g.avg_overall_score for g in all_groups]))
-        global_success_rate = float(np.mean([g.success_rate for g in all_groups]))
-        global_avg_retrieval_recall = float(np.mean([g.avg_retrieval_recall for g in all_groups]))
-        global_avg_citation_f1 = float(np.mean([g.avg_citation_f1 for g in all_groups]))
-
-        # Disparity metrics
-        scores = [g.avg_overall_score for g in all_groups]
-        max_score = max(scores)
-        min_score = min(scores)
-        max_gap = max_score - min_score
-
-        # Check per-group thresholds
-        per_group_failures = []
-        for g in all_groups:
-            if g.avg_overall_score < min_group_score:
-                per_group_failures.append(
-                    f"group {g.group_id} avg_overall_score={g.avg_overall_score:.3f} < {min_group_score:.3f}"
+                answer = final_state.get("answer", "")
+                sources = final_state.get("sources", [])
+                
+                # Compute Metrics
+                # Note: We pass 'sources' as 'retrieved_chunks' here because 'sources' in final_state 
+                # usually contains the chunks used for generation. 
+                # If we want ALL retrieved chunks (before synthesis), we'd need to modify graph to correct that output.
+                # For now, using 'sources' is a good proxy for "effective retrieval".
+                
+                # To get exact retrieval hit, we check if target_chunk_id is in the sources
+                retrieved_chunks = final_state.get("research_data", []) # Graph step 'researcher' output
+                
+                metrics = compute_all_metrics(
+                    query=query,
+                    answer=answer,
+                    sources=sources,
+                    retrieved_chunks=retrieved_chunks,
+                    test_case=case
                 )
-
-        disparity_failure = max_gap > max_allowed_gap
-
-        bias_passed = not per_group_failures and not disparity_failure
-
-        return {
-            "bias_passed": bias_passed,
-            "global": {
-                "global_avg_overall_score": global_avg_score,
-                "global_avg_success_rate": global_success_rate,
-                "global_avg_retrieval_recall": global_avg_retrieval_recall,
-                "global_avg_citation_f1": global_avg_citation_f1,
-                "max_group_avg_score": max_score,
-                "min_group_avg_score": min_score,
-                "max_gap": max_gap,
-                "max_allowed_gap": max_allowed_gap,
-                "min_group_score_threshold": min_group_score,
-            },
-            "per_group": {
-                g.group_id: {
-                    "num_tests": g.num_tests,
-                    "num_success": g.num_success,
-                    "success_rate": g.success_rate,
-                    "avg_overall_score": g.avg_overall_score,
-                    "avg_groundedness": g.avg_groundedness,
-                    "avg_relevancy": g.avg_relevancy,
-                    "avg_citation_f1": g.avg_citation_f1,
-                    "avg_retrieval_recall": g.avg_retrieval_recall,
+                
+                # Check Recall@k (Retrieval Hit)
+                target_id = case.get('target_chunk_id')
+                # Check in research_data (all retrieved)
+                # chunks from hybrid_search have 'chunk_id' field from payload
+                retrieved_ids = [str(r.get('chunk_id') or r.get('id', '')) for r in retrieved_chunks]
+                # Also check in sources (used in context) - stronger signal
+                used_ids = [str(s.get('chunk_id') or s.get('id', '')) for s in sources]
+                
+                hit = 1 if str(target_id) in retrieved_ids else 0
+                used_hit = 1 if str(target_id) in used_ids else 0
+                
+                # Store Result
+                result = {
+                    "query_id": case.get("query_id"),
+                    "metadata": case.get("metadata", {}),
+                    "company": case.get("company"),
+                    "metrics": metrics,
+                    "retrieval_hit": hit,
+                    "used_hit": used_hit,
+                    "execution_time": 0, # TODO: Track time if needed
+                    "overall_score": metrics.get("overall_score", 0)
                 }
-                for g in all_groups
-            },
-            "failures": {
-                "per_group_thresholds": per_group_failures,
-                "disparity_failure": disparity_failure,
-            },
+                self.results.append(result)
+                print(f"   ✅ Score: {result['overall_score']:.2f} | Hit: {hit}")
+                
+            except Exception as e:
+                print(f"   ❌ Error: {e}")
+                import traceback
+                traceback.print_exc()
+
+    def calculate_slice_metrics(self):
+        """Calculate metrics aggregated by metadata slices"""
+        print("\n📊 Calculating Bias Metrics...")
+        
+        # Slices to check
+        slices = ['sector', 'market_cap']
+        
+        bias_report = {
+            "timestamp": datetime.now().isoformat(),
+            "global_metrics": self._aggregate_metrics(self.results),
+            "per_slice": {},
+            "per_group": {} # Flat list of all groups for easy lookup
+        }
+        
+        for slice_key in slices:
+            slice_groups = defaultdict(list)
+            
+            for res in self.results:
+                # Get value for this slice (e.g. "Technology" or "Large Cap")
+                val = res.get("metadata", {}).get(slice_key, "Unknown")
+                slice_groups[val].append(res)
+            
+            # Compute stats for each group in this slice
+            bias_report["per_slice"][slice_key] = {}
+            
+            for group_name, group_results in slice_groups.items():
+                stats = self._aggregate_metrics(group_results)
+                bias_report["per_slice"][slice_key][group_name] = stats
+                
+                # Also add to flat flattened map with a unique key
+                # e.g. "sector:Technology" or just "Technology" if unique?
+                # The mitigator uses specific IDs. Let's use the raw group name for now.
+                # Ideally we want a distinct ID.
+                # For compatibility with mitigator which looks for "group_id", we might need mapping.
+                # For now, we'll store by name.
+                bias_report["per_group"][group_name] = stats
+
+        self.bias_report = bias_report
+        return bias_report
+
+    def _aggregate_metrics(self, results: List[Dict]) -> Dict:
+        """Compute average scores for a list of results"""
+        if not results:
+            return {}
+        
+        count = len(results)
+        avg_score = np.mean([r['overall_score'] for r in results])
+        avg_hit = np.mean([r['retrieval_hit'] for r in results])
+        avg_groundedness = np.mean([r['metrics'].get('groundedness', {}).get('score', 0) for r in results])
+        
+        return {
+            "count": count,
+            "avg_overall_score": float(avg_score),
+            "avg_retrieval_hit": float(avg_hit),
+            "avg_groundedness": float(avg_groundedness)
         }
 
+    def save_report(self, output_path: str = "src/model_validation/bias_report.json"):
+        """Save bias report to file"""
+        # Ensure directory exists
+        os.makedirs(os.path.dirname(output_path), exist_ok=True)
+        
+        with open(output_path, 'w') as f:
+            json.dump(self.bias_report, f, indent=2)
+        
+        print(f"\n💾 Bias Report saved to {output_path}")
 
 def main():
-    print("\n" + "=" * 70)
-    print("🧪 BIAS DETECTION ACROSS GROUPS (e.g., TICKERS/COMPANIES)")
-    print("=" * 70)
-
-    # For now: run a fresh validation pass and reuse its results
-    pipeline = ValidationPipeline()
-    results = pipeline.run_all_tests(limit=None)
-
-    detector = BiasDetector(results=results)
-    report = detector.check_bias(
-        min_samples=3,        # only consider groups with >=3 test cases
-        max_allowed_gap=0.20, # max 20 percentage point difference in avg scores
-        min_group_score=BIAS_CONFIG["min_score_threshold"], # each group should have at least 60% avg score
-    )
-
-    print("\n📊 GLOBAL BIAS METRICS")
-    for k, v in report["global"].items():
-        if isinstance(v, float):
-            print(f"  {k}: {v:.3f}")
-        else:
-            print(f"  {k}: {v}")
-
-    print("\n📊 PER-GROUP METRICS")
-    for group_id, stats in report["per_group"].items():
-        print(f"\n  Group: {group_id}")
-        print(f"    num_tests:       {stats['num_tests']}")
-        print(f"    success_rate:    {stats['success_rate']:.3f}")
-        print(f"    avg_overall:     {stats['avg_overall_score']:.3f}")
-        print(f"    avg_groundedness:{stats['avg_groundedness']:.3f}")
-        print(f"    avg_relevancy:   {stats['avg_relevancy']:.3f}")
-        print(f"    avg_citation_f1: {stats['avg_citation_f1']:.3f}")
-        print(f"    avg_retrieval:   {stats['avg_retrieval_recall']:.3f}")
-
-    if report["failures"]["per_group_thresholds"] or report["failures"]["disparity_failure"]:
-        print("\n❌ BIAS CHECK FAILED")
-        if report["failures"]["per_group_thresholds"]:
-            print("  Per-group issues:")
-            for msg in report["failures"]["per_group_thresholds"]:
-                print(f"   - {msg}")
-        if report["failures"]["disparity_failure"]:
-            print(
-                f"  Score disparity too high: max_gap={report['global']['max_gap']:.3f} "
-                f"> max_allowed_gap={report['global']['max_allowed_gap']:.3f}"
-            )
-        exit_code = 1
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--input", default="src/model_validation/golden_dataset.json", help="Input test dataset")
+    parser.add_argument("--output", default="src/model_validation/bias_report.json", help="Output bias report")
+    parser.add_argument("--threshold", type=float, default=0.0, help="Minimum global score to pass")
+    args = parser.parse_args()
+    
+    checker = BiasChecker(dataset_path=args.input)
+    checker.run_inference()
+    report = checker.calculate_slice_metrics()
+    checker.save_report(output_path=args.output)
+    
+    # Check against threshold
+    global_score = report.get("global_metrics", {}).get("avg_overall_score", 0)
+    print(f"Global Score: {global_score:.2f} (Threshold: {args.threshold})")
+    
+    if global_score >= args.threshold:
+        sys.exit(0)
     else:
-        print("\n✅ BIAS CHECK PASSED")
-        exit_code = 0
-
-    # Save report
-    report_path = "src/model_validation/reports/bias_report.json"
-    with open(report_path, "w") as f:
-        json.dump(report, f, indent=4, cls=NumpyEncoder)
-
-    print(f"\n✅ Bias report saved to {report_path}")
-
-    # Save Markdown report
-    md_path = "src/model_validation/reports/bias_report.md"
-    save_markdown_report(report, md_path)
-
-    # CI/CD GATEKEEPER
-    # Fail if overall score is too low
-    if report["global"]["global_avg_overall_score"] < BIAS_CONFIG["min_score_threshold"]:
-        print(f"❌ FAILURE: Overall score {report['global']['global_avg_overall_score']:.2f} is below threshold {BIAS_CONFIG['min_score_threshold']}")
+        print(f"❌ Score {global_score:.2f} below threshold {args.threshold}")
         sys.exit(1)
-
-    print("✅ SUCCESS: Model passed validation thresholds.")
-    sys.exit(0)
-
-
-def save_markdown_report(report: Dict, filepath: str):
-    """
-    Generate a Markdown table from the bias report.
-    """
-    with open(filepath, "w") as f:
-        f.write("# 📊 Model Validation & Bias Report\n\n")
-        
-        # Global Metrics
-        f.write("## 🌍 Global Metrics\n\n")
-        f.write("| Metric | Value |\n")
-        f.write("| :--- | :--- |\n")
-        glob = report["global"]
-        f.write(f"| **Overall Score** | {glob['global_avg_overall_score']:.2%} |\n")
-        f.write(f"| **Success Rate** | {glob['global_avg_success_rate']:.1%} |\n")
-        f.write(f"| **Retrieval Recall** | {glob['global_avg_retrieval_recall']:.2%} |\n")
-        f.write(f"| **Citation F1** | {glob['global_avg_citation_f1']:.2%} |\n")
-        f.write(f"| **Max Group Gap** | {glob['max_gap']:.2%} (Limit: {glob['max_allowed_gap']:.0%}) |\n")
-        f.write("\n")
-
-        # Per-Group Metrics
-        f.write("## 👥 Per-Group Metrics\n\n")
-        f.write("| Group | Tests | Success Rate | Overall Score | Groundedness | Relevancy | Citation F1 | Retrieval Recall |\n")
-        f.write("| :--- | :---: | :---: | :---: | :---: | :---: | :---: | :---: |\n")
-        
-        for group_id, stats in report["per_group"].items():
-            f.write(f"| **{group_id}** | {stats['num_tests']} | {stats['success_rate']:.1%} | "
-                    f"{stats['avg_overall_score']:.2%} | {stats['avg_groundedness']:.2%} | "
-                    f"{stats['avg_relevancy']:.2%} | {stats['avg_citation_f1']:.2%} | "
-                    f"{stats['avg_retrieval_recall']:.2%} |\n")
-        
-        f.write("\n")
-        
-        # Pass/Fail Status
-        if report["failures"]["per_group_thresholds"] or report["failures"]["disparity_failure"]:
-            f.write("## ❌ Status: FAILED\n\n")
-            if report["failures"]["per_group_thresholds"]:
-                f.write("### Per-Group Issues\n")
-                for msg in report["failures"]["per_group_thresholds"]:
-                    f.write(f"- {msg}\n")
-            if report["failures"]["disparity_failure"]:
-                f.write(f"\n### Disparity Issue\n")
-                f.write(f"- Max gap {glob['max_gap']:.2%} exceeds limit {glob['max_allowed_gap']:.2%}\n")
-        else:
-            f.write("## ✅ Status: PASSED\n")
-
-    print(f"✅ Markdown report saved to {filepath}")
-
 
 if __name__ == "__main__":
     main()

@@ -33,17 +33,36 @@ EMBEDDING_CONFIG = {
 }
 
 # ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-# LLM CONFIG - Gemini 2.0 Flash Experimental
+# LLM CONFIG - Local (Ollama)
 # ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
+LLM_CONFIG = {
+    "provider": "vertex",
+    "base_url": "http://localhost:11434",
+    "model": "gemini-2.5-flash", # Latest Stable (June 2025)
+    "embedding_model": "text-embedding-004"
+}
+
 AGENT_CONFIG = {
-    "analyser": {
-        "model": "gemini-2.0-flash-exp",
+    "orchestrator": {
+        "model": LLM_CONFIG["model"],
+        "temperature": 0.1
+    },
+    "planner": {  # Formerly Analyser
+        "model": LLM_CONFIG["model"],
         "temperature": 0.3
     },
+    "researcher": {
+        "model": LLM_CONFIG["model"],
+        "temperature": 0.2
+    },
     "synthesiser": {
-        "model": "gemini-2.0-flash-exp",
+        "model": LLM_CONFIG["model"],
         "temperature": 0.5
+    },
+    "evaluator": {
+        "model": LLM_CONFIG["model"],
+        "temperature": 0.1
     }
 }
 
@@ -53,7 +72,7 @@ AGENT_CONFIG = {
 
 SEARCH_CONFIG = {
     "alpha": 0.7,              # 70% semantic, 30% keyword
-    "initial_k": 20,           # Candidates from hybrid search
+    "initial_k": 50,           # Candidates from hybrid search (Increased for better recall)
     "final_k": 5,              # Results after re-ranking
     "reranker_model": "cross-encoder/ms-marco-MiniLM-L-6-v2"
 }

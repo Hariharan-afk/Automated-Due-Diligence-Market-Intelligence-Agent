@@ -1,34 +1,30 @@
-# ---------- Base image ----------
-FROM python:3.10-slim AS base
+FROM python:3.11-slim
 
-# Avoid Python buffering and .pyc clutter
-ENV PYTHONUNBUFFERED=1 \
-    PYTHONDONTWRITEBYTECODE=1
+WORKDIR /app
 
-# Install system deps you actually need (qdrant client, curl for health checks, etc.)
+# Install system dependencies
 RUN apt-get update && apt-get install -y --no-install-recommends \
+    build-essential \
     curl \
     && rm -rf /var/lib/apt/lists/*
 
-# Set workdir
-WORKDIR /app
-
-# ---------- Install Python dependencies ----------
-# Copy only requirements first for better layer caching
+# Install dependencies
 COPY requirements.txt .
-
-# Install CPU-only torch first to avoid downloading huge CUDA wheels
-RUN pip install --no-cache-dir torch --index-url https://download.pytorch.org/whl/cpu
-
 RUN pip install --no-cache-dir -r requirements.txt
 
-# ---------- Copy project code ----------
-# Copy src directory
-COPY src/ ./src/
+# Copy source code and config
+COPY src/ src/
+COPY .env .
+COPY vertex-key.json .
 
-
-# Add project root to PYTHONPATH
+# Set environment variables
 ENV PYTHONPATH=/app
+ENV PORT=8080
+# Ensure stdout shows up in logs
+ENV PYTHONUNBUFFERED=1
 
-# Default command
-CMD ["python", "src/main.py"]
+# Expose port
+EXPOSE 8080
+
+# Run the application
+CMD ["uvicorn", "src.api:api", "--host", "0.0.0.0", "--port", "8080"]

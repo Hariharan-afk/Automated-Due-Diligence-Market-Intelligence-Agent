@@ -1,35 +1,16 @@
-# VCS / IDE metadata
-.git
-.gitignore
-.idea
-.vscode
-
-# Python cache / junk
-__pycache__/
+__pycache__
 *.pyc
 *.pyo
 *.pyd
-.mypy_cache/
-.pytest_cache/
-.ipynb_checkpoints/
-
-# Virtual environments
+.Python
+env/
 venv/
 .venv/
-.env*
-
-# Logs / local outputs
+.git
+.gitignore
+.dockerignore
 logs/
-*.log
-
-# Large local data that's NOT needed inside the image
-data/
-tmp/
-*.csv
-*.parquet
-*.pkl
-
-# Profiling / experiment artifacts (adjust as needed)
-mosaic_profile_tests/
-checkpoints/
-runs/
+results/
+tests/
+test/
+*.zip

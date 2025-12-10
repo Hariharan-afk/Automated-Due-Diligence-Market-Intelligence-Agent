@@ -1,0 +1,65 @@
+{
+  "timestamp": "2025-12-09T14:14:40.042664",
+  "global_metrics": {
+    "count": 5,
+    "avg_overall_score": 0.3009564469832721,
+    "avg_retrieval_hit": 0.2,
+    "avg_groundedness": 0.607163187297313
+  },
+  "per_slice": {
+    "sector": {
+      "Consumer Discretionary": {
+        "count": 1,
+        "avg_overall_score": 0.3134920634920635,
+        "avg_retrieval_hit": 1.0,
+        "avg_groundedness": 0.6507936507936508
+      },
+      "Energy": {
+        "count": 4,
+        "avg_overall_score": 0.29782254285607435,
+        "avg_retrieval_hit": 0.0,
+        "avg_groundedness": 0.5962555714232286
+      }
+    },
+    "market_cap": {
+      "Large Cap": {
+        "count": 3,
+        "avg_overall_score": 0.3044946096463519,
+        "avg_retrieval_hit": 0.3333333333333333,
+        "avg_groundedness": 0.6454889212476324
+      },
+      "Small Cap": {
+        "count": 2,
+        "avg_overall_score": 0.29564920298865255,
+        "avg_retrieval_hit": 0.0,
+        "avg_groundedness": 0.5496745863718341
+      }
+    }
+  },
+  "per_group": {
+    "Consumer Discretionary": {
+      "count": 1,
+      "avg_overall_score": 0.3134920634920635,
+      "avg_retrieval_hit": 1.0,
+      "avg_groundedness": 0.6507936507936508
+    },
+    "Energy": {
+      "count": 4,
+      "avg_overall_score": 0.29782254285607435,
+      "avg_retrieval_hit": 0.0,
+      "avg_groundedness": 0.5962555714232286
+    },
+    "Large Cap": {
+      "count": 3,
+      "avg_overall_score": 0.3044946096463519,
+      "avg_retrieval_hit": 0.3333333333333333,
+      "avg_groundedness": 0.6454889212476324
+    },
+    "Small Cap": {
+      "count": 2,
+      "avg_overall_score": 0.29564920298865255,
+      "avg_retrieval_hit": 0.0,
+      "avg_groundedness": 0.5496745863718341
+    }
+  }
+}

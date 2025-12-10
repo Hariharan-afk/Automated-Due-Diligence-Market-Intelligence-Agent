@@ -1,102 +1,166 @@
-# MLOps Project: Agentic RAG Pipeline with Bias Detection
+# Market Due Diligence AI (Agentic RAG) 🤖 📈
 
-This project implements an **Agentic RAG (Retrieval-Augmented Generation)** system designed for financial due diligence. It features a multi-agent architecture, hybrid search with re-ranking, and a robust validation pipeline to detect and mitigate bias across different companies.
+A production-grade Multi-Agent AI system for financial analysis, powered by **LangGraph**, **FastAPI**, **Streamlit**, and **Google Vertex AI**.
 
-This repository is structured to meet the **Model Development** and **MLOps** requirements of the course.
-
----
-
-## 1. Overview
-We utilize a **Retrieval-Augmented Generation (RAG)** approach, leveraging pre-trained Large Language Models (Gemini 2.0) and embeddings. Instead of fine-tuning a model weights, we optimize the retrieval pipeline and agentic workflows.
-
-**Core Technologies:**
--   **LLM**: `gemini-2.0-flash-exp` (Google Vertex AI)
--   **Embeddings**: `text-embedding-004`
--   **Vector DB**: Qdrant Cloud
--   **Orchestration**: Custom Multi-Agent System (Analyser, Researcher, Synthesiser)
+This system autonomously:
+1.  **Deconstructs** complex queries (Planner Agent).
+2.  **Researches** live data from SEC filings, News, and Wikipedia (Researcher Agent).
+3.  **Synthesizes** findings into a professional report (Synthesiser Agent).
+4.  **Validates** accuracy and hallucinations (Evaluator Agent).
 
 ---
 
-## 2. Model Development & Code
+## ⚡ Quick Start (For Developers)
 
-### 2.1 Data Loading
-Data is processed and stored in **Qdrant** (Vector Database). For validation, we load a versioned test dataset acting as our "Hold-out Set".
--   **Code**: `src/model_validation/test_dataset.py` (Loads `test_dataset.json`)
+### 1. Prerequisites
+*   **Python 3.10+**
+*   **Google Cloud SDK** (For deployment)
+*   **Docker** (For containerization)
 
-### 2.2 Model Architecture (RAG)
-Our "Model" is the composite system of agents:
-1.  **Analyser**: Decomposes queries.
-2.  **Researcher**: Performs Hybrid Search (BM25 + Vector) and Re-ranking (`cross-encoder/ms-marco-MiniLM-L-6-v2`).
-3.  **Synthesiser**: Generates answers using retrieved context.
-
-### 2.3 Model Validation
-We implement a rigorous validation pipeline on a hold-out dataset (`test_dataset.json`).
--   **Script**: `src/model_validation/run_validation.py`
--   **Metrics**:
-    -   **Retrieval Recall (Recall@k)**: Measures retrieval quality.
-    -   **Groundedness**: Measures hallucination rates.
-    -   **Citation F1**: Ensures sources are correctly cited.
-    -   **Answer Relevancy**: Ensures the query is actually answered.
-
-### 2.4 Bias Detection (Slicing)
-We evaluate model performance across different **Data Slices** (specifically, by Company/Ticker) to ensure fairness.
--   **Script**: `src/model_validation/bias_check.py`
--   **Methodology**: We group test cases by Company (e.g., Microsoft, Tesla, Apple) and compute metrics for each group.
--   **Thresholds**: The pipeline fails if any group's performance drops below 60% or if the disparity between groups exceeds 20%.
-
-### 2.5 Artifact Registry
-The finalized model (application code + environment) is containerized and pushed to **Google Artifact Registry (GAR)**.
--   **Registry**: `us-central1-docker.pkg.dev/[PROJECT_ID]/agents-repo/ml-app`
-
----
-
-## 3. CI/CD Pipeline Automation
-
-We use **GitHub Actions** to automate the MLOps lifecycle.
-
-**Workflow File**: `.github/workflows/ci-cd.yml`
-
-### Pipeline Steps:
-1.  **Trigger**: Pushes to **any branch** (`**`).
-2.  **Automated Validation**:
-    -   Runs `bias_check.py`.
-    -   Calculates Global and Per-Group metrics.
-    -   **Gate**: Fails the pipeline if Bias Checks or Quality Thresholds are not met.
-3.  **Containerization**: Builds a Docker image.
-4.  **Registry Push**:
-    -   Pushes the validated image to **Google Artifact Registry**.
-    -   Tags: `:latest` and `:sha` (enabling rollback to specific commits).
-
----
-
-## 4. Project Structure
-
-```text
-src/
-├── agents/             # Agent Logic (Model)
-├── tools/              # Tools (Search, Reranker)
-├── model_validation/   # MLOps Validation Suite
-│   ├── bias_check.py           # Bias Detection & Slicing
-│   ├── run_validation.py       # Performance Validation
-│   ├── metrics.py              # Metric Definitions
-│   └── test_dataset.json       # Hold-out Dataset
-├── config.py           # Hyperparameters
-└── main.py             # App Entry Point
-```
-
-## 7. How to Run
-
-### Local Validation
+### 2. Setup Environment
 ```bash
-python src/model_validation/run_validation.py
+# 1. Clone & Enter
+git clone <repo_url>
+cd agents-repo
+
+# 2. Create Virtual Env
+python -m venv .venv
+source .venv/bin/activate
+
+# 3. Install Dependencies
+pip install -r requirements.txt
 ```
 
-### Bias Check
+### 3. Configure Secrets (`.env`)
+Create a `.env` file in the root directory:
+```properties
+# Google Cloud (Required)
+GOOGLE_APPLICATION_CREDENTIALS=vertex-key.json
+PROJECT_ID=coherent-rite-473622-j0
+LOCATION=us-central1
+
+# Vector Database (Qdrant)
+QDRANT_URL=https://your-qdrant-cluster.qdrant.tech
+QDRANT_API_KEY=your-qdrant-key
+```
+*Make sure `vertex-key.json` is present in the root folder!*
+
+---
+
+## 🤝 For New Developers (Handoff Guide)
+
+## 🤝 For New Developers (Handoff Guide)
+
+**If you just received this code folder, follow these steps:**
+
+### Step 1: Get the Keys 🔑
+Ask the previous owner (Saumith) for:
+1.  `vertex-key.json` (Google Cloud Service Account Key)
+2.  `.env` file (API Keys)
+*Place these in the root folder.*
+
+### Step 2: Choose Your Path
+
+**Option A: "I just want to RUN it" (No Install Needed) 🐳**
+If you have Docker, you don't need to install Python or libraries. Just run:
 ```bash
-python src/model_validation/bias_check.py
+# Terminal 1: Backend
+docker run -p 8080:8080 --env-file .env us-central1-docker.pkg.dev/coherent-rite-473622-j0/agents-repo/agent-api:v2
+
+# Terminal 2: Frontend
+docker run -p 8501:8501 us-central1-docker.pkg.dev/coherent-rite-473622-j0/agents-repo/agent-ui:v1
+```
+*Access App at http://localhost:8501*
+
+**Option B: "I want to EDIT the code" (Developer Mode) 💻**
+To change the code, you need Python:
+1.  Create Env: `python -m venv .venv && source .venv/bin/activate`
+2.  Install: `pip install -r requirements.txt`
+3.  Run:
+    *   `uvicorn src.api:api --reload --port 8080`
+    *   `streamlit run src/ui/app.py`
+
+---
+
+---
+
+## 🚀 Running Locally
+
+You can run the full stack (UI + Backend) on your machine.
+
+**Terminal 1: The Backend (API)**
+```bash
+uvicorn src.api:api --reload --port 8080
+```
+*Test it: Open http://localhost:8080/docs*
+
+**Terminal 2: The Frontend (UI)**
+```bash
+streamlit run src/ui/app.py
+```
+*Access App: http://localhost:8501*
+
+### Option 2: Run with Docker (Cleaner)
+If you don't want to install Python dependencies, you can run the Docker image directly:
+
+```bash
+# Backend
+docker run -p 8080:8080 --env-file .env us-central1-docker.pkg.dev/coherent-rite-473622-j0/agents-repo/agent-api:v2
+
+# Frontend
+docker run -p 8501:8501 us-central1-docker.pkg.dev/coherent-rite-473622-j0/agents-repo/agent-ui:v1
 ```
 
-### Docker Execution
+---
+
+## ☁️ Cloud Deployment
+
+### 1. Backend API (GKE)
+The backend runs on Google Kubernetes Engine (GKE) for high availability.
+
 ```bash
-docker compose exec -it ml-app python src/model_validation/bias_check.py
+# 1. Build Backend Image (Use --no-cache if debugging)
+docker build --no-cache --platform linux/amd64 -t us-central1-docker.pkg.dev/coherent-rite-473622-j0/agents-repo/agent-api:v2 .
+
+# 2. Push to Registry
+docker push us-central1-docker.pkg.dev/coherent-rite-473622-j0/agents-repo/agent-api:v2
+
+# 3. Update Kubernetes Deployment
+kubectl set image deployment/agent-api agent-api=us-central1-docker.pkg.dev/coherent-rite-473622-j0/agents-repo/agent-api:v2
 ```
+
+### 2. Frontend UI (Cloud Run)
+The frontend runs on Cloud Run (Serverless) for cost efficiency.
+
+```bash
+# 1. Build Frontend Image (Dockerfile.frontend)
+docker build -f Dockerfile.frontend --platform linux/amd64 -t us-central1-docker.pkg.dev/coherent-rite-473622-j0/agents-repo/agent-ui:v1 .
+
+# 2. Push to Registry
+docker push us-central1-docker.pkg.dev/coherent-rite-473622-j0/agents-repo/agent-ui:v1
+
+# 3. Deploy to Cloud Run
+gcloud run deploy agent-ui \
+    --image us-central1-docker.pkg.dev/coherent-rite-473622-j0/agents-repo/agent-ui:v1 \
+    --platform managed \
+    --region us-central1 \
+    --allow-unauthenticated \
+    --port 8501
+```
+
+---
+
+## 📂 Project Structure
+
+*   `src/agents/`: Core logic for the 5 agents (Planner, Researcher, etc.).
+*   `src/ui/`: Streamlit Application (Chat Interface + Admin Dashboard).
+*   `src/graph.py`: LangGraph state machine definition.
+*   `k8s/`: Kubernetes deployment manifests.
+*   `Dockerfile`: Production container config.
+
+## 🛠 Troubleshooting
+
+*   **UI shows "Connection Timeout"**: 
+    *   The complex queries might take >120s. The UI handles this gracefully now.
+*   **Admin Dashboard shows "404"**:
+    *   This means the backend is running an old image. Run the **Cloud Deployment** steps above to push a new tag (`v2`, `v3`...) to force an update.

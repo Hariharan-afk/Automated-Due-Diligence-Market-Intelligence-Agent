@@ -1,0 +1,71 @@
+{
+  "generated_at": "now",
+  "source": "synthetic_qdrant",
+  "test_cases": [
+    {
+      "query_id": "ALPHABETIN_001",
+      "query": "Alphabet Inc. $74.8 billion remained available Class A Class C share repurchases September 30, 2025",
+      "target_chunk_id": "GOOGL_sec_f5608956_156",
+      "target_chunk_text": "\u20ac1.25 billion of 4.00% notes due 2054. The net proceeds from all notes issued in May 2025 are used for general corporate purposes.\n\nAs of September 30, 2025, we had senior unsecured notes outstanding ...",
+      "company": "Alphabet Inc.",
+      "golden_answer": "As of September 30, 2025, $74.8 billion remained available for Alphabet Inc.'s Class A and Class C share repurchases.",
+      "metadata": {
+        "sector": "Consumer Discretionary",
+        "market_cap": "Large Cap",
+        "region": "North America"
+      }
+    },
+    {
+      "query_id": "ALPHABETIN_002",
+      "query": "Alphabet Inc. debt maturity schedule June 30 2024",
+      "target_chunk_id": "GOOGL_sec_40245511_31",
+      "target_chunk_text": "|  |  |  |  |  |  |\n| --- | --- | --- | --- | --- | --- |\n|  |  |  |  |  |  |\n|  | | | As of June 30, 2024 | | |\n| Due in 1 year or less | | | $ | 7,234 |  |\n| Due in 1 year through 5 years | | | 36,6...",
+      "company": "Alphabet Inc.",
+      "golden_answer": "As of June 30, 2024, Alphabet Inc.'s debt maturity schedule is: $7,234 million due in 1 year or less, $36,666 million due in 1-5 years, $11,977 million due in 5-10 years, and $12,664 million due after 10 years, totaling $68,541 million.",
+      "metadata": {
+        "sector": "Energy",
+        "market_cap": "Small Cap",
+        "region": "North America"
+      }
+    },
+    {
+      "query_id": "MICROSOFTC_003",
+      "query": "Microsoft Corporation income taxes effective tax rate Notice 2023-55 Notice 2023-80 IRS NOPAs $28.9 billion",
+      "target_chunk_id": "MSFT_sec_1ed8438a_70",
+      "target_chunk_text": "NOTE 11 \u2014 INCOME TAXES\n\nEffective Tax Rate\n\nOur effective tax rate was 18% and 19% for the three months ended March 31, 2024 and 2023, respectively, and 18% and 19% for the nine months ended March 31,...",
+      "company": "Microsoft Corporation",
+      "golden_answer": "Microsoft's effective tax rate was 18% for the three and nine months ended March 31, 2024, partly due to tax benefits from IRS Notice 2023-55 and Notice 2023-80. The company received IRS NOPAs on September 26, 2023, seeking an additional tax payment of $28.9 billion plus penalties and interest related to intercompany transfer pricing for tax years 2004 to 2013.",
+      "metadata": {
+        "sector": "Energy",
+        "market_cap": "Large Cap",
+        "region": "North America"
+      }
+    },
+    {
+      "query_id": "AMAZONCOMI_004",
+      "query": "Amazon.com Inc. net sales North America International AWS year-over-year growth net sales mix June 30 2024",
+      "target_chunk_id": "AMZN_sec_c3cc1645_73",
+      "target_chunk_text": "|  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |\n| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- ...",
+      "company": "Amazon.com Inc.",
+      "golden_answer": "For the three months ended June 30, 2024, Amazon.com Inc. reported North America net sales of $90,033 million, International net sales of $31,663 million, and AWS net sales of $26,281 million. Year-over-year growth was 9% for North America, 7% for International, and 19% for AWS, with the net sales mix being 61% North America, 21% International, and 18% AWS.",
+      "metadata": {
+        "sector": "Energy",
+        "market_cap": "Small Cap",
+        "region": "North America"
+      }
+    },
+    {
+      "query_id": "MICROSOFTC_005",
+      "query": "Microsoft Corporation Revenue allocated to remaining performance obligations $229 billion December 31, 2023 NOTE 13 LEASES datacenters corporate offices",
+      "target_chunk_id": "MSFT_sec_9da97981_73",
+      "target_chunk_text": "Revenue allocated to remaining performance obligations, which includes unearned revenue and amounts that will be invoiced and recognized as revenue in future periods, was $229 billion as of December 3...",
+      "company": "Microsoft Corporation",
+      "golden_answer": "Microsoft Corporation's revenue allocated to remaining performance obligations was $229 billion as of December 31, 2023. The provided text does not state that this revenue is allocated to or derived from leases for datacenters or corporate offices, which are discussed separately under Note 13.",
+      "metadata": {
+        "sector": "Energy",
+        "market_cap": "Large Cap",
+        "region": "North America"
+      }
+    }
+  ]
+}
