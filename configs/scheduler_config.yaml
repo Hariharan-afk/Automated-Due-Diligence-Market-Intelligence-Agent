@@ -1,0 +1,34 @@
+# Data_Pipeline/configs/scheduler_config.yaml
+# Configuration for scheduled pipeline tasks
+
+schedulers:
+  # SEC Filing Monitoring Task
+  # Runs daily to check for new filings
+  sec_task:
+    enabled: true
+    time: "02:00"  # Run at 2:00 AM
+    timezone: "America/New_York"  # NYSE timezone
+    params:
+      filing_types: ['10-K', '10-Q']
+      start_date: "2024-01-01"
+      skip_existing: true
+  
+  # Wikipedia Page Refresh Task
+  # Runs weekly to check for page updates
+  wikipedia_task:
+    enabled: true
+    day: "monday"  # Run every Monday
+    time: "03:00"  # Run at 3:00 AM
+    timezone: "UTC"
+    params:
+      force_refresh: false  # Only refresh if revision_id changed
+  
+  # News Article Processing Task
+  # Runs every 6 hours to fetch new news and cleanup old articles
+  news_task:
+    enabled: true
+    interval_hours: 6  # Every 6 hours
+    params:
+      days_back: 7  # Fetch news from last 7 days
+      max_articles_per_company: 20
+      relevance_threshold: 0.6  # Minimum relevance score

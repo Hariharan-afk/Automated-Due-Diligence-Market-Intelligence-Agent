@@ -1,0 +1,52 @@
+{
+  "generated_at": "2025-12-09T23:45:39.504145",
+  "total_companies": 6,
+  "global_settings": {
+    "boost_enabled": true,
+    "quality_adjustment": true,
+    "max_boost": 0.3
+  },
+  "classifications": {
+    "small": [
+      {
+        "ticker": "AAPL",
+        "boost": 0.25,
+        "coverage_ratio": 0.8810126582278481
+      },
+      {
+        "ticker": "AMZN",
+        "boost": 0.25,
+        "coverage_ratio": 0.9113924050632911
+      }
+    ],
+    "medium": [
+      {
+        "ticker": "TSLA",
+        "boost": 0.12,
+        "coverage_ratio": 0.9265822784810127
+      },
+      {
+        "ticker": "NVDA",
+        "boost": 0.12,
+        "coverage_ratio": 1.0126582278481013
+      }
+    ],
+    "large": [
+      {
+        "ticker": "MSFT",
+        "boost": 0.0,
+        "coverage_ratio": 1.0227848101265822
+      },
+      {
+        "ticker": "GOOGL",
+        "boost": 0.0,
+        "coverage_ratio": 1.2455696202531645
+      }
+    ]
+  },
+  "classification_counts": {
+    "small": 2,
+    "medium": 2,
+    "large": 2
+  }
+}

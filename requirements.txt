@@ -1,19 +1,29 @@
-# Due Diligence System - GCP Version
-# Install: pip install -r requirements.txt
+# sec filings
+edgartools
+# sec filings
+edgartools
 
-# GCP
-google-cloud-aiplatform>=1.38.0
-vertexai>=1.38.0
+pyyaml 
+tqdm
+# sec filings
+edgartools
+# sec filings
+edgartools
 
-# Vector Database
-qdrant-client>=1.7.0
+pyyaml 
+tqdm
 
-# Search
-rank-bm25>=0.2.2
-sentence-transformers>=2.2.2
+# table summarization
+groq
+tiktoken
 
-# Utilities
-tiktoken>=0.5.2
-numpy>=1.24.0
-tqdm>=4.66.0
-tiktoken==0.5.2
+# text splitting (NEW - for testing LangChain chunker)
+langchain
+langchain-text-splitters
+
+dotenv
+wikipedia-api
+newspaper3k
+lxml_html_clean
+Levenshtein
+fuzzywuzzy

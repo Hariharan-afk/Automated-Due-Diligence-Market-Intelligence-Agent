@@ -1,0 +1,232 @@
+{
+  "timestamp": "2025-12-09T23:09:05.796334",
+  "checks": {
+    "completeness": {
+      "valid": true,
+      "issues": [],
+      "warnings": [],
+      "completeness_score": 1.0
+    },
+    "schema": {
+      "valid": true,
+      "errors": [],
+      "warnings": [
+        "MSFT_sec_0000950170-24-087843_8_33: Very short chunk (7 chars)",
+        "MSFT_sec_0000950170-24-087843_1_9: Very short chunk (13 chars)",
+        "MSFT_sec_0000950170-24-087843_1A_6: Very short chunk (14 chars)",
+        "MSFT_sec_0000950170-24-087843_1A_12: Very short chunk (14 chars)"
+      ],
+      "total_errors": 0,
+      "total_warnings": 4,
+      "sampled_chunks": 100
+    },
+    "token_sizes": {
+      "valid": true,
+      "oversized_chunks": 0,
+      "undersized_chunks": 9,
+      "oversized_examples": [],
+      "undersized_examples": [
+        {
+          "chunk_id": "MSFT_sec_0000950170-24-087843_1_9",
+          "tokens": 6
+        },
+        {
+          "chunk_id": "MSFT_sec_0000950170-24-087843_1_21",
+          "tokens": 2
+        },
+        {
+          "chunk_id": "MSFT_sec_0000950170-24-087843_1A_6",
+          "tokens": 7
+        },
+        {
+          "chunk_id": "MSFT_sec_0000950170-24-087843_1A_9",
+          "tokens": 7
+        },
+        {
+          "chunk_id": "MSFT_sec_0000950170-24-087843_1A_12",
+          "tokens": 7
+        }
+      ],
+      "stats": {
+        "avg_tokens": 513.6039603960396,
+        "min_tokens": 2,
+        "max_tokens": 796,
+        "median_tokens": 586.5
+      }
+    },
+    "content_quality": {
+      "valid": false,
+      "issues": [
+        {
+          "chunk_id": "MSFT_sec_0000950170-24-087843_1_9",
+          "issue": "too_few_words",
+          "word_count": 4
+        },
+        {
+          "chunk_id": "MSFT_sec_0000950170-24-087843_1_21",
+          "issue": "too_few_words",
+          "word_count": 2
+        },
+        {
+          "chunk_id": "MSFT_sec_0000950170-24-087843_1A_6",
+          "issue": "too_few_words",
+          "word_count": 4
+        },
+        {
+          "chunk_id": "MSFT_sec_0000950170-24-087843_1A_9",
+          "issue": "too_few_words",
+          "word_count": 4
+        },
+        {
+          "chunk_id": "MSFT_sec_0000950170-24-087843_1A_12",
+          "issue": "too_few_words",
+          "word_count": 4
+        },
+        {
+          "chunk_id": "MSFT_sec_0000950170-24-087843_1A_22",
+          "issue": "too_few_words",
+          "word_count": 4
+        }
+      ],
+      "total_issues": 6,
+      "sampled_chunks": 100
+    },
+    "statistics": {
+      "valid": true,
+      "warnings": [],
+      "stats": {
+        "mean": 2610.6039603960394,
+        "median": 2814.5,
+        "std": 1287.868263812262,
+        "min": 6,
+        "max": 4748
+      },
+      "source_distribution": {
+        "sec": 122,
+        "wikipedia": 23,
+        "news": 57
+      },
+      "total_chunks": 202
+    },
+    "table_references": {
+      "valid": false,
+      "issues": [
+        "Referenced table not found: TABLE_MSFT_0000950170_8_54",
+        "Referenced table not found: TABLE_MSFT_0000950170_15_4",
+        "Referenced table not found: TABLE_MSFT_0000950170_8_29",
+        "Referenced table not found: TABLE_MSFT_0000950170_8_31",
+        "Referenced table not found: TABLE_MSFT_0000950170_8_0",
+        "Referenced table not found: TABLE_MSFT_0000950170_1_0",
+        "Referenced table not found: TABLE_MSFT_0000950170_8_27",
+        "Referenced table not found: TABLE_MSFT_0000950170_8_45",
+        "Referenced table not found: TABLE_MSFT_0000950170_8_17",
+        "Referenced table not found: TABLE_MSFT_0000950170_8_30",
+        "Referenced table not found: TABLE_MSFT_0000950170_8_1",
+        "Referenced table not found: TABLE_MSFT_0000950170_7_12",
+        "Referenced table not found: TABLE_MSFT_0000950170_8_57",
+        "Referenced table not found: TABLE_MSFT_0000950170_7_0",
+        "Referenced table not found: TABLE_MSFT_0000950170_15_0",
+        "Referenced table not found: TABLE_MSFT_0000950170_15_3",
+        "Referenced table not found: TABLE_MSFT_0000950170_7_4",
+        "Referenced table not found: TABLE_MSFT_0000950170_8_55",
+        "Referenced table not found: TABLE_MSFT_0000950170_7_1",
+        "Referenced table not found: TABLE_MSFT_0000950170_15_7",
+        "Referenced table not found: TABLE_MSFT_0000950170_8_39",
+        "Referenced table not found: TABLE_MSFT_0000950170_8_43",
+        "Referenced table not found: TABLE_MSFT_0000950170_7_6",
+        "Referenced table not found: TABLE_MSFT_0000950170_8_48",
+        "Referenced table not found: TABLE_MSFT_0000950170_8_20",
+        "Referenced table not found: TABLE_MSFT_0000950170_8_19",
+        "Referenced table not found: TABLE_MSFT_0000950170_8_28",
+        "Referenced table not found: TABLE_MSFT_0000950170_8_10",
+        "Referenced table not found: TABLE_MSFT_0000950170_7_5",
+        "Referenced table not found: TABLE_MSFT_0000950170_8_46",
+        "Referenced table not found: TABLE_MSFT_0000950170_15_1",
+        "Referenced table not found: TABLE_MSFT_0000950170_7_10",
+        "Referenced table not found: TABLE_MSFT_0000950170_8_7",
+        "Referenced table not found: TABLE_MSFT_0000950170_8_25",
+        "Referenced table not found: TABLE_MSFT_0000950170_5_0",
+        "Referenced table not found: TABLE_MSFT_0000950170_8_5",
+        "Referenced table not found: TABLE_MSFT_0000950170_8_51",
+        "Referenced table not found: TABLE_MSFT_0000950170_15_2",
+        "Referenced table not found: TABLE_MSFT_0000950170_8_2",
+        "Referenced table not found: TABLE_MSFT_0000950170_8_22",
+        "Referenced table not found: TABLE_MSFT_0000950170_8_13",
+        "Referenced table not found: TABLE_MSFT_0000950170_8_15",
+        "Referenced table not found: TABLE_MSFT_0000950170_7_8",
+        "Referenced table not found: TABLE_MSFT_0000950170_8_11",
+        "Referenced table not found: TABLE_MSFT_0000950170_8_23",
+        "Referenced table not found: TABLE_MSFT_0000950170_8_37",
+        "Referenced table not found: TABLE_MSFT_0000950170_8_8",
+        "Referenced table not found: TABLE_MSFT_0000950170_8_40",
+        "Referenced table not found: TABLE_MSFT_0000950170_8_38",
+        "Referenced table not found: TABLE_MSFT_0000950170_7_7",
+        "Referenced table not found: TABLE_MSFT_0000950170_8_52",
+        "Referenced table not found: TABLE_MSFT_0000950170_5_1",
+        "Referenced table not found: TABLE_MSFT_0000950170_8_21",
+        "Referenced table not found: TABLE_MSFT_0000950170_8_34",
+        "Referenced table not found: TABLE_MSFT_0000950170_7A_0",
+        "Referenced table not found: TABLE_MSFT_0000950170_8_42",
+        "Referenced table not found: TABLE_MSFT_0000950170_8_36",
+        "Referenced table not found: TABLE_MSFT_0000950170_8_9",
+        "Referenced table not found: TABLE_MSFT_0000950170_8_24",
+        "Referenced table not found: TABLE_MSFT_0000950170_8_33",
+        "Referenced table not found: TABLE_MSFT_0000950170_8_3",
+        "Referenced table not found: TABLE_MSFT_0000950170_8_35",
+        "Referenced table not found: TABLE_MSFT_0000950170_8_14",
+        "Referenced table not found: TABLE_MSFT_0000950170_7_9",
+        "Referenced table not found: TABLE_MSFT_0000950170_8_12",
+        "Referenced table not found: TABLE_MSFT_0000950170_8_47",
+        "Referenced table not found: TABLE_MSFT_0000950170_15_6",
+        "Referenced table not found: TABLE_MSFT_0000950170_8_4",
+        "Referenced table not found: TABLE_MSFT_0000950170_2_0",
+        "Referenced table not found: TABLE_MSFT_0000950170_15_5",
+        "Referenced table not found: TABLE_MSFT_0000950170_7_11",
+        "Referenced table not found: TABLE_MSFT_0000950170_8_32",
+        "Referenced table not found: TABLE_MSFT_0000950170_8_56",
+        "Referenced table not found: TABLE_MSFT_0000950170_8_16",
+        "Referenced table not found: TABLE_MSFT_0000950170_8_41",
+        "Referenced table not found: TABLE_MSFT_0000950170_8_18",
+        "Referenced table not found: TABLE_MSFT_0000950170_7_3",
+        "Referenced table not found: TABLE_MSFT_0000950170_8_44",
+        "Referenced table not found: TABLE_MSFT_0000950170_8_49",
+        "Referenced table not found: TABLE_MSFT_0000950170_8_50",
+        "Referenced table not found: TABLE_MSFT_0000950170_7_2",
+        "Referenced table not found: TABLE_MSFT_0000950170_8_53",
+        "Referenced table not found: TABLE_MSFT_0000950170_8_26",
+        "Referenced table not found: TABLE_MSFT_0000950170_8_6"
+      ],
+      "stats": {
+        "total_tables": 0,
+        "referenced_tables": 84,
+        "orphaned_tables": 0,
+        "chunks_with_tables": 37
+      }
+    }
+  },
+  "overall_valid": false,
+  "critical_issues": [
+    "content_quality: {'chunk_id': 'MSFT_sec_0000950170-24-087843_1_9', 'issue': 'too_few_words', 'word_count': 4}",
+    "content_quality: {'chunk_id': 'MSFT_sec_0000950170-24-087843_1_21', 'issue': 'too_few_words', 'word_count': 2}",
+    "content_quality: {'chunk_id': 'MSFT_sec_0000950170-24-087843_1A_6', 'issue': 'too_few_words', 'word_count': 4}",
+    "content_quality: {'chunk_id': 'MSFT_sec_0000950170-24-087843_1A_9', 'issue': 'too_few_words', 'word_count': 4}",
+    "content_quality: {'chunk_id': 'MSFT_sec_0000950170-24-087843_1A_12', 'issue': 'too_few_words', 'word_count': 4}",
+    "table_references: Referenced table not found: TABLE_MSFT_0000950170_8_54",
+    "table_references: Referenced table not found: TABLE_MSFT_0000950170_15_4",
+    "table_references: Referenced table not found: TABLE_MSFT_0000950170_8_29",
+    "table_references: Referenced table not found: TABLE_MSFT_0000950170_8_31",
+    "table_references: Referenced table not found: TABLE_MSFT_0000950170_8_0"
+  ],
+  "warnings": [
+    "schema: MSFT_sec_0000950170-24-087843_8_33: Very short chunk (7 chars)",
+    "schema: MSFT_sec_0000950170-24-087843_1_9: Very short chunk (13 chars)",
+    "schema: MSFT_sec_0000950170-24-087843_1A_6: Very short chunk (14 chars)",
+    "schema: MSFT_sec_0000950170-24-087843_1A_12: Very short chunk (14 chars)"
+  ],
+  "stats": {
+    "total_chunks": 202,
+    "ticker": "MSFT",
+    "year": 2024,
+    "fetched_at": "2025-12-09T23:07:44.022117"
+  }
+}

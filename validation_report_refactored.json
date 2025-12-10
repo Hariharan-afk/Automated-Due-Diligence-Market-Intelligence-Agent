@@ -1,0 +1,147 @@
+{
+  "timestamp": "2025-12-09T11:44:05.005226",
+  "checks": {
+    "completeness": {
+      "valid": true,
+      "issues": [],
+      "warnings": [],
+      "completeness_score": 1.0
+    },
+    "schema": {
+      "valid": true,
+      "errors": [],
+      "warnings": [],
+      "total_errors": 0,
+      "total_warnings": 0,
+      "sampled_chunks": 100
+    },
+    "token_sizes": {
+      "valid": true,
+      "oversized_chunks": 0,
+      "undersized_chunks": 4,
+      "oversized_examples": [],
+      "undersized_examples": [
+        {
+          "chunk_id": "AAPL_sec_0000320193-24-000123_9_0",
+          "tokens": 22
+        },
+        {
+          "chunk_id": "AAPL_sec_0000320193-24-000123_11_0",
+          "tokens": 32
+        },
+        {
+          "chunk_id": "AAPL_sec_0000320193-24-000123_12_0",
+          "tokens": 44
+        },
+        {
+          "chunk_id": "AAPL_sec_0000320193-24-000123_13_0",
+          "tokens": 39
+        }
+      ],
+      "stats": {
+        "avg_tokens": 528.9314285714286,
+        "min_tokens": 22,
+        "max_tokens": 793,
+        "median_tokens": 582.0
+      }
+    },
+    "content_quality": {
+      "valid": true,
+      "issues": [],
+      "total_issues": 0,
+      "sampled_chunks": 100
+    },
+    "statistics": {
+      "valid": true,
+      "warnings": [],
+      "stats": {
+        "mean": 2565.6628571428573,
+        "median": 2714.0,
+        "std": 1091.6100012853135,
+        "min": 101,
+        "max": 4784
+      },
+      "source_distribution": {
+        "sec": 72,
+        "wikipedia": 31,
+        "news": 72
+      },
+      "total_chunks": 175
+    },
+    "table_references": {
+      "valid": false,
+      "issues": [
+        "Referenced table not found: TABLE_AAPL_0000320193_7_3",
+        "Referenced table not found: TABLE_AAPL_0000320193_8_26",
+        "Referenced table not found: TABLE_AAPL_0000320193_8_6",
+        "Referenced table not found: TABLE_AAPL_0000320193_8_17",
+        "Referenced table not found: TABLE_AAPL_0000320193_8_21",
+        "Referenced table not found: TABLE_AAPL_0000320193_8_0",
+        "Referenced table not found: TABLE_AAPL_0000320193_7_2",
+        "Referenced table not found: TABLE_AAPL_0000320193_8_22",
+        "Referenced table not found: TABLE_AAPL_0000320193_8_4",
+        "Referenced table not found: TABLE_AAPL_0000320193_8_25",
+        "Referenced table not found: TABLE_AAPL_0000320193_15_2",
+        "Referenced table not found: TABLE_AAPL_0000320193_8_1",
+        "Referenced table not found: TABLE_AAPL_0000320193_15_1",
+        "Referenced table not found: TABLE_AAPL_0000320193_8_29",
+        "Referenced table not found: TABLE_AAPL_0000320193_7_4",
+        "Referenced table not found: TABLE_AAPL_0000320193_8_5",
+        "Referenced table not found: TABLE_AAPL_0000320193_15_4",
+        "Referenced table not found: TABLE_AAPL_0000320193_8_7",
+        "Referenced table not found: TABLE_AAPL_0000320193_8_3",
+        "Referenced table not found: TABLE_AAPL_0000320193_5_0",
+        "Referenced table not found: TABLE_AAPL_0000320193_8_20",
+        "Referenced table not found: TABLE_AAPL_0000320193_7_1",
+        "Referenced table not found: TABLE_AAPL_0000320193_7_0",
+        "Referenced table not found: TABLE_AAPL_0000320193_8_24",
+        "Referenced table not found: TABLE_AAPL_0000320193_8_30",
+        "Referenced table not found: TABLE_AAPL_0000320193_8_31",
+        "Referenced table not found: TABLE_AAPL_0000320193_5_1",
+        "Referenced table not found: TABLE_AAPL_0000320193_8_15",
+        "Referenced table not found: TABLE_AAPL_0000320193_8_13",
+        "Referenced table not found: TABLE_AAPL_0000320193_8_9",
+        "Referenced table not found: TABLE_AAPL_0000320193_8_33",
+        "Referenced table not found: TABLE_AAPL_0000320193_8_2",
+        "Referenced table not found: TABLE_AAPL_0000320193_8_8",
+        "Referenced table not found: TABLE_AAPL_0000320193_8_23",
+        "Referenced table not found: TABLE_AAPL_0000320193_7_5",
+        "Referenced table not found: TABLE_AAPL_0000320193_7A_0",
+        "Referenced table not found: TABLE_AAPL_0000320193_8_14",
+        "Referenced table not found: TABLE_AAPL_0000320193_8_16",
+        "Referenced table not found: TABLE_AAPL_0000320193_8_12",
+        "Referenced table not found: TABLE_AAPL_0000320193_8_27",
+        "Referenced table not found: TABLE_AAPL_0000320193_8_10",
+        "Referenced table not found: TABLE_AAPL_0000320193_15_0",
+        "Referenced table not found: TABLE_AAPL_0000320193_8_34",
+        "Referenced table not found: TABLE_AAPL_0000320193_8_28",
+        "Referenced table not found: TABLE_AAPL_0000320193_8_32",
+        "Referenced table not found: TABLE_AAPL_0000320193_8_18",
+        "Referenced table not found: TABLE_AAPL_0000320193_15_3",
+        "Referenced table not found: TABLE_AAPL_0000320193_8_19",
+        "Referenced table not found: TABLE_AAPL_0000320193_8_11"
+      ],
+      "stats": {
+        "total_tables": 0,
+        "referenced_tables": 49,
+        "orphaned_tables": 0,
+        "chunks_with_tables": 22
+      }
+    }
+  },
+  "overall_valid": false,
+  "critical_issues": [
+    "table_references: Referenced table not found: TABLE_AAPL_0000320193_7_3",
+    "table_references: Referenced table not found: TABLE_AAPL_0000320193_8_26",
+    "table_references: Referenced table not found: TABLE_AAPL_0000320193_8_6",
+    "table_references: Referenced table not found: TABLE_AAPL_0000320193_8_17",
+    "table_references: Referenced table not found: TABLE_AAPL_0000320193_8_21"
+  ],
+  "warnings": [],
+  "stats": {
+    "total_chunks": 175,
+    "ticker": "AAPL",
+    "year": 2024,
+    "fetched_at": "2025-12-09T00:40:49.203571"
+  }
+}

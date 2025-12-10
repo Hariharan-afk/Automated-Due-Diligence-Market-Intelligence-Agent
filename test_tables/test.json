@@ -1,0 +1,16 @@
+{
+  "metadata": {
+    "total_tables": 1,
+    "saved_at": "2025-12-08T23:43:39.603986",
+    "version": "1.0"
+  },
+  "tables": {
+    "TABLE_AAPL_Item_7_0": {
+      "table_id": "TABLE_AAPL_Item_7_0",
+      "company": "Apple Inc.",
+      "section": "7",
+      "summary": "Revenue by product category",
+      "table_markdown": "| Product | Revenue |\n|---------|-------|\n| iPhone | 45B |"
+    }
+  }
+}

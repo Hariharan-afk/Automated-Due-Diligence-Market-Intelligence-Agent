@@ -1,0 +1,26 @@
+# Data_Pipeline/configs/companies.yaml
+
+companies:
+  - ticker: AAPL
+    name: Apple Inc.
+    cik: "0000320193"
+    
+  - ticker: MSFT
+    name: Microsoft Corporation
+    cik: "0000789019"
+    
+  - ticker: GOOGL
+    name: Alphabet Inc.
+    cik: "0001652044"
+    
+  - ticker: AMZN
+    name: Amazon.com Inc.
+    cik: "0001018724"
+    
+  - ticker: TSLA
+    name: Tesla Inc.
+    cik: "0001318605"
+
+  - ticker: NVDA
+    name: NVIDIA Corporation
+    cik: "0001045810"

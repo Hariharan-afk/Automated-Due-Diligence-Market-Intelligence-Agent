@@ -1,0 +1,23 @@
+# Data_Pipeline/configs/sec_config.yaml
+
+# SEC filing fetch configuration
+fetch_start_date: "2023-01-01"
+fetch_end_date: null  # null = today
+
+# EdgarTools identity (required by SEC for compliance)
+# Replace with your actual email address
+user_identity: "surajonlyforgames@gmail.com"
+
+# Chunking parameters
+chunk_size: 800  # tokens (approximate, ~3200 characters)
+overlap: 100     # tokens overlap between chunks
+
+# Table processing configuration
+table_processing:
+  enabled: true
+  groq_api_key: "${GROQ_API_KEY}"  # Set in environment variable
+  groq_model: "llama-3.1-8b-instant"
+  summary_max_length: 300  # Max characters for summary
+  batch_size: 10  # Tables processed per batch
+  min_table_size: 0  # Process ALL tables (no size threshold)
+  rate_limit_rpm: 300  # Requests per minute (paid tier: 300+, free: 30)

@@ -1,0 +1,34 @@
+# Data_Pipeline/configs/database_config.yaml
+
+postgresql:
+  host: aws-1-us-east-1.pooler.supabase.com
+  port: 5432
+  database: postgres
+  user: postgres.fbbhutigncxoxtzhnaws
+  password: ${POSTGRES_PASSWORD}   
+  min_connections: 2
+  max_connections: 10
+
+qdrant:
+  host: remote
+  url: https://d328ddf6-bc11-482e-b57e-b5780a3ed460.us-east4-0.gcp.cloud.qdrant.io
+  api_key: ${QDRANT_API_KEY}
+  collection_name: financial_data
+  vector_size: 768  # FinE5 embedding dimension
+  distance: Cosine
+
+# Embedding model configuration
+embedding:
+  model_name: FinLang/finance-embeddings-investopedia
+  device: cpu  # or 'cuda' if GPU available
+  batch_size: 32
+  max_length: 512
+
+# LLM configuration for table headers
+llm:
+  provider: groq
+  model: llama-3.1-8b-instant
+  api_key: ${GROQ_API_KEY}  # Set as environment variable
+  temperature: 0.3
+  max_tokens: 200
+  table_confidence_threshold: 0.6  # Only generate headers for high-confidence tables

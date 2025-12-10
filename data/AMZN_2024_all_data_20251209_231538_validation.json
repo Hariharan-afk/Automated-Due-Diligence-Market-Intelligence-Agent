@@ -1,0 +1,193 @@
+{
+  "timestamp": "2025-12-09T23:15:38.701020",
+  "checks": {
+    "completeness": {
+      "valid": true,
+      "issues": [],
+      "warnings": [],
+      "completeness_score": 1.0
+    },
+    "schema": {
+      "valid": true,
+      "errors": [],
+      "warnings": [],
+      "total_errors": 0,
+      "total_warnings": 0,
+      "sampled_chunks": 100
+    },
+    "token_sizes": {
+      "valid": true,
+      "oversized_chunks": 0,
+      "undersized_chunks": 2,
+      "oversized_examples": [],
+      "undersized_examples": [
+        {
+          "chunk_id": "AMZN_sec_0001018724-24-000008_9A_0",
+          "tokens": 49
+        },
+        {
+          "chunk_id": "AMZN_news_unknown_2",
+          "tokens": 21
+        }
+      ],
+      "stats": {
+        "avg_tokens": 531.5,
+        "min_tokens": 21,
+        "max_tokens": 798,
+        "median_tokens": 631.5
+      }
+    },
+    "content_quality": {
+      "valid": false,
+      "issues": [
+        {
+          "chunk_id": "AMZN_sec_0001018724-24-000008_8_0",
+          "issue": "placeholder_text",
+          "found": [
+            "placeholder"
+          ]
+        },
+        {
+          "chunk_id": "AMZN_sec_0001018724-24-000008_9A_0",
+          "issue": "placeholder_text",
+          "found": [
+            "placeholder"
+          ]
+        },
+        {
+          "chunk_id": "AMZN_sec_0001018724-24-000008_9C_0",
+          "issue": "placeholder_text",
+          "found": [
+            "placeholder"
+          ]
+        }
+      ],
+      "total_issues": 3,
+      "sampled_chunks": 100
+    },
+    "statistics": {
+      "valid": true,
+      "warnings": [],
+      "stats": {
+        "mean": 2609.8888888888887,
+        "median": 2947.0,
+        "std": 1268.2161482828674,
+        "min": 111,
+        "max": 4490
+      },
+      "source_distribution": {
+        "sec": 96,
+        "wikipedia": 14,
+        "news": 70
+      },
+      "total_chunks": 180
+    },
+    "table_references": {
+      "valid": false,
+      "issues": [
+        "Referenced table not found: TABLE_AMZN_0001018724_2_2",
+        "Referenced table not found: TABLE_AMZN_0001018724_2_0",
+        "Referenced table not found: TABLE_AMZN_0001018724_8_27",
+        "Referenced table not found: TABLE_AMZN_0001018724_15_1",
+        "Referenced table not found: TABLE_AMZN_0001018724_8_23",
+        "Referenced table not found: TABLE_AMZN_0001018724_8_8",
+        "Referenced table not found: TABLE_AMZN_0001018724_8_2",
+        "Referenced table not found: TABLE_AMZN_0001018724_8_33",
+        "Referenced table not found: TABLE_AMZN_0001018724_7_5",
+        "Referenced table not found: TABLE_AMZN_0001018724_9_0",
+        "Referenced table not found: TABLE_AMZN_0001018724_7_1",
+        "Referenced table not found: TABLE_AMZN_0001018724_9A_0",
+        "Referenced table not found: TABLE_AMZN_0001018724_8_41",
+        "Referenced table not found: TABLE_AMZN_0001018724_5_0",
+        "Referenced table not found: TABLE_AMZN_0001018724_8_7",
+        "Referenced table not found: TABLE_AMZN_0001018724_8_4",
+        "Referenced table not found: TABLE_AMZN_0001018724_8_29",
+        "Referenced table not found: TABLE_AMZN_0001018724_10_0",
+        "Referenced table not found: TABLE_AMZN_0001018724_8_14",
+        "Referenced table not found: TABLE_AMZN_0001018724_8_30",
+        "Referenced table not found: TABLE_AMZN_0001018724_1A_0",
+        "Referenced table not found: TABLE_AMZN_0001018724_8_37",
+        "Referenced table not found: TABLE_AMZN_0001018724_8_36",
+        "Referenced table not found: TABLE_AMZN_0001018724_8_11",
+        "Referenced table not found: TABLE_AMZN_0001018724_11_0",
+        "Referenced table not found: TABLE_AMZN_0001018724_7_0",
+        "Referenced table not found: TABLE_AMZN_0001018724_8_43",
+        "Referenced table not found: TABLE_AMZN_0001018724_7_6",
+        "Referenced table not found: TABLE_AMZN_0001018724_7_7",
+        "Referenced table not found: TABLE_AMZN_0001018724_8_1",
+        "Referenced table not found: TABLE_AMZN_0001018724_8_39",
+        "Referenced table not found: TABLE_AMZN_0001018724_8_26",
+        "Referenced table not found: TABLE_AMZN_0001018724_8_24",
+        "Referenced table not found: TABLE_AMZN_0001018724_8_28",
+        "Referenced table not found: TABLE_AMZN_0001018724_7_2",
+        "Referenced table not found: TABLE_AMZN_0001018724_8_25",
+        "Referenced table not found: TABLE_AMZN_0001018724_8_31",
+        "Referenced table not found: TABLE_AMZN_0001018724_8_17",
+        "Referenced table not found: TABLE_AMZN_0001018724_7_4",
+        "Referenced table not found: TABLE_AMZN_0001018724_13_0",
+        "Referenced table not found: TABLE_AMZN_0001018724_8_13",
+        "Referenced table not found: TABLE_AMZN_0001018724_8_10",
+        "Referenced table not found: TABLE_AMZN_0001018724_8_21",
+        "Referenced table not found: TABLE_AMZN_0001018724_8_38",
+        "Referenced table not found: TABLE_AMZN_0001018724_1_0",
+        "Referenced table not found: TABLE_AMZN_0001018724_8_19",
+        "Referenced table not found: TABLE_AMZN_0001018724_8_18",
+        "Referenced table not found: TABLE_AMZN_0001018724_8_12",
+        "Referenced table not found: TABLE_AMZN_0001018724_8_20",
+        "Referenced table not found: TABLE_AMZN_0001018724_8_35",
+        "Referenced table not found: TABLE_AMZN_0001018724_8_34",
+        "Referenced table not found: TABLE_AMZN_0001018724_15_3",
+        "Referenced table not found: TABLE_AMZN_0001018724_9B_0",
+        "Referenced table not found: TABLE_AMZN_0001018724_8_15",
+        "Referenced table not found: TABLE_AMZN_0001018724_7A_1",
+        "Referenced table not found: TABLE_AMZN_0001018724_1C_0",
+        "Referenced table not found: TABLE_AMZN_0001018724_8_40",
+        "Referenced table not found: TABLE_AMZN_0001018724_1_2",
+        "Referenced table not found: TABLE_AMZN_0001018724_8_9",
+        "Referenced table not found: TABLE_AMZN_0001018724_7A_0",
+        "Referenced table not found: TABLE_AMZN_0001018724_2_1",
+        "Referenced table not found: TABLE_AMZN_0001018724_7_8",
+        "Referenced table not found: TABLE_AMZN_0001018724_9C_0",
+        "Referenced table not found: TABLE_AMZN_0001018724_15_2",
+        "Referenced table not found: TABLE_AMZN_0001018724_8_32",
+        "Referenced table not found: TABLE_AMZN_0001018724_8_22",
+        "Referenced table not found: TABLE_AMZN_0001018724_12_0",
+        "Referenced table not found: TABLE_AMZN_0001018724_8_3",
+        "Referenced table not found: TABLE_AMZN_0001018724_8_5",
+        "Referenced table not found: TABLE_AMZN_0001018724_8_6",
+        "Referenced table not found: TABLE_AMZN_0001018724_8_0",
+        "Referenced table not found: TABLE_AMZN_0001018724_15_0",
+        "Referenced table not found: TABLE_AMZN_0001018724_14_0",
+        "Referenced table not found: TABLE_AMZN_0001018724_7_3",
+        "Referenced table not found: TABLE_AMZN_0001018724_3_0",
+        "Referenced table not found: TABLE_AMZN_0001018724_8_42",
+        "Referenced table not found: TABLE_AMZN_0001018724_8_16",
+        "Referenced table not found: TABLE_AMZN_0001018724_1_1"
+      ],
+      "stats": {
+        "total_tables": 0,
+        "referenced_tables": 78,
+        "orphaned_tables": 0,
+        "chunks_with_tables": 48
+      }
+    }
+  },
+  "overall_valid": false,
+  "critical_issues": [
+    "content_quality: {'chunk_id': 'AMZN_sec_0001018724-24-000008_8_0', 'issue': 'placeholder_text', 'found': ['placeholder']}",
+    "content_quality: {'chunk_id': 'AMZN_sec_0001018724-24-000008_9A_0', 'issue': 'placeholder_text', 'found': ['placeholder']}",
+    "content_quality: {'chunk_id': 'AMZN_sec_0001018724-24-000008_9C_0', 'issue': 'placeholder_text', 'found': ['placeholder']}",
+    "table_references: Referenced table not found: TABLE_AMZN_0001018724_2_2",
+    "table_references: Referenced table not found: TABLE_AMZN_0001018724_2_0",
+    "table_references: Referenced table not found: TABLE_AMZN_0001018724_8_27",
+    "table_references: Referenced table not found: TABLE_AMZN_0001018724_15_1",
+    "table_references: Referenced table not found: TABLE_AMZN_0001018724_8_23"
+  ],
+  "warnings": [],
+  "stats": {
+    "total_chunks": 180,
+    "ticker": "AMZN",
+    "year": 2024,
+    "fetched_at": "2025-12-09T23:13:59.897667"
+  }
+}
