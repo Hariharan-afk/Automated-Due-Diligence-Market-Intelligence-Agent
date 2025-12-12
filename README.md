@@ -584,7 +584,7 @@ When we convert text to vectors for search:
 
 ---
 
-## <a name="data-pipeline"></a> 7. Data Pipeline (Refer [Data Pipeline Branch](https://github.com/Hariharan-afk/Automated-Due-Diligence-Market-Intelligence-Agent/commits/Data_Pipeline_V2))
+## <a name="data-pipeline"></a> 7. Data Pipeline (Refer [https://github.com/Hariharan-afk/Automated-Due-Diligence-Market-Intelligence-Agent/tree/Data_Pipeline]))
 
 ### 1. Overview and Data Flow
 
