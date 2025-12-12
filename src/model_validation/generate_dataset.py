@@ -21,7 +21,7 @@ from src.config import QDRANT_CONFIG, LLM_CONFIG
 from src.tools.local_client import get_local_client
 from src.utils.helpers import extract_json
 
-def generate_golden_dataset(num_samples: int = 15, output_file: str = "src/model_validation/golden_dataset.json"):
+def generate_golden_dataset(num_samples: int = 20, output_file: str = "src/model_validation/golden_dataset.json"):
     print(f"\n✨ Generating Golden Dataset from Qdrant ({QDRANT_CONFIG['url']})...")
     
     # 1. Connect to Qdrant

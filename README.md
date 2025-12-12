@@ -917,7 +917,7 @@ Every push to any branch triggers the following sequential pipeline:
 ![Deployment Logs](Assets\CI_CD_Deployment_logs.png)
 
 ## Email Alert
-![Email Alert](Assets/Email_Alert.png)
+![Email Alert](Assets/Email_Success.png)
 ---
 
 ## <a name="secrets"></a> 15. GitHub Secrets Configuration
