@@ -1,0 +1,141 @@
+{
+  "generated_at": "2025-12-09T23:45:39.483919",
+  "summary": {
+    "total_companies": 6,
+    "avg_total_chunks": 197.5,
+    "min_chunks": 174,
+    "max_chunks": 246,
+    "avg_completeness": 1.0,
+    "companies_with_sec": 6,
+    "companies_with_wiki": 6,
+    "companies_with_news": 6
+  },
+  "companies": {
+    "MSFT": {
+      "ticker": "MSFT",
+      "company_name": "MICROSOFT CORP",
+      "total_chunks": 202,
+      "source_distribution": {
+        "sec": 122,
+        "wikipedia": 23,
+        "news": 57
+      },
+      "num_tables": 84,
+      "avg_chunk_length": 2610.6039603960394,
+      "completeness_score": 1.0,
+      "has_sec": true,
+      "has_wikipedia": true,
+      "has_news": true,
+      "last_updated": "2025-12-09T23:45:39.472709",
+      "metadata": {
+        "year": 2024,
+        "file": "MSFT_2024_all_data_20251209_230905.json"
+      }
+    },
+    "GOOGL": {
+      "ticker": "GOOGL",
+      "company_name": "Alphabet Inc.",
+      "total_chunks": 246,
+      "source_distribution": {
+        "sec": 152,
+        "wikipedia": 9,
+        "news": 85
+      },
+      "num_tables": 163,
+      "avg_chunk_length": 2470.2520325203254,
+      "completeness_score": 1.0,
+      "has_sec": true,
+      "has_wikipedia": true,
+      "has_news": true,
+      "last_updated": "2025-12-09T23:45:39.467657",
+      "metadata": {
+        "year": 2024,
+        "file": "GOOGL_2024_all_data_20251209_231900.json"
+      }
+    },
+    "TSLA": {
+      "ticker": "TSLA",
+      "company_name": "Tesla, Inc.",
+      "total_chunks": 183,
+      "source_distribution": {
+        "sec": 119,
+        "wikipedia": 31,
+        "news": 33
+      },
+      "num_tables": 76,
+      "avg_chunk_length": 2949.4262295081967,
+      "completeness_score": 1.0,
+      "has_sec": true,
+      "has_wikipedia": true,
+      "has_news": true,
+      "last_updated": "2025-12-09T23:45:39.481919",
+      "metadata": {
+        "year": 2024,
+        "file": "TSLA_2024_all_data_20251209_232018.json"
+      }
+    },
+    "NVDA": {
+      "ticker": "NVDA",
+      "company_name": "NVIDIA CORP",
+      "total_chunks": 200,
+      "source_distribution": {
+        "sec": 111,
+        "wikipedia": 19,
+        "news": 70
+      },
+      "num_tables": 58,
+      "avg_chunk_length": 2803.09,
+      "completeness_score": 1.0,
+      "has_sec": true,
+      "has_wikipedia": true,
+      "has_news": true,
+      "last_updated": "2025-12-09T23:45:39.476289",
+      "metadata": {
+        "year": 2024,
+        "file": "NVDA_2024_all_data_20251209_232157.json"
+      }
+    },
+    "AAPL": {
+      "ticker": "AAPL",
+      "company_name": "Apple Inc.",
+      "total_chunks": 174,
+      "source_distribution": {
+        "sec": 71,
+        "wikipedia": 31,
+        "news": 72
+      },
+      "num_tables": 49,
+      "avg_chunk_length": 2617.5459770114944,
+      "completeness_score": 1.0,
+      "has_sec": true,
+      "has_wikipedia": true,
+      "has_news": true,
+      "last_updated": "2025-12-09T23:45:39.457715",
+      "metadata": {
+        "year": 2024,
+        "file": "AAPL_2024_all_data_20251209_232319.json"
+      }
+    },
+    "AMZN": {
+      "ticker": "AMZN",
+      "company_name": "AMAZON COM INC",
+      "total_chunks": 180,
+      "source_distribution": {
+        "sec": 96,
+        "wikipedia": 14,
+        "news": 70
+      },
+      "num_tables": 78,
+      "avg_chunk_length": 2609.8888888888887,
+      "completeness_score": 1.0,
+      "has_sec": true,
+      "has_wikipedia": true,
+      "has_news": true,
+      "last_updated": "2025-12-09T23:45:39.461960",
+      "metadata": {
+        "year": 2024,
+        "file": "AMZN_2024_all_data_20251209_231538.json"
+      }
+    }
+  }
+}

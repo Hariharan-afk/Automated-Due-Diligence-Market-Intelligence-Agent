@@ -1,0 +1,166 @@
+{
+  "timestamp": "2025-12-09T23:20:18.260966",
+  "checks": {
+    "completeness": {
+      "valid": true,
+      "issues": [],
+      "warnings": [],
+      "completeness_score": 1.0
+    },
+    "schema": {
+      "valid": true,
+      "errors": [],
+      "warnings": [],
+      "total_errors": 0,
+      "total_warnings": 0,
+      "sampled_chunks": 100
+    },
+    "token_sizes": {
+      "valid": true,
+      "oversized_chunks": 0,
+      "undersized_chunks": 2,
+      "oversized_examples": [],
+      "undersized_examples": [
+        {
+          "chunk_id": "TSLA_sec_0001628280-24-002390_11_0",
+          "tokens": 41
+        },
+        {
+          "chunk_id": "TSLA_sec_0001628280-24-002390_14_0",
+          "tokens": 45
+        }
+      ],
+      "stats": {
+        "avg_tokens": 578.9071038251366,
+        "min_tokens": 41,
+        "max_tokens": 795,
+        "median_tokens": 674.0
+      }
+    },
+    "content_quality": {
+      "valid": true,
+      "issues": [],
+      "total_issues": 0,
+      "sampled_chunks": 100
+    },
+    "statistics": {
+      "valid": true,
+      "warnings": [],
+      "stats": {
+        "mean": 2949.4262295081967,
+        "median": 3325.0,
+        "std": 1245.9125668919692,
+        "min": 157,
+        "max": 4674
+      },
+      "source_distribution": {
+        "sec": 119,
+        "wikipedia": 31,
+        "news": 33
+      },
+      "total_chunks": 183
+    },
+    "table_references": {
+      "valid": false,
+      "issues": [
+        "Referenced table not found: TABLE_TSLA_0001628280_8_13",
+        "Referenced table not found: TABLE_TSLA_0001628280_8_17",
+        "Referenced table not found: TABLE_TSLA_0001628280_8_39",
+        "Referenced table not found: TABLE_TSLA_0001628280_8_14",
+        "Referenced table not found: TABLE_TSLA_0001628280_8_15",
+        "Referenced table not found: TABLE_TSLA_0001628280_8_24",
+        "Referenced table not found: TABLE_TSLA_0001628280_15_5",
+        "Referenced table not found: TABLE_TSLA_0001628280_8_0",
+        "Referenced table not found: TABLE_TSLA_0001628280_8_31",
+        "Referenced table not found: TABLE_TSLA_0001628280_8_16",
+        "Referenced table not found: TABLE_TSLA_0001628280_8_42",
+        "Referenced table not found: TABLE_TSLA_0001628280_8_18",
+        "Referenced table not found: TABLE_TSLA_0001628280_15_10",
+        "Referenced table not found: TABLE_TSLA_0001628280_2_0",
+        "Referenced table not found: TABLE_TSLA_0001628280_15_1",
+        "Referenced table not found: TABLE_TSLA_0001628280_8_25",
+        "Referenced table not found: TABLE_TSLA_0001628280_15_12",
+        "Referenced table not found: TABLE_TSLA_0001628280_8_44",
+        "Referenced table not found: TABLE_TSLA_0001628280_15_9",
+        "Referenced table not found: TABLE_TSLA_0001628280_7_8",
+        "Referenced table not found: TABLE_TSLA_0001628280_8_26",
+        "Referenced table not found: TABLE_TSLA_0001628280_8_27",
+        "Referenced table not found: TABLE_TSLA_0001628280_8_32",
+        "Referenced table not found: TABLE_TSLA_0001628280_8_6",
+        "Referenced table not found: TABLE_TSLA_0001628280_8_34",
+        "Referenced table not found: TABLE_TSLA_0001628280_8_41",
+        "Referenced table not found: TABLE_TSLA_0001628280_8_47",
+        "Referenced table not found: TABLE_TSLA_0001628280_8_23",
+        "Referenced table not found: TABLE_TSLA_0001628280_7_7",
+        "Referenced table not found: TABLE_TSLA_0001628280_8_49",
+        "Referenced table not found: TABLE_TSLA_0001628280_15_3",
+        "Referenced table not found: TABLE_TSLA_0001628280_7_9",
+        "Referenced table not found: TABLE_TSLA_0001628280_8_21",
+        "Referenced table not found: TABLE_TSLA_0001628280_8_5",
+        "Referenced table not found: TABLE_TSLA_0001628280_7_4",
+        "Referenced table not found: TABLE_TSLA_0001628280_8_7",
+        "Referenced table not found: TABLE_TSLA_0001628280_8_28",
+        "Referenced table not found: TABLE_TSLA_0001628280_8_1",
+        "Referenced table not found: TABLE_TSLA_0001628280_8_43",
+        "Referenced table not found: TABLE_TSLA_0001628280_7_6",
+        "Referenced table not found: TABLE_TSLA_0001628280_8_12",
+        "Referenced table not found: TABLE_TSLA_0001628280_8_19",
+        "Referenced table not found: TABLE_TSLA_0001628280_8_37",
+        "Referenced table not found: TABLE_TSLA_0001628280_7_1",
+        "Referenced table not found: TABLE_TSLA_0001628280_15_6",
+        "Referenced table not found: TABLE_TSLA_0001628280_8_46",
+        "Referenced table not found: TABLE_TSLA_0001628280_15_7",
+        "Referenced table not found: TABLE_TSLA_0001628280_15_0",
+        "Referenced table not found: TABLE_TSLA_0001628280_7_5",
+        "Referenced table not found: TABLE_TSLA_0001628280_8_8",
+        "Referenced table not found: TABLE_TSLA_0001628280_8_3",
+        "Referenced table not found: TABLE_TSLA_0001628280_8_10",
+        "Referenced table not found: TABLE_TSLA_0001628280_8_38",
+        "Referenced table not found: TABLE_TSLA_0001628280_8_45",
+        "Referenced table not found: TABLE_TSLA_0001628280_7_2",
+        "Referenced table not found: TABLE_TSLA_0001628280_8_2",
+        "Referenced table not found: TABLE_TSLA_0001628280_7_0",
+        "Referenced table not found: TABLE_TSLA_0001628280_8_33",
+        "Referenced table not found: TABLE_TSLA_0001628280_8_35",
+        "Referenced table not found: TABLE_TSLA_0001628280_8_48",
+        "Referenced table not found: TABLE_TSLA_0001628280_8_20",
+        "Referenced table not found: TABLE_TSLA_0001628280_8_22",
+        "Referenced table not found: TABLE_TSLA_0001628280_8_4",
+        "Referenced table not found: TABLE_TSLA_0001628280_8_40",
+        "Referenced table not found: TABLE_TSLA_0001628280_15_11",
+        "Referenced table not found: TABLE_TSLA_0001628280_8_11",
+        "Referenced table not found: TABLE_TSLA_0001628280_15_4",
+        "Referenced table not found: TABLE_TSLA_0001628280_7_3",
+        "Referenced table not found: TABLE_TSLA_0001628280_15_14",
+        "Referenced table not found: TABLE_TSLA_0001628280_8_29",
+        "Referenced table not found: TABLE_TSLA_0001628280_8_30",
+        "Referenced table not found: TABLE_TSLA_0001628280_15_13",
+        "Referenced table not found: TABLE_TSLA_0001628280_15_2",
+        "Referenced table not found: TABLE_TSLA_0001628280_8_9",
+        "Referenced table not found: TABLE_TSLA_0001628280_8_36",
+        "Referenced table not found: TABLE_TSLA_0001628280_15_8"
+      ],
+      "stats": {
+        "total_tables": 0,
+        "referenced_tables": 76,
+        "orphaned_tables": 0,
+        "chunks_with_tables": 42
+      }
+    }
+  },
+  "overall_valid": false,
+  "critical_issues": [
+    "table_references: Referenced table not found: TABLE_TSLA_0001628280_8_13",
+    "table_references: Referenced table not found: TABLE_TSLA_0001628280_8_17",
+    "table_references: Referenced table not found: TABLE_TSLA_0001628280_8_39",
+    "table_references: Referenced table not found: TABLE_TSLA_0001628280_8_14",
+    "table_references: Referenced table not found: TABLE_TSLA_0001628280_8_15"
+  ],
+  "warnings": [],
+  "stats": {
+    "total_chunks": 183,
+    "ticker": "TSLA",
+    "year": 2024,
+    "fetched_at": "2025-12-09T23:19:16.922949"
+  }
+}

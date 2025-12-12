@@ -1,0 +1,411 @@
+{
+  "timestamp": "2025-12-09T23:19:00.069518",
+  "checks": {
+    "completeness": {
+      "valid": true,
+      "issues": [],
+      "warnings": [],
+      "completeness_score": 1.0
+    },
+    "schema": {
+      "valid": true,
+      "errors": [],
+      "warnings": [],
+      "total_errors": 0,
+      "total_warnings": 0,
+      "sampled_chunks": 100
+    },
+    "token_sizes": {
+      "valid": true,
+      "oversized_chunks": 0,
+      "undersized_chunks": 20,
+      "oversized_examples": [],
+      "undersized_examples": [
+        {
+          "chunk_id": "GOOGL_sec_0001652044-24-000022_1_3",
+          "tokens": 46
+        },
+        {
+          "chunk_id": "GOOGL_sec_0001652044-24-000022_1_6",
+          "tokens": 38
+        },
+        {
+          "chunk_id": "GOOGL_sec_0001652044-24-000022_1_10",
+          "tokens": 43
+        },
+        {
+          "chunk_id": "GOOGL_sec_0001652044-24-000022_1_13",
+          "tokens": 40
+        },
+        {
+          "chunk_id": "GOOGL_sec_0001652044-24-000022_1A_5",
+          "tokens": 47
+        }
+      ],
+      "stats": {
+        "avg_tokens": 496.4512195121951,
+        "min_tokens": 38,
+        "max_tokens": 795,
+        "median_tokens": 571.5
+      }
+    },
+    "content_quality": {
+      "valid": false,
+      "issues": [
+        {
+          "chunk_id": "GOOGL_sec_0001652044-24-000022_1_0",
+          "issue": "placeholder_text",
+          "found": [
+            "placeholder"
+          ]
+        },
+        {
+          "chunk_id": "GOOGL_sec_0001652044-24-000022_1_3",
+          "issue": "placeholder_text",
+          "found": [
+            "placeholder"
+          ]
+        },
+        {
+          "chunk_id": "GOOGL_sec_0001652044-24-000022_1_7",
+          "issue": "placeholder_text",
+          "found": [
+            "placeholder"
+          ]
+        },
+        {
+          "chunk_id": "GOOGL_sec_0001652044-24-000022_1_11",
+          "issue": "placeholder_text",
+          "found": [
+            "placeholder"
+          ]
+        },
+        {
+          "chunk_id": "GOOGL_sec_0001652044-24-000022_1A_2",
+          "issue": "placeholder_text",
+          "found": [
+            "placeholder"
+          ]
+        },
+        {
+          "chunk_id": "GOOGL_sec_0001652044-24-000022_1A_6",
+          "issue": "placeholder_text",
+          "found": [
+            "placeholder"
+          ]
+        },
+        {
+          "chunk_id": "GOOGL_sec_0001652044-24-000022_1A_9",
+          "issue": "placeholder_text",
+          "found": [
+            "placeholder"
+          ]
+        },
+        {
+          "chunk_id": "GOOGL_sec_0001652044-24-000022_1A_24",
+          "issue": "placeholder_text",
+          "found": [
+            "placeholder"
+          ]
+        },
+        {
+          "chunk_id": "GOOGL_sec_0001652044-24-000022_1A_30",
+          "issue": "placeholder_text",
+          "found": [
+            "placeholder"
+          ]
+        },
+        {
+          "chunk_id": "GOOGL_sec_0001652044-24-000022_5_0",
+          "issue": "placeholder_text",
+          "found": [
+            "placeholder"
+          ]
+        },
+        {
+          "chunk_id": "GOOGL_sec_0001652044-24-000022_5_1",
+          "issue": "placeholder_text",
+          "found": [
+            "placeholder"
+          ]
+        },
+        {
+          "chunk_id": "GOOGL_sec_0001652044-24-000022_7_5",
+          "issue": "placeholder_text",
+          "found": [
+            "placeholder"
+          ]
+        },
+        {
+          "chunk_id": "GOOGL_sec_0001652044-24-000022_7_6",
+          "issue": "placeholder_text",
+          "found": [
+            "placeholder"
+          ]
+        },
+        {
+          "chunk_id": "GOOGL_sec_0001652044-24-000022_7_7",
+          "issue": "placeholder_text",
+          "found": [
+            "placeholder"
+          ]
+        },
+        {
+          "chunk_id": "GOOGL_sec_0001652044-24-000022_7_8",
+          "issue": "placeholder_text",
+          "found": [
+            "placeholder"
+          ]
+        },
+        {
+          "chunk_id": "GOOGL_sec_0001652044-24-000022_7_9",
+          "issue": "placeholder_text",
+          "found": [
+            "placeholder"
+          ]
+        },
+        {
+          "chunk_id": "GOOGL_sec_0001652044-24-000022_7_10",
+          "issue": "placeholder_text",
+          "found": [
+            "placeholder"
+          ]
+        },
+        {
+          "chunk_id": "GOOGL_sec_0001652044-24-000022_7_11",
+          "issue": "placeholder_text",
+          "found": [
+            "placeholder"
+          ]
+        },
+        {
+          "chunk_id": "GOOGL_sec_0001652044-24-000022_7_12",
+          "issue": "placeholder_text",
+          "found": [
+            "placeholder"
+          ]
+        },
+        {
+          "chunk_id": "GOOGL_sec_0001652044-24-000022_7_13",
+          "issue": "placeholder_text",
+          "found": [
+            "placeholder"
+          ]
+        }
+      ],
+      "total_issues": 29,
+      "sampled_chunks": 100
+    },
+    "statistics": {
+      "valid": true,
+      "warnings": [],
+      "stats": {
+        "mean": 2470.2520325203254,
+        "median": 2763.5,
+        "std": 1333.1427023896929,
+        "min": 135,
+        "max": 4568
+      },
+      "source_distribution": {
+        "sec": 152,
+        "wikipedia": 9,
+        "news": 85
+      },
+      "total_chunks": 246
+    },
+    "table_references": {
+      "valid": false,
+      "issues": [
+        "Referenced table not found: TABLE_GOOGL_0001652044_8_90",
+        "Referenced table not found: TABLE_GOOGL_0001652044_7A_0",
+        "Referenced table not found: TABLE_GOOGL_0001652044_8_8",
+        "Referenced table not found: TABLE_GOOGL_0001652044_15_10",
+        "Referenced table not found: TABLE_GOOGL_0001652044_8_0",
+        "Referenced table not found: TABLE_GOOGL_0001652044_8_69",
+        "Referenced table not found: TABLE_GOOGL_0001652044_5_2",
+        "Referenced table not found: TABLE_GOOGL_0001652044_1A_4",
+        "Referenced table not found: TABLE_GOOGL_0001652044_7_13",
+        "Referenced table not found: TABLE_GOOGL_0001652044_7_8",
+        "Referenced table not found: TABLE_GOOGL_0001652044_8_24",
+        "Referenced table not found: TABLE_GOOGL_0001652044_8_55",
+        "Referenced table not found: TABLE_GOOGL_0001652044_1A_11",
+        "Referenced table not found: TABLE_GOOGL_0001652044_1A_2",
+        "Referenced table not found: TABLE_GOOGL_0001652044_8_42",
+        "Referenced table not found: TABLE_GOOGL_0001652044_8_84",
+        "Referenced table not found: TABLE_GOOGL_0001652044_9C_0",
+        "Referenced table not found: TABLE_GOOGL_0001652044_8_1",
+        "Referenced table not found: TABLE_GOOGL_0001652044_8_56",
+        "Referenced table not found: TABLE_GOOGL_0001652044_8_17",
+        "Referenced table not found: TABLE_GOOGL_0001652044_7_1",
+        "Referenced table not found: TABLE_GOOGL_0001652044_7A_2",
+        "Referenced table not found: TABLE_GOOGL_0001652044_8_63",
+        "Referenced table not found: TABLE_GOOGL_0001652044_8_67",
+        "Referenced table not found: TABLE_GOOGL_0001652044_8_22",
+        "Referenced table not found: TABLE_GOOGL_0001652044_7_25",
+        "Referenced table not found: TABLE_GOOGL_0001652044_8_43",
+        "Referenced table not found: TABLE_GOOGL_0001652044_7_27",
+        "Referenced table not found: TABLE_GOOGL_0001652044_7_24",
+        "Referenced table not found: TABLE_GOOGL_0001652044_1_2",
+        "Referenced table not found: TABLE_GOOGL_0001652044_8_50",
+        "Referenced table not found: TABLE_GOOGL_0001652044_7_17",
+        "Referenced table not found: TABLE_GOOGL_0001652044_7_26",
+        "Referenced table not found: TABLE_GOOGL_0001652044_8_16",
+        "Referenced table not found: TABLE_GOOGL_0001652044_8_77",
+        "Referenced table not found: TABLE_GOOGL_0001652044_5_3",
+        "Referenced table not found: TABLE_GOOGL_0001652044_7_10",
+        "Referenced table not found: TABLE_GOOGL_0001652044_8_38",
+        "Referenced table not found: TABLE_GOOGL_0001652044_8_14",
+        "Referenced table not found: TABLE_GOOGL_0001652044_8_86",
+        "Referenced table not found: TABLE_GOOGL_0001652044_15_5",
+        "Referenced table not found: TABLE_GOOGL_0001652044_8_83",
+        "Referenced table not found: TABLE_GOOGL_0001652044_8_40",
+        "Referenced table not found: TABLE_GOOGL_0001652044_8_49",
+        "Referenced table not found: TABLE_GOOGL_0001652044_8_28",
+        "Referenced table not found: TABLE_GOOGL_0001652044_8_10",
+        "Referenced table not found: TABLE_GOOGL_0001652044_8_2",
+        "Referenced table not found: TABLE_GOOGL_0001652044_1_5",
+        "Referenced table not found: TABLE_GOOGL_0001652044_7A_1",
+        "Referenced table not found: TABLE_GOOGL_0001652044_1A_3",
+        "Referenced table not found: TABLE_GOOGL_0001652044_8_32",
+        "Referenced table not found: TABLE_GOOGL_0001652044_8_6",
+        "Referenced table not found: TABLE_GOOGL_0001652044_8_52",
+        "Referenced table not found: TABLE_GOOGL_0001652044_8_65",
+        "Referenced table not found: TABLE_GOOGL_0001652044_7_7",
+        "Referenced table not found: TABLE_GOOGL_0001652044_8_81",
+        "Referenced table not found: TABLE_GOOGL_0001652044_8_3",
+        "Referenced table not found: TABLE_GOOGL_0001652044_7_9",
+        "Referenced table not found: TABLE_GOOGL_0001652044_1A_10",
+        "Referenced table not found: TABLE_GOOGL_0001652044_8_59",
+        "Referenced table not found: TABLE_GOOGL_0001652044_8_72",
+        "Referenced table not found: TABLE_GOOGL_0001652044_15_8",
+        "Referenced table not found: TABLE_GOOGL_0001652044_8_47",
+        "Referenced table not found: TABLE_GOOGL_0001652044_8_29",
+        "Referenced table not found: TABLE_GOOGL_0001652044_8_54",
+        "Referenced table not found: TABLE_GOOGL_0001652044_8_70",
+        "Referenced table not found: TABLE_GOOGL_0001652044_8_51",
+        "Referenced table not found: TABLE_GOOGL_0001652044_1A_9",
+        "Referenced table not found: TABLE_GOOGL_0001652044_7_23",
+        "Referenced table not found: TABLE_GOOGL_0001652044_8_36",
+        "Referenced table not found: TABLE_GOOGL_0001652044_8_12",
+        "Referenced table not found: TABLE_GOOGL_0001652044_7_11",
+        "Referenced table not found: TABLE_GOOGL_0001652044_1_4",
+        "Referenced table not found: TABLE_GOOGL_0001652044_7_22",
+        "Referenced table not found: TABLE_GOOGL_0001652044_8_61",
+        "Referenced table not found: TABLE_GOOGL_0001652044_15_0",
+        "Referenced table not found: TABLE_GOOGL_0001652044_8_44",
+        "Referenced table not found: TABLE_GOOGL_0001652044_8_45",
+        "Referenced table not found: TABLE_GOOGL_0001652044_8_85",
+        "Referenced table not found: TABLE_GOOGL_0001652044_15_4",
+        "Referenced table not found: TABLE_GOOGL_0001652044_7_19",
+        "Referenced table not found: TABLE_GOOGL_0001652044_8_20",
+        "Referenced table not found: TABLE_GOOGL_0001652044_1A_8",
+        "Referenced table not found: TABLE_GOOGL_0001652044_15_2",
+        "Referenced table not found: TABLE_GOOGL_0001652044_7_0",
+        "Referenced table not found: TABLE_GOOGL_0001652044_8_48",
+        "Referenced table not found: TABLE_GOOGL_0001652044_8_39",
+        "Referenced table not found: TABLE_GOOGL_0001652044_8_68",
+        "Referenced table not found: TABLE_GOOGL_0001652044_8_71",
+        "Referenced table not found: TABLE_GOOGL_0001652044_1A_7",
+        "Referenced table not found: TABLE_GOOGL_0001652044_8_53",
+        "Referenced table not found: TABLE_GOOGL_0001652044_7_6",
+        "Referenced table not found: TABLE_GOOGL_0001652044_7_4",
+        "Referenced table not found: TABLE_GOOGL_0001652044_7_28",
+        "Referenced table not found: TABLE_GOOGL_0001652044_8_58",
+        "Referenced table not found: TABLE_GOOGL_0001652044_1_6",
+        "Referenced table not found: TABLE_GOOGL_0001652044_7_18",
+        "Referenced table not found: TABLE_GOOGL_0001652044_8_82",
+        "Referenced table not found: TABLE_GOOGL_0001652044_9A_0",
+        "Referenced table not found: TABLE_GOOGL_0001652044_15_6",
+        "Referenced table not found: TABLE_GOOGL_0001652044_15_9",
+        "Referenced table not found: TABLE_GOOGL_0001652044_1A_6",
+        "Referenced table not found: TABLE_GOOGL_0001652044_8_9",
+        "Referenced table not found: TABLE_GOOGL_0001652044_1_3",
+        "Referenced table not found: TABLE_GOOGL_0001652044_7_16",
+        "Referenced table not found: TABLE_GOOGL_0001652044_8_64",
+        "Referenced table not found: TABLE_GOOGL_0001652044_8_13",
+        "Referenced table not found: TABLE_GOOGL_0001652044_5_1",
+        "Referenced table not found: TABLE_GOOGL_0001652044_7_2",
+        "Referenced table not found: TABLE_GOOGL_0001652044_8_11",
+        "Referenced table not found: TABLE_GOOGL_0001652044_8_75",
+        "Referenced table not found: TABLE_GOOGL_0001652044_8_89",
+        "Referenced table not found: TABLE_GOOGL_0001652044_8_31",
+        "Referenced table not found: TABLE_GOOGL_0001652044_1C_0",
+        "Referenced table not found: TABLE_GOOGL_0001652044_8_87",
+        "Referenced table not found: TABLE_GOOGL_0001652044_7_14",
+        "Referenced table not found: TABLE_GOOGL_0001652044_7_15",
+        "Referenced table not found: TABLE_GOOGL_0001652044_8_88",
+        "Referenced table not found: TABLE_GOOGL_0001652044_8_18",
+        "Referenced table not found: TABLE_GOOGL_0001652044_7_12",
+        "Referenced table not found: TABLE_GOOGL_0001652044_8_25",
+        "Referenced table not found: TABLE_GOOGL_0001652044_8_23",
+        "Referenced table not found: TABLE_GOOGL_0001652044_8_80",
+        "Referenced table not found: TABLE_GOOGL_0001652044_1A_1",
+        "Referenced table not found: TABLE_GOOGL_0001652044_8_21",
+        "Referenced table not found: TABLE_GOOGL_0001652044_8_5",
+        "Referenced table not found: TABLE_GOOGL_0001652044_8_26",
+        "Referenced table not found: TABLE_GOOGL_0001652044_7_21",
+        "Referenced table not found: TABLE_GOOGL_0001652044_8_30",
+        "Referenced table not found: TABLE_GOOGL_0001652044_8_73",
+        "Referenced table not found: TABLE_GOOGL_0001652044_8_33",
+        "Referenced table not found: TABLE_GOOGL_0001652044_8_15",
+        "Referenced table not found: TABLE_GOOGL_0001652044_8_19",
+        "Referenced table not found: TABLE_GOOGL_0001652044_14_0",
+        "Referenced table not found: TABLE_GOOGL_0001652044_8_74",
+        "Referenced table not found: TABLE_GOOGL_0001652044_8_79",
+        "Referenced table not found: TABLE_GOOGL_0001652044_1A_5",
+        "Referenced table not found: TABLE_GOOGL_0001652044_1A_12",
+        "Referenced table not found: TABLE_GOOGL_0001652044_8_57",
+        "Referenced table not found: TABLE_GOOGL_0001652044_7_20",
+        "Referenced table not found: TABLE_GOOGL_0001652044_7_3",
+        "Referenced table not found: TABLE_GOOGL_0001652044_8_34",
+        "Referenced table not found: TABLE_GOOGL_0001652044_8_37",
+        "Referenced table not found: TABLE_GOOGL_0001652044_8_41",
+        "Referenced table not found: TABLE_GOOGL_0001652044_8_35",
+        "Referenced table not found: TABLE_GOOGL_0001652044_1A_0",
+        "Referenced table not found: TABLE_GOOGL_0001652044_1_1",
+        "Referenced table not found: TABLE_GOOGL_0001652044_7_29",
+        "Referenced table not found: TABLE_GOOGL_0001652044_15_1",
+        "Referenced table not found: TABLE_GOOGL_0001652044_8_60",
+        "Referenced table not found: TABLE_GOOGL_0001652044_8_62",
+        "Referenced table not found: TABLE_GOOGL_0001652044_8_27",
+        "Referenced table not found: TABLE_GOOGL_0001652044_8_66",
+        "Referenced table not found: TABLE_GOOGL_0001652044_8_78",
+        "Referenced table not found: TABLE_GOOGL_0001652044_8_76",
+        "Referenced table not found: TABLE_GOOGL_0001652044_15_3",
+        "Referenced table not found: TABLE_GOOGL_0001652044_8_7",
+        "Referenced table not found: TABLE_GOOGL_0001652044_7_5",
+        "Referenced table not found: TABLE_GOOGL_0001652044_15_7",
+        "Referenced table not found: TABLE_GOOGL_0001652044_1_0",
+        "Referenced table not found: TABLE_GOOGL_0001652044_5_0",
+        "Referenced table not found: TABLE_GOOGL_0001652044_8_4",
+        "Referenced table not found: TABLE_GOOGL_0001652044_8_46"
+      ],
+      "stats": {
+        "total_tables": 0,
+        "referenced_tables": 163,
+        "orphaned_tables": 0,
+        "chunks_with_tables": 85
+      }
+    }
+  },
+  "overall_valid": false,
+  "critical_issues": [
+    "content_quality: {'chunk_id': 'GOOGL_sec_0001652044-24-000022_1_0', 'issue': 'placeholder_text', 'found': ['placeholder']}",
+    "content_quality: {'chunk_id': 'GOOGL_sec_0001652044-24-000022_1_3', 'issue': 'placeholder_text', 'found': ['placeholder']}",
+    "content_quality: {'chunk_id': 'GOOGL_sec_0001652044-24-000022_1_7', 'issue': 'placeholder_text', 'found': ['placeholder']}",
+    "content_quality: {'chunk_id': 'GOOGL_sec_0001652044-24-000022_1_11', 'issue': 'placeholder_text', 'found': ['placeholder']}",
+    "content_quality: {'chunk_id': 'GOOGL_sec_0001652044-24-000022_1A_2', 'issue': 'placeholder_text', 'found': ['placeholder']}",
+    "table_references: Referenced table not found: TABLE_GOOGL_0001652044_8_90",
+    "table_references: Referenced table not found: TABLE_GOOGL_0001652044_7A_0",
+    "table_references: Referenced table not found: TABLE_GOOGL_0001652044_8_8",
+    "table_references: Referenced table not found: TABLE_GOOGL_0001652044_15_10",
+    "table_references: Referenced table not found: TABLE_GOOGL_0001652044_8_0"
+  ],
+  "warnings": [],
+  "stats": {
+    "total_chunks": 246,
+    "ticker": "GOOGL",
+    "year": 2024,
+    "fetched_at": "2025-12-09T23:17:13.843807"
+  }
+}

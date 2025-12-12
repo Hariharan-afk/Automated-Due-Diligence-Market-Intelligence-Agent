@@ -1,0 +1,38 @@
+{
+  "baselines": {
+    "total_chunks": {
+      "mean": 197.5,
+      "median": 191.5,
+      "std": 23.970467941476098,
+      "min": 174,
+      "max": 246
+    },
+    "source_chunks": {
+      "sec": {
+        "mean": 111.83333333333333,
+        "median": 115.0
+      },
+      "wikipedia": {
+        "mean": 21.166666666666668,
+        "median": 21.0
+      },
+      "news": {
+        "mean": 64.5,
+        "median": 70.0
+      }
+    },
+    "tables": {
+      "mean": 84.66666666666667,
+      "median": 77.0
+    },
+    "completeness": {
+      "mean": 1.0,
+      "median": 1.0
+    }
+  },
+  "thresholds": {
+    "small": 181.95,
+    "medium": 200.7
+  },
+  "generated_at": "2025-12-10T04:45:39"
+}

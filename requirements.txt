@@ -1,0 +1,23 @@
+# sec filings
+edgartools
+
+pyyaml 
+tqdm
+
+# table summarization
+groq
+tiktoken
+
+# text splitting (NEW - for testing LangChain chunker)
+langchain
+langchain-text-splitters
+
+# wikipedia & news
+dotenv
+wikipedia-api
+newspaper3k
+lxml_html_clean
+Levenshtein
+fuzzywuzzy
+
+# 

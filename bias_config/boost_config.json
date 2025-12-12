@@ -1,0 +1,102 @@
+{
+  "version": "1.0",
+  "created_at": "2025-12-09T12:58:39.409108",
+  "global_settings": {
+    "boost_enabled": true,
+    "quality_adjustment": true,
+    "max_boost": 0.3
+  },
+  "companies": {
+    "MSFT": {
+      "classification": "large",
+      "coverage_ratio": 1.0227848101265822,
+      "base_boost": 0.0,
+      "source_boosts": {
+        "sec": 0.0,
+        "wikipedia": 0.0,
+        "news": 0.0
+      },
+      "metadata": {
+        "completeness": 1.0,
+        "total_chunks": 202
+      },
+      "updated_at": "2025-12-09T23:45:39.499630"
+    },
+    "GOOGL": {
+      "classification": "large",
+      "coverage_ratio": 1.2455696202531645,
+      "base_boost": 0.0,
+      "source_boosts": {
+        "sec": 0.0,
+        "wikipedia": 0.0,
+        "news": 0.0
+      },
+      "metadata": {
+        "completeness": 1.0,
+        "total_chunks": 246
+      },
+      "updated_at": "2025-12-09T23:45:39.501139"
+    },
+    "TSLA": {
+      "classification": "medium",
+      "coverage_ratio": 0.9265822784810127,
+      "base_boost": 0.12,
+      "source_boosts": {
+        "sec": 0.096,
+        "wikipedia": 0.072,
+        "news": 0.144
+      },
+      "metadata": {
+        "completeness": 1.0,
+        "total_chunks": 183
+      },
+      "updated_at": "2025-12-09T23:45:39.502142"
+    },
+    "NVDA": {
+      "classification": "medium",
+      "coverage_ratio": 1.0126582278481013,
+      "base_boost": 0.12,
+      "source_boosts": {
+        "sec": 0.096,
+        "wikipedia": 0.072,
+        "news": 0.144
+      },
+      "metadata": {
+        "completeness": 1.0,
+        "total_chunks": 200
+      },
+      "updated_at": "2025-12-09T23:45:39.502142"
+    },
+    "AAPL": {
+      "classification": "small",
+      "coverage_ratio": 0.8810126582278481,
+      "base_boost": 0.25,
+      "source_boosts": {
+        "sec": 0.2,
+        "wikipedia": 0.15,
+        "news": 0.3
+      },
+      "metadata": {
+        "completeness": 1.0,
+        "total_chunks": 174
+      },
+      "updated_at": "2025-12-09T23:45:39.503142"
+    },
+    "AMZN": {
+      "classification": "small",
+      "coverage_ratio": 0.9113924050632911,
+      "base_boost": 0.25,
+      "source_boosts": {
+        "sec": 0.2,
+        "wikipedia": 0.15,
+        "news": 0.3
+      },
+      "metadata": {
+        "completeness": 1.0,
+        "total_chunks": 180
+      },
+      "updated_at": "2025-12-09T23:45:39.503142"
+    }
+  },
+  "last_updated": "2025-12-09T23:45:39.503142"
+}

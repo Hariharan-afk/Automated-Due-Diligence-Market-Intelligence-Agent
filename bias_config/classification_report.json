@@ -1,0 +1,80 @@
+{
+  "baselines": {
+    "total_chunks": {
+      "mean": 197.5,
+      "median": 191.5,
+      "std": 23.970467941476098,
+      "min": 174,
+      "max": 246
+    },
+    "source_chunks": {
+      "sec": {
+        "mean": 111.83333333333333,
+        "median": 115.0
+      },
+      "wikipedia": {
+        "mean": 21.166666666666668,
+        "median": 21.0
+      },
+      "news": {
+        "mean": 64.5,
+        "median": 70.0
+      }
+    },
+    "tables": {
+      "mean": 84.66666666666667,
+      "median": 77.0
+    },
+    "completeness": {
+      "mean": 1.0,
+      "median": 1.0
+    }
+  },
+  "thresholds": {
+    "small": 181.95,
+    "medium": 200.7
+  },
+  "classification_counts": {
+    "small": 2,
+    "medium": 2,
+    "large": 2
+  },
+  "classifications": {
+    "small": [
+      {
+        "ticker": "AAPL",
+        "chunks": 174,
+        "ratio": 0.8810126582278481
+      },
+      {
+        "ticker": "AMZN",
+        "chunks": 180,
+        "ratio": 0.9113924050632911
+      }
+    ],
+    "medium": [
+      {
+        "ticker": "TSLA",
+        "chunks": 183,
+        "ratio": 0.9265822784810127
+      },
+      {
+        "ticker": "NVDA",
+        "chunks": 200,
+        "ratio": 1.0126582278481013
+      }
+    ],
+    "large": [
+      {
+        "ticker": "MSFT",
+        "chunks": 202,
+        "ratio": 1.0227848101265822
+      },
+      {
+        "ticker": "GOOGL",
+        "chunks": 246,
+        "ratio": 1.2455696202531645
+      }
+    ]
+  }
+}

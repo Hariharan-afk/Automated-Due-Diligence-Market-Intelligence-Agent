@@ -1,0 +1,482 @@
+2025-12-08 14:37:31 | src.data_ingestion.sec_fetcher | ERROR    |   ✗ Failed to process filing 0000320193-25-000079: 'Attachment' object is not callable
+2025-12-08 14:37:32 | src.data_ingestion.sec_fetcher | ERROR    |   ✗ Failed to process filing 0000320193-25-000073: 'Attachment' object is not callable
+2025-12-08 14:37:32 | src.data_ingestion.sec_fetcher | ERROR    |   ✗ Failed to process filing 0000320193-25-000057: 'Attachment' object is not callable
+2025-12-08 14:37:32 | src.data_ingestion.sec_fetcher | ERROR    |   ✗ Failed to process filing 0000320193-25-000008: 'Attachment' object is not callable
+2025-12-08 14:37:32 | src.data_ingestion.sec_fetcher | ERROR    |   ✗ Failed to process filing 0000320193-24-000123: 'Attachment' object is not callable
+2025-12-08 14:37:32 | src.data_ingestion.sec_fetcher | ERROR    |   ✗ Failed to process filing 0000320193-24-000081: 'Attachment' object is not callable
+2025-12-08 14:37:32 | src.data_ingestion.sec_fetcher | ERROR    |   ✗ Failed to process filing 0000320193-24-000069: 'Attachment' object is not callable
+2025-12-08 14:37:33 | src.data_ingestion.sec_fetcher | ERROR    |   ✗ Failed to process filing 0000320193-24-000006: 'Attachment' object is not callable
+2025-12-08 16:26:43 | src.data_ingestion.sec_fetcher | ERROR    |   ✗ Failed to process filing 0000320193-25-000079: 'Attachment' object is not callable
+2025-12-08 16:26:43 | src.data_ingestion.sec_fetcher | ERROR    |   ✗ Failed to process filing 0000320193-25-000073: 'Attachment' object is not callable
+2025-12-08 16:26:43 | src.data_ingestion.sec_fetcher | ERROR    |   ✗ Failed to process filing 0000320193-25-000057: 'Attachment' object is not callable
+2025-12-08 16:26:43 | src.data_ingestion.sec_fetcher | ERROR    |   ✗ Failed to process filing 0000320193-25-000008: 'Attachment' object is not callable
+2025-12-08 16:26:43 | src.data_ingestion.sec_fetcher | ERROR    |   ✗ Failed to process filing 0000320193-24-000123: 'Attachment' object is not callable
+2025-12-08 16:26:43 | src.data_ingestion.sec_fetcher | ERROR    |   ✗ Failed to process filing 0000320193-24-000081: 'Attachment' object is not callable
+2025-12-08 16:26:43 | src.data_ingestion.sec_fetcher | ERROR    |   ✗ Failed to process filing 0000320193-24-000069: 'Attachment' object is not callable
+2025-12-08 16:26:43 | src.data_ingestion.sec_fetcher | ERROR    |   ✗ Failed to process filing 0000320193-24-000006: 'Attachment' object is not callable
+2025-12-08 16:26:43 | src.data_ingestion.sec_fetcher | ERROR    |   ✗ Failed to process filing 0000320193-23-000106: 'Attachment' object is not callable
+2025-12-08 16:26:44 | src.data_ingestion.sec_fetcher | ERROR    |   ✗ Failed to process filing 0000320193-23-000077: 'Attachment' object is not callable
+2025-12-08 16:26:44 | src.data_ingestion.sec_fetcher | ERROR    |   ✗ Failed to process filing 0000320193-23-000064: 'Attachment' object is not callable
+2025-12-08 16:26:44 | src.data_ingestion.sec_fetcher | ERROR    |   ✗ Failed to process filing 0000320193-23-000006: 'Attachment' object is not callable
+2025-12-08 16:27:39 | src.data_ingestion.sec_fetcher | ERROR    |   ✗ Failed to process filing 0000320193-25-000079: 'str' object has no attribute 'year'
+2025-12-08 16:27:40 | src.data_ingestion.sec_fetcher | ERROR    |   ✗ Failed to process filing 0000320193-25-000073: 'str' object has no attribute 'year'
+2025-12-08 16:27:40 | src.data_ingestion.sec_fetcher | ERROR    |   ✗ Failed to process filing 0000320193-25-000057: 'str' object has no attribute 'year'
+2025-12-08 16:27:41 | src.data_ingestion.sec_fetcher | ERROR    |   ✗ Failed to process filing 0000320193-25-000008: 'str' object has no attribute 'year'
+2025-12-08 16:27:42 | src.data_ingestion.sec_fetcher | ERROR    |   ✗ Failed to process filing 0000320193-24-000123: 'str' object has no attribute 'year'
+2025-12-08 16:27:42 | src.data_ingestion.sec_fetcher | ERROR    |   ✗ Failed to process filing 0000320193-24-000081: 'str' object has no attribute 'year'
+2025-12-08 16:27:43 | src.data_ingestion.sec_fetcher | ERROR    |   ✗ Failed to process filing 0000320193-24-000069: 'str' object has no attribute 'year'
+2025-12-08 16:27:44 | src.data_ingestion.sec_fetcher | ERROR    |   ✗ Failed to process filing 0000320193-24-000006: 'str' object has no attribute 'year'
+2025-12-08 16:27:45 | src.data_ingestion.sec_fetcher | ERROR    |   ✗ Failed to process filing 0000320193-23-000106: 'str' object has no attribute 'year'
+2025-12-08 16:27:45 | src.data_ingestion.sec_fetcher | ERROR    |   ✗ Failed to process filing 0000320193-23-000077: 'str' object has no attribute 'year'
+2025-12-08 16:27:46 | src.data_ingestion.sec_fetcher | ERROR    |   ✗ Failed to process filing 0000320193-23-000064: 'str' object has no attribute 'year'
+2025-12-08 16:27:47 | src.data_ingestion.sec_fetcher | ERROR    |   ✗ Failed to process filing 0000320193-23-000006: 'str' object has no attribute 'year'
+2025-12-08 18:56:41 | src.data_processing.table_processor | ERROR    | Error processing table 5 in 1: DataFrame columns must be unique for orient='records'.
+2025-12-08 18:56:42 | src.data_processing.table_processor | ERROR    | Error processing table 7 in 1: DataFrame columns must be unique for orient='records'.
+2025-12-08 18:56:42 | src.data_processing.table_processor | ERROR    | Error processing table 9 in 1: DataFrame columns must be unique for orient='records'.
+2025-12-08 18:56:43 | src.data_processing.table_processor | ERROR    | Error processing table 11 in 1: DataFrame columns must be unique for orient='records'.
+2025-12-08 18:56:43 | src.data_processing.table_processor | ERROR    | Error processing table 12 in 1: DataFrame columns must be unique for orient='records'.
+2025-12-08 18:56:43 | src.data_processing.table_processor | ERROR    | Error processing table 13 in 1: DataFrame columns must be unique for orient='records'.
+2025-12-08 18:56:44 | src.data_processing.table_processor | ERROR    | Error processing table 14 in 1: DataFrame columns must be unique for orient='records'.
+2025-12-08 18:56:44 | src.data_processing.table_processor | ERROR    | Error processing table 15 in 1: DataFrame columns must be unique for orient='records'.
+2025-12-08 18:56:44 | src.data_processing.table_processor | ERROR    | Error processing table 16 in 1: DataFrame columns must be unique for orient='records'.
+2025-12-08 18:56:45 | src.data_processing.table_processor | ERROR    | Error processing table 17 in 1: DataFrame columns must be unique for orient='records'.
+2025-12-08 18:56:45 | src.data_processing.table_processor | ERROR    | Error processing table 18 in 1: DataFrame columns must be unique for orient='records'.
+2025-12-08 18:56:45 | src.data_processing.table_processor | ERROR    | Error processing table 19 in 1: DataFrame columns must be unique for orient='records'.
+2025-12-08 18:56:46 | src.data_processing.table_processor | ERROR    | Error processing table 20 in 1: DataFrame columns must be unique for orient='records'.
+2025-12-08 18:56:46 | src.data_processing.table_processor | ERROR    | Error processing table 21 in 1: DataFrame columns must be unique for orient='records'.
+2025-12-08 18:56:46 | src.data_processing.table_processor | ERROR    | Error processing table 22 in 1: DataFrame columns must be unique for orient='records'.
+2025-12-08 18:56:47 | src.data_processing.table_processor | ERROR    | Error processing table 23 in 1: DataFrame columns must be unique for orient='records'.
+2025-12-08 18:56:47 | src.data_processing.table_processor | ERROR    | Error processing table 24 in 1: DataFrame columns must be unique for orient='records'.
+2025-12-08 18:56:47 | src.data_processing.table_processor | ERROR    | Error processing table 25 in 1: DataFrame columns must be unique for orient='records'.
+2025-12-08 18:56:48 | src.data_processing.table_processor | ERROR    | Error processing table 26 in 1: DataFrame columns must be unique for orient='records'.
+2025-12-08 18:56:48 | src.data_processing.table_processor | ERROR    | Error processing table 27 in 1: DataFrame columns must be unique for orient='records'.
+2025-12-08 18:56:49 | src.data_processing.table_processor | ERROR    | Error processing table 28 in 1: DataFrame columns must be unique for orient='records'.
+2025-12-08 18:56:49 | src.data_processing.table_processor | ERROR    | Error processing table 29 in 1: DataFrame columns must be unique for orient='records'.
+2025-12-08 18:57:40 | src.data_processing.table_processor | ERROR    | Error processing table 30 in 1: DataFrame columns must be unique for orient='records'.
+2025-12-08 18:57:40 | src.data_processing.table_processor | ERROR    | Error processing table 31 in 1: DataFrame columns must be unique for orient='records'.
+2025-12-08 18:57:41 | src.data_processing.table_processor | ERROR    | Error processing table 32 in 1: DataFrame columns must be unique for orient='records'.
+2025-12-08 18:57:41 | src.data_processing.table_processor | ERROR    | Error processing table 33 in 1: DataFrame columns must be unique for orient='records'.
+2025-12-08 18:57:41 | src.data_processing.table_processor | ERROR    | Error processing table 34 in 1: DataFrame columns must be unique for orient='records'.
+2025-12-08 18:57:42 | src.data_processing.table_processor | ERROR    | Error processing table 35 in 1: DataFrame columns must be unique for orient='records'.
+2025-12-08 18:57:42 | src.data_processing.table_processor | ERROR    | Error processing table 36 in 1: DataFrame columns must be unique for orient='records'.
+2025-12-08 18:57:42 | src.data_processing.table_processor | ERROR    | Error processing table 37 in 1: DataFrame columns must be unique for orient='records'.
+2025-12-08 18:57:42 | src.data_processing.table_processor | ERROR    | Error processing table 38 in 1: DataFrame columns must be unique for orient='records'.
+2025-12-08 18:57:43 | src.data_processing.table_processor | ERROR    | Error processing table 39 in 1: DataFrame columns must be unique for orient='records'.
+2025-12-08 18:57:43 | src.data_processing.table_processor | ERROR    | Error processing table 40 in 1: DataFrame columns must be unique for orient='records'.
+2025-12-08 18:57:43 | src.data_processing.table_processor | ERROR    | Error processing table 41 in 1: DataFrame columns must be unique for orient='records'.
+2025-12-08 18:57:44 | src.data_processing.table_processor | ERROR    | Error processing table 42 in 1: DataFrame columns must be unique for orient='records'.
+2025-12-08 18:57:44 | src.data_processing.table_processor | ERROR    | Error processing table 43 in 1: DataFrame columns must be unique for orient='records'.
+2025-12-08 18:57:44 | src.data_processing.table_processor | ERROR    | Error processing table 44 in 1: DataFrame columns must be unique for orient='records'.
+2025-12-08 18:57:45 | src.data_processing.table_processor | ERROR    | Error processing table 45 in 1: DataFrame columns must be unique for orient='records'.
+2025-12-08 18:57:45 | src.data_processing.table_processor | ERROR    | Error processing table 46 in 1: DataFrame columns must be unique for orient='records'.
+2025-12-08 18:57:45 | src.data_processing.table_processor | ERROR    | Error processing table 47 in 1: DataFrame columns must be unique for orient='records'.
+2025-12-08 18:57:45 | src.data_processing.table_processor | ERROR    | Error processing table 48 in 1: DataFrame columns must be unique for orient='records'.
+2025-12-08 18:57:46 | src.data_processing.table_processor | ERROR    | Error processing table 49 in 1: DataFrame columns must be unique for orient='records'.
+2025-12-08 18:57:46 | src.data_processing.table_processor | ERROR    | Error processing table 50 in 1: DataFrame columns must be unique for orient='records'.
+2025-12-08 18:57:46 | src.data_processing.table_processor | ERROR    | Error processing table 51 in 1: DataFrame columns must be unique for orient='records'.
+2025-12-08 18:57:47 | src.data_processing.table_processor | ERROR    | Error processing table 52 in 1: DataFrame columns must be unique for orient='records'.
+2025-12-08 18:57:47 | src.data_processing.table_processor | ERROR    | Error processing table 53 in 1: DataFrame columns must be unique for orient='records'.
+2025-12-08 18:57:47 | src.data_processing.table_processor | ERROR    | Error processing table 54 in 1: DataFrame columns must be unique for orient='records'.
+2025-12-08 18:57:47 | src.data_processing.table_processor | ERROR    | Error processing table 55 in 1: DataFrame columns must be unique for orient='records'.
+2025-12-08 18:57:48 | src.data_processing.table_processor | ERROR    | Error processing table 56 in 1: DataFrame columns must be unique for orient='records'.
+2025-12-08 18:57:48 | src.data_processing.table_processor | ERROR    | Error processing table 57 in 1: DataFrame columns must be unique for orient='records'.
+2025-12-08 18:57:48 | src.data_processing.table_processor | ERROR    | Error processing table 58 in 1: DataFrame columns must be unique for orient='records'.
+2025-12-08 18:57:49 | src.data_processing.table_processor | ERROR    | Error processing table 59 in 1: DataFrame columns must be unique for orient='records'.
+2025-12-08 18:57:49 | src.data_processing.table_processor | ERROR    | Error processing table 60 in 1: DataFrame columns must be unique for orient='records'.
+2025-12-08 18:57:49 | src.data_processing.table_processor | ERROR    | Error processing table 61 in 1: DataFrame columns must be unique for orient='records'.
+2025-12-08 18:57:51 | src.data_processing.table_processor | ERROR    | Error processing table 5 in 1A: DataFrame columns must be unique for orient='records'.
+2025-12-08 18:57:52 | src.data_processing.table_processor | ERROR    | Error processing table 7 in 1A: DataFrame columns must be unique for orient='records'.
+2025-12-08 18:57:52 | src.data_processing.table_processor | ERROR    | Error processing table 9 in 1A: DataFrame columns must be unique for orient='records'.
+2025-12-08 18:57:53 | src.data_processing.table_processor | ERROR    | Error processing table 11 in 1A: DataFrame columns must be unique for orient='records'.
+2025-12-08 18:57:53 | src.data_processing.table_processor | ERROR    | Error processing table 12 in 1A: DataFrame columns must be unique for orient='records'.
+2025-12-08 18:57:53 | src.data_processing.table_processor | ERROR    | Error processing table 13 in 1A: DataFrame columns must be unique for orient='records'.
+2025-12-08 18:57:54 | src.data_processing.table_processor | ERROR    | Error processing table 14 in 1A: DataFrame columns must be unique for orient='records'.
+2025-12-08 18:57:54 | src.data_processing.table_processor | ERROR    | Error processing table 15 in 1A: DataFrame columns must be unique for orient='records'.
+2025-12-08 18:57:54 | src.data_processing.table_processor | ERROR    | Error processing table 16 in 1A: DataFrame columns must be unique for orient='records'.
+2025-12-08 18:57:55 | src.data_processing.table_processor | ERROR    | Error processing table 17 in 1A: DataFrame columns must be unique for orient='records'.
+2025-12-08 18:57:55 | src.data_processing.table_processor | ERROR    | Error processing table 18 in 1A: DataFrame columns must be unique for orient='records'.
+2025-12-08 18:57:55 | src.data_processing.table_processor | ERROR    | Error processing table 19 in 1A: DataFrame columns must be unique for orient='records'.
+2025-12-08 18:57:55 | src.data_processing.table_processor | ERROR    | Error processing table 20 in 1A: DataFrame columns must be unique for orient='records'.
+2025-12-08 18:57:56 | src.data_processing.table_processor | ERROR    | Error processing table 21 in 1A: DataFrame columns must be unique for orient='records'.
+2025-12-08 18:57:56 | src.data_processing.table_processor | ERROR    | Error processing table 22 in 1A: DataFrame columns must be unique for orient='records'.
+2025-12-08 18:57:57 | src.data_processing.table_processor | ERROR    | Error processing table 23 in 1A: DataFrame columns must be unique for orient='records'.
+2025-12-08 18:57:57 | src.data_processing.table_processor | ERROR    | Error processing table 24 in 1A: DataFrame columns must be unique for orient='records'.
+2025-12-08 18:57:57 | src.data_processing.table_processor | ERROR    | Error processing table 25 in 1A: DataFrame columns must be unique for orient='records'.
+2025-12-08 18:57:58 | src.data_processing.table_processor | ERROR    | Error processing table 26 in 1A: DataFrame columns must be unique for orient='records'.
+2025-12-08 18:57:58 | src.data_processing.table_processor | ERROR    | Error processing table 27 in 1A: DataFrame columns must be unique for orient='records'.
+2025-12-08 18:58:49 | src.data_processing.table_processor | ERROR    | Error processing table 28 in 1A: DataFrame columns must be unique for orient='records'.
+2025-12-08 18:58:50 | src.data_processing.table_processor | ERROR    | Error processing table 29 in 1A: DataFrame columns must be unique for orient='records'.
+2025-12-08 18:58:50 | src.data_processing.table_processor | ERROR    | Error processing table 30 in 1A: DataFrame columns must be unique for orient='records'.
+2025-12-08 18:58:50 | src.data_processing.table_processor | ERROR    | Error processing table 31 in 1A: DataFrame columns must be unique for orient='records'.
+2025-12-08 18:58:51 | src.data_processing.table_processor | ERROR    | Error processing table 32 in 1A: DataFrame columns must be unique for orient='records'.
+2025-12-08 18:58:51 | src.data_processing.table_processor | ERROR    | Error processing table 33 in 1A: DataFrame columns must be unique for orient='records'.
+2025-12-08 18:58:51 | src.data_processing.table_processor | ERROR    | Error processing table 34 in 1A: DataFrame columns must be unique for orient='records'.
+2025-12-08 18:58:51 | src.data_processing.table_processor | ERROR    | Error processing table 35 in 1A: DataFrame columns must be unique for orient='records'.
+2025-12-08 18:58:52 | src.data_processing.table_processor | ERROR    | Error processing table 36 in 1A: DataFrame columns must be unique for orient='records'.
+2025-12-08 18:58:52 | src.data_processing.table_processor | ERROR    | Error processing table 37 in 1A: DataFrame columns must be unique for orient='records'.
+2025-12-08 18:58:53 | src.data_processing.table_processor | ERROR    | Error processing table 38 in 1A: DataFrame columns must be unique for orient='records'.
+2025-12-08 18:58:53 | src.data_processing.table_processor | ERROR    | Error processing table 39 in 1A: DataFrame columns must be unique for orient='records'.
+2025-12-08 18:58:53 | src.data_processing.table_processor | ERROR    | Error processing table 40 in 1A: DataFrame columns must be unique for orient='records'.
+2025-12-08 18:58:54 | src.data_processing.table_processor | ERROR    | Error processing table 41 in 1A: DataFrame columns must be unique for orient='records'.
+2025-12-08 18:58:54 | src.data_processing.table_processor | ERROR    | Error processing table 42 in 1A: DataFrame columns must be unique for orient='records'.
+2025-12-08 18:58:54 | src.data_processing.table_processor | ERROR    | Error processing table 43 in 1A: DataFrame columns must be unique for orient='records'.
+2025-12-08 18:58:54 | src.data_processing.table_processor | ERROR    | Error processing table 44 in 1A: DataFrame columns must be unique for orient='records'.
+2025-12-08 18:58:55 | src.data_processing.table_processor | ERROR    | Error processing table 45 in 1A: DataFrame columns must be unique for orient='records'.
+2025-12-08 18:58:55 | src.data_processing.table_processor | ERROR    | Error processing table 46 in 1A: DataFrame columns must be unique for orient='records'.
+2025-12-08 18:58:55 | src.data_processing.table_processor | ERROR    | Error processing table 47 in 1A: DataFrame columns must be unique for orient='records'.
+2025-12-08 18:58:55 | src.data_processing.table_processor | ERROR    | Error processing table 48 in 1A: DataFrame columns must be unique for orient='records'.
+2025-12-08 18:58:56 | src.data_processing.table_processor | ERROR    | Error processing table 49 in 1A: DataFrame columns must be unique for orient='records'.
+2025-12-08 18:58:56 | src.data_processing.table_processor | ERROR    | Error processing table 50 in 1A: DataFrame columns must be unique for orient='records'.
+2025-12-08 18:58:56 | src.data_processing.table_processor | ERROR    | Error processing table 51 in 1A: DataFrame columns must be unique for orient='records'.
+2025-12-08 18:58:57 | src.data_processing.table_processor | ERROR    | Error processing table 52 in 1A: DataFrame columns must be unique for orient='records'.
+2025-12-08 18:58:57 | src.data_processing.table_processor | ERROR    | Error processing table 53 in 1A: DataFrame columns must be unique for orient='records'.
+2025-12-08 18:58:57 | src.data_processing.table_processor | ERROR    | Error processing table 54 in 1A: DataFrame columns must be unique for orient='records'.
+2025-12-08 18:58:57 | src.data_processing.table_processor | ERROR    | Error processing table 55 in 1A: DataFrame columns must be unique for orient='records'.
+2025-12-08 18:58:58 | src.data_processing.table_processor | ERROR    | Error processing table 56 in 1A: DataFrame columns must be unique for orient='records'.
+2025-12-08 18:58:58 | src.data_processing.table_processor | ERROR    | Error processing table 57 in 1A: DataFrame columns must be unique for orient='records'.
+2025-12-08 18:58:59 | src.data_processing.table_processor | ERROR    | Error processing table 58 in 1A: DataFrame columns must be unique for orient='records'.
+2025-12-08 18:59:49 | src.data_processing.table_processor | ERROR    | Error processing table 59 in 1A: DataFrame columns must be unique for orient='records'.
+2025-12-08 18:59:50 | src.data_processing.table_processor | ERROR    | Error processing table 60 in 1A: DataFrame columns must be unique for orient='records'.
+2025-12-08 18:59:50 | src.data_processing.table_processor | ERROR    | Error processing table 61 in 1A: DataFrame columns must be unique for orient='records'.
+2025-12-08 18:59:52 | src.data_processing.table_processor | ERROR    | Error processing table 5 in 1C: DataFrame columns must be unique for orient='records'.
+2025-12-08 18:59:52 | src.data_processing.table_processor | ERROR    | Error processing table 7 in 1C: DataFrame columns must be unique for orient='records'.
+2025-12-08 18:59:53 | src.data_processing.table_processor | ERROR    | Error processing table 9 in 1C: DataFrame columns must be unique for orient='records'.
+2025-12-08 18:59:53 | src.data_processing.table_processor | ERROR    | Error processing table 11 in 1C: DataFrame columns must be unique for orient='records'.
+2025-12-08 18:59:54 | src.data_processing.table_processor | ERROR    | Error processing table 12 in 1C: DataFrame columns must be unique for orient='records'.
+2025-12-08 18:59:54 | src.data_processing.table_processor | ERROR    | Error processing table 13 in 1C: DataFrame columns must be unique for orient='records'.
+2025-12-08 18:59:54 | src.data_processing.table_processor | ERROR    | Error processing table 14 in 1C: DataFrame columns must be unique for orient='records'.
+2025-12-08 18:59:54 | src.data_processing.table_processor | ERROR    | Error processing table 15 in 1C: DataFrame columns must be unique for orient='records'.
+2025-12-08 18:59:55 | src.data_processing.table_processor | ERROR    | Error processing table 16 in 1C: DataFrame columns must be unique for orient='records'.
+2025-12-08 18:59:55 | src.data_processing.table_processor | ERROR    | Error processing table 17 in 1C: DataFrame columns must be unique for orient='records'.
+2025-12-08 18:59:55 | src.data_processing.table_processor | ERROR    | Error processing table 18 in 1C: DataFrame columns must be unique for orient='records'.
+2025-12-08 18:59:56 | src.data_processing.table_processor | ERROR    | Error processing table 19 in 1C: DataFrame columns must be unique for orient='records'.
+2025-12-08 18:59:56 | src.data_processing.table_processor | ERROR    | Error processing table 20 in 1C: DataFrame columns must be unique for orient='records'.
+2025-12-08 18:59:56 | src.data_processing.table_processor | ERROR    | Error processing table 21 in 1C: DataFrame columns must be unique for orient='records'.
+2025-12-08 18:59:57 | src.data_processing.table_processor | ERROR    | Error processing table 22 in 1C: DataFrame columns must be unique for orient='records'.
+2025-12-08 18:59:57 | src.data_processing.table_processor | ERROR    | Error processing table 23 in 1C: DataFrame columns must be unique for orient='records'.
+2025-12-08 18:59:57 | src.data_processing.table_processor | ERROR    | Error processing table 24 in 1C: DataFrame columns must be unique for orient='records'.
+2025-12-08 18:59:58 | src.data_processing.table_processor | ERROR    | Error processing table 25 in 1C: DataFrame columns must be unique for orient='records'.
+2025-12-08 18:59:58 | src.data_processing.table_processor | ERROR    | Error processing table 26 in 1C: DataFrame columns must be unique for orient='records'.
+2025-12-08 18:59:59 | src.data_processing.table_processor | ERROR    | Error processing table 27 in 1C: DataFrame columns must be unique for orient='records'.
+2025-12-08 18:59:59 | src.data_processing.table_processor | ERROR    | Error processing table 28 in 1C: DataFrame columns must be unique for orient='records'.
+2025-12-08 19:00:00 | src.data_processing.table_processor | ERROR    | Error processing table 29 in 1C: DataFrame columns must be unique for orient='records'.
+2025-12-08 19:00:00 | src.data_processing.table_processor | ERROR    | Error processing table 30 in 1C: DataFrame columns must be unique for orient='records'.
+2025-12-08 19:00:01 | src.data_processing.table_processor | ERROR    | Error processing table 31 in 1C: DataFrame columns must be unique for orient='records'.
+2025-12-08 19:00:01 | src.data_processing.table_processor | ERROR    | Error processing table 32 in 1C: DataFrame columns must be unique for orient='records'.
+2025-12-08 19:00:01 | src.data_processing.table_processor | ERROR    | Error processing table 33 in 1C: DataFrame columns must be unique for orient='records'.
+2025-12-08 19:00:01 | src.data_processing.table_processor | ERROR    | Error processing table 34 in 1C: DataFrame columns must be unique for orient='records'.
+2025-12-08 19:00:02 | src.data_processing.table_processor | ERROR    | Error processing table 35 in 1C: DataFrame columns must be unique for orient='records'.
+2025-12-08 19:00:02 | src.data_processing.table_processor | ERROR    | Error processing table 36 in 1C: DataFrame columns must be unique for orient='records'.
+2025-12-08 19:00:02 | src.data_processing.table_processor | ERROR    | Error processing table 37 in 1C: DataFrame columns must be unique for orient='records'.
+2025-12-08 19:00:03 | src.data_processing.table_processor | ERROR    | Error processing table 38 in 1C: DataFrame columns must be unique for orient='records'.
+2025-12-08 19:00:03 | src.data_processing.table_processor | ERROR    | Error processing table 39 in 1C: DataFrame columns must be unique for orient='records'.
+2025-12-08 19:00:03 | src.data_processing.table_processor | ERROR    | Error processing table 40 in 1C: DataFrame columns must be unique for orient='records'.
+2025-12-08 19:00:04 | src.data_processing.table_processor | ERROR    | Error processing table 41 in 1C: DataFrame columns must be unique for orient='records'.
+2025-12-08 19:00:04 | src.data_processing.table_processor | ERROR    | Error processing table 42 in 1C: DataFrame columns must be unique for orient='records'.
+2025-12-08 19:00:04 | src.data_processing.table_processor | ERROR    | Error processing table 43 in 1C: DataFrame columns must be unique for orient='records'.
+2025-12-08 19:00:05 | src.data_processing.table_processor | ERROR    | Error processing table 44 in 1C: DataFrame columns must be unique for orient='records'.
+2025-12-08 19:00:05 | src.data_processing.table_processor | ERROR    | Error processing table 45 in 1C: DataFrame columns must be unique for orient='records'.
+2025-12-08 19:00:05 | src.data_processing.table_processor | ERROR    | Error processing table 46 in 1C: DataFrame columns must be unique for orient='records'.
+2025-12-08 19:00:05 | src.data_processing.table_processor | ERROR    | Error processing table 47 in 1C: DataFrame columns must be unique for orient='records'.
+2025-12-08 19:00:06 | src.data_processing.table_processor | ERROR    | Error processing table 48 in 1C: DataFrame columns must be unique for orient='records'.
+2025-12-08 19:00:06 | src.data_processing.table_processor | ERROR    | Error processing table 49 in 1C: DataFrame columns must be unique for orient='records'.
+2025-12-08 19:00:06 | src.data_processing.table_processor | ERROR    | Error processing table 50 in 1C: DataFrame columns must be unique for orient='records'.
+2025-12-08 19:00:07 | src.data_processing.table_processor | ERROR    | Error processing table 51 in 1C: DataFrame columns must be unique for orient='records'.
+2025-12-08 19:00:07 | src.data_processing.table_processor | ERROR    | Error processing table 52 in 1C: DataFrame columns must be unique for orient='records'.
+2025-12-08 19:00:07 | src.data_processing.table_processor | ERROR    | Error processing table 53 in 1C: DataFrame columns must be unique for orient='records'.
+2025-12-08 19:00:07 | src.data_processing.table_processor | ERROR    | Error processing table 54 in 1C: DataFrame columns must be unique for orient='records'.
+2025-12-08 19:00:08 | src.data_processing.table_processor | ERROR    | Error processing table 55 in 1C: DataFrame columns must be unique for orient='records'.
+2025-12-08 19:00:08 | src.data_processing.table_processor | ERROR    | Error processing table 56 in 1C: DataFrame columns must be unique for orient='records'.
+2025-12-08 19:00:59 | src.data_processing.table_processor | ERROR    | Error processing table 57 in 1C: DataFrame columns must be unique for orient='records'.
+2025-12-08 19:00:59 | src.data_processing.table_processor | ERROR    | Error processing table 58 in 1C: DataFrame columns must be unique for orient='records'.
+2025-12-08 19:00:59 | src.data_processing.table_processor | ERROR    | Error processing table 59 in 1C: DataFrame columns must be unique for orient='records'.
+2025-12-08 19:00:59 | src.data_processing.table_processor | ERROR    | Error processing table 60 in 1C: DataFrame columns must be unique for orient='records'.
+2025-12-08 19:01:00 | src.data_processing.table_processor | ERROR    | Error processing table 61 in 1C: DataFrame columns must be unique for orient='records'.
+2025-12-08 19:01:02 | src.data_processing.table_processor | ERROR    | Error processing table 5 in 2: DataFrame columns must be unique for orient='records'.
+2025-12-08 19:01:02 | src.data_processing.table_processor | ERROR    | Error processing table 7 in 2: DataFrame columns must be unique for orient='records'.
+2025-12-08 19:01:03 | src.data_processing.table_processor | ERROR    | Error processing table 9 in 2: DataFrame columns must be unique for orient='records'.
+2025-12-08 19:01:03 | src.data_processing.table_processor | ERROR    | Error processing table 11 in 2: DataFrame columns must be unique for orient='records'.
+2025-12-08 19:01:04 | src.data_processing.table_processor | ERROR    | Error processing table 12 in 2: DataFrame columns must be unique for orient='records'.
+2025-12-08 19:01:04 | src.data_processing.table_processor | ERROR    | Error processing table 13 in 2: DataFrame columns must be unique for orient='records'.
+2025-12-08 19:01:04 | src.data_processing.table_processor | ERROR    | Error processing table 14 in 2: DataFrame columns must be unique for orient='records'.
+2025-12-08 19:01:04 | src.data_processing.table_processor | ERROR    | Error processing table 15 in 2: DataFrame columns must be unique for orient='records'.
+2025-12-08 19:01:05 | src.data_processing.table_processor | ERROR    | Error processing table 16 in 2: DataFrame columns must be unique for orient='records'.
+2025-12-08 19:01:05 | src.data_processing.table_processor | ERROR    | Error processing table 17 in 2: DataFrame columns must be unique for orient='records'.
+2025-12-08 19:01:05 | src.data_processing.table_processor | ERROR    | Error processing table 18 in 2: DataFrame columns must be unique for orient='records'.
+2025-12-08 19:01:06 | src.data_processing.table_processor | ERROR    | Error processing table 19 in 2: DataFrame columns must be unique for orient='records'.
+2025-12-08 19:01:06 | src.data_processing.table_processor | ERROR    | Error processing table 20 in 2: DataFrame columns must be unique for orient='records'.
+2025-12-08 19:01:06 | src.data_processing.table_processor | ERROR    | Error processing table 21 in 2: DataFrame columns must be unique for orient='records'.
+2025-12-08 19:01:07 | src.data_processing.table_processor | ERROR    | Error processing table 22 in 2: DataFrame columns must be unique for orient='records'.
+2025-12-08 19:01:07 | src.data_processing.table_processor | ERROR    | Error processing table 23 in 2: DataFrame columns must be unique for orient='records'.
+2025-12-08 19:01:08 | src.data_processing.table_processor | ERROR    | Error processing table 24 in 2: DataFrame columns must be unique for orient='records'.
+2025-12-08 19:01:08 | src.data_processing.table_processor | ERROR    | Error processing table 25 in 2: DataFrame columns must be unique for orient='records'.
+2025-12-08 19:01:09 | src.data_processing.table_processor | ERROR    | Error processing table 26 in 2: DataFrame columns must be unique for orient='records'.
+2025-12-08 19:01:09 | src.data_processing.table_processor | ERROR    | Error processing table 27 in 2: DataFrame columns must be unique for orient='records'.
+2025-12-08 19:01:09 | src.data_processing.table_processor | ERROR    | Error processing table 28 in 2: DataFrame columns must be unique for orient='records'.
+2025-12-08 19:01:10 | src.data_processing.table_processor | ERROR    | Error processing table 29 in 2: DataFrame columns must be unique for orient='records'.
+2025-12-08 19:01:10 | src.data_processing.table_processor | ERROR    | Error processing table 30 in 2: DataFrame columns must be unique for orient='records'.
+2025-12-08 19:01:11 | src.data_processing.table_processor | ERROR    | Error processing table 31 in 2: DataFrame columns must be unique for orient='records'.
+2025-12-08 19:01:11 | src.data_processing.table_processor | ERROR    | Error processing table 32 in 2: DataFrame columns must be unique for orient='records'.
+2025-12-08 19:01:11 | src.data_processing.table_processor | ERROR    | Error processing table 33 in 2: DataFrame columns must be unique for orient='records'.
+2025-12-08 19:01:12 | src.data_processing.table_processor | ERROR    | Error processing table 34 in 2: DataFrame columns must be unique for orient='records'.
+2025-12-08 19:01:12 | src.data_processing.table_processor | ERROR    | Error processing table 35 in 2: DataFrame columns must be unique for orient='records'.
+2025-12-08 19:01:12 | src.data_processing.table_processor | ERROR    | Error processing table 36 in 2: DataFrame columns must be unique for orient='records'.
+2025-12-08 19:01:12 | src.data_processing.table_processor | ERROR    | Error processing table 37 in 2: DataFrame columns must be unique for orient='records'.
+2025-12-08 19:01:13 | src.data_processing.table_processor | ERROR    | Error processing table 38 in 2: DataFrame columns must be unique for orient='records'.
+2025-12-08 19:01:13 | src.data_processing.table_processor | ERROR    | Error processing table 39 in 2: DataFrame columns must be unique for orient='records'.
+2025-12-08 19:01:13 | src.data_processing.table_processor | ERROR    | Error processing table 40 in 2: DataFrame columns must be unique for orient='records'.
+2025-12-08 19:01:14 | src.data_processing.table_processor | ERROR    | Error processing table 41 in 2: DataFrame columns must be unique for orient='records'.
+2025-12-08 19:01:14 | src.data_processing.table_processor | ERROR    | Error processing table 42 in 2: DataFrame columns must be unique for orient='records'.
+2025-12-08 19:01:14 | src.data_processing.table_processor | ERROR    | Error processing table 43 in 2: DataFrame columns must be unique for orient='records'.
+2025-12-08 19:01:14 | src.data_processing.table_processor | ERROR    | Error processing table 44 in 2: DataFrame columns must be unique for orient='records'.
+2025-12-08 19:01:15 | src.data_processing.table_processor | ERROR    | Error processing table 45 in 2: DataFrame columns must be unique for orient='records'.
+2025-12-08 19:01:15 | src.data_processing.table_processor | ERROR    | Error processing table 46 in 2: DataFrame columns must be unique for orient='records'.
+2025-12-08 19:01:15 | src.data_processing.table_processor | ERROR    | Error processing table 47 in 2: DataFrame columns must be unique for orient='records'.
+2025-12-08 19:01:15 | src.data_processing.table_processor | ERROR    | Error processing table 48 in 2: DataFrame columns must be unique for orient='records'.
+2025-12-08 19:01:16 | src.data_processing.table_processor | ERROR    | Error processing table 49 in 2: DataFrame columns must be unique for orient='records'.
+2025-12-08 19:01:16 | src.data_processing.table_processor | ERROR    | Error processing table 50 in 2: DataFrame columns must be unique for orient='records'.
+2025-12-08 19:01:16 | src.data_processing.table_processor | ERROR    | Error processing table 51 in 2: DataFrame columns must be unique for orient='records'.
+2025-12-08 19:01:17 | src.data_processing.table_processor | ERROR    | Error processing table 52 in 2: DataFrame columns must be unique for orient='records'.
+2025-12-08 19:01:17 | src.data_processing.table_processor | ERROR    | Error processing table 53 in 2: DataFrame columns must be unique for orient='records'.
+2025-12-08 19:01:17 | src.data_processing.table_processor | ERROR    | Error processing table 54 in 2: DataFrame columns must be unique for orient='records'.
+2025-12-08 19:02:08 | src.data_processing.table_processor | ERROR    | Error processing table 55 in 2: DataFrame columns must be unique for orient='records'.
+2025-12-08 19:02:08 | src.data_processing.table_processor | ERROR    | Error processing table 56 in 2: DataFrame columns must be unique for orient='records'.
+2025-12-08 19:02:09 | src.data_processing.table_processor | ERROR    | Error processing table 57 in 2: DataFrame columns must be unique for orient='records'.
+2025-12-08 19:02:09 | src.data_processing.table_processor | ERROR    | Error processing table 58 in 2: DataFrame columns must be unique for orient='records'.
+2025-12-08 19:02:09 | src.data_processing.table_processor | ERROR    | Error processing table 59 in 2: DataFrame columns must be unique for orient='records'.
+2025-12-08 19:02:09 | src.data_processing.table_processor | ERROR    | Error processing table 60 in 2: DataFrame columns must be unique for orient='records'.
+2025-12-08 19:02:10 | src.data_processing.table_processor | ERROR    | Error processing table 61 in 2: DataFrame columns must be unique for orient='records'.
+2025-12-08 19:02:11 | src.data_processing.table_processor | ERROR    | Error processing table 5 in 3: DataFrame columns must be unique for orient='records'.
+2025-12-08 19:02:12 | src.data_processing.table_processor | ERROR    | Error processing table 7 in 3: DataFrame columns must be unique for orient='records'.
+2025-12-08 19:02:13 | src.data_processing.table_processor | ERROR    | Error processing table 9 in 3: DataFrame columns must be unique for orient='records'.
+2025-12-08 19:02:13 | src.data_processing.table_processor | ERROR    | Error processing table 11 in 3: DataFrame columns must be unique for orient='records'.
+2025-12-08 19:02:13 | src.data_processing.table_processor | ERROR    | Error processing table 12 in 3: DataFrame columns must be unique for orient='records'.
+2025-12-08 19:02:14 | src.data_processing.table_processor | ERROR    | Error processing table 13 in 3: DataFrame columns must be unique for orient='records'.
+2025-12-08 19:02:14 | src.data_processing.table_processor | ERROR    | Error processing table 14 in 3: DataFrame columns must be unique for orient='records'.
+2025-12-08 19:02:14 | src.data_processing.table_processor | ERROR    | Error processing table 15 in 3: DataFrame columns must be unique for orient='records'.
+2025-12-08 19:02:15 | src.data_processing.table_processor | ERROR    | Error processing table 16 in 3: DataFrame columns must be unique for orient='records'.
+2025-12-08 19:02:15 | src.data_processing.table_processor | ERROR    | Error processing table 17 in 3: DataFrame columns must be unique for orient='records'.
+2025-12-08 19:02:15 | src.data_processing.table_processor | ERROR    | Error processing table 18 in 3: DataFrame columns must be unique for orient='records'.
+2025-12-08 19:02:16 | src.data_processing.table_processor | ERROR    | Error processing table 19 in 3: DataFrame columns must be unique for orient='records'.
+2025-12-08 19:02:16 | src.data_processing.table_processor | ERROR    | Error processing table 20 in 3: DataFrame columns must be unique for orient='records'.
+2025-12-08 19:02:16 | src.data_processing.table_processor | ERROR    | Error processing table 21 in 3: DataFrame columns must be unique for orient='records'.
+2025-12-08 19:02:17 | src.data_processing.table_processor | ERROR    | Error processing table 22 in 3: DataFrame columns must be unique for orient='records'.
+2025-12-08 19:02:17 | src.data_processing.table_processor | ERROR    | Error processing table 23 in 3: DataFrame columns must be unique for orient='records'.
+2025-12-08 19:02:18 | src.data_processing.table_processor | ERROR    | Error processing table 24 in 3: DataFrame columns must be unique for orient='records'.
+2025-12-08 19:02:18 | src.data_processing.table_processor | ERROR    | Error processing table 25 in 3: DataFrame columns must be unique for orient='records'.
+2025-12-08 19:02:18 | src.data_processing.table_processor | ERROR    | Error processing table 26 in 3: DataFrame columns must be unique for orient='records'.
+2025-12-08 19:02:19 | src.data_processing.table_processor | ERROR    | Error processing table 27 in 3: DataFrame columns must be unique for orient='records'.
+2025-12-08 19:02:19 | src.data_processing.table_processor | ERROR    | Error processing table 28 in 3: DataFrame columns must be unique for orient='records'.
+2025-12-08 19:02:20 | src.data_processing.table_processor | ERROR    | Error processing table 29 in 3: DataFrame columns must be unique for orient='records'.
+2025-12-08 19:02:20 | src.data_processing.table_processor | ERROR    | Error processing table 30 in 3: DataFrame columns must be unique for orient='records'.
+2025-12-08 19:02:20 | src.data_processing.table_processor | ERROR    | Error processing table 31 in 3: DataFrame columns must be unique for orient='records'.
+2025-12-08 19:02:21 | src.data_processing.table_processor | ERROR    | Error processing table 32 in 3: DataFrame columns must be unique for orient='records'.
+2025-12-08 19:02:21 | src.data_processing.table_processor | ERROR    | Error processing table 33 in 3: DataFrame columns must be unique for orient='records'.
+2025-12-08 19:02:21 | src.data_processing.table_processor | ERROR    | Error processing table 34 in 3: DataFrame columns must be unique for orient='records'.
+2025-12-08 19:02:21 | src.data_processing.table_processor | ERROR    | Error processing table 35 in 3: DataFrame columns must be unique for orient='records'.
+2025-12-08 19:02:22 | src.data_processing.table_processor | ERROR    | Error processing table 36 in 3: DataFrame columns must be unique for orient='records'.
+2025-12-08 19:02:22 | src.data_processing.table_processor | ERROR    | Error processing table 37 in 3: DataFrame columns must be unique for orient='records'.
+2025-12-08 19:02:23 | src.data_processing.table_processor | ERROR    | Error processing table 38 in 3: DataFrame columns must be unique for orient='records'.
+2025-12-08 19:02:23 | src.data_processing.table_processor | ERROR    | Error processing table 39 in 3: DataFrame columns must be unique for orient='records'.
+2025-12-08 19:02:23 | src.data_processing.table_processor | ERROR    | Error processing table 40 in 3: DataFrame columns must be unique for orient='records'.
+2025-12-08 19:02:23 | src.data_processing.table_processor | ERROR    | Error processing table 41 in 3: DataFrame columns must be unique for orient='records'.
+2025-12-08 19:02:24 | src.data_processing.table_processor | ERROR    | Error processing table 42 in 3: DataFrame columns must be unique for orient='records'.
+2025-12-08 19:02:24 | src.data_processing.table_processor | ERROR    | Error processing table 43 in 3: DataFrame columns must be unique for orient='records'.
+2025-12-08 19:02:24 | src.data_processing.table_processor | ERROR    | Error processing table 44 in 3: DataFrame columns must be unique for orient='records'.
+2025-12-08 19:02:25 | src.data_processing.table_processor | ERROR    | Error processing table 45 in 3: DataFrame columns must be unique for orient='records'.
+2025-12-08 19:02:25 | src.data_processing.table_processor | ERROR    | Error processing table 46 in 3: DataFrame columns must be unique for orient='records'.
+2025-12-08 19:02:25 | src.data_processing.table_processor | ERROR    | Error processing table 47 in 3: DataFrame columns must be unique for orient='records'.
+2025-12-08 19:02:26 | src.data_processing.table_processor | ERROR    | Error processing table 48 in 3: DataFrame columns must be unique for orient='records'.
+2025-12-08 19:02:26 | src.data_processing.table_processor | ERROR    | Error processing table 49 in 3: DataFrame columns must be unique for orient='records'.
+2025-12-08 19:02:26 | src.data_processing.table_processor | ERROR    | Error processing table 50 in 3: DataFrame columns must be unique for orient='records'.
+2025-12-08 19:02:27 | src.data_processing.table_processor | ERROR    | Error processing table 51 in 3: DataFrame columns must be unique for orient='records'.
+2025-12-08 19:02:27 | src.data_processing.table_processor | ERROR    | Error processing table 52 in 3: DataFrame columns must be unique for orient='records'.
+2025-12-08 19:03:17 | src.data_processing.table_processor | ERROR    | Error processing table 53 in 3: DataFrame columns must be unique for orient='records'.
+2025-12-08 19:03:17 | src.data_processing.table_processor | ERROR    | Error processing table 54 in 3: DataFrame columns must be unique for orient='records'.
+2025-12-08 19:03:17 | src.data_processing.table_processor | ERROR    | Error processing table 55 in 3: DataFrame columns must be unique for orient='records'.
+2025-12-08 19:03:18 | src.data_processing.table_processor | ERROR    | Error processing table 56 in 3: DataFrame columns must be unique for orient='records'.
+2025-12-08 19:03:18 | src.data_processing.table_processor | ERROR    | Error processing table 57 in 3: DataFrame columns must be unique for orient='records'.
+2025-12-08 19:03:19 | src.data_processing.table_processor | ERROR    | Error processing table 58 in 3: DataFrame columns must be unique for orient='records'.
+2025-12-08 19:03:19 | src.data_processing.table_processor | ERROR    | Error processing table 59 in 3: DataFrame columns must be unique for orient='records'.
+2025-12-08 19:03:19 | src.data_processing.table_processor | ERROR    | Error processing table 60 in 3: DataFrame columns must be unique for orient='records'.
+2025-12-08 19:03:20 | src.data_processing.table_processor | ERROR    | Error processing table 61 in 3: DataFrame columns must be unique for orient='records'.
+2025-12-08 19:03:22 | src.data_processing.table_processor | ERROR    | Error processing table 5 in 5: DataFrame columns must be unique for orient='records'.
+2025-12-08 19:03:22 | src.data_processing.table_processor | ERROR    | Error processing table 7 in 5: DataFrame columns must be unique for orient='records'.
+2025-12-08 19:03:23 | src.data_processing.table_processor | ERROR    | Error processing table 9 in 5: DataFrame columns must be unique for orient='records'.
+2025-12-08 19:03:23 | src.data_processing.table_processor | ERROR    | Error processing table 11 in 5: DataFrame columns must be unique for orient='records'.
+2025-12-08 19:03:23 | src.data_processing.table_processor | ERROR    | Error processing table 12 in 5: DataFrame columns must be unique for orient='records'.
+2025-12-08 19:03:24 | src.data_processing.table_processor | ERROR    | Error processing table 13 in 5: DataFrame columns must be unique for orient='records'.
+2025-12-08 19:03:24 | src.data_processing.table_processor | ERROR    | Error processing table 14 in 5: DataFrame columns must be unique for orient='records'.
+2025-12-08 19:03:24 | src.data_processing.table_processor | ERROR    | Error processing table 15 in 5: DataFrame columns must be unique for orient='records'.
+2025-12-08 19:03:25 | src.data_processing.table_processor | ERROR    | Error processing table 16 in 5: DataFrame columns must be unique for orient='records'.
+2025-12-08 19:03:25 | src.data_processing.table_processor | ERROR    | Error processing table 17 in 5: DataFrame columns must be unique for orient='records'.
+2025-12-08 19:03:25 | src.data_processing.table_processor | ERROR    | Error processing table 18 in 5: DataFrame columns must be unique for orient='records'.
+2025-12-08 19:03:26 | src.data_processing.table_processor | ERROR    | Error processing table 19 in 5: DataFrame columns must be unique for orient='records'.
+2025-12-08 19:03:26 | src.data_processing.table_processor | ERROR    | Error processing table 20 in 5: DataFrame columns must be unique for orient='records'.
+2025-12-08 19:03:27 | src.data_processing.table_processor | ERROR    | Error processing table 21 in 5: DataFrame columns must be unique for orient='records'.
+2025-12-08 19:03:28 | src.data_processing.table_processor | ERROR    | Error processing table 22 in 5: DataFrame columns must be unique for orient='records'.
+2025-12-08 19:03:29 | src.data_processing.table_processor | ERROR    | Error processing table 23 in 5: DataFrame columns must be unique for orient='records'.
+2025-12-08 19:03:30 | src.data_processing.table_processor | ERROR    | Error processing table 24 in 5: DataFrame columns must be unique for orient='records'.
+2025-12-08 19:03:30 | src.data_processing.table_processor | ERROR    | Error processing table 25 in 5: DataFrame columns must be unique for orient='records'.
+2025-12-08 19:03:31 | src.data_processing.table_processor | ERROR    | Error processing table 26 in 5: DataFrame columns must be unique for orient='records'.
+2025-12-08 19:03:31 | src.data_processing.table_processor | ERROR    | Error processing table 27 in 5: DataFrame columns must be unique for orient='records'.
+2025-12-08 19:03:31 | src.data_processing.table_processor | ERROR    | Error processing table 28 in 5: DataFrame columns must be unique for orient='records'.
+2025-12-08 19:03:32 | src.data_processing.table_processor | ERROR    | Error processing table 29 in 5: DataFrame columns must be unique for orient='records'.
+2025-12-08 19:03:32 | src.data_processing.table_processor | ERROR    | Error processing table 30 in 5: DataFrame columns must be unique for orient='records'.
+2025-12-08 19:03:33 | src.data_processing.table_processor | ERROR    | Error processing table 31 in 5: DataFrame columns must be unique for orient='records'.
+2025-12-08 19:03:33 | src.data_processing.table_processor | ERROR    | Error processing table 32 in 5: DataFrame columns must be unique for orient='records'.
+2025-12-08 19:03:34 | src.data_processing.table_processor | ERROR    | Error processing table 33 in 5: DataFrame columns must be unique for orient='records'.
+2025-12-08 19:03:34 | src.data_processing.table_processor | ERROR    | Error processing table 34 in 5: DataFrame columns must be unique for orient='records'.
+2025-12-08 19:03:34 | src.data_processing.table_processor | ERROR    | Error processing table 35 in 5: DataFrame columns must be unique for orient='records'.
+2025-12-08 19:03:35 | src.data_processing.table_processor | ERROR    | Error processing table 36 in 5: DataFrame columns must be unique for orient='records'.
+2025-12-08 19:03:35 | src.data_processing.table_processor | ERROR    | Error processing table 37 in 5: DataFrame columns must be unique for orient='records'.
+2025-12-08 19:03:35 | src.data_processing.table_processor | ERROR    | Error processing table 38 in 5: DataFrame columns must be unique for orient='records'.
+2025-12-08 19:03:36 | src.data_processing.table_processor | ERROR    | Error processing table 39 in 5: DataFrame columns must be unique for orient='records'.
+2025-12-08 19:03:36 | src.data_processing.table_processor | ERROR    | Error processing table 40 in 5: DataFrame columns must be unique for orient='records'.
+2025-12-08 19:03:36 | src.data_processing.table_processor | ERROR    | Error processing table 41 in 5: DataFrame columns must be unique for orient='records'.
+2025-12-08 19:03:37 | src.data_processing.table_processor | ERROR    | Error processing table 42 in 5: DataFrame columns must be unique for orient='records'.
+2025-12-08 19:03:37 | src.data_processing.table_processor | ERROR    | Error processing table 43 in 5: DataFrame columns must be unique for orient='records'.
+2025-12-08 19:03:37 | src.data_processing.table_processor | ERROR    | Error processing table 44 in 5: DataFrame columns must be unique for orient='records'.
+2025-12-08 19:03:38 | src.data_processing.table_processor | ERROR    | Error processing table 45 in 5: DataFrame columns must be unique for orient='records'.
+2025-12-08 19:03:38 | src.data_processing.table_processor | ERROR    | Error processing table 46 in 5: DataFrame columns must be unique for orient='records'.
+2025-12-08 19:03:38 | src.data_processing.table_processor | ERROR    | Error processing table 47 in 5: DataFrame columns must be unique for orient='records'.
+2025-12-08 19:03:39 | src.data_processing.table_processor | ERROR    | Error processing table 48 in 5: DataFrame columns must be unique for orient='records'.
+2025-12-08 19:03:39 | src.data_processing.table_processor | ERROR    | Error processing table 49 in 5: DataFrame columns must be unique for orient='records'.
+2025-12-08 19:03:40 | src.data_processing.table_processor | ERROR    | Error processing table 50 in 5: DataFrame columns must be unique for orient='records'.
+2025-12-08 19:04:26 | src.data_processing.table_processor | ERROR    | Error processing table 51 in 5: DataFrame columns must be unique for orient='records'.
+2025-12-08 19:04:27 | src.data_processing.table_processor | ERROR    | Error processing table 52 in 5: DataFrame columns must be unique for orient='records'.
+2025-12-08 19:04:27 | src.data_processing.table_processor | ERROR    | Error processing table 53 in 5: DataFrame columns must be unique for orient='records'.
+2025-12-08 19:04:27 | src.data_processing.table_processor | ERROR    | Error processing table 54 in 5: DataFrame columns must be unique for orient='records'.
+2025-12-08 19:04:28 | src.data_processing.table_processor | ERROR    | Error processing table 55 in 5: DataFrame columns must be unique for orient='records'.
+2025-12-08 19:04:28 | src.data_processing.table_processor | ERROR    | Error processing table 56 in 5: DataFrame columns must be unique for orient='records'.
+2025-12-08 19:04:28 | src.data_processing.table_processor | ERROR    | Error processing table 57 in 5: DataFrame columns must be unique for orient='records'.
+2025-12-08 19:04:29 | src.data_processing.table_processor | ERROR    | Error processing table 58 in 5: DataFrame columns must be unique for orient='records'.
+2025-12-08 19:04:29 | src.data_processing.table_processor | ERROR    | Error processing table 59 in 5: DataFrame columns must be unique for orient='records'.
+2025-12-08 19:04:29 | src.data_processing.table_processor | ERROR    | Error processing table 60 in 5: DataFrame columns must be unique for orient='records'.
+2025-12-08 19:04:30 | src.data_processing.table_processor | ERROR    | Error processing table 61 in 5: DataFrame columns must be unique for orient='records'.
+2025-12-08 19:04:31 | src.data_processing.table_processor | ERROR    | Error processing table 5 in 7: DataFrame columns must be unique for orient='records'.
+2025-12-08 19:04:32 | src.data_processing.table_processor | ERROR    | Error processing table 7 in 7: DataFrame columns must be unique for orient='records'.
+2025-12-08 19:04:32 | src.data_processing.table_processor | ERROR    | Error processing table 9 in 7: DataFrame columns must be unique for orient='records'.
+2025-12-08 19:04:33 | src.data_processing.table_processor | ERROR    | Error processing table 11 in 7: DataFrame columns must be unique for orient='records'.
+2025-12-08 19:04:33 | src.data_processing.table_processor | ERROR    | Error processing table 12 in 7: DataFrame columns must be unique for orient='records'.
+2025-12-08 19:04:33 | src.data_processing.table_processor | ERROR    | Error processing table 13 in 7: DataFrame columns must be unique for orient='records'.
+2025-12-08 19:04:34 | src.data_processing.table_processor | ERROR    | Error processing table 14 in 7: DataFrame columns must be unique for orient='records'.
+2025-12-08 19:04:34 | src.data_processing.table_processor | ERROR    | Error processing table 15 in 7: DataFrame columns must be unique for orient='records'.
+2025-12-08 19:04:34 | src.data_processing.table_processor | ERROR    | Error processing table 16 in 7: DataFrame columns must be unique for orient='records'.
+2025-12-08 19:04:34 | src.data_processing.table_processor | ERROR    | Error processing table 17 in 7: DataFrame columns must be unique for orient='records'.
+2025-12-08 19:04:35 | src.data_processing.table_processor | ERROR    | Error processing table 18 in 7: DataFrame columns must be unique for orient='records'.
+2025-12-08 19:04:40 | src.data_processing.table_processor | ERROR    | Error processing table 19 in 7: DataFrame columns must be unique for orient='records'.
+2025-12-08 19:04:40 | src.data_processing.table_processor | ERROR    | Error processing table 20 in 7: DataFrame columns must be unique for orient='records'.
+2025-12-08 19:04:40 | src.data_processing.table_processor | ERROR    | Error processing table 21 in 7: DataFrame columns must be unique for orient='records'.
+2025-12-08 19:04:41 | src.data_processing.table_processor | ERROR    | Error processing table 22 in 7: DataFrame columns must be unique for orient='records'.
+2025-12-08 19:04:41 | src.data_processing.table_processor | ERROR    | Error processing table 23 in 7: DataFrame columns must be unique for orient='records'.
+2025-12-08 19:04:42 | src.data_processing.table_processor | ERROR    | Error processing table 24 in 7: DataFrame columns must be unique for orient='records'.
+2025-12-08 19:04:42 | src.data_processing.table_processor | ERROR    | Error processing table 25 in 7: DataFrame columns must be unique for orient='records'.
+2025-12-08 19:04:42 | src.data_processing.table_processor | ERROR    | Error processing table 26 in 7: DataFrame columns must be unique for orient='records'.
+2025-12-08 19:04:43 | src.data_processing.table_processor | ERROR    | Error processing table 27 in 7: DataFrame columns must be unique for orient='records'.
+2025-12-08 19:04:43 | src.data_processing.table_processor | ERROR    | Error processing table 28 in 7: DataFrame columns must be unique for orient='records'.
+2025-12-08 19:04:44 | src.data_processing.table_processor | ERROR    | Error processing table 29 in 7: DataFrame columns must be unique for orient='records'.
+2025-12-08 19:04:44 | src.data_processing.table_processor | ERROR    | Error processing table 30 in 7: DataFrame columns must be unique for orient='records'.
+2025-12-08 19:04:44 | src.data_processing.table_processor | ERROR    | Error processing table 31 in 7: DataFrame columns must be unique for orient='records'.
+2025-12-08 19:04:44 | src.data_processing.table_processor | ERROR    | Error processing table 32 in 7: DataFrame columns must be unique for orient='records'.
+2025-12-08 19:04:45 | src.data_processing.table_processor | ERROR    | Error processing table 33 in 7: DataFrame columns must be unique for orient='records'.
+2025-12-08 19:04:45 | src.data_processing.table_processor | ERROR    | Error processing table 34 in 7: DataFrame columns must be unique for orient='records'.
+2025-12-08 19:04:45 | src.data_processing.table_processor | ERROR    | Error processing table 35 in 7: DataFrame columns must be unique for orient='records'.
+2025-12-08 19:04:46 | src.data_processing.table_processor | ERROR    | Error processing table 36 in 7: DataFrame columns must be unique for orient='records'.
+2025-12-08 19:04:46 | src.data_processing.table_processor | ERROR    | Error processing table 37 in 7: DataFrame columns must be unique for orient='records'.
+2025-12-08 19:04:46 | src.data_processing.table_processor | ERROR    | Error processing table 38 in 7: DataFrame columns must be unique for orient='records'.
+2025-12-08 19:04:47 | src.data_processing.table_processor | ERROR    | Error processing table 39 in 7: DataFrame columns must be unique for orient='records'.
+2025-12-08 19:04:47 | src.data_processing.table_processor | ERROR    | Error processing table 40 in 7: DataFrame columns must be unique for orient='records'.
+2025-12-08 19:04:47 | src.data_processing.table_processor | ERROR    | Error processing table 41 in 7: DataFrame columns must be unique for orient='records'.
+2025-12-08 19:04:48 | src.data_processing.table_processor | ERROR    | Error processing table 42 in 7: DataFrame columns must be unique for orient='records'.
+2025-12-08 19:04:48 | src.data_processing.table_processor | ERROR    | Error processing table 43 in 7: DataFrame columns must be unique for orient='records'.
+2025-12-08 19:04:49 | src.data_processing.table_processor | ERROR    | Error processing table 44 in 7: DataFrame columns must be unique for orient='records'.
+2025-12-08 19:04:49 | src.data_processing.table_processor | ERROR    | Error processing table 45 in 7: DataFrame columns must be unique for orient='records'.
+2025-12-08 19:04:49 | src.data_processing.table_processor | ERROR    | Error processing table 46 in 7: DataFrame columns must be unique for orient='records'.
+2025-12-08 19:04:49 | src.data_processing.table_processor | ERROR    | Error processing table 47 in 7: DataFrame columns must be unique for orient='records'.
+2025-12-08 19:04:50 | src.data_processing.table_processor | ERROR    | Error processing table 48 in 7: DataFrame columns must be unique for orient='records'.
+2025-12-08 19:05:35 | src.data_processing.table_processor | ERROR    | Error processing table 49 in 7: DataFrame columns must be unique for orient='records'.
+2025-12-08 19:05:36 | src.data_processing.table_processor | ERROR    | Error processing table 50 in 7: DataFrame columns must be unique for orient='records'.
+2025-12-08 19:05:36 | src.data_processing.table_processor | ERROR    | Error processing table 51 in 7: DataFrame columns must be unique for orient='records'.
+2025-12-08 19:05:36 | src.data_processing.table_processor | ERROR    | Error processing table 52 in 7: DataFrame columns must be unique for orient='records'.
+2025-12-08 19:05:37 | src.data_processing.table_processor | ERROR    | Error processing table 53 in 7: DataFrame columns must be unique for orient='records'.
+2025-12-08 19:05:37 | src.data_processing.table_processor | ERROR    | Error processing table 54 in 7: DataFrame columns must be unique for orient='records'.
+2025-12-08 19:05:37 | src.data_processing.table_processor | ERROR    | Error processing table 55 in 7: DataFrame columns must be unique for orient='records'.
+2025-12-08 19:05:38 | src.data_processing.table_processor | ERROR    | Error processing table 56 in 7: DataFrame columns must be unique for orient='records'.
+2025-12-08 19:05:38 | src.data_processing.table_processor | ERROR    | Error processing table 57 in 7: DataFrame columns must be unique for orient='records'.
+2025-12-08 19:05:38 | src.data_processing.table_processor | ERROR    | Error processing table 58 in 7: DataFrame columns must be unique for orient='records'.
+2025-12-08 19:05:39 | src.data_processing.table_processor | ERROR    | Error processing table 59 in 7: DataFrame columns must be unique for orient='records'.
+2025-12-08 19:05:39 | src.data_processing.table_processor | ERROR    | Error processing table 60 in 7: DataFrame columns must be unique for orient='records'.
+2025-12-08 19:05:39 | src.data_processing.table_processor | ERROR    | Error processing table 61 in 7: DataFrame columns must be unique for orient='records'.
+2025-12-08 19:05:41 | src.data_processing.table_processor | ERROR    | Error processing table 5 in 7A: DataFrame columns must be unique for orient='records'.
+2025-12-08 19:05:41 | src.data_processing.table_processor | ERROR    | Error processing table 7 in 7A: DataFrame columns must be unique for orient='records'.
+2025-12-08 19:05:42 | src.data_processing.table_processor | ERROR    | Error processing table 9 in 7A: DataFrame columns must be unique for orient='records'.
+2025-12-08 19:05:43 | src.data_processing.table_processor | ERROR    | Error processing table 11 in 7A: DataFrame columns must be unique for orient='records'.
+2025-12-08 19:05:43 | src.data_processing.table_processor | ERROR    | Error processing table 12 in 7A: DataFrame columns must be unique for orient='records'.
+2025-12-08 19:05:43 | src.data_processing.table_processor | ERROR    | Error processing table 13 in 7A: DataFrame columns must be unique for orient='records'.
+2025-12-08 19:05:44 | src.data_processing.table_processor | ERROR    | Error processing table 14 in 7A: DataFrame columns must be unique for orient='records'.
+2025-12-08 19:05:44 | src.data_processing.table_processor | ERROR    | Error processing table 15 in 7A: DataFrame columns must be unique for orient='records'.
+2025-12-08 19:05:44 | src.data_processing.table_processor | ERROR    | Error processing table 16 in 7A: DataFrame columns must be unique for orient='records'.
+2025-12-08 19:05:50 | src.data_processing.table_processor | ERROR    | Error processing table 17 in 7A: DataFrame columns must be unique for orient='records'.
+2025-12-08 19:05:50 | src.data_processing.table_processor | ERROR    | Error processing table 18 in 7A: DataFrame columns must be unique for orient='records'.
+2025-12-08 19:05:51 | src.data_processing.table_processor | ERROR    | Error processing table 19 in 7A: DataFrame columns must be unique for orient='records'.
+2025-12-08 19:05:51 | src.data_processing.table_processor | ERROR    | Error processing table 20 in 7A: DataFrame columns must be unique for orient='records'.
+2025-12-08 19:05:51 | src.data_processing.table_processor | ERROR    | Error processing table 21 in 7A: DataFrame columns must be unique for orient='records'.
+2025-12-08 19:05:52 | src.data_processing.table_processor | ERROR    | Error processing table 22 in 7A: DataFrame columns must be unique for orient='records'.
+2025-12-08 19:05:52 | src.data_processing.table_processor | ERROR    | Error processing table 23 in 7A: DataFrame columns must be unique for orient='records'.
+2025-12-08 19:05:52 | src.data_processing.table_processor | ERROR    | Error processing table 24 in 7A: DataFrame columns must be unique for orient='records'.
+2025-12-08 19:05:53 | src.data_processing.table_processor | ERROR    | Error processing table 25 in 7A: DataFrame columns must be unique for orient='records'.
+2025-12-08 19:05:53 | src.data_processing.table_processor | ERROR    | Error processing table 26 in 7A: DataFrame columns must be unique for orient='records'.
+2025-12-08 19:05:53 | src.data_processing.table_processor | ERROR    | Error processing table 27 in 7A: DataFrame columns must be unique for orient='records'.
+2025-12-08 19:05:53 | src.data_processing.table_processor | ERROR    | Error processing table 28 in 7A: DataFrame columns must be unique for orient='records'.
+2025-12-08 19:05:54 | src.data_processing.table_processor | ERROR    | Error processing table 29 in 7A: DataFrame columns must be unique for orient='records'.
+2025-12-08 19:05:54 | src.data_processing.table_processor | ERROR    | Error processing table 30 in 7A: DataFrame columns must be unique for orient='records'.
+2025-12-08 19:05:54 | src.data_processing.table_processor | ERROR    | Error processing table 31 in 7A: DataFrame columns must be unique for orient='records'.
+2025-12-08 19:05:55 | src.data_processing.table_processor | ERROR    | Error processing table 32 in 7A: DataFrame columns must be unique for orient='records'.
+2025-12-08 19:05:55 | src.data_processing.table_processor | ERROR    | Error processing table 33 in 7A: DataFrame columns must be unique for orient='records'.
+2025-12-08 19:05:55 | src.data_processing.table_processor | ERROR    | Error processing table 34 in 7A: DataFrame columns must be unique for orient='records'.
+2025-12-08 19:05:56 | src.data_processing.table_processor | ERROR    | Error processing table 35 in 7A: DataFrame columns must be unique for orient='records'.
+2025-12-08 19:05:56 | src.data_processing.table_processor | ERROR    | Error processing table 36 in 7A: DataFrame columns must be unique for orient='records'.
+2025-12-08 19:05:56 | src.data_processing.table_processor | ERROR    | Error processing table 37 in 7A: DataFrame columns must be unique for orient='records'.
+2025-12-08 19:05:57 | src.data_processing.table_processor | ERROR    | Error processing table 38 in 7A: DataFrame columns must be unique for orient='records'.
+2025-12-08 19:05:57 | src.data_processing.table_processor | ERROR    | Error processing table 39 in 7A: DataFrame columns must be unique for orient='records'.
+2025-12-08 19:05:57 | src.data_processing.table_processor | ERROR    | Error processing table 40 in 7A: DataFrame columns must be unique for orient='records'.
+2025-12-08 19:05:58 | src.data_processing.table_processor | ERROR    | Error processing table 41 in 7A: DataFrame columns must be unique for orient='records'.
+2025-12-08 19:05:58 | src.data_processing.table_processor | ERROR    | Error processing table 42 in 7A: DataFrame columns must be unique for orient='records'.
+2025-12-08 19:05:58 | src.data_processing.table_processor | ERROR    | Error processing table 43 in 7A: DataFrame columns must be unique for orient='records'.
+2025-12-08 19:05:58 | src.data_processing.table_processor | ERROR    | Error processing table 44 in 7A: DataFrame columns must be unique for orient='records'.
+2025-12-08 19:05:59 | src.data_processing.table_processor | ERROR    | Error processing table 45 in 7A: DataFrame columns must be unique for orient='records'.
+2025-12-08 19:05:59 | src.data_processing.table_processor | ERROR    | Error processing table 46 in 7A: DataFrame columns must be unique for orient='records'.
+2025-12-08 23:42:48 | src.data_processing.chunker    | ERROR    | LangChain/tiktoken required: No module named 'langchain.text_splitter'
+2025-12-08 23:42:48 | __main__                       | ERROR    | 
+
+FATAL ERROR: No module named 'langchain.text_splitter'
+Traceback (most recent call last):
+  File "C:\Users\suraj\Hariharan\Assignments\Term3\MLOps\MLOps-Project\Automated_Due_Dillegence_Market_Intelligence_Agent_v2\Data_Pipeline\src\data_processing\chunker.py", line 39, in __init__
+    from langchain_text_splitters import RecursiveCharacterTextSplitter
+ModuleNotFoundError: No module named 'langchain_text_splitters'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\suraj\Hariharan\Assignments\Term3\MLOps\MLOps-Project\Automated_Due_Dillegence_Market_Intelligence_Agent_v2\Data_Pipeline\scripts\fetch_and_process_sec.py", line 339, in <module>
+    main()
+  File "C:\Users\suraj\Hariharan\Assignments\Term3\MLOps\MLOps-Project\Automated_Due_Dillegence_Market_Intelligence_Agent_v2\Data_Pipeline\scripts\fetch_and_process_sec.py", line 113, in main
+    chunker = TextChunker(chunk_size=chunk_size, overlap=overlap)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\suraj\Hariharan\Assignments\Term3\MLOps\MLOps-Project\Automated_Due_Dillegence_Market_Intelligence_Agent_v2\Data_Pipeline\src\data_processing\chunker.py", line 41, in __init__
+    from langchain.text_splitter import RecursiveCharacterTextSplitter
+ModuleNotFoundError: No module named 'langchain.text_splitter'
+2025-12-08 23:43:09 | src.data_processing.chunker    | ERROR    | LangChain/tiktoken required: No module named 'langchain_text_splitters'
+2025-12-08 23:43:09 | __main__                       | ERROR    | 
+
+FATAL ERROR: No module named 'langchain_text_splitters'
+Traceback (most recent call last):
+  File "C:\Users\suraj\Hariharan\Assignments\Term3\MLOps\MLOps-Project\Automated_Due_Dillegence_Market_Intelligence_Agent_v2\Data_Pipeline\scripts\fetch_and_process_sec.py", line 339, in <module>
+    main()
+  File "C:\Users\suraj\Hariharan\Assignments\Term3\MLOps\MLOps-Project\Automated_Due_Dillegence_Market_Intelligence_Agent_v2\Data_Pipeline\scripts\fetch_and_process_sec.py", line 113, in main
+    chunker = TextChunker(chunk_size=chunk_size, overlap=overlap)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\suraj\Hariharan\Assignments\Term3\MLOps\MLOps-Project\Automated_Due_Dillegence_Market_Intelligence_Agent_v2\Data_Pipeline\src\data_processing\chunker.py", line 38, in __init__
+    from langchain_text_splitters import RecursiveCharacterTextSplitter
+ModuleNotFoundError: No module named 'langchain_text_splitters'

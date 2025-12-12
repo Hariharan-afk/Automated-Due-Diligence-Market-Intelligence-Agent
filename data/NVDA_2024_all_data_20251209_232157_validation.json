@@ -1,0 +1,152 @@
+{
+  "timestamp": "2025-12-09T23:21:57.490754",
+  "checks": {
+    "completeness": {
+      "valid": true,
+      "issues": [],
+      "warnings": [],
+      "completeness_score": 1.0
+    },
+    "schema": {
+      "valid": true,
+      "errors": [],
+      "warnings": [],
+      "total_errors": 0,
+      "total_warnings": 0,
+      "sampled_chunks": 100
+    },
+    "token_sizes": {
+      "valid": true,
+      "oversized_chunks": 0,
+      "undersized_chunks": 3,
+      "oversized_examples": [],
+      "undersized_examples": [
+        {
+          "chunk_id": "NVDA_sec_0001045810-24-000029_3_0",
+          "tokens": 45
+        },
+        {
+          "chunk_id": "NVDA_sec_0001045810-24-000029_8_0",
+          "tokens": 40
+        },
+        {
+          "chunk_id": "NVDA_wiki_8",
+          "tokens": 42
+        }
+      ],
+      "stats": {
+        "avg_tokens": 551.515,
+        "min_tokens": 40,
+        "max_tokens": 793,
+        "median_tokens": 625.0
+      }
+    },
+    "content_quality": {
+      "valid": true,
+      "issues": [],
+      "total_issues": 0,
+      "sampled_chunks": 100
+    },
+    "statistics": {
+      "valid": true,
+      "warnings": [],
+      "stats": {
+        "mean": 2803.09,
+        "median": 3119.5,
+        "std": 1193.0243341608755,
+        "min": 196,
+        "max": 4590
+      },
+      "source_distribution": {
+        "sec": 111,
+        "wikipedia": 19,
+        "news": 70
+      },
+      "total_chunks": 200
+    },
+    "table_references": {
+      "valid": false,
+      "issues": [
+        "Referenced table not found: TABLE_NVDA_0001045810_15_38",
+        "Referenced table not found: TABLE_NVDA_0001045810_15_32",
+        "Referenced table not found: TABLE_NVDA_0001045810_15_10",
+        "Referenced table not found: TABLE_NVDA_0001045810_15_19",
+        "Referenced table not found: TABLE_NVDA_0001045810_15_15",
+        "Referenced table not found: TABLE_NVDA_0001045810_7_8",
+        "Referenced table not found: TABLE_NVDA_0001045810_15_27",
+        "Referenced table not found: TABLE_NVDA_0001045810_7_2",
+        "Referenced table not found: TABLE_NVDA_0001045810_7_6",
+        "Referenced table not found: TABLE_NVDA_0001045810_7_7",
+        "Referenced table not found: TABLE_NVDA_0001045810_15_7",
+        "Referenced table not found: TABLE_NVDA_0001045810_15_18",
+        "Referenced table not found: TABLE_NVDA_0001045810_15_20",
+        "Referenced table not found: TABLE_NVDA_0001045810_15_25",
+        "Referenced table not found: TABLE_NVDA_0001045810_15_28",
+        "Referenced table not found: TABLE_NVDA_0001045810_15_24",
+        "Referenced table not found: TABLE_NVDA_0001045810_1_0",
+        "Referenced table not found: TABLE_NVDA_0001045810_15_13",
+        "Referenced table not found: TABLE_NVDA_0001045810_15_36",
+        "Referenced table not found: TABLE_NVDA_0001045810_15_4",
+        "Referenced table not found: TABLE_NVDA_0001045810_15_33",
+        "Referenced table not found: TABLE_NVDA_0001045810_7_4",
+        "Referenced table not found: TABLE_NVDA_0001045810_15_22",
+        "Referenced table not found: TABLE_NVDA_0001045810_15_0",
+        "Referenced table not found: TABLE_NVDA_0001045810_15_26",
+        "Referenced table not found: TABLE_NVDA_0001045810_15_43",
+        "Referenced table not found: TABLE_NVDA_0001045810_7_0",
+        "Referenced table not found: TABLE_NVDA_0001045810_15_31",
+        "Referenced table not found: TABLE_NVDA_0001045810_15_45",
+        "Referenced table not found: TABLE_NVDA_0001045810_15_16",
+        "Referenced table not found: TABLE_NVDA_0001045810_15_8",
+        "Referenced table not found: TABLE_NVDA_0001045810_15_9",
+        "Referenced table not found: TABLE_NVDA_0001045810_15_39",
+        "Referenced table not found: TABLE_NVDA_0001045810_5_0",
+        "Referenced table not found: TABLE_NVDA_0001045810_15_5",
+        "Referenced table not found: TABLE_NVDA_0001045810_15_14",
+        "Referenced table not found: TABLE_NVDA_0001045810_15_23",
+        "Referenced table not found: TABLE_NVDA_0001045810_15_6",
+        "Referenced table not found: TABLE_NVDA_0001045810_7_1",
+        "Referenced table not found: TABLE_NVDA_0001045810_15_11",
+        "Referenced table not found: TABLE_NVDA_0001045810_15_12",
+        "Referenced table not found: TABLE_NVDA_0001045810_7_3",
+        "Referenced table not found: TABLE_NVDA_0001045810_7_5",
+        "Referenced table not found: TABLE_NVDA_0001045810_15_41",
+        "Referenced table not found: TABLE_NVDA_0001045810_15_44",
+        "Referenced table not found: TABLE_NVDA_0001045810_15_21",
+        "Referenced table not found: TABLE_NVDA_0001045810_15_3",
+        "Referenced table not found: TABLE_NVDA_0001045810_15_35",
+        "Referenced table not found: TABLE_NVDA_0001045810_15_37",
+        "Referenced table not found: TABLE_NVDA_0001045810_15_42",
+        "Referenced table not found: TABLE_NVDA_0001045810_15_1",
+        "Referenced table not found: TABLE_NVDA_0001045810_15_34",
+        "Referenced table not found: TABLE_NVDA_0001045810_15_2",
+        "Referenced table not found: TABLE_NVDA_0001045810_15_17",
+        "Referenced table not found: TABLE_NVDA_0001045810_15_30",
+        "Referenced table not found: TABLE_NVDA_0001045810_15_29",
+        "Referenced table not found: TABLE_NVDA_0001045810_15_40",
+        "Referenced table not found: TABLE_NVDA_0001045810_5_1"
+      ],
+      "stats": {
+        "total_tables": 0,
+        "referenced_tables": 58,
+        "orphaned_tables": 0,
+        "chunks_with_tables": 29
+      }
+    }
+  },
+  "overall_valid": false,
+  "critical_issues": [
+    "table_references: Referenced table not found: TABLE_NVDA_0001045810_15_38",
+    "table_references: Referenced table not found: TABLE_NVDA_0001045810_15_32",
+    "table_references: Referenced table not found: TABLE_NVDA_0001045810_15_10",
+    "table_references: Referenced table not found: TABLE_NVDA_0001045810_15_19",
+    "table_references: Referenced table not found: TABLE_NVDA_0001045810_15_15"
+  ],
+  "warnings": [],
+  "stats": {
+    "total_chunks": 200,
+    "ticker": "NVDA",
+    "year": 2024,
+    "fetched_at": "2025-12-09T23:20:47.323431"
+  }
+}
