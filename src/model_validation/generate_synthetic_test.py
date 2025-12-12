@@ -16,7 +16,7 @@ from qdrant_client import QdrantClient
 from src.config import QDRANT_CONFIG
 from src.tools.gcp_client import get_gcp_client
 
-def generate_synthetic_data(num_samples: int = 5, output_file: str = "src/model_validation/golden_dataset.json"):
+def generate_synthetic_data(num_samples: int = 15, output_file: str = "src/model_validation/golden_dataset.json"):
     print(f"🔄 Connecting to Qdrant: {QDRANT_CONFIG['url']}...")
     
     client = QdrantClient(
