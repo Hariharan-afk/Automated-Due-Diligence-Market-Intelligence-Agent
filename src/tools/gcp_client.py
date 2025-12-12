@@ -22,41 +22,40 @@ class GCPClient:
     def __init__(self):
         import os
         print(f"DEBUG: GCP_PROJECT_ID={GCP_PROJECT_ID}")
-        print(f"DEBUG: GOOGLE_APPLICATION_CREDENTIALS={os.environ.get('GOOGLE_APPLICATION_CREDENTIALS')}")
         print(f"DEBUG: EMBEDDING_MODEL={EMBEDDING_CONFIG['model']}")
         print(f"DEBUG: LLM_MODEL={AGENT_CONFIG['planner']['model']}")
         
-        self.embedding_model = TextEmbeddingModel.from_pretrained(
-            EMBEDDING_CONFIG["model"]
-        )
+        # LLM (Always Vertex for now)
         self.chat_model = GenerativeModel(
             AGENT_CONFIG["planner"]["model"]
         )
+        
+        
+        # Embeddings (Vertex AI)
+        print(f"🔄 Loading Vertex AI Embedding Model: {EMBEDDING_CONFIG['model']}...")
+        self.embedding_model = TextEmbeddingModel.from_pretrained(EMBEDDING_CONFIG["model"])
+        print(f"✅ Vertex AI Embedding Model Loaded")
+        
         print(f"✅ GCP Client initialized (Project: {GCP_PROJECT_ID})")
     
     def get_embedding(self, text: str) -> List[float]:
         """
-        Get embedding from Vertex AI
-        
-        Args:
-            text: Text to embed
-        
-        Returns:
-            List of floats (768 dimensions)
+        Get embedding using Vertex AI
         """
         embeddings = self.embedding_model.get_embeddings([text])
         return embeddings[0].values
     
     def get_embeddings_batch(self, texts: List[str]) -> List[List[float]]:
-        """Get embeddings in batches (more efficient)"""
-        batch_size = 5
+        """Get embeddings in batches"""
+        # Vertex AI Limit: 250 inputs per request for newer models
+        batch_size = 20 
         all_embeddings = []
         
         for i in range(0, len(texts), batch_size):
             batch = texts[i:i+batch_size]
             embeddings = self.embedding_model.get_embeddings(batch)
             all_embeddings.extend([emb.values for emb in embeddings])
-        
+            
         return all_embeddings
     
     def chat_completion(self, messages: List[dict], temperature: float = 0.3) -> str:

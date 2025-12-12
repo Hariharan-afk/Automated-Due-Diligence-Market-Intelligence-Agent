@@ -1,0 +1,368 @@
+{
+  "timestamp": "2025-12-11T04:43:17.162773",
+  "summary": {
+    "success_rate": 1.0,
+    "total_tests": 3,
+    "successful_tests": 3,
+    "failed_tests": 0,
+    "avg_overall_score": 0.2692806267806268,
+    "min_overall_score": 0.23611111111111116,
+    "max_overall_score": 0.3125,
+    "std_overall_score": 0.03198505186280067,
+    "avg_execution_time": 95.63782890637715,
+    "min_execution_time": 84.12663698196411,
+    "max_execution_time": 104.76341271400452,
+    "std_execution_time": 8.592146519498227,
+    "avg_agent_confidence": 0.0,
+    "min_agent_confidence": 0.0,
+    "max_agent_confidence": 0.0,
+    "std_agent_confidence": 0.0,
+    "avg_groundedness": 0.4810185185185185,
+    "min_groundedness": 0.4305555555555556,
+    "avg_citation_f1": 0.0,
+    "avg_citation_precision": 0.0,
+    "avg_citation_recall": 0.3333333333333333,
+    "avg_relevancy": 0.8653846153846154,
+    "retrieval_recall": 0.0
+  },
+  "acceptance_criteria": {
+    "all_criteria_met": false,
+    "criteria": {
+      "turnaround_time": {
+        "threshold": 300,
+        "actual": 95.63782890637715,
+        "passed": true
+      },
+      "hallucination_rate": {
+        "threshold": 0.05,
+        "actual": 0.5189814814814815,
+        "passed": false
+      },
+      "quality_score": {
+        "threshold": 0.8,
+        "actual": 0.2692806267806268,
+        "passed": false
+      },
+      "success_rate": {
+        "threshold": 0.9,
+        "actual": 1.0,
+        "passed": true
+      }
+    },
+    "summary": {
+      "success_rate": 1.0,
+      "total_tests": 3,
+      "successful_tests": 3,
+      "failed_tests": 0,
+      "avg_overall_score": 0.2692806267806268,
+      "min_overall_score": 0.23611111111111116,
+      "max_overall_score": 0.3125,
+      "std_overall_score": 0.03198505186280067,
+      "avg_execution_time": 95.63782890637715,
+      "min_execution_time": 84.12663698196411,
+      "max_execution_time": 104.76341271400452,
+      "std_execution_time": 8.592146519498227,
+      "avg_agent_confidence": 0.0,
+      "min_agent_confidence": 0.0,
+      "max_agent_confidence": 0.0,
+      "std_agent_confidence": 0.0,
+      "avg_groundedness": 0.4810185185185185,
+      "min_groundedness": 0.4305555555555556,
+      "avg_citation_f1": 0.0,
+      "avg_citation_precision": 0.0,
+      "avg_citation_recall": 0.3333333333333333,
+      "avg_relevancy": 0.8653846153846154,
+      "retrieval_recall": 0.0
+    },
+    "detailed_results": [
+      {
+        "query_id": "ALPHABETIN_001",
+        "query": "What was Alphabet Inc.'s total stock-based compensation expense for the three months ended March 31, 2023 and 2024?",
+        "groundedness": {
+          "score": 0.45,
+          "supported_tokens": 45,
+          "total_answer_tokens": 100,
+          "details": "Computed via Token Overlap"
+        },
+        "citation": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1_score": 0.0,
+          "citations_found": 0
+        },
+        "answer_relevancy": {
+          "score": 0.8461538461538461,
+          "found_keywords": [
+            "three",
+            "compensation",
+            "31",
+            "ended",
+            "2023",
+            "2024",
+            "alphabet",
+            "expense",
+            "march",
+            "total",
+            "months"
+          ],
+          "missing_keywords": [
+            "incs",
+            "stockbased"
+          ],
+          "explanation": "Found 11/13 query keywords"
+        },
+        "context_relevancy": {
+          "score": 0.95,
+          "relevant_chunks": 19,
+          "total_chunks": 20
+        },
+        "overall_score": 0.25923076923076926,
+        "execution_time": 104.76341271400452,
+        "agent_confidence": 0.0,
+        "num_retrieved_chunks": 20,
+        "num_sources": 4,
+        "status": "success",
+        "retrieval_hit": 0
+      },
+      {
+        "query_id": "MICROSOFTC_002",
+        "query": "Where does Microsoft Corporation show the reconciliation of GAAP to non-GAAP financial results?",
+        "groundedness": {
+          "score": 0.4305555555555556,
+          "supported_tokens": 62,
+          "total_answer_tokens": 144,
+          "details": "Computed via Token Overlap"
+        },
+        "citation": {
+          "precision": 0.0,
+          "recall": 1.0,
+          "f1_score": 0.0,
+          "citations_found": 0
+        },
+        "answer_relevancy": {
+          "score": 0.75,
+          "found_keywords": [
+            "corporation",
+            "gaap",
+            "reconciliation",
+            "financial",
+            "results",
+            "microsoft"
+          ],
+          "missing_keywords": [
+            "nongaap",
+            "show"
+          ],
+          "explanation": "Found 6/8 query keywords"
+        },
+        "context_relevancy": {
+          "score": 0.1,
+          "relevant_chunks": 2,
+          "total_chunks": 20
+        },
+        "overall_score": 0.23611111111111116,
+        "execution_time": 98.02343702316284,
+        "agent_confidence": 0.0,
+        "num_retrieved_chunks": 20,
+        "num_sources": 4,
+        "status": "success",
+        "retrieval_hit": 0
+      },
+      {
+        "query_id": "ALPHABETIN_003",
+        "query": "What were the cumulative net gains from equity securities sold by Alphabet Inc. for the three months ended March 31, 2024?",
+        "groundedness": {
+          "score": 0.5625,
+          "supported_tokens": 54,
+          "total_answer_tokens": 96,
+          "details": "Computed via Token Overlap"
+        },
+        "citation": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1_score": 0.0,
+          "citations_found": 0
+        },
+        "answer_relevancy": {
+          "score": 1.0,
+          "found_keywords": [
+            "securities",
+            "gains",
+            "three",
+            "31",
+            "net",
+            "equity",
+            "ended",
+            "2024",
+            "alphabet",
+            "sold",
+            "inc",
+            "march",
+            "from",
+            "cumulative",
+            "months"
+          ],
+          "missing_keywords": [],
+          "explanation": "Found 15/15 query keywords"
+        },
+        "context_relevancy": {
+          "score": 1.0,
+          "relevant_chunks": 20,
+          "total_chunks": 20
+        },
+        "overall_score": 0.3125,
+        "execution_time": 84.12663698196411,
+        "agent_confidence": 0.0,
+        "num_retrieved_chunks": 20,
+        "num_sources": 5,
+        "status": "success",
+        "retrieval_hit": 0
+      }
+    ]
+  },
+  "detailed_results": [
+    {
+      "query_id": "ALPHABETIN_001",
+      "query": "What was Alphabet Inc.'s total stock-based compensation expense for the three months ended March 31, 2023 and 2024?",
+      "groundedness": {
+        "score": 0.45,
+        "supported_tokens": 45,
+        "total_answer_tokens": 100,
+        "details": "Computed via Token Overlap"
+      },
+      "citation": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1_score": 0.0,
+        "citations_found": 0
+      },
+      "answer_relevancy": {
+        "score": 0.8461538461538461,
+        "found_keywords": [
+          "three",
+          "compensation",
+          "31",
+          "ended",
+          "2023",
+          "2024",
+          "alphabet",
+          "expense",
+          "march",
+          "total",
+          "months"
+        ],
+        "missing_keywords": [
+          "incs",
+          "stockbased"
+        ],
+        "explanation": "Found 11/13 query keywords"
+      },
+      "context_relevancy": {
+        "score": 0.95,
+        "relevant_chunks": 19,
+        "total_chunks": 20
+      },
+      "overall_score": 0.25923076923076926,
+      "execution_time": 104.76341271400452,
+      "agent_confidence": 0.0,
+      "num_retrieved_chunks": 20,
+      "num_sources": 4,
+      "status": "success",
+      "retrieval_hit": 0
+    },
+    {
+      "query_id": "MICROSOFTC_002",
+      "query": "Where does Microsoft Corporation show the reconciliation of GAAP to non-GAAP financial results?",
+      "groundedness": {
+        "score": 0.4305555555555556,
+        "supported_tokens": 62,
+        "total_answer_tokens": 144,
+        "details": "Computed via Token Overlap"
+      },
+      "citation": {
+        "precision": 0.0,
+        "recall": 1.0,
+        "f1_score": 0.0,
+        "citations_found": 0
+      },
+      "answer_relevancy": {
+        "score": 0.75,
+        "found_keywords": [
+          "corporation",
+          "gaap",
+          "reconciliation",
+          "financial",
+          "results",
+          "microsoft"
+        ],
+        "missing_keywords": [
+          "nongaap",
+          "show"
+        ],
+        "explanation": "Found 6/8 query keywords"
+      },
+      "context_relevancy": {
+        "score": 0.1,
+        "relevant_chunks": 2,
+        "total_chunks": 20
+      },
+      "overall_score": 0.23611111111111116,
+      "execution_time": 98.02343702316284,
+      "agent_confidence": 0.0,
+      "num_retrieved_chunks": 20,
+      "num_sources": 4,
+      "status": "success",
+      "retrieval_hit": 0
+    },
+    {
+      "query_id": "ALPHABETIN_003",
+      "query": "What were the cumulative net gains from equity securities sold by Alphabet Inc. for the three months ended March 31, 2024?",
+      "groundedness": {
+        "score": 0.5625,
+        "supported_tokens": 54,
+        "total_answer_tokens": 96,
+        "details": "Computed via Token Overlap"
+      },
+      "citation": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1_score": 0.0,
+        "citations_found": 0
+      },
+      "answer_relevancy": {
+        "score": 1.0,
+        "found_keywords": [
+          "securities",
+          "gains",
+          "three",
+          "31",
+          "net",
+          "equity",
+          "ended",
+          "2024",
+          "alphabet",
+          "sold",
+          "inc",
+          "march",
+          "from",
+          "cumulative",
+          "months"
+        ],
+        "missing_keywords": [],
+        "explanation": "Found 15/15 query keywords"
+      },
+      "context_relevancy": {
+        "score": 1.0,
+        "relevant_chunks": 20,
+        "total_chunks": 20
+      },
+      "overall_score": 0.3125,
+      "execution_time": 84.12663698196411,
+      "agent_confidence": 0.0,
+      "num_retrieved_chunks": 20,
+      "num_sources": 5,
+      "status": "success",
+      "retrieval_hit": 0
+    }
+  ]
+}

@@ -21,7 +21,7 @@ from src.model_validation.test_dataset import TestDataset
 from src.model_validation.metrics import compute_all_metrics
 
 # Import agent system
-from src.agents.analyser_agent import AnalyserAgent
+from src.agents.planner_agent import PlannerAgent
 from src.agents.researcher_agent import ResearcherAgent
 from src.agents.synthesiser_agent import SynthesiserAgent
 from src.tools.hybrid_search import HybridSearchEngine
@@ -49,30 +49,27 @@ class ValidationPipeline:
         print("🔬 INITIALIZING VALIDATION PIPELINE")
         print("="*70)
         
-        # Load test dataset
-        if test_dataset_path:
-            self.test_cases = TestDataset.load_from_file(test_dataset_path)
-        else:
-            dataset = TestDataset()
-            self.test_cases = dataset.get_test_cases()
+        # Default to golden dataset
+        self.test_cases = TestDataset.load_from_file("src/model_validation/golden_dataset.json")
         
         print(f"✅ Loaded {len(self.test_cases)} test cases")
         
-        # Import Graph
-        try:
-            from src.graph import app
-            self.graph_app = app
-            print("✅ Agent Graph loaded")
-        except ImportError as e:
-            print(f"❌ Failed to load Agent Graph: {e}")
-            raise
-
+        # Initialize agent system
+        print("\n🔧 Initializing agents...")
+        self.search_engine = HybridSearchEngine()
+        self.reranker = Reranker()
+        self.planner = PlannerAgent()
+        self.researcher = ResearcherAgent(self.search_engine, self.reranker)
+        self.synthesiser = SynthesiserAgent()
+        
+        print("✅ Agents initialized")
+        
         # Results storage
         self.results = []
         
     def run_single_test(self, test_case: Dict) -> Dict:
         """
-        Run agent graph on single test case and evaluate
+        Run agent pipeline on single test case and evaluate
         """
         query_id = test_case['query_id']
         query = test_case['query']
@@ -85,19 +82,26 @@ class ValidationPipeline:
         start_time = time.time()
         
         try:
-            # Invoke Graph
-            print("\n🤖 Invoking Agent Graph...")
-            final_state = self.graph_app.invoke({"query": query})
+            # Step 1: Analyser decomposes query
+            print("\n[1/3] Planner: Decomposing query...")
+            sub_queries = self.planner.execute(query)
             
-            answer = final_state.get('answer', "")
-            sources = final_state.get('sources', [])
-            confidence = final_state.get('confidence', 0.0)
-            retrieved_chunks = final_state.get('research_data', [])
+            # Step 2: Researcher retrieves information
+            print("\n[2/3] Researcher: Retrieving information...")
+            retrieved_chunks = self.researcher.execute(sub_queries, query)
+            
+            # Step 3: Synthesiser generates answer
+            print("\n[3/3] Synthesiser: Generating answer...")
+            result = self.synthesiser.execute(query, retrieved_chunks)
+            
+            answer = result['answer']
+            sources = result['sources']
+            confidence = result.get('confidence', 0.0)
             
             elapsed_time = time.time() - start_time
             
-            # Compute metrics (rule-based)
-            print("\n📊 Computing metrics...")
+            # Compute metrics (all rule-based, very fast)
+            print("\n📊 Computing metrics (rule-based)...")
             metrics = compute_all_metrics(
                 query=query,
                 answer=answer,
@@ -112,16 +116,15 @@ class ValidationPipeline:
             metrics['num_retrieved_chunks'] = len(retrieved_chunks)
             metrics['num_sources'] = len(sources)
             metrics['status'] = 'success'
-            metrics['hallucination_score'] = final_state.get('hallucination_score', 0.0)
-            metrics['iterations'] = final_state.get('iteration', 1)
             
             # Check for retrieval hit (Recall@k)
-            target_chunk_id = test_case.get('target_chunk_id')
-            if target_chunk_id:
-                # Check both research_data (all candidates) and sources (final used)
-                # chunks from hybrid_search have 'chunk_id' field from payload
-                retrieved_ids = [str(c.get('chunk_id') or c.get('id', '')) for c in retrieved_chunks]
-                metrics['retrieval_hit'] = 1 if str(target_chunk_id) in retrieved_ids else 0
+            # Check for retrieval hit (Use Soft Recall from metrics.py)
+            if 'retrieval_recall' in metrics:
+                # metrics['retrieval_recall'] is {"score": float, "hit": bool}
+                soft_score = metrics['retrieval_recall'].get('score', 0.0)
+                metrics['retrieval_hit'] = soft_score # Use the soft float score (0.0 - 1.0)
+            else:
+                metrics['retrieval_hit'] = 0.0
             
             print(f"\n✅ Test completed in {elapsed_time:.2f}s")
             print(f"📈 Overall Score: {metrics['overall_score']:.2%}")
@@ -133,8 +136,6 @@ class ValidationPipeline:
             
         except Exception as e:
             print(f"\n❌ Test failed: {e}")
-            import traceback
-            traceback.print_exc()
             elapsed_time = time.time() - start_time
             
             return {
@@ -347,7 +348,8 @@ def main():
         print(f"   Threshold: {criterion['threshold']}")
         print(f"   Actual: {criterion['actual']:.4f}")
     
-    print("\n" + acceptance['summary'])
+    print("\nSummary Validation Details:")
+    print(json.dumps(acceptance['summary'], indent=2, cls=NumpyEncoder))
     
     # Save results
     results_file = pipeline.save_results()

@@ -1,0 +1,328 @@
+{
+  "timestamp": "20251208_233000",
+  "total_tests": 5,
+  "metrics": {
+    "avg_overall": 0.29600488205053777,
+    "avg_relevance": 0.7866829401684593,
+    "avg_faithfulness": 0.2,
+    "avg_recall": 0.0
+  },
+  "detailed_results": [
+    {
+      "query_id": "GOLD_001_MIC",
+      "query": "What were the Level 2 derivative assets and liabilities for Microsoft Corporation as of June 30, 2023?",
+      "answer": "```markdown\n**Executive Summary**\n\nBased on the provided documents, specific Level 2 derivative asset and liability values for Microsoft Corporation as of June 30, 2023, are not available. The provided documents do not contain the specific figures requested for Microsoft.\n\n**Key Findings**\n\n*   The provided documents do not contain information about Microsoft's Level 2 derivative assets and liabilities as of June 30, 2023.\n\n**Detailed Analysis**\n\nThe provided documents contain financial information for Tesla, Amazon, Apple, and Alphabet Inc., but not for Microsoft regarding Level 2 derivative assets and liabilities as of June 30, 2023. Some documents discuss derivative financial instruments in general terms and fair value hierarchy levels, but no specific values for Microsoft are present.\n\n**Data Gaps/Limitations**\n\n*   The specific Level 2 derivative asset and liability values for Microsoft Corporation as of June 30, 2023, are missing from the provided research data.\n```",
+      "sources": [
+        {
+          "company": "Tesla Inc.",
+          "source_type": "sec",
+          "date": "2025-11-22T23:57:42.797780",
+          "ticker": "TSLA",
+          "chunk_id": "TSLA_sec_5b566669_83"
+        },
+        {
+          "company": "Amazon.com Inc.",
+          "source_type": "sec",
+          "date": "2025-11-22T23:53:07.485933",
+          "ticker": "AMZN",
+          "chunk_id": "AMZN_sec_d2881b14_95"
+        },
+        {
+          "company": "Apple Inc.",
+          "source_type": "news",
+          "date": "2025-11-22T23:58:33.617594",
+          "ticker": "AAPL",
+          "chunk_id": "AAPL_news_c9ab0780_0"
+        },
+        {
+          "company": "Alphabet Inc.",
+          "source_type": "sec",
+          "date": "2025-11-22T23:50:07.745363",
+          "ticker": "GOOGL",
+          "chunk_id": "GOOGL_sec_cf741d97_133"
+        },
+        {
+          "company": "Apple Inc.",
+          "source_type": "sec",
+          "date": "2025-11-22T23:46:49.628643",
+          "ticker": "AAPL",
+          "chunk_id": "AAPL_sec_5389e34a_81"
+        },
+        {
+          "company": "Microsoft Corporation",
+          "source_type": "news",
+          "date": "2025-11-22T23:58:50.159755",
+          "ticker": "MSFT",
+          "chunk_id": "MSFT_news_819133c6_0"
+        },
+        {
+          "company": "Microsoft Corporation",
+          "source_type": "sec",
+          "date": "2025-11-22T23:49:21.973806",
+          "ticker": "MSFT",
+          "chunk_id": "MSFT_sec_9562f598_180"
+        }
+      ],
+      "metrics": {
+        "retrieval_recall": 0.0,
+        "answer_relevancy": 0.7688224169386636,
+        "faithfulness": 0.0,
+        "overall_score": 0.23064672508159906,
+        "duration_seconds": 39.672600984573364
+      },
+      "metadata": {
+        "ticker": "MSFT",
+        "company": "Microsoft Corporation",
+        "source": "sec"
+      },
+      "slices": {
+        "market_cap": "large_cap",
+        "source_bias": "mostly_sec",
+        "sentiment": "sentiment_neutral"
+      }
+    },
+    {
+      "query_id": "GOLD_002_MIC",
+      "query": "Where in Microsoft Corporation's filings can I find a reconciliation table between GAAP and non-GAAP financial results?",
+      "answer": "```markdown\n**Executive Summary**\n\nThe provided research data does not contain specific information regarding the location of GAAP to non-GAAP reconciliation tables within Microsoft Corporation's filings. The documents primarily focus on AI advancements, competition law, and product developments.\n\n**Key Findings**\n\n*   The provided documents do not contain GAAP to non-GAAP reconciliation information.\n*   The documents highlight Microsoft's AI strategy and product launches (Document 2, Document 8, Document 10).\n*   One document discusses potential competition law issues (Document 7).\n\n**Detailed Analysis**\n\nThe provided documents related to Microsoft Corporation do not include financial statements or information on where to find GAAP to non-GAAP reconciliations. The news articles discuss Microsoft's AI initiatives and a humorous take on multi-factor authentication (Document 4, Document 6). The SEC filing snippet discusses competition law and its potential impact on Microsoft's business (Document 7). Without access to Microsoft's financial filings (e.g., 10-K or 10-Q reports), the location of the requested reconciliation cannot be determined.\n\n**Data Gaps/Limitations**\n\n*   The primary limitation is the absence of Microsoft's financial statements (10-K, 10-Q, or earnings releases) in the provided data.\n*   Therefore, the location of GAAP to non-GAAP reconciliation tables cannot be identified.\n```",
+      "sources": [
+        {
+          "company": "Apple Inc.",
+          "source_type": "sec",
+          "date": "2025-11-22T23:46:00.203239",
+          "ticker": "AAPL",
+          "chunk_id": "AAPL_sec_f299acb1_120"
+        },
+        {
+          "company": "Microsoft Corporation",
+          "source_type": "news",
+          "date": "2025-11-22T23:58:50.159755",
+          "ticker": "MSFT",
+          "chunk_id": "MSFT_news_819133c6_0"
+        },
+        {
+          "company": "Alphabet Inc.",
+          "source_type": "sec",
+          "date": "2025-11-22T23:50:37.844975",
+          "ticker": "GOOGL",
+          "chunk_id": "GOOGL_sec_e1d5c0b7_126"
+        },
+        {
+          "company": "Microsoft Corporation",
+          "source_type": "sec",
+          "date": "2025-11-22T23:47:31.157714",
+          "ticker": "MSFT",
+          "chunk_id": "MSFT_sec_176109a2_168"
+        },
+        {
+          "company": "Amazon.com Inc.",
+          "source_type": "sec",
+          "date": "2025-11-22T23:55:08.008743",
+          "ticker": "AMZN",
+          "chunk_id": "AMZN_sec_868d0c84_26"
+        }
+      ],
+      "metrics": {
+        "retrieval_recall": 0.0,
+        "answer_relevancy": 0.7382587570044091,
+        "faithfulness": 0.0,
+        "overall_score": 0.22147762710132274,
+        "duration_seconds": 42.337317943573
+      },
+      "metadata": {
+        "ticker": "MSFT",
+        "company": "Microsoft Corporation",
+        "source": "sec"
+      },
+      "slices": {
+        "market_cap": "large_cap",
+        "source_bias": "mostly_sec",
+        "sentiment": "sentiment_neutral"
+      }
+    },
+    {
+      "query_id": "GOLD_003_ALP",
+      "query": "What is the carrying value of Alphabet Inc.'s marketable and non-marketable equity securities as of December 31, 2023 and December 31, 2024?",
+      "answer": "```markdown\n**Executive Summary**\n\nThe carrying value of Alphabet Inc.'s equity securities, both marketable and non-marketable, is reflected in the Other Income & Expense (OI&E) line item. OI&E, net increased by **$4.9 billion** from 2022 to 2023 and **$6.0 billion** from 2023 to 2024, primarily due to fluctuations and gains in the value of equity securities.\n\n**Key Findings**\n\n*   OI&E, net increased **$4.9 billion** from 2022 to 2023.\n*   OI&E, net increased **$6.0 billion** from 2023 to 2024.\n*   The increase in OI&E from 2023 to 2024 was primarily due to net gains on equity securities and a decrease in net losses on foreign currency exchange.\n*   The net gains on equity securities from 2023 to 2024 were primarily due to net unrealized gains on non-marketable equity securities driven by fair value adjustments related to observable transactions, partially offset by a decrease in net unrealized gains on marketable equity securities due to market-driven changes.\n*   In January 2025, Alphabet recognized an **$8.0 billion** unrealized gain on non-marketable equity securities related to an investment in a private company.\n\n**Detailed Analysis**\n\nThe changes in the value of Alphabet's marketable and non-marketable equity securities are primarily reflected in the Other Income and Expense (OI&E) line item on the income statement. The **$4.9 billion** increase in OI&E from 2022 to 2023 was attributed to fluctuations in the value of equity securities, reflecting market-driven changes in marketable equity securities and investment-specific event-driven changes in non-marketable equity securities. The **$6.0 billion** increase in OI&E from 2023 to 2024 was primarily due to net gains on equity securities, specifically net unrealized gains on non-marketable equity securities driven by fair value adjustments related to observable transactions, partially offset by a decrease in net unrealized gains on marketable equity securities due to market-driven changes. Furthermore, the company recognized an **$8.0 billion** unrealized gain on non-marketable equity securities in January 2025.\n\n**Data Gaps/Limitations**\n\nThe specific carrying values (i.e., the actual dollar amounts) of marketable and non-marketable equity securities are not explicitly stated in the provided documents for December 31, 2023 and December 31, 2024. The data only provides the *changes* in OI&E, which are influenced by the fluctuations in the value of these securities. To determine the carrying value, one would need to consult Alphabet's consolidated balance sheets for those specific dates and review Note 7 in the 2023 10-K and Note 7 in the 2024 10-K.\n```",
+      "sources": [
+        {
+          "company": "Apple Inc.",
+          "source_type": "sec",
+          "date": "2025-11-22T23:46:49.627643",
+          "ticker": "AAPL",
+          "chunk_id": "AAPL_sec_0c7868ee_74"
+        },
+        {
+          "company": "Tesla Inc.",
+          "source_type": "sec",
+          "date": "2025-11-22T23:56:57.897863",
+          "ticker": "TSLA",
+          "chunk_id": "TSLA_sec_a74efd7b_96"
+        },
+        {
+          "company": "Alphabet Inc.",
+          "source_type": "sec",
+          "date": "2025-11-22T23:50:06.947678",
+          "ticker": "GOOGL",
+          "chunk_id": "GOOGL_sec_97febfe1_87"
+        },
+        {
+          "company": "Alphabet Inc.",
+          "source_type": "news",
+          "date": "2025-11-22T23:59:10.445981",
+          "ticker": "GOOGL",
+          "chunk_id": "GOOGL_news_43206919_0"
+        },
+        {
+          "company": "Apple Inc.",
+          "source_type": "news",
+          "date": "2025-11-22T23:58:33.617594",
+          "ticker": "AAPL",
+          "chunk_id": "AAPL_news_c9ab0780_0"
+        },
+        {
+          "company": "Microsoft Corporation",
+          "source_type": "sec",
+          "date": "2025-11-22T23:48:38.575278",
+          "ticker": "MSFT",
+          "chunk_id": "MSFT_sec_6d5b2ad4_62"
+        }
+      ],
+      "metrics": {
+        "retrieval_recall": 0.0,
+        "answer_relevancy": 0.7955458487026864,
+        "faithfulness": 0.0,
+        "overall_score": 0.2386637546108059,
+        "duration_seconds": 42.36797285079956
+      },
+      "metadata": {
+        "ticker": "GOOGL",
+        "company": "Alphabet Inc.",
+        "source": "sec"
+      },
+      "slices": {
+        "market_cap": "large_cap",
+        "source_bias": "mostly_sec",
+        "sentiment": "sentiment_neutral"
+      }
+    },
+    {
+      "query_id": "GOLD_004_TES",
+      "query": "What was Tesla Inc.'s total cost of revenues for the three months ended March 31, 2025?",
+      "answer": "```markdown\n**Executive Summary**\n\nFor the three months ended March 31, 2025, Tesla Inc.'s cost of automotive sales revenue decreased by **$2.44 billion**, or **18%**, compared to the same period in 2024. However, the cost of energy generation and storage revenue increased by **$713 million**, or **58%**, over the same period.\n\n**Key Findings**\n\n*   Cost of automotive sales revenue decreased by **$2.44 billion** or **18%** for the three months ended March 31, 2025, compared to March 31, 2024.\n*   Cost of services and other revenue increased by **$330 million**, or **15%**, for the three months ended March 31, 2025, compared to March 31, 2024.\n*   Cost of energy generation and storage revenue increased by **$713 million**, or **58%**, for the three months ended March 31, 2025, compared to March 31, 2024.\n\n**Detailed Analysis**\n\nThe decrease in the cost of automotive sales revenue is attributed to decreased deliveries year-over-year, lower raw material costs, and a positive impact from the strengthening of the U.S. dollar compared to foreign currencies, partially offset by sales mix. The increase in the cost of services and other revenue is generally in line with the changes in services and other revenue. The increase in cost of energy generation and storage revenue was primarily due to increases in Megapack and Powerwall deployments compared to the prior year, with decreased average cost per unit for Megapack and Powerwall due to lower raw material costs.\n\n**Data Gaps/Limitations**\n\nThe total cost of revenues for Tesla Inc. for the three months ended March 31, 2025 is not explicitly stated in the provided documents. The documents only provide segmented cost of revenue information for automotive sales, services and other, and energy generation and storage. To calculate the total cost of revenues, one would need to sum the cost of revenues from each segment, but this is not possible with the available data.\n```",
+      "sources": [
+        {
+          "company": "Apple Inc.",
+          "source_type": "sec",
+          "date": "2025-11-22T23:46:21.530933",
+          "ticker": "AAPL",
+          "chunk_id": "AAPL_sec_dd566593_31"
+        },
+        {
+          "company": "Tesla Inc.",
+          "source_type": "news",
+          "date": "2025-11-22T23:59:54.278315",
+          "ticker": "TSLA",
+          "chunk_id": "TSLA_news_bd698b87_0"
+        },
+        {
+          "company": "Tesla Inc.",
+          "source_type": "sec",
+          "date": "2025-11-22T23:56:59.649302",
+          "ticker": "TSLA",
+          "chunk_id": "TSLA_sec_8b47d3fa_193"
+        },
+        {
+          "company": "Amazon.com Inc.",
+          "source_type": "sec",
+          "date": "2025-11-22T23:54:50.382040",
+          "ticker": "AMZN",
+          "chunk_id": "AMZN_sec_a43a9233_11"
+        }
+      ],
+      "metrics": {
+        "retrieval_recall": 0.0,
+        "answer_relevancy": 0.7737508346845915,
+        "faithfulness": 0.0,
+        "overall_score": 0.23212525040537743,
+        "duration_seconds": 125.42341327667236
+      },
+      "metadata": {
+        "ticker": "TSLA",
+        "company": "Tesla Inc.",
+        "source": "sec"
+      },
+      "slices": {
+        "market_cap": "large_cap",
+        "source_bias": "mostly_sec",
+        "sentiment": "sentiment_neutral"
+      }
+    },
+    {
+      "query_id": "GOLD_005_ALP",
+      "query": "What was the increase in Google Cloud's operating income for Alphabet Inc. from the three and nine months ended September 30, 2024 to the three and nine months ended September 30, 2025?",
+      "answer": "```markdown\n## Google Cloud Operating Income Analysis: 2024-2025\n\n**Executive Summary:** The provided research data does not contain the specific operating income figures for Google Cloud. Therefore, the exact increase in Google Cloud's operating income for Alphabet Inc. from the three and nine months ended September 30, 2024, to the three and nine months ended September 30, 2025, cannot be determined.\n\n**Key Findings:**\n\n*   The provided documents do not contain specific operating income figures for Google Cloud.\n*   Several news articles highlight the strong growth and momentum of Google Cloud, driven by AI and increased adoption of enterprise AI tools.\n*   One article mentions Google Cloud revenue jumped **34%** to **$15.2 billion**.\n\n**Detailed Analysis:**\n\nWhile the provided data does not offer the precise operating income for Google Cloud, it strongly suggests positive growth. News articles emphasize that AI is a key driver of Alphabet's growth, particularly within the cloud computing segment. The increase in Google Cloud revenue and backlog, along with the adoption of AI tools, indicates a strong performance. However, without the specific operating income figures for the periods in question, a quantitative assessment of the increase is impossible.\n\n**Data Gaps/Limitations:**\n\n*   Specific operating income figures for Google Cloud for the three and nine months ended September 30, 2024, and September 30, 2025, are missing.\n*   Detailed financial statements from Alphabet Inc. are needed to provide a precise answer.\n```",
+      "sources": [
+        {
+          "company": "Amazon.com Inc.",
+          "source_type": "sec",
+          "date": "2025-11-22T23:55:25.789387",
+          "ticker": "AMZN",
+          "chunk_id": "AMZN_sec_513b26b6_13"
+        },
+        {
+          "company": "Apple Inc.",
+          "source_type": "sec",
+          "date": "2025-11-22T23:45:49.303099",
+          "ticker": "AAPL",
+          "chunk_id": "AAPL_sec_c5268123_40"
+        },
+        {
+          "company": "Alphabet Inc.",
+          "source_type": "news",
+          "date": "2025-11-22T23:59:12.268581",
+          "ticker": "GOOGL",
+          "chunk_id": "GOOGL_news_6e7ab39c_0"
+        },
+        {
+          "company": "Tesla Inc.",
+          "source_type": "sec",
+          "date": "2025-11-22T23:56:44.560830",
+          "ticker": "TSLA",
+          "chunk_id": "TSLA_sec_2d647eb3_103"
+        },
+        {
+          "company": "Alphabet Inc.",
+          "source_type": "sec",
+          "date": "2025-11-22T23:51:34.213948",
+          "ticker": "GOOGL",
+          "chunk_id": "GOOGL_sec_1b023419_37"
+        },
+        {
+          "company": "Microsoft Corporation",
+          "source_type": "sec",
+          "date": "2025-11-22T23:49:47.406582",
+          "ticker": "MSFT",
+          "chunk_id": "MSFT_sec_eeabb9dd_19"
+        }
+      ],
+      "metrics": {
+        "retrieval_recall": 0.0,
+        "answer_relevancy": 0.8570368435119461,
+        "faithfulness": 1.0,
+        "overall_score": 0.5571110530535839,
+        "duration_seconds": 82.89747071266174
+      },
+      "metadata": {
+        "ticker": "GOOGL",
+        "company": "Alphabet Inc.",
+        "source": "sec"
+      },
+      "slices": {
+        "market_cap": "large_cap",
+        "source_bias": "mostly_sec",
+        "sentiment": "sentiment_positive"
+      }
+    }
+  ]
+}

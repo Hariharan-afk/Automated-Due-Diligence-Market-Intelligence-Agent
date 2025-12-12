@@ -3,12 +3,51 @@
   "source": "synthetic_qdrant",
   "test_cases": [
     {
-      "query_id": "ALPHABETIN_001",
-      "query": "Alphabet Inc. $74.8 billion remained available Class A Class C share repurchases September 30, 2025",
-      "target_chunk_id": "GOOGL_sec_f5608956_156",
-      "target_chunk_text": "\u20ac1.25 billion of 4.00% notes due 2054. The net proceeds from all notes issued in May 2025 are used for general corporate purposes.\n\nAs of September 30, 2025, we had senior unsecured notes outstanding ...",
-      "company": "Alphabet Inc.",
-      "golden_answer": "As of September 30, 2025, $74.8 billion remained available for Alphabet Inc.'s Class A and Class C share repurchases.",
+      "query_id": "TESLAINC_001",
+      "query": "What were the components of Tesla Inc.'s solar energy systems, net, as of December 31, 2023 and 2022?",
+      "target_chunk_id": "TSLA_sec_2f3eba1a_164",
+      "target_chunk_text": "**Table Description:** Note 7: Solar Energy Systems, Net - Balance Sheet Disclosure\"\n\nThis table presents the net carrying value of Tesla's solar energy systems, including initial direct costs and acc...",
+      "company": "Tesla Inc.",
+      "golden_answer": "Based on the provided text, Tesla Inc.'s solar energy systems, net, consist of their net carrying value, which includes initial direct costs and accumulated depreciation and amortization. The specific values and breakdown of these components for December 31, 2023, and 2022 are not detailed in this chunk.",
+      "metadata": {
+        "sector": "Healthcare",
+        "market_cap": "Large Cap",
+        "region": "North America"
+      }
+    },
+    {
+      "query_id": "TESLAINC_002",
+      "query": "What are the details of the lawsuits filed against Tesla Inc. by JPMorgan Chase, the California Civil Rights Department, and the EEOC?",
+      "target_chunk_id": "TSLA_sec_1cbc9069_65",
+      "target_chunk_text": "On November 15, 2021, JPMorgan Chase Bank (\u201cJP Morgan\u201d) filed a lawsuit against Tesla in the Southern District of New York alleging breach of a stock warrant agreement that was entered into as part of...",
+      "company": "Tesla Inc.",
+      "golden_answer": "Based on the text, JPMorgan Chase's lawsuit alleges Tesla breached a stock warrant agreement and owes approximately $162 million, which Tesla disputes. The California Civil Rights Department and the EEOC filed separate lawsuits alleging systemic race discrimination, harassment, and retaliation, with both seeking monetary and injunctive relief.",
+      "metadata": {
+        "sector": "Energy",
+        "market_cap": "Large Cap",
+        "region": "North America"
+      }
+    },
+    {
+      "query_id": "MICROSOFTC_003",
+      "query": "How much did Microsoft Corporation spend on share repurchases and declare in dividends for the three months ended September 30, 2024?",
+      "target_chunk_id": "MSFT_sec_93924e7e_110",
+      "target_chunk_text": "PART I\n\nItem 2\n\nShare Repurchases\n\nFor the three months ended September 30, 2024 and 2023, we repurchased 7 million shares and 11 million shares of our common stock for $2.8 billion and $3.6 billion, ...",
+      "company": "Microsoft Corporation",
+      "golden_answer": "Based on the provided text, for the three months ended September 30, 2024, Microsoft Corporation spent $2.8 billion on share repurchases. During the same period, its Board of Directors declared dividends totaling $6.2 billion.",
+      "metadata": {
+        "sector": "Consumer Discretionary",
+        "market_cap": "Small Cap",
+        "region": "North America"
+      }
+    },
+    {
+      "query_id": "AMAZONCOMI_004",
+      "query": "What was the value of Amazon.com Inc. common stock repurchased in 2022 and how much remained under the repurchase program as of December 31, 2024?",
+      "target_chunk_id": "AMZN_sec_f9e1cf9d_147",
+      "target_chunk_text": "**Table Description:** **Stockholders' Equity and Stock Repurchase Activity**\n\nThis table presents the stockholders' equity metrics, including preferred and common stock outstanding, and stock repurch...",
+      "company": "Amazon.com Inc.",
+      "golden_answer": "Based on the provided text, Amazon.com Inc. repurchased its common stock for $6.0 billion in 2022. As of December 31, 2024, the company had $6.1 billion remaining under the repurchase program.",
       "metadata": {
         "sector": "Consumer Discretionary",
         "market_cap": "Large Cap",
@@ -16,54 +55,15 @@
       }
     },
     {
-      "query_id": "ALPHABETIN_002",
-      "query": "Alphabet Inc. debt maturity schedule June 30 2024",
-      "target_chunk_id": "GOOGL_sec_40245511_31",
-      "target_chunk_text": "|  |  |  |  |  |  |\n| --- | --- | --- | --- | --- | --- |\n|  |  |  |  |  |  |\n|  | | | As of June 30, 2024 | | |\n| Due in 1 year or less | | | $ | 7,234 |  |\n| Due in 1 year through 5 years | | | 36,6...",
-      "company": "Alphabet Inc.",
-      "golden_answer": "As of June 30, 2024, Alphabet Inc.'s debt maturity schedule is: $7,234 million due in 1 year or less, $36,666 million due in 1-5 years, $11,977 million due in 5-10 years, and $12,664 million due after 10 years, totaling $68,541 million.",
-      "metadata": {
-        "sector": "Energy",
-        "market_cap": "Small Cap",
-        "region": "North America"
-      }
-    },
-    {
-      "query_id": "MICROSOFTC_003",
-      "query": "Microsoft Corporation income taxes effective tax rate Notice 2023-55 Notice 2023-80 IRS NOPAs $28.9 billion",
-      "target_chunk_id": "MSFT_sec_1ed8438a_70",
-      "target_chunk_text": "NOTE 11 \u2014 INCOME TAXES\n\nEffective Tax Rate\n\nOur effective tax rate was 18% and 19% for the three months ended March 31, 2024 and 2023, respectively, and 18% and 19% for the nine months ended March 31,...",
-      "company": "Microsoft Corporation",
-      "golden_answer": "Microsoft's effective tax rate was 18% for the three and nine months ended March 31, 2024, partly due to tax benefits from IRS Notice 2023-55 and Notice 2023-80. The company received IRS NOPAs on September 26, 2023, seeking an additional tax payment of $28.9 billion plus penalties and interest related to intercompany transfer pricing for tax years 2004 to 2013.",
-      "metadata": {
-        "sector": "Energy",
-        "market_cap": "Large Cap",
-        "region": "North America"
-      }
-    },
-    {
-      "query_id": "AMAZONCOMI_004",
-      "query": "Amazon.com Inc. net sales North America International AWS year-over-year growth net sales mix June 30 2024",
-      "target_chunk_id": "AMZN_sec_c3cc1645_73",
-      "target_chunk_text": "|  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |\n| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- ...",
-      "company": "Amazon.com Inc.",
-      "golden_answer": "For the three months ended June 30, 2024, Amazon.com Inc. reported North America net sales of $90,033 million, International net sales of $31,663 million, and AWS net sales of $26,281 million. Year-over-year growth was 9% for North America, 7% for International, and 19% for AWS, with the net sales mix being 61% North America, 21% International, and 18% AWS.",
-      "metadata": {
-        "sector": "Energy",
-        "market_cap": "Small Cap",
-        "region": "North America"
-      }
-    },
-    {
       "query_id": "MICROSOFTC_005",
-      "query": "Microsoft Corporation Revenue allocated to remaining performance obligations $229 billion December 31, 2023 NOTE 13 LEASES datacenters corporate offices",
-      "target_chunk_id": "MSFT_sec_9da97981_73",
-      "target_chunk_text": "Revenue allocated to remaining performance obligations, which includes unearned revenue and amounts that will be invoiced and recognized as revenue in future periods, was $229 billion as of December 3...",
+      "query": "What was the value of Microsoft Corporation's common stock repurchases for the six months ended December 31, 2024, and how much remained of the share repurchase program as of that date?",
+      "target_chunk_id": "MSFT_sec_d16583cb_136",
+      "target_chunk_text": "If our customers choose to license cloud-based versions of our products and services rather than licensing transaction-based products and services, the associated revenue will shift from being recogni...",
       "company": "Microsoft Corporation",
-      "golden_answer": "Microsoft Corporation's revenue allocated to remaining performance obligations was $229 billion as of December 31, 2023. The provided text does not state that this revenue is allocated to or derived from leases for datacenters or corporate offices, which are discussed separately under Note 13.",
+      "golden_answer": "Based on the provided text, for the six months ended December 31, 2024, Microsoft Corporation repurchased $6.3 billion of its common stock. As of that date, $4.0 billion remained of its share repurchase program.",
       "metadata": {
-        "sector": "Energy",
-        "market_cap": "Large Cap",
+        "sector": "Technology",
+        "market_cap": "Mid Cap",
         "region": "North America"
       }
     }

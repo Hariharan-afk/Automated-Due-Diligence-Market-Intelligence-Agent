@@ -3,7 +3,7 @@ import sys
 import os
 from typing import Dict, Any, Optional
 
-from fastapi import FastAPI, HTTPException
+from fastapi import FastAPI, HTTPException, Request
 from pydantic import BaseModel
 from dotenv import load_dotenv
 
@@ -62,6 +62,31 @@ async def analyze(request: QueryRequest):
         # Save result (optional side effect)
         save_result(request.query, final_state)
         
+        # --- METRIC COLLECTION ---
+        timing = final_state.get("timing", {})
+        token_usage = final_state.get("token_usage", {})
+        
+        # Calculate derived metrics
+        total_tokens = sum(token_usage.values())
+        est_cost = (total_tokens / 1000) * 0.002 # $0.002 per 1k tokens (example rate)
+        
+        # Total latency from graph (sum of parts, or wall clock?) 
+        # Wall clock is better for user experience, but sum of parts is good for breakdown.
+        # Let's use the sum of parts for "AI Processing Time"
+        total_ai_latency = sum(timing.values()) * 1000 # to ms
+        
+        # Record rich history
+        STATS["history"].append({
+            "timestamp": time.time(),
+            "latency_ms": total_ai_latency,
+            "status": 200,
+            "error": 0,
+            "breakdown": timing,
+            "tokens": total_tokens,
+            "cost": est_cost,
+            "rag_hit": 1 if len(final_state.get("sources", [])) > 0 else 0
+        })
+        
         return AnalysisResponse(
             answer=answer,
             sources=[], # TODO: Extract sources from state if needed
@@ -71,6 +96,49 @@ async def analyze(request: QueryRequest):
     except Exception as e:
         print(f"❌ Error processing query: {e}")
         raise HTTPException(status_code=500, detail=str(e))
+
+import time
+from collections import deque
+
+# --- Observability / Metrics ---
+# --- Observability / Metrics ---
+STATS = {
+    "total_requests": 0,
+    "total_errors": 0,
+    "history": deque(maxlen=100) # List of {timestamp, latency, status, breakdown, tokens, cost}
+}
+
+@api.middleware("http")
+async def track_metrics(request: Request, call_next):
+    # middleware only tracks basic counts now
+    try:
+        response = await call_next(request)
+        if request.url.path == "/analyze":
+            STATS["total_requests"] += 1
+            if response.status_code >= 400:
+                STATS["total_errors"] += 1
+        return response
+    except Exception as e:
+        STATS["total_errors"] += 1
+        raise e
+
+@api.get("/stats")
+def get_stats():
+    """Returns real-time system metrics + History for charts."""
+    history_list = list(STATS["history"])
+    
+    avg_latency = 0
+    if history_list:
+        latencies = [x["latency_ms"] for x in history_list]
+        avg_latency = sum(latencies) / len(latencies)
+    
+    return {
+        "status": "healthy",
+        "total_requests": STATS["total_requests"],
+        "total_errors": STATS["total_errors"],
+        "avg_latency_ms": round(avg_latency, 2),
+        "history": history_list  # Return full list for plotting
+    }
 
 if __name__ == "__main__":
     import uvicorn

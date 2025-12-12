@@ -1,0 +1,46 @@
+{
+    "bias_passed": true,
+    "global": {
+        "global_avg_overall_score": 0.6170819002228355,
+        "global_avg_success_rate": 1.0,
+        "global_avg_retrieval_recall": 0.5,
+        "max_group_avg_score": 0.685416598904971,
+        "min_group_avg_score": 0.5675,
+        "max_gap": 0.11791659890497097,
+        "max_allowed_gap": 0.2,
+        "min_group_score_threshold": 0.2
+    },
+    "per_group": {
+        "TESLAINC": {
+            "num_tests": 2,
+            "num_success": 2,
+            "success_rate": 1.0,
+            "avg_overall_score": 0.685416598904971,
+            "avg_groundedness": 0.5634466308884913,
+            "avg_relevancy": 0.9545454545454546,
+            "avg_retrieval_recall": 0.5
+        },
+        "MICROSOFTC": {
+            "num_tests": 2,
+            "num_success": 2,
+            "success_rate": 1.0,
+            "avg_overall_score": 0.5983291017635353,
+            "avg_groundedness": 0.4427733283665487,
+            "avg_relevancy": 0.849624060150376,
+            "avg_retrieval_recall": 0.5
+        },
+        "AMAZONCOMI": {
+            "num_tests": 1,
+            "num_success": 1,
+            "success_rate": 1.0,
+            "avg_overall_score": 0.5675,
+            "avg_groundedness": 0.4375,
+            "avg_relevancy": 0.8,
+            "avg_retrieval_recall": 0.5
+        }
+    },
+    "failures": {
+        "per_group_thresholds": [],
+        "disparity_failure": false
+    }
+}

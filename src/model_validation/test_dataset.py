@@ -14,7 +14,7 @@ from datetime import datetime
 class TestDataset:
     """Generate and manage test queries with ground truth"""
     
-    def __init__(self, filepath: str = "src/model_validation/test_dataset.json"):
+    def __init__(self, filepath: str = "src/model_validation/golden_dataset.json"):
         import os
         
         if os.path.exists(filepath):

@@ -20,11 +20,20 @@ wheels/
 *.egg-info/
 .installed.cfg
 *.egg
+src/.DS_Store
 
-#Folders
-Saumith_Models_2/
-DEVIL_IS_NEAR/
+#Unwanted
+Final_Model_Pipeline/
+ARCHITECTURE.md
+debug_gemini.py
 DEVIL_IS_NEAR.zip
+README DataPipeline.md
+
+# workflows
+.github/workflows/ci.yaml
+.github/workflows/cd.yaml
+.github/workflows/pipeline.yaml
+.github/workflows/ci-cd.yml
 
 # Virtual Environment
 venv/
@@ -42,13 +51,12 @@ vertex-key.json
 .vscode/
 .idea/
 
-# Logs
-logs/
-*.log
+# # Logs
+# logs/
+# *.log
 
 # Results
 results/
-src/model_validation/reports/
 
 # Docker
 docker-compose.override.yml

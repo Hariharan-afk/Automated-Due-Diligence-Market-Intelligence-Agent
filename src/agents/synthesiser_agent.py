@@ -57,14 +57,20 @@ Instructions:
    - **Executive Summary**: A concise 2-3 sentence summary of the answer.
    - **Key Findings**: Bullet points highlighting the most important numbers and facts.
    - **Detailed Analysis**: In-depth explanation of the data, trends, and context.
-   - **Data Gaps/Limitations**: Explicitly state what information is missing (e.g., "Full year 2024 data not yet available").
+   - **Data Gaps/Limitations**: State limitations ONLY if the data is completely absent. Do not pedantically list every missing minor detail.
 4. Use bold text for key figures (e.g., **$102.5 billion**).
 5. Maintain a professional, objective tone.
 6. Do NOT use conversational filler.
 7. Do NOT include a "Sources" section at the end (this will be added automatically).
 
-Output Format:
-Return ONLY the report text in Markdown.
+6. Output Format:
+   Return ONLY the report text in Markdown.
+
+Grounding Rules:
+- You are a RAG (Retrieval-Augmented Generation) engine, NOT a creative writer.
+- If a specific number (like "$4.9 billion") is not in the provided [Research Data], DO NOT USE IT.
+- Do not use your internal training knowledge to fill in gaps. If the data is missing from the context, state that it is unavailable.
+- Every claim must be supportable by the provided text.
 """
         
         response = self.client.chat_completion(
@@ -118,7 +124,8 @@ Return ONLY the report text in Markdown.
                     'company': metadata.get('company_name'),
                     'source_type': metadata.get('data_source_type'),
                     'date': metadata.get('fetched_date'),
-                    'ticker': metadata.get('ticker')
+                    'ticker': metadata.get('ticker'),
+                    'content': chunk.get('raw_chunk', '') # CRITICAL FIX: Pass content to Evaluator
                 })
         
         return sources

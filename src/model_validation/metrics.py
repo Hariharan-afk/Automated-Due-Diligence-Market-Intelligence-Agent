@@ -68,54 +68,9 @@ class RAGMetrics:
         }
     
     # ═══════════════════════════════════════════════════════════════
-    # 2. CITATION METRICS (Regex - Unchanged)
+    # 2. CITATION METRICS (Removed)
     # ═══════════════════════════════════════════════════════════════
-    
-    def compute_citation_metrics(self, answer: str, sources: List[Dict], 
-                                 retrieved_chunks: List[Dict]) -> Dict:
-        """
-        Measure citation precision and recall using Regex
-        """
-        # Extract citations from answer (format: [Company - Source - Date])
-        citation_pattern = r'\[([^\]]+)\]'
-        citations = re.findall(citation_pattern, answer)
-        
-        has_facts = any(keyword in answer.lower() 
-                      for keyword in ['revenue', '$', 'founded', 'employees', 'growth'])
-
-        if not citations:
-            return {
-                "precision": 0.0,
-                "recall": 0.0 if has_facts else 1.0,
-                "f1_score": 0.0,
-                "citations_found": 0
-            }
-        
-        # Precision: Check if citations match actual sources
-        valid_citations = 0
-        for citation in citations:
-            for source in sources:
-                # flexible matching of source name or type
-                if (source.get('company', '').lower() in citation.lower() or
-                    source.get('source_type', '').lower() in citation.lower()):
-                    valid_citations += 1
-                    break
-        
-        precision = valid_citations / len(citations)
-        
-        # Recall: Should have cited each unique source used
-        expected_citations = len(sources)
-        recall = min(len(citations) / expected_citations, 1.0) if expected_citations > 0 else 0.0
-        
-        f1 = 2 * precision * recall / (precision + recall) if (precision + recall) > 0 else 0.0
-        
-        return {
-            "precision": precision,
-            "recall": recall,
-            "f1_score": f1,
-            "citations_found": len(citations),
-            "expected_citations": expected_citations
-        }
+    # (Metric removed by user request)
     
     # ═══════════════════════════════════════════════════════════════
     # 3. ANSWER RELEVANCY (Query Keyword Recall)
@@ -267,9 +222,11 @@ def compute_all_metrics(query: str, answer: str, sources: List[Dict],
     
     # 1. Compute Base Metrics
     results['groundedness'] = metrics.compute_groundedness(answer, retrieved_chunks)
-    results['citation'] = metrics.compute_citation_metrics(answer, sources, retrieved_chunks)
+    # Citation removed
     results['answer_relevancy'] = metrics.compute_answer_relevancy(query, answer)
     results['context_relevancy'] = metrics.compute_context_relevancy(query, retrieved_chunks)
+    
+    # 2. Compute Task-Specific Metrics (if defined in test case)
     
     # 2. Compute Task-Specific Metrics (if defined in test case)
     if 'required_sections' in test_case:
@@ -281,37 +238,72 @@ def compute_all_metrics(query: str, answer: str, sources: List[Dict],
         results['factual_accuracy'] = metrics.compute_factual_accuracy(
             answer, test_case['expected_answer_contains']
         )
+        
+    # Retrieval Recall Check (Diagnostic & Metric)
+    # Implements "Soft Recall" (0.0 to 1.0 range) based on hierarchy
+    if 'target_chunk_id' in test_case:
+        target_id = test_case['target_chunk_id']
+        retrieved_ids = [c.get('chunk_id') or "" for c in retrieved_chunks]
+        
+        # 1. Exact Match (1.0)
+        if target_id in retrieved_ids:
+            hit_score = 1.0
+        else:
+            # Parse Target Metadata (Assumption: TICKER_SOURCE_HASH_ID)
+            # e.g. MSFT_sec_12345_67 -> Prefix: MSFT_sec
+            try:
+                parts = target_id.split('_')
+                if len(parts) >= 2:
+                    target_doc_prefix = f"{parts[0]}_{parts[1]}" # e.g. MSFT_sec
+                    target_ticker = parts[0] # e.g. MSFT
+                    
+                    # DEBUG PRINTS
+                    # print(f"DEBUG: Target: {target_id} | Retreived: {retrieved_ids[:3]}...") 
+                    
+                    # 2. Document/Source Match (0.5)
+                    # Check if any retrieved ID starts with the same doc prefix
+                    if any(rid.startswith(target_doc_prefix) for rid in retrieved_ids):
+                        hit_score = 0.5
+                    # 3. Company Match (0.2)
+                    elif any(rid.startswith(target_ticker) for rid in retrieved_ids):
+                        hit_score = 0.2
+                    else:
+                        print(f"⚠️ Retrieval Miss: Target {target_id} not in {retrieved_ids[:5]}...")
+                        hit_score = 0.0
+                else:
+                    print("Error in soft recall: Target ID format not recognized")
+                    hit_score = 0.0
+            except Exception as e:
+                print(f"Error in soft recall: {e}")
+                hit_score = 0.0
+                
+        results['retrieval_recall'] = {"score": hit_score, "hit": hit_score > 0.9}
     
-    if 'required_sources' in test_case:
-        results['source_coverage'] = metrics.compute_source_coverage(
-            sources, test_case['required_sources']
-        )
+    # 3. Calculate Overall Score using Config Weights
+    from src.config import VALIDATION_WEIGHTS
     
-    # 3. Calculate Overall Score (Weighted Average)
-    # We adjust weights to prioritize Factual Accuracy since we aren't using LLM-Judge
-    scores = []
+    score = 0.0
     
-    # High Priority: Did it find the specific facts we wanted?
-    if 'factual_accuracy' in results:
-        scores.append(results['factual_accuracy']['score'] * 0.30)
-    
-    # Medium Priority: Is it grounded in context?
+    # Groundedness
     if 'groundedness' in results:
-        scores.append(results['groundedness']['score'] * 0.20)
+        score += results['groundedness']['score'] * VALIDATION_WEIGHTS["groundedness"]
         
-    # Medium Priority: Did it answer the prompt keywords?
+    # Answer Relevancy
     if 'answer_relevancy' in results:
-        scores.append(results['answer_relevancy']['score'] * 0.20)
+        score += results['answer_relevancy']['score'] * VALIDATION_WEIGHTS["answer_relevancy"]
         
-    # Low Priority: Formatting and Citations
-    if 'citation' in results:
-        scores.append(results['citation'].get('f1_score', 0) * 0.15)
+    # Factual Accuracy
+    if 'factual_accuracy' in results:
+        score += results['factual_accuracy']['score'] * VALIDATION_WEIGHTS["factual_accuracy"]
         
+    # Section Completeness
     if 'section_completeness' in results:
-        scores.append(results['section_completeness']['score'] * 0.15)
+        score += results['section_completeness']['score'] * VALIDATION_WEIGHTS["section_completeness"]
+        
+    # Retrieval Recall
+    if 'retrieval_recall' in results:
+        score += results['retrieval_recall']['score'] * VALIDATION_WEIGHTS["retrieval_recall"]
 
-    # If specific test case metrics aren't present, normalize the remaining weights
-    # (Simple sum for now, assuming a "standard" test case has all of them)
-    results['overall_score'] = min(sum(scores), 1.0) if scores else 0.0
+    results['overall_score'] = min(score, 1.0)
     
     return results

@@ -1,0 +1,137 @@
+{
+  "timestamp": "20251208_230926",
+  "total_tests": 2,
+  "metrics": {
+    "avg_overall": 0.6311791693127714,
+    "avg_relevance": 0.7705972310425713,
+    "avg_faithfulness": 0.0,
+    "avg_recall": 1.0
+  },
+  "detailed_results": [
+    {
+      "query_id": "GOLD_001_APP",
+      "query": "According to the text, how many weeks did Apple Inc.'s fiscal years 2024 and 2023 span?",
+      "answer": "```markdown\n**Executive Summary**\n\nThe provided documents do not explicitly state the number of weeks in Apple Inc.'s fiscal years 2024 and 2023. However, the documents do provide financial data and commentary related to these fiscal years.\n\n**Key Findings**\n\n*   Depreciation expense on property, plant, and equipment was **$8.2 billion** during 2024 and **$8.5 billion** during 2023.\n*   Apple Inc. reported revenue of **$102.5 billion** in the September quarter, reflecting an 8% year-over-year increase.\n*   Selling, general, and administrative expense increased **$1.2 billion** during 2024 compared to 2023.\n\n**Detailed Analysis**\n\nWhile the documents do not directly answer the question about the number of weeks in Apple's fiscal years, they offer insights into the company's financial performance during those periods. The mention of depreciation expense, revenue, and selling, general, and administrative expenses provides a glimpse into Apple's operational activities. The provided data focuses on financial metrics and stock performance, with no mention of the length of the fiscal year in weeks.\n\n**Data Gaps/Limitations**\n\nThe primary data gap is the explicit statement of the number of weeks in Apple Inc.'s fiscal years 2024 and 2023. The documents do not contain this information.\n```",
+      "sources": [
+        {
+          "company": "Apple Inc.",
+          "source_type": "sec",
+          "date": "2025-11-22T23:46:49.627643",
+          "ticker": "AAPL",
+          "chunk_id": "AAPL_sec_0c7868ee_74"
+        },
+        {
+          "company": "Tesla Inc.",
+          "source_type": "sec",
+          "date": "2025-11-22T23:56:57.897863",
+          "ticker": "TSLA",
+          "chunk_id": "TSLA_sec_d188dbbd_90"
+        },
+        {
+          "company": "Apple Inc.",
+          "source_type": "news",
+          "date": "2025-11-22T23:58:33.617594",
+          "ticker": "AAPL",
+          "chunk_id": "AAPL_news_c9ab0780_0"
+        },
+        {
+          "company": "Alphabet Inc.",
+          "source_type": "sec",
+          "date": "2025-11-22T23:50:55.589654",
+          "ticker": "GOOGL",
+          "chunk_id": "GOOGL_sec_ccaaf549_113"
+        }
+      ],
+      "metrics": {
+        "retrieval_recall": 1.0,
+        "answer_relevancy": 0.7741749061386061,
+        "faithfulness": 0.0,
+        "overall_score": 0.6322524718415818,
+        "duration_seconds": 39.35080361366272
+      },
+      "metadata": {
+        "ticker": "AAPL",
+        "company": "Apple Inc.",
+        "source": "sec"
+      },
+      "slices": {
+        "market_cap": "large_cap",
+        "source_bias": "mostly_sec",
+        "sentiment": "sentiment_neutral"
+      }
+    },
+    {
+      "query_id": "GOLD_002_MIC",
+      "query": "What was Microsoft Corporation's total revenue for the three months ended December 31, 2024?",
+      "answer": "```markdown\n**Executive Summary**\n\nMicrosoft Corporation's total revenue for the three months ended December 31, 2024, is reported as **$17,664 million** in one document and **$2,703 million** in another. There is conflicting information regarding the total revenue for this period.\n\n**Key Findings**\n\n*   One document indicates Microsoft's revenue for the three months ended December 31, 2024, is **$17,664 million**.\n*   Another document indicates Microsoft's revenue for the three months ended December 31, 2024, is **$2,703 million**.\n*   The documents provide revenue forecasts for future periods.\n\n**Detailed Analysis**\n\nThe provided documents contain conflicting information regarding Microsoft's revenue for the three months ended December 31, 2024. Document 14 states the revenue as **$17,664 million**, while Document 15 states the revenue as **$2,703 million**. Without further context or clarification, it is impossible to determine which figure is accurate or if they represent different aspects of Microsoft's revenue.\n\nThe documents also include revenue figures for other periods, such as the three months ended September 30, 2024 (**$22,529 million** in Document 14 and **$5,615 million** in Document 15) and projections for future quarters.\n\n**Data Gaps/Limitations**\n\n*   There is conflicting information regarding the total revenue for the three months ended December 31, 2024.\n*   The provided data does not clarify the discrepancy between the two revenue figures.\n*   There is no explanation of what the different values represent.\n",
+      "sources": [
+        {
+          "company": "Microsoft Corporation",
+          "source_type": "sec",
+          "date": "2025-11-22T23:47:51.872640",
+          "ticker": "MSFT",
+          "chunk_id": "MSFT_sec_8f5dbe09_30"
+        },
+        {
+          "company": "Microsoft Corporation",
+          "source_type": "news",
+          "date": "2025-11-22T23:58:50.159755",
+          "ticker": "MSFT",
+          "chunk_id": "MSFT_news_819133c6_0"
+        },
+        {
+          "company": "Apple Inc.",
+          "source_type": "sec",
+          "date": "2025-11-22T23:46:49.627643",
+          "ticker": "AAPL",
+          "chunk_id": "AAPL_sec_0c7868ee_74"
+        },
+        {
+          "company": "Amazon.com Inc.",
+          "source_type": "sec",
+          "date": "2025-11-22T23:53:30.664132",
+          "ticker": "AMZN",
+          "chunk_id": "AMZN_sec_4b3bc6d7_11"
+        },
+        {
+          "company": "Tesla Inc.",
+          "source_type": "sec",
+          "date": "2025-11-22T23:55:45.198943",
+          "ticker": "TSLA",
+          "chunk_id": "TSLA_sec_c413b169_75"
+        },
+        {
+          "company": "Alphabet Inc.",
+          "source_type": "sec",
+          "date": "2025-11-22T23:51:34.559660",
+          "ticker": "GOOGL",
+          "chunk_id": "GOOGL_sec_41660098_86"
+        },
+        {
+          "company": "Apple Inc.",
+          "source_type": "news",
+          "date": "2025-11-22T23:58:33.617594",
+          "ticker": "AAPL",
+          "chunk_id": "AAPL_news_c9ab0780_0"
+        }
+      ],
+      "metrics": {
+        "retrieval_recall": 1.0,
+        "answer_relevancy": 0.7670195559465366,
+        "faithfulness": 0.0,
+        "overall_score": 0.630105866783961,
+        "duration_seconds": 141.14132237434387
+      },
+      "metadata": {
+        "ticker": "MSFT",
+        "company": "Microsoft Corporation",
+        "source": "sec"
+      },
+      "slices": {
+        "market_cap": "large_cap",
+        "source_bias": "mostly_sec",
+        "sentiment": "sentiment_neutral"
+      }
+    }
+  ]
+}

@@ -11,6 +11,7 @@ qdrant-client>=1.7.0
 # Search
 rank-bm25>=0.2.2
 sentence-transformers>=2.2.2
+torch>=2.0.0
 
 # Utilities
 tiktoken>=0.5.2

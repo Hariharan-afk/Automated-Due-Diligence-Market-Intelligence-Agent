@@ -5,7 +5,12 @@ metadata:
   labels:
     app: agent-api
 spec:
-  replicas: 1
+  replicas: 3
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxSurge: 0
+      maxUnavailable: 1
   selector:
     matchLabels:
       app: agent-api
@@ -22,11 +27,11 @@ spec:
         - containerPort: 8080
         resources:
           requests:
-            memory: "2Gi"
-            cpu: "1000m"
+            memory: "512Mi"
+            cpu: "250m"
           limits:
-            memory: "4Gi"
-            cpu: "2000m"
+            memory: "1Gi"
+            cpu: "1000m"
 ---
 apiVersion: v1
 kind: Service

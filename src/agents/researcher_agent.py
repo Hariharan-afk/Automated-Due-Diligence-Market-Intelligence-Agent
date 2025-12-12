@@ -23,83 +23,57 @@ class ResearcherAgent(BaseAgent):
         self.mitigator = BiasMitigator()
         self.qdrant_client = get_local_client()
     
-    def execute(self, sub_queries: List[str]) -> List[Dict]:
+    def execute(self, sub_queries: List[str], original_query: str) -> List[Dict]:
         """
-        Execute hybrid search + re-ranking for each sub-query
-        Ensures diversity by fetching from SEC, News, and Wikipedia.
+        Execute Global Reranking Strategy:
+        1. Retrieve chunks for all sub-queries (Aggregation)
+        2. Deduplicate
+        3. Global Rerank against original_query
         """
-        self.log(f"Researching {len(sub_queries)} sub-queries...")
+        self.log(f"🔎 Researching {len(sub_queries)} sub-queries for Global Reranking...")
         
-        all_results = []
-        
-        # Define sources to target
+        all_candidates = []
         target_sources = ['sec', 'news', 'wikipedia']
-        # Dynamic selection config
-        min_score_threshold = -5.0  # Lowered threshold to allow more chunks (since scores are around -4 to -6)
-        max_chunks_per_source = 10  # Safety cap
         
+        # 1. AGGREGATE CANDIDATES
         for i, query in enumerate(sub_queries, 1):
-            self.log(f"Sub-query {i}: '{query}'")
-            sub_query_results = []
+            self.log(f"  Query {i}: {query}")
             
             for source in target_sources:
-                # Search with filter
+                # Retrieve raw candidates (NO RERANKING YET)
                 candidates = self.search_engine.search(
                     query, 
-                    top_k=self.initial_k, 
+                    top_k=20, # Fetch more to have a good pool
                     source_filter=source
                 )
-                
                 if candidates:
-                    # Re-rank MANY candidates (up to max safety cap)
-                    reranked = self.reranker.rerank(query, candidates, top_k=max_chunks_per_source)
-                    
-                    # Apply Bias Mitigation (Boost underrepresented groups)
-                    reranked = self.mitigator.adjust_scores_by_metadata(reranked)
-                    
-                    # Sync rerank_score with final_score if boosted (so they pass threshold)
-                    for c in reranked:
-                        if c.get('bias_boosted') and 'final_score' in c:
-                             c['rerank_score'] = c['final_score']
-                    
-                    # Filter by Score Threshold
-                    selected = [c for c in reranked if c['rerank_score'] > min_score_threshold]
-                    
-                    # If nothing meets threshold, keep at least the top 1 (best effort)
-                    if not selected and reranked:
-                        # Sort again just in case mitigation changed order (mitigator does sort, but safely)
-                        reranked.sort(key=lambda x: x.get('rerank_score', -99), reverse=True)
-                        selected = [reranked[0]]
-                    
-                    # Add sub_query to each selected result
-                    for res in selected:
-                        res['sub_query'] = query
-                    
-                    self.log(f"    → Found {len(selected)} chunks from {source.upper()} (threshold: {min_score_threshold})")
-                    sub_query_results.extend(selected)
-                else:
-                    self.log(f"    → No chunks found for {source.upper()}")
-            
-            # 2. Also do a general search (no filter) to catch anything else relevant
-            # general_candidates = self.search_engine.search(query, top_k=5)
-            # general_reranked = self.reranker.rerank(query, general_candidates, top_k=2)
-            # sub_query_results.extend(general_reranked)
-            
-            # Deduplicate by chunk_id
-            seen_ids = set()
-            unique_results = []
-            for res in sub_query_results:
-                if res['chunk_id'] not in seen_ids:
-                    seen_ids.add(res['chunk_id'])
-                    unique_results.append(res)
-            
-            if unique_results:
-                avg_score = np.mean([r['final_score'] for r in unique_results])
-                self.log(f"  → Retrieved {len(unique_results)} unique chunks (avg score: {avg_score:.3f})")
-            else:
-                self.log(f"  → No results found")
-            
-            all_results.extend(unique_results)
+                    for c in candidates:
+                        c['retrieved_for'] = query # Track provenance
+                    all_candidates.extend(candidates)
         
-        self.log(f"Total chunks retrieved: {len(all_results)}")
-        return all_results
+        # 2. DEDUPLICATE
+        unique_candidates = {}
+        for c in all_candidates:
+            # Keep the one with highest retrieval score if duplicate
+            c_id = c['chunk_id']
+            if c_id not in unique_candidates:
+                unique_candidates[c_id] = c
+            else:
+                if c.get('final_score', 0) > unique_candidates[c_id].get('final_score', 0):
+                    unique_candidates[c_id] = c
+        
+        pool = list(unique_candidates.values())
+        self.log(f"📥 Aggregated Pool: {len(pool)} unique chunks. Starting Global Rerank...")
+        
+        if not pool:
+            return []
+            
+        # 3. GLOBAL RERANK (Gemini 2.5 Pro)
+        # Rerank the entire pool against the ORIGINAL wide query
+        # We cap at 50 chunks sent to LLM to avoid context overflow/latency
+        pool_for_rerank = sorted(pool, key=lambda x: x.get('final_score', 0), reverse=True)[:50]
+        
+        reranked_results = self.reranker.rerank(original_query, pool_for_rerank, top_k=self.final_k * 4) # Get Top 20 Global
+        
+        self.log(f"✅ Selected Top {len(reranked_results)} Global Chunks")
+        return reranked_results

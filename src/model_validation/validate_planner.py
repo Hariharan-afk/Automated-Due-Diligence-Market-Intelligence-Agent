@@ -1,17 +1,17 @@
 """
-model_validation/validate_analyser.py
-Validates AnalyserAgent output structure and format.
+model_validation/validate_planner.py
+Validates PlannerAgent output structure and format.
 """
 
 import sys
 sys.path.append('.')
 
 import json
-from src.agents.analyser_agent import AnalyserAgent
+from src.agents.planner_agent import PlannerAgent
 
-def validate_analyser(test_file: str = "src/model_validation/test_dataset.json"):
+def validate_planner(test_file: str = "src/model_validation/golden_dataset.json"):
     print("\n" + "="*70)
-    print("🧠 VALIDATING ANALYSER AGENT (STRUCTURE TEST)")
+    print("🧠 VALIDATING PLANNER AGENT (STRUCTURE TEST)")
     print("="*70)
     
     # Load test data
@@ -24,8 +24,8 @@ def validate_analyser(test_file: str = "src/model_validation/test_dataset.json")
         return
         
     # Initialize Agent
-    print("⚙️ Initializing Analyser Agent...")
-    analyser = AnalyserAgent()
+    print("⚙️ Initializing Planner Agent...")
+    planner = PlannerAgent()
     
     passed = 0
     total = len(test_cases)
@@ -37,8 +37,8 @@ def validate_analyser(test_file: str = "src/model_validation/test_dataset.json")
         print(f"\nTest {i}/{total}: '{query}'")
         
         try:
-            # Execute Analyser
-            sub_queries = analyser.execute(query)
+            # Execute Planner
+            sub_queries = planner.execute(query)
             
             # Validation Checks
             is_list = isinstance(sub_queries, list)
@@ -67,4 +67,4 @@ def validate_analyser(test_file: str = "src/model_validation/test_dataset.json")
         sys.exit(0)
 
 if __name__ == "__main__":
-    validate_analyser()
+    validate_planner()
